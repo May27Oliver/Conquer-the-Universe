@@ -1,0 +1,101 @@
+@import url(reset.css);
+@import url(col.css);
+
+*{
+    outline: 1px solid #f00;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif,'微軟正黑體';
+    background-color: #1c0e44;
+}
+
+
+/*==== 選單區 ====*/
+header{
+    
+}
+.navTop{
+    height: 40px;
+    background-color: #333;
+}
+.nav{
+    background-color: #462d8a;
+    height: 100px;
+}
+.loge{
+    float: left;
+  
+}
+.navIn{
+    display: flex;
+    /* justify-content: center; */
+    /* background-color: brown; */
+    margin: auto;
+}
+
+.navIn li{
+    display: inline-block;
+    margin-top: 20px;
+    
+}
+
+.navIn a{
+    
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    padding:20px;
+    
+}
+
+/*==== 內容區塊 ====*/
+.content{
+    background-image:url(../img/star2.png),
+                    url(../img/star1.png),
+                    url(../img/bac2.png),
+                    url(../img/bac1.png);
+    width: 100%;
+    height: 1450px;
+    background-repeat: no-repeat;
+}
+
+.boxLeft{
+    
+}
+
+.memNameBox{
+    overflow: hidden;
+}
+
+.memNameBox img{
+  float: left;
+  padding-right: 20px;
+}
+
+.memNameBox h3,.memNameBox h2{
+    color: #fff;
+}
+
+.supportBox{
+    background-color: #5cc9cd;
+    height: 100px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.supportBox h4,.abilityBox h4{
+    text-align: center;
+}
+
+.supportBoxIn{
+    width: 90%;
+    height: 50%;
+    background-color: #d4faff;
+    margin: auto;
+    border-radius: 8px
+
+}
+
+.abilityBox{
+    background-color: #5cc9cd;
+}
