@@ -1,12 +1,15 @@
 @import url(reset.css);
 @import url(col.css);
-
+/* 
 *{
     outline: 1px solid #f00;
-}
+} */
 body{
     font-family: Arial, Helvetica, sans-serif,'微軟正黑體';
     background-color: #1c0e44;
+}
+a{
+    text-decoration: none;
 }
 
 
@@ -40,8 +43,6 @@ header{
 }
 
 .navIn a{
-    
-    text-decoration: none;
     color: #fff;
     font-size: 24px;
     padding:20px;
@@ -50,7 +51,8 @@ header{
 
 /*==== 內容區塊 ====*/
 .content{
-    background-image:url(../img/star2.png),
+    background-image:
+                    url(../img/star2.png),
                     url(../img/star1.png),
                     url(../img/bac2.png),
                     url(../img/bac1.png);
@@ -59,12 +61,14 @@ header{
     background-repeat: no-repeat;
 }
 
+
 .boxLeft{
     
 }
 
 .memNameBox{
     overflow: hidden;
+    margin-bottom:10px;
 }
 
 .memNameBox img{
@@ -75,27 +79,178 @@ header{
 .memNameBox h3,.memNameBox h2{
     color: #fff;
 }
+.memNameBox h3{
+    font-size: 20px;
+}
+.memNameBox h2{
+    font-size: 32px;
+}
 
-.supportBox{
-    background-color: #5cc9cd;
-    height: 100px;
+.supportBox,.abilityBox{
+    background-color: #5cc9cd;  
+    padding-bottom: 2%;
     border-radius: 8px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+   
 }
 
 .supportBox h4,.abilityBox h4{
     text-align: center;
+    font-size: 20px;
+    line-height: 2.5;
 }
 
-.supportBoxIn{
-    width: 90%;
-    height: 50%;
+.supportBoxIn,.abilityBoxIn{
+    width: 95%;
+    line-height: 2;
     background-color: #d4faff;
     margin: auto;
-    border-radius: 8px
+    border-radius: 8px;
+    
+    
 
+}
+
+.abilityBoxIn{
+    height: 200px;
+}
+
+.supportBoxIn p{
+    color: #333;
+    font-size: 20px;
+    text-align: center;
+    
 }
 
 .abilityBox{
     background-color: #5cc9cd;
+}
+
+@media screen and (max-width: 767px){
+    .supportBox,.abilityBox{
+        overflow: hidden;   
+    }
+    .supportBox h4,.abilityBox h4{
+        width: 38%;
+        float: left;
+        padding-top: 10px;
+        margin-left: 5px;
+        font-size: 1.1em;
+    }
+    .supportBoxIn,.abilityBoxIn{
+        width: 57%;
+        float: right;
+        margin-top: 10px;
+        margin-right: 10px;
+        
+    }
+
+    .supportBoxIn p{
+      line-height: 2;
+        
+    }
+}
+
+@media screen and (min-width: 768px){
+    .memNameBox{
+        margin-bottom:50px;
+    }
+    .supportBox{
+      margin-bottom: 30px;  
+    }
+    
+    .supportBox h4,.abilityBox h4{
+        font-size: 24px;
+    }
+    .supportBoxIn{
+        margin-bottom: 3px;
+    }
+    .supportBoxIn p{   
+        font-size: 60px;
+    }
+}
+
+/*== 內容區塊-中 ==*/
+.boxCenter img{
+    display: block;
+    margin: auto;
+}
+
+.redBall{
+    
+}
+
+.redBall .redImg{
+    width: 100%;
+    
+}
+
+@media screen and (min-width: 768px){
+    .boxCenter img{
+        margin-top: 190px;
+    }
+}
+
+/*== 內容區塊右 ==*/
+#tab-demo{ 
+    width:100%;
+    /* height: 600px;  */
+    background-color: #5cc9cd;
+    margin: auto;
+    border-radius: 8px;
+}
+#tab-demo > ul{ 
+    display:block; margin:0;list-style:none;
+}
+.tab-title{
+    list-style:none;
+}
+#tab-demo > ul > li{
+     display:inline-block; 
+     vertical-align:top;
+      margin:0 -1px -1px 0 ; 
+      /* border:1px solid #BCBCBC;  */
+      height:25px; line-height:25px; 
+      background:#d4faff;
+      padding:0 15px;list-style:none; box-sizing:border-box;
+      border-radius: 8px;
+    }
+#tab-demo >  ul > li a{ 
+    color:#000; 
+    text-decoration:none;
+}
+#tab-demo > ul > li.active{ 
+    /* border-bottom:1px solid #fff;  */
+    background:#5cc9cd;
+}
+#tab-demo > .tab-inner{ 
+    clear:both; color:#000; 
+    /* border:1px #BCBCBC solid; */
+}
+.tab-inner{ 
+    padding:15px 10px; 
+    height:50px;
+}
+
+.propBox{
+    border-radius: 8px;
+    background-color: #d4faff;
+    width: 30%;   
+    padding-bottom: 30%;
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 2.5px;
+    margin-left: 2.5px;
+}
+
+
+@media screen and (min-width: 768px){
+    #tab-demo{
+        width:80%; 
+        height: 610px; 
+    }
+    .propBox,.propBox2{
+        width: 48%;   
+        padding-bottom: 48%;
+    }
 }

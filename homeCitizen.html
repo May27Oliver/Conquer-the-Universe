@@ -15,7 +15,7 @@
             <h1 class="loge">
                 <img src="img/logo.png" alt="征服宇宙LOGO">
             </h1>
-            <div class="navIn">
+            <!-- <div class="navIn">
                 <ul>
                     <li><a href="">宇宙星聞</a></li>
                     <li><a href="">公民學堂</a></li>
@@ -23,51 +23,110 @@
                     <li><a href="">宇宙商城</a></li>
                     <li><a href="">公民的家</a></li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </header>
 
     <!---- 內容區塊 ---->
     <div class="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <div class="item boxLeft">
-                        <div class="memNameBox"><a href="">
-                        <img src="img/badge.png" alt="">
-                            <h3>菜逼巴</h3>
-                            <h2>發大財</h2> 
-                        </a></div>
+        <div class="redBall">    
+            <div class="container">
+                <div class="row " >
+                    <div class="col-12 col-md-4">
+                        <div class="item boxLeft">
+                            <div class="memNameBox"><a href="">
+                            <img src="img/badge.png" alt="">
+                                <h3>菜逼巴</h3>
+                                <h2>發大財</h2> 
+                            </a></div>
 
-                        <div class="supportBox">
-                            <h4>個人貢獻支持度</h4>
-                            <div class="supportBoxIn">
-                                <p>66666</p>
+                            <div class="supportBox">
+                                <h4>個人貢獻支持度</h4>
+                                <div class="supportBoxIn">
+                                    <p>66666</p>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="abilityBox">
-                            <h4>個人能力值</h4>
+                            <div class="abilityBox">
+                                <h4>個人能力值</h4>
+                                <div class="abilityBoxIn">
+                                </div>
+                            </div>
+                            
                         </div>
-                        
                     </div>
-                </div>
-
+                    <div class="col-12 col-md-4">
+                        <div class="item boxCenter">
+                            <img src="img/rabbit.png" alt="">                      
+                        </div>
+                    </div>
+                     
+                     <div class="col-12 col-md-4 boxRight">
+                            <div id="tab-demo">
+                                <ul class="tab-title">
+                                    <li><a href="#tab01">現有道具</a></li>
+                                    <li><a href="#tab02">今日道具</a></li>
+                                    
+                                </ul>
+                                <div id="tab01" class="tab-inner">
+                                    <div class="propBox">
+                                    </div>
+                                    <div class="propBox">
+                                    </div>
+                                    <div class="propBox">
+                                    </div>
+                                    <div class="propBox">
+                                    </div>
+                                    <div class="propBox">
+                                    </div>
+                                    <div class="propBox">
+                                    </div>
+                                    <div class="propBox">
+                                    </div>
+                                    <div class="propBox">
+                                    </div>
+                                </div>
+                                <div id="tab02" class="tab-inner">
+                                    <div class="propBox">
+                                    </div>
+                                    <div class="propBox">
+                                    </div>
+                                    <div class="propBox">
+                                    </div>
+                                    <div class="propBox">
+                                    </div>
+                                    <div class="propBox">
+                                    </div>
+                                    <div class="propBox">
+                                    </div>
+                                    <div class="propBox">
+                                    </div>
+                                    <div class="propBox">
+                                    </div>
+                                </div>
+                                
+                               
+                            </div>
+                    </div> 
+                </div> 
             </div>
-        </div>
-
-        <div class="container boxCenter">
-            <div class="row">
-                    
-            </div>
-        </div>
-
-        <div class="container boxRight">
-            <div class="row">
-                
-            </div>
+            <img class="redImg" src="img/redball.png" alt="">
         </div>
     </div>
     <footer></footer>
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>    
+    $(function(){
+    var $li = $('ul.tab-title li');
+        $($li. eq(0) .addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
+    
+        $li.click(function(){
+            $($(this).find('a'). attr ('href')).show().siblings ('.tab-inner').hide();
+            $(this).addClass('active'). siblings ('.active').removeClass('active');
+        });
+    });
+    </script>
 </body>
 </html>
