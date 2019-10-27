@@ -1,0 +1,90 @@
+@import url(reset.css);
+@import url(col.css);
+/* 
+*{
+    outline: 1px solid #f00;
+} */
+body{
+    font-family: Arial, Helvetica, sans-serif,'微軟正黑體';
+    background-color: #1c0e44;
+    color: #fff;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+p{
+    font-size: 14px;
+}
+span{
+    font-size: 14px;
+}
+
+
+
+
+.indexHeader h1{
+    font-size: 2em;
+    text-align: center;
+    margin:50px auto;
+}
+.indexHeader .indexWinner{
+    width: 330px;
+    margin:0 auto;
+    overflow: hidden;
+}
+.indexHeader .indexWinner li{
+    float: left;
+    width: 110px;
+}
+.indexHeader .indexWinner li .stageText{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+    padding-top:150px;
+    position: relative;
+}
+.indexHeader .indexWinner .winner2 .stageText{
+    background-image: url(../img/stageB2.png);
+    margin-right: -3%;
+}
+.indexHeader .indexWinner .winner1 .stageText{
+    background-image: url(../img/stageR1.png);
+}
+.indexHeader .indexWinner .winner3 .stageText{
+    background-image: url(../img/stageY3.png);
+    margin-left: -3.5%;
+}
+.indexHeader .indexWinner li img{
+    display: block;
+    width: 80%;
+    margin:0 auto;
+}
+.indexHeader .indexWinner span{
+    display: block;
+    text-align: center;
+}
+.indexHeader .indexWinner p{
+    text-align: center;
+}
+.indexHeader .indexWinner .alienImg{
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+.indexHeader .indexWinner .winner1 .alienImg{
+    bottom:105px;
+}
+
+.indexHeader .indexWinner .winner2 .alienImg{
+    bottom:85px;
+}
+
+.indexHeader .indexWinner .winner3 .alienImg{
+    bottom:70px;
+}
+.indexHeader .indexWinner li .stageText p{
+    position: absolute;
+    top:0;
+}
+
