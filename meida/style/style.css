@@ -1,7 +1,7 @@
 @import url(reset.css);
 @import url(col.css);
-/* 
-*{
+
+/* *{
     outline: 1px solid #f00;
 } */
 body{
@@ -49,7 +49,7 @@ header{
     
 }
 
-/*==== 內容區塊 ====*/
+/*==== 公民家內容區塊 ====*/
 .content{
     background-image:
                     url(../img/star2.png),
@@ -61,11 +61,7 @@ header{
     background-repeat: no-repeat;
 }
 
-
-.boxLeft{
-    
-}
-
+/*== 內容區塊左 ==*/
 .memNameBox{
     overflow: hidden;
     margin-bottom:10px;
@@ -176,13 +172,39 @@ header{
     margin: auto;
 }
 
+
+
 .redBall{
+    background-image: url(../img/redball.png);
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:center bottom;
     
+
 }
 
 .redBall .redImg{
     width: 100%;
     
+}
+
+.memBtn{
+    display: block;
+    margin: auto;
+    font-size: 20px;
+    border-radius: 20px;
+    color: #b78100;
+    border:1px solid #b78100;
+    background: #ffd584;
+    padding: 10px 20px;
+    margin-top: 30px;
+}
+
+
+@media screen and (max-width: 767px){
+    .redBallIn{
+        padding: 0px 15px;
+    }
 }
 
 @media screen and (min-width: 768px){
@@ -191,10 +213,12 @@ header{
     }
 }
 
+
 /*== 內容區塊右 ==*/
 #tab-demo{ 
-    width:100%;
-    /* height: 600px;  */
+    /* width:100%; */
+    height: 168px; 
+    /* overflow: overlay; */
     background-color: #5cc9cd;
     margin: auto;
     border-radius: 8px;
@@ -210,18 +234,18 @@ header{
      vertical-align:top;
       margin:0 -1px -1px 0 ; 
       /* border:1px solid #BCBCBC;  */
-      height:25px; line-height:25px; 
-      background:#d4faff;
+      height:28px; line-height:2; 
+      background:#5cc9cd;
       padding:0 15px;list-style:none; box-sizing:border-box;
       border-radius: 8px;
     }
 #tab-demo >  ul > li a{ 
-    color:#000; 
+    color:#333; 
     text-decoration:none;
 }
 #tab-demo > ul > li.active{ 
     /* border-bottom:1px solid #fff;  */
-    background:#5cc9cd;
+    background:#a6bfd0;
 }
 #tab-demo > .tab-inner{ 
     clear:both; color:#000; 
@@ -235,16 +259,85 @@ header{
 .propBox{
     border-radius: 8px;
     background-color: #d4faff;
-    width: 30%;   
-    padding-bottom: 30%;
+    width: 100px;   
+    padding-bottom: 100px;
     float: left;
     margin-bottom: 10px;
     margin-right: 2.5px;
     margin-left: 2.5px;
+    
 }
 
+@media screen and (max-width: 767px){
+    .tabIn{
+        margin: 0 10px;  
+        overflow: overlay;
+        
+    }
+    .tabIn::-webkit-scrollbar {
+        width: 6px;
+        height: 10px;
+    }
+    .tabIn::-webkit-scrollbar-thumb {
+        background-color: #d4faff;
+        border-radius: 5px;
+    }
+
+    .tabIn::-webkit-scrollbar-track {
+        background-color: #c4c4c4;
+    }
+    
+    .tab-inner{
+      width: 864px;
+      margin-bottom: 55px;  
+    }
+    .propBox{
+    margin-right: 5.5px;
+  
+    }
+   #tab-demo >  ul > li a{ 
+        padding-left: 18.5px;
+        padding-right: 18.5px;
+    }  
+}
 
 @media screen and (min-width: 768px){
+    .redBallIn{
+        padding: 100px 15px;
+    }
+    #tab-demo{
+        width:240px; 
+        height: 505px; 
+    }
+    .propBox,.propBox2{
+        width: 105px;   
+        padding-bottom: 105px;
+    }
+  
+
+      
+}
+
+@media screen and (min-width: 992px){
+    .redBallIn{
+        padding: 160px 15px;
+    }
+    #tab-demo{
+        width:300px; 
+        height: 630px; 
+    }
+    .propBox,.propBox2{
+        width: 135px;   
+        padding-bottom: 135px;
+    }
+
+    
+}
+
+@media screen and (min-width: 1200px){
+    .redBallIn{
+        padding: 300px 15px;
+    }
     #tab-demo{
         width:80%; 
         height: 610px; 
@@ -253,4 +346,51 @@ header{
         width: 48%;   
         padding-bottom: 48%;
     }
+
+    
 }
+
+
+
+/*==== 會員內容區塊 ====*/
+.memDataItem{
+    width: 450px;
+    margin: auto;
+    
+}
+.memDataItem label,.memDataItem span{
+    color: #eee;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.memDataBox{
+    text-align: center;
+    width: 450px;
+    margin: auto;
+    background-color: rgba(161, 48, 48, 0.2);
+    border: 2px solid #5cc9cd;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.memDataButton{
+    font-size: 16px;
+    border-radius: 20px;
+    color: #b78100;
+    border:1px solid #b78100;
+    background: #ffd584;
+    padding: 5px 20px;
+    margin: 10px 30px 0;
+}
+.memDataCancel{
+    font-size: 16px;
+    border-radius: 20px;
+    color: #077e46;
+    border:1px solid #077e46;
+    background: #53d674;
+    padding: 5px 20px;
+    
+}
+
+
