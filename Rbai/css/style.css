@@ -280,7 +280,7 @@ h2{
 }
 .innerTitle li{
     float: left;
-    margin:15px;
+    margin:10px 5px;
 }
 #innerPlayer{
     clear:both;
