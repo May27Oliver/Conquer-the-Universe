@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/style.css">
+    <title>公民的家</title>
+</head>
+<body>
+    <!---- 選單區 ---->
+    <header>
+        <div class="navTop"></div>
+        <div class="nav">
+            <h1 class="loge">
+                <img src="img/logo.png" alt="征服宇宙LOGO">
+            </h1>
+            <!-- <div class="navIn">
+                <ul>
+                    <li><a href="">宇宙星聞</a></li>
+                    <li><a href="">公民學堂</a></li>
+                    <li><a href="">公民投票</a></li>
+                    <li><a href="">宇宙商城</a></li>
+                    <li><a href="">公民的家</a></li>
+                </ul>
+            </div> -->
+        </div>
+    </header>
+
+    <!---- 公民家內容區塊 ---->
+    <div class="content">
+        <div class="redBall">
+            <!---- 內容區塊左 ---->
+            <div class="container redBallIn">
+                <div class="row " >
+                    <div class="col-12 col-md-4">
+                        <div class="item boxLeft">
+                            <div class="memNameBox"><a href="">
+                            <img src="img/badge.png" alt="">
+                                <h3>菜逼巴</h3>
+                                <h2>發大財</h2> 
+                            </a></div>
+
+                            <div class="supportBox">
+                                <h4>個人貢獻支持度</h4>
+                                <div class="supportBoxIn">
+                                    <p>66666</p>
+                                </div>
+                            </div>
+
+                            <div class="abilityBox">
+                                <h4>個人能力值</h4>
+                                <div class="abilityBoxIn">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="item boxCenter">
+                            <img src="img/rabbit.png" alt="">
+                            <input type="button" class="memBtn" value="編輯會員資料"  onclick="location.href='要前往的網頁連結'">                      
+                        </div>
+                    </div>
+                     
+                     <div class="col-12 col-md-4 boxRight">
+                            <div id="tab-demo"> 
+                                <ul class="tab-title">
+                                        <li><a href="#tab01">現有道具</a></li>
+                                        <li><a href="#tab02">今日道具</a></li>
+                                    </ul>
+                                <div class="tabIn">
+                                   
+                                    <div id="tab01" class="tab-inner">
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                    </div>
+                                    <div id="tab02" class="tab-inner">
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                               
+                            </div>
+                    </div> 
+                </div> 
+            </div>
+            <!-- <img class="redImg" src="img/redball.png" alt=""> -->
+            
+        </div>
+    </div>
+    <footer></footer>
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>    
+    $(function(){
+    var $li = $('ul.tab-title li');
+        $($li. eq(0) .addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
+    
+        $li.click(function(){
+            $($(this).find('a'). attr ('href')).show().siblings ('.tab-inner').hide();
+            $(this).addClass('active'). siblings ('.active').removeClass('active');
+        });
+    });
+    </script>
+</body>
+</html>

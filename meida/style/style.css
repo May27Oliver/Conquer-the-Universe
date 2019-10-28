@@ -1,0 +1,396 @@
+@import url(reset.css);
+@import url(col.css);
+
+/* *{
+    outline: 1px solid #f00;
+} */
+body{
+    font-family: Arial, Helvetica, sans-serif,'微軟正黑體';
+    background-color: #1c0e44;
+}
+a{
+    text-decoration: none;
+}
+
+
+/*==== 選單區 ====*/
+header{
+    
+}
+.navTop{
+    height: 40px;
+    background-color: #333;
+}
+.nav{
+    background-color: #462d8a;
+    height: 100px;
+}
+.loge{
+    float: left;
+  
+}
+.navIn{
+    display: flex;
+    /* justify-content: center; */
+    /* background-color: brown; */
+    margin: auto;
+}
+
+.navIn li{
+    display: inline-block;
+    margin-top: 20px;
+    
+}
+
+.navIn a{
+    color: #fff;
+    font-size: 24px;
+    padding:20px;
+    
+}
+
+/*==== 公民家內容區塊 ====*/
+.content{
+    background-image:
+                    url(../img/star2.png),
+                    url(../img/star1.png),
+                    url(../img/bac2.png),
+                    url(../img/bac1.png);
+    width: 100%;
+    height: 1450px;
+    background-repeat: no-repeat;
+}
+
+/*== 內容區塊左 ==*/
+.memNameBox{
+    overflow: hidden;
+    margin-bottom:10px;
+}
+
+.memNameBox img{
+  float: left;
+  padding-right: 20px;
+}
+
+.memNameBox h3,.memNameBox h2{
+    color: #fff;
+}
+.memNameBox h3{
+    font-size: 20px;
+}
+.memNameBox h2{
+    font-size: 32px;
+}
+
+.supportBox,.abilityBox{
+    background-color: #5cc9cd;  
+    padding-bottom: 2%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+   
+}
+
+.supportBox h4,.abilityBox h4{
+    text-align: center;
+    font-size: 20px;
+    line-height: 2.5;
+}
+
+.supportBoxIn,.abilityBoxIn{
+    width: 95%;
+    line-height: 2;
+    background-color: #d4faff;
+    margin: auto;
+    border-radius: 8px;
+    
+    
+
+}
+
+.abilityBoxIn{
+    height: 200px;
+}
+
+.supportBoxIn p{
+    color: #333;
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+.abilityBox{
+    background-color: #5cc9cd;
+}
+
+@media screen and (max-width: 767px){
+    .supportBox,.abilityBox{
+        overflow: hidden;   
+    }
+    .supportBox h4,.abilityBox h4{
+        width: 38%;
+        float: left;
+        padding-top: 10px;
+        margin-left: 5px;
+        font-size: 1.1em;
+    }
+    .supportBoxIn,.abilityBoxIn{
+        width: 57%;
+        float: right;
+        margin-top: 10px;
+        margin-right: 10px;
+        
+    }
+
+    .supportBoxIn p{
+      line-height: 2;
+        
+    }
+}
+
+@media screen and (min-width: 768px){
+    .memNameBox{
+        margin-bottom:50px;
+    }
+    .supportBox{
+      margin-bottom: 30px;  
+    }
+    
+    .supportBox h4,.abilityBox h4{
+        font-size: 24px;
+    }
+    .supportBoxIn{
+        margin-bottom: 3px;
+    }
+    .supportBoxIn p{   
+        font-size: 60px;
+    }
+}
+
+/*== 內容區塊-中 ==*/
+.boxCenter img{
+    display: block;
+    margin: auto;
+}
+
+
+
+.redBall{
+    background-image: url(../img/redball.png);
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:center bottom;
+    
+
+}
+
+.redBall .redImg{
+    width: 100%;
+    
+}
+
+.memBtn{
+    display: block;
+    margin: auto;
+    font-size: 20px;
+    border-radius: 20px;
+    color: #b78100;
+    border:1px solid #b78100;
+    background: #ffd584;
+    padding: 10px 20px;
+    margin-top: 30px;
+}
+
+
+@media screen and (max-width: 767px){
+    .redBallIn{
+        padding: 0px 15px;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .boxCenter img{
+        margin-top: 190px;
+    }
+}
+
+
+/*== 內容區塊右 ==*/
+#tab-demo{ 
+    /* width:100%; */
+    height: 168px; 
+    /* overflow: overlay; */
+    background-color: #5cc9cd;
+    margin: auto;
+    border-radius: 8px;
+}
+#tab-demo > ul{ 
+    display:block; margin:0;list-style:none;
+}
+.tab-title{
+    list-style:none;
+}
+#tab-demo > ul > li{
+     display:inline-block; 
+     vertical-align:top;
+      margin:0 -1px -1px 0 ; 
+      /* border:1px solid #BCBCBC;  */
+      height:28px; line-height:2; 
+      background:#5cc9cd;
+      padding:0 15px;list-style:none; box-sizing:border-box;
+      border-radius: 8px;
+    }
+#tab-demo >  ul > li a{ 
+    color:#333; 
+    text-decoration:none;
+}
+#tab-demo > ul > li.active{ 
+    /* border-bottom:1px solid #fff;  */
+    background:#a6bfd0;
+}
+#tab-demo > .tab-inner{ 
+    clear:both; color:#000; 
+    /* border:1px #BCBCBC solid; */
+}
+.tab-inner{ 
+    padding:15px 10px; 
+    height:50px;
+}
+
+.propBox{
+    border-radius: 8px;
+    background-color: #d4faff;
+    width: 100px;   
+    padding-bottom: 100px;
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 2.5px;
+    margin-left: 2.5px;
+    
+}
+
+@media screen and (max-width: 767px){
+    .tabIn{
+        margin: 0 10px;  
+        overflow: overlay;
+        
+    }
+    .tabIn::-webkit-scrollbar {
+        width: 6px;
+        height: 10px;
+    }
+    .tabIn::-webkit-scrollbar-thumb {
+        background-color: #d4faff;
+        border-radius: 5px;
+    }
+
+    .tabIn::-webkit-scrollbar-track {
+        background-color: #c4c4c4;
+    }
+    
+    .tab-inner{
+      width: 864px;
+      margin-bottom: 55px;  
+    }
+    .propBox{
+    margin-right: 5.5px;
+  
+    }
+   #tab-demo >  ul > li a{ 
+        padding-left: 18.5px;
+        padding-right: 18.5px;
+    }  
+}
+
+@media screen and (min-width: 768px){
+    .redBallIn{
+        padding: 100px 15px;
+    }
+    #tab-demo{
+        width:240px; 
+        height: 505px; 
+    }
+    .propBox,.propBox2{
+        width: 105px;   
+        padding-bottom: 105px;
+    }
+  
+
+      
+}
+
+@media screen and (min-width: 992px){
+    .redBallIn{
+        padding: 160px 15px;
+    }
+    #tab-demo{
+        width:300px; 
+        height: 630px; 
+    }
+    .propBox,.propBox2{
+        width: 135px;   
+        padding-bottom: 135px;
+    }
+
+    
+}
+
+@media screen and (min-width: 1200px){
+    .redBallIn{
+        padding: 300px 15px;
+    }
+    #tab-demo{
+        width:80%; 
+        height: 610px; 
+    }
+    .propBox,.propBox2{
+        width: 48%;   
+        padding-bottom: 48%;
+    }
+
+    
+}
+
+
+
+/*==== 會員內容區塊 ====*/
+.memDataItem{
+    width: 450px;
+    margin: auto;
+    
+}
+.memDataItem label,.memDataItem span{
+    color: #eee;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.memDataBox{
+    text-align: center;
+    width: 450px;
+    margin: auto;
+    background-color: rgba(161, 48, 48, 0.2);
+    border: 2px solid #5cc9cd;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.memDataButton{
+    font-size: 16px;
+    border-radius: 20px;
+    color: #b78100;
+    border:1px solid #b78100;
+    background: #ffd584;
+    padding: 5px 20px;
+    margin: 10px 30px 0;
+}
+.memDataCancel{
+    font-size: 16px;
+    border-radius: 20px;
+    color: #077e46;
+    border:1px solid #077e46;
+    background: #53d674;
+    padding: 5px 20px;
+    
+}
+
+
