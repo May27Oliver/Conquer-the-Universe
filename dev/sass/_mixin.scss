@@ -56,25 +56,30 @@
 
 // rwd function
 @mixin respond($breakpoint){
+<<<<<<< HEAD
     
     @if $breakpoint == 'large'{
         @media all and (min-width: $large){
+=======
+    @if $breakpoint == 'xl'{
+        @media all and (min-width: $xl){
+>>>>>>> 28ee5c6d9c0dfed161f646fd7fea8441cb9025d8
             @content;
         }
     }
 
-    @else if $breakpoint =='medium'{
-        @media all and (min-width: $medium){
+    @else if $breakpoint =='lg'{
+        @media all and (min-width: $lg){
             @content;
         }
     }
-    @else if ($breakpoint =='small'){
-        @media all and (min-width: $small){
+    @else if ($breakpoint =='md'){
+        @media all and (min-width: $md){
             @content;
         }
     }
-    @else if ($breakpoint =='small'){
-        @media all and (max-width: $small){
+    @else if ($breakpoint =='xs'){
+        @media all and (max-width: $xs){
             @content;
         }
     }

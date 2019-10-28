@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 @include respond(large) {
     @include md-grid(12);
+=======
+@include respond(xl) {
+
+>>>>>>> 28ee5c6d9c0dfed161f646fd7fea8441cb9025d8
     body {
     font-family: Arial, Helvetica, sans-serif,'微軟正黑體';
     background-color: #1c0e44;
@@ -442,6 +447,8 @@
         margin-bottom: 14px;
     }
 
+
+    //會員資料區
     .memDataItem{
         width: 450px;
         margin: auto;
