@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>公民的家</title>
+</head>
+<body>
+    <!---- 選單區 ---->
+    @@include('./template/header.html')
+    <!---- 會員內容區塊 ---->
+    <div class="content memberData">
+       <div class="container">
+           <div class="row">
+
+                <div class="memDataItem col-12 col-md-12">
+                        <div class=" col-12">
+                            <div class="col-12 col-md-12 wrapDataItem">
+                                <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員編號 :</label>
+                                <span class="col-md-5 mem_no">1</span>
+                            </div>
+                            <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                                    <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員姓名 :</label>
+                                    <span class="col-md-5 mem_id">王大財</span>
+                                    
+                                </div>
+                            <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                                <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色稱號 :</label>
+                                <select name="memTitle">
+                                        　<option>菜逼巴</option>
+                                        </select>
+                                <img src="img/pencil.png" class="memDataEdit memEditing" alt="editIcon">
+                            </div>
+                            <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                                <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色暱稱 :
+                                </label>
+                                <span class="col-md-5 mem_id">發大財</span>
+                                
+                            </div>
+                            <div class="col-12 col-md-12 wrapDataItem">
+                                <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員帳號 : </label>
+                                <span class="col-md-5 mem_id">1234</span>
+                            </div>
+                            <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                                <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員密碼 :
+                                </label>
+                                <input class="col-5 col-md-5 col-lg-5 col-xl-5 mem_psw memDatalock" disabled="" type="password" value="123">
+                                <img src="img/pencil.png" class="memDataEdit" alt="editIcon">
+                            </div>
+                            <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                                <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員信箱 :
+                                </label>
+                                <input class="col-5 col-md-5 col-lg-5 col-xl-5 mem_email memDatalock" disabled="" type="text" value="123">
+                                <img src="img/pencil.png" class="memDataEdit" alt="editIcon">
+                            </div>
+                        </div>
+  
+                    </div>
+               <!-- <div class="col-12">
+                   <div class="memDataItem">
+                        <label class="col-6 col-md-6 col-lg-6 col-xl-6">會員編號:</label>
+                        <span class="col-md-6 level_no">1</span>
+                      
+                        <label class="col-5 col-md-6 col-lg-6 col-xl-6">角色稱號:</label>
+                        <span class="col-md-6 roleTitle">
+                            <select name="">
+                            　<option>菜逼巴</option>
+                            　<option>宇宙王</option>
+                            </select>
+                            <img src="img/pencil.png" alt="">
+                        </span>
+                       
+                            
+                        <p>會員暱稱:發大財</p>
+                       <p>帳號:</p>
+                       <p>密碼:<img src="img/pencil.png" alt=""></p>
+                       <p>信箱:<img src="img/pencil.png" alt=""></p>   
+                    </div>
+               </div> -->
+               <div class="memDataBox col-md-12">
+                    <button class="memDataButton"type="submit">確認</button>
+                    <button class="memDataCancel" type="reset">取消</button>
+                </div>
+            </div>
+       </div>
+    </div>
+    <!-- footer -->
+    @@include('./template/footer.html')
+
+</body>
+</html>

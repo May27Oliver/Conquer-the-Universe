@@ -1,16 +1,54 @@
 //格線
 @mixin grid($num) { 
+    [class|="col"]{
+        float: left;
+        padding:0 15px;
+        box-sizing: border-box;
+    }
+    @for $i from 1 through $num {
+        .col-#{$i} {
+            width: ($i / $num) * 100%;
+        }
+    }
+}
+
+@mixin md-grid($num) { 
+    [class|="col"]{
+        float: left;
+        padding:0 15px;
+        box-sizing: border-box;
+    }
+    @for $i from 1 through $num {
+
+        .col-md-#{$i} {
+            width: ($i / $num) * 100%;
+        }
+    }
+}
+
+@mixin lg-grid($num) { 
+    [class|="col"]{
+        float: left;
+        padding:0 15px;
+        box-sizing: border-box;
+    }
     @for $i from 1 through $num {
 
         .col-lg-#{$i} {
             width: ($i / $num) * 100%;
         }
+    }
+}
 
-        .col-md-#{$i} {
-            width: ($i / $num) * 100%;
-        }
+@mixin xl-grid($num) { 
+    [class|="col"]{
+        float: left;
+        padding:0 15px;
+        box-sizing: border-box;
+    }
+    @for $i from 1 through $num {
 
-        .col-sm-#{$i} {
+        .col-xl-#{$i} {
             width: ($i / $num) * 100%;
         }
     }
@@ -18,6 +56,7 @@
 
 // rwd function
 @mixin respond($breakpoint){
+    
     @if $breakpoint == 'large'{
         @media all and (min-width: $large){
             @content;

@@ -50,7 +50,7 @@ gulp.task('default',function () {
         server: {
             //根目錄 可以把function放在參數裡執行完再回來做function
             baseDir: "./dest",
-            index: "index.html"
+            index: "homeCitizen.html"
         }
     });
 
