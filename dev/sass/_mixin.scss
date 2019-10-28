@@ -30,6 +30,11 @@
         }
     }
     @else if ($breakpoint =='small'){
+        @media all and (min-width: $small){
+            @content;
+        }
+    }
+    @else if ($breakpoint =='small'){
         @media all and (max-width: $small){
             @content;
         }
