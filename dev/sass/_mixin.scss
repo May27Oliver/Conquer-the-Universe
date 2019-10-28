@@ -1,0 +1,37 @@
+//格線
+@mixin grid($num) { 
+    @for $i from 1 through $num {
+
+        .col-lg-#{$i} {
+            width: ($i / $num) * 100%;
+        }
+
+        .col-md-#{$i} {
+            width: ($i / $num) * 100%;
+        }
+
+        .col-sm-#{$i} {
+            width: ($i / $num) * 100%;
+        }
+    }
+}
+
+// rwd function
+@mixin respond($breakpoint){
+    @if $breakpoint == 'large'{
+        @media all and (min-width: $large){
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='medium'{
+        @media all and (min-width: $medium){
+            @content;
+        }
+    }
+    @else if ($breakpoint =='small'){
+        @media all and (max-width: $small){
+            @content;
+        }
+    }
+}
