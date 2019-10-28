@@ -56,14 +56,8 @@
 
 // rwd function
 @mixin respond($breakpoint){
-<<<<<<< HEAD
-    
-    @if $breakpoint == 'large'{
-        @media all and (min-width: $large){
-=======
     @if $breakpoint == 'xl'{
         @media all and (min-width: $xl){
->>>>>>> 28ee5c6d9c0dfed161f646fd7fea8441cb9025d8
             @content;
         }
     }

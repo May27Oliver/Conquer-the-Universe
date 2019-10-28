@@ -3,4 +3,67 @@
     body {
         // font-size: 40px;
     }
+}@include respond(md) {
+
+    .indexHeader{
+        .indexWinner{
+            width: 450px;
+            li{
+                width: 150px;
+                .stageText{
+                    h1{
+                        padding-bottom:5px;
+                    }
+                    padding-top:320px;
+                }
+            }
+            .winner1{
+                .alienImg{
+                    bottom:140px;
+                }
+                .stageText{
+                    p{
+                        bottom:90px;
+                    }
+                }
+            }
+            .winner2{
+                .alienImg{
+                    bottom:115px;
+                }
+                .stageText{
+                    p{
+                        bottom:65px;
+                    }
+                    padding-top:279px;
+                }
+                .planetTxt{
+                    padding-top:40px;
+                }
+            }
+            .winner3{
+                .alienImg{
+                    bottom:90px;
+                }
+                .stageText{
+                    p{
+                        bottom:45px;
+                    }
+                    padding-top:249px;
+                }
+                .planetTxt{
+                    padding-top:70px;
+                }
+            }
+        }
+        li{
+            .stageText{
+                padding-top:320px;
+            }
+        }
+    }
+
+
+
+
 }
