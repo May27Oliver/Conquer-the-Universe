@@ -1,5 +1,5 @@
 @include respond(xl) {
-
+    @include xl-fontsize($fontBasesize);
     body {
     font-family: Arial, Helvetica, sans-serif,'微軟正黑體';
     background-color: #1c0e44;
