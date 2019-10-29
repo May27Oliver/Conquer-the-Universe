@@ -1,5 +1,5 @@
 // @include respond(xs) {
-    @include fontsize($fontBasesize);
+    @include md-fontsize($fontBasesize);
     @include grid(12);
     body {
         // font-family: Arial, Helvetica, sans-serif,'微軟正黑體';
