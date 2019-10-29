@@ -55,67 +55,300 @@ a {
 button {
   font-family: "微軟正黑體"; }
 
-.indexHeader h1 {
-  text-align: center;
-  margin: 70px auto; }
-
-.indexHeader .indexWinner {
-  width: 330px;
-  margin: 0 auto;
-  overflow: hidden; }
-  .indexHeader .indexWinner li {
+@media all and (max-width: 768px) {
+  [class|="col"] {
     float: left;
-    width: 110px; }
-    .indexHeader .indexWinner li .stageText {
-      background-repeat: no-repeat;
-      background-size: 100%;
-      background-position: bottom;
-      padding-top: 220px;
-      position: relative; }
-      .indexHeader .indexWinner li .stageText p {
-        width: 150px;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%); }
-    .indexHeader .indexWinner li img {
-      display: block;
-      width: 80%;
-      margin: 0 auto; }
-    .indexHeader .indexWinner li .planetTxt span {
-      margin-left: 5px; }
-  .indexHeader .indexWinner .winner2 .stageText {
-    background-image: url(../img/index_img/stageB2.png);
-    margin-right: -3.4%;
-    padding-top: 189px; }
-    .indexHeader .indexWinner .winner2 .stageText p {
-      bottom: 50px; }
-  .indexHeader .indexWinner .winner2 .alienImg {
-    bottom: 85px; }
-  .indexHeader .indexWinner .winner2 .planetTxt {
-    padding-top: 30px; }
-  .indexHeader .indexWinner .winner1 .stageText {
-    background-image: url(../img/index_img/stageR1.png); }
-    .indexHeader .indexWinner .winner1 .stageText p {
+    padding: 0 15px;
+    box-sizing: border-box; }
+  .col-1 {
+    width: 8.33333%; }
+  .col-2 {
+    width: 16.66667%; }
+  .col-3 {
+    width: 25%; }
+  .col-4 {
+    width: 33.33333%; }
+  .col-5 {
+    width: 41.66667%; }
+  .col-6 {
+    width: 50%; }
+  .col-7 {
+    width: 58.33333%; }
+  .col-8 {
+    width: 66.66667%; }
+  .col-9 {
+    width: 75%; }
+  .col-10 {
+    width: 83.33333%; }
+  .col-11 {
+    width: 91.66667%; }
+  .col-12 {
+    width: 100%; }
+  body {
+    font-family: Arial, Helvetica, sans-serif,'微軟正黑體';
+    background-color: #1c0e44;
+    background-image: url(../img/star2.png), url(../img/star1.png), url(../img/bac2.png), url(../img/bac1.png);
+    width: 100%;
+    /* height: 1450px; */
+    background-repeat: no-repeat;
+    /* background-size: contain; */ }
+  .indexHeader h1 {
+    text-align: center;
+    margin: 70px auto; }
+  .indexHeader .indexWinner {
+    width: 330px;
+    margin: 0 auto;
+    overflow: hidden; }
+    .indexHeader .indexWinner li {
+      float: left;
+      width: 110px; }
+      .indexHeader .indexWinner li .stageText {
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: bottom;
+        padding-top: 220px;
+        position: relative; }
+        .indexHeader .indexWinner li .stageText p {
+          width: 150px;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%); }
+      .indexHeader .indexWinner li img {
+        display: block;
+        width: 80%;
+        margin: 0 auto; }
+      .indexHeader .indexWinner li .planetTxt span {
+        margin-left: 5px; }
+    .indexHeader .indexWinner .winner2 .stageText {
+      background-image: url(../img/index_img/stageB2.png);
+      margin-right: -3.4%;
+      padding-top: 189px; }
+      .indexHeader .indexWinner .winner2 .stageText p {
+        bottom: 50px; }
+    .indexHeader .indexWinner .winner2 .alienImg {
+      bottom: 85px; }
+    .indexHeader .indexWinner .winner2 .planetTxt {
+      padding-top: 30px; }
+    .indexHeader .indexWinner .winner1 .stageText {
+      background-image: url(../img/index_img/stageR1.png); }
+      .indexHeader .indexWinner .winner1 .stageText p {
+        bottom: 70px; }
+    .indexHeader .indexWinner .winner1 .alienImg {
+      bottom: 105px; }
+    .indexHeader .indexWinner .winner3 .stageText {
+      background-image: url(../img/index_img/stageY3.png);
+      margin-left: -3.3%;
+      padding-top: 159px; }
+      .indexHeader .indexWinner .winner3 .stageText p {
+        bottom: 35px; }
+    .indexHeader .indexWinner .winner3 .alienImg {
       bottom: 70px; }
-  .indexHeader .indexWinner .winner1 .alienImg {
-    bottom: 105px; }
-  .indexHeader .indexWinner .winner3 .stageText {
-    background-image: url(../img/index_img/stageY3.png);
-    margin-left: -3.3%;
-    padding-top: 159px; }
-    .indexHeader .indexWinner .winner3 .stageText p {
-      bottom: 35px; }
-  .indexHeader .indexWinner .winner3 .alienImg {
-    bottom: 70px; }
-  .indexHeader .indexWinner .winner3 .planetTxt {
-    padding-top: 60px; }
-  .indexHeader .indexWinner p {
-    text-align: center; }
-  .indexHeader .indexWinner .alienImg {
-    position: absolute;
-    bottom: 0;
-    left: 0; }
+    .indexHeader .indexWinner .winner3 .planetTxt {
+      padding-top: 60px; }
+    .indexHeader .indexWinner p {
+      text-align: center; }
+    .indexHeader .indexWinner .alienImg {
+      position: absolute;
+      bottom: 0;
+      left: 0; }
+  .memNameBox {
+    overflow: hidden;
+    margin-bottom: 10px; }
+    .memNameBox img {
+      float: left;
+      padding-right: 20px; }
+    .memNameBox h3, .memNameBox h2 {
+      color: #fff; }
+    .memNameBox h3 {
+      font-size: 20px; }
+    .memNameBox h2 {
+      font-size: 32px; }
+  .supportBox {
+    background-color: #5cc9cd;
+    padding-bottom: 2%;
+    border-radius: 8px;
+    margin-bottom: 10px; }
+    .supportBox h4 {
+      text-align: center;
+      font-size: 20px;
+      line-height: 2.5; }
+    .supportBox .supportBoxIn {
+      width: 95%;
+      line-height: 2;
+      background-color: #d4faff;
+      margin: auto;
+      border-radius: 8px; }
+      .supportBox .supportBoxIn p {
+        color: #333;
+        font-size: 20px;
+        text-align: center; }
+  .abilityBox {
+    background-color: #5cc9cd;
+    padding-bottom: 2%;
+    border-radius: 8px;
+    margin-bottom: 10px; }
+    .abilityBox h4 {
+      text-align: center;
+      font-size: 20px;
+      line-height: 2.5; }
+    .abilityBox .abilityBoxIn {
+      width: 95%;
+      line-height: 2;
+      background-color: #d4faff;
+      margin: auto;
+      border-radius: 8px;
+      height: 200px; }
+  .supportBox {
+    overflow: hidden; }
+    .supportBox h4 {
+      width: 38%;
+      float: left;
+      padding-top: 10px;
+      margin-left: 5px;
+      font-size: 1.1em; }
+    .supportBox .supportBoxIn {
+      width: 57%;
+      float: right;
+      margin-top: 10px;
+      margin-right: 10px; }
+    .supportBox p {
+      line-height: 2; }
+  .abilityBox {
+    overflow: hidden; }
+    .abilityBox h4 {
+      width: 38%;
+      float: left;
+      padding-top: 10px;
+      margin-left: 5px;
+      font-size: 1.1em; }
+    .abilityBox .abilityBoxIn {
+      width: 57%;
+      float: right;
+      margin-top: 10px;
+      margin-right: 10px; }
+  .boxCenter img {
+    display: block;
+    margin: auto; }
+  .redBall {
+    background-image: url(../img/redball.png);
+    background-repeat: no-repeat;
+    background-position: center bottom; }
+    .redBall .redImg {
+      width: 100%; }
+    .redBall .redBallIn {
+      padding: 0px 15px; }
+  .memBtn {
+    display: block;
+    margin: auto;
+    font-size: 20px;
+    border-radius: 20px;
+    color: #b78100;
+    border: 1px solid #b78100;
+    background: #ffd584;
+    padding: 10px 20px;
+    margin-top: 30px; }
+  #tab-demo {
+    margin: auto; }
+    #tab-demo ul {
+      display: block;
+      margin: 0;
+      list-style: none; }
+      #tab-demo ul li {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 -1px -1px 0;
+        /* border:1px solid #BCBCBC;  */
+        height: 28px;
+        line-height: 2;
+        background: #a6bfd0;
+        padding: 0 15px;
+        list-style: none;
+        box-sizing: border-box;
+        border-radius: 8px 8px 0 0; }
+        #tab-demo ul li a {
+          color: #333;
+          text-decoration: none;
+          padding-left: 18.5px;
+          padding-right: 18.5px; }
+      #tab-demo ul li.active {
+        /* border-bottom:1px solid #fff;  */
+        background: #5cc9cd; }
+    #tab-demo .tab-title {
+      list-style: none; }
+    #tab-demo .tabIn {
+      /* width:100%; */
+      height: 148px;
+      /* overflow: overlay; */
+      background-color: #5cc9cd;
+      margin: auto;
+      border-radius: 0px 8px 8px 8px; }
+      #tab-demo .tabIn .tab-inner {
+        clear: both;
+        color: #000;
+        padding: 15px 10px;
+        height: 50px;
+        /* border:1px #BCBCBC solid; */ }
+      #tab-demo .tabIn .wrapTabIn {
+        margin: 0 10px;
+        overflow: overlay; }
+        #tab-demo .tabIn .wrapTabIn .tab-inner {
+          width: 912px;
+          margin-bottom: 55px; }
+          #tab-demo .tabIn .wrapTabIn .tab-inner .propBox {
+            border-radius: 8px;
+            background-color: #d4faff;
+            width: 100px;
+            padding-bottom: 100px;
+            float: left;
+            margin-bottom: 10px;
+            margin-right: 2.5px;
+            margin-left: 2.5px;
+            margin-right: 5.5px;
+            margin-left: 7px;
+            margin-right: 7px;
+            margin-bottom: 14px; }
+      #tab-demo .tabIn .wrapTabIn::-webkit-scrollbar {
+        width: 6px;
+        height: 10px; }
+      #tab-demo .tabIn .wrapTabIn::-webkit-scrollbar-thumb {
+        background-color: #0996b9;
+        border-radius: 5px; }
+      #tab-demo .tabIn .wrapTabIn::-webkit-scrollbar-track {
+        background-color: #c4c4c4; }
+  .memDataItem {
+    width: 450px;
+    margin: auto; }
+  .memDataItem label, .memDataItem span {
+    color: #eee;
+    font-size: 18px;
+    line-height: 1; }
+  .memDataBox {
+    text-align: center;
+    width: 450px;
+    margin: auto;
+    background-color: rgba(161, 48, 48, 0.2);
+    border: 2px solid #5cc9cd;
+    padding: 30px;
+    box-sizing: border-box; }
+  /* .memNameBox h3{
+        padding-left: 50px;
+    } */
+  .memDataButton {
+    font-size: 16px;
+    border-radius: 20px;
+    color: #b78100;
+    border: 1px solid #b78100;
+    background: #ffd584;
+    padding: 5px 20px;
+    margin: 10px 30px 0; }
+  .memDataCancel {
+    font-size: 16px;
+    border-radius: 20px;
+    color: #077e46;
+    border: 1px solid #077e46;
+    background: #53d674;
+    padding: 5px 20px; } }
 
 @media all and (min-width: 768px) {
   .indexHeader .indexWinner {
@@ -316,160 +549,31 @@ button {
       margin-top: 1vw;
       text-align: center;
       color: white; }
-  .memNameBox {
-    overflow: hidden;
-    margin-bottom: 10px; }
-    .memNameBox img {
-      float: left;
-      padding-right: 20px; }
-    .memNameBox h3, .memNameBox h2 {
-      color: #fff; }
-    .memNameBox h3 {
-      font-size: 20px; }
-    .memNameBox h2 {
-      font-size: 32px; }
-  .supportBox {
-    background-color: #5cc9cd;
-    padding-bottom: 2%;
-    border-radius: 8px;
-    margin-bottom: 10px; }
-    .supportBox h4 {
-      text-align: center;
-      font-size: 20px;
-      line-height: 2.5; }
-    .supportBox .supportBoxIn {
-      width: 95%;
-      line-height: 2;
-      background-color: #d4faff;
-      margin: auto;
-      border-radius: 8px; }
-      .supportBox .supportBoxIn p {
-        color: #333;
-        font-size: 20px;
-        text-align: center; }
-  .abilityBox {
-    background-color: #5cc9cd;
-    padding-bottom: 2%;
-    border-radius: 8px;
-    margin-bottom: 10px; }
-    .abilityBox h4 {
-      text-align: center;
-      font-size: 20px;
-      line-height: 2.5; }
-    .abilityBox .abilityBoxIn {
-      width: 95%;
-      line-height: 2;
-      background-color: #d4faff;
-      margin: auto;
-      border-radius: 8px;
-      height: 200px; }
-  .boxCenter img {
-    display: block;
-    margin: auto; }
-  .redBall {
-    background-image: url(../img/redball.png);
-    background-repeat: no-repeat;
-    background-position: center bottom; }
-    .redBall .redImg {
-      width: 100%; }
-    .redBall .redBallIn {
-      padding: 200px 15px; }
-  .memBtn {
-    display: block;
-    margin: auto;
-    font-size: 20px;
-    border-radius: 20px;
-    color: #b78100;
-    border: 1px solid #b78100;
-    background: #ffd584;
-    padding: 10px 20px;
-    margin-top: 30px; }
-  #tab-demo {
-    margin: auto; }
-    #tab-demo ul {
-      display: block;
-      margin: 0;
-      list-style: none; }
-      #tab-demo ul li {
-        display: inline-block;
-        vertical-align: top;
-        margin: 0 -1px -1px 0;
-        /* border:1px solid #BCBCBC;  */
-        height: 28px;
-        line-height: 2;
-        background: #a6bfd0;
-        padding: 0 15px;
-        list-style: none;
-        box-sizing: border-box;
-        border-radius: 8px 8px 0 0; }
-        #tab-demo ul li a {
-          color: #333;
-          text-decoration: none; }
-        #tab-demo ul li .active {
-          /* border-bottom:1px solid #fff;  */
-          background: #5cc9cd; }
-    #tab-demo .tab-title {
-      list-style: none; }
-    #tab-demo .tabIn {
-      /* width:100%; */
-      height: 148px;
-      /* overflow: overlay; */
-      background-color: #5cc9cd;
-      margin: auto;
-      border-radius: 0px 8px 8px 8px; }
-      #tab-demo .tabIn .tab-inner {
-        clear: both;
-        color: #000;
-        padding: 15px 10px;
-        height: 50px;
-        /* border:1px #BCBCBC solid; */ }
-  .propBox {
-    border-radius: 8px;
-    background-color: #d4faff;
-    width: 100px;
-    padding-bottom: 100px;
+  [class|="col"] {
     float: left;
-    margin-bottom: 10px;
-    margin-right: 2.5px;
-    margin-left: 2.5px; }
-  .tabIn, #tab-demo {
-    height: 580px; }
-  .propBox, .propBox2 {
-    width: 45%;
-    padding-bottom: 45%;
-    margin-left: 7px;
-    margin-right: 7px;
-    margin-bottom: 14px; }
-  .memDataItem {
-    width: 450px;
-    margin: auto; }
-  .memDataItem label, .memDataItem span {
-    color: #eee;
-    font-size: 18px;
-    line-height: 1; }
-  .memDataBox {
-    text-align: center;
-    width: 450px;
-    margin: auto;
-    background-color: rgba(161, 48, 48, 0.2);
-    border: 2px solid #5cc9cd;
-    padding: 30px;
+    padding: 0 15px;
     box-sizing: border-box; }
-  /* .memNameBox h3{
-        padding-left: 50px;
-    } */
-  .memDataButton {
-    font-size: 16px;
-    border-radius: 20px;
-    color: #b78100;
-    border: 1px solid #b78100;
-    background: #ffd584;
-    padding: 5px 20px;
-    margin: 10px 30px 0; }
-  .memDataCancel {
-    font-size: 16px;
-    border-radius: 20px;
-    color: #077e46;
-    border: 1px solid #077e46;
-    background: #53d674;
-    padding: 5px 20px; } }
+  .col-xl-1 {
+    width: 8.33333%; }
+  .col-xl-2 {
+    width: 16.66667%; }
+  .col-xl-3 {
+    width: 25%; }
+  .col-xl-4 {
+    width: 33.33333%; }
+  .col-xl-5 {
+    width: 41.66667%; }
+  .col-xl-6 {
+    width: 50%; }
+  .col-xl-7 {
+    width: 58.33333%; }
+  .col-xl-8 {
+    width: 66.66667%; }
+  .col-xl-9 {
+    width: 75%; }
+  .col-xl-10 {
+    width: 83.33333%; }
+  .col-xl-11 {
+    width: 91.66667%; }
+  .col-xl-12 {
+    width: 100%; } }

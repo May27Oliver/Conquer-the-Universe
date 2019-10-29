@@ -3,8 +3,8 @@
     body {
         // font-size: 40px;
     }
-}@include respond(md) {
 
+    // 首頁最上面獎台
     .indexHeader{
         .indexWinner{
             width: 450px;
@@ -63,7 +63,5 @@
         }
     }
 
-
-
-
+    
 }
