@@ -39,6 +39,7 @@
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         font-family: "微軟正黑體";
         .logo{
             img{
@@ -53,11 +54,11 @@
         display: flex;
         justify-content: space-around;
         li{
-            margin: 3vw 40px 0 ;
+            padding: 5px 15px 0 ;
             a{
                 color:white;
                 text-decoration: none;
-                font-size: 1vw;  
+                font-size: 24px;  
             }
             
         }
@@ -99,7 +100,7 @@
             font-weight: bold;
             text-align: center;
             line-height: 6vw;
-            font-size: 3vw;
+            font-size: 30px;
         }
         h2{
             text-align: center;
@@ -113,11 +114,16 @@
         margin: 5vw auto;
         button{
             font-size: 20px;
+            // background-color: #1d2088;
             background-color: #1d2088;
+            &:hover{
+                background-color: lighten(#1d2088 , 10%);
+            }
             color: white;
-            padding: 0.5vw;
-            box-shadow: white;
+            padding:5px 18px;
+            // box-shadow: 0px 0px 20px #fff;
             border-radius: 20px;
+            border: 1px solid #fff;
         }
     }
     // 影片區
@@ -198,14 +204,13 @@
             // display: flex;
             // justify-content: space-around;
             button{
-                float:right;
                 font-size: 20px;
                 background-color: #1d2088;
                 color: white;
-                padding: 0.5vw;
-                box-shadow: white;
+                padding:5px 18px;
+                box-shadow: 0px 0px 20px #fff;
                 border-radius: 20px;
-                margin-right: 1vw;
+                border: none;
             }
         }
     }
