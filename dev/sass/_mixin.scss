@@ -79,3 +79,59 @@
         }
     }
 }
+
+@mixin xl-fontsize($fontBasesize) {
+    h1 {
+        font-size: $fontBasesize * 15;
+        font-weight: 700;
+    }
+    h2 {
+        font-size: $fontBasesize * 12;
+        font-weight: 500;
+    }
+    h3 {
+        font-size: $fontBasesize * 10;
+        font-weight: 500;
+    }
+    .nav {//導覽列字型大小
+        font-size: $fontBasesize * 12;
+        font-weight: 700;        
+    }
+    p{
+        font-size: $fontBasesize * 9.5;
+        font-weight: 400;
+    }
+    button{
+        font-size: $fontBasesize * 9.5;
+        font-family: Arial,'Noto Sans TC', sans-serif;
+        font-weight: 500;
+    }
+}
+
+@mixin md-fontsize($fontBasesize) {
+    h1 {
+        font-size: $fontBasesize * 12;
+        font-weight: 700;
+    }
+    h2 {
+        font-size: $fontBasesize * 10;
+        font-weight: 500;
+    }
+    h3 {
+        font-size: $fontBasesize * 8;
+        font-weight: 500;
+    }
+    .nav {//導覽列字型大小
+        font-size: $fontBasesize * 10;
+        font-weight: 700;
+    }
+    p{
+        font-size: $fontBasesize * 7.5;
+        font-weight: 400;
+    }
+    button{
+        font-size: $fontBasesize * 9.5;
+        font-family: Arial,'Noto Sans TC', sans-serif;
+        font-weight: 500;
+    }
+}
