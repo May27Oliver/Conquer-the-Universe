@@ -411,6 +411,34 @@ body {
   .indexHeader li .stageText {
     padding-top: 320px; } }
 
+@media all and (min-width: 992px) {
+  .indexHeader .indexWinner {
+    width: 600px; }
+    .indexHeader .indexWinner li {
+      width: 200px; }
+    .indexHeader .indexWinner .winner1 .alienImg {
+      bottom: 185px; }
+    .indexHeader .indexWinner .winner1 .stageText p {
+      bottom: 120px; }
+    .indexHeader .indexWinner .winner2 .alienImg {
+      bottom: 150px; }
+    .indexHeader .indexWinner .winner2 .stageText {
+      padding-top: 389px; }
+      .indexHeader .indexWinner .winner2 .stageText p {
+        bottom: 90px; }
+    .indexHeader .indexWinner .winner2 .planetTxt {
+      padding-top: 50px; }
+    .indexHeader .indexWinner .winner3 .alienImg {
+      bottom: 120px; }
+    .indexHeader .indexWinner .winner3 .stageText {
+      padding-top: 359px; }
+      .indexHeader .indexWinner .winner3 .stageText p {
+        bottom: 60px; }
+    .indexHeader .indexWinner .winner3 .planetTxt {
+      padding-top: 80px; }
+    .indexHeader .indexWinner li .stageText {
+      padding-top: 440px; } }
+
 @media all and (min-width: 1200px) {
   body {
     font-family: Arial, Helvetica, sans-serif,'微軟正黑體';

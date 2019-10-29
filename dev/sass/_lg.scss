@@ -3,4 +3,55 @@
     body {
         // font-size: 40px;
     }
+    .indexHeader{
+        .indexWinner{
+            width: 600px;
+            li{
+                width: 200px;
+            }
+            .winner1{
+                .alienImg{
+                    bottom:185px;
+                }
+                .stageText{
+                    p{
+                        bottom:120px;
+                    }
+                }
+            }
+            .winner2{
+                .alienImg{
+                    bottom:150px;
+                }
+                .stageText{
+                    p{
+                        bottom:90px;
+                    }
+                    padding-top:389px;
+                }
+                .planetTxt{
+                    padding-top:50px;
+                }
+            }
+            .winner3{
+                .alienImg{
+                    bottom:120px;
+                }
+                .stageText{
+                    p{
+                        bottom:60px;
+                    }
+                    padding-top:359px;
+                }
+                .planetTxt{
+                    padding-top:80px;
+                }
+            }
+            li{
+                .stageText{
+                    padding-top:440px;
+                }
+            }
+        }
+    }
 }
