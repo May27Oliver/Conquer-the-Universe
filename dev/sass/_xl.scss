@@ -17,6 +17,7 @@
         width: 100%;
         height: 100%;
         background: url(../img/background.png);
+        background-size:cover;
         position: relative;
         z-index: -2;
     }
@@ -128,14 +129,16 @@
     }
     // 影片區
     .video{
-        width: 55%;
-        height: 450px;
+        width: 53vw;
+        height: 36vw;
         overflow: hidden;
         background: url("../img/video-frame.png");
         background-size: cover;
         text-align: center;//iframe是inline屬性
         margin: 5vw auto 0;
         iframe{
+            width:70%;
+            height: 70%;
             margin: 5vw 0 0 0;
         }
     }
@@ -155,7 +158,7 @@
         width: 10vw;
         position: absolute;
         top:37vw;
-        left:14vw;
+        left:5vw;
         z-index:-1;
         img{
             width: 20vw;
@@ -164,7 +167,7 @@
 
     // 影片區slider
     .video-slider{
-        width: 55%;
+        width: 53vw;
         height: 10vw;
         margin: 2vw auto;
         background-color: #CCC;
@@ -172,7 +175,7 @@
     }
     // Question
     .question{
-        width: 55%;
+        width: 53vw;
         margin: 5vw auto;
         background: #dcdcdc;
         border-radius: 30px;
