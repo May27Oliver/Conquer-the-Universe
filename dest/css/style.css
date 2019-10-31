@@ -643,6 +643,25 @@ button {
     width: 91.66667%; }
   .col-md-12 {
     width: 100%; }
+  h1 {
+    font-size: 24px;
+    font-weight: 700; }
+  h2 {
+    font-size: 20px;
+    font-weight: 500; }
+  h3 {
+    font-size: 16px;
+    font-weight: 500; }
+  .nav {
+    font-size: 20px;
+    font-weight: 700; }
+  p {
+    font-size: 15px;
+    font-weight: 400; }
+  button {
+    font-size: 19px;
+    font-family: Arial,'Noto Sans TC', sans-serif;
+    font-weight: 500; }
   .indexHeader .indexWinner {
     width: 450px; }
     .indexHeader .indexWinner li {
@@ -764,11 +783,143 @@ button {
     #innerPlayer li ul li:nth-child(2) {
       margin-right: 75px; }
     #innerPlayer li ul li:nth-child(3) {
-      margin-right: 65px; } }
+      margin-right: 65px; }
+  .video-body {
+    width: 100%;
+    height: 100%;
+    background: url(../img/background.png);
+    background-size: cover;
+    position: relative;
+    z-index: -2; }
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 15px;
+    box-sizing: border-box; }
+  .indexHeader {
+    padding-top: 150px; }
+    .indexHeader h1 {
+      padding-bottom: 50px; }
+    .indexHeader .indexWinner {
+      width: 600px; }
+      .indexHeader .indexWinner li {
+        width: 200px; }
+      .indexHeader .indexWinner .winner1 .alienImg {
+        bottom: 185px; }
+      .indexHeader .indexWinner .winner1 .stageText p {
+        bottom: 120px; }
+      .indexHeader .indexWinner .winner2 .alienImg {
+        bottom: 150px; }
+      .indexHeader .indexWinner .winner2 .stageText {
+        padding-top: 389px; }
+        .indexHeader .indexWinner .winner2 .stageText p {
+          bottom: 90px; }
+      .indexHeader .indexWinner .winner2 .planetTxt {
+        padding-top: 50px; }
+      .indexHeader .indexWinner .winner3 .alienImg {
+        bottom: 120px; }
+      .indexHeader .indexWinner .winner3 .stageText {
+        padding-top: 359px; }
+        .indexHeader .indexWinner .winner3 .stageText p {
+          bottom: 60px; }
+      .indexHeader .indexWinner .winner3 .planetTxt {
+        padding-top: 80px; }
+      .indexHeader .indexWinner li .stageText {
+        padding-top: 440px; }
+  .title {
+    width: 18.5vw;
+    height: 6vw;
+    background: url("../img/slogan-frame.png");
+    background-size: cover;
+    color: white;
+    margin: 5vw auto 0; }
+    .title h1 {
+      font-weight: bold;
+      text-align: center;
+      line-height: 6vw; }
+    .title h2 {
+      text-align: center; }
+  .select-section {
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5vw auto; }
+    .select-section button {
+      font-size: 20px;
+      background-color: #1d2088;
+      color: white;
+      padding: 5px 18px;
+      border-radius: 20px;
+      border: 1px solid #fff; }
+      .select-section button:hover {
+        background-color: #262ab2; }
+  .video {
+    width: 53vw;
+    height: 36vw;
+    overflow: hidden;
+    background: url("../img/video-frame.png");
+    background-size: cover;
+    text-align: center;
+    vertical-align: middle;
+    margin: 5vw auto 0; }
+    .video iframe {
+      width: 70%;
+      height: 70%;
+      margin: 5vw 0 0 0; }
+  .rabbit {
+    width: 10vw;
+    position: absolute;
+    top: 30vw;
+    right: 20vw;
+    z-index: -1; }
+    .rabbit img {
+      width: 20vw; }
+  .fatty {
+    width: 10vw;
+    position: absolute;
+    top: 37vw;
+    left: 5vw;
+    z-index: -1; }
+    .fatty img {
+      width: 20vw; }
+  .video-slider {
+    width: 55%;
+    height: 10vw;
+    margin: 2vw auto;
+    background-color: #CCC;
+    border-radius: 20px; }
+  .question {
+    width: 55%;
+    margin: 5vw auto;
+    background: #dcdcdc;
+    border-radius: 30px;
+    padding: 5vw;
+    box-sizing: border-box; }
+    .question h2 {
+      font-size: 2vw;
+      font-weight: bold; }
+    .question li {
+      font-size: 1.5vw;
+      margin: 2vw 0; }
+      .question li a {
+        color: black; }
+      .question li a:hover {
+        color: #1d2088; }
+    .question p {
+      font-size: 1.5vw;
+      margin: 2vw 0;
+      color: red; }
+    .question .button-section button {
+      font-size: 20px;
+      background-color: #1d2088;
+      color: white;
+      padding: 5px 18px;
+      box-shadow: 0px 0px 20px #fff;
+      border-radius: 20px;
+      border: none; } }
 
 @media all and (min-width: 992px) {
-  body {
-    background-color: #666; }
   .navTop {
     line-height: 35px; }
     .navTop p {
@@ -844,7 +995,7 @@ button {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    padding: 0 15px;
+    padding: 100px 15px;
     box-sizing: border-box; }
   .indexHeader {
     padding-top: 150px; }
@@ -886,8 +1037,7 @@ button {
     .title h1 {
       font-weight: bold;
       text-align: center;
-      line-height: 6vw;
-      font-size: 30px; }
+      line-height: 6vw; }
     .title h2 {
       text-align: center; }
   .select-section {
@@ -1087,7 +1237,6 @@ button {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    padding: 0 15px;
     box-sizing: border-box; }
   .title {
     width: 18.5vw;
@@ -1099,8 +1248,7 @@ button {
     .title h1 {
       font-weight: bold;
       text-align: center;
-      line-height: 6vw;
-      font-size: 30px; }
+      line-height: 6vw; }
     .title h2 {
       text-align: center; }
   .select-section {
