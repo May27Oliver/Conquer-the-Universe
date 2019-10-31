@@ -267,7 +267,10 @@
     }
 
      //公民的家
-.homeContent{margin-top: 50px;}
+.homeContent{
+    // margin-top: 50px;
+    padding-top: 150px;
+}
 .memNameBox{
     overflow: hidden;
     margin-bottom:10px;
@@ -287,7 +290,7 @@
     }
 }
 .supportBox{
-    background-color: #5cc9cd;  
+    background-color: $green;  
     padding-bottom: 2%;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -312,7 +315,7 @@
 }
 
 .abilityBox{
-    background-color: #5cc9cd;  
+    background-color: $green;  
     padding-bottom: 2%;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -379,6 +382,7 @@
 .boxCenter{
     margin-top: 60px;
     margin-bottom: 60px;
+    
 }
 .boxCenter img{
     display: block;
@@ -443,13 +447,13 @@
            }
            li.active{ 
                 /* border-bottom:1px solid #fff;  */
-                background:#5cc9cd;
+                background:$green;
             }
     }
     
     
     .tabIn{
-        background-color: #5cc9cd;
+        background-color: $green;
         margin: auto;
         border-radius: 0px 8px 8px 8px;
         height: 148px;
@@ -519,7 +523,7 @@
         width: 450px;
         margin: auto;
         background-color: rgba(161, 48, 48, 0.2);
-        border: 2px solid #5cc9cd;
+        border: 2px solid $green;
         padding: 30px;
         box-sizing: border-box;
     }
