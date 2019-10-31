@@ -4,6 +4,7 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 var fileinclude = require('gulp-file-include');
+var indexpath = require('./indexpath.js');
 
 
 gulp.task('concat', function () {
@@ -52,15 +53,9 @@ gulp.task('default',function () {
             //根目錄 可以把function放在參數裡執行完再回來做function
             baseDir: "./dest",
             // index: "video.html"
-<<<<<<< HEAD
-            // index: "index.html"
-            index: "homeCitizen.html"
-g        }
-=======
-            index: "index.html"
+            index: indexpath
             // index: "homeCitizen.html"
         }
->>>>>>> e273a08eec4ee982cd8b4495d2d86087b1a9bf40
     });
 
     gulp.watch(["dev/sass/*.scss", "dev/sass/**/*.scss"] , ['sass']).on('change', reload);
