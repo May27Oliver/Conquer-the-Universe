@@ -270,22 +270,21 @@
         margin-right: 10px;
     }   
 }
-
-.abilityBox{ 
-    h4{
-        font-size: 24px;
-        width:100%;
-        float: none;
-    }
-    .abilityBoxIn{
-        width: 95%;
-        margin-right: 10px;
+.boxLeft{
+        .abilityBox{ 
+        h4{
+            font-size: 24px;
+            width:100%;
+            float: none;
+        }
+        .abilityBoxIn{
+            width: 241px;
+            margin-right: 10px;
+        }
     }
 }
 
-.redBallIn{
-    padding: 200px 15px;
-}
+
 
 .propBox,.propBox2{
     width: 45%;   
