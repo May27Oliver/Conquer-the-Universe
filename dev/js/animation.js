@@ -16,3 +16,10 @@ console.log('star');
     yoyo:true,
     ease: Power2.easeOut, x: 80
  })
+
+ //公民的家
+ TweenMax.to('.boxCenter img', 2,{
+   y: -30,
+   repeat: -1, //-1無限迴圈,
+   yoyo: true
+});
