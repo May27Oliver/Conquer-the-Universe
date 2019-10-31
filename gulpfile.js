@@ -53,6 +53,7 @@ gulp.task('default',function () {
             baseDir: "./dest",
             // index: "video.html"
             index: "index.html"
+            // index: "homeCitizen.html"
         }
     });
 
