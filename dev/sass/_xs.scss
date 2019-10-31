@@ -15,12 +15,29 @@
         /* background-size: contain; */
     }
 
+
+// 星球計分列
+.navTop{
+    position: fixed;
+    top:0;
+    width: 100%;
+    line-height: 30px;
+    z-index: 999;
+    background-color: #000;
+    p{
+        color:#fff;
+        float:right;
+        margin-right: 20px;
+    }
+}
     
 // 選單
 .banner{
     position: fixed;
     width: 100%;
     z-index: 999;
+    top:30px;
+    left:0;
     .hamburger{
         width: 40px;
         height: 40px;
@@ -155,6 +172,7 @@
 
     // 首頁最上面獎台
     .indexHeader{
+        padding-top:100px;
         h1{
             text-align: center;
             margin:70px auto;
@@ -188,6 +206,9 @@
                 .planetTxt{
                     span{
                         margin-left:5px;
+                    }
+                    p{
+                        margin-bottom:5px;
                     }
                 }
             }
@@ -246,7 +267,10 @@
     }
 
      //公民的家
-.homeContent{margin-top: 50px;}
+.homeContent{
+    // margin-top: 50px;
+    padding-top: 150px;
+}
 .memNameBox{
     overflow: hidden;
     margin-bottom:10px;
@@ -266,7 +290,7 @@
     }
 }
 .supportBox{
-    background-color: #5cc9cd;  
+    background-color: $green;  
     padding-bottom: 2%;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -291,7 +315,7 @@
 }
 
 .abilityBox{
-    background-color: #5cc9cd;  
+    background-color: $green;  
     padding-bottom: 2%;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -358,6 +382,7 @@
 .boxCenter{
     margin-top: 60px;
     margin-bottom: 60px;
+    
 }
 .boxCenter img{
     display: block;
@@ -422,13 +447,13 @@
            }
            li.active{ 
                 /* border-bottom:1px solid #fff;  */
-                background:#5cc9cd;
+                background:$green;
             }
     }
     
     
     .tabIn{
-        background-color: #5cc9cd;
+        background-color: $green;
         margin: auto;
         border-radius: 0px 8px 8px 8px;
         height: 148px;
@@ -498,7 +523,7 @@
         width: 450px;
         margin: auto;
         background-color: rgba(161, 48, 48, 0.2);
-        border: 2px solid #5cc9cd;
+        border: 2px solid $green;
         padding: 30px;
         box-sizing: border-box;
     }
@@ -634,7 +659,102 @@
     }
 }
 
+    // -------贊助商品區------
 
+    .shopContainer{
+        margin-top: 100px;
+        padding-top: 50px;
+		padding-bottom: 50px;
+        text-align: center;
+        background-color: #333;
+        
+	
+	
+	.shoptitle{
+		margin: 30px auto 50px;
+		padding: 30px;
+		width: 150px;
+		background-size:100%;
+		background-position: center;
+		background-repeat: no-repeat;
+        background-image: url(../img/title.png);
+         h2{
+             color:#fff;
+        }	
+       
+    }  
+    .productBox{
+        margin: 0 auto;
+        width: 95%;
+        background-color: #90BEE3;
+        border-radius: 10px;
+        background-image: url(../img/pinkPlanet.png);
+        background-repeat: no-repeat;
+        background-size:contain;
+        background-position: bottom;
+    }
+    .model{
+        margin-bottom: 50px;
+    }
+    .model .pic01{
+        padding: 20px;
+        margin-top: 50px;
+    }
+    .productPic{
+        box-sizing:border-box;
+        margin: 50px auto 20px;
+        background-color: antiquewhite;;
+        border-radius: 10px;
+        width: 150px;
+        height: 150px;
+        position: relative;
+        img{
+            top: calc(50% - 50px);
+            left: calc(50% - 50px);
+            position: absolute;
+            
+            width: 100px;
+            text-align: center;
+        }
+
+    }
+  
+       
+    
+
+.productTitle{
+    h3{
+        font-weight: bold;
+        color: #fff;	
+    }
+    .productBtn{
+        width: 60px;
+        margin: 10px auto;
+        background-color: #448aca;
+        padding: 5px;
+        border-radius: 50px;
+        h2{
+            color: #fff;
+        }	
+    }
+} 
+
+}
+.moreProductBtn{
+    text-align: center;
+    margin: 30px auto;
+    width: 80px;
+    border-radius: 50px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+    background-color: #E8B51C;	
+    h2{ 
+        font-weight: bold;
+        color: #fff;
+    }
+}
 
         
 // }

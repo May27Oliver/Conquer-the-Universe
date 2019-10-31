@@ -127,10 +127,24 @@ button {
   background-repeat: no-repeat;
   /* background-size: contain; */ }
 
+.navTop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  line-height: 30px;
+  z-index: 999;
+  background-color: #000; }
+  .navTop p {
+    color: #fff;
+    float: right;
+    margin-right: 20px; }
+
 .banner {
   position: fixed;
   width: 100%;
-  z-index: 999; }
+  z-index: 999;
+  top: 30px;
+  left: 0; }
   .banner .hamburger {
     width: 40px;
     height: 40px;
@@ -241,70 +255,73 @@ button {
         width: 130px;
         height: 55px; }
 
-.indexHeader h1 {
-  text-align: center;
-  margin: 70px auto; }
-
-.indexHeader .indexWinner {
-  width: 330px;
-  margin: 0 auto;
-  overflow: hidden; }
-  .indexHeader .indexWinner li {
-    float: left;
-    width: 110px; }
-    .indexHeader .indexWinner li .stageText {
-      background-repeat: no-repeat;
-      background-size: 100%;
-      background-position: bottom;
-      padding-top: 220px;
-      position: relative; }
-      .indexHeader .indexWinner li .stageText p {
-        width: 150px;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%); }
-    .indexHeader .indexWinner li img {
-      display: block;
-      width: 80%;
-      margin: 0 auto; }
-    .indexHeader .indexWinner li .planetTxt span {
-      margin-left: 5px; }
-  .indexHeader .indexWinner .winner2 .stageText {
-    background-image: url(../img/index_img/stageB2.png);
-    margin-right: -3.4%;
-    padding-top: 189px; }
-    .indexHeader .indexWinner .winner2 .stageText p {
-      bottom: 50px; }
-  .indexHeader .indexWinner .winner2 .alienImg {
-    bottom: 85px; }
-  .indexHeader .indexWinner .winner2 .planetTxt {
-    padding-top: 30px; }
-  .indexHeader .indexWinner .winner1 .stageText {
-    background-image: url(../img/index_img/stageR1.png); }
-    .indexHeader .indexWinner .winner1 .stageText p {
+.indexHeader {
+  padding-top: 100px; }
+  .indexHeader h1 {
+    text-align: center;
+    margin: 70px auto; }
+  .indexHeader .indexWinner {
+    width: 330px;
+    margin: 0 auto;
+    overflow: hidden; }
+    .indexHeader .indexWinner li {
+      float: left;
+      width: 110px; }
+      .indexHeader .indexWinner li .stageText {
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: bottom;
+        padding-top: 220px;
+        position: relative; }
+        .indexHeader .indexWinner li .stageText p {
+          width: 150px;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%); }
+      .indexHeader .indexWinner li img {
+        display: block;
+        width: 80%;
+        margin: 0 auto; }
+      .indexHeader .indexWinner li .planetTxt span {
+        margin-left: 5px; }
+      .indexHeader .indexWinner li .planetTxt p {
+        margin-bottom: 5px; }
+    .indexHeader .indexWinner .winner2 .stageText {
+      background-image: url(../img/index_img/stageB2.png);
+      margin-right: -3.4%;
+      padding-top: 189px; }
+      .indexHeader .indexWinner .winner2 .stageText p {
+        bottom: 50px; }
+    .indexHeader .indexWinner .winner2 .alienImg {
+      bottom: 85px; }
+    .indexHeader .indexWinner .winner2 .planetTxt {
+      padding-top: 30px; }
+    .indexHeader .indexWinner .winner1 .stageText {
+      background-image: url(../img/index_img/stageR1.png); }
+      .indexHeader .indexWinner .winner1 .stageText p {
+        bottom: 70px; }
+    .indexHeader .indexWinner .winner1 .alienImg {
+      bottom: 105px; }
+    .indexHeader .indexWinner .winner3 .stageText {
+      background-image: url(../img/index_img/stageY3.png);
+      margin-left: -3.3%;
+      padding-top: 159px; }
+      .indexHeader .indexWinner .winner3 .stageText p {
+        bottom: 35px; }
+    .indexHeader .indexWinner .winner3 .alienImg {
       bottom: 70px; }
-  .indexHeader .indexWinner .winner1 .alienImg {
-    bottom: 105px; }
-  .indexHeader .indexWinner .winner3 .stageText {
-    background-image: url(../img/index_img/stageY3.png);
-    margin-left: -3.3%;
-    padding-top: 159px; }
-    .indexHeader .indexWinner .winner3 .stageText p {
-      bottom: 35px; }
-  .indexHeader .indexWinner .winner3 .alienImg {
-    bottom: 70px; }
-  .indexHeader .indexWinner .winner3 .planetTxt {
-    padding-top: 60px; }
-  .indexHeader .indexWinner p {
-    text-align: center; }
-  .indexHeader .indexWinner .alienImg {
-    position: absolute;
-    bottom: 0;
-    left: 0; }
+    .indexHeader .indexWinner .winner3 .planetTxt {
+      padding-top: 60px; }
+    .indexHeader .indexWinner p {
+      text-align: center; }
+    .indexHeader .indexWinner .alienImg {
+      position: absolute;
+      bottom: 0;
+      left: 0; }
 
 .homeContent {
-  margin-top: 50px; }
+  padding-top: 150px; }
 
 .memNameBox {
   overflow: hidden;
@@ -320,7 +337,7 @@ button {
     font-size: 32px; }
 
 .supportBox {
-  background-color: #5cc9cd;
+  background-color: #84ccc9;
   padding-bottom: 2%;
   border-radius: 8px;
   margin-bottom: 10px; }
@@ -340,7 +357,7 @@ button {
       text-align: center; }
 
 .abilityBox {
-  background-color: #5cc9cd;
+  background-color: #84ccc9;
   padding-bottom: 2%;
   border-radius: 8px;
   margin-bottom: 10px; }
@@ -437,9 +454,9 @@ button {
         padding-right: 18.5px; }
     #tab-demo ul li.active {
       /* border-bottom:1px solid #fff;  */
-      background: #5cc9cd; }
+      background: #84ccc9; }
   #tab-demo .tabIn {
-    background-color: #5cc9cd;
+    background-color: #84ccc9;
     margin: auto;
     border-radius: 0px 8px 8px 8px;
     height: 148px; }
@@ -490,7 +507,7 @@ button {
   width: 450px;
   margin: auto;
   background-color: rgba(161, 48, 48, 0.2);
-  border: 2px solid #5cc9cd;
+  border: 2px solid #84ccc9;
   padding: 30px;
   box-sizing: border-box; }
 
@@ -597,6 +614,76 @@ button {
     #innerPlayer li ul li:nth-child(5):after {
       content: '/'; }
 
+.shopContainer {
+  margin-top: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  background-color: #333; }
+  .shopContainer .shoptitle {
+    margin: 30px auto 50px;
+    padding: 30px;
+    width: 150px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../img/title.png); }
+    .shopContainer .shoptitle h2 {
+      color: #fff; }
+  .shopContainer .productBox {
+    margin: 0 auto;
+    width: 95%;
+    background-color: #90BEE3;
+    border-radius: 10px;
+    background-image: url(../img/pinkPlanet.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom; }
+  .shopContainer .model {
+    margin-bottom: 50px; }
+  .shopContainer .model .pic01 {
+    padding: 20px;
+    margin-top: 50px; }
+  .shopContainer .productPic {
+    box-sizing: border-box;
+    margin: 50px auto 20px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    position: relative; }
+    .shopContainer .productPic img {
+      top: calc(50% - 50px);
+      left: calc(50% - 50px);
+      position: absolute;
+      width: 100px;
+      text-align: center; }
+  .shopContainer .productTitle h3 {
+    font-weight: bold;
+    color: #fff; }
+  .shopContainer .productTitle .productBtn {
+    width: 60px;
+    margin: 10px auto;
+    background-color: #448aca;
+    padding: 5px;
+    border-radius: 50px; }
+    .shopContainer .productTitle .productBtn h2 {
+      color: #fff; }
+
+.moreProductBtn {
+  text-align: center;
+  margin: 30px auto;
+  width: 80px;
+  border-radius: 50px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  overflow: hidden;
+  background-color: #E8B51C; }
+  .moreProductBtn h2 {
+    font-weight: bold;
+    color: #fff; }
+
 @media all and (min-width: 768px) {
   [class|="col"] {
     float: left;
@@ -626,6 +713,25 @@ button {
     width: 91.66667%; }
   .col-md-12 {
     width: 100%; }
+  h1 {
+    font-size: 24px;
+    font-weight: 700; }
+  h2 {
+    font-size: 20px;
+    font-weight: 500; }
+  h3 {
+    font-size: 16px;
+    font-weight: 500; }
+  .nav {
+    font-size: 20px;
+    font-weight: 700; }
+  p {
+    font-size: 15px;
+    font-weight: 400; }
+  button {
+    font-size: 19px;
+    font-family: Arial,'Noto Sans TC', sans-serif;
+    font-weight: 500; }
   .indexHeader .indexWinner {
     width: 450px; }
     .indexHeader .indexWinner li {
@@ -656,6 +762,8 @@ button {
       padding-top: 70px; }
   .indexHeader li .stageText {
     padding-top: 320px; }
+  .homeContent {
+    padding-top: -150px; }
   .boxLeft {
     margin: auto; }
     .boxLeft .memNameBox {
@@ -747,12 +855,151 @@ button {
     #innerPlayer li ul li:nth-child(2) {
       margin-right: 75px; }
     #innerPlayer li ul li:nth-child(3) {
-      margin-right: 65px; } }
+      margin-right: 65px; }
+  .video-body {
+    width: 100%;
+    height: 100%;
+    background: url(../img/background.png);
+    background-size: cover;
+    position: relative;
+    z-index: -2; }
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 15px;
+    box-sizing: border-box; }
+  .indexHeader {
+    padding-top: 150px; }
+    .indexHeader h1 {
+      padding-bottom: 50px; }
+    .indexHeader .indexWinner {
+      width: 600px; }
+      .indexHeader .indexWinner li {
+        width: 200px; }
+      .indexHeader .indexWinner .winner1 .alienImg {
+        bottom: 185px; }
+      .indexHeader .indexWinner .winner1 .stageText p {
+        bottom: 120px; }
+      .indexHeader .indexWinner .winner2 .alienImg {
+        bottom: 150px; }
+      .indexHeader .indexWinner .winner2 .stageText {
+        padding-top: 389px; }
+        .indexHeader .indexWinner .winner2 .stageText p {
+          bottom: 90px; }
+      .indexHeader .indexWinner .winner2 .planetTxt {
+        padding-top: 50px; }
+      .indexHeader .indexWinner .winner3 .alienImg {
+        bottom: 120px; }
+      .indexHeader .indexWinner .winner3 .stageText {
+        padding-top: 359px; }
+        .indexHeader .indexWinner .winner3 .stageText p {
+          bottom: 60px; }
+      .indexHeader .indexWinner .winner3 .planetTxt {
+        padding-top: 80px; }
+      .indexHeader .indexWinner li .stageText {
+        padding-top: 440px; }
+  .title {
+    width: 18.5vw;
+    height: 6vw;
+    background: url("../img/slogan-frame.png");
+    background-size: cover;
+    color: white;
+    margin: 5vw auto 0; }
+    .title h1 {
+      font-weight: bold;
+      text-align: center;
+      line-height: 6vw; }
+    .title h2 {
+      text-align: center; }
+  .select-section {
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5vw auto; }
+    .select-section button {
+      font-size: 20px;
+      background-color: #1d2088;
+      color: white;
+      padding: 5px 18px;
+      border-radius: 20px;
+      border: 1px solid #fff; }
+      .select-section button:hover {
+        background-color: #262ab2; }
+  .video {
+    width: 53vw;
+    height: 36vw;
+    overflow: hidden;
+    background: url("../img/video-frame.png");
+    background-size: cover;
+    text-align: center;
+    vertical-align: middle;
+    margin: 5vw auto 0; }
+    .video iframe {
+      width: 70%;
+      height: 70%;
+      margin: 5vw 0 0 0; }
+  .rabbit {
+    width: 10vw;
+    position: absolute;
+    top: 30vw;
+    right: 20vw;
+    z-index: -1; }
+    .rabbit img {
+      width: 20vw; }
+  .fatty {
+    width: 10vw;
+    position: absolute;
+    top: 37vw;
+    left: 5vw;
+    z-index: -1; }
+    .fatty img {
+      width: 20vw; }
+  .video-slider {
+    width: 55%;
+    height: 10vw;
+    margin: 2vw auto;
+    background-color: #CCC;
+    border-radius: 20px; }
+  .question {
+    width: 55%;
+    margin: 5vw auto;
+    background: #dcdcdc;
+    border-radius: 30px;
+    padding: 5vw;
+    box-sizing: border-box; }
+    .question h2 {
+      font-size: 2vw;
+      font-weight: bold; }
+    .question li {
+      font-size: 1.5vw;
+      margin: 2vw 0; }
+      .question li a {
+        color: black; }
+      .question li a:hover {
+        color: #1d2088; }
+    .question p {
+      font-size: 1.5vw;
+      margin: 2vw 0;
+      color: red; }
+    .question .button-section button {
+      font-size: 20px;
+      background-color: #1d2088;
+      color: white;
+      padding: 5px 18px;
+      box-shadow: 0px 0px 20px #fff;
+      border-radius: 20px;
+      border: none; } }
 
 @media all and (min-width: 992px) {
+  .navTop {
+    line-height: 35px; }
+    .navTop p {
+      margin-right: 60px; }
   .banner {
     position: fixed;
-    width: 100%; }
+    width: 100%;
+    top: 35px; }
     .banner .hamburger {
       width: 100%;
       height: 100px;
@@ -809,32 +1056,6 @@ button {
       background-size: 100%;
       width: calc(230px * .8);
       height: calc(91px * .8); }
-  .indexHeader .indexWinner {
-    width: 600px; }
-    .indexHeader .indexWinner li {
-      width: 200px; }
-    .indexHeader .indexWinner .winner1 .alienImg {
-      bottom: 185px; }
-    .indexHeader .indexWinner .winner1 .stageText p {
-      bottom: 120px; }
-    .indexHeader .indexWinner .winner2 .alienImg {
-      bottom: 150px; }
-    .indexHeader .indexWinner .winner2 .stageText {
-      padding-top: 389px; }
-      .indexHeader .indexWinner .winner2 .stageText p {
-        bottom: 90px; }
-    .indexHeader .indexWinner .winner2 .planetTxt {
-      padding-top: 50px; }
-    .indexHeader .indexWinner .winner3 .alienImg {
-      bottom: 120px; }
-    .indexHeader .indexWinner .winner3 .stageText {
-      padding-top: 359px; }
-      .indexHeader .indexWinner .winner3 .stageText p {
-        bottom: 60px; }
-    .indexHeader .indexWinner .winner3 .planetTxt {
-      padding-top: 80px; }
-    .indexHeader .indexWinner li .stageText {
-      padding-top: 440px; }
   .video-body {
     width: 100%;
     height: 100%;
@@ -842,49 +1063,42 @@ button {
     background-size: cover;
     position: relative;
     z-index: -2; }
-  .navTop {
-    color: white;
-    background: black;
-    overflow: hidden; }
-    .navTop span {
-      float: right;
-      padding: .3vw;
-      margin: 0 1vw 0; }
-  .nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
-    .nav .logo img {
-      margin: 1.5vw 0 0 0;
-      width: 12vw; }
-  .navBar ul {
-    display: flex;
-    justify-content: space-around; }
-    .navBar ul li {
-      padding: 5px 15px 0; }
-      .navBar ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 24px; }
-  .navLogin .login {
-    margin: 2.3vw 0 0 0;
-    width: 8vw;
-    height: 2.5vw;
-    background: url("../img/loginButton.png");
-    background-size: cover;
-    text-align: center;
-    line-height: 2.5vw; }
-    .navLogin .login a {
-      color: black;
-      font-size: .8vw; }
   .container {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    padding: 0 15px;
+    padding: 100px 15px;
     box-sizing: border-box; }
+  .indexHeader {
+    padding-top: 150px; }
+    .indexHeader h1 {
+      padding-bottom: 50px; }
+    .indexHeader .indexWinner {
+      width: 600px; }
+      .indexHeader .indexWinner li {
+        width: 200px; }
+      .indexHeader .indexWinner .winner1 .alienImg {
+        bottom: 185px; }
+      .indexHeader .indexWinner .winner1 .stageText p {
+        bottom: 120px; }
+      .indexHeader .indexWinner .winner2 .alienImg {
+        bottom: 150px; }
+      .indexHeader .indexWinner .winner2 .stageText {
+        padding-top: 389px; }
+        .indexHeader .indexWinner .winner2 .stageText p {
+          bottom: 90px; }
+      .indexHeader .indexWinner .winner2 .planetTxt {
+        padding-top: 50px; }
+      .indexHeader .indexWinner .winner3 .alienImg {
+        bottom: 120px; }
+      .indexHeader .indexWinner .winner3 .stageText {
+        padding-top: 359px; }
+        .indexHeader .indexWinner .winner3 .stageText p {
+          bottom: 60px; }
+      .indexHeader .indexWinner .winner3 .planetTxt {
+        padding-top: 80px; }
+      .indexHeader .indexWinner li .stageText {
+        padding-top: 440px; }
   .title {
     width: 18.5vw;
     height: 6vw;
@@ -895,8 +1109,7 @@ button {
     .title h1 {
       font-weight: bold;
       text-align: center;
-      line-height: 6vw;
-      font-size: 30px; }
+      line-height: 6vw; }
     .title h2 {
       text-align: center; }
   .select-section {
@@ -1054,7 +1267,11 @@ button {
     #innerPlayer li ul li:nth-child(2) {
       margin-right: 83px; }
     #innerPlayer li ul li:nth-child(3) {
-      margin-right: 87px; } }
+      margin-right: 87px; }
+  .boxLeft {
+    width: 260px; }
+    .boxLeft .abilityBox .abilityBoxIn {
+      width: 244.4px; } }
 
 @media all and (min-width: 1200px) {
   h1 {
@@ -1083,6 +1300,8 @@ button {
     /* height: 1450px; */
     background-repeat: no-repeat;
     /* background-size: contain; */ }
+  .banner nav li {
+    margin: 0 25px; }
   .video-body {
     width: 100%;
     height: 100%;
@@ -1090,48 +1309,10 @@ button {
     background-size: cover;
     position: relative;
     z-index: -2; }
-  .navTop {
-    color: white;
-    background: black;
-    overflow: hidden; }
-    .navTop span {
-      float: right;
-      padding: .3vw;
-      margin: 0 1vw 0; }
-  .nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
-    .nav .logo img {
-      margin: 1.5vw 0 0 0;
-      width: 12vw; }
-  .navBar ul {
-    display: flex;
-    justify-content: space-around; }
-    .navBar ul li {
-      padding: 5px 15px 0; }
-      .navBar ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 24px; }
-  .navLogin .login {
-    margin: 2.3vw 0 0 0;
-    width: 8vw;
-    height: 2.5vw;
-    background: url("../img/loginButton.png");
-    background-size: cover;
-    text-align: center;
-    line-height: 2.5vw; }
-    .navLogin .login a {
-      color: black;
-      font-size: .8vw; }
   .container {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    padding: 0 15px;
     box-sizing: border-box; }
   .title {
     width: 18.5vw;
@@ -1143,8 +1324,7 @@ button {
     .title h1 {
       font-weight: bold;
       text-align: center;
-      line-height: 6vw;
-      font-size: 30px; }
+      line-height: 6vw; }
     .title h2 {
       text-align: center; }
   .select-section {
@@ -1251,15 +1431,13 @@ button {
   .supportBox .supportBoxIn {
     width: 95%;
     margin-right: 10px; }
-  .abilityBox h4 {
+  .boxLeft .abilityBox h4 {
     font-size: 24px;
     width: 100%;
     float: none; }
-  .abilityBox .abilityBoxIn {
-    width: 95%;
+  .boxLeft .abilityBox .abilityBoxIn {
+    width: 241px;
     margin-right: 10px; }
-  .redBallIn {
-    padding: 200px 15px; }
   .propBox, .propBox2 {
     width: 45%;
     padding-bottom: 45%;

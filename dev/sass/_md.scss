@@ -1,5 +1,6 @@
 @include respond(md) {
     @include md-grid(12);
+    @include md-fontsize($fontBasesize);
     body {
         // font-size: 40px;
     }
@@ -64,9 +65,14 @@
     }
 
      //公民的家
+.homeContent{
+    padding-top: -150px;
+}
+
 // 內容區塊-左
 .boxLeft{
     margin: auto;
+    
     
     .memNameBox{
         margin-bottom:50px;
@@ -223,7 +229,210 @@
             }
         }
     }
+    // 公民小學堂
+    .video-body{
+        width: 100%;
+        height: 100%;
+        background: url(../img/background.png);
+        background-size:cover;
+        position: relative;
+        z-index: -2;
+    }
     
+    .container{
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 100px 15px;
+        box-sizing: border-box;
+    }
+
+    // 最上面的獎台
+    .indexHeader{
+        padding-top:150px;
+        h1{
+            padding-bottom:50px;
+        }
+        .indexWinner{
+            width: 600px;
+            li{
+                width: 200px;
+            }
+            .winner1{
+                .alienImg{
+                    bottom:185px;
+                }
+                .stageText{
+                    p{
+                        bottom:120px;
+                    }
+                }
+            }
+            .winner2{
+                .alienImg{
+                    bottom:150px;
+                }
+                .stageText{
+                    p{
+                        bottom:90px;
+                    }
+                    padding-top:389px;
+                }
+                .planetTxt{
+                    padding-top:50px;
+                }
+            }
+            .winner3{
+                .alienImg{
+                    bottom:120px;
+                }
+                .stageText{
+                    p{
+                        bottom:60px;
+                    }
+                    padding-top:359px;
+                }
+                .planetTxt{
+                    padding-top:80px;
+                }
+            }
+            li{
+                .stageText{
+                    padding-top:440px;
+                }
+            }
+        }
+    }
+
+
+    // 公民小學堂網頁標題
+    .title{
+        width: 18.5vw;
+        height: 6vw;
+        background: url("../img/slogan-frame.png");
+        background-size: cover;
+        color:white;
+        margin: 5vw auto 0;
+        h1{
+            font-weight: bold;
+            text-align: center;
+            line-height: 6vw;
+        }
+        h2{
+            text-align: center;
+        }
+    }
+    // 目錄與頁籤
+    .select-section{
+        width: 55%;
+        display: flex;
+        justify-content: space-between;
+        margin: 5vw auto;
+        button{
+            font-size: 20px;
+            // background-color: #1d2088;
+            background-color: #1d2088;
+            &:hover{
+                background-color: lighten(#1d2088 , 10%);
+            }
+            color: white;
+            padding:5px 18px;
+            // box-shadow: 0px 0px 20px #fff;
+            border-radius: 20px;
+            border: 1px solid #fff;
+        }
+    }
+    // 影片區
+    .video{
+        width: 53vw;
+        height: 36vw;
+        overflow: hidden;
+        background: url("../img/video-frame.png");
+        background-size: cover;
+        text-align: center;//iframe是inline屬性
+        vertical-align: middle;
+        margin: 5vw auto 0;
+        iframe{
+            width:70%;
+            height: 70%;
+            margin: 5vw 0 0 0;
+        }
+    }
+    // 背景小物
+    .rabbit{
+        width: 10vw;
+        position: absolute;
+        top:30vw;
+        right:20vw;
+        z-index:-1;
+        img{
+            width: 20vw;
+        }
+    }
+
+    .fatty{
+        width: 10vw;
+        position: absolute;
+        top:37vw;
+        left:5vw;
+        z-index:-1;
+        img{
+            width: 20vw;
+        }
+    }
+
+    // 影片區slider
+    .video-slider{
+        width: 55%;
+        height: 10vw;
+        margin: 2vw auto;
+        background-color: #CCC;
+        border-radius: 20px;
+    }
+    // Question
+    .question{
+        width: 55%;
+        margin: 5vw auto;
+        background: #dcdcdc;
+        border-radius: 30px;
+        padding: 5vw;
+        box-sizing: border-box;
+        h2{
+          font-size: 2vw;
+          font-weight: bold;  
+        }
+        li{
+            font-size: 1.5vw;
+            margin: 2vw 0;
+            a{
+                color:black;
+            }
+            a:hover {
+            color: #1d2088;
+            }
+        }
+        
+        
+        p{
+            font-size: 1.5vw;
+            margin: 2vw 0;
+            color: red;
+        }
+        .button-section{
+            // width: 25%;
+            // display: flex;
+            // justify-content: space-around;
+            button{
+                font-size: 20px;
+                background-color: #1d2088;
+                color: white;
+                padding:5px 18px;
+                box-shadow: 0px 0px 20px #fff;
+                border-radius: 20px;
+                border: none;
+            }
+        }
+    }
 
 
     
