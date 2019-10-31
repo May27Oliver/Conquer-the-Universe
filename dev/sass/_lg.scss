@@ -1,4 +1,8 @@
 @include respond(lg) {
+<<<<<<< HEAD
+    @include lg-grid(12);    
+=======
+>>>>>>> master
     body {
 
     }
@@ -49,7 +53,7 @@
             }
             li{
                 list-style: none;
-                margin:0 15px;
+                margin:0 12px;
                 line-height: 100px;
                 float: left;
                 text-align: center;
@@ -315,7 +319,6 @@
             color:white;
         }
     }
-    @include xl-grid(12);
 
     // 排行榜
     .boardTitle{
@@ -364,7 +367,30 @@
         }
     }
 
+    //公民的家
+//內容區塊左
+    .boxLeft{
+        width: 260px;
+        .abilityBox{
+            .abilityBoxIn{
+                width: 244.4px;
+            }
+        }
+    }
 
 
-
+    /*____________________ VOTE ____________________*/
+    .votePage{
+        .container{
+            .voteCard{
+                .voteWrapper{
+                    button{
+                        width: 100px;
+                        font-size: 18px;
+                        padding: 5px 18px;
+                    }
+                }
+            }
+        }
+    }
 }
