@@ -52,7 +52,7 @@ gulp.task('default',function () {
             //根目錄 可以把function放在參數裡執行完再回來做function
             baseDir: "./dest",
             // index: "video.html"
-            index: "homeCitizen.html"
+            index: "index.html"
         }
     });
 

@@ -166,5 +166,65 @@
         margin-bottom: 14px;
     }
 
+
+    // 排行榜
+    .boardTitle{
+        max-width: 550px;
+        li{
+            padding:0px 20px;
+            line-height: 36px;
+        }
+    }
+    .boardInner{
+        max-width: 520px;
+        .innerTitle{
+            width: 450px;
+        }
+        .innerTitle{
+            li:nth-child(1){
+                margin-left:9px;
+                margin-right:48px;
+            }
+            li:nth-child(2){
+                margin-right:84px;
+            }
+            li:nth-child(3){
+                margin-right:72px;
+            }
+        }
+    }
+    #innerPlayer{
+        >li{
+            margin:0 auto;
+            height: 40px;
+            line-height: 40px;
+            margin-bottom:7px;
+            border-radius: 5px;
+            padding: 0px 12px;
+            max-width: 450px;
+        }
+        li{
+            ul{
+                width: 423px;
+                li{
+                    float:left;
+                    width: 40px; 
+                }
+                li:nth-child(1){
+                    margin-left:8px;
+                    margin-right:30px;
+                }
+                li:nth-child(2){
+                    margin-right:75px;
+                }
+                li:nth-child(3){
+                    margin-right:65px;
+                }
+            }
+        }
+    }
+    
+
+
     
 }

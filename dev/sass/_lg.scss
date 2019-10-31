@@ -290,7 +290,54 @@
             color:white;
         }
     }
-
-    
     @include xl-grid(12);
+
+    // 排行榜
+    .boardTitle{
+        max-width: 700px;
+    }
+    .boardInner{
+        max-width: 670px;
+        .innerTitle{
+            width: 600px;
+            li:nth-child(1){
+                margin-left:60px;
+                margin-right:62px;
+            }
+            li:nth-child(2){
+                margin-right:95px;
+            }
+            li:nth-child(3){
+                margin-right:91px;
+            }
+         }
+    }
+    #innerPlayer{
+        >li{
+            margin:0 auto;
+            height: 40px;
+            line-height: 40px;
+            margin-bottom:7px;
+            border-radius: 5px;
+            padding: 0px 12px;
+            max-width: 600px;
+        }
+        li{
+            ul{
+                width: 470px;
+                li:nth-child(1){
+                    margin-left:8px;
+                    margin-right:45px;
+                }
+                li:nth-child(2){
+                    margin-right:83px;
+                }
+                li:nth-child(3){
+                    margin-right:87px;
+                }
+             }
+        }
+    }
+
+
 }

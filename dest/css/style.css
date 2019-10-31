@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -399,6 +400,89 @@ button {
   background: #53d674;
   padding: 5px 20px; }
 
+/* 排行榜 */
+.leaderBoard {
+  color: #333; }
+  .leaderBoard h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #FFF; }
+  .leaderBoard p {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #FFF; }
+
+.boardTitle {
+  width: 90%;
+  background-color: #666;
+  margin: 0 auto;
+  max-width: 400px; }
+  .boardTitle li {
+    float: left;
+    padding: 0 10px;
+    line-height: 30px;
+    margin-right: 5px;
+    border-radius: 5px 5px 0 0; }
+  .boardTitle #rankAll {
+    background-color: #84ccc9; }
+  .boardTitle #rankP_1 {
+    background-color: #ffeb9d; }
+  .boardTitle #rankP_2 {
+    background-color: #58d8ff; }
+  .boardTitle #rankP_3 {
+    background-color: #ff99a2; }
+
+.boardInner {
+  width: calc(90% - 30px);
+  background-color: #84ccc9;
+  margin: 0 auto;
+  clear: both;
+  padding: 15px;
+  border-radius: 0 5px 5px 5px;
+  max-width: 370px; }
+  .boardInner .innerTitle {
+    width: 300px;
+    margin: 0 auto; }
+    .boardInner .innerTitle li {
+      float: left;
+      margin-bottom: 10px; }
+    .boardInner .innerTitle li:nth-child(1) {
+      margin-left: 2px;
+      margin-right: 15px; }
+    .boardInner .innerTitle li:nth-child(2) {
+      margin-right: 35px; }
+    .boardInner .innerTitle li:nth-child(3) {
+      margin-right: 30px; }
+
+#innerPlayer {
+  clear: both; }
+  #innerPlayer > li {
+    margin: 0 auto;
+    height: 36px;
+    line-height: 36px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 0px 10px;
+    max-width: 400px; }
+  #innerPlayer li ul {
+    width: 280px;
+    margin: 0 auto; }
+    #innerPlayer li ul li {
+      float: left;
+      width: 30px; }
+    #innerPlayer li ul li:nth-child(1) {
+      margin-left: 4px;
+      margin-right: 8px; }
+    #innerPlayer li ul li:nth-child(2) {
+      margin-right: 35px; }
+    #innerPlayer li ul li:nth-child(3) {
+      margin-right: 35px; }
+    #innerPlayer li ul li:nth-child(4):after {
+      content: '/'; }
+    #innerPlayer li ul li:nth-child(5):after {
+      content: '/'; }
+
 @media all and (min-width: 768px) {
   [class|="col"] {
     float: left;
@@ -513,7 +597,43 @@ button {
     padding-bottom: 95px;
     margin-left: 7px;
     margin-right: 7px;
-    margin-bottom: 14px; } }
+    margin-bottom: 14px; }
+  .boardTitle {
+    max-width: 550px; }
+    .boardTitle li {
+      padding: 0px 20px;
+      line-height: 36px; }
+  .boardInner {
+    max-width: 520px; }
+    .boardInner .innerTitle {
+      width: 450px; }
+    .boardInner .innerTitle li:nth-child(1) {
+      margin-left: 9px;
+      margin-right: 48px; }
+    .boardInner .innerTitle li:nth-child(2) {
+      margin-right: 84px; }
+    .boardInner .innerTitle li:nth-child(3) {
+      margin-right: 72px; }
+  #innerPlayer > li {
+    margin: 0 auto;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 7px;
+    border-radius: 5px;
+    padding: 0px 12px;
+    max-width: 450px; }
+  #innerPlayer li ul {
+    width: 423px; }
+    #innerPlayer li ul li {
+      float: left;
+      width: 40px; }
+    #innerPlayer li ul li:nth-child(1) {
+      margin-left: 8px;
+      margin-right: 30px; }
+    #innerPlayer li ul li:nth-child(2) {
+      margin-right: 75px; }
+    #innerPlayer li ul li:nth-child(3) {
+      margin-right: 65px; } }
 
 @media all and (min-width: 992px) {
   .indexHeader .indexWinner {
@@ -731,7 +851,37 @@ button {
   .col-xl-11 {
     width: 91.66667%; }
   .col-xl-12 {
-    width: 100%; } }
+    width: 100%; }
+  .boardTitle {
+    max-width: 700px; }
+  .boardInner {
+    max-width: 670px; }
+    .boardInner .innerTitle {
+      width: 600px; }
+      .boardInner .innerTitle li:nth-child(1) {
+        margin-left: 60px;
+        margin-right: 62px; }
+      .boardInner .innerTitle li:nth-child(2) {
+        margin-right: 95px; }
+      .boardInner .innerTitle li:nth-child(3) {
+        margin-right: 91px; }
+  #innerPlayer > li {
+    margin: 0 auto;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 7px;
+    border-radius: 5px;
+    padding: 0px 12px;
+    max-width: 600px; }
+  #innerPlayer li ul {
+    width: 470px; }
+    #innerPlayer li ul li:nth-child(1) {
+      margin-left: 8px;
+      margin-right: 45px; }
+    #innerPlayer li ul li:nth-child(2) {
+      margin-right: 83px; }
+    #innerPlayer li ul li:nth-child(3) {
+      margin-right: 87px; } }
 
 @media all and (min-width: 1200px) {
   h1 {
