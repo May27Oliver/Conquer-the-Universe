@@ -20,6 +20,7 @@ gulp.task('minicss', function () {
         .pipe(cleanCSS({
             compatibility: 'ie8'}))
         .pipe(gulp.dest('dest/css'));
+        
 });
 
 // SASS
@@ -50,7 +51,8 @@ gulp.task('default',function () {
         server: {
             //根目錄 可以把function放在參數裡執行完再回來做function
             baseDir: "./dest",
-            index: "video.html"
+            // index: "video.html"
+            index: "homeCitizen.html"
         }
     });
 
