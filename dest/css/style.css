@@ -597,6 +597,76 @@ button {
     #innerPlayer li ul li:nth-child(5):after {
       content: '/'; }
 
+.shopContainer {
+  margin-top: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  background-color: #333; }
+  .shopContainer .shoptitle {
+    margin: 30px auto 50px;
+    padding: 30px;
+    width: 150px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../img/title.png); }
+    .shopContainer .shoptitle h2 {
+      color: #fff; }
+  .shopContainer .productBox {
+    margin: 0 auto;
+    width: 95%;
+    background-color: #90BEE3;
+    border-radius: 10px;
+    background-image: url(../img/pinkPlanet.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom; }
+  .shopContainer .model {
+    margin-bottom: 50px; }
+  .shopContainer .model .pic01 {
+    padding: 20px;
+    margin-top: 50px; }
+  .shopContainer .productPic {
+    box-sizing: border-box;
+    margin: 50px auto 20px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    position: relative; }
+    .shopContainer .productPic img {
+      top: calc(50% - 50px);
+      left: calc(50% - 50px);
+      position: absolute;
+      width: 100px;
+      text-align: center; }
+  .shopContainer .productTitle h3 {
+    font-weight: bold;
+    color: #fff; }
+  .shopContainer .productTitle .productBtn {
+    width: 60px;
+    margin: 10px auto;
+    background-color: #448aca;
+    padding: 5px;
+    border-radius: 50px; }
+    .shopContainer .productTitle .productBtn h2 {
+      color: #fff; }
+
+.moreProductBtn {
+  text-align: center;
+  margin: 30px auto;
+  width: 80px;
+  border-radius: 50px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  overflow: hidden;
+  background-color: #E8B51C; }
+  .moreProductBtn h2 {
+    font-weight: bold;
+    color: #fff; }
+
 @media all and (min-width: 768px) {
   [class|="col"] {
     float: left;
