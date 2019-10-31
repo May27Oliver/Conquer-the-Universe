@@ -20,6 +20,7 @@ gulp.task('minicss', function () {
         .pipe(cleanCSS({
             compatibility: 'ie8'}))
         .pipe(gulp.dest('dest/css'));
+        
 });
 
 // SASS
