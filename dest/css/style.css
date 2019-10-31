@@ -73,6 +73,10 @@ p {
   font-size: 15px;
   font-weight: 400; }
 
+a {
+  font-size: 19px;
+  font-family: Arial,'Noto Sans TC', sans-serif; }
+
 button {
   font-size: 19px;
   font-family: Arial,'Noto Sans TC', sans-serif;
@@ -658,6 +662,9 @@ button {
   p {
     font-size: 15px;
     font-weight: 400; }
+  a {
+    font-size: 19px;
+    font-family: Arial,'Noto Sans TC', sans-serif; }
   button {
     font-size: 19px;
     font-family: Arial,'Noto Sans TC', sans-serif;
@@ -846,7 +853,6 @@ button {
     justify-content: space-between;
     margin: 5vw auto; }
     .select-section button {
-      font-size: 20px;
       background-color: #1d2088;
       color: white;
       padding: 5px 18px;
@@ -864,8 +870,8 @@ button {
     vertical-align: middle;
     margin: 5vw auto 0; }
     .video iframe {
-      width: 70%;
-      height: 70%;
+      width: 85%;
+      height: 78%;
       margin: 5vw 0 0 0; }
   .rabbit {
     width: 10vw;
@@ -897,27 +903,39 @@ button {
     padding: 5vw;
     box-sizing: border-box; }
     .question h2 {
-      font-size: 2vw;
       font-weight: bold; }
     .question li {
-      font-size: 1.5vw;
       margin: 2vw 0; }
       .question li a {
         color: black; }
       .question li a:hover {
         color: #1d2088; }
     .question p {
-      font-size: 1.5vw;
       margin: 2vw 0;
       color: red; }
     .question .button-section button {
-      font-size: 20px;
       background-color: #1d2088;
       color: white;
       padding: 5px 18px;
       box-shadow: 0px 0px 20px #fff;
       border-radius: 20px;
-      border: none; } }
+      border: none; }
+  .tip-robot {
+    display: none; }
+  .footer {
+    background: black; }
+    .footer .footer-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1vw; }
+    .footer .icon {
+      text-align: center; }
+      .footer .icon img {
+        width: 2vw; }
+    .footer p {
+      margin-top: 1vw;
+      text-align: center;
+      color: white; } }
 
 @media all and (min-width: 992px) {
   .navTop {
@@ -1046,7 +1064,6 @@ button {
     justify-content: space-between;
     margin: 5vw auto; }
     .select-section button {
-      font-size: 20px;
       background-color: #1d2088;
       color: white;
       padding: 5px 18px;
@@ -1064,8 +1081,8 @@ button {
     vertical-align: middle;
     margin: 5vw auto 0; }
     .video iframe {
-      width: 70%;
-      height: 70%;
+      width: 80%;
+      height: 75%;
       margin: 5vw 0 0 0; }
   .rabbit {
     width: 10vw;
@@ -1097,17 +1114,14 @@ button {
     padding: 5vw;
     box-sizing: border-box; }
     .question h2 {
-      font-size: 2vw;
       font-weight: bold; }
     .question li {
-      font-size: 1.5vw;
       margin: 2vw 0; }
       .question li a {
         color: black; }
       .question li a:hover {
         color: #1d2088; }
     .question p {
-      font-size: 1.5vw;
       margin: 2vw 0;
       color: red; }
     .question .button-section button {
@@ -1274,8 +1288,8 @@ button {
     text-align: center;
     margin: 5vw auto 0; }
     .video iframe {
-      width: 70%;
-      height: 70%;
+      width: 80%;
+      height: 75%;
       margin: 5vw 0 0 0; }
   .rabbit {
     width: 10vw;
@@ -1307,21 +1321,17 @@ button {
     padding: 5vw;
     box-sizing: border-box; }
     .question h2 {
-      font-size: 2vw;
       font-weight: bold; }
     .question li {
-      font-size: 1.5vw;
       margin: 2vw 0; }
       .question li a {
         color: black; }
       .question li a:hover {
         color: #1d2088; }
     .question p {
-      font-size: 1.5vw;
       margin: 2vw 0;
       color: red; }
     .question .button-section button {
-      font-size: 20px;
       background-color: #1d2088;
       color: white;
       padding: 5px 18px;

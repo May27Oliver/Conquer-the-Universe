@@ -85,8 +85,8 @@
         text-align: center;//iframe是inline屬性
         margin: 5vw auto 0;
         iframe{
-            width:70%;
-            height: 70%;
+            width:80%;
+            height: 75%;
             margin: 5vw 0 0 0;
         }
     }
@@ -130,11 +130,9 @@
         padding: 5vw;
         box-sizing: border-box;
         h2{
-          font-size: 2vw;
           font-weight: bold;  
         }
         li{
-            font-size: 1.5vw;
             margin: 2vw 0;
             a{
                 color:black;
@@ -146,7 +144,6 @@
         
         
         p{
-            font-size: 1.5vw;
             margin: 2vw 0;
             color: red;
         }
@@ -155,7 +152,6 @@
             // display: flex;
             // justify-content: space-around;
             button{
-                font-size: 20px;
                 background-color: #1d2088;
                 color: white;
                 padding:5px 18px;

@@ -128,6 +128,12 @@
         font-size: $fontBasesize * 7.5;
         font-weight: 400;
     }
+
+    a{
+        font-size: $fontBasesize * 9.5;
+        font-family: Arial,'Noto Sans TC', sans-serif;
+    }
+
     button{
         font-size: $fontBasesize * 9.5;
         font-family: Arial,'Noto Sans TC', sans-serif;
