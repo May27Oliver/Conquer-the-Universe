@@ -1,5 +1,5 @@
 @include respond(lg) {
-    
+    @include lg-grid(12);    
     body {
         // font-size: 40px;
     }
@@ -370,7 +370,6 @@
             color:white;
         }
     }
-    @include xl-grid(12);
 
     // 排行榜
     .boardTitle{
@@ -421,5 +420,18 @@
 
 
 
-
+    /*____________________ VOTE ____________________*/
+    .votePage{
+        .container{
+            .voteCard{
+                .voteWrapper{
+                    button{
+                        width: 100px;
+                        font-size: 18px;
+                        padding: 5px 18px;
+                    }
+                }
+            }
+        }
+    }
 }

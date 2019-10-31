@@ -597,6 +597,78 @@ button {
     #innerPlayer li ul li:nth-child(5):after {
       content: '/'; }
 
+/*____________________ VOTE ____________________*/
+.votePage {
+  background: url("../img/vote/page-bg.png") no-repeat center center/cover; }
+  .votePage .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 1px 15px;
+    box-sizing: border-box; }
+    .votePage .container h1 {
+      background: url("../img/vote/title-bg.png") no-repeat center center/contain;
+      color: #fff;
+      text-align: center;
+      line-height: 2.8;
+      margin-top: 150px; }
+    .votePage .container h2 {
+      background: #84ccc9;
+      border-radius: 10px 10px 0 0;
+      padding: 15px;
+      margin: 80px 0 15px; }
+    .votePage .container .voteEnd {
+      margin-bottom: 250px; }
+      .votePage .container .voteEnd h2 {
+        margin: 50px 0 15px; }
+    .votePage .container .voteCard .voteWrapper {
+      background: #c0eef1;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+      padding: 15px;
+      margin-left: 15px; }
+      .votePage .container .voteCard .voteWrapper .voteChart img {
+        width: 80%; }
+      .votePage .container .voteCard .voteWrapper .voteText span {
+        margin-top: 10px;
+        font-size: 15px;
+        display: block; }
+      .votePage .container .voteCard .voteWrapper .voteText h3 {
+        margin-top: 10px; }
+      .votePage .container .voteCard .voteWrapper .voteText p {
+        margin-top: 10px; }
+      .votePage .container .voteCard .voteWrapper button {
+        width: 80px;
+        background: #1d2088;
+        color: #fff;
+        font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 5px 10px;
+        margin: 10px 10px 0;
+        border: none;
+        border-radius: 20px; }
+        .votePage .container .voteCard .voteWrapper button[disabled|="disabled"] {
+          background: #ccc; }
+        .votePage .container .voteCard .voteWrapper button#report {
+          width: 40px;
+          background: #fff;
+          color: #333;
+          font-size: 10px;
+          font-weight: 400;
+          padding: 2px 0;
+          margin: 0;
+          border-radius: 5px;
+          box-sizing: border-box;
+          position: absolute;
+          right: 20px;
+          top: 18px; }
+      .votePage .container .voteCard .voteWrapper:first-child button {
+        margin-left: 0; }
+    .votePage .container .voteCard:first-child .voteWrapper {
+      margin-left: 0; }
+
 @media all and (min-width: 768px) {
   [class|="col"] {
     float: left;
@@ -750,6 +822,34 @@ button {
       margin-right: 65px; } }
 
 @media all and (min-width: 992px) {
+  [class|="col"] {
+    float: left;
+    padding: 0 15px;
+    box-sizing: border-box; }
+  .col-lg-1 {
+    width: 8.33333%; }
+  .col-lg-2 {
+    width: 16.66667%; }
+  .col-lg-3 {
+    width: 25%; }
+  .col-lg-4 {
+    width: 33.33333%; }
+  .col-lg-5 {
+    width: 41.66667%; }
+  .col-lg-6 {
+    width: 50%; }
+  .col-lg-7 {
+    width: 58.33333%; }
+  .col-lg-8 {
+    width: 66.66667%; }
+  .col-lg-9 {
+    width: 75%; }
+  .col-lg-10 {
+    width: 83.33333%; }
+  .col-lg-11 {
+    width: 91.66667%; }
+  .col-lg-12 {
+    width: 100%; }
   .banner {
     position: fixed;
     width: 100%; }
@@ -997,34 +1097,6 @@ button {
       margin-top: 1vw;
       text-align: center;
       color: white; }
-  [class|="col"] {
-    float: left;
-    padding: 0 15px;
-    box-sizing: border-box; }
-  .col-xl-1 {
-    width: 8.33333%; }
-  .col-xl-2 {
-    width: 16.66667%; }
-  .col-xl-3 {
-    width: 25%; }
-  .col-xl-4 {
-    width: 33.33333%; }
-  .col-xl-5 {
-    width: 41.66667%; }
-  .col-xl-6 {
-    width: 50%; }
-  .col-xl-7 {
-    width: 58.33333%; }
-  .col-xl-8 {
-    width: 66.66667%; }
-  .col-xl-9 {
-    width: 75%; }
-  .col-xl-10 {
-    width: 83.33333%; }
-  .col-xl-11 {
-    width: 91.66667%; }
-  .col-xl-12 {
-    width: 100%; }
   .boardTitle {
     max-width: 700px; }
   .boardInner {
@@ -1054,9 +1126,42 @@ button {
     #innerPlayer li ul li:nth-child(2) {
       margin-right: 83px; }
     #innerPlayer li ul li:nth-child(3) {
-      margin-right: 87px; } }
+      margin-right: 87px; }
+  /*____________________ VOTE ____________________*/
+  .votePage .container .voteCard .voteWrapper button {
+    width: 100px;
+    font-size: 18px;
+    padding: 5px 18px; } }
 
 @media all and (min-width: 1200px) {
+  [class|="col"] {
+    float: left;
+    padding: 0 15px;
+    box-sizing: border-box; }
+  .col-xl-1 {
+    width: 8.33333%; }
+  .col-xl-2 {
+    width: 16.66667%; }
+  .col-xl-3 {
+    width: 25%; }
+  .col-xl-4 {
+    width: 33.33333%; }
+  .col-xl-5 {
+    width: 41.66667%; }
+  .col-xl-6 {
+    width: 50%; }
+  .col-xl-7 {
+    width: 58.33333%; }
+  .col-xl-8 {
+    width: 66.66667%; }
+  .col-xl-9 {
+    width: 75%; }
+  .col-xl-10 {
+    width: 83.33333%; }
+  .col-xl-11 {
+    width: 91.66667%; }
+  .col-xl-12 {
+    width: 100%; }
   h1 {
     font-size: 30px;
     font-weight: 700; }
@@ -1265,32 +1370,4 @@ button {
     padding-bottom: 45%;
     margin-left: 7px;
     margin-right: 7px;
-    margin-bottom: 14px; }
-  [class|="col"] {
-    float: left;
-    padding: 0 15px;
-    box-sizing: border-box; }
-  .col-xl-1 {
-    width: 8.33333%; }
-  .col-xl-2 {
-    width: 16.66667%; }
-  .col-xl-3 {
-    width: 25%; }
-  .col-xl-4 {
-    width: 33.33333%; }
-  .col-xl-5 {
-    width: 41.66667%; }
-  .col-xl-6 {
-    width: 50%; }
-  .col-xl-7 {
-    width: 58.33333%; }
-  .col-xl-8 {
-    width: 66.66667%; }
-  .col-xl-9 {
-    width: 75%; }
-  .col-xl-10 {
-    width: 83.33333%; }
-  .col-xl-11 {
-    width: 91.66667%; }
-  .col-xl-12 {
-    width: 100%; } }
+    margin-bottom: 14px; } }
