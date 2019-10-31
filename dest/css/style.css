@@ -127,6 +127,120 @@ button {
   background-repeat: no-repeat;
   /* background-size: contain; */ }
 
+.banner {
+  position: fixed;
+  width: 100%;
+  z-index: 999; }
+  .banner .hamburger {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    border-radius: 50%;
+    border: 2px solid #d4f0f8;
+    background-color: rgba(133, 215, 240, 0.9); }
+  .banner .hamburger::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0px 8px 0px #fff;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    transition: .5s; }
+  .banner .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0px -8px 0px #fff;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    transition: .5s; }
+  .banner nav {
+    width: 70vw;
+    height: 100vh;
+    /*background-color: rgba(133, 215, 240, 0.9);*/
+    background-image: linear-gradient(180deg, #85d7f0 0%, rgba(75, 54, 145, 0.8) 100%);
+    position: absolute;
+    top: 0;
+    right: -70vw;
+    transition: .5s; }
+    .banner nav ul {
+      padding-top: 100px; }
+    .banner nav li {
+      list-style: none;
+      margin: 30px;
+      text-align: center; }
+    .banner nav a {
+      color: white;
+      text-decoration: none; }
+  .banner span {
+    display: block;
+    margin-top: 60px; }
+    .banner span #loginBtn {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      border: 1px solid #fff;
+      line-height: 40px;
+      width: 150px;
+      border-radius: 20px; }
+  .banner #nav-control {
+    position: fixed;
+    margin-left: -9999px; }
+  .banner #nav-control:checked ~ .hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    box-shadow: none;
+    transform: skew(10deg, -45deg);
+    transition: .5s;
+    transform: rotate(225deg); }
+  .banner #nav-control:checked ~ .hamburger::after {
+    content: '';
+    width: 20px;
+    height: 2px;
+    display: block;
+    box-shadow: none;
+    background-color: white;
+    transform: skew(-10deg, 45deg);
+    transition: .5s;
+    transform: rotate(-225deg); }
+  .banner #nav-control:checked ~ nav {
+    transition: .5s;
+    right: 0; }
+  .banner .logo {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0; }
+    .banner .logo h1 {
+      text-indent: -9999px; }
+      .banner .logo h1 a {
+        display: block;
+        margin: 15px 0 5px 20px;
+        background-image: url(../img/logo.png);
+        background-repeat: no-repeat;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        width: 130px;
+        height: 55px; }
+
 .indexHeader h1 {
   text-align: center;
   margin: 70px auto; }
@@ -636,6 +750,65 @@ button {
       margin-right: 65px; } }
 
 @media all and (min-width: 992px) {
+  .banner {
+    position: fixed;
+    width: 100%; }
+    .banner .hamburger {
+      width: 100%;
+      height: 100px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 998;
+      border-radius: 0;
+      border: 0;
+      background-color: rgba(255, 255, 255, 0); }
+    .banner .hamburger::before {
+      display: none; }
+    .banner .hamburger::after {
+      display: none; }
+    .banner nav {
+      width: 100%;
+      height: 100px;
+      background-image: none;
+      top: 0;
+      right: 0;
+      transition: .5s; }
+      .banner nav ul {
+        position: absolute;
+        padding-top: 0;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999; }
+      .banner nav li {
+        list-style: none;
+        margin: 0 15px;
+        line-height: 100px;
+        float: left;
+        text-align: center; }
+    .banner span {
+      margin-top: 0;
+      position: absolute;
+      right: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 999; }
+      .banner span #loginBtn {
+        text-align: center;
+        border: 0;
+        line-height: 56px;
+        background-image: url(../img/loginBtn.png);
+        width: 176px;
+        height: 56px;
+        color: #333; }
+    .banner #nav-control {
+      display: none; }
+    .banner .logo h1 a {
+      margin: 15px 0px 0px 50px;
+      background-size: 100%;
+      width: calc(230px * .8);
+      height: calc(91px * .8); }
   .indexHeader .indexWinner {
     width: 600px; }
     .indexHeader .indexWinner li {
