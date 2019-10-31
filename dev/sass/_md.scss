@@ -127,8 +127,8 @@
         ul{
             li{
                 a{
-                    padding-left: 11.5px;
-                    padding-right: 11.5px;
+                    padding-left: 12px;
+                    padding-right: 12.5px;
                 }
             }
         }
@@ -136,6 +136,7 @@
         height: 580px;
         .tabIn{
             height: 460px;
+            border-radius: 0px 0px 8px 8px;
             .wrapTabIn{
                 overflow: visible;
                 .tab-inner{
