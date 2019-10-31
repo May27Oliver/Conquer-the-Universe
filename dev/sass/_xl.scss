@@ -1,7 +1,7 @@
 @include respond(xl) {
-
+    @include xl-fontsize($fontBasesize);
     body {
-    font-family: Arial, Helvetica, sans-serif,'微軟正黑體';
+    // font-family: Arial, Helvetica, sans-serif,'微軟正黑體';
     background-color: #1c0e44;
     background-image:
     url(../img/star2.png),
@@ -13,10 +13,11 @@
     background-repeat: no-repeat;
     /* background-size: contain; */
     }
-    .vedio-body{
+    .video-body{
         width: 100%;
         height: 100%;
         background: url(../img/background.png);
+        background-size:cover;
         position: relative;
         z-index: -2;
     }
@@ -39,7 +40,8 @@
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
-        font-family: "微軟正黑體";
+        align-items: center;
+        // font-family: "微軟正黑體";
         .logo{
             img{
                 margin:1.5vw 0 0 0 ;
@@ -53,11 +55,11 @@
         display: flex;
         justify-content: space-around;
         li{
-            margin: 3vw 40px 0 ;
+            padding: 5px 15px 0 ;
             a{
                 color:white;
                 text-decoration: none;
-                font-size: 1vw;  
+                font-size: 24px;  
             }
             
         }
@@ -99,7 +101,7 @@
             font-weight: bold;
             text-align: center;
             line-height: 6vw;
-            font-size: 3vw;
+            font-size: 30px;
         }
         h2{
             text-align: center;
@@ -113,23 +115,30 @@
         margin: 5vw auto;
         button{
             font-size: 20px;
+            // background-color: #1d2088;
             background-color: #1d2088;
+            &:hover{
+                background-color: lighten(#1d2088 , 10%);
+            }
             color: white;
-            padding: 0.5vw;
-            box-shadow: white;
+            padding:5px 18px;
+            // box-shadow: 0px 0px 20px #fff;
             border-radius: 20px;
+            border: 1px solid #fff;
         }
     }
     // 影片區
-    .vedio{
-        width: 55%;
-        height: 450px;
+    .video{
+        width: 53vw;
+        height: 36vw;
         overflow: hidden;
-        background: url("../img/vedio-frame.png");
+        background: url("../img/video-frame.png");
         background-size: cover;
         text-align: center;//iframe是inline屬性
         margin: 5vw auto 0;
         iframe{
+            width:70%;
+            height: 70%;
             margin: 5vw 0 0 0;
         }
     }
@@ -149,7 +158,7 @@
         width: 10vw;
         position: absolute;
         top:37vw;
-        left:14vw;
+        left:5vw;
         z-index:-1;
         img{
             width: 20vw;
@@ -157,8 +166,8 @@
     }
 
     // 影片區slider
-    .vedio-slider{
-        width: 55%;
+    .video-slider{
+        width: 53vw;
         height: 10vw;
         margin: 2vw auto;
         background-color: #CCC;
@@ -166,7 +175,7 @@
     }
     // Question
     .question{
-        width: 55%;
+        width: 53vw;
         margin: 5vw auto;
         background: #dcdcdc;
         border-radius: 30px;
@@ -198,14 +207,13 @@
             // display: flex;
             // justify-content: space-around;
             button{
-                float:right;
                 font-size: 20px;
                 background-color: #1d2088;
                 color: white;
-                padding: 0.5vw;
-                box-shadow: white;
+                padding:5px 18px;
+                box-shadow: 0px 0px 20px #fff;
                 border-radius: 20px;
-                margin-right: 1vw;
+                border: none;
             }
         }
     }
@@ -221,7 +229,7 @@
     // footer
     .footer{
         background: black;
-        font-family: "微軟正黑體";
+        // font-family: "微軟正黑體";
         .footer-wrap {
             max-width:1200px;
             margin:0 auto;
@@ -239,6 +247,45 @@
             color:white;
         }
     }
+
+    // 公民的家
+//內容區塊左
+.supportBox{
+        
+    h4{
+        font-size: 24px;
+        float: none;
+        width: 100%;
+    }
+    .supportBoxIn{
+        width: 95%;
+        margin-right: 10px;
+    }   
+}
+
+.abilityBox{ 
+    h4{
+        font-size: 24px;
+        width:100%;
+        float: none;
+    }
+    .abilityBoxIn{
+        width: 95%;
+        margin-right: 10px;
+    }
+}
+
+.redBallIn{
+    padding: 200px 15px;
+}
+
+.propBox,.propBox2{
+    width: 45%;   
+    padding-bottom: 45%;
+    margin-left: 7px;
+    margin-right: 7px;
+    margin-bottom: 14px;
+}
 
     
     @include xl-grid(12);
