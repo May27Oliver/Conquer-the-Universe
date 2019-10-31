@@ -13,6 +13,14 @@
     background-repeat: no-repeat;
     /* background-size: contain; */
     }
+
+    .banner{
+        nav{
+            li{
+                margin:0 25px;
+            }
+        }
+    }
     .video-body{
         width: 100%;
         height: 100%;
@@ -22,64 +30,64 @@
         z-index: -2;
     }
     
-            // 天長條
-    .navTop{
+    //         // 天長條
+    // .navTop{
         
-        color:white;
-        background:black;
-        overflow: hidden;
-        span{
-            float:right;
-            padding: .3vw;
-            margin:0 1vw 0;
-        }
-    }
+    //     color:white;
+    //     background:black;
+    //     overflow: hidden;
+    //     span{
+    //         float:right;
+    //         padding: .3vw;
+    //         margin:0 1vw 0;
+    //     }
+    // }
 
-    .nav{
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        // font-family: "微軟正黑體";
-        .logo{
-            img{
-                margin:1.5vw 0 0 0 ;
-                width:12vw;
-            }
+    // .nav{
+    //     max-width: 1200px;
+    //     margin: 0 auto;
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: center;
+    //     // font-family: "微軟正黑體";
+    //     .logo{
+    //         img{
+    //             margin:1.5vw 0 0 0 ;
+    //             width:12vw;
+    //         }
             
-        }
-    }
+    //     }
+    // }
     
-    .navBar ul{
-        display: flex;
-        justify-content: space-around;
-        li{
-            padding: 5px 15px 0 ;
-            a{
-                color:white;
-                text-decoration: none;
-                font-size: 24px;  
-            }
+    // .navBar ul{
+    //     display: flex;
+    //     justify-content: space-around;
+    //     li{
+    //         padding: 5px 15px 0 ;
+    //         a{
+    //             color:white;
+    //             text-decoration: none;
+    //             font-size: 24px;  
+    //         }
             
-        }
-    }
+    //     }
+    // }
     
-    .navLogin{
-        .login{
-            margin:2.3vw 0 0 0;
-            width:8vw;
-            height:2.5vw;
-            background: url("../img/loginButton.png");
-            background-size: cover;
-            text-align: center;
-            line-height: 2.5vw;
-            a{
-                color:black;
-                font-size: .8vw; 
-            }
-        }
-    }
+    // .navLogin{
+    //     .login{
+    //         margin:2.3vw 0 0 0;
+    //         width:8vw;
+    //         height:2.5vw;
+    //         background: url("../img/loginButton.png");
+    //         background-size: cover;
+    //         text-align: center;
+    //         line-height: 2.5vw;
+    //         a{
+    //             color:black;
+    //             font-size: .8vw; 
+    //         }
+    //     }
+    // }
     .container{
         width: 100%;
         max-width: 1200px;
