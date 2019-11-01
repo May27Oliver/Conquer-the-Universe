@@ -759,6 +759,7 @@ button {
         margin-left: 0; }
     .votePage .container .voteCard:first-child .voteWrapper {
       margin-left: 0; }
+<<<<<<< HEAD
 
 .video-body {
   width: 100%;
@@ -885,6 +886,8 @@ button {
     margin-top: 1vw;
     text-align: center;
     color: white; }
+=======
+>>>>>>> 27cd88f1bcfb409e9a441a0572f9b13e479785c1
 
 @media all and (min-width: 768px) {
   [class|="col"] {
@@ -1003,8 +1006,8 @@ button {
     width: 240px;
     height: 580px; }
     #tab-demo ul li a {
-      padding-left: 12px;
-      padding-right: 12.5px; }
+      padding-left: 6px;
+      padding-right: 6.5px; }
     #tab-demo .tabIn {
       height: 460px;
       border-radius: 0px 0px 8px 8px; }
@@ -1074,36 +1077,36 @@ button {
     margin: auto;
     padding: 100px 15px;
     box-sizing: border-box; }
-  .indexHeader {
-    padding-top: 150px; }
-    .indexHeader h1 {
-      padding-bottom: 50px; }
-    .indexHeader .indexWinner {
-      width: 600px; }
-      .indexHeader .indexWinner li {
-        width: 200px; }
-      .indexHeader .indexWinner .winner1 .alienImg {
-        bottom: 185px; }
-      .indexHeader .indexWinner .winner1 .stageText p {
-        bottom: 120px; }
-      .indexHeader .indexWinner .winner2 .alienImg {
-        bottom: 150px; }
-      .indexHeader .indexWinner .winner2 .stageText {
-        padding-top: 389px; }
-        .indexHeader .indexWinner .winner2 .stageText p {
-          bottom: 90px; }
-      .indexHeader .indexWinner .winner2 .planetTxt {
-        padding-top: 50px; }
-      .indexHeader .indexWinner .winner3 .alienImg {
-        bottom: 120px; }
-      .indexHeader .indexWinner .winner3 .stageText {
-        padding-top: 359px; }
-        .indexHeader .indexWinner .winner3 .stageText p {
-          bottom: 60px; }
-      .indexHeader .indexWinner .winner3 .planetTxt {
-        padding-top: 80px; }
+  .indexHeader .indexWinner {
+    width: 450px; }
+    .indexHeader .indexWinner li {
+      width: 150px; }
       .indexHeader .indexWinner li .stageText {
-        padding-top: 440px; }
+        padding-top: 320px; }
+        .indexHeader .indexWinner li .stageText h1 {
+          padding-bottom: 5px; }
+    .indexHeader .indexWinner .winner1 .alienImg {
+      bottom: 140px; }
+    .indexHeader .indexWinner .winner1 .stageText p {
+      bottom: 90px; }
+    .indexHeader .indexWinner .winner2 .alienImg {
+      bottom: 115px; }
+    .indexHeader .indexWinner .winner2 .stageText {
+      padding-top: 279px; }
+      .indexHeader .indexWinner .winner2 .stageText p {
+        bottom: 65px; }
+    .indexHeader .indexWinner .winner2 .planetTxt {
+      padding-top: 40px; }
+    .indexHeader .indexWinner .winner3 .alienImg {
+      bottom: 90px; }
+    .indexHeader .indexWinner .winner3 .stageText {
+      padding-top: 249px; }
+      .indexHeader .indexWinner .winner3 .stageText p {
+        bottom: 45px; }
+    .indexHeader .indexWinner .winner3 .planetTxt {
+      padding-top: 70px; }
+  .indexHeader li .stageText {
+    padding-top: 320px; }
   .title {
     width: 18.5vw;
     height: 6vw;
@@ -1246,7 +1249,11 @@ button {
         z-index: 999; }
       .banner nav li {
         list-style: none;
+<<<<<<< HEAD
         margin: 0 12px;
+=======
+        margin: 0 11px;
+>>>>>>> 27cd88f1bcfb409e9a441a0572f9b13e479785c1
         line-height: 100px;
         float: left;
         text-align: center; }
@@ -1518,7 +1525,7 @@ button {
     background-repeat: no-repeat;
     /* background-size: contain; */ }
   .banner nav li {
-    margin: 0 25px; }
+    margin: 0 20px; }
   .video-body {
     width: 100%;
     height: 100%;
