@@ -1,1 +1,1 @@
-module.exports = 'homeCitizen.html';
+module.exports = 'index.html';
