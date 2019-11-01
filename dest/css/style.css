@@ -618,7 +618,76 @@ button {
     #innerPlayer li ul li:nth-child(5):after {
       content: '/'; }
 
-<<<<<<< HEAD
+.shopContainer {
+  margin-top: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  background-color: #333; }
+  .shopContainer .shoptitle {
+    margin: 30px auto 50px;
+    padding: 30px;
+    width: 150px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../img/title.png); }
+    .shopContainer .shoptitle h2 {
+      color: #fff; }
+  .shopContainer .productBox {
+    margin: 0 auto;
+    width: 95%;
+    background-color: #90BEE3;
+    border-radius: 10px;
+    background-image: url(../img/pinkPlanet.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom; }
+  .shopContainer .model {
+    margin-bottom: 50px; }
+  .shopContainer .model .pic01 {
+    padding: 20px;
+    margin-top: 50px; }
+  .shopContainer .productPic {
+    box-sizing: border-box;
+    margin: 50px auto 20px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    position: relative; }
+    .shopContainer .productPic img {
+      top: calc(50% - 50px);
+      left: calc(50% - 50px);
+      position: absolute;
+      width: 100px;
+      text-align: center; }
+  .shopContainer .productTitle h3 {
+    font-weight: bold;
+    color: #fff; }
+  .shopContainer .productTitle .productBtn {
+    width: 60px;
+    margin: 10px auto;
+    background-color: #448aca;
+    padding: 5px;
+    border-radius: 50px; }
+    .shopContainer .productTitle .productBtn h2 {
+      color: #fff; }
+
+.moreProductBtn {
+  text-align: center;
+  margin: 30px auto;
+  width: 80px;
+  border-radius: 50px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  overflow: hidden;
+  background-color: #E8B51C; }
+  .moreProductBtn h2 {
+    font-weight: bold;
+    color: #fff; }
+
 /*____________________ VOTE ____________________*/
 .votePage {
   background: url("../img/vote/page-bg.png") no-repeat center center/cover; }
@@ -690,77 +759,6 @@ button {
         margin-left: 0; }
     .votePage .container .voteCard:first-child .voteWrapper {
       margin-left: 0; }
-=======
-.shopContainer {
-  margin-top: 100px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  text-align: center;
-  background-color: #333; }
-  .shopContainer .shoptitle {
-    margin: 30px auto 50px;
-    padding: 30px;
-    width: 150px;
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url(../img/title.png); }
-    .shopContainer .shoptitle h2 {
-      color: #fff; }
-  .shopContainer .productBox {
-    margin: 0 auto;
-    width: 95%;
-    background-color: #90BEE3;
-    border-radius: 10px;
-    background-image: url(../img/pinkPlanet.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom; }
-  .shopContainer .model {
-    margin-bottom: 50px; }
-  .shopContainer .model .pic01 {
-    padding: 20px;
-    margin-top: 50px; }
-  .shopContainer .productPic {
-    box-sizing: border-box;
-    margin: 50px auto 20px;
-    background-color: antiquewhite;
-    border-radius: 10px;
-    width: 150px;
-    height: 150px;
-    position: relative; }
-    .shopContainer .productPic img {
-      top: calc(50% - 50px);
-      left: calc(50% - 50px);
-      position: absolute;
-      width: 100px;
-      text-align: center; }
-  .shopContainer .productTitle h3 {
-    font-weight: bold;
-    color: #fff; }
-  .shopContainer .productTitle .productBtn {
-    width: 60px;
-    margin: 10px auto;
-    background-color: #448aca;
-    padding: 5px;
-    border-radius: 50px; }
-    .shopContainer .productTitle .productBtn h2 {
-      color: #fff; }
-
-.moreProductBtn {
-  text-align: center;
-  margin: 30px auto;
-  width: 80px;
-  border-radius: 50px;
-  padding: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  overflow: hidden;
-  background-color: #E8B51C; }
-  .moreProductBtn h2 {
-    font-weight: bold;
-    color: #fff; }
->>>>>>> master
 
 @media all and (min-width: 768px) {
   [class|="col"] {
@@ -879,8 +877,8 @@ button {
     width: 240px;
     height: 580px; }
     #tab-demo ul li a {
-      padding-left: 12px;
-      padding-right: 12.5px; }
+      padding-left: 6px;
+      padding-right: 6.5px; }
     #tab-demo .tabIn {
       height: 460px;
       border-radius: 0px 0px 8px 8px; }
@@ -1084,41 +1082,10 @@ button {
       color: white; } }
 
 @media all and (min-width: 992px) {
-<<<<<<< HEAD
-  [class|="col"] {
-    float: left;
-    padding: 0 15px;
-    box-sizing: border-box; }
-  .col-lg-1 {
-    width: 8.33333%; }
-  .col-lg-2 {
-    width: 16.66667%; }
-  .col-lg-3 {
-    width: 25%; }
-  .col-lg-4 {
-    width: 33.33333%; }
-  .col-lg-5 {
-    width: 41.66667%; }
-  .col-lg-6 {
-    width: 50%; }
-  .col-lg-7 {
-    width: 58.33333%; }
-  .col-lg-8 {
-    width: 66.66667%; }
-  .col-lg-9 {
-    width: 75%; }
-  .col-lg-10 {
-    width: 83.33333%; }
-  .col-lg-11 {
-    width: 91.66667%; }
-  .col-lg-12 {
-    width: 100%; }
-=======
   .navTop {
     line-height: 35px; }
     .navTop p {
       margin-right: 60px; }
->>>>>>> master
   .banner {
     position: fixed;
     width: 100%;
@@ -1153,7 +1120,7 @@ button {
         z-index: 999; }
       .banner nav li {
         list-style: none;
-        margin: 0 15px;
+        margin: 0 12px;
         line-height: 100px;
         float: left;
         text-align: center; }
@@ -1359,18 +1326,15 @@ button {
       margin-right: 83px; }
     #innerPlayer li ul li:nth-child(3) {
       margin-right: 87px; }
-<<<<<<< HEAD
+  .boxLeft {
+    width: 260px; }
+    .boxLeft .abilityBox .abilityBoxIn {
+      width: 244.4px; }
   /*____________________ VOTE ____________________*/
   .votePage .container .voteCard .voteWrapper button {
     width: 100px;
     font-size: 18px;
     padding: 5px 18px; } }
-=======
-  .boxLeft {
-    width: 260px; }
-    .boxLeft .abilityBox .abilityBoxIn {
-      width: 244.4px; } }
->>>>>>> master
 
 @media all and (min-width: 1200px) {
   [class|="col"] {
