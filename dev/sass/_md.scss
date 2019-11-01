@@ -133,8 +133,8 @@
         ul{
             li{
                 a{
-                    padding-left: 12px;
-                    padding-right: 12.5px;
+                    padding-left: 6px;
+                    padding-right: 6.5px;
                 }
             }
         }
@@ -249,57 +249,59 @@
 
     // 最上面的獎台
     .indexHeader{
-        padding-top:150px;
-        h1{
-            padding-bottom:50px;
-        }
         .indexWinner{
-            width: 600px;
+            width: 450px;
             li{
-                width: 200px;
+                width: 150px;
+                .stageText{
+                    h1{
+                        padding-bottom:5px;
+                    }
+                    padding-top:320px;
+                }
             }
             .winner1{
                 .alienImg{
-                    bottom:185px;
-                }
-                .stageText{
-                    p{
-                        bottom:120px;
-                    }
-                }
-            }
-            .winner2{
-                .alienImg{
-                    bottom:150px;
+                    bottom:140px;
                 }
                 .stageText{
                     p{
                         bottom:90px;
                     }
-                    padding-top:389px;
+                }
+            }
+            .winner2{
+                .alienImg{
+                    bottom:115px;
+                }
+                .stageText{
+                    p{
+                        bottom:65px;
+                    }
+                    padding-top:279px;
                 }
                 .planetTxt{
-                    padding-top:50px;
+                    padding-top:40px;
                 }
             }
             .winner3{
                 .alienImg{
-                    bottom:120px;
+                    bottom:90px;
                 }
                 .stageText{
                     p{
-                        bottom:60px;
+                        bottom:45px;
                     }
-                    padding-top:359px;
+                    padding-top:249px;
                 }
                 .planetTxt{
-                    padding-top:80px;
+                    padding-top:70px;
                 }
             }
-            li{
-                .stageText{
-                    padding-top:440px;
-                }
+        }
+        li{
+            .stageText{
+                padding-top:320px;
             }
         }
     }

@@ -636,20 +636,15 @@ button {
       color: #fff; }
   .shopContainer .productBox {
     margin: 0 auto;
-    width: 95%; }
-    .shopContainer .productBox .boxForProduct {
-      margin: 0 auto;
-      max-width: 500px; }
-      .shopContainer .productBox .boxForProduct .col-6 {
-        padding: 0; }
-  .shopContainer .model {
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: contain;
+    width: 95%;
+    background-color: #90BEE3;
     border-radius: 10px;
     background-image: url(../img/pinkPlanet.png);
-    margin-bottom: 50px;
-    background-color: #90BEE3; }
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom; }
+  .shopContainer .model {
+    margin-bottom: 50px; }
   .shopContainer .model .pic01 {
     padding: 20px;
     margin-top: 50px; }
@@ -679,12 +674,9 @@ button {
     .shopContainer .productTitle .productBtn h2 {
       color: #fff; }
 
-.clearboth {
-  clear: both; }
-
 .moreProductBtn {
   text-align: center;
-  margin: 50px auto;
+  margin: 30px auto;
   width: 80px;
   border-radius: 50px;
   padding: 10px;
@@ -695,24 +687,6 @@ button {
   .moreProductBtn h2 {
     font-weight: bold;
     color: #fff; }
-
-.toolTitle h3 {
-  color: white;
-  margin-bottom: 10px; }
-
-.toolTitle span {
-  color: white; }
-
-.toolTitle02 {
-  display: none; }
-
-.event {
-  max-width: 300px;
-  margin: 0 auto; }
-  .event .gashapon {
-    margin: 0 auto; }
-    .event .gashapon .gashaponPic {
-      width: 300px; }
 
 /*____________________ VOTE ____________________*/
 .votePage {
@@ -903,8 +877,8 @@ button {
     width: 240px;
     height: 580px; }
     #tab-demo ul li a {
-      padding-left: 12px;
-      padding-right: 12.5px; }
+      padding-left: 6px;
+      padding-right: 6.5px; }
     #tab-demo .tabIn {
       height: 460px;
       border-radius: 0px 0px 8px 8px; }
@@ -974,36 +948,36 @@ button {
     margin: auto;
     padding: 100px 15px;
     box-sizing: border-box; }
-  .indexHeader {
-    padding-top: 150px; }
-    .indexHeader h1 {
-      padding-bottom: 50px; }
-    .indexHeader .indexWinner {
-      width: 600px; }
-      .indexHeader .indexWinner li {
-        width: 200px; }
-      .indexHeader .indexWinner .winner1 .alienImg {
-        bottom: 185px; }
-      .indexHeader .indexWinner .winner1 .stageText p {
-        bottom: 120px; }
-      .indexHeader .indexWinner .winner2 .alienImg {
-        bottom: 150px; }
-      .indexHeader .indexWinner .winner2 .stageText {
-        padding-top: 389px; }
-        .indexHeader .indexWinner .winner2 .stageText p {
-          bottom: 90px; }
-      .indexHeader .indexWinner .winner2 .planetTxt {
-        padding-top: 50px; }
-      .indexHeader .indexWinner .winner3 .alienImg {
-        bottom: 120px; }
-      .indexHeader .indexWinner .winner3 .stageText {
-        padding-top: 359px; }
-        .indexHeader .indexWinner .winner3 .stageText p {
-          bottom: 60px; }
-      .indexHeader .indexWinner .winner3 .planetTxt {
-        padding-top: 80px; }
+  .indexHeader .indexWinner {
+    width: 450px; }
+    .indexHeader .indexWinner li {
+      width: 150px; }
       .indexHeader .indexWinner li .stageText {
-        padding-top: 440px; }
+        padding-top: 320px; }
+        .indexHeader .indexWinner li .stageText h1 {
+          padding-bottom: 5px; }
+    .indexHeader .indexWinner .winner1 .alienImg {
+      bottom: 140px; }
+    .indexHeader .indexWinner .winner1 .stageText p {
+      bottom: 90px; }
+    .indexHeader .indexWinner .winner2 .alienImg {
+      bottom: 115px; }
+    .indexHeader .indexWinner .winner2 .stageText {
+      padding-top: 279px; }
+      .indexHeader .indexWinner .winner2 .stageText p {
+        bottom: 65px; }
+    .indexHeader .indexWinner .winner2 .planetTxt {
+      padding-top: 40px; }
+    .indexHeader .indexWinner .winner3 .alienImg {
+      bottom: 90px; }
+    .indexHeader .indexWinner .winner3 .stageText {
+      padding-top: 249px; }
+      .indexHeader .indexWinner .winner3 .stageText p {
+        bottom: 45px; }
+    .indexHeader .indexWinner .winner3 .planetTxt {
+      padding-top: 70px; }
+  .indexHeader li .stageText {
+    padding-top: 320px; }
   .title {
     width: 18.5vw;
     height: 6vw;
@@ -1196,34 +1170,6 @@ button {
       color: white; } }
 
 @media all and (min-width: 992px) {
-  [class|="col"] {
-    float: left;
-    padding: 0 15px;
-    box-sizing: border-box; }
-  .col-lg-1 {
-    width: 8.33333%; }
-  .col-lg-2 {
-    width: 16.66667%; }
-  .col-lg-3 {
-    width: 25%; }
-  .col-lg-4 {
-    width: 33.33333%; }
-  .col-lg-5 {
-    width: 41.66667%; }
-  .col-lg-6 {
-    width: 50%; }
-  .col-lg-7 {
-    width: 58.33333%; }
-  .col-lg-8 {
-    width: 66.66667%; }
-  .col-lg-9 {
-    width: 75%; }
-  .col-lg-10 {
-    width: 83.33333%; }
-  .col-lg-11 {
-    width: 91.66667%; }
-  .col-lg-12 {
-    width: 100%; }
   .navTop {
     line-height: 35px; }
     .navTop p {
@@ -1262,7 +1208,7 @@ button {
         z-index: 999; }
       .banner nav li {
         list-style: none;
-        margin: 0 12px;
+        margin: 0 11px;
         line-height: 100px;
         float: left;
         text-align: center; }
@@ -1621,7 +1567,7 @@ button {
     background-repeat: no-repeat;
     /* background-size: contain; */ }
   .banner nav li {
-    margin: 0 25px; }
+    margin: 0 20px; }
   .video-body {
     width: 100%;
     height: 100%;
