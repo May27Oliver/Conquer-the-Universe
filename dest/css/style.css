@@ -877,8 +877,8 @@ button {
     width: 240px;
     height: 580px; }
     #tab-demo ul li a {
-      padding-left: 12px;
-      padding-right: 12.5px; }
+      padding-left: 6px;
+      padding-right: 6.5px; }
     #tab-demo .tabIn {
       height: 460px;
       border-radius: 0px 0px 8px 8px; }
