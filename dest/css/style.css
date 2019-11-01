@@ -1190,6 +1190,94 @@ button {
       box-shadow: 0px 0px 20px #fff;
       border-radius: 20px;
       border: none; }
+  .shopContainer {
+    margin-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    background-color: #333; }
+    .shopContainer .shoptitle {
+      margin: 30px auto 50px;
+      padding: 30px;
+      width: 150px;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(../img/title.png); }
+      .shopContainer .shoptitle h2 {
+        color: #fff; }
+    .shopContainer .productBox {
+      margin: 0 auto;
+      width: 95%;
+      display: flex; }
+      .shopContainer .productBox .boxForProduct {
+        margin: 0 auto;
+        max-width: 500px; }
+        .shopContainer .productBox .boxForProduct .col-6 {
+          margin-bottom: 50px;
+          padding: 0;
+          width: 50%; }
+    .shopContainer .model {
+      width: 500px;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: contain;
+      border-radius: 10px;
+      background-image: url(../img/pinkPlanet.png);
+      margin-bottom: 50px;
+      background-color: #90BEE3; }
+    .shopContainer .model .pic01 {
+      padding: 20px;
+      margin-top: 50px; }
+    .shopContainer .productPic {
+      box-sizing: border-box;
+      margin: 0 auto 20px;
+      background-color: antiquewhite;
+      border-radius: 10px;
+      width: 150px;
+      height: 150px;
+      position: relative; }
+      .shopContainer .productPic img {
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+        position: absolute;
+        width: 100px;
+        text-align: center; }
+    .shopContainer .productTitle h3 {
+      font-weight: bold;
+      color: #fff; }
+    .shopContainer .productTitle .productBtn {
+      width: 60px;
+      margin: 10px auto;
+      background-color: #448aca;
+      padding: 5px;
+      border-radius: 50px; }
+      .shopContainer .productTitle .productBtn h2 {
+        color: #fff; }
+  .clearboth {
+    clear: both; }
+  .moreProductBtn {
+    text-align: center;
+    margin: 50px auto;
+    width: 80px;
+    border-radius: 50px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+    background-color: #E8B51C; }
+    .moreProductBtn h2 {
+      font-weight: bold;
+      color: #fff; }
+  .toolTitle {
+    display: none; }
+  .toolTitle02 {
+    margin: 50px; }
+    .toolTitle02 h2 {
+      color: white;
+      margin-bottom: 10px; }
+    .toolTitle02 p {
+      color: white; }
   .tip-robot {
     display: none; }
   .footer {
@@ -1208,6 +1296,34 @@ button {
       color: white; } }
 
 @media all and (min-width: 992px) {
+  [class|="col"] {
+    float: left;
+    padding: 0 15px;
+    box-sizing: border-box; }
+  .col-lg-1 {
+    width: 8.33333%; }
+  .col-lg-2 {
+    width: 16.66667%; }
+  .col-lg-3 {
+    width: 25%; }
+  .col-lg-4 {
+    width: 33.33333%; }
+  .col-lg-5 {
+    width: 41.66667%; }
+  .col-lg-6 {
+    width: 50%; }
+  .col-lg-7 {
+    width: 58.33333%; }
+  .col-lg-8 {
+    width: 66.66667%; }
+  .col-lg-9 {
+    width: 75%; }
+  .col-lg-10 {
+    width: 83.33333%; }
+  .col-lg-11 {
+    width: 91.66667%; }
+  .col-lg-12 {
+    width: 100%; }
   .navTop {
     line-height: 35px; }
     .navTop p {
@@ -1402,6 +1518,93 @@ button {
       box-shadow: 0px 0px 20px #fff;
       border-radius: 20px;
       border: none; }
+  .shopContainer {
+    margin-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    background-color: #333; }
+    .shopContainer .shoptitle {
+      margin: 30px auto 50px;
+      padding: 30px;
+      width: 150px;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(../img/title.png); }
+      .shopContainer .shoptitle h2 {
+        color: #fff; }
+    .shopContainer .productBox {
+      margin: 0 auto;
+      width: 95%;
+      display: flex; }
+    .shopContainer .boxForProduct {
+      margin-right: -100px;
+      max-width: 500px; }
+      .shopContainer .boxForProduct .col-6 {
+        width: 40%;
+        margin-bottom: 50px; }
+    .shopContainer .model {
+      width: 600px;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: contain;
+      border-radius: 10px;
+      background-image: url(../img/pinkPlanet.png);
+      margin-bottom: 50px;
+      background-color: #90BEE3; }
+    .shopContainer .model .pic01 {
+      padding: 20px;
+      margin-top: 50px; }
+    .shopContainer .productPic {
+      box-sizing: border-box;
+      margin: 0 auto 20px;
+      background-color: antiquewhite;
+      border-radius: 10px;
+      width: 150px;
+      height: 150px;
+      position: relative; }
+      .shopContainer .productPic img {
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+        position: absolute;
+        width: 100px;
+        text-align: center; }
+    .shopContainer .productTitle h3 {
+      font-weight: bold;
+      color: #fff; }
+    .shopContainer .productTitle .productBtn {
+      width: 60px;
+      margin: 10px auto;
+      background-color: #448aca;
+      padding: 5px;
+      border-radius: 50px; }
+      .shopContainer .productTitle .productBtn h2 {
+        color: #fff; }
+  .clearboth {
+    clear: both; }
+  .moreProductBtn {
+    text-align: center;
+    margin: 50px auto;
+    width: 80px;
+    border-radius: 50px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+    background-color: #E8B51C; }
+    .moreProductBtn h2 {
+      font-weight: bold;
+      color: #fff; }
+  .toolTitle {
+    display: none; }
+  .toolTitle02 {
+    margin: 50px; }
+    .toolTitle02 h2 {
+      color: white;
+      margin-bottom: 10px; }
+    .toolTitle02 p {
+      color: white; }
   .tip-robot {
     position: fixed;
     bottom: 3vw;
@@ -1623,6 +1826,94 @@ button {
     right: 3vw; }
     .tip-robot img {
       width: 15vw; }
+  .shopContainer {
+    margin-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    background-color: #333; }
+    .shopContainer .shoptitle {
+      margin: 30px auto 50px;
+      padding: 30px;
+      width: 150px;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(../img/title.png); }
+      .shopContainer .shoptitle h2 {
+        color: #fff; }
+    .shopContainer .productBox {
+      margin: 0 auto;
+      width: 95%;
+      display: flex;
+      max-width: 1200px; }
+    .shopContainer .boxForProduct {
+      margin-right: -100px;
+      max-width: 500px; }
+      .shopContainer .boxForProduct .col-6 {
+        width: 40%;
+        margin-bottom: 50px; }
+    .shopContainer .model {
+      width: 600px;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: contain;
+      border-radius: 10px;
+      background-image: url(../img/pinkPlanet.png);
+      margin-bottom: 50px;
+      background-color: #90BEE3; }
+    .shopContainer .model .pic01 {
+      padding: 20px;
+      margin-top: 50px; }
+    .shopContainer .productPic {
+      box-sizing: border-box;
+      margin: 0 auto 20px;
+      background-color: antiquewhite;
+      border-radius: 10px;
+      width: 150px;
+      height: 150px;
+      position: relative; }
+      .shopContainer .productPic img {
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+        position: absolute;
+        width: 100px;
+        text-align: center; }
+    .shopContainer .productTitle h3 {
+      font-weight: bold;
+      color: #fff; }
+    .shopContainer .productTitle .productBtn {
+      width: 60px;
+      margin: 10px auto;
+      background-color: #448aca;
+      padding: 5px;
+      border-radius: 50px; }
+      .shopContainer .productTitle .productBtn h2 {
+        color: #fff; }
+  .clearboth {
+    clear: both; }
+  .moreProductBtn {
+    text-align: center;
+    margin: 50px auto;
+    width: 80px;
+    border-radius: 50px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+    background-color: #E8B51C; }
+    .moreProductBtn h2 {
+      font-weight: bold;
+      color: #fff; }
+  .toolTitle {
+    display: none; }
+  .toolTitle02 {
+    margin: 50px; }
+    .toolTitle02 h2 {
+      color: white;
+      margin-bottom: 10px; }
+    .toolTitle02 p {
+      color: white; }
   .footer {
     background: black; }
     .footer .footer-wrap {
