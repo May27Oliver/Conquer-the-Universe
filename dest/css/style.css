@@ -1120,11 +1120,7 @@ button {
         z-index: 999; }
       .banner nav li {
         list-style: none;
-<<<<<<< HEAD
-        margin: 0 12px;
-=======
         margin: 0 11px;
->>>>>>> 27cd88f1bcfb409e9a441a0572f9b13e479785c1
         line-height: 100px;
         float: left;
         text-align: center; }
