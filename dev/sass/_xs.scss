@@ -659,98 +659,90 @@
     }
 }
 
-    // -------首頁的贊助商品區------
+    // -------贊助商品區------
 
-.shopContainer{
-    margin-top: 100px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-    background-color: #333;
-    
-
-
-.shoptitle{
-    margin: 30px auto 50px;
-    padding: 30px;
-    width: 150px;
-    background-size:100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url(../img/title.png);
-        h2{
-            color:#fff;
-    }	
-    
-}  
-.productBox{
-    margin: 0 auto;
-    width: 95%;
-   
-   
-    
-  
-    .boxForProduct{
-        margin:0 auto;
-        max-width: 500px;
-        .col-6{
-            padding: 0;
-        }
-    }
-}
-.model{
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size:contain;
-    border-radius: 10px;
-    background-image: url(../img/pinkPlanet.png);
-    margin-bottom: 50px;
-    background-color: #90BEE3;
-}
-.model .pic01{
-    padding: 20px;
-    margin-top: 50px;
-}
-.productPic{
-    box-sizing:border-box;
-    margin: 50px auto 20px;
-    background-color: antiquewhite;;
-    border-radius: 10px;
-    width: 150px;
-    height: 150px;
-    position: relative;
-    img{
-        top: calc(50% - 50px);
-        left: calc(50% - 50px);
-        position: absolute;  
-        width: 100px;
+    .shopContainer{
+        margin-top: 100px;
+        padding-top: 50px;
+		padding-bottom: 50px;
         text-align: center;
+        background-color: #333;
+        
+	
+	
+	.shoptitle{
+		margin: 30px auto 50px;
+		padding: 30px;
+		width: 150px;
+		background-size:100%;
+		background-position: center;
+		background-repeat: no-repeat;
+        background-image: url(../img/title.png);
+         h2{
+             color:#fff;
+        }	
+       
+    }  
+    .productBox{
+        margin: 0 auto;
+        width: 95%;
+        background-color: #90BEE3;
+        border-radius: 10px;
+        background-image: url(../img/pinkPlanet.png);
+        background-repeat: no-repeat;
+        background-size:contain;
+        background-position: bottom;
     }
-}
+    .model{
+        margin-bottom: 50px;
+    }
+    .model .pic01{
+        padding: 20px;
+        margin-top: 50px;
+    }
+    .productPic{
+        box-sizing:border-box;
+        margin: 50px auto 20px;
+        background-color: antiquewhite;;
+        border-radius: 10px;
+        width: 150px;
+        height: 150px;
+        position: relative;
+        img{
+            top: calc(50% - 50px);
+            left: calc(50% - 50px);
+            position: absolute;
+            
+            width: 100px;
+            text-align: center;
+        }
+
+    }
+  
+       
+    
+
 .productTitle{
-h3{
-    font-weight: bold;
-    color: #fff;	
-}
-.productBtn{
-    width: 60px;
-    margin: 10px auto;
-    background-color: #448aca;
-    padding: 5px;
-    border-radius: 50px;
-    h2{
-        color: #fff;
-    }	
-}
+    h3{
+        font-weight: bold;
+        color: #fff;	
+    }
+    .productBtn{
+        width: 60px;
+        margin: 10px auto;
+        background-color: #448aca;
+        padding: 5px;
+        border-radius: 50px;
+        h2{
+            color: #fff;
+        }	
+    }
 } 
 
 }
-.clearboth{
-    clear: both;
-}
 .moreProductBtn{
     text-align: center;
-    margin: 50px auto;
+    margin: 30px auto;
     width: 80px;
     border-radius: 50px;
     padding: 10px;
@@ -763,32 +755,6 @@ h3{
         color: #fff;
     }
 }
-// 贊助商品內頁
-.toolTitle{
-    h3{
-        color: white;
-        margin-bottom: 10px;
-    }
-    span{  
-        color: white;
-    }
-}
-.toolTitle02{
-    display: none;
-}
-.event{
-    max-width: 300px;
-    margin: 0 auto;
-    .gashapon{
-        margin: 0 auto;
-        .gashaponPic{
-            width: 300px;
-        }
-          
-    }
-    
-}
-
 
 /*____________________ VOTE ____________________*/
 .votePage{
@@ -886,177 +852,8 @@ h3{
             }
         }
     }
-
-   
 }
-.video-body{
-    width: 100%;
-    height: 100%;
-    background: url(../img/background.png);
-    background-size:cover;
-    position: relative;
-    z-index: -2;
-}
-
-.container{
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 100px 15px;
-    box-sizing: border-box;
-}
-
-
-// 公民小學堂網頁標題
-.title{
-    width: 40.5vw;
-    height: 13vw;
-    background: url("../img/slogan-frame.png");
-    background-size: cover;
-    color:white;
-    margin: 5vw auto 0;
-    h1{
-        font-weight: bold;
-        text-align: center;
-        line-height: 13vw;
-    }
-    h2{
-        text-align: center;
-    }
-}
-// 目錄與頁籤
-.select-section{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin: 5vw auto;
-    button{
-        // font-size: 20px;
-        // background-color: #1d2088;
-        background-color: #1d2088;
-        &:hover{
-            background-color: lighten(#1d2088 , 10%);
-        }
-        color: white;
-        padding:5px 18px;
-        // box-shadow: 0px 0px 20px #fff;
-        border-radius: 20px;
-        border: 1px solid #fff;
-    }
-}
-// 影片區
-.video{
-    width: 100%;
-    height: 64vw;
-    overflow: hidden;
-    background: url("../img/video-frame.png");
-    background-size: cover;
-    text-align: center;//iframe是inline屬性
-    vertical-align: middle;
-    margin: 5vw auto 0;
-    iframe{
-        width:85%;
-        height: 78%;
-        margin: 5vw 0 0 0;
-    }
-}
-// 背景小物
-.rabbit{
-    width: 10vw;
-    position: absolute;
-    top:30vw;
-    right:20vw;
-    z-index:-1;
-    img{
-        width: 20vw;
-    }
-}
-
-.fatty{
-    width: 10vw;
-    position: absolute;
-    top:37vw;
-    left:5vw;
-    z-index:-1;
-    img{
-        width: 20vw;
-    }
-}
-
-// 影片區slider
-.video-slider{
-    width: 100%;
-    height: 20vw;
-    margin: 2vw auto;
-    background-color: #CCC;
-    border-radius: 20px;
-}
-// Question
-.question{
-    width: 100%;
-    margin: 5vw auto;
-    background: #dcdcdc;
-    border-radius: 30px;
-    padding: 5vw;
-    box-sizing: border-box;
-    h2{
-        font-weight: bold;  
-    }
-    li{
-        margin: 2vw 0;
-        a{
-            color:black;
-        }
-        a:hover {
-        color: #1d2088;
-        }
-    }
-    
-    
-    p{
-        margin: 2vw 0;
-        color: red;
-    }
-    .button-section{
-        // width: 25%;
-        // display: flex;
-        // justify-content: space-around;
-        button{
-            // font-size: 20px;
-            background-color: #1d2088;
-            color: white;
-            padding:5px 18px;
-            box-shadow: 0px 0px 20px #fff;
-            border-radius: 20px;
-            border: none;
-        }
-    }
-}
-
-// 聊天機器人
-.tip-robot{
-    display: none;
-}
-// footer
-.footer{
-    background: black;
-    .footer-wrap {
-        max-width:1200px;
-        margin:0 auto;
-        padding: 1vw;
-    }
-    .icon{
-        text-align: center;
-        img{
-            width: 2vw; 
-        }
-    }
-    p{
-        margin-top:1vw;
-        text-align: center;
-        color:white;
-    }
-}
+        
 // }
 
     
