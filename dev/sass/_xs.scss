@@ -666,10 +666,7 @@
         padding-top: 50px;
 		padding-bottom: 50px;
         text-align: center;
-        background-color: #333;
-        
-	
-	
+        background-color: #333;	
 	.shoptitle{
 		margin: 30px auto 50px;
 		padding: 30px;
@@ -683,23 +680,34 @@
         }	
        
     }  
+    .boxForProduct{
+        .col-6{
+            max-width: 400px;
+            background-color: #1c0e44;
+        }
+    }
     .productBox{
         margin: 0 auto;
         width: 95%;
-        background-color: #90BEE3;
-        border-radius: 10px;
-        background-image: url(../img/pinkPlanet.png);
         background-repeat: no-repeat;
         background-size:contain;
         background-position: bottom;
     }
     .model{
-        margin-bottom: 50px;
+        
+        background-color: #90BEE3;
+        max-width: 500px;
+        margin: 0 auto 50px;
+        background-image: url(../img/pinkPlanet.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        border-radius: 10px;
     }
     .model .pic01{
         padding: 20px;
         margin-top: 50px;
     }
+    
     .productPic{
         box-sizing:border-box;
         margin: 50px auto 20px;
@@ -718,9 +726,6 @@
         }
 
     }
-  
-       
-    
 
 .productTitle{
     h3{
@@ -740,6 +745,14 @@
 } 
 
 }
+.toolTitle{
+    color:#fff;
+    line-height: 2;
+}
+.toolTitle02{
+    display: none;
+   
+}
 .moreProductBtn{
     text-align: center;
     margin: 30px auto;
@@ -755,7 +768,21 @@
         color: #fff;
     }
 }
-
+//內頁的扭蛋區
+.event{
+    padding-top: 50px;
+    background-color: #1c0e44;
+}
+.gashapon{
+    
+    text-align: center;;
+    img{
+        width: 300px;
+    }
+}
+.clearboth{
+    clear: both;
+}
 /*____________________ VOTE ____________________*/
 .votePage{
     background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
