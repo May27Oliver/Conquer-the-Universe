@@ -1,11 +1,8 @@
 @include respond(lg) {
-<<<<<<< HEAD
     // *{
     //     outline: 1px solid #f00;
     // } *
-=======
     @include lg-grid(12);    
->>>>>>> c52cdbc8d831f6e7c4586ba6786c63af28342337
     body {
 
     }
@@ -542,7 +539,6 @@
             }
         }
     }
-<<<<<<< HEAD
     
 //首頁footer
     .indexFooter{
@@ -593,7 +589,6 @@
 
 
     
-=======
 
  
 
@@ -602,5 +597,4 @@
 
 
 
->>>>>>> c52cdbc8d831f6e7c4586ba6786c63af28342337
 }
