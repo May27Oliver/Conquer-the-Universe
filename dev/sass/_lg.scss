@@ -507,34 +507,31 @@
     /*____________________ VOTE ____________________*/
     .votePage{
         .container{
-            .voteCard{
-                .voteWrapper{
-                    .voteText{
-                        span{
-                            margin-top: 10px;
-                            font-size: 15px;
-                            display: block;
+            .voteGroup{
+                .voteCard{
+                    .voteWrapper{
+                        .voteText{
+                            small{
+                                margin-top: 10px;
+                                font-size: 15px;
+                                display: block;
+                            }
+                            h3{
+                                font-size: 18px;
+                                font-weight: 500;
+                                margin-top: 10px;
+                            }
+                            p{
+                                font-size: 18px;
+                                font-weight: 400;
+                                margin-top: 10px;
+                            }
                         }
-                        h3{
+                        button{
+                            width: 100px;
                             font-size: 18px;
-                            font-weight: 500;
-                            margin-top: 10px;
-                        }
-                        p{
-                            font-size: 18px;
-                            font-weight: 400;
-                            margin-top: 10px;
                         }
                     }
-                    button{
-                        width: 100px;
-                        font-size: 18px;
-                    }
-                }
-            }
-            &:nth-child(4){
-                .voteWrapper{
-                    margin-right: 0;
                 }
             }
         }

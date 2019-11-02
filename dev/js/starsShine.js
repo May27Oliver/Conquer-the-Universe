@@ -5,7 +5,7 @@ function Star(x,y,r,color){
     this.x = x;
     this.y = y;
     this.r = r;
-    this.rChange = 0.025;
+    this.rChange = 0.045;
     // this.vx = Math.floor(Math.random()*4+1);
     // this.vy = Math.floor(Math.random()*4+1);
     this.color = color;
@@ -46,7 +46,7 @@ var arrStars = [];
 for(i = 0; i < 250; i++){
     var randX = Math.floor((Math.random()*canvasW)+1);
     var randY = Math.floor((Math.random()*canvasH)+1);
-    var randR = Math.random() * 1.7 + .5;
+    var randR = Math.random() * 2.7 + .5;
     
     var star = new Star(randX, randY, randR, randomColor());
     arrStars.push(star);
