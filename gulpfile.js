@@ -12,6 +12,11 @@ gulp.task('concat', function () {
     gulp.src('./dev/*.html').pipe(gulp.dest('./dest/'))
 });
 
+gulp.task('concatimg', function () {
+    //do sometime
+    gulp.src(['./dev/img/*' ,'./dev/img/**/*'  ]).pipe(gulp.dest('./dest/img/'))
+});
+
 gulp.task('concatjs', function () {
     gulp.src('dev/js/*.js').pipe(gulp.dest('dest/js/'));
 })
@@ -62,4 +67,5 @@ gulp.task('default',function () {
     gulp.watch(["dev/*.html" , "dev/**/*.html"] , ['template']).on('change', reload);
     // gulp.watch(["dev/*.html", "dev/**/*.html"] , ['concat']).on('change', reload);
     gulp.watch(["dev/js/*.js"] , ['concatjs']).on('change', reload);
+    gulp.watch(['./dev/img/*' ,'./dev/img/**/*'  ] , ['concatimg']).on('change', reload);
 });
