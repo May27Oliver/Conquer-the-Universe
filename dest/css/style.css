@@ -663,6 +663,7 @@ button {
       width: 100px;
       text-align: center; }
   .shopContainer .productTitle h3 {
+<<<<<<< HEAD
     font-weight: bold;
     color: #fff; }
   .shopContainer .productTitle .productBtn {
@@ -783,6 +784,8 @@ button {
   color: white;
   margin: 5vw auto 0; }
   .title h1 {
+=======
+>>>>>>> dev
     font-weight: bold;
     text-align: center;
     line-height: 13vw; }
@@ -885,6 +888,117 @@ button {
     margin-top: 1vw;
     text-align: center;
     color: white; }
+  background-color: #E8B51C; }
+  .moreProductBtn h2 {
+    font-weight: bold;
+    color: #fff; }
+
+/*____________________ VOTE ____________________*/
+.votePage {
+  background: url("../img/vote/page-bg-star.png") no-repeat center center/cover; }
+  .votePage .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 200px auto 0;
+    padding: 1px 15px;
+    box-sizing: border-box;
+    /*------ 投票卡片 ------*/ }
+    .votePage .container h1 {
+      background: url("../img/vote/title-bg.png") no-repeat center center/contain;
+      color: #fff;
+      text-align: center;
+      line-height: 2.8; }
+    .votePage .container h2 {
+      background: #84ccc9;
+      border-radius: 10px 10px 0 0;
+      padding: 15px;
+      margin: 80px 0 15px; }
+    .votePage .container .voteEnd {
+      margin-bottom: 250px; }
+      .votePage .container .voteEnd h2 {
+        margin: 50px 0 15px; }
+    .votePage .container .voteGroup {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -7.5px; }
+      .votePage .container .voteGroup .voteCard .voteWrapper {
+        background-image: linear-gradient(#84ccc9 65%, #c0eef1 30%);
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+        padding: 15px;
+        margin: 7.5px;
+        /*+++ 按鈕 +++*/ }
+        .votePage .container .voteGroup .voteCard .voteWrapper .voteChart img {
+          width: 80%;
+          vertical-align: bottom;
+          padding-bottom: 20px; }
+        .votePage .container .voteGroup .voteCard .voteWrapper .voteText span {
+          margin-top: 10px;
+          font-size: 15px;
+          display: block; }
+        .votePage .container .voteGroup .voteCard .voteWrapper .voteText h3 {
+          font-size: 18px;
+          font-weight: 500;
+          margin-top: 10px; }
+        .votePage .container .voteGroup .voteCard .voteWrapper .voteText p {
+          font-size: 18px;
+          font-weight: 400;
+          margin-top: 10px; }
+        .votePage .container .voteGroup .voteCard .voteWrapper button {
+          width: 80px;
+          background: #1d2088;
+          color: #fff;
+          font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+          font-size: 15px;
+          font-weight: 500;
+          padding: 5px 10px;
+          margin: 10px 5px 0;
+          border: none;
+          border-radius: 20px; }
+          .votePage .container .voteGroup .voteCard .voteWrapper button[disabled|="disabled"] {
+            background: #ccc;
+            opacity: 0.8; }
+          .votePage .container .voteGroup .voteCard .voteWrapper button#report {
+            width: 40px;
+            background: #fff;
+            color: #333;
+            font-size: 10px;
+            font-weight: 400;
+            padding: 2px 0;
+            margin: 0;
+            border-radius: 5px;
+            box-sizing: border-box;
+            position: absolute;
+            right: 20px;
+            top: 18px; }
+        .votePage .container .voteGroup .voteCard .voteWrapper.voteArea {
+          position: relative; }
+          .votePage .container .voteGroup .voteCard .voteWrapper.voteArea .voteAdd {
+            height: 0;
+            transform: perspective(300px) rotateY(0deg);
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            transition: 1s; }
+          .votePage .container .voteGroup .voteCard .voteWrapper.voteArea .voteForm {
+            padding: 15px;
+            transform: perspective(300px) rotateY(180deg);
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            transition: 1s; }
+          .votePage .container .voteGroup .voteCard .voteWrapper.voteArea:hover .voteAdd {
+            transform: perspective(300px) rotateY(180deg); }
+          .votePage .container .voteGroup .voteCard .voteWrapper.voteArea:hover .voteForm {
+            transform: perspective(300px) rotateY(360deg); }
+  .votePage #starShine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; }
 
 @media all and (min-width: 768px) {
   [class|="col"] {
@@ -1293,7 +1407,11 @@ button {
     .footer p {
       margin-top: 1vw;
       text-align: center;
-      color: white; } }
+      color: #999; } }
+
+/*____________________ VOTE ____________________*/
+.votePage .container .voteGroup .voteWrapper {
+  background-image: linear-gradient(#84ccc9 65%, #c0eef1 30%); }
 
 @media all and (min-width: 992px) {
   [class|="col"] {
@@ -1362,7 +1480,11 @@ button {
         z-index: 999; }
       .banner nav li {
         list-style: none;
+<<<<<<< HEAD
         margin: 0 11px;
+=======
+        margin: 0 12px;
+>>>>>>> dev
         line-height: 100px;
         float: left;
         text-align: center; }
@@ -1624,7 +1746,7 @@ button {
     .footer p {
       margin-top: 1vw;
       text-align: center;
-      color: white; }
+      color: #999; }
   .boardTitle {
     max-width: 700px; }
   .boardInner {
@@ -1660,10 +1782,23 @@ button {
     .boxLeft .abilityBox .abilityBoxIn {
       width: 244.4px; }
   /*____________________ VOTE ____________________*/
+  .votePage .container .voteCard .voteWrapper .voteText span {
+    margin-top: 10px;
+    font-size: 15px;
+    display: block; }
+  .votePage .container .voteCard .voteWrapper .voteText h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px; }
+  .votePage .container .voteCard .voteWrapper .voteText p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px; }
   .votePage .container .voteCard .voteWrapper button {
     width: 100px;
-    font-size: 18px;
-    padding: 5px 18px; } }
+    font-size: 18px; }
+  .votePage .container:nth-child(4) .voteWrapper {
+    margin-right: 0; } }
 
 @media all and (min-width: 1200px) {
   [class|="col"] {
@@ -1927,7 +2062,7 @@ button {
     .footer p {
       margin-top: 1vw;
       text-align: center;
-      color: white; }
+      color: #999; }
   .supportBox h4 {
     font-size: 24px;
     float: none;

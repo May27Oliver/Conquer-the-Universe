@@ -29,10 +29,10 @@
             <nav>
                 <ul>
                     <li><a href="#">宇宙星聞</a></li>
-                    <li><a href="#">公民學堂</a></li>
+                    <li><a href="video.html">公民學堂</a></li>
                     <li><a href="vote.html">公民投票</a></li>
                     <li><a href="#">宇宙商城</a></li>
-                    <li><a href="#">公民的家</a></li>
+                    <li><a href="homeCitizen.html">公民的家</a></li>
                 </ul>
                 <span><a href="" id="loginBtn">登入 / 登出</a></span>
             </nav>
@@ -47,6 +47,26 @@
             <h2>正在進行中的議題</h2>
             <div class="voteGroup">
                 <div class="voteCard col-6 col-md-4 col-lg-3">
+                    <div class="voteWrapper voteArea">
+                        <div class="voteAdd"></div>
+                        <div class="voteForm">
+                            <button id="report">檢舉</button>
+                            <div class="voteChart">
+                                <img src="img/vote/unknow.png" alt="未知統計結果">
+                            </div>
+                            <div class="voteText">
+                                <span>發起人：AAA</span>
+                                <h3>公民投票標題</h3>
+                                <p>2019/10/30~2019/11/05</p>
+                                <div class="voteSelect">
+                                    <button type="submit" id="selectA">選項一</button>
+                                    <button type="submit" id="selectB">選項二</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voteCard col-6 col-md-4 col-lg-3">
                     <div class="voteWrapper">
                         <button id="report">檢舉</button>
                         <div class="voteChart">
@@ -57,8 +77,76 @@
                             <h3>公民投票標題</h3>
                             <p>2019/10/30~2019/11/05</p>
                             <div class="voteSelect">
-                                <button type="submit">選項一</button>
-                                <button type="submit">選項二</button>
+                                <button type="submit" id="selectA">選項一</button>
+                                <button type="submit" id="selectB">選項二</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voteCard col-6 col-md-4 col-lg-3">
+                    <div class="voteWrapper">
+                        <button id="report">檢舉</button>
+                        <div class="voteChart">
+                            <img src="img/vote/unknow.png" alt="未知統計結果">
+                        </div>
+                        <div class="voteText">
+                            <span>發起人：AAA</span>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/30~2019/11/05</p>
+                            <div class="voteSelect">
+                                <button type="submit" id="selectA">選項一</button>
+                                <button type="submit" id="selectB">選項二</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voteCard col-6 col-md-4 col-lg-3">
+                    <div class="voteWrapper">
+                        <button id="report">檢舉</button>
+                        <div class="voteChart">
+                            <img src="img/vote/unknow.png" alt="未知統計結果">
+                        </div>
+                        <div class="voteText">
+                            <span>發起人：AAA</span>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/30~2019/11/05</p>
+                            <div class="voteSelect">
+                                <button type="submit" id="selectA">選項一</button>
+                                <button type="submit" id="selectB">選項二</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voteCard col-6 col-md-4 col-lg-3">
+                    <div class="voteWrapper">
+                        <button id="report">檢舉</button>
+                        <div class="voteChart">
+                            <img src="img/vote/unknow.png" alt="未知統計結果">
+                        </div>
+                        <div class="voteText">
+                            <span>發起人：AAA</span>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/30~2019/11/05</p>
+                            <div class="voteSelect">
+                                <button type="submit" id="selectA">選項一</button>
+                                <button type="submit" id="selectB">選項二</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voteCard col-6 col-md-4 col-lg-3">
+                    <div class="voteWrapper">
+                        <button id="report">檢舉</button>
+                        <div class="voteChart">
+                            <img src="img/vote/unknow.png" alt="未知統計結果">
+                        </div>
+                        <div class="voteText">
+                            <span>發起人：AAA</span>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/30~2019/11/05</p>
+                            <div class="voteSelect">
+                                <button type="submit" id="selectA">選項一</button>
+                                <button type="submit" id="selectB">選項二</button>
                             </div>
                         </div>
                     </div>
@@ -87,7 +175,7 @@
             </div>
         </section>
     </div>
-
+    <canvas id="starShine"></canvas>
     <!-------------------- 頁尾 -------------------->
     <div class="footer">
     <div class="footer-wrap ">
@@ -100,6 +188,6 @@
     </div>
 </div>
 
-	<!-- <script src="js/script.js"></script> -->
+	<script src="js/starsShine.js"></script>
 </body>
 </html>
