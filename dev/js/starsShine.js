@@ -34,8 +34,8 @@ Star.prototype = {
 var canvas = document.getElementById("starShine");
 var context = canvas.getContext("2d");
 
-var C_WIDTH = canvas.width = screen.width;
-var C_HEIGHT = canvas.height = $(document).height();
+var canvasW = canvas.width = $(window).width();
+var canvasH = canvas.height = $(document).height();
 
 function randomColor(){
         var arrColors = ["ffffff", "ffecd3" , "bfcfff"];
@@ -44,8 +44,8 @@ function randomColor(){
         
 var arrStars = [];
 for(i = 0; i < 250; i++){
-    var randX = Math.floor((Math.random()*C_WIDTH)+1);
-    var randY = Math.floor((Math.random()*C_HEIGHT)+1);
+    var randX = Math.floor((Math.random()*canvasW)+1);
+    var randY = Math.floor((Math.random()*canvasH)+1);
     var randR = Math.random() * 1.7 + .5;
     
     var star = new Star(randX, randY, randR, randomColor());
@@ -58,13 +58,11 @@ function update(){
 }
 function animate(){
   update();
-  /*
-    Remove comments below these for a cool trailing effect & comment
-    out the context.clearRect.
-  */
+  
+    // Remove comments below these for a cool trailing effect & comment out the context.clearRect.
     //context.fillStyle = 'rgba(255, 255, 255, .1)';
-    //context.fillRect(0,0,C_WIDTH,C_HEIGHT);
-    context.clearRect(0,0,C_WIDTH,C_HEIGHT);
+    //context.fillRect(0,0,canvasW,canvasH);
+    context.clearRect(0,0,canvasW,canvasH);
     for(var i = 0; i < arrStars.length; i++){
       arrStars[i].render();
     }
@@ -73,10 +71,11 @@ function animate(){
 
 animate();
 // $(document).ready(function(){
-    $(window).resize(function() {
-        C_WIDTH=screen.width;
-    });
-// });
+    // $(window).resize(function() {
+	// 	canvas.attr('width', canvasW);
+	// 	canvas.attr('height', canvasH);
+    // });
+//  });
 
 
 
@@ -92,7 +91,7 @@ var numStars = 500;
 $('document').ready(function() {
   
   	// Calculate the screen size
-	screenH = $(document).height();
+	screenH = $(window).height();
 	screenW = $(window).width();
 	
 	// Get the canvas
