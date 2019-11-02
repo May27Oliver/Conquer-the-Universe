@@ -566,7 +566,7 @@
             top:88%;
             left: 0;
         };
-        nav{
+        .indexFooterNav{
             
             position: absolute;
             top: 30%;
@@ -580,6 +580,23 @@
                     a{
                         padding: 0 20px;
                         color: #1d2088;
+                    }
+                }
+            }
+        }
+        .indexMedia{
+            position: absolute;
+            top: 77%;
+            left: 0%;
+            width: 100%;
+            text-align: center;
+            ul{
+                li{
+                    display: inline-block;
+                    .fa{
+                        font-size: 25px;
+                        color:  #1d2088;
+                        padding: 0 10px;
                     }
                 }
             }

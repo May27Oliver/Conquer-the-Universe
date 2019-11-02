@@ -295,15 +295,23 @@ h3{
 
 
     // footer
+    //首頁footer
     footer{
         .indexFooter{
             position: absolute;
           
-            .footerImg{
-               
-                width: 100%; 
-                 
-                }
+                .footerImg{
+                
+                    width: 100%; 
+                    
+                        }
+            .indexMedia{
+                position: absolute;
+                top: 78.5%;
+                left: 0%;
+                width: 100%;
+                text-align: center 
+                    }   
                 
         }
         
