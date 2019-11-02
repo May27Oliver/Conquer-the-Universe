@@ -295,18 +295,34 @@ h3{
 
 
     // footer
+    footer{
+        .indexFooter{
+            position: absolute;
+          
+            .footerImg{
+               
+                width: 100%; 
+                 
+                }
+                
+        }
+        
+    }
+    
     .footer{
         background: black;
         // font-family: "微軟正黑體";
         .footer-wrap {
             max-width:1200px;
+            
             margin:0 auto;
-            padding: 1vw;
+           
         }
         .icon{
             text-align: center;
             img{
                width: 2vw; 
+               
             }
         }
         p{
@@ -353,7 +369,5 @@ h3{
     margin-right: 7px;
     margin-bottom: 14px;
 }
-
-    
     
 }
