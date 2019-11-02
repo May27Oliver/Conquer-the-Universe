@@ -1,0 +1,143 @@
+//格線
+@mixin grid($num) { 
+    [class|="col"]{
+        float: left;
+        padding:0 15px;
+        box-sizing: border-box;
+    }
+    @for $i from 1 through $num {
+        .col-#{$i} {
+            width: ($i / $num) * 100%;
+        }
+    }
+}
+
+@mixin md-grid($num) { 
+    [class|="col"]{
+        float: left;
+        padding:0 15px;
+        box-sizing: border-box;
+    }
+    @for $i from 1 through $num {
+
+        .col-md-#{$i} {
+            width: ($i / $num) * 100%;
+        }
+    }
+}
+
+@mixin lg-grid($num) { 
+    [class|="col"]{
+        float: left;
+        padding:0 15px;
+        box-sizing: border-box;
+    }
+    @for $i from 1 through $num {
+
+        .col-lg-#{$i} {
+            width: ($i / $num) * 100%;
+        }
+    }
+}
+
+@mixin xl-grid($num) { 
+    [class|="col"]{
+        float: left;
+        padding:0 15px;
+        box-sizing: border-box;
+    }
+    @for $i from 1 through $num {
+
+        .col-xl-#{$i} {
+            width: ($i / $num) * 100%;
+        }
+    }
+}
+
+// rwd function
+@mixin respond($breakpoint){
+    @if $breakpoint == 'xl'{
+        @media all and (min-width: $xl){
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='lg'{
+        @media all and (min-width: $lg){
+            @content;
+        }
+    }
+    @else if ($breakpoint =='md'){
+        @media all and (min-width: $md){
+            @content;
+        }
+    }
+    @else if ($breakpoint =='xs'){
+        @media all and (max-width: $xs){
+            @content;
+        }
+    }
+}
+
+@mixin xl-fontsize($fontBasesize) {
+    h1 {
+        font-size: $fontBasesize * 15;
+        font-weight: 700;
+    }
+    h2 {
+        font-size: $fontBasesize * 12;
+        font-weight: 500;
+    }
+    h3 {
+        font-size: $fontBasesize * 10;
+        font-weight: 500;
+    }
+    .nav {//導覽列字型大小
+        font-size: $fontBasesize * 12;
+        font-weight: 700;        
+    }
+    p{
+        font-size: $fontBasesize * 9.5;
+        font-weight: 400;
+    }
+    button{
+        font-size: $fontBasesize * 9.5;
+        font-family: Arial,'Noto Sans TC', sans-serif;
+        font-weight: 500;
+    }
+}
+
+@mixin md-fontsize($fontBasesize) {
+    h1 {
+        font-size: $fontBasesize * 12;
+        font-weight: 700;
+    }
+    h2 {
+        font-size: $fontBasesize * 10;
+        font-weight: 500;
+    }
+    h3 {
+        font-size: $fontBasesize * 8;
+        font-weight: 500;
+    }
+    .nav {//導覽列字型大小
+        font-size: $fontBasesize * 10;
+        font-weight: 700;
+    }
+    p{
+        font-size: $fontBasesize * 7.5;
+        font-weight: 400;
+    }
+
+    a{
+        font-size: $fontBasesize * 9.5;
+        font-family: Arial,'Noto Sans TC', sans-serif;
+    }
+
+    button{
+        font-size: $fontBasesize * 9.5;
+        font-family: Arial,'Noto Sans TC', sans-serif;
+        font-weight: 500;
+    }
+    
+}
