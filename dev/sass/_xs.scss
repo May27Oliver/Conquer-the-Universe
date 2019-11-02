@@ -758,7 +758,7 @@
 
 /*____________________ VOTE ____________________*/
 .votePage{
-    background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
+    background: url('../img/vote/page-bg.png') no-repeat center center / cover;
     .container{
         width: 100%;
         max-width: 1200px;
@@ -789,94 +789,108 @@
             flex-wrap: wrap;
             margin: -7.5px;
             .voteCard{
-                .voteWrapper{
-                    background-image: linear-gradient($green 65%,#c0eef1 30%);
-                    border-radius: 10px;
-                    text-align: center;
-                    position: relative;
-                    padding: 15px;
-                    margin: 7.5px;
-                    .voteChart{
-                        img{
-                            width: 80%;
-                            vertical-align: bottom;
-                            padding-bottom: 20px;
-                        }
-                    }
-                    .voteText{
-                        span{
-                            margin-top: 10px;
-                            font-size: 15px;
-                            display: block;
-                        }
-                        h3{
-                            font-size: 18px;
-                            font-weight: 500;
-                            margin-top: 10px;
-                        }
-                        p{
-                            font-size: 18px;
-                            font-weight: 400;
-                            margin-top: 10px;
-                        }
-                    }
-                    /*+++ 按鈕 +++*/
-                    button{
-                        width: 80px;
-                        background: #1d2088;
-                        color: #fff;
-                        font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
-                        font-size: 15px;
-                        font-weight: 500;
-                        padding: 5px 10px;
-                        margin: 10px 5px 0;
-                        border: none;
-                        border-radius: 20px;
-                        &[disabled|="disabled"]{
-                            background: #ccc;
-                            opacity: 0.8;
-                        }
-                        &#report{
-                            width: 40px;
-                            background: #fff;
-                            color: #333;
-                            font-size: 10px;
-                            font-weight: 400;
-                            padding: 2px 0;
-                            margin: 0;
-                            border-radius: 5px;
-                            box-sizing: border-box;
-                            position: absolute;
-                            right: 20px;
-                            top: 18px;
-                        }
-                    }
-                    &.voteArea{
+                &:not(first-child){
+                    .voteWrapper{
+                        background-image: linear-gradient($green 65%,#c0eef1 30%);
+                        //background-image: linear-gradient(rgb(192,238,241),rgba(255,255,255,.7));
+                        border-radius: 10px;
+                        text-align: center;
                         position: relative;
-                        .voteAdd{
-                            height: 0;
-                            transform: perspective(300px) rotateY(0deg);
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            backface-visibility: hidden;
-                            transition: 1s;
+                        padding: 15px;
+                        margin: 7.5px;
+                        .voteChart{
+                            img{
+                                width: 80%;
+                                vertical-align: bottom;
+                                padding-bottom: 20px;
+                            }
                         }
-                        .voteForm{
-                            padding: 15px;
-                            transform: perspective(300px) rotateY(180deg);
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            backface-visibility: hidden;
-                            transition: 1s;
+                        .voteText{
+                            span{
+                                margin-top: 10px;
+                                font-size: 15px;
+                                display: block;
+                            }
+                            h3{
+                                font-size: 18px;
+                                font-weight: 500;
+                                margin-top: 10px;
+                            }
+                            p{
+                                font-size: 18px;
+                                font-weight: 400;
+                                margin-top: 10px;
+                            }
                         }
-                        &:hover{
+                        /*+++ 按鈕 +++*/
+                        button{
+                            width: 80px;
+                            background: #1d2088;
+                            color: #fff;
+                            font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                            font-size: 15px;
+                            font-weight: 500;
+                            padding: 5px 10px;
+                            margin: 10px 5px 0;
+                            border: none;
+                            border-radius: 20px;
+                            &[disabled|="disabled"]{
+                                background: #ccc;
+                                opacity: 0.8;
+                            }
+                            &#report{
+                                width: 40px;
+                                background: #fff;
+                                color: #333;
+                                font-size: 10px;
+                                font-weight: 400;
+                                padding: 2px 0;
+                                margin: 0;
+                                border-radius: 5px;
+                                box-sizing: border-box;
+                                position: absolute;
+                                right: 20px;
+                                top: 18px;
+                            }
+                        }
+                        &.voteArea{
+                            position: relative;
+                            display: flex;
                             .voteAdd{
-                                transform: perspective(300px) rotateY(180deg);
+                                width: 100%;
+                                height: 0;
+                                background-image: linear-gradient(rgba(255,255,255,.7),rgba(255,255,255,.7));
+                                // padding-bottom: 136%;
+                                border: 10px solid #c0eef1;
+                                border-radius: 10px;
+                                box-sizing: border-box;
+                                transform: perspective(800px) rotateY(0deg);
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                backface-visibility: hidden;
+                                transition: 1s;
                             }
                             .voteForm{
-                                transform: perspective(300px) rotateY(360deg);
+                                background-image: linear-gradient(rgba(255,255,255,.7),rgba(255,255,255,.7));
+                                border: 10px solid #c0eef1;
+                                border-radius: 10px;
+                                padding: 15px;
+                                box-sizing: border-box;
+                                transform: perspective(800px) rotateY(180deg);
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                backface-visibility: hidden;
+                                transition: 1s;
+                            }
+                            &:hover{
+                                .voteAdd{
+                                    transform: perspective(800px) rotateY(180deg);
+                                }
+                                .voteForm{
+                                    transform: perspective(800px) rotateY(360deg);
+                                }
                             }
                         }
                     }
