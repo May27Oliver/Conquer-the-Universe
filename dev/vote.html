@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+    <title>公民投票 - 征服宇宙 Conquer the universe</title>
+    @@include('template/CDN.html')
+</head>
+<body class="votePage">
+    <!-------------------- 頁首(計分板+導覽列) -------------------->
+    @@include('template/header.html')
+
+    <!-------------------- 內容 -------------------->
+    <div class="container">
+        <h1>公民投票</h1>
+        <!---------- 進行中 ---------->
+        <section class="voteRun">
+            <h2>正在進行中的議題</h2>
+            <div class="voteGroup">
+                <div class="voteCard col-6 col-md-4 col-lg-3">
+                    <div class="voteWrapper voteArea">
+                        <div class="voteAdd"></div>
+                        <div class="voteForm">
+                            <button id="report">檢舉</button>
+                            <div class="voteChart">
+                                <img src="img/vote/unknow.png" alt="未知統計結果">
+                            </div>
+                            <div class="voteText">
+                                <span>發起人：AAA</span>
+                                <h3>公民投票標題</h3>
+                                <p>2019/10/30~2019/11/05</p>
+                                <div class="voteSelect">
+                                    <button type="submit" id="selectA">選項一</button>
+                                    <button type="submit" id="selectB">選項二</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voteCard col-6 col-md-4 col-lg-3">
+                    <div class="voteWrapper">
+                        <button id="report">檢舉</button>
+                        <div class="voteChart">
+                            <img src="img/vote/unknow.png" alt="未知統計結果">
+                        </div>
+                        <div class="voteText">
+                            <span>發起人：AAA</span>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/30~2019/11/05</p>
+                            <div class="voteSelect">
+                                <button type="submit" id="selectA">選項一</button>
+                                <button type="submit" id="selectB">選項二</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voteCard col-6 col-md-4 col-lg-3">
+                    <div class="voteWrapper">
+                        <button id="report">檢舉</button>
+                        <div class="voteChart">
+                            <img src="img/vote/unknow.png" alt="未知統計結果">
+                        </div>
+                        <div class="voteText">
+                            <span>發起人：AAA</span>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/30~2019/11/05</p>
+                            <div class="voteSelect">
+                                <button type="submit" id="selectA">選項一</button>
+                                <button type="submit" id="selectB">選項二</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voteCard col-6 col-md-4 col-lg-3">
+                    <div class="voteWrapper">
+                        <button id="report">檢舉</button>
+                        <div class="voteChart">
+                            <img src="img/vote/unknow.png" alt="未知統計結果">
+                        </div>
+                        <div class="voteText">
+                            <span>發起人：AAA</span>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/30~2019/11/05</p>
+                            <div class="voteSelect">
+                                <button type="submit" id="selectA">選項一</button>
+                                <button type="submit" id="selectB">選項二</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voteCard col-6 col-md-4 col-lg-3">
+                    <div class="voteWrapper">
+                        <button id="report">檢舉</button>
+                        <div class="voteChart">
+                            <img src="img/vote/unknow.png" alt="未知統計結果">
+                        </div>
+                        <div class="voteText">
+                            <span>發起人：AAA</span>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/30~2019/11/05</p>
+                            <div class="voteSelect">
+                                <button type="submit" id="selectA">選項一</button>
+                                <button type="submit" id="selectB">選項二</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voteCard col-6 col-md-4 col-lg-3">
+                    <div class="voteWrapper">
+                        <button id="report">檢舉</button>
+                        <div class="voteChart">
+                            <img src="img/vote/unknow.png" alt="未知統計結果">
+                        </div>
+                        <div class="voteText">
+                            <span>發起人：AAA</span>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/30~2019/11/05</p>
+                            <div class="voteSelect">
+                                <button type="submit" id="selectA">選項一</button>
+                                <button type="submit" id="selectB">選項二</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!---------- 已結束 ---------->
+        <section class="voteEnd">
+            <h2>已結束的議題</h2>
+            <div class="voteGroup">
+                <div class="voteCard col-6 col-md-4 col-lg-3">
+                    <div class="voteWrapper">
+                        <div class="voteChart">
+                            <img src="img/vote/voted.png" alt="目前統計結果">
+                        </div>
+                        <div class="voteText">
+                            <span>發起人：AAA</span>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/10~2019/10/17</p>
+                            <div class="voteSelect">
+                                <button disabled="disabled">已結束</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <canvas id="starShine"></canvas>
+    <!-------------------- 頁尾 -------------------->
+    @@include('template/footer.html')
+
+	<script src="js/starsShine.js"></script>
+</body>
+</html>
