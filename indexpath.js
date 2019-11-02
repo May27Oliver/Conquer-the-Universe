@@ -1,1 +1,1 @@
-module.exports = 'video.html';
+module.exports = 'vote.html';
