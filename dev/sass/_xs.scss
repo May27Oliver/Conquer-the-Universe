@@ -853,7 +853,157 @@
         }
     }
 }
-        
+
+// 公民小學堂網頁標題
+.title{
+    width: 40.5vw;
+    height: 13vw;
+    background: url("../img/slogan-frame.png");
+    background-size: cover;
+    color:white;
+    margin: 5vw auto 0;
+    h1{
+        font-weight: bold;
+        text-align: center;
+        line-height: 13vw;
+    }
+    h2{
+        text-align: center;
+    }
+}
+// 目錄與頁籤
+.select-section{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5vw auto;
+    button{
+        // font-size: 20px;
+        // background-color: #1d2088;
+        background-color: #1d2088;
+        &:hover{
+            background-color: lighten(#1d2088 , 10%);
+        }
+        color: white;
+        padding:5px 18px;
+        // box-shadow: 0px 0px 20px #fff;
+        border-radius: 20px;
+        border: 1px solid #fff;
+    }
+}
+// 影片區
+.video{
+    width: 100%;
+    height: 64vw;
+    overflow: hidden;
+    background: url("../img/video-frame.png");
+    background-size: cover;
+    text-align: center;//iframe是inline屬性
+    vertical-align: middle;
+    margin: 5vw auto 0;
+    iframe{
+        width:85%;
+        height: 78%;
+        margin: 5vw 0 0 0;
+    }
+}
+// 背景小物
+.rabbit{
+    width: 10vw;
+    position: absolute;
+    top:30vw;
+    right:20vw;
+    z-index:-1;
+    img{
+        width: 20vw;
+    }
+}
+
+.fatty{
+    width: 10vw;
+    position: absolute;
+    top:37vw;
+    left:5vw;
+    z-index:-1;
+    img{
+        width: 20vw;
+    }
+}
+
+// 影片區slider
+.video-slider{
+    width: 100%;
+    height: 20vw;
+    margin: 2vw auto;
+    background-color: #CCC;
+    border-radius: 20px;
+}
+// Question
+.question{
+    width: 100%;
+    margin: 5vw auto;
+    background: #dcdcdc;
+    border-radius: 30px;
+    padding: 5vw;
+    box-sizing: border-box;
+    h2{
+        font-weight: bold;  
+    }
+    li{
+        margin: 2vw 0;
+        a{
+            color:black;
+        }
+        a:hover {
+        color: #1d2088;
+        }
+    }
+    
+    
+    p{
+        margin: 2vw 0;
+        color: red;
+    }
+    .button-section{
+        // width: 25%;
+        // display: flex;
+        // justify-content: space-around;
+        button{
+            // font-size: 20px;
+            background-color: #1d2088;
+            color: white;
+            padding:5px 18px;
+            box-shadow: 0px 0px 20px #fff;
+            border-radius: 20px;
+            border: none;
+        }
+    }
+}
+
+// 聊天機器人
+.tip-robot{
+    display: none;
+}
+// footer
+.footer{
+    background: black;
+    .footer-wrap {
+        max-width:1200px;
+        margin:0 auto;
+        padding: 1vw;
+    }
+    .icon{
+        text-align: center;
+        img{
+            width: 2vw; 
+        }
+    }
+    p{
+        margin-top:1vw;
+        text-align: center;
+        color:white;
+    }
+}
 // }
 
     
