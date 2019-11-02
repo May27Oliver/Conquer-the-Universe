@@ -1,1 +1,1 @@
-module.exports = 'shop.html';
+module.exports = 'vote.html';
