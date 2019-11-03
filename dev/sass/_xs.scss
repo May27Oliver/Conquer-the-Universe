@@ -972,16 +972,16 @@
 }
 
 .title{
-    width: 40.5vw;
-    height: 13vw;
+    width: 45vw;
+    height: 14vw;
     background: url("../img/slogan-frame.png");
     background-size: cover;
     color:white;
-    margin: 5vw auto 0;
+    margin: 5vw auto;
     h1{
         font-weight: bold;
         text-align: center;
-        line-height: 13vw;
+        line-height: 15vw;
     }
     h2{
         text-align: center;
@@ -992,17 +992,14 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin: 5vw auto;
+    margin: 15vw auto;
     button{
-        // font-size: 20px;
-        // background-color: #1d2088;
         background-color: #1d2088;
         &:hover{
             background-color: lighten(#1d2088 , 10%);
         }
         color: white;
         padding:5px 18px;
-        // box-shadow: 0px 0px 20px #fff;
         border-radius: 20px;
         border: 1px solid #fff;
     }
@@ -1010,7 +1007,7 @@
 // 影片區
 .video{
     width: 100%;
-    height: 64vw;
+    height: 65vw;
     overflow: hidden;
     background: url("../img/video-frame.png");
     background-size: cover;
@@ -1027,7 +1024,7 @@
 .rabbit{
     width: 10vw;
     position: absolute;
-    top:30vw;
+    top:50vw;
     right:20vw;
     z-index:-1;
     img{
@@ -1038,7 +1035,7 @@
 .fatty{
     width: 10vw;
     position: absolute;
-    top:37vw;
+    top:70vw;
     left:5vw;
     z-index:-1;
     img{
@@ -1062,11 +1059,15 @@
     border-radius: 30px;
     padding: 5vw;
     box-sizing: border-box;
+    line-height: 1.6;
     h2{
         font-weight: bold;  
+        line-height: 1.6;
     }
     li{
-        margin: 2vw 0;
+        border: transparent 2px solid;
+        padding: 2vw 0;
+        line-height: 1.6;
         a{
             color:black;
         }
@@ -1075,15 +1076,33 @@
         }
     }
     
-    
-    p{
+    li:hover a{
+    color: #1d2088;
+    }
+
+    li:active a{
+    color: #813260;
+    }
+
+    li:hover{
+    border: #1d2088 2px solid;
+    border-radius: 10px;
+    }
+
+    li:active{
+    border: #813260 2px solid;
+    border-radius: 10px;
+    }
+
+    p{  
+        display: none;
         margin: 2vw 0;
         color: red;
     }
     .button-section{
-        // width: 25%;
-        // display: flex;
-        // justify-content: space-around;
+        margin-top:5vw;
+        display: flex;
+        justify-content: space-around;
         button{
             // font-size: 20px;
             background-color: #1d2088;
@@ -1092,6 +1111,9 @@
             box-shadow: 0px 0px 20px #fff;
             border-radius: 20px;
             border: none;
+            &:hover{
+                background-color: lighten(#1d2088 , 10%);
+            }
         }
     }
 }
@@ -1111,7 +1133,7 @@
     .icon{
         text-align: center;
         img{
-            width: 4vw; 
+            width: 30px; 
         }
     }
     p{
