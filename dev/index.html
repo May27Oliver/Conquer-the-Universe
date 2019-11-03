@@ -91,9 +91,87 @@
         </ul>
     </div>
 </section>
-<section>
+<section class="joinPlanet container">
     <h2>加入星球</h2>
+    <div class="slider slider_circle_10 pla_slec">
+        <div class="pla_slec_in" id="pla_slec_1">
+            <div class="slec_star">
+                <div class="slec_cont">
+                    <div id="slec_cont_img1"></div>
+                </div>
+                <img src="img/index_img/planet_1.png" alt="">
+                <div class="slec_alien">
+                    <img src="img/index_img/alien_1.png" alt="">
+                </div>
+                <span class="indexMore_btn" id="slec_btn_1"><a href="">成為此星球公民</a></span>
+            </div>
+        </div>
+        <div class="pla_slec_in" id="pla_slec_2">
+            <div class="slec_star">
+                <div class="slec_cont">
+                    <div id="slec_cont_img2"></div>
+                </div>
+                <img src="img/index_img/planet_2.png" alt="">
+                <div class="slec_alien">
+                    <img src="img/index_img/alien_2.png" alt="">
+                </div>
+                <span class="indexMore_btn" id="slec_btn_2"><a href="">成為此星球公民</a></span>
+            </div>
+        </div>
+        <div class="pla_slec_in" id="pla_slec_3">
+            <div class="slec_star">
+                <div class="slec_cont">
+                    <div id="slec_cont_img3"></div>
+                </div>
+                <img src="img/index_img/planet_3.png" alt="">
+                <div class="slec_alien">
+                    <img src="img/index_img/alien_3.png" alt="">
+                </div>
+                <span class="indexMore_btn" id="slec_btn_3"><a href="">成為此星球公民</a></span>
+            </div>
+        </div>
+        <div class="next_button"></div>
+        <div class="prev_button"></div>
+    </div>
 </section>
+<!-- 公民小學堂 -->
+<div class="container">
+    <!-- 網頁標題 -->
+    <div class="title">
+        <h1>公民小學堂</h1>
+        <!-- <h2>地球觀測站</h2> -->
+    </div>
+    <!-- 目錄與頁籤 -->
+    <div class="select-section">
+        <button>財經題</button>
+        <button>思辨題</button>
+        <button>美學題</button>
+        <!-- <button>回目錄</button>         -->
+    </div>
+    <!-- 影片區 -->
+    <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/lJyt1sy4xv4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+    </div>
+    <!-- 影片區slider -->
+    <div class="video-slider"></div>
+    <!-- Question -->
+    <div class="question">
+        <h2>1.財經題：美中貿易戰起因為何？</h2>
+        <ul>
+            <li><a href="">&nbsp&nbsp1.日圓貼水</a></li>
+            <li><a href="">&nbsp&nbsp2.英國脫歐</a></li>
+            <li><a href="">&nbsp&nbsp3.鉅額貿易逆差</a></li>
+            <li><a href="">&nbsp&nbsp4.聯準會過度量化寬鬆</a></li>
+        </ul>
+        <p id="award">恭喜答對！<br>您將得到5點候選人支持度與宇宙幣100元！</p>
+        <div class="button-section">
+            <button>上一題</button>
+            <button>下一題</button>
+            <!-- <button>回目錄</button> -->
+        </div>
+    </div>
+</div>
 <!-- ------贊助商品區------- -->
 <section class="shopContainer">   
     <div class="shoptitle">
@@ -186,5 +264,16 @@
     </div>
     
 </footer>
+<script>
+    $(document).ready(function() {
+    
+            $('.slider_circle_10').EasySlides({
+                'autoplay': true,
+                'show': 3,
+                'timeout': 5000,
+                'delayaftershow': 300,
+            })
+    });
+</script>
 </body>
 </html>
