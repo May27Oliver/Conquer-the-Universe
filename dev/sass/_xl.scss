@@ -196,8 +196,7 @@ h3{
         
     h4{
         font-size: 24px;
-        float: none;
-        width: 100%;
+      
     }
     .supportBoxIn{
         width: 95%;
@@ -208,8 +207,7 @@ h3{
         .abilityBox{ 
         h4{
             font-size: 24px;
-            width:100%;
-            float: none;
+            
         }
         .abilityBoxIn{
             width: 241px;
@@ -227,5 +225,12 @@ h3{
     margin-right: 7px;
     margin-bottom: 14px;
 }
+
+// 首頁加入星球
+    .slider_circle_10 {
+        margin:0 50%;
+        transform: translateX(-50%);
+        margin-top:-250px;
+    }
     
 }
