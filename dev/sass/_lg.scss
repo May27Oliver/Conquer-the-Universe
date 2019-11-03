@@ -476,12 +476,65 @@
     }
 
 
-
-    
-
- 
-
-
+    // 首頁加入星球
+    .slider_circle_10 {
+        width: 65vw;
+        height: 53vw;
+        margin-top:-250px;
+        .active {
+            top: 30%;
+            left: 50%;
+            margin-left: -25%;
+            width: 50%;
+            height: 75%;
+            z-index: 10;
+        }
+        .prev1,
+        .next1 {
+            top: 35%;
+            left: 50%;
+            margin-left: -40%;
+            width: 25%;
+            height: 35%;
+            z-index: 9;
+        }
+        .next1 {
+            margin-left: 15%;
+        }
+    }
+    .pla_slec_in{
+        .slec_star{
+            width: 100%;
+            height: 100%;
+            img{
+                width: 75%;
+                bottom:10%;
+            }
+        }
+        .slec_alien{
+            img{
+                width: 25%;
+                bottom:50%;
+            }
+        }
+        .slec_cont{
+            width: 55%;
+            height: 35%;
+            div{
+                bottom:7%;
+                height: 70%;
+            }
+        }
+    }
+    #pla_slec_2{
+        .slec_alien{
+            img{
+                width: 30%;
+                bottom:50%;
+            }
+        }
+    }
+  
 
 
 
