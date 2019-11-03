@@ -949,13 +949,16 @@
     padding: 100px 15px;
     box-sizing: border-box;
     button{
-        background: #FFD584;
-        padding:5px 18px;
-        color: #724E1E;
-        display: block;
+        display:block;
         margin: auto;
-        border: solid 2px #724E1E;
-        border-radius: 20px;
+        color:#b78100;
+        background-color: #ffd584;
+    /* padding:15px;*/
+        width: 160px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 40px;
+        border:2px solid #b78100;
     }
 }
 
