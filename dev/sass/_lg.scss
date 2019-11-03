@@ -507,6 +507,7 @@
     /*____________________ VOTE ____________________*/
     .votePage{
         .container{
+            /*------ 投票卡片 ------*/
             .voteGroup{
                 .voteCard{
                     .voteWrapper{
@@ -527,11 +528,29 @@
                                 margin-top: 10px;
                             }
                         }
-                        button{
-                            width: 100px;
-                            font-size: 18px;
+                        &.voteArea{
+                            .voteAdding{
+                                #voteForm{
+                                    margin: 25px;
+                                    h3{
+                                        font-size: 18px;
+                                    }
+                                    p{
+                                        font-size: 18px;
+                                    }
+                                }
+                            }
                         }
                     }
+                }
+            }
+            /*------ 按鈕------*/
+            button{
+                font-size: 18px;
+                padding: 5px 18px;
+                &.report{
+                    font-size: 10px;
+                    padding: 2px 0;
                 }
             }
         }
