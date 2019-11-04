@@ -66,71 +66,71 @@
 
     
      //公民的家
-.homeContent{
-    padding-top:50px
-}
-
-// 內容區塊-左
-.boxLeft{
-    margin: auto;
-    
-    
-    .memNameBox{
-        margin-bottom:50px;
-        
+    .homeContent{
+        padding-top:50px
     }
-    .supportBox{
-        border-radius: 8px 8px 8px 8px ;
-        padding-bottom: 2%;
-        margin-bottom: 30px; 
+
+    // 內容區塊-左
+    .boxLeft{
         margin: auto;
-        h4{
-            text-align: center;
-            width: 90%;
-            font-size: 24px;
-            // margin-left: -5px;
-        }
-        .supportBoxIn{
-            padding-top: 5%;
-            margin-right: 8px;
-            margin-bottom: 3px;
-            padding-bottom: 5%;
-            width: 94%;
-                p{   
-                    font-size: 60px;
-                }
-            }
         
+        
+        .memNameBox{
+            margin-bottom:50px;
+            
         }
+        .supportBox{
+            border-radius: 8px 8px 8px 8px ;
+            padding-bottom: 2%;
+            margin-bottom: 30px; 
+            margin: auto;
+            h4{
+                text-align: center;
+                width: 90%;
+                font-size: 24px;
+                // margin-left: -5px;
+            }
+            .supportBoxIn{
+                padding-top: 5%;
+                margin-right: 8px;
+                margin-bottom: 3px;
+                padding-bottom: 5%;
+                width: 94%;
+                    p{   
+                        font-size: 60px;
+                    }
+                }
+            
+            }
 
-    .abilityBox{
+        .abilityBox{
 
-        border-radius: 8px 8px 8px 8px ;
-        margin-top: 30px;
-        // height: 200px;
-        h4{
-           
-            text-align: center;
-            width: 90%;
-            font-size: 24px;
-            // margin-left: -5px;
+            border-radius: 8px 8px 8px 8px ;
+            margin-top: 30px;
+            // height: 200px;
+            h4{
+            
+                text-align: center;
+                width: 90%;
+                font-size: 24px;
+                // margin-left: -5px;
+            }
+            .abilityBoxIn{
+                padding-top: 40px;
+                margin-bottom: 3px;
+                height: 200px;
+                width: 94%;
+                    p{   
+                        font-size: 60px;
+                    }
+            }
         }
-        .abilityBoxIn{
-            padding-top: 40px;
-            margin-bottom: 3px;
-            height: 200px;
-            width: 94%;
-                 p{   
-                     font-size: 60px;
-                 }
-         }
     }
-}
     
     
 
     
-//內容區塊-中
+    //內容區塊-中
     .redBall{
         height: 900px;
         .boxCenter{ 
@@ -141,7 +141,7 @@
     }
 
     
- //內容區塊-右
+    //內容區塊-右
  
     #tab-demo{
         margin-top: 115px;
@@ -404,6 +404,24 @@
     .question{
         width: 55%;
     }
+
+
+    /*__________[START] 首頁公民投票 VOTE IN INDEX __________*/
+    .voteSectionWrapper{
+        .voteSection{
+            /*------ 投票卡片 ------*/
+            .voteGroup{
+                .voteCard{
+                    &:nth-child(n+3){
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    /*__________[END] 首頁公民投票 VOTE IN INDEX __________*/
+
+
     
 /*____________________ 贊助商品區 ____________________*/
     .shopContainerAll{
@@ -638,117 +656,117 @@
 
 
 
-// news 開始
-.news {
-    background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
-    font-family: "微軟正黑體";
-//     background-image: url(../img/START.png), url(../img/bg.png);
-//     background-repeat: repeat;
-}
-.newstitle{
-    h1 {
-        background: url('../img/vote/title-bg.png') no-repeat center center / contain;
-        color: #fff;
-        text-align: center;
-        line-height: 2.8;
+    // news 開始
+    .news {
+        background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
+        font-family: "微軟正黑體";
+    //     background-image: url(../img/START.png), url(../img/bg.png);
+    //     background-repeat: repeat;
     }
-}  
+    .newstitle{
+        h1 {
+            background: url('../img/vote/title-bg.png') no-repeat center center / contain;
+            color: #fff;
+            text-align: center;
+            line-height: 2.8;
+        }
+    }  
 
-.newsBox {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-}
+    .newsBox {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
 
-.newsitem {
-    background-color:rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction:row;
-    width: 100%;
-    max-width: 1200px;
-    color: #eee;
-    text-align: center;
-    margin: 30px auto;
-    border-radius: 30px;
+    .newsitem {
+        background-color:rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction:row;
+        width: 100%;
+        max-width: 1200px;
+        color: #eee;
+        text-align: center;
+        margin: 30px auto;
+        border-radius: 30px;
 
 
-    .newsPic {
-       width: 40%;
+        .newsPic {
+        width: 40%;
+
+            img {
+                width: 80%;
+                margin: 20px auto;
+                text-align: center;
+
+            }
+
+        }
+
+        .newsText {
+            width: 60%;
+            text-align: left;
+            margin: auto;
+
+    h2 {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+
+        p {
+            line-height: 1.6;
+            margin-top: 20px;
+            margin-bottom: 25px;
+
+        }
+
+        }
+
+        
+
+    }
+    .newsBtnAll{
+        .newsBtn{
+            float: left;
+        }
+        .newsreport{
+            float: right;
+
+        }
+    }
+
+    .newsBtn {
+        margin-bottom: 20px;
+        display: flex;
 
         img {
-            width: 80%;
-            margin: 20px auto;
-            text-align: center;
-
+            padding-left: 30px;
+        }
+        .newsreport{
+        margin: 50px;
+        
         }
 
     }
 
-    .newsText {
-        width: 60%;
-        text-align: left;
-        margin: auto;
-
-h2 {
-        font-size: 24px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+    .creatNEWS{
+    background-color: #000000;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 30px;
     }
 
+    // news end
 
-    p {
-        line-height: 1.6;
-        margin-top: 20px;
-        margin-bottom: 25px;
 
+    // 首頁雷達
+    .chartRadarDiv{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
     }
-
-    }
-
-    
-
-}
-.newsBtnAll{
-    .newsBtn{
-        float: left;
-    }
-    .newsreport{
-        float: right;
-
-    }
-}
-
-.newsBtn {
-    margin-bottom: 20px;
-    display: flex;
-
-    img {
-        padding-left: 30px;
-    }
-    .newsreport{
-       margin: 50px;
-       
-    }
-
-}
-
-.creatNEWS{
-   background-color: #000000;
-  max-width: 1200px;
-  margin: 0 auto;
-  border-radius: 30px;
-}
-
-// news end
-
-
-// 首頁雷達
-.chartRadarDiv{
-    display: flex;
-      justify-content: center;
-      align-items: center; 
-}
 
 
 // MD 結束

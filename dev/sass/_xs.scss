@@ -770,6 +770,417 @@
         }
     }
 }
+
+/*__________[START] 首頁公民投票 VOTE IN INDEX __________*/
+
+.voteSectionWrapper{
+    // background: url('../img/vote/index-vote-bg.png') no-repeat center center / contain ;
+    .voteSection {
+        width: 100%;
+        max-width: 992px;
+        margin: 200px auto;
+        padding: 1px 15px;
+        box-sizing: border-box;
+
+        h2 {
+            background: url('../img/vote/title-bg.png') no-repeat center center / contain;
+            color: #fff;
+            text-align: center;
+            line-height: 2.8;
+            margin: 0px auto 80px;
+        }
+
+        /*------ 投票卡片 ------*/
+        .voteGroup {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0px -7.5px;
+
+            .voteCard {
+                &:nth-child(n+3){
+                    display: none;
+                }
+                .voteWrapper {
+                    height: 100%;
+                    border-radius: 10px;
+                    text-align: center;
+                    position: relative;
+                    padding: 1px;
+                    margin: 7.5px;
+
+                    .voteChart {
+                        background: $green;
+                        padding: 15px;
+                        border-radius: 10px 10px 0 0;
+
+                        img {
+                            width: 80%;
+                            vertical-align: bottom;
+                            padding-bottom: 10px;
+                        }
+                        #votePie{
+                            width: 80%;
+                            height: auto;
+                        }
+                    }
+
+                    .voteText {
+                        background: lighten($green, 15);
+                        padding: 15px;
+                        border-radius: 0 0 10px 10px;
+
+                        small {
+                            margin-top: 10px;
+                            font-size: 15px;
+                            display: block;
+                        }
+
+                        h3 {
+                            font-size: 18px;
+                            font-weight: 500;
+                            margin-top: 10px;
+                        }
+
+                        p {
+                            font-size: 15px;
+                            font-weight: 400;
+                            margin-top: 10px;
+                        }
+                    }
+
+                    &.voteArea {
+                        position: relative;
+                        height: 100%;
+                        margin: 8.5px;
+                    }
+                }
+            }
+        }
+    }
+    /*------ 按鈕 ------*/
+    button {
+        display: block;
+        background: #1d2088;
+        color: #fff;
+        font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 5px 18px;
+        margin: 10px auto 0;
+        border: none;
+        border-radius: 20px;
+
+        &:hover {
+            background: lighten(#1d2088, 15);
+        }
+
+        &[disabled|="disabled"] {
+            background: #ccc;
+            opacity: 0.8;
+
+            &:hover {
+                background: #ccc;
+            }
+        }
+
+        &.report {
+            width: 40px;
+            background: #fff;
+            color: #333;
+            font-size: 10px;
+            font-weight: 400;
+            padding: 2px 0;
+            margin: 0;
+            border-radius: 5px;
+            box-sizing: border-box;
+            position: absolute;
+            right: 20px;
+            top: 18px;
+        }
+        
+        &.index-more{
+            background: #ffd584;
+            color: #b78100;
+            line-height: 40px;
+            text-align: center;
+            padding: 0 18px;
+            margin-top: 50px;
+            border: 2px solid #b78100;
+            border-radius: 40px;
+            cursor: pointer;
+
+            &:hover {
+                background: lighten(#ffd584,10);
+            }
+        }
+    }
+
+    /*------ 跳窗提示 ------*/
+    .voteAlertGroup {
+        width: 100vw;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .5);
+        z-index: 9999;
+        display: none;
+
+        .voteAlertVoting,
+        .voteAlertVoted,
+        .voteAlertReport {
+            width: 300px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+
+            h2 {
+                font-size: 30px;
+                text-align: center;
+                background: $yellow;
+                padding: 20px;
+                margin: 0;
+            }
+
+            .voteAlertText {
+                background: lighten($yellow, 12);
+                border-radius: 0 0 10px 10px;
+                text-align: center;
+                padding: 20px;
+
+                p {
+                    margin: 10px 10px 0;
+                }
+
+                button {
+                    display: inline-block;
+                    background: $yellow;
+                    color: #333;
+                    margin-top: 35px;
+                }
+
+                select {
+                    width: 120px;
+                    display: block;
+                    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                    border: none;
+                    margin: 30px auto 0;
+                }
+            }
+        }
+    }
+        
+    
+}
+/*__________[END] 首頁公民投票 VOTE IN INDEX __________*/
+
+
+
+   // -------贊助商品區------
+ 
+//    .shopContainer{
+//     margin-top: 100px;
+//     padding-top: 50px;
+//     padding-bottom: 50px;
+//     text-align: center;
+//     background-color: #333;	
+//     position: relative;
+// .shoptitle{
+//     margin: 30px auto 50px;
+//     padding: 30px;
+//     width: 150px;
+//     background-size:100%;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-image: url(../img/title.png);
+//      h2{
+//          color:#fff;
+//     }	
+
+// }  
+// .boxForProduct{
+//     max-width: 500px;
+//     margin: 0 auto;
+//     height: 600px;
+//      .col-6{
+//          padding: 0;    
+//      }
+//  }
+// .productBox{
+//     margin: 0 auto;
+//     width: 95%;
+//     background-repeat: no-repeat;
+//     background-size:contain;
+//     background-position: bottom;
+//     position: relative;
+// }
+// .model{
+//     background-color: #90BEE3;
+//     max-width: 500px;
+//     margin: 0 auto 50px;
+//     background-image: url(../img/pinkPlanet.png);
+//     background-repeat: no-repeat;
+//     background-position: bottom;
+//     border-radius: 10px;
+// }
+// .model .pic01{
+//     padding: 20px;
+//     margin-top: 50px;
+// }
+// .productPic{
+//     box-sizing:border-box;
+//     margin: 50px auto 20px;
+//     background-color: antiquewhite;;
+//     border-radius: 10px;
+//     width: 145px;
+//     height: 145px;
+//     position: relative;
+//     img{
+//         top: calc(50% - 50px);
+//         left: calc(50% - 50px);
+//         position: absolute; 
+//         max-width: 100px;
+//         text-align: center;
+        // background-color: #333;	
+// 	.shoptitle{
+// 		margin: 30px auto 50px;
+// 		padding: 30px;
+// 		width: 150px;
+// 		background-size:100%;
+// 		background-position: center;
+// 		background-repeat: no-repeat;
+//         background-image: url(../img/title.png);
+
+//         h2 {
+//             color: #fff;
+//         }
+
+//     }
+
+//     .boxForProduct {
+//         .col-6 {
+//             max-width: 400px;
+//             background-color: #1c0e44;
+//         }
+//     }
+
+//     .productBox {
+//         margin: 0 auto;
+//         width: 95%;
+//         background-repeat: no-repeat;
+//         background-size: contain;
+//         background-position: bottom;
+//     }
+
+//     .model {
+
+//         background-color: #90BEE3;
+//         max-width: 500px;
+//         margin: 0 auto 50px;
+//         background-image: url(../img/pinkPlanet.png);
+//         background-repeat: no-repeat;
+//         background-position: bottom;
+//         border-radius: 10px;
+//     }
+
+//     .model .pic01 {
+//         padding: 20px;
+//         margin-top: 50px;
+//     }
+// }
+// .productTitle{
+// h3{
+//     font-weight: bold;
+//     color: #fff;	
+// }
+// .productBtn{
+//     width: 60px;
+//     margin: 10px auto;
+//     background-color: #448aca;
+//     padding: 5px;
+//     border-radius: 50px;
+//     h2{
+//         color: #fff;
+//     }	
+// }
+// } 
+// }
+// .toolTitle{
+// color:#fff;
+// line-height: 2;
+// }
+// .toolTitle02{
+// display: none;
+
+// }
+// .proTitle{
+//     a{ 
+//         display:block;
+//         margin: auto;
+//         color:#b78100;
+//         background-color: #ffd584;
+//     /* padding:15px;*/
+//         width: 160px;
+//         line-height: 40px;
+//         text-align: center;
+//         border-radius: 40px;
+//         border:2px solid #b78100;
+//     }
+// .moreProductBtn{
+// text-align: center;
+// margin: 30px auto;
+// width: 80px;
+// border-radius: 50px;
+// padding: 10px;
+// font-size: 20px;
+// font-weight: bold;
+// overflow: hidden;
+// background-color: #E8B51C;	
+// h2{ 
+//     font-weight: bold;
+//     color: #fff;
+// }
+// }
+// //商品業內頁的扭蛋區
+// .event{
+// padding-top: 50px;
+// background-color: #1c0e44;
+// }
+// .gashapon{
+
+// text-align: center;;
+// img{
+//     width: 300px;
+// }
+// }
+// .clearboth{
+// clear: both;
+// }
+// //商品業內頁的燈箱
+// #shopLightBox{
+// color: #FFF;
+// background-color: #E8B51C;
+// margin: 0 auto;
+// border-radius: 10px;
+// position: absolute;
+// top: calc(60% - 100px);
+// right: calc(50% - 100px);
+// z-index: 1;
+// width: 200px;
+// height: 150px;
+// p{
+//   margin: 30px auto 30px;
+// }
+// span{
+
+//     padding: 5px 10px 5px 10px;
+//     margin: 20px;
+//     background-color: #a6bfd0;
+//     border-radius: 5px;
+// }
+// }
 /*____________________ 贊助商品區 ____________________*/
     .shopContainerAll{
         background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
@@ -1008,6 +1419,7 @@
             border-radius: 5px;
         }
     }
+<<<<<<< HEAD
     .shopNews{
         background: #84ccc9;
         border-radius: 10px 10px 0px 0px;
@@ -1023,6 +1435,12 @@
     }
   
 /*____________________ VOTE ____________________*/
+=======
+
+
+
+/*____________________[START] VOTE ____________________*/
+>>>>>>> d337f5604b753119a79f6039f169e4d65985ddf7
 .votePage {
     background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
 
@@ -1078,7 +1496,7 @@
                         img {
                             width: 80%;
                             vertical-align: bottom;
-                            padding-bottom: 10px;
+                            padding-bottom: 15px;
                         }
                     }
 
@@ -1086,9 +1504,10 @@
                         background: lighten($green, 15);
                         padding: 15px;
                         border-radius: 0 0 10px 10px;
+                        position: relative;
 
                         small {
-                            margin-top: 10px;
+                            padding-top: 10px;
                             font-size: 15px;
                             display: block;
                         }
@@ -1236,8 +1655,8 @@
                 border-radius: 5px;
                 box-sizing: border-box;
                 position: absolute;
-                right: 20px;
-                top: 18px;
+                right: 10px;
+                top: 8px;
             }
 
             &.voteLaunch {
@@ -1323,6 +1742,9 @@
         z-index: -1;
     }
 }
+/*____________________[END] VOTE ____________________*/
+
+
 
 // 公民小學堂網頁標題
 .video-body {
@@ -1338,7 +1760,7 @@
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    padding: 100px 15px;
+    padding: 200px 15px;
     box-sizing: border-box;
     .video-button{
         background-color: #1d2088;
