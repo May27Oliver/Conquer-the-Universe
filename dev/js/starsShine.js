@@ -78,8 +78,6 @@ animate();
     });
 // });
 
-
-
 /* 比較不明顯的星星
 var canvas;
 var context;
@@ -184,3 +182,6 @@ Star.prototype.draw = function() {
 	context.restore();
 }
 */
+
+//贊助商品區燈箱////
+
