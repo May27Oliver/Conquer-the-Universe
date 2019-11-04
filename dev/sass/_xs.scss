@@ -1272,13 +1272,31 @@ span{
     margin: auto;
     padding: 100px 15px;
     box-sizing: border-box;
+<<<<<<< HEAD
 
     button {
         display: block;
+=======
+    .video-button{
+        background-color: #1d2088;
+        &:hover{
+            background-color: lighten(#1d2088 , 10%);
+        }
+        color: white;
+        padding:5px 18px;
+        border-radius: 20px;
+        border: 1px solid #fff;
+    }
+    .index-more{
+        display:block;
+>>>>>>> 7fab00c675c4a4ba88e05d028b78d7bebf361134
         margin: auto;
         color: #b78100;
         background-color: #ffd584;
+<<<<<<< HEAD
         /* padding:15px;*/
+=======
+>>>>>>> 7fab00c675c4a4ba88e05d028b78d7bebf361134
         width: 160px;
         line-height: 40px;
         text-align: center;
@@ -1308,8 +1326,12 @@ span{
     display: flex;
     justify-content: space-between;
     margin: 15vw auto;
+<<<<<<< HEAD
 
     button {
+=======
+    .video-button{
+>>>>>>> 7fab00c675c4a4ba88e05d028b78d7bebf361134
         background-color: #1d2088;
 
         &:hover {
@@ -1321,6 +1343,7 @@ span{
         border-radius: 20px;
         border: 1px solid #fff;
     }
+    
 }
 
 // 影片區
@@ -1367,14 +1390,77 @@ span{
 }
 
 // 影片區slider
+<<<<<<< HEAD
 .video-slider {
     width: 100%;
+=======
+.slider{
+    display: flex;
+    justify-content: center;
+>>>>>>> 7fab00c675c4a4ba88e05d028b78d7bebf361134
     height: 20vw;
-    margin: 2vw auto;
-    background-color: #CCC;
-    border-radius: 20px;
+    width: 100%;
+    .video-slider{    
+        margin: 2vw auto;
+        background-color: #CCC;
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+        ul{
+            width: 125%;
+            height: 16vw;
+            position: relative;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            li{
+                width: 25%;
+                height: 16vw;
+                line-height: 20vw;
+                display: block;
+            }
+        }
+    }
+
+    .slider-forward{
+        background:transparent;
+        border: transparent;    
+        width: 5vw;
+        height: 20vw;
+        line-height: 20vw;
+        position: relative;
+        i{
+            color: #aaa;
+            position: absolute;
+            top: 5vw;
+            left: -2vw;
+            z-index: 2;
+            font-size: 8vw;
+        }
+    }
+
+    .slider-back{
+        background:transparent;
+        border: transparent;
+        width: 5vw;
+        height: 20vw;
+        line-height: 20vw;
+        position: relative;
+        i{
+            color: #aaa;
+            position: absolute;
+            top: 5vw;
+            left:-2vw;
+            z-index: 2;
+            font-size: 8vw;
+        }
+    }
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7fab00c675c4a4ba88e05d028b78d7bebf361134
 // Question
 .question {
     width: 100%;
