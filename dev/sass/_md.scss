@@ -557,27 +557,18 @@
 
 // news 開始
 .news {
+    background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
     font-family: "微軟正黑體";
-    background-image: url(../img/START.png), url(../img/bg.png);
-    background-repeat: repeat;
+//     background-image: url(../img/START.png), url(../img/bg.png);
+//     background-repeat: repeat;
 }
 .newstitle{
-    margin: 150px auto 50px;
-    padding: 30px;
-    width: 150px;
-    background-size:100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url(../img/title.png);
-        h2{
-            color:#fff; 
-            
-           background-image: url(../img/UFO.png);
-        }
-       	   :hover{
-            display: block;
-            
-        }
+    h1 {
+        background: url('../img/vote/title-bg.png') no-repeat center center / contain;
+        color: #fff;
+        text-align: center;
+        line-height: 2.8;
+    }
 }  
 
 .newsBox {
