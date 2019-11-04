@@ -1464,6 +1464,7 @@
     }
 }
 
+
 // Question
 .question {
     width: 100%;
@@ -2180,3 +2181,31 @@ button{
     background-color: #1c0e44;
 }
 
+.newsTitle{
+    width: 100%;
+    h2{
+        line-height: 100px;
+        text-align: center;
+        color:#fff;
+        background-image: url(../img/title.png);
+        background-repeat: no-repeat;
+        width: 210px;
+        background-size:100%;
+        background-position: center;
+        margin:0 auto;
+    }
+}
+.newsMore{
+    a{
+        display:block;
+        text-decoration: none;
+        color: #b78100;
+        background-color: #ffd584;
+        width: 160px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 40px;
+        border: 2px solid #b78100;
+        margin:0 auto;
+    }
+}
