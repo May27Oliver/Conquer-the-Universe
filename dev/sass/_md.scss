@@ -334,9 +334,69 @@
     }
 
     // 影片區slider
-    .video-slider{
-        width: 55%;
+    .slider{
+        display: flex;
+        justify-content: center;
         height: 10vw;
+        margin: 0 auto;
+        width: 65%;
+        .video-slider{    
+            margin: 2vw auto;
+            background-color: #CCC;
+            border-radius: 20px;
+            position: relative;
+            height: 10vw;
+            overflow: hidden;
+            width: 100%;
+            ul{
+                width: 125%;
+                height: 10vw;
+                position: relative;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                li{
+                    width: 20%;
+                    height: 10vw;
+                    line-height: 10vw;
+                    display: block;
+                }
+            }
+        }
+    
+        .slider-forward{
+            background:transparent;
+            border: transparent;    
+            width: 5vw;
+            height: 10vw;
+            line-height: 10vw;
+            position: relative;
+            i{
+                color: #aaa;
+                position: absolute;
+                top: 3vw;
+                left: -2vw;
+                z-index: 2;
+                font-size: 8vw;
+            }
+        }
+    
+        .slider-back{
+            background:transparent;
+            border: transparent;
+            width: 5vw;
+            height: 10vw;
+            line-height: 10vw;
+            position: relative;
+            i{
+                color: #aaa;
+                position: absolute;
+                top: 3vw;
+                left:-1vw;
+                z-index: 2;
+                font-size: 8vw;
+            }
+        }
     }
     // Question
     .question{
@@ -562,7 +622,7 @@
             width: 60%;
             height: 33%;
             div{
-                bottom:7%;
+                bottom:-15%;
                 height: 70%;
             }
         }
@@ -574,27 +634,18 @@
 
 // news 開始
 .news {
+    background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
     font-family: "微軟正黑體";
-    background-image: url(../img/START.png), url(../img/bg.png);
-    background-repeat: repeat;
+//     background-image: url(../img/START.png), url(../img/bg.png);
+//     background-repeat: repeat;
 }
 .newstitle{
-    margin: 150px auto 50px;
-    padding: 30px;
-    width: 150px;
-    background-size:100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url(../img/title.png);
-        h2{
-            color:#fff; 
-            
-           background-image: url(../img/UFO.png);
-        }
-       	   :hover{
-            display: block;
-            
-        }
+    h1 {
+        background: url('../img/vote/title-bg.png') no-repeat center center / contain;
+        color: #fff;
+        text-align: center;
+        line-height: 2.8;
+    }
 }  
 
 .newsBox {
@@ -685,6 +736,13 @@ h2 {
 
 // news end
 
+
+// 首頁雷達
+.chartRadarDiv{
+    display: flex;
+      justify-content: center;
+      align-items: center; 
+}
 
 
 // MD 結束

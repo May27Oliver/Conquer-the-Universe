@@ -11,6 +11,8 @@
     <!-- 分頁 -->
     <script type="text/javascript" src="js/jquery-1.8.3.js"></script>  
   <script type="text/javascript" src="js/jquery.pagination.js"></script>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>宇宙星聞 - 征服宇宙</title>
     <style>
     
@@ -25,61 +27,45 @@
 
         <div class="newstitle">
             <!-- <img src="img/UFO.png" alt=""> -->
-                    <h2>宇宙新聞</h2>
+                    <h1>宇宙新聞</h1>
                     
              
         </div>
 
 
-        <div class="newscontainer">
-            <form>
-              <div class="row">
-                <h4>新聞標題</h4>
-                <div class="input-group input-group-icon">
-                  <input type="text" placeholder="新聞標題"/>
-                  <div class="input-icon"><i class="fa fa-newspaper-o"></i></div>
-                </div>
-                
-                
-              </div>
-              <div class="row">
-                    <h4>新聞內容</h4>
-                    <div class="input-group input-group-icon">
-                           <textarea name="" id=""></textarea>
-                      
-                          </div>
-              </div>
-              
-                <h4>作用星球</h4>
-                <div class="input-group">
-                  <input type="radio" name="payment-method" value="card" id="payment-method-card" />
-                  <label for="payment-method-card"><span>星球A</span></label>
-                  <input type="radio" name="payment-method" value="paypal" id="payment-method-paypal"/>
-                  <label for="payment-method-paypal"> <span>星球B</span></label>
-                  <input type="radio" name="payment-method" value="card" id="payment-method-card" />
+        <!---------- 新聞表單 ---------->
+	<div class="fakeNewsLanuch container">
+        <div class="ufo">
 
-                  <input type="radio" name="payment-method" value="card2" id="payment-method-card2" />
-                  <label for="payment-method-card2"><span>星球C</span></label>
-                  
-                 
-                </div>
-                <div class="row">
-                <div class="input-group input-group-icon">
-                        <h4>影響分數</h4>
-                  <input type="text" />
-                  
-                </div>
-                
-                
-              </div>
-              <div class="row">
-                
-                <div class="newsSubmit">
-                    <button class="btn-5" onclick="CheckForm()"">送出</button>
-                </div>
-              </div>
-            </form>
-          </div>
+            <img class="uu" src="img/UFO.png" alt="">
+            
+        </div>
+		<h2>發佈新聞</h2>
+		<form method="POST" action="fakeNewsLanuch.php">
+			<p>使用對象：
+				<label for="planetA">星球A</label>
+				<input type="radio" name="planet" id="planetA">
+				<label for="planetB">星球B</label>
+				<input type="radio" name="planet" id="planetB">
+				<label for="planetC">星球C</label>
+				<input type="radio" name="planet" id="planetC">
+			</p>
+			<p>支持度基礎值：
+				<select>
+					<option>請選擇</option>
+					<option>200</option>
+					<option>100</option>
+					<option>50</option>
+					<option>-50</option>
+					<option>-100</option>
+					<option>-200</option>
+				</select>
+			</p>
+			<p>新聞標題：<input type="text" maxlength="20" placeholder="最多輸入10個中文字"></p>
+			<p>新聞內容：<textarea maxlength="240" placeholder="最多輸入120個中文字"></textarea></p>
+			<button type="submit">送出(<span>$100</span>)</button>
+		</form>
+	</div>
 
          
          <div class="newsBox">
@@ -176,22 +162,26 @@
                   </div>
                 </div>
 
+                
+
+    
          
 
-            <!-- @@include('./template/footer.html') -->
+            @@include('./template/footer.html')
 <script language="Javascript">   
 
 function CheckForm()
 
 {
+    swal("Good job!", "You clicked the button!", "success");
 
-  if(confirm("確認要送出本表單嗎?????")==true)   
+//   if(confirm("確認要送出本表單嗎?????")==true)   
 
-    return true;
+//     return true;
 
-  else  
+//   else  
 
-    return false;
+//     return false;
 
 }  
     </script>
@@ -213,5 +203,6 @@ function CheckForm()
     }
   }
   </script> 
+  
 </body>
 </html>
