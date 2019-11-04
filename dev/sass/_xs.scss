@@ -197,134 +197,134 @@
 
 
     // 首頁最上面獎台
-    .indexHeader{
-        padding-top:100px;
-        >h1{
-            color:#fff;
-        }
-        h1{
-            text-align: center;
-            margin:70px auto;
-        }
-        .indexWinner{
-            width: 330px;
-            margin:0 auto;
-            overflow: hidden;
-            li{
-                float: left;
-                width: 110px;
-                .stageText{
-                    background-repeat: no-repeat;
-                    background-size: 100%;
-                    background-position: bottom;
-                    padding-top:220px;
-                    position: relative;
-                    p{
-                        width: 150px;
-                        position: absolute;
-                        bottom:0;
-                        left:50%;
-                        transform: translateX(-50%);
-                    }
-                }
-                img{
-                    display: block;
-                    width: 80%;
-                    margin:0 auto;
-                }
-                .planetTxt{
-                    span{
-                        margin-left:5px;
-                    }
-                    p{
-                        margin-bottom:5px;
-                        color:#fff;
-                    }
+.indexHeader{
+    padding-top:100px;
+    >h1{
+        color:#fff;
+    }
+    h1{
+        text-align: center;
+        margin:70px auto;
+    }
+    .indexWinner{
+        width: 330px;
+        margin:0 auto;
+        overflow: hidden;
+        li{
+            float: left;
+            width: 110px;
+            .stageText{
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: bottom;
+                padding-top:220px;
+                position: relative;
+                p{
+                    width: 150px;
+                    position: absolute;
+                    bottom:0;
+                    left:50%;
+                    transform: translateX(-50%);
                 }
             }
-
-            img {
+            img{
                 display: block;
                 width: 80%;
-                margin: 0 auto;
+                margin:0 auto;
             }
-
-            .planetTxt {
-                span {
-                    margin-left: 5px;
+            .planetTxt{
+                span{
+                    margin-left:5px;
                 }
-
-                p {
-                    margin-bottom: 5px;
+                p{
+                    margin-bottom:5px;
+                    color:#fff;
                 }
             }
         }
 
-        .winner2 {
-            .stageText {
-                background-image: url(../img/index_img/stageB2.png);
-                margin-right: -3.4%;
-                padding-top: 189px;
-
-                p {
-                    bottom: 50px;
-                }
-            }
-
-            .alienImg {
-                bottom: 85px;
-            }
-
-            .planetTxt {
-                padding-top: 30px;
-            }
+        img {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
         }
 
-        .winner1 {
-            .stageText {
-                background-image: url(../img/index_img/stageR1.png);
-
-                p {
-                    bottom: 70px;
-                }
+        .planetTxt {
+            span {
+                margin-left: 5px;
             }
 
-            .alienImg {
-                bottom: 105px;
+            p {
+                margin-bottom: 5px;
             }
         }
+    }
 
-        .winner3 {
-            .stageText {
-                background-image: url(../img/index_img/stageY3.png);
-                margin-left: -3.3%;
-                padding-top: 159px;
+    .winner2 {
+        .stageText {
+            background-image: url(../img/index_img/stageB2.png);
+            margin-right: -3.4%;
+            padding-top: 189px;
 
-                p {
-                    bottom: 35px;
-                }
+            p {
+                bottom: 50px;
             }
-
-            .alienImg {
-                bottom: 70px;
-            }
-
-            .planetTxt {
-                padding-top: 60px;
-            }
-        }
-
-        p {
-            text-align: center;
         }
 
         .alienImg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
+            bottom: 85px;
+        }
+
+        .planetTxt {
+            padding-top: 30px;
         }
     }
+
+    .winner1 {
+        .stageText {
+            background-image: url(../img/index_img/stageR1.png);
+
+            p {
+                bottom: 70px;
+            }
+        }
+
+        .alienImg {
+            bottom: 105px;
+        }
+    }
+
+    .winner3 {
+        .stageText {
+            background-image: url(../img/index_img/stageY3.png);
+            margin-left: -3.3%;
+            padding-top: 159px;
+
+            p {
+                bottom: 35px;
+            }
+        }
+
+        .alienImg {
+            bottom: 70px;
+        }
+
+        .planetTxt {
+            padding-top: 60px;
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .alienImg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
 }
+
 
 //公民的家
 .homeContent {
@@ -2004,13 +2004,6 @@ div.slider {
     box-sizing: border-box;
     color: orange;
     text-align: center;
-
-    &:hover{
-        
-       
-        
-        
-    }
 }
 
 
