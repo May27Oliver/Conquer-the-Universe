@@ -233,4 +233,83 @@ h3{
         margin-top:-250px;
     }
     
+
+
+
+// news 開始
+.news {
+    font-family: "微軟正黑體";
+    background-image: url(../img/START.png), url(../img/bg.png);
+    background-repeat: repeat;
+}
+
+.newsBox {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsitem {
+    background-color:rgba(0, 0, 0, 0.5);
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    color: #eee;
+    text-align: center;
+    margin: 30px auto;
+    border-radius: 30px;
+
+
+    .newsPic {
+        width: 40%;
+
+        img {
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+
+        }
+
+    }
+
+    .newsText {
+        width: 60%;
+        text-align: left;
+        margin: auto;
+
+h2 {
+        font-size: 24px;
+
+        margin-bottom: 20px;
+    }
+
+
+    p {
+        line-height: 1.6;
+        margin-top: 20px;
+        margin-bottom: 25px;
+
+    }
+
+    }
+
+    
+
+}
+
+
+.newsBtn {
+    margin-bottom: 20px;
+
+    img {
+        padding-left: 30px;
+    }
+
+}
+
+// news end
+    
+
+
 }
