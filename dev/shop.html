@@ -9,93 +9,106 @@
 <body class="votePage">
     <!-------------------- 頁首(計分板+導覽列) -------------------->
     @@include('template/header.html')
-
+    <script src='js/shop.js'></script>
 <!--------------------內容----------------------->
-<section class="shopContainer">   
-    <div class="shoptitle">
-    <h2>贊助候選人</h2>
-    </div>
-    <div class="toolTitle02">
-        <h3>
-            服裝道具
-        </h3>
-        <span>
-            購買服裝道具可以增加候選人支持度
-        </span>
-    </div>
-    <div class="productBox">
-        <div class="model">
-            <img class="pic01" src="img/rabbit.png"" alt="">
-        </div>  
-    </div>
-    <div class="toolTitle">
-        <h3>
-            服裝道具
-        </h3>
-        <p>
-            購買服裝道具可以增加候選人支持度
-        </p>
-    </div>
-    <div class="boxForProduct">
-            <div class="col-6">
-                    <div class="productPic">
-                        <img src="img/hat.png"" alt="">
-                    </div>
-                    <div class="productTitle">
-                        <h3>
-                        聰明棒球帽
-                        </h3>
-                        <div class="productBtn">
-                            <h2>$100</h2>
-                        </div>
-                    </div>  
-            </div>
-            <div class="col-6">
-                <div class="productPic">
-                    <img src="img/mask.png"" alt="">
-                </div>
-                <div class="productTitle">
-                    <h3>親和力面具</h3>
-                    <div class="productBtn">
-                        <h2>$100</h2>
-                    </div>
-                </div>  
-            </div>
-            <div class="col-6">
-                <div class="productPic">
-                    <img src="img/loudspeaker.png"" alt="">
-                </div>
-                <div class="productTitle">
-                    <h3>口才大聲公</h3>
-                    <div class="productBtn">
-                            <h2>$100</h2>
-                        </div>
-                    </div>  
-            </div>
-            <div class="col-6">
-                <div class="productPic">
-                    <img src="img/ballon.png"" alt="">
-                </div>
-                <div class="productTitle">
-                    <h3>人氣氣球</h3>
-                    <div class="productBtn">
-                            <h2>$100</h2>
-                        </div>
-                    </div>  
-            </div>
-    </div>      
-</section>
-<div class="clearboth"></div>
-<section class="event">
-        <div class="gashapon">
-            <img class="gashaponPic"src="img/gashapon.png" alt="">
-        </div>
-    </section>
 
- 
+<section class="shopContainer">  
+
+    <div id="shopLightBox" style="display:none">  
+        <img src="../dev/img/" alt="">  
+        <p>確定要購買此項道具?</p>  
+        <span id="addToBackpack">確認</span>
+        <span id="Cancelbtn">取消</span>
+    </div> 
+    <div class="shoptitle">
+        <h2>贊助候選人</h2>
+    </div>
+    <div id="boxForDisappear">
+        <div class="toolTitle02">
+            <h2>
+                服裝道具
+            </h2>
+            <span>
+                購買服裝道具可以增加候選人支持度
+            </span>
+        </div>
+        <div id="productBox" class="productBox">
+            <div class="model">
+                <img class="pic01" src="img/rabbit.png"" alt="">
+            </div>
+            
+            <div class="boxForProduct">
+                    <div class="toolTitle">
+                        <h3>
+                            服裝道具
+                        </h3>
+                        <span>
+                            購買服裝道具可以增加候選人支持度
+                        </span>
+                    </div>
+                    <div class="col-6">
+                            <div class="productPic">
+                                <img id="shopPic1" src="img/shopPic1.png"" alt="">
+                            </div>
+                            <div class="productTitle">
+                                <h3>
+                                聰明棒球帽
+                                </h3>
+                                <div  class="productBtn">
+                                    <h2  id="shopSpanLogin">$100</h2>
+                                </div>
+                            </div>  
+                    </div>
+                    <div class="col-6">
+                        <div class="productPic">
+                            <img id="shopPic2" src="img/shopPic2.png"" alt="">
+                        </div>
+                        <div class="productTitle">
+                            <h3>親和力面具</h3>
+                            <div class="productBtn">
+                                <h2 id="shopSpanLogin" >$100</h2>
+                            </div>
+                        </div>  
+                    </div>    
+                    <div class="col-6">
+                        <div class="productPic">
+                            <img id="shopPic3" src="img/shopPic3.png"" alt="">
+                        </div>
+                        <div class="productTitle">
+                            <h3>口才大聲公</h3>
+                            <div  class="productBtn">
+                                <h2 id="shopSpanLogin">$100</h2>
+                            </div>
+                            </div>  
+                    </div>
+                    <div class="col-6">
+                        <div class="productPic">
+                            <img id="shopPic4" src="img/shopPic4.png"" alt="">
+                        </div>
+                        <div  class="productTitle">
+                            <h3>人氣氣球</h3>
+                            <div class="productBtn">
+                                <h2 id="shopSpanLogin">$100</h2>
+                            </div>
+                        </div>  
+                    </div>
+            </div> 
+        </div>
+        <div class="clearboth"></div>
+        <div class="event">
+            <div class="gashapon">
+                <img class="gashaponPic"src="img/gashapon.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>      
+  
+  
+     
+
     <!-------------------- 頁尾 -------------------->
     @@include('template/footer.html')
-
+  
 	<!-- <script src="js/script.js"></script> -->
 </body>
 </html>
