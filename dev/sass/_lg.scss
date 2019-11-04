@@ -172,7 +172,58 @@
         left:10vw;
     }
 
-//首頁的贊助商品區//
+    // 影片區slider
+    .video-slider{
+        width: 55%;
+        height: 10vw;
+        margin: 2vw auto;
+        background-color: #CCC;
+        border-radius: 20px;
+    }
+    // Question
+    .question{
+        width: 55%;
+        margin: 5vw auto;
+        background: #dcdcdc;
+        border-radius: 30px;
+        padding: 5vw;
+        box-sizing: border-box;
+        h2{
+          font-weight: bold;  
+        }
+        li{
+            margin: 2vw 0;
+            a{
+                color:black;
+            }
+            a:hover {
+            color: #1d2088;
+            }
+        }
+        
+        
+        p{
+            margin: 2vw 0;
+            color: red;
+        }
+        .button-section{
+            // width: 25%;
+            // display: flex;
+            // justify-content: space-around;
+            button{
+                font-size: 20px;
+                background-color: #1d2088;
+                color: white;
+                padding:5px 18px;
+                box-shadow: 0px 0px 20px #fff;
+                border-radius: 20px;
+                border: none;
+            }
+        }
+    }
+
+
+//↓↓↓↓↓↓以下為首頁的贊助商品區↓↓↓↓↓↓//
 
     .shopContainer{
         margin-top: 100px;
@@ -180,84 +231,79 @@
         padding-bottom: 50px;
         text-align: center;
         background-color: #333;
-        
-
-
-    .shoptitle{
-        margin: 30px auto 50px;
-        padding: 30px;
-        width: 150px;
-        background-size:100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-image: url(../img/title.png);
-            h2{
-                color:#fff;
-        }	
-        
-    }  
-    .productBox{
-        margin: 0 auto;
-        width: 95%;
-        display: flex;
-      
-    }
-    .boxForProduct{
-        margin-right: -100px;
-        max-width: 500px;
-        .col-6{
-            width: 40%;
+            
+        .shoptitle{
+            margin: 30px auto 50px;
+            padding: 30px;
+            width: 150px;
+            background-size:100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(../img/title.png);
+                h2{
+                    color:#fff;
+                }	  
+        }  
+        .productBox{
+            max-width: 800px;
+            display: flex;
+            .boxForProduct{
+                max-width: 500px;
+                .col-6{
+                    margin-bottom: 50px;
+                    width: 50%;
+                }
+            }
+        }
+        .model{
+            width: 600px;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            background-size:contain;
+            border-radius: 10px;
+            background-image: url(../img/pinkPlanet.png);
             margin-bottom: 50px;
+            background-color: #90BEE3;
         
         }
-    }
-    .model{
-        width: 600px;
-        background-position: bottom;
-        background-repeat: no-repeat;
-        background-size:contain;
-        border-radius: 10px;
-        background-image: url(../img/pinkPlanet.png);
-        margin-bottom: 50px;
-        background-color: #90BEE3;
-    
-    }
-    .model .pic01{
-        padding: 20px;
-        margin-top: 50px;
-    }
-    .productPic{
-        box-sizing:border-box;
-        margin: 0 auto 20px;
-        background-color: antiquewhite;;
-        border-radius: 10px;
-        width: 150px;
-        height: 150px;
-        position: relative;
-        img{
-            top: calc(50% - 50px);
-            left: calc(50% - 50px);
-            position: absolute;  
-            width: 100px;
-            text-align: center;
+        .model .pic01{
+            padding: 20px;
+            margin-top: 50px;
         }
-    }
-    .productTitle{
-    h3{
-        font-weight: bold;
-        color: #fff;	
-    }
-    .productBtn{
-        width: 60px;
-        margin: 10px auto;
-        background-color: #448aca;
-        padding: 5px;
-        border-radius: 50px;
-        h2{
-            color: #fff;
-        }	
-    }
-    } 
+        .productPic{
+            box-sizing:border-box;
+            margin-top: 0;
+            margin-right: 0;
+            background-color: antiquewhite;;
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+            position: relative;
+            img{
+                top: calc(50% - 50px);
+                left: calc(50% - 50px);
+                position: absolute;  
+                width: 100px;
+                text-align: center;
+            }
+        }
+        .productTitle{
+            h3{
+                font-weight: bold;
+                color: #fff;
+                margin-left: 18px;	
+            }
+            .productBtn{
+                width: 60px;
+                margin-right: 40px;
+                background-color: #448aca;
+                padding: 5px;
+                border-radius: 50px;
+                h2{
+                    color: #fff;
+                }	
+            }
+        } 
 
     }
     .clearboth{
@@ -277,8 +323,7 @@
             font-weight: bold;
             color: #fff;
         }
-    } 
-    
+    }
     // 贊助商品內頁
     .toolTitle{
         display: none;
@@ -293,7 +338,31 @@
             color: white;
         }
     }
-    
+     //贊助商品區的道具燈箱//    
+    #shopLightBox{
+        color: #FFF;
+        background-color: #E8B51C;
+        margin: 0 auto;
+        border-radius: 10px;
+        position: absolute;
+        top: calc(45% - 100px);
+        right: calc(50% - 100px);
+        z-index: 1;
+        width: 200px;
+        height: 150px;
+        p{
+          margin: 30px auto 30px;
+        }
+        span{
+        
+            padding: 5px 10px 5px 10px;
+            margin: 20px;
+            background-color: #a6bfd0;
+            border-radius: 5px;
+        }
+        }
+
+    //↑↑↑↑↑以上為贊助商品區↑↑↑↑↑
 
     // 聊天機器人
     .tip-robot{
