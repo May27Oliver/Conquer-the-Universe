@@ -1272,11 +1272,6 @@ span{
     margin: auto;
     padding: 100px 15px;
     box-sizing: border-box;
-<<<<<<< HEAD
-
-    button {
-        display: block;
-=======
     .video-button{
         background-color: #1d2088;
         &:hover{
@@ -1289,14 +1284,9 @@ span{
     }
     .index-more{
         display:block;
->>>>>>> 7fab00c675c4a4ba88e05d028b78d7bebf361134
         margin: auto;
         color: #b78100;
         background-color: #ffd584;
-<<<<<<< HEAD
-        /* padding:15px;*/
-=======
->>>>>>> 7fab00c675c4a4ba88e05d028b78d7bebf361134
         width: 160px;
         line-height: 40px;
         text-align: center;
@@ -1326,12 +1316,7 @@ span{
     display: flex;
     justify-content: space-between;
     margin: 15vw auto;
-<<<<<<< HEAD
-
-    button {
-=======
     .video-button{
->>>>>>> 7fab00c675c4a4ba88e05d028b78d7bebf361134
         background-color: #1d2088;
 
         &:hover {
@@ -1390,14 +1375,9 @@ span{
 }
 
 // 影片區slider
-<<<<<<< HEAD
-.video-slider {
-    width: 100%;
-=======
 .slider{
     display: flex;
     justify-content: center;
->>>>>>> 7fab00c675c4a4ba88e05d028b78d7bebf361134
     height: 20vw;
     width: 100%;
     .video-slider{    
@@ -1457,10 +1437,6 @@ span{
     }
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7fab00c675c4a4ba88e05d028b78d7bebf361134
 // Question
 .question {
     width: 100%;
