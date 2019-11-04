@@ -16,7 +16,7 @@
     
     // 選單
     .topBg{
-        height: 140px;
+        height: 135px;
     }
     .banner{
         position: fixed;
@@ -339,7 +339,7 @@
                 margin-right:95px;
             }
             li:nth-child(3){
-                margin-right:91px;
+                margin-right:78px;
             }
          }
     }
@@ -502,7 +502,7 @@
     .slider_circle_10 {
         width: 65vw;
         height: 55vw;
-        margin-top:-220px;
+        margin-top:-230px;
         .active {
             top: 30%;
             left: 50%;
@@ -513,7 +513,7 @@
         }
         .prev1,
         .next1 {
-            top: 35%;
+            top: 40%;
             left: 50%;
             margin-left: -40%;
             width: 25%;
