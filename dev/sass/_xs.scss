@@ -34,7 +34,16 @@
 }
 
 // 選單
-.banner {
+.topBg{
+    position: fixed;
+    width: 100%;
+    height: 110px;
+    z-index: 995;
+    top:0;
+    left:0;
+    background-color: rgba(75, 54, 145,.8);
+}
+.banner{
     position: fixed;
     width: 100%;
     z-index: 999;
@@ -187,37 +196,50 @@
 }
 
 
-// 首頁最上面獎台
-.indexHeader {
-    padding-top: 100px;
-
-    h1 {
-        text-align: center;
-        margin: 70px auto;
-    }
-
-    .indexWinner {
-        width: 330px;
-        margin: 0 auto;
-        overflow: hidden;
-
-        li {
-            float: left;
-            width: 110px;
-
-            .stageText {
-                background-repeat: no-repeat;
-                background-size: 100%;
-                background-position: bottom;
-                padding-top: 220px;
-                position: relative;
-
-                p {
-                    width: 150px;
-                    position: absolute;
-                    bottom: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
+    // 首頁最上面獎台
+    .indexHeader{
+        padding-top:100px;
+        >h1{
+            color:#fff;
+        }
+        h1{
+            text-align: center;
+            margin:70px auto;
+        }
+        .indexWinner{
+            width: 330px;
+            margin:0 auto;
+            overflow: hidden;
+            li{
+                float: left;
+                width: 110px;
+                .stageText{
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    background-position: bottom;
+                    padding-top:220px;
+                    position: relative;
+                    p{
+                        width: 150px;
+                        position: absolute;
+                        bottom:0;
+                        left:50%;
+                        transform: translateX(-50%);
+                    }
+                }
+                img{
+                    display: block;
+                    width: 80%;
+                    margin:0 auto;
+                }
+                .planetTxt{
+                    span{
+                        margin-left:5px;
+                    }
+                    p{
+                        margin-bottom:5px;
+                        color:#fff;
+                    }
                 }
             }
 
@@ -594,16 +616,24 @@
 
 
 /* 排行榜 */
-.leaderBoard {
-    color: #333;
-
-    h2 {
-        text-align: center;
-        margin-bottom: 10px;
-        color: #FFF;
+.leaderBoard{
+    color:#333;
+    .leaderTitle{
+        width: 100%;
+        h2{
+            line-height: 100px;
+            text-align: center;
+            color:#fff;
+            background-image: url(../img/title.png);
+            background-repeat: no-repeat;
+            width: 210px;
+            background-size:100%;
+            background-position: center;
+            margin:0 auto;
+        }
     }
-
-    p {
+   
+    p{
         text-align: center;
         margin-bottom: 50px;
         color: #FFF;
@@ -622,6 +652,7 @@
         line-height: 30px;
         margin-right: 5px;
         border-radius: 5px 5px 0 0;
+        cursor: pointer;
     }
 
     #rankAll {
@@ -649,8 +680,8 @@
     padding: 15px;
     border-radius: 0 5px 5px 5px;
     max-width: 370px;
-
-    .innerTitle {
+    transform: translateY(-1px);
+    .innerTitle{
         width: 300px;
         margin: 0 auto;
 
@@ -658,18 +689,15 @@
             float: left;
             margin-bottom: 10px;
         }
-
-        li:nth-child(1) {
-            margin-left: 2px;
-            margin-right: 15px;
+        li:nth-child(1){
+            margin-left:2px;
+            margin-right:17px;
         }
-
-        li:nth-child(2) {
-            margin-right: 35px;
+        li:nth-child(2){
+            margin-right:33px;
         }
-
-        li:nth-child(3) {
-            margin-right: 30px;
+        li:nth-child(3){
+            margin-right:18px;
         }
     }
 }
@@ -722,24 +750,79 @@
     }
 }
 
-// -------贊助商品區------
-
-.shopContainer {
+   // -------贊助商品區------
+ 
+   .shopContainer{
     margin-top: 100px;
     padding-top: 50px;
     padding-bottom: 50px;
     text-align: center;
-    background-color: #333;
-        background-color: #333;	
-    background-color: #333;
+    background-color: #333;	
+    position: relative;
+.shoptitle{
+    margin: 30px auto 50px;
+    padding: 30px;
+    width: 150px;
+    background-size:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../img/title.png);
+     h2{
+         color:#fff;
+    }	
 
-    .shoptitle {
-        margin: 30px auto 50px;
-        padding: 30px;
-        width: 150px;
-        background-size: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
+}  
+.boxForProduct{
+    max-width: 500px;
+    margin: 0 auto;
+    height: 600px;
+     .col-6{
+         padding: 0;    
+     }
+ }
+.productBox{
+    margin: 0 auto;
+    width: 95%;
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: bottom;
+    position: relative;
+}
+.model{
+    background-color: #90BEE3;
+    max-width: 500px;
+    margin: 0 auto 50px;
+    background-image: url(../img/pinkPlanet.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    border-radius: 10px;
+}
+.model .pic01{
+    padding: 20px;
+    margin-top: 50px;
+}
+.productPic{
+    box-sizing:border-box;
+    margin: 50px auto 20px;
+    background-color: antiquewhite;;
+    border-radius: 10px;
+    width: 145px;
+    height: 145px;
+    position: relative;
+    img{
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+        position: absolute; 
+        max-width: 100px;
+        text-align: center;
+        // background-color: #333;	
+	.shoptitle{
+		margin: 30px auto 50px;
+		padding: 30px;
+		width: 150px;
+		background-size:100%;
+		background-position: center;
+		background-repeat: no-repeat;
         background-image: url(../img/title.png);
 
         h2 {
@@ -778,97 +861,97 @@
         padding: 20px;
         margin-top: 50px;
     }
-
-    .productPic {
-        box-sizing: border-box;
-        margin: 50px auto 20px;
-        background-color: antiquewhite;
-        ;
-        border-radius: 10px;
-        width: 150px;
-        height: 150px;
-        position: relative;
-
-        img {
-            top: calc(50% - 50px);
-            left: calc(50% - 50px);
-            position: absolute;
-
-            width: 100px;
-            text-align: center;
-        }
-
-    }
-
-    .productTitle {
-        h3 {
-            font-weight: bold;
-            color: #fff;
-        color: #fff;	
-            color: #fff;
-        }
-
-        .productBtn {
-            width: 60px;
-            margin: 10px auto;
-            background-color: #448aca;
-            padding: 5px;
-            border-radius: 50px;
-
-            h2 {
-                color: #fff;
-            }
-        }
-    }
-
 }
-
-
-.toolTitle {
-    color: #fff;
-    line-height: 2;
-}
-
-.toolTitle02 {
-    display: none;
-
-}
-
-.moreProductBtn {
-    text-align: center;
-    margin: 30px auto;
-    width: 80px;
-    border-radius: 50px;
-    padding: 10px;
-    font-size: 20px;
+.productTitle{
+h3{
     font-weight: bold;
-    overflow: hidden;
-    background-color: #E8B51C;
-
-    h2 {
-        font-weight: bold;
+    color: #fff;	
+}
+.productBtn{
+    width: 60px;
+    margin: 10px auto;
+    background-color: #448aca;
+    padding: 5px;
+    border-radius: 50px;
+    h2{
         color: #fff;
+    }	
+}
+} 
+}
+.toolTitle{
+color:#fff;
+line-height: 2;
+}
+.toolTitle02{
+display: none;
+
+}
+.proTitle{
+    a{ 
+        display:block;
+        margin: auto;
+        color:#b78100;
+        background-color: #ffd584;
+    /* padding:15px;*/
+        width: 160px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 40px;
+        border:2px solid #b78100;
     }
+.moreProductBtn{
+text-align: center;
+margin: 30px auto;
+width: 80px;
+border-radius: 50px;
+padding: 10px;
+font-size: 20px;
+font-weight: bold;
+overflow: hidden;
+background-color: #E8B51C;	
+h2{ 
+    font-weight: bold;
+    color: #fff;
 }
-
-//內頁的扭蛋區
-.event {
-    padding-top: 50px;
-    background-color: #1c0e44;
 }
-
-.gashapon {
-
-    text-align: center;
-    ;
-
-    img {
-        width: 300px;
-    }
+//商品業內頁的扭蛋區
+.event{
+padding-top: 50px;
+background-color: #1c0e44;
 }
+.gashapon{
 
-.clearboth {
-    clear: both;
+text-align: center;;
+img{
+    width: 300px;
+}
+}
+.clearboth{
+clear: both;
+}
+//商品業內頁的燈箱
+#shopLightBox{
+color: #FFF;
+background-color: #E8B51C;
+margin: 0 auto;
+border-radius: 10px;
+position: absolute;
+top: calc(60% - 100px);
+right: calc(50% - 100px);
+z-index: 1;
+width: 200px;
+height: 150px;
+p{
+  margin: 30px auto 30px;
+}
+span{
+
+    padding: 5px 10px 5px 10px;
+    margin: 20px;
+    background-color: #a6bfd0;
+    border-radius: 5px;
+}
 }
 
 /*____________________ VOTE ____________________*/
@@ -1204,22 +1287,18 @@
     }
 }
 
-.title {
-    width: 45vw;
-    height: 14vw;
-    background: url("../img/slogan-frame.png");
-    background-size: cover;
-    color: white;
-    margin: 5vw auto;
-
-    h1 {
-        font-weight: bold;
+.videoTitle{
+    width: 100%;
+    h2{
+        line-height: 100px;
         text-align: center;
-        line-height: 15vw;
-    }
-
-    h2 {
-        text-align: center;
+        color:#fff;
+        background-image: url(../img/title.png);
+        background-repeat: no-repeat;
+        width: 210px;
+        background-size:100%;
+        background-position: center;
+        margin:0 auto;
     }
 }
 
@@ -1411,6 +1490,22 @@
 // }
 
 // 首頁加入星球
+.joinPlanet{
+    .joinTitle{
+        width: 100%;
+        h2{
+            line-height: 100px;
+            text-align: center;
+            color:#fff;
+            background-image: url(../img/title.png);
+            background-repeat: no-repeat;
+            width: 210px;
+            background-size:100%;
+            background-position: center;
+            margin:0 auto;
+        }
+    }
+}
 .slider_circle_10 {
     position: relative;
     width: 85vw;
@@ -1418,9 +1513,8 @@
     height: 90vw;
     margin: 0 auto;
     user-select: none;
-    margin-top: -50px;
-
-    >* {
+    margin-top:-100px;
+    >*{
         transition: ease all 1s;
     }
 
@@ -1442,6 +1536,7 @@
         width: 1px;
         height: 1px;
         z-index: 0;
+        
     }
 
     .active {
@@ -1578,6 +1673,7 @@ div.slider {
             left: 50%;
             bottom: 15%;
             transform: translateX(-50%);
+            cursor: pointer;
         }
     }
 
@@ -1597,10 +1693,10 @@ div.slider {
 
         div {
             position: absolute;
-            bottom: 5%;
-            left: 50%;
+            bottom:-42%;
+            left:50%;
             transform: translateX(-50%);
-            background-color: #ccc;
+            // background-color: rgba(0,0,0,.3);
             height: 67%;
             width: 60%;
         }
@@ -1997,5 +2093,10 @@ button{
 
 // news分頁end
 
+// 首頁
+.index_body{
+    background-color: #1c0e44;
+}
 
-// news end
+
+}}
