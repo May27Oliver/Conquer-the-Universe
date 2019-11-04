@@ -32,6 +32,15 @@
 }
     
 // 選單
+.topBg{
+    position: fixed;
+    width: 100%;
+    height: 115px;
+    z-index: 995;
+    top:0;
+    left:0;
+    background-color: rgba(75, 54, 145,.8);
+}
 .banner{
     position: fixed;
     width: 100%;
@@ -173,6 +182,9 @@
     // 首頁最上面獎台
     .indexHeader{
         padding-top:100px;
+        >h1{
+            color:#fff;
+        }
         h1{
             text-align: center;
             margin:70px auto;
@@ -209,6 +221,7 @@
                     }
                     p{
                         margin-bottom:5px;
+                        color:#fff;
                     }
                 }
             }
@@ -1232,6 +1245,12 @@
 // }
 
 // 首頁加入星球
+.joinPlanet{
+    h2{
+        text-align: center;
+        color:#fff;
+    }
+}
 .slider_circle_10 {
     position: relative;
     width: 85vw;
@@ -1400,7 +1419,7 @@ div.slider{
         display:none;
         div{
             position: absolute;
-            bottom:5%;
+            bottom:3%;
             left:50%;
             transform: translateX(-50%);
             background-color: #ccc;
@@ -1689,6 +1708,13 @@ div.slider{
     
 
 // news end
+
+
+// 首頁背景
+.index_body{
+    background-color: #1c0e44;
+}
+
 
 
 

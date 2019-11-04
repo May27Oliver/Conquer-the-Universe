@@ -15,6 +15,9 @@
     }
     
     // 選單
+    .topBg{
+        height: 140px;
+    }
     .banner{
         position: fixed;
         width: 100%;
@@ -498,8 +501,8 @@
     // 首頁加入星球
     .slider_circle_10 {
         width: 65vw;
-        height: 50vw;
-        margin-top:-250px;
+        height: 55vw;
+        margin-top:-220px;
         .active {
             top: 30%;
             left: 50%;
@@ -533,14 +536,14 @@
         .slec_alien{
             img{
                 width: 25%;
-                bottom:50%;
+                bottom:45%;
             }
         }
         .slec_cont{
             width: 55%;
             height: 35%;
             div{
-                bottom:7%;
+                bottom:5%;
                 height: 70%;
             }
         }
@@ -549,7 +552,7 @@
         .slec_alien{
             img{
                 width: 30%;
-                bottom:50%;
+                bottom:45%;
             }
         }
     }
