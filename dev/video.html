@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>公民小學堂</title>
     @@include('./template/CDN.html')
+    <script src="js/vediopage.js"></script>
 </head>
 <body class="video-body">
     <div>
@@ -38,11 +39,11 @@
                 <button class="slider-forward"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
                 <div class="video-slider">
                     <ul>
-                        <li class="fn-video"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/et3NitNdfv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-                        <li class="fn-video"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/et3NitNdfv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-                        <li class="fn-video"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/et3NitNdfv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-                        <li class="fn-video"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/et3NitNdfv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-                        <li class="fn-video"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/et3NitNdfv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="fn-video"><span data-source="https://www.youtube.com/embed/et3NitNdfv0"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/et3NitNdfv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="fn-video"><span data-source="https://www.youtube.com/embed/et3NitNdfv0"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/et3NitNdfv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="fn-video"><span data-source="https://www.youtube.com/embed/et3NitNdfv0"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/et3NitNdfv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="fn-video"><span data-source="https://www.youtube.com/embed/et3NitNdfv0"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/et3NitNdfv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="fn-video"><span data-source="https://www.youtube.com/embed/et3NitNdfv0"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/et3NitNdfv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
                     </ul>
                 </div>
                 <button class="slider-back"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
@@ -51,12 +52,13 @@
             <div class="question">
                 <h2>1.財經題：美中貿易戰起因為何？</h2>
                 <ul>
-                    <li><a href="">&nbsp&nbsp1.日圓貼水</a></li>
-                    <li><a href="">&nbsp&nbsp2.英國脫歐</a></li>
-                    <li><a href="">&nbsp&nbsp3.鉅額貿易逆差</a></li>
-                    <li><a href="">&nbsp&nbsp4.聯準會過度量化寬鬆</a></li>
+                    <li id="ans1">&nbsp&nbsp1.日圓貼水</li>
+                    <li id="ans2">&nbsp&nbsp2.英國脫歐</li>
+                    <li id="ans3">&nbsp&nbsp3.鉅額貿易逆差</li>
+                    <li id="ans4">&nbsp&nbsp4.聯準會過度量化寬鬆</li>
                 </ul>
                 <p id="award">恭喜答對！<br>您將得到5點候選人支持度與宇宙幣100元！</p>
+                <p id="wrongAns">不好意思您答錯囉！</p>                
                 <div class="button-section">
                     <button class="video-button">上一題</button>
                     <button class="video-button">下一題</button>
@@ -72,47 +74,5 @@
         @@include('./template/footer.html')
     </div>
 <script src="js/animation.js"></script>
-<script>
-window.addEventListener('load',function(){
-    let videos=document.querySelectorAll(".fn-video");
-    for(let i=0;i<videos.length;i++){
-        videos[i].addEventListener('mouseover',function(e){
-            // console.log(e.target.src);
-            // e.target.preventDefault();
-            let smallVideo=e.target.src; //抓slider上的影片來源
-            let bigVideo = document.getElementById("big-video").src;
-            document.getElementById("big-video").src=smallVideo;
-        });
-    }
-    let oneVedio=0;
-    let wrap=document.querySelector(".video-slider ul");
-    let turnLeft=document.querySelector(".slider-forward");
-    let turnRight=document.querySelector(".slider-back");
-    turnRight.disabled=true; //一開始右鍵不能按
-    turnRight.style.opacity=0;
-    document.querySelector(".slider-forward").addEventListener('click',function(e){
-        oneVedio--;
-        wrap.style.left= 25*oneVedio+"%";
-        console.log(oneVedio);
-        turnRight.disabled=false;
-        turnRight.style.opacity=1;
-        if( oneVedio == -1){
-            turnLeft.disabled = true;
-            turnLeft.style.opacity=0;
-        }
-    });
-    document.querySelector(".slider-back").addEventListener('click',function(e){
-        oneVedio++;
-        wrap.style.left= 25*oneVedio+"%";
-        console.log(oneVedio);
-        turnLeft.disabled = false;
-        turnLeft.style.opacity=1;
-        if( oneVedio == 0){
-            turnRight.disabled = true;
-            turnRight.style.opacity=0;
-        } 
-    });
-});
-</script>
 </body>
 </html>
