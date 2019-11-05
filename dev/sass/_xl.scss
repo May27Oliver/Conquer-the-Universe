@@ -40,6 +40,70 @@
         width: 53vw;
         height: 10vw;
     }
+
+    .slider{
+        display: flex;
+        justify-content: center;
+        height: 10vw;
+        margin: 0 auto;
+        width: 62vw;
+        .video-slider{    
+            margin: 2vw auto;
+            background-color: #CCC;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            ul{
+                width: 125%;
+                height: 10vw;
+                position: relative;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                li{
+                    width: 20%;
+                    height: 10vw;
+                    line-height: 10vw;
+                    display: block;
+                }
+            }
+        }
+    
+        .slider-forward{
+            background:transparent;
+            border: transparent;    
+            width: 5vw;
+            height: 10vw;
+            line-height: 10vw;
+            position: relative;
+            i{
+                color: #aaa;
+                position: absolute;
+                top: 3vw;
+                left: -2vw;
+                z-index: 2;
+                font-size: 8vw;
+            }
+        }
+    
+        .slider-back{
+            background:transparent;
+            border: transparent;
+            width: 5vw;
+            height: 10vw;
+            line-height: 10vw;
+            position: relative;
+            i{
+                color: #aaa;
+                position: absolute;
+                top: 3vw;
+                left:-1vw;
+                z-index: 2;
+                font-size: 8vw;
+            }
+        }
+    }
     // Question
     .question{
         width: 53vw;

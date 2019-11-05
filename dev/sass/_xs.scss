@@ -1036,12 +1036,21 @@
     margin: auto;
     padding: 100px 15px;
     box-sizing: border-box;
-    button{
+    .video-button{
+        background-color: #1d2088;
+        &:hover{
+            background-color: lighten(#1d2088 , 10%);
+        }
+        color: white;
+        padding:5px 18px;
+        border-radius: 20px;
+        border: 1px solid #fff;
+    }
+    .index-more{
         display:block;
         margin: auto;
         color:#b78100;
         background-color: #ffd584;
-    /* padding:15px;*/
         width: 160px;
         line-height: 40px;
         text-align: center;
@@ -1072,7 +1081,7 @@
     display: flex;
     justify-content: space-between;
     margin: 15vw auto;
-    button{
+    .video-button{
         background-color: #1d2088;
         &:hover{
             background-color: lighten(#1d2088 , 10%);
@@ -1082,6 +1091,7 @@
         border-radius: 20px;
         border: 1px solid #fff;
     }
+    
 }
 // 影片區
 .video{
@@ -1123,13 +1133,69 @@
 }
 
 // 影片區slider
-.video-slider{
-    width: 100%;
+.slider{
+    display: flex;
+    justify-content: center;
     height: 20vw;
-    margin: 2vw auto;
-    background-color: #CCC;
-    border-radius: 20px;
+    width: 100%;
+    .video-slider{    
+        margin: 2vw auto;
+        background-color: #CCC;
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+        ul{
+            width: 125%;
+            height: 16vw;
+            position: relative;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            li{
+                width: 25%;
+                height: 16vw;
+                line-height: 20vw;
+                display: block;
+            }
+        }
+    }
+
+    .slider-forward{
+        background:transparent;
+        border: transparent;    
+        width: 5vw;
+        height: 20vw;
+        line-height: 20vw;
+        position: relative;
+        i{
+            color: #aaa;
+            position: absolute;
+            top: 5vw;
+            left: -2vw;
+            z-index: 2;
+            font-size: 8vw;
+        }
+    }
+
+    .slider-back{
+        background:transparent;
+        border: transparent;
+        width: 5vw;
+        height: 20vw;
+        line-height: 20vw;
+        position: relative;
+        i{
+            color: #aaa;
+            position: absolute;
+            top: 5vw;
+            left:-2vw;
+            z-index: 2;
+            font-size: 8vw;
+        }
+    }
 }
+
+
 // Question
 .question{
     width: 100%;
