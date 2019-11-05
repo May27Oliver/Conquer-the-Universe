@@ -197,134 +197,134 @@
 
 
     // 首頁最上面獎台
-    .indexHeader{
-        padding-top:100px;
-        >h1{
-            color:#fff;
-        }
-        h1{
-            text-align: center;
-            margin:70px auto;
-        }
-        .indexWinner{
-            width: 330px;
-            margin:0 auto;
-            overflow: hidden;
-            li{
-                float: left;
-                width: 110px;
-                .stageText{
-                    background-repeat: no-repeat;
-                    background-size: 100%;
-                    background-position: bottom;
-                    padding-top:220px;
-                    position: relative;
-                    p{
-                        width: 150px;
-                        position: absolute;
-                        bottom:0;
-                        left:50%;
-                        transform: translateX(-50%);
-                    }
-                }
-                img{
-                    display: block;
-                    width: 80%;
-                    margin:0 auto;
-                }
-                .planetTxt{
-                    span{
-                        margin-left:5px;
-                    }
-                    p{
-                        margin-bottom:5px;
-                        color:#fff;
-                    }
+.indexHeader{
+    padding-top:100px;
+    >h1{
+        color:#fff;
+    }
+    h1{
+        text-align: center;
+        margin:70px auto;
+    }
+    .indexWinner{
+        width: 330px;
+        margin:0 auto;
+        overflow: hidden;
+        li{
+            float: left;
+            width: 110px;
+            .stageText{
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: bottom;
+                padding-top:220px;
+                position: relative;
+                p{
+                    width: 150px;
+                    position: absolute;
+                    bottom:0;
+                    left:50%;
+                    transform: translateX(-50%);
                 }
             }
-
-            img {
+            img{
                 display: block;
                 width: 80%;
-                margin: 0 auto;
+                margin:0 auto;
             }
-
-            .planetTxt {
-                span {
-                    margin-left: 5px;
+            .planetTxt{
+                span{
+                    margin-left:5px;
                 }
-
-                p {
-                    margin-bottom: 5px;
+                p{
+                    margin-bottom:5px;
+                    color:#fff;
                 }
             }
         }
 
-        .winner2 {
-            .stageText {
-                background-image: url(../img/index_img/stageB2.png);
-                margin-right: -3.4%;
-                padding-top: 189px;
-
-                p {
-                    bottom: 50px;
-                }
-            }
-
-            .alienImg {
-                bottom: 85px;
-            }
-
-            .planetTxt {
-                padding-top: 30px;
-            }
+        img {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
         }
 
-        .winner1 {
-            .stageText {
-                background-image: url(../img/index_img/stageR1.png);
-
-                p {
-                    bottom: 70px;
-                }
+        .planetTxt {
+            span {
+                margin-left: 5px;
             }
 
-            .alienImg {
-                bottom: 105px;
+            p {
+                margin-bottom: 5px;
             }
         }
+    }
 
-        .winner3 {
-            .stageText {
-                background-image: url(../img/index_img/stageY3.png);
-                margin-left: -3.3%;
-                padding-top: 159px;
+    .winner2 {
+        .stageText {
+            background-image: url(../img/index_img/stageB2.png);
+            margin-right: -3.4%;
+            padding-top: 189px;
 
-                p {
-                    bottom: 35px;
-                }
+            p {
+                bottom: 50px;
             }
-
-            .alienImg {
-                bottom: 70px;
-            }
-
-            .planetTxt {
-                padding-top: 60px;
-            }
-        }
-
-        p {
-            text-align: center;
         }
 
         .alienImg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
+            bottom: 85px;
+        }
+
+        .planetTxt {
+            padding-top: 30px;
         }
     }
+
+    .winner1 {
+        .stageText {
+            background-image: url(../img/index_img/stageR1.png);
+
+            p {
+                bottom: 70px;
+            }
+        }
+
+        .alienImg {
+            bottom: 105px;
+        }
+    }
+
+    .winner3 {
+        .stageText {
+            background-image: url(../img/index_img/stageY3.png);
+            margin-left: -3.3%;
+            padding-top: 159px;
+
+            p {
+                bottom: 35px;
+            }
+        }
+
+        .alienImg {
+            bottom: 70px;
+        }
+
+        .planetTxt {
+            padding-top: 60px;
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .alienImg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
 }
+
 
 //公民的家
 .homeContent {
@@ -752,207 +752,207 @@
 
    // -------贊助商品區------
  
-   .shopContainer{
-    margin-top: 100px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-    background-color: #333;	
-    position: relative;
-.shoptitle{
-    margin: 30px auto 50px;
-    padding: 30px;
-    width: 150px;
-    background-size:100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url(../img/title.png);
-     h2{
-         color:#fff;
-    }	
+//    .shopContainer{
+//     margin-top: 100px;
+//     padding-top: 50px;
+//     padding-bottom: 50px;
+//     text-align: center;
+//     background-color: #333;	
+//     position: relative;
+// .shoptitle{
+//     margin: 30px auto 50px;
+//     padding: 30px;
+//     width: 150px;
+//     background-size:100%;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-image: url(../img/title.png);
+//      h2{
+//          color:#fff;
+//     }	
 
-}  
-.boxForProduct{
-    max-width: 500px;
-    margin: 0 auto;
-    height: 600px;
-     .col-6{
-         padding: 0;    
-     }
- }
-.productBox{
-    margin: 0 auto;
-    width: 95%;
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position: bottom;
-    position: relative;
-}
-.model{
-    background-color: #90BEE3;
-    max-width: 500px;
-    margin: 0 auto 50px;
-    background-image: url(../img/pinkPlanet.png);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    border-radius: 10px;
-}
-.model .pic01{
-    padding: 20px;
-    margin-top: 50px;
-}
-.productPic{
-    box-sizing:border-box;
-    margin: 50px auto 20px;
-    background-color: antiquewhite;;
-    border-radius: 10px;
-    width: 145px;
-    height: 145px;
-    position: relative;
-    img{
-        top: calc(50% - 50px);
-        left: calc(50% - 50px);
-        position: absolute; 
-        max-width: 100px;
-        text-align: center;
+// }  
+// .boxForProduct{
+//     max-width: 500px;
+//     margin: 0 auto;
+//     height: 600px;
+//      .col-6{
+//          padding: 0;    
+//      }
+//  }
+// .productBox{
+//     margin: 0 auto;
+//     width: 95%;
+//     background-repeat: no-repeat;
+//     background-size:contain;
+//     background-position: bottom;
+//     position: relative;
+// }
+// .model{
+//     background-color: #90BEE3;
+//     max-width: 500px;
+//     margin: 0 auto 50px;
+//     background-image: url(../img/pinkPlanet.png);
+//     background-repeat: no-repeat;
+//     background-position: bottom;
+//     border-radius: 10px;
+// }
+// .model .pic01{
+//     padding: 20px;
+//     margin-top: 50px;
+// }
+// .productPic{
+//     box-sizing:border-box;
+//     margin: 50px auto 20px;
+//     background-color: antiquewhite;;
+//     border-radius: 10px;
+//     width: 145px;
+//     height: 145px;
+//     position: relative;
+//     img{
+//         top: calc(50% - 50px);
+//         left: calc(50% - 50px);
+//         position: absolute; 
+//         max-width: 100px;
+//         text-align: center;
         // background-color: #333;	
-	.shoptitle{
-		margin: 30px auto 50px;
-		padding: 30px;
-		width: 150px;
-		background-size:100%;
-		background-position: center;
-		background-repeat: no-repeat;
-        background-image: url(../img/title.png);
+// 	.shoptitle{
+// 		margin: 30px auto 50px;
+// 		padding: 30px;
+// 		width: 150px;
+// 		background-size:100%;
+// 		background-position: center;
+// 		background-repeat: no-repeat;
+//         background-image: url(../img/title.png);
 
-        h2 {
-            color: #fff;
-        }
+//         h2 {
+//             color: #fff;
+//         }
 
-    }
+//     }
 
-    .boxForProduct {
-        .col-6 {
-            max-width: 400px;
-            background-color: #1c0e44;
-        }
-    }
+//     .boxForProduct {
+//         .col-6 {
+//             max-width: 400px;
+//             background-color: #1c0e44;
+//         }
+//     }
 
-    .productBox {
-        margin: 0 auto;
-        width: 95%;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: bottom;
-    }
+//     .productBox {
+//         margin: 0 auto;
+//         width: 95%;
+//         background-repeat: no-repeat;
+//         background-size: contain;
+//         background-position: bottom;
+//     }
 
-    .model {
+//     .model {
 
-        background-color: #90BEE3;
-        max-width: 500px;
-        margin: 0 auto 50px;
-        background-image: url(../img/pinkPlanet.png);
-        background-repeat: no-repeat;
-        background-position: bottom;
-        border-radius: 10px;
-    }
+//         background-color: #90BEE3;
+//         max-width: 500px;
+//         margin: 0 auto 50px;
+//         background-image: url(../img/pinkPlanet.png);
+//         background-repeat: no-repeat;
+//         background-position: bottom;
+//         border-radius: 10px;
+//     }
 
-    .model .pic01 {
-        padding: 20px;
-        margin-top: 50px;
-    }
-}
-.productTitle{
-h3{
-    font-weight: bold;
-    color: #fff;	
-}
-.productBtn{
-    width: 60px;
-    margin: 10px auto;
-    background-color: #448aca;
-    padding: 5px;
-    border-radius: 50px;
-    h2{
-        color: #fff;
-    }	
-}
-} 
-}
-.toolTitle{
-color:#fff;
-line-height: 2;
-}
-.toolTitle02{
-display: none;
+//     .model .pic01 {
+//         padding: 20px;
+//         margin-top: 50px;
+//     }
+// }
+// .productTitle{
+// h3{
+//     font-weight: bold;
+//     color: #fff;	
+// }
+// .productBtn{
+//     width: 60px;
+//     margin: 10px auto;
+//     background-color: #448aca;
+//     padding: 5px;
+//     border-radius: 50px;
+//     h2{
+//         color: #fff;
+//     }	
+// }
+// } 
+// }
+// .toolTitle{
+// color:#fff;
+// line-height: 2;
+// }
+// .toolTitle02{
+// display: none;
 
-}
-.proTitle{
-    a{ 
-        display:block;
-        margin: auto;
-        color:#b78100;
-        background-color: #ffd584;
-    /* padding:15px;*/
-        width: 160px;
-        line-height: 40px;
-        text-align: center;
-        border-radius: 40px;
-        border:2px solid #b78100;
-    }
-.moreProductBtn{
-text-align: center;
-margin: 30px auto;
-width: 80px;
-border-radius: 50px;
-padding: 10px;
-font-size: 20px;
-font-weight: bold;
-overflow: hidden;
-background-color: #E8B51C;	
-h2{ 
-    font-weight: bold;
-    color: #fff;
-}
-}
-//商品業內頁的扭蛋區
-.event{
-padding-top: 50px;
-background-color: #1c0e44;
-}
-.gashapon{
+// }
+// .proTitle{
+//     a{ 
+//         display:block;
+//         margin: auto;
+//         color:#b78100;
+//         background-color: #ffd584;
+//     /* padding:15px;*/
+//         width: 160px;
+//         line-height: 40px;
+//         text-align: center;
+//         border-radius: 40px;
+//         border:2px solid #b78100;
+//     }
+// .moreProductBtn{
+// text-align: center;
+// margin: 30px auto;
+// width: 80px;
+// border-radius: 50px;
+// padding: 10px;
+// font-size: 20px;
+// font-weight: bold;
+// overflow: hidden;
+// background-color: #E8B51C;	
+// h2{ 
+//     font-weight: bold;
+//     color: #fff;
+// }
+// }
+// //商品業內頁的扭蛋區
+// .event{
+// padding-top: 50px;
+// background-color: #1c0e44;
+// }
+// .gashapon{
 
-text-align: center;;
-img{
-    width: 300px;
-}
-}
-.clearboth{
-clear: both;
-}
-//商品業內頁的燈箱
-#shopLightBox{
-color: #FFF;
-background-color: #E8B51C;
-margin: 0 auto;
-border-radius: 10px;
-position: absolute;
-top: calc(60% - 100px);
-right: calc(50% - 100px);
-z-index: 1;
-width: 200px;
-height: 150px;
-p{
-  margin: 30px auto 30px;
-}
-span{
+// text-align: center;;
+// img{
+//     width: 300px;
+// }
+// }
+// .clearboth{
+// clear: both;
+// }
+// //商品業內頁的燈箱
+// #shopLightBox{
+// color: #FFF;
+// background-color: #E8B51C;
+// margin: 0 auto;
+// border-radius: 10px;
+// position: absolute;
+// top: calc(60% - 100px);
+// right: calc(50% - 100px);
+// z-index: 1;
+// width: 200px;
+// height: 150px;
+// p{
+//   margin: 30px auto 30px;
+// }
+// span{
 
-    padding: 5px 10px 5px 10px;
-    margin: 20px;
-    background-color: #a6bfd0;
-    border-radius: 5px;
-}
-}
+//     padding: 5px 10px 5px 10px;
+//     margin: 20px;
+//     background-color: #a6bfd0;
+//     border-radius: 5px;
+// }
+// }
 
 /*____________________ VOTE ____________________*/
 .votePage {
@@ -1272,11 +1272,6 @@ span{
     margin: auto;
     padding: 100px 15px;
     box-sizing: border-box;
-<<<<<<< HEAD
-
-    button {
-        display: block;
-=======
     .video-button{
         background-color: #1d2088;
         &:hover{
@@ -1289,14 +1284,9 @@ span{
     }
     .index-more{
         display:block;
->>>>>>> 7fab00c675c4a4ba88e05d028b78d7bebf361134
         margin: auto;
         color: #b78100;
         background-color: #ffd584;
-<<<<<<< HEAD
-        /* padding:15px;*/
-=======
->>>>>>> 7fab00c675c4a4ba88e05d028b78d7bebf361134
         width: 160px;
         line-height: 40px;
         text-align: center;
@@ -1326,12 +1316,7 @@ span{
     display: flex;
     justify-content: space-between;
     margin: 15vw auto;
-<<<<<<< HEAD
-
-    button {
-=======
     .video-button{
->>>>>>> 7fab00c675c4a4ba88e05d028b78d7bebf361134
         background-color: #1d2088;
 
         &:hover {
@@ -1390,14 +1375,9 @@ span{
 }
 
 // 影片區slider
-<<<<<<< HEAD
-.video-slider {
-    width: 100%;
-=======
 .slider{
     display: flex;
     justify-content: center;
->>>>>>> 7fab00c675c4a4ba88e05d028b78d7bebf361134
     height: 20vw;
     width: 100%;
     .video-slider{    
@@ -1457,10 +1437,6 @@ span{
     }
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7fab00c675c4a4ba88e05d028b78d7bebf361134
 // Question
 .question {
     width: 100%;
@@ -2028,13 +2004,6 @@ div.slider {
     box-sizing: border-box;
     color: orange;
     text-align: center;
-
-    &:hover{
-        
-       
-        
-        
-    }
 }
 
 
@@ -2184,5 +2153,3 @@ button{
     background-color: #1c0e44;
 }
 
-
-}}

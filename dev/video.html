@@ -12,7 +12,7 @@
     @@include('./template/header.html')
         <div class="container">
             <!-- 網頁標題 -->
-            <div class="title">
+            <div class="videoTitle">
                 <h1>公民小學堂</h1>
                 <!-- <h2>地球觀測站</h2> -->
             </div>
@@ -76,9 +76,9 @@
 window.addEventListener('load',function(){
     let videos=document.querySelectorAll(".fn-video");
     for(let i=0;i<videos.length;i++){
-        videos[i].addEventListener('mouseover',function(e){
+        videos[i].addEventListener('click',function(e){
             // console.log(e.target.src);
-            // e.target.preventDefault();
+            e.preventDefault();
             let smallVideo=e.target.src; //抓slider上的影片來源
             let bigVideo = document.getElementById("big-video").src;
             document.getElementById("big-video").src=smallVideo;
