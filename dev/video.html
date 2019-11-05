@@ -76,9 +76,9 @@
 window.addEventListener('load',function(){
     let videos=document.querySelectorAll(".fn-video");
     for(let i=0;i<videos.length;i++){
-        videos[i].addEventListener('click',function(e){
+        videos[i].addEventListener('mouseover',function(e){
             // console.log(e.target.src);
-            e.preventDefault();
+            // e.target.preventDefault();
             let smallVideo=e.target.src; //抓slider上的影片來源
             let bigVideo = document.getElementById("big-video").src;
             document.getElementById("big-video").src=smallVideo;

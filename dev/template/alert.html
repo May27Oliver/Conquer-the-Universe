@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+	<title>alert樣式修改</title>
+    <style>
+     #alertWindowWrap {
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index:999; 
+    }
+    .alertWindow {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        width: 25%;
+        min-width: 350px;
+        max-width: 400px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #fff;
+        color: #333;
+        z-index: 999;
+        text-align: center; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        height: 200px;
+    }
+     .alertWindow .alertTitle {
+        font-size: 32px; 
+    }
+    .alertWindow .alertContent {
+        font-size: 20px;
+        line-height: 1.2;
+        padding: 20px 0; 
+    }
+    .alertWindow .closeWrap {
+        height: 38px; 
+    }
+    .alertWindow #alertButton {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        border-radius: 20px;
+        color: #b78100;
+        border:1px solid #b78100;
+        background: #ffd584;
+        padding: 9px 20px 9px 20px;
+        margin: 10px;
+    }
+   .alertWindow #cancelButton{
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        border-radius: 20px;
+        color: #b78100;
+        border:1px solid #b78100;
+        background: #ffd584;
+        opacity: .8;
+        padding: 9px 20px 9px 20px;
+        margin: 10px;
+        font-weight: 900;
+        font-weight: 500;
+    }
+     
+    .alertWindow .alertClose:after {
+        transform: rotate(-45deg); 
+    }
+    .alertWindow .alertClose:hover {
+        background-color: #ccc; 
+    }
+    </style>
+	
+</head>
+<body>
+    <div id="alertWindowWrap" style="display: flex; display: none;">
+        <div class="alertWindow">
+            <h3 class="alertTitle" style="color: red;">注意</h3>
+            <div class="alertContent">確定要取消目前變更的會員資料嗎?</div>
+            <div class="closeWrap">
+                <div id="alertButton">確認</div>
+                <div id="cancelButton">取消</div>
+            </div>
+            <div class="alertClose"></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+    function alertCloseWindow(callback){
+        // e.stopPropagation();
+        // $('.alertWindowWrap').css('display', 'none');
+        $('.alertWindowWrap').fadeOut(100);
+        
+        // $(this).parentsUntil('.alertWindowWrap').fadeOut(100);
+        if( callback){
+            callback();
+        }
+    }
+   
+    </script>
+</body>
+</html>
