@@ -770,210 +770,182 @@
         }
     }
 }
-
-   // -------贊助商品區------
- 
-//    .shopContainer{
-//     margin-top: 100px;
-//     padding-top: 50px;
-//     padding-bottom: 50px;
-//     text-align: center;
-//     background-color: #333;	
-//     position: relative;
-// .shoptitle{
-//     margin: 30px auto 50px;
-//     padding: 30px;
-//     width: 150px;
-//     background-size:100%;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-image: url(../img/title.png);
-//      h2{
-//          color:#fff;
-//     }	
-
-// }  
-// .boxForProduct{
-//     max-width: 500px;
-//     margin: 0 auto;
-//     height: 600px;
-//      .col-6{
-//          padding: 0;    
-//      }
-//  }
-// .productBox{
-//     margin: 0 auto;
-//     width: 95%;
-//     background-repeat: no-repeat;
-//     background-size:contain;
-//     background-position: bottom;
-//     position: relative;
-// }
-// .model{
-//     background-color: #90BEE3;
-//     max-width: 500px;
-//     margin: 0 auto 50px;
-//     background-image: url(../img/pinkPlanet.png);
-//     background-repeat: no-repeat;
-//     background-position: bottom;
-//     border-radius: 10px;
-// }
-// .model .pic01{
-//     padding: 20px;
-//     margin-top: 50px;
-// }
-// .productPic{
-//     box-sizing:border-box;
-//     margin: 50px auto 20px;
-//     background-color: antiquewhite;;
-//     border-radius: 10px;
-//     width: 145px;
-//     height: 145px;
-//     position: relative;
-//     img{
-//         top: calc(50% - 50px);
-//         left: calc(50% - 50px);
-//         position: absolute; 
-//         max-width: 100px;
-//         text-align: center;
-        // background-color: #333;	
-// 	.shoptitle{
-// 		margin: 30px auto 50px;
-// 		padding: 30px;
-// 		width: 150px;
-// 		background-size:100%;
-// 		background-position: center;
-// 		background-repeat: no-repeat;
-//         background-image: url(../img/title.png);
-
-//         h2 {
-//             color: #fff;
-//         }
-
-//     }
-
-//     .boxForProduct {
-//         .col-6 {
-//             max-width: 400px;
-//             background-color: #1c0e44;
-//         }
-//     }
-
-//     .productBox {
-//         margin: 0 auto;
-//         width: 95%;
-//         background-repeat: no-repeat;
-//         background-size: contain;
-//         background-position: bottom;
-//     }
-
-//     .model {
-
-//         background-color: #90BEE3;
-//         max-width: 500px;
-//         margin: 0 auto 50px;
-//         background-image: url(../img/pinkPlanet.png);
-//         background-repeat: no-repeat;
-//         background-position: bottom;
-//         border-radius: 10px;
-//     }
-
-//     .model .pic01 {
-//         padding: 20px;
-//         margin-top: 50px;
-//     }
-// }
-// .productTitle{
-// h3{
-//     font-weight: bold;
-//     color: #fff;	
-// }
-// .productBtn{
-//     width: 60px;
-//     margin: 10px auto;
-//     background-color: #448aca;
-//     padding: 5px;
-//     border-radius: 50px;
-//     h2{
-//         color: #fff;
-//     }	
-// }
-// } 
-// }
-// .toolTitle{
-// color:#fff;
-// line-height: 2;
-// }
-// .toolTitle02{
-// display: none;
-
-// }
-// .proTitle{
-//     a{ 
-//         display:block;
-//         margin: auto;
-//         color:#b78100;
-//         background-color: #ffd584;
-//     /* padding:15px;*/
-//         width: 160px;
-//         line-height: 40px;
-//         text-align: center;
-//         border-radius: 40px;
-//         border:2px solid #b78100;
-//     }
-// .moreProductBtn{
-// text-align: center;
-// margin: 30px auto;
-// width: 80px;
-// border-radius: 50px;
-// padding: 10px;
-// font-size: 20px;
-// font-weight: bold;
-// overflow: hidden;
-// background-color: #E8B51C;	
-// h2{ 
-//     font-weight: bold;
-//     color: #fff;
-// }
-// }
-// //商品業內頁的扭蛋區
-// .event{
-// padding-top: 50px;
-// background-color: #1c0e44;
-// }
-// .gashapon{
-
-// text-align: center;;
-// img{
-//     width: 300px;
-// }
-// }
-// .clearboth{
-// clear: both;
-// }
-// //商品業內頁的燈箱
-// #shopLightBox{
-// color: #FFF;
-// background-color: #E8B51C;
-// margin: 0 auto;
-// border-radius: 10px;
-// position: absolute;
-// top: calc(60% - 100px);
-// right: calc(50% - 100px);
-// z-index: 1;
-// width: 200px;
-// height: 150px;
-// p{
-//   margin: 30px auto 30px;
-// }
-// span{
-
-//     padding: 5px 10px 5px 10px;
-//     margin: 20px;
-//     background-color: #a6bfd0;
-//     border-radius: 5px;
-// }
-// }
+/*____________________ 贊助商品區 ____________________*/
+   .shopContainer{
+        margin-top: 100px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        background-color: #333;	
+        position: relative;
+        .shoptitle{
+            margin: 30px auto 50px;
+            padding: 30px;
+            width: 150px;
+            background-size:100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(../img/title.png);
+            h2{
+                color:#fff;
+            }
+        }  
+        .boxForProduct{
+            max-width: 500px;
+            margin: 0 auto;
+            height: 600px;
+            .col-6{
+                padding: 0;    
+            }
+        }
+        .productBox{
+            margin: 0 auto;
+            width: 95%;
+            background-repeat: no-repeat;
+            background-size:contain;
+            background-position: bottom;
+            position: relative;
+        }
+        .model{
+            background-color: #90BEE3;
+            max-width: 500px;
+            margin: 0 auto 50px;
+            background-image: url(../img/pinkPlanet.png);
+            background-repeat: no-repeat;
+            background-position: bottom;
+            border-radius: 10px;
+            .pic01{
+                padding: 20px;
+                margin-top: 50px;
+            }
+        }
+        .productPic{
+            box-sizing:border-box;
+            margin: 50px auto 20px;
+            background-color: antiquewhite;;
+            border-radius: 10px;
+            width: 145px;
+            height: 145px;
+            position: relative;
+            img{
+                top: calc(50% - 50px);
+                left: calc(50% - 50px);
+                position: absolute; 
+                max-width: 100px;
+                text-align: center;
+            }
+        }
+        .productTitle{
+            h3{
+                font-weight: bold;
+                color: #fff;	
+            }
+            .productBtn{
+                width: 60px;
+                margin: 10px auto;
+                background-color: #448aca;
+                padding: 5px;
+                border-radius: 50px;
+                h2{
+                    color: #fff;
+                }	
+            }
+        } 
+    }
+    .toolTitle{
+        color:#fff;
+        line-height: 2;
+    }
+    .toolTitle02{
+        display: none;
+    }
+    .proTitle{
+        a{ 
+        display:block;
+        margin: auto;
+        color:#b78100;
+        background-color: #ffd584;
+    /* padding:15px;*/
+        width: 160px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 40px;
+        border:2px solid #b78100;
+        }
+    }
+    .moreProductBtn{
+        text-align: center;
+        margin: 30px auto;
+        width: 80px;
+        border-radius: 50px;
+        padding: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        overflow: hidden;
+        background-color: #E8B51C;	
+        h2{ 
+            font-weight: bold;
+            color: #fff;
+        }
+    }
+    //商品業內頁的扭蛋區
+    .event{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .gashapon{
+        text-align: center;;
+        img{
+            width: 300px;
+        }
+    }
+    .event{
+        a{
+            font-size: 22px;
+            padding: 5px 10px 10px 8px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            background-color: #bb6e6e80;
+            box-shadow:   0px   4px   0px   0px   #A25050;
+            border-radius:20px;
+            position: relative;
+            top: 0;
+            transition: 0.3s;
+        }
+    }
+    .boxfora{
+        color: #FFF;
+        width: 100px;
+        height: 50px;
+        margin:10px 0;
+        text-align: center;   
+    }
+    .clearboth{
+        clear: both;
+    }
+    //商品業內頁的燈箱
+    #shopLightBox{
+        color: #FFF;
+        background-color: #E8B51C;
+        margin: 0 auto;
+        border-radius: 10px;
+        position: absolute;
+        top: calc(55% - 100px);
+        right: calc(50% - 100px);
+        z-index: 1;
+        width: 200px;
+        height: 150px;
+        p{
+            margin: 30px auto 30px;
+        }
+        span{
+            padding: 5px 10px 5px 10px;
+            margin: 20px;
+            background-color: #a6bfd0;
+            border-radius: 5px;
+        }
+    }
 
 /*____________________ VOTE ____________________*/
 .votePage {
