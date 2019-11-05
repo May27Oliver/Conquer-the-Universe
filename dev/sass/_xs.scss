@@ -196,11 +196,11 @@
 }
 
 
-    // 首頁最上面獎台
-.indexHeader{
+  // 首頁最上面獎台
+  .indexHeader{
     padding-top:100px;
     >h1{
-        color:#fff;
+        color: #fff;
     }
     h1{
         text-align: center;
@@ -238,90 +238,61 @@
                 }
                 p{
                     margin-bottom:5px;
-                    color:#fff;
+                    color: #fff;
                 }
             }
         }
-
-        img {
-            display: block;
-            width: 80%;
-            margin: 0 auto;
-        }
-
-        .planetTxt {
-            span {
-                margin-left: 5px;
+        .winner2{
+            .stageText{
+                background-image: url(../img/index_img/stageB2.png);
+                margin-right: -3.4%;
+                padding-top:189px;
+                p{
+                    bottom:50px;
+                }
             }
-
-            p {
-                margin-bottom: 5px;
+            .alienImg{
+                bottom:85px;
             }
-        }
-    }
-
-    .winner2 {
-        .stageText {
-            background-image: url(../img/index_img/stageB2.png);
-            margin-right: -3.4%;
-            padding-top: 189px;
-
-            p {
-                bottom: 50px;
+            .planetTxt{
+                padding-top:30px;
             }
         }
-
-        .alienImg {
-            bottom: 85px;
-        }
-
-        .planetTxt {
-            padding-top: 30px;
-        }
-    }
-
-    .winner1 {
-        .stageText {
-            background-image: url(../img/index_img/stageR1.png);
-
-            p {
-                bottom: 70px;
+        .winner1{
+            .stageText{
+                background-image: url(../img/index_img/stageR1.png);
+                p{
+                    bottom:70px;
+                }
+            }
+            .alienImg{
+                bottom:105px;
             }
         }
-
-        .alienImg {
-            bottom: 105px;
-        }
-    }
-
-    .winner3 {
-        .stageText {
-            background-image: url(../img/index_img/stageY3.png);
-            margin-left: -3.3%;
-            padding-top: 159px;
-
-            p {
-                bottom: 35px;
+        .winner3{
+            .stageText{
+                background-image: url(../img/index_img/stageY3.png);
+                margin-left: -3.3%;
+                padding-top:159px;
+                p{
+                    bottom:35px;
+                }
+            }
+            .alienImg{
+                bottom:70px;
+            }
+            .planetTxt{
+                padding-top:60px;
             }
         }
-
-        .alienImg {
-            bottom: 70px;
+        p{
+            text-align: center;
         }
-
-        .planetTxt {
-            padding-top: 60px;
+        .alienImg{
+            position: absolute;
+            bottom:0;
+            left:0;
         }
-    }
-
-    p {
-        text-align: center;
-    }
-
-    .alienImg {
-        position: absolute;
-        bottom: 0;
-        left: 0;
     }
 }
 
@@ -1572,7 +1543,7 @@
     position: relative;
     width: 85vw;
     /* 640px; */
-    height: 90vw;
+    height: 85vw;
     margin: 0 auto;
     user-select: none;
     margin-top:-100px;
@@ -1755,7 +1726,7 @@ div.slider {
 
         div {
             position: absolute;
-            bottom:-42%;
+            bottom:-38%;
             left:50%;
             transform: translateX(-50%);
             // background-color: rgba(0,0,0,.3);
