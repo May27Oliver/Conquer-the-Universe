@@ -6,8 +6,65 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @@include('./template/CDN.html')
     <title>公民的家</title>
+ 
 </head>
 <body class="homeCitizen">
+    <!---- 編輯會員內容區塊燈箱 ---->
+    <div class="content" id="memberData" style="display: none;">
+        <div class="container">
+            <div class="row">
+
+                 <div class="memDataItem col-12 col-md-12">
+                         <div class=" col-12">
+                             <h2>編輯會員資料</h2>
+                             <div class="col-12 col-md-12 wrapDataItem">
+                                 <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員編號 :</label>
+                                 <span class="col-md-5 mem_no">1</span>
+                             </div>
+                             <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                                    <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員姓名 :</label>
+                                    <span class="col-md-5 mem_id">王曉明</span>
+                            </div>
+                            <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                                <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色稱號 :</label>
+                                <select name="memTitle" id="memDataLock1" class="memDataLock1" disabled="">
+                                    <option>菜逼巴</option>
+                                </select>
+                                <img src="img/pencil.png" id="memDataEdit1" class="memDataEdit1" alt="editIcon">
+                             </div>
+                             <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                                <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色暱稱 :
+                                </label>
+                                <span class="col-md-5 mem_id">發大財</span>  
+                             </div>
+                             <div class="col-12 col-md-12 wrapDataItem">
+                                <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員帳號 : </label>
+                                <span class="col-md-5 mem_id">1234</span>
+                             </div>
+                             <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                                <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員密碼 :
+                                </label>
+                                <input id="memDataLock2" class="col-5 col-md-5 col-lg-5 col-xl-5 mem_psw memDataLock"  disabled="" type="password" value="123">
+                                <img src="img/pencil.png" id="memDataEdit2" alt="editIcon">
+                             </div>
+                             <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                                <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員信箱 :
+                                </label>
+                                <input id="memDataLock3" class="col-5 col-md-5 col-lg-5 col-xl-5 mem_email memDataLock"  disabled="" type="email" value="DD103G2@gmail.com">
+                                <img src="img/pencil.png" id="memDataEdit3" alt="editIcon">
+                            </div>
+                         </div>
+                         <div class="memDataBox">
+                            <button id="memDataButton"type="submit">確認</button>
+                            <button id="memDataCancel" type="reset">取消</button>
+                        </div>
+                </div>
+                
+             </div>
+        </div>
+     </div>
+    <!---- alert ---->
+    @@include('./template/alert.html')
     <!---- 選單區 ---->
     @@include('./template/header.html')
     <!---- 公民家內容區塊 ---->
@@ -43,9 +100,7 @@
                     <div class="col-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="item boxCenter">
                             <img src="img/rabbit.png" alt="">
-                            <a href="memberData.html">
-                                <button class="memBtn">編輯會員資料</button>
-                                </a>
+                                <button class="memBtn" id="memDataBtn">編輯會員資料</button>
                             <!-- onclick="location.href='memberData.html'   -->
                         </div>
                     </div>
@@ -109,7 +164,8 @@
     @@include('./template/footer.html')
     <script src="js/animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>    
+    <script> 
+    //=====頁籤程式碼=====   
     $(function(){
     var $li = $('ul.tab-title li');
         $($li. eq(0) .addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
@@ -119,6 +175,87 @@
             $(this).addClass('active'). siblings ('.active').removeClass('active');
         });
     });
+
+//=====會員編輯按鈕程式=====
+    function $id(id){
+        return document.getElementById(id);
+    }
+
+    //點擊編輯會員按鈕,memDataBtn會出現編輯燈箱
+    function showMemberForm(){
+        $id("memberData").style.display = "block";//編輯視窗show出來
+    } 
+
+     //點擊取消按鈕,提醒使用者是否確定取消,叫出alert視窗
+    function cancelMemData(){
+        // $id("memberData").style.display = "none";
+        $id("alertWindowWrap").style.display = "block";
+        
+    }
+
+    //點擊會員編輯鉛筆按鈕可修改資料
+    function showMemDataEdit1(){
+       document.getElementById("memDataLock1").disabled=false;
+    }
+    function showMemDataEdit2(){
+        $id("memDataLock2").disabled=false;
+    } 
+    function showMemDataEdit3(){
+        $id("memDataLock3").disabled=false;
+    }
+
+    //點擊alert視窗_確認_取消修改
+    function alertCancelMemData(){
+        $id("alertWindowWrap").style.display = "none";
+        $id("memberData").style.display = "none";
+        $id("memDataLock1").disabled=true;
+        $id("memDataLock2").disabled=true;
+        $id("memDataLock3").disabled=true;
+    }
+    //點擊alert視窗_取消_取消修改
+    function alertMemData(){
+        $id("alertWindowWrap").style.display = "none";
+    }
+
+    
+    function init(){
+        //===設定memDataBtn.onclick 事件理程序是 showMemberForm ,編輯會員資料按鈕
+        $id("memDataBtn").onclick = showMemberForm;
+        
+        //===設定btnLogin.onclick 事件處理程序是 sendForm ,確認按鈕-送去後端資料
+        // $id("memDataButton").onclick = sendForm;
+
+        //===設定btnLoginCancel.onclick 事件處理程序是 cancelLogin ,取消按鈕-跳出視窗
+        $id("memDataCancel").onclick = cancelMemData;
+
+        //===設定memDataEdit.onclick 事件理程序是  showMemDataEdit ,會員資料編輯鉛筆按鈕
+        document.getElementById("memDataEdit1").onclick = showMemDataEdit1;
+        $id("memDataEdit2").onclick = showMemDataEdit2;
+        $id("memDataEdit3").onclick = showMemDataEdit3;
+
+        //===設定alertWindowWrap確認取消
+        $id("alertButton").onclick = alertCancelMemData;
+
+        //===設定alertWindowWrap不要取消
+        $id("cancelButton").onclick = alertMemData;
+    }; //window.onload
+
+    window.onload=init;	
+    
+    //====alert訊息====
+    function alertBoxShow(content = '你確認修改資料嗎?', title = '注意', color = 'red', callback){
+        $('.alertWindowWrap').css('display', 'flex');
+        $('.alertTitle').html(title).css('color', color);
+        $('.alertContent').html(content);
+        $('.alertClose').off();
+        $('.alertButton').off();
+
+        $('.alertClose').click(() => {alertCloseWindow(callback)});
+        $('.alertButton').click(() => { alertCloseWindow(callback)});
+        $('.cancelButton').click(() => { alertCloseWindow(callback)});
+        // callback();
+    }
+    
     </script>
 </body>
 </html>

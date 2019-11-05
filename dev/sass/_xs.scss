@@ -297,294 +297,344 @@
 }
 
 
-//公民的家
-.homeContent {
-    // margin-top: 50px;
-    padding-top: 30px;
-}
-
-// .row{
-//     overflow: hidden;
-// }
-.memNameBox {
-    overflow: hidden;
-    margin-bottom: 10px;
-
-    img {
-        float: left;
-        padding-right: 20px;
+     //公民的家
+     .homeContent{
+        // margin-top: 50px;
+        padding-top: 30px;
     }
-
-    h3,
-    h2 {
-        color: #fff;
-    }
-
-    h3 {
-        font-size: 20px;
-    }
-
-    h2 {
-        font-size: 32px;
-    }
-}
-
-.supportBox {
-    background-color: $green;
-
-    border-radius: 8px 8px 0 0;
-
-    h4 {
-        padding-left: 5%;
-        // text-align: center;
-        line-height: 2;
-        // width: 41%;
-
-        padding-top: 10px;
-        // margin: auto;
-        font-size: 1em;
-    }
-
-    .supportBoxIn {
-        width: 95%;
-        line-height: 2;
-        background-color: #d4faff;
-        margin: auto;
-        border-radius: 8px;
-
-        p {
-            color: #333;
-            font-size: 20px;
-            text-align: center;
-            line-height: 2;
-
-        }
-    }
-}
-
-.abilityBox {
-    background-color: $green;
-    border-radius: 0 0 8px 8px;
-    padding-bottom: 3%;
-
-    h4 {
-        padding-left: 5%;
-        padding-top: 10px;
-        // text-align: center;
-        line-height: 2;
-        // width: 35%;
-        font-size: 1em;
-    }
-
-    .abilityBoxIn {
-
-        background-color: #d4faff;
-        margin: auto;
-        border-radius: 8px;
-        height: 80%;
-        width: 95%;
-        padding-top: 8%;
-        padding-bottom: 1%;
-
-
-
-    }
-}
-
-
-
-
-
-//中間區塊
-.boxCenter {
-    margin-top: 60px;
-    margin-bottom: 60px;
-
-}
-
-.boxCenter img {
-    display: block;
-    margin: auto;
-}
-
-
-.redBall {
-    background-image: url(../img/redball.png);
-
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    height: 1365px;
-
-
-
-
-    .redImg {
-        width: 100%;
-    }
-
-    // .redBallIn{
-    // padding: 0px 15px;
+    // .row{
+    //     overflow: hidden;
     // }
-}
-
-.memBtn {
-    display: block;
-    margin: auto;
-    font-size: 20px;
-    border-radius: 20px;
-    color: #b78100;
-    border: 1px solid #b78100;
-    background: #ffd584;
-    padding: 10px 20px;
-    margin-top: 30px;
-}
-
-
-
-// 內容區塊右
-#tab-demo {
-    overflow: hidden;
-    margin: auto;
-
-    ul {
-        display: block;
-        margin: 0;
-        list-style: none;
-
-        li {
-            display: inline-block;
-            vertical-align: top;
-            margin: 0 -1px -1px 0;
-            /* border:1px solid #BCBCBC;  */
-            height: 28px;
+    .memNameBox{
+        overflow: hidden;
+        margin-bottom:10px;
+        img{
+            float: left;
+            padding-right: 20px;
+          }
+        h3,h2{
+        color: #fff;
+        }
+    
+        h3{
+        font-size: 20px;
+        }
+        h2{
+        font-size: 32px;
+        }
+    }
+    .supportBox{
+        background-color: $green;  
+       
+        border-radius: 8px 8px 0 0;
+       
+        h4{
+            padding-left: 5%;
+            // text-align: center;
             line-height: 2;
-            background: #a6bfd0;
-            padding: 0 15px;
-            list-style: none;
-            box-sizing: border-box;
-            border-radius: 8px 8px 0 0;
-
-            a {
+            // width: 41%;
+            
+            padding-top: 10px;
+            // margin: auto;
+            font-size: 1em;
+        }
+        .supportBoxIn{
+            width: 95%;
+            line-height: 2;
+            background-color: #d4faff;
+            margin: auto;
+            border-radius: 8px;
+    
+            p{
                 color: #333;
-                text-decoration: none;
-                padding-left: 18.5px;
-                padding-right: 18.5px;
+                font-size: 20px;
+                text-align: center;
+                line-height: 2;
+                
             }
-
-        }
-
-        li.active {
-            /* border-bottom:1px solid #fff;  */
-            background: $green;
         }
     }
-
-
-    .tabIn {
-        background-color: $green;
+    
+    .abilityBox{  
+        background-color: $green;  
+        border-radius: 0 0 8px 8px;
+        padding-bottom: 3%;
+        h4{
+            padding-left: 5%;
+            padding-top: 10px;
+            // text-align: center;
+            line-height: 2;
+            // width: 35%;
+            font-size: 1em;
+        }
+        .abilityBoxIn{
+            
+            background-color: #d4faff;
+            margin: auto;
+            border-radius: 8px;
+            height: 80%;
+            width: 95%;
+            padding-top: 8%;
+            padding-bottom: 1%;
+            
+           
+           
+        }
+    }
+    
+    
+    
+    
+    
+    //中間區塊
+    .boxCenter{
+        margin-top: 60px;
+        margin-bottom: 60px;
+        
+    }
+    .boxCenter img{
+        display: block;
         margin: auto;
-        border-radius: 0px 8px 8px 8px;
-        height: 148px;
-
-        .wrapTabIn {
-            margin: 0 10px;
-            overflow: overlay;
-
-            .tab-inner {
-                width: 912px;
-                margin-bottom: 55px;
-                clear: both;
-                color: #000;
-                padding: 15px 10px;
-                height: 50px;
-
-                /* border:1px #BCBCBC solid; */
-                .propBox {
-                    border-radius: 8px;
-                    background-color: #d4faff;
-                    width: 100px;
-                    padding-bottom: 100px;
-                    float: left;
-                    margin-bottom: 10px;
-                    margin-right: 2.5px;
-                    margin-left: 2.5px;
-                    margin-right: 5.5px;
-
-
-                    margin-left: 7px;
-                    margin-right: 7px;
-                    margin-bottom: 14px;
-
-                }
-            }
-
-        }
-
-        .wrapTabIn::-webkit-scrollbar {
-            width: 6px;
-            height: 10px;
-        }
-
-        .wrapTabIn::-webkit-scrollbar-thumb {
-            background-color: #0996b9;
-            border-radius: 5px;
-        }
-
-        .wrapTabIn::-webkit-scrollbar-track {
-            background-color: #c4c4c4;
-        }
     }
-}
-
-//會員資料區
-.memDataItem {
-    width: 450px;
-    margin: auto;
-
-}
-
-.memDataItem label,
-.memDataItem span {
-    color: #eee;
-    font-size: 18px;
-    line-height: 1;
-}
-
-
-.memDataBox {
-    text-align: center;
-    width: 450px;
-    margin: auto;
-    background-color: rgba(161, 48, 48, 0.2);
-    border: 2px solid $green;
-    padding: 30px;
-    box-sizing: border-box;
-}
-
-/* .memNameBox h3{
-        padding-left: 50px;
-    } */
-
-.memDataButton {
-    font-size: 16px;
-    border-radius: 20px;
-    color: #b78100;
-    border: 1px solid #b78100;
-    background: #ffd584;
-    padding: 5px 20px;
-    margin: 10px 30px 0;
-}
-
-.memDataCancel {
-    font-size: 16px;
-    border-radius: 20px;
-    color: #077e46;
-    border: 1px solid #077e46;
-    background: #53d674;
-    padding: 5px 20px;
-
-}
-
+    
+    
+    .redBall{
+        background-image: url(../img/redball.png);
+        
+        background-repeat: no-repeat;background-position:center bottom;
+        height: 1365px;
+        
+    //container限制容器    
+    .redBallIn{
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 100px 15px;
+        box-sizing: border-box;
+    }    
+        
+        .redImg{
+        width: 100%;
+        }
+        // .redBallIn{
+        // padding: 0px 15px;
+        // }
+    }
+    
+    .memBtn{
+        display: block;
+        margin: auto;
+        font-size: 20px;
+        border-radius: 20px;
+        color: #b78100;
+        border:1px solid #b78100;
+        background: #ffd584;
+        padding: 10px 20px;
+        margin-top: 30px;
+    }
+    
+    
+    
+    // 內容區塊右
+    #tab-demo{ 
+        overflow: hidden;
+        margin: auto;
+        ul{ 
+            display:block;
+            margin:0;
+            list-style:none;
+           
+            li{
+                display:inline-block; 
+                vertical-align:top;
+                 margin:0 -1px -1px 0 ; 
+                 /* border:1px solid #BCBCBC;  */
+                 height:28px; line-height:2; 
+                 background:#a6bfd0;
+                 padding:0 15px;list-style:none; box-sizing:border-box;
+                 border-radius: 8px 8px 0 0;
+                 a{ 
+                    color:#333; 
+                    text-decoration:none;
+                    padding-left: 18.5px;
+                    padding-right: 18.5px;
+                }
+                
+               }
+               li.active{ 
+                    /* border-bottom:1px solid #fff;  */
+                    background:$green;
+                }
+        }
+        
+        
+        .tabIn{
+            background-color: $green;
+            margin: auto;
+            border-radius: 0px 8px 8px 8px;
+            height: 148px;
+            .wrapTabIn{
+                margin: 0 10px;  
+                overflow: overlay;
+    
+                .tab-inner{
+                    width: 912px;
+                    margin-bottom: 55px;
+                    clear:both; 
+                    color:#000;
+                    padding:15px 10px; 
+                    height:50px; 
+                    /* border:1px #BCBCBC solid; */
+                    .propBox{
+                        border-radius: 8px;
+                        background-color: #d4faff;
+                        width: 100px;   
+                        padding-bottom: 100px;
+                        float: left;
+                        margin-bottom: 10px;
+                        margin-right: 2.5px;
+                        margin-left: 2.5px;
+                        margin-right: 5.5px;
+                           
+                        
+                        margin-left: 7px;
+                        margin-right: 7px;
+                        margin-bottom: 14px;
+                        
+                    }  
+                  }
+                
+            }
+    
+            .wrapTabIn::-webkit-scrollbar {
+                width: 6px;
+                height: 10px;
+            }
+            .wrapTabIn::-webkit-scrollbar-thumb {
+                background-color: #0996b9;
+                border-radius: 5px;
+            }
+        
+            .wrapTabIn::-webkit-scrollbar-track {
+                background-color: #c4c4c4;
+            }
+        }
+     }
+    
+        //會員資料區
+        #memberData{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(66,66,66,.6);
+            margin: auto; 
+            z-index: 900;
+        }
+        .memDataItem{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            max-width: 350px;
+            width: 450px;
+            height: 450px;
+            margin: auto;
+            background-color: #440b86;
+            border-radius: 20px;
+            h2{
+                text-align: center;
+                line-height: 3;
+                color: #eee;
+            }
+           
+            
+        }
+        .memDataItem label,.memDataItem span{
+            color: #ddd;
+            font-size: 18px;
+            line-height: 2;
+        }
+        
+        
+        .memDataBox{
+            text-align: center;
+            width: 350px;
+            margin: auto;
+            background-color: #440b86;
+            /* border: 2px solid $green; */
+           
+            box-sizing: border-box;
+        }
+        
+        
+        #memDataButton{
+            font-size: 16px;
+            border-radius: 20px;
+            color: #b78100;
+            border:1px solid #b78100;
+            background: #ffd584;
+            padding: 5px 20px;
+            margin: 50px 10px 0;
+        }
+        #memDataCancel{
+            font-size: 16px;
+            border-radius: 20px;
+            color: #b78100;
+            border:1px solid #b78100;
+            background: #ffd584;
+            opacity: .9;
+            padding: 5px 20px;
+            margin: 50px 10px 0;
+            
+        }
+        /*會員編輯資料的select與option樣式*/
+        .homeCitizen{
+            select{
+                    
+                /* background:transparent; */
+                padding: 2.5px 10px;
+                font-size: 16px;
+                /* color: white; */
+                text-align: center;
+                border: 1px #a4e1f0 solid;
+                border-radius: 5px;
+                line-height: 1.5;
+                margin-right: 8px;
+            }
+            option{
+                color: black;
+                background: #A6E1EC;
+                line-height: 20px;
+            }
+            select:focus{
+                border: 1px #ddd solid;
+                box-shadow: 0 0 2px 1px #DDDDDD;
+            }
+            option:hover{
+                background: #EBCCD1;
+            }
+            input{
+                background:white;
+                padding: 0 10px;
+                font-size: 16px;
+                /* color: ; */
+                text-align: center;
+                border: 1px #a4e1f0 solid;
+                border-radius: 5px;
+                line-height: 1.5;
+                margin: 5px 12px 5px 0;
+                
+    
+            }
+            #memDataEdit1{
+                vertical-align: middle;
+            }
+            #memDataEdit2,#memDataEdit3{
+                margin-top: 8px;
+                    
+            }   
+        }
 
 /* 排行榜 */
 .leaderBoard{
