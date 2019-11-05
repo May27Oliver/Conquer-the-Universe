@@ -774,6 +774,7 @@
 /*__________[START] 首頁公民投票 VOTE IN INDEX __________*/
 
 .voteSectionWrapper{
+    margin-top: -160px;
     // background: url('../img/vote/index-vote-bg.png') no-repeat center center / contain ;
     .voteSection {
         width: 100%;
@@ -1183,11 +1184,11 @@
 // }
 /*____________________ 贊助商品區 ____________________*/
    .shopContainer{
-        margin-top: 100px;
+        margin-top: 80px;
         padding-top: 50px;
         padding-bottom: 50px;
         text-align: center;
-        background-color: #333;	
+        // background-color: #333;	
         position: relative;
         .shoptitle{
             margin: 30px auto 50px;
@@ -2302,6 +2303,7 @@ div.slider {
 
 // NEWS 開始
 .news {
+    margin-top:-200px;
     background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
     // background-image: url(../img/STAR.png), url(../img/bg.png);
     // background-repeat: repeat;
@@ -2599,7 +2601,9 @@ button{
 }
 
 .newsTitle{
+    margin-top:-180px;
     width: 100%;
+    margin-bottom:50px;
     h2{
         line-height: 100px;
         text-align: center;
@@ -2613,6 +2617,8 @@ button{
     }
 }
 .newsMore{
+    margin-top:80px;
+    margin-bottom:-160px;
     a{
         display:block;
         text-decoration: none;
