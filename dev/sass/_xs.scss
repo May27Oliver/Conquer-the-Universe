@@ -817,11 +817,7 @@
                         img {
                             width: 80%;
                             vertical-align: bottom;
-                            padding-bottom: 10px;
-                        }
-                        #votePie{
-                            width: 80%;
-                            height: auto;
+                            padding: 9px 0 5px;
                         }
                     }
 
@@ -829,6 +825,7 @@
                         background: lighten($green, 15);
                         padding: 15px;
                         border-radius: 0 0 10px 10px;
+                        position: relative;
 
                         small {
                             margin-top: 10px;
@@ -895,8 +892,8 @@
             border-radius: 5px;
             box-sizing: border-box;
             position: absolute;
-            right: 20px;
-            top: 18px;
+            right: 10px;
+            top: 8px;
         }
         
         &.index-more{
@@ -971,10 +968,9 @@
                 }
             }
         }
-    }
-        
-    
+    }    
 }
+
 /*__________[END] 首頁公民投票 VOTE IN INDEX __________*/
 
 
@@ -1492,7 +1488,7 @@
                         img {
                             width: 80%;
                             vertical-align: bottom;
-                            padding-bottom: 15px;
+                            padding: 8px 0 5px;
                         }
                     }
 
