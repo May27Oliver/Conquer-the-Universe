@@ -402,6 +402,24 @@
     .question{
         width: 55%;
     }
+
+
+    /*__________[START] 首頁公民投票 VOTE IN INDEX __________*/
+    .voteSectionWrapper{
+        .voteSection{
+            /*------ 投票卡片 ------*/
+            .voteGroup{
+                .voteCard{
+                    &:nth-child(n+3){
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    /*__________[END] 首頁公民投票 VOTE IN INDEX __________*/
+
+
     
   //首頁的贊助商品區//
 

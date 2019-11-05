@@ -362,6 +362,46 @@
     }
 
 
+    /*__________[START] 首頁公民投票 VOTE IN INDEX __________*/
+    .voteSection{
+        /*------ 投票卡片 ------*/
+        .voteGroup{
+            .voteCard{
+                .voteWrapper{
+                    .voteText{
+                        small{
+                            margin-top: 10px;
+                            font-size: 15px;
+                            display: block;
+                        }
+                        h3{
+                            font-size: 18px;
+                            font-weight: 500;
+                            margin-top: 10px;
+                        }
+                        p{
+                            font-size: 18px;
+                            font-weight: 400;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        /*------ 按鈕------*/
+        button{
+            font-size: 18px;
+            padding: 5px 18px;
+            &.report{
+                font-size: 10px;
+                padding: 2px 0;
+            }
+        }
+    }
+    /*__________[END] 首頁公民投票 VOTE IN INDEX __________*/
+    
+
+
     // 公民小學堂
     //聊天機器人
     .tip-robot{
@@ -450,7 +490,7 @@
     }
 
 
-    /*____________________ VOTE ____________________*/
+    /*____________________[START] VOTE ____________________*/
     .votePage{
         .container{
             /*------ 投票卡片 ------*/
@@ -501,6 +541,8 @@
             }
         }
     }
+    /*____________________[END] VOTE ____________________*/
+
     
 //首頁footer
     .indexFooter{
