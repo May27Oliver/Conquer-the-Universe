@@ -424,13 +424,13 @@
 
     
 /*____________________ 贊助商品區 ____________________*/
-
+    .shopContainerAll{
+        background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
+    }
     .shopContainer{
         margin-top: 100px;
         padding-top: 50px;
         padding-bottom: 50px;
-        text-align: center;
-        background-color: #333; 
         .shoptitle{
             margin: 30px auto 50px;
             padding: 30px;
@@ -439,9 +439,9 @@
             background-position: center;
             background-repeat: no-repeat;
             background-image: url(../img/title.png);
-                h2{
-                    color:#fff;
-                }	  
+            h2{
+                color:#fff;
+            }	  
         }  
         .productBox{
             max-width: 800px;
@@ -526,6 +526,7 @@
         display: none;
     }
     .toolTitle02{
+        padding: 10px;
         display: block;
         margin: 50px;
         h2{
@@ -536,6 +537,9 @@
             color: white;
         }
     }
+    .toolTitle03{
+        padding: 10px;
+    }
     //贊助商品區的到具燈箱//
     #shopLightBox{
         color: #FFF;
@@ -543,7 +547,7 @@
         margin: 0 auto;
         border-radius: 10px;
         position: absolute;
-        top: calc(40% - 100px);
+        top: calc(25% - 100px);
         right: calc(50% - 100px);
         z-index: 1;
         width: 200px;

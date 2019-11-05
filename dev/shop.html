@@ -6,14 +6,16 @@
     <title>贊助商品</title>
     @@include('./template/CDN.html')
 </head>
-<body class="votePage">
+<body class="shopContainerAll">
     <!-------------------- 頁首(計分板+導覽列) -------------------->
     @@include('template/header.html')
     <script src='js/shop.js'></script>
+    <!-- <script src="js/starsShine.js"></script> -->
+    
 <!--------------------內容----------------------->
 
 <section class="shopContainer">  
-
+<!-- --------------------服裝道具---------------------- -->
     <div id="shopLightBox" style="display:none">  
         <img src="../dev/img/" alt="">  
         <p>確定要購買此項道具?</p>  
@@ -93,32 +95,80 @@
                         </div>  
                     </div>
             </div> 
+    </div>
+      <!-- -------------------新聞道具區-------------------  -->
+      <div class="toolTitle03">
+            <h2>
+                新聞集錦
+            </h2>
+            <span>
+                購買新聞道具之後可以張貼至討論區，經由玩家案讚或按噓，候選人的支持度就會增加或減少
+            </span>
         </div>
+      <div class="fakeNewsLanuch container">
+               >
+            <form method="POST" action="fakeNewsLanuch.php">
+                <p>使用對象：
+                    <label for="planetA">星球A</label>
+                    <input type="radio" name="planet" id="planetA">
+                    <label for="planetB">星球B</label>
+                    <input type="radio" name="planet" id="planetB">
+                    <label for="planetC">星球C</label>
+                    <input type="radio" name="planet" id="planetC">
+                </p>
+                <p>支持度基礎值：
+                    <select>
+                        <option>請選擇</option>
+                        <option>200</option>
+                        <option>100</option>
+                        <option>50</option>
+                        <option>-50</option>
+                        <option>-100</option>
+                        <option>-200</option>
+                    </select>
+                </p>
+                <p>新聞標題：<input type="text" maxlength="20" placeholder="最多輸入10個中文字"></p>
+                <p>新聞內容：<textarea maxlength="240" placeholder="最多輸入120個中文字"></textarea></p>
+                <button type="submit">送出(<span>$100</span>)</button>
+            </form>
+        </div>             
         <div class="clearboth"></div>
+    <!-- -------------------扭蛋區------------------ -->
+        <div class="toolTitle04">
+                <h2>
+                    新聞集錦
+                </h2>
+                <span>
+                    購買新聞道具之後可以張貼至討論區，經由玩家案讚或按噓，候選人的支持度就會增加或減少
+                </span>
+        </div>
         <div class="event">
-            <div class="gashapon">
+            <div id="trashLightBox" style="opacity:0;" class="trash">
+                <div class="trashPic">
+                    <img src="img/trash.png" alt="">
+                </div>
+                <h2>肥仔星候選人亂丟垃圾!!</h2>
+                <span>支持度-10</span>
+                <div id="trashLightBoxBtn">
+                    <p>
+                      確認
+                    </p>
+                </div>
+            </div>
+            <div id="event" class="gashapon">
                 <img class="gashaponPic"src="img/gashapon.png" alt="">
             </div>
-            <div class="boxfora">
-				<span>按下去</span>
+            <div id="gashaponBtn" class="boxfora">
+				<a id="eventButton">按下去</a>
 		    </div>
         </div>
-        <div class="trash">
-            <div class="trashPic">
-                <img src="img/trash.png" alt="">
-            </div>
-            <h3>肥仔星候選人亂丟垃圾!!</h3>
-            <span>支持度 -3</span>
-        </div>
-
+  
     </div>
+
 
 
 </section>      
   
-  
-     
-
     <!-------------------- 頁尾 -------------------->
     @@include('template/footer.html')
   
