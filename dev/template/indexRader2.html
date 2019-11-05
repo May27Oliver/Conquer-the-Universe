@@ -1,0 +1,78 @@
+
+<canvas id="chartRadar2"></canvas>
+
+<script type="text/javascript">
+    
+//定義變數
+var chartRadarDOM;
+var chartRadarData;
+var chartRadarOptions;
+
+    //載入雷達圖
+Chart.defaults.global.legend.display = false;
+Chart.defaults.global.defaultFontColor = 'rgba(0,0,74, 1)';
+chartRadarDOM = document.getElementById("chartRadar2");
+Chart.defaults.global.defaultFontFamily= '微軟正黑體';
+chartRadarData;
+chartRadarOptions = 
+{
+    scale: 
+    {
+        ticks: 
+        {
+            fontSize: 12,
+            beginAtZero: true,
+            maxTicksLimit: 7,//三角形線的數量
+            min:0,
+            max:100
+        },
+        pointLabels: 
+        {
+            fontSize: 12, //智力,財力,魅力的字
+            color: '#0044BB'
+        },
+        gridLines: //三角線
+        {
+            color: '#009FCC' 
+        }
+    }
+};
+
+console.log("---------Rader Data--------");
+var graphData =new Array();
+graphData.push(100,40,65);
+// graphData.push(40);
+// graphData.push(65);
+
+
+
+console.log("--------Rader Create-------------");
+console.log(graphData);
+    
+//CreateData
+chartRadarData = {
+        labels: ['智力', '財力', '魅力'],
+    datasets: [{
+        label: "Skill Level",
+        data: graphData,
+        fill: true,
+        backgroundColor: "rgba(17, 34, 51,0.6)",
+        borderColor: "rgba(63,63,74,0.6)",
+        pointBackgroundColor: "rgba(63,63,74,.5)",
+        pointBorderColor: "rgba(0,0,0,0)",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgba(0,0,0,0.3)",
+        pointBorderWidth: 3,
+        
+        }]
+};
+
+
+    
+//Draw
+var chartRadar = new Chart(chartRadarDOM, {
+    type: 'radar',
+    data: chartRadarData,
+    options: chartRadarOptions
+});
+</script>

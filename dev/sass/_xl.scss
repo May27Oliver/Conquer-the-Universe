@@ -1,19 +1,6 @@
 @include respond(xl) {
     @include xl-grid(12);
     @include xl-fontsize($fontBasesize);
-    body {
-    // font-family: Arial, Helvetica, sans-serif,'微軟正黑體';
-    background-color: #1c0e44;
-    background-image:
-    url(../img/star2.png),
-    url(../img/star1.png),
-    url(../img/bac2.png),
-    url(../img/bac1.png);
-    width: 100%;
-    /* height: 1450px; */
-    background-repeat: no-repeat;
-    /* background-size: contain; */
-    }
 
     .banner{
         nav{
@@ -111,133 +98,214 @@
 
 //首頁的贊助商品區//
 
-.shopContainer{
-    margin-top: 100px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-    background-color: #333;
-    
-
-
-.shoptitle{
-    margin: 30px auto 50px;
-    padding: 30px;
-    width: 150px;
-    background-size:100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url(../img/title.png);
-        h2{
-            color:#fff;
-    }	
-    
-}  
-.productBox{
-    margin: 0 auto;
-    width: 95%;
-    display: flex;
-    max-width: 1200px;
-  
-}
-.boxForProduct{
-    margin-right: -100px;
-    max-width: 500px;
-    .col-6{
-        width: 40%;
-        margin-bottom: 50px;
-    
-    }
-}
-.model{
-    width: 600px;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size:contain;
-    border-radius: 10px;
-    background-image: url(../img/pinkPlanet.png);
-    margin-bottom: 50px;
-    background-color: #90BEE3;
-
-}
-.model .pic01{
-    padding: 20px;
-    margin-top: 50px;
-}
-.productPic{
-    box-sizing:border-box;
-    margin: 0 auto 20px;
-    background-color: antiquewhite;;
-    border-radius: 10px;
-    width: 150px;
-    height: 150px;
-    position: relative;
-    img{
-        top: calc(50% - 50px);
-        left: calc(50% - 50px);
-        position: absolute;  
-        width: 100px;
+    .shopContainer{
+        margin-top: 100px;
+        padding-top: 50px;
+        padding-bottom: 50px;
         text-align: center;
+        background-color: #333;
+        .shoptitle{
+            margin: 30px auto 50px;
+            padding: 30px;
+            width: 150px;
+            background-size:100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(../img/title.png);
+                h2{
+                    color:#fff;
+                }	  
+        }  
+        .productBox{
+            margin: 0 auto;
+            width: 95%;
+            display: flex;
+            max-width: 1200px;
+        }
+        .boxForProduct{
+            margin-right: -100px;
+            max-width: 500px;
+            .col-6{
+                width: 40%;
+                margin-bottom: 50px;
+            }
+        }
+        .model{
+            width: 600px;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            background-size:contain;
+            border-radius: 10px;
+            background-image: url(../img/pinkPlanet.png);
+            margin-bottom: 50px;
+            background-color: #90BEE3;
+            .pic01{
+                padding: 20px;
+                margin-top: 50px;
+            }
+        } 
+        .productPic{
+            box-sizing:border-box;
+            margin: 0 auto 20px;
+            background-color: antiquewhite;;
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+            position: relative;
+            img{
+                top: calc(50% - 50px);
+                left: calc(50% - 50px);
+                position: absolute;  
+                width: 100px;
+                text-align: center;
+            }
+        }
+        .productTitle{
+            h3{
+                font-weight: bold;
+                color: #fff;	
+            }
+            .productBtn{
+                width: 60px;
+                margin: 10px auto;
+                background-color: #448aca;
+                padding: 5px;
+                border-radius: 50px;
+                h2{
+                    color: #fff;
+                }	
+            }
+        } 
     }
-}
-.productTitle{
-h3{
-    font-weight: bold;
-    color: #fff;	
-}
-.productBtn{
-    width: 60px;
-    margin: 10px auto;
-    background-color: #448aca;
-    padding: 5px;
-    border-radius: 50px;
-    h2{
-        color: #fff;
-    }	
-}
-} 
-
-}
-.clearboth{
-    clear: both;
-}
-.moreProductBtn{
-    text-align: center;
-    margin: 50px auto;
-    width: 80px;
-    border-radius: 50px;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    overflow: hidden;
-    background-color: #E8B51C;	
-    h2{ 
+    .clearboth{
+        clear: both;
+    }
+    .moreProductBtn{
+        text-align: center;
+        margin: 50px auto;
+        width: 80px;
+        border-radius: 50px;
+        padding: 10px;
+        font-size: 20px;
         font-weight: bold;
-        color: #fff;
+        overflow: hidden;
+        background-color: #E8B51C;	
+        h2{ 
+            font-weight: bold;
+            color: #fff;
+        }
+    } 
+    // 贊助商品內頁
+    .toolTitle{
+        display: none;
     }
-} 
-// 贊助商品內頁
-.toolTitle{
-    display: none;
-}
-.toolTitle02{
-    margin: 50px;
-    h2{
-        color: white;
-        margin-bottom: 10px;
+    .toolTitle02{
+        margin: 50px;
+        h2{
+            color: white;
+            margin-bottom: 10px;
+        }
+        p{  
+            color: white;
+        }
     }
-    p{  
-        color: white;
+//商品業內頁的燈箱
+    #shopLightBox{
+        color: #FFF;
+        background-color: #E8B51C;
+        margin: 0 auto;
+        border-radius: 10px;
+        position: absolute;
+        top: calc(40% - 100px);
+        right: calc(50% - 100px);
+        z-index: 1;
+        width: 200px;
+        height: 150px;
+        p{
+        margin: 30px auto 30px;
+        }
+        span{
+            padding: 5px 10px 5px 10px;
+            margin: 20px;
+            background-color: #a6bfd0;
+            border-radius: 5px;
+        }
     }
-}
 
+    .slider{
+        display: flex;
+        justify-content: center;
+        height: 10vw;
+        margin: 0 auto;
+        width: 62vw;
+        .video-slider{    
+            margin: 2vw auto;
+            background-color: #CCC;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            ul{
+                width: 125%;
+                height: 10vw;
+                position: relative;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                li{
+                    width: 20%;
+                    height: 10vw;
+                    line-height: 10vw;
+                    display: block;
+                }
+            }
+        }
+
+        .slider-forward{
+            background:transparent;
+            border: transparent;    
+            width: 5vw;
+            height: 10vw;
+            line-height: 10vw;
+            position: relative;
+            i{
+                color: #aaa;
+                position: absolute;
+                top: 3vw;
+                left: -2vw;
+                z-index: 2;
+                font-size: 8vw;
+            }
+        }
+
+        .slider-back{
+            background:transparent;
+            border: transparent;
+            width: 5vw;
+            height: 10vw;
+            line-height: 10vw;
+            position: relative;
+            i{
+                color: #aaa;
+                position: absolute;
+                top: 3vw;
+                left:-1vw;
+                z-index: 2;
+                font-size: 8vw;
+            }
+        }
+    }
+// Question
+    .question{
+        width: 53vw;
+    }
 
     // footer
     //首頁footer
     footer{
         .indexFooter{
             position: absolute;
-          
+            
                 .footerImg{
                 
                     width: 100%; 
@@ -256,45 +324,74 @@ h3{
     }
     // 公民的家
 //內容區塊左
-.supportBox{
-        
-    h4{
-        font-size: 24px;
-      
-    }
-    .supportBoxIn{
-        width: 95%;
-        margin-right: 10px;
-    }   
-}
-.boxLeft{
-        .abilityBox{ 
+    .supportBox{
+            
         h4{
             font-size: 24px;
-            
+        
         }
-        .abilityBoxIn{
-            width: 241px;
+        .supportBoxIn{
+            width: 95%;
             margin-right: 10px;
+        }   
+    }
+    .boxLeft{
+            .abilityBox{ 
+            h4{
+                font-size: 24px;
+                
+            }
+            .abilityBoxIn{
+                width: 241px;
+                margin-right: 10px;
+            }
         }
     }
-}
 
 
 
-.propBox,.propBox2{
-    width: 45%;   
-    padding-bottom: 45%;
-    margin-left: 7px;
-    margin-right: 7px;
-    margin-bottom: 14px;
-}
-
-// 首頁加入星球
-    .slider_circle_10 {
-        margin:0 50%;
-        transform: translateX(-50%);
-        margin-top:-250px;
+    .propBox,.propBox2{
+        width: 45%;   
+        padding-bottom: 45%;
+        margin-left: 7px;
+        margin-right: 7px;
+        margin-bottom: 14px;
     }
-    
+
+
+  // 首頁加入星球
+  .slider_circle_10 {
+        width: 65vw;
+        height: 55vw;
+        margin-top:-280px;
+    }
+
+// news 開始
+    .news {
+        background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
+        // font-family: "微軟正黑體";
+        // background-image: url(../img/START.png), url(../img/bg.png);
+        // background-repeat: repeat;
+    }
+
+    .newsBox {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+
+
+
+    .newsBtn {
+        margin-bottom: 20px;
+
+        img {
+            padding-left: 30px;
+        }
+
+    }
+
+// news end
 }

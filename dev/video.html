@@ -12,8 +12,8 @@
     @@include('./template/header.html')
         <div class="container">
             <!-- 網頁標題 -->
-            <div class="title">
-                <h1>公民小學堂</h1>
+            <div class="videoTitle">
+                <h2>公民小學堂</h2>
                 <!-- <h2>地球觀測站</h2> -->
             </div>
             <!-- 目錄與頁籤 -->
@@ -86,23 +86,31 @@ window.addEventListener('load',function(){
     }
     let oneVedio=0;
     let wrap=document.querySelector(".video-slider ul");
-    document.querySelector(".slider-forward").addEventListener('click',function(){
-        var turnLeft=document.querySelector(".slider-forward");
-        if( oneVedio <= -1){
-            turnLeft.disabled = true;
-        }else{
-            turnLeft.disabled = false;
-        }
+    let turnLeft=document.querySelector(".slider-forward");
+    let turnRight=document.querySelector(".slider-back");
+    turnRight.disabled=true; //一開始右鍵不能按
+    turnRight.style.opacity=0;
+    document.querySelector(".slider-forward").addEventListener('click',function(e){
         oneVedio--;
         wrap.style.left= 25*oneVedio+"%";
-    });
-    document.querySelector(".slider-back").addEventListener('click',function(){
-        var turnRight=document.querySelector(".slider-back");
-        if( oneVedio >= 0){
-            turnLRight.disabled = true;
+        console.log(oneVedio);
+        turnRight.disabled=false;
+        turnRight.style.opacity=1;
+        if( oneVedio == -1){
+            turnLeft.disabled = true;
+            turnLeft.style.opacity=0;
         }
+    });
+    document.querySelector(".slider-back").addEventListener('click',function(e){
         oneVedio++;
         wrap.style.left= 25*oneVedio+"%";
+        console.log(oneVedio);
+        turnLeft.disabled = false;
+        turnLeft.style.opacity=1;
+        if( oneVedio == 0){
+            turnRight.disabled = true;
+            turnRight.style.opacity=0;
+        } 
     });
 });
 </script>
