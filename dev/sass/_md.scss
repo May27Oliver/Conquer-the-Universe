@@ -64,9 +64,10 @@
         }
     }
 
+    
      //公民的家
 .homeContent{
-    padding-top: -150px;
+    padding-top:50px
 }
 
 // 內容區塊-左
@@ -108,13 +109,14 @@
         margin-top: 30px;
         // height: 200px;
         h4{
-            padding-left: -5%;
+           
             text-align: center;
             width: 90%;
             font-size: 24px;
             // margin-left: -5px;
         }
         .abilityBoxIn{
+            padding-top: 40px;
             margin-bottom: 3px;
             height: 200px;
             width: 94%;
