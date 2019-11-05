@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @@include('./template/CDN.html')
     <title>公民的家</title>
- 
+    
 </head>
 <body class="homeCitizen">
     <!---- 編輯會員內容區塊燈箱 ---->
@@ -14,7 +14,7 @@
         <div class="container">
             <div class="row">
 
-                 <div class="memDataItem col-12 col-md-12">
+                 <form action="" class="memDataItem col-12 col-md-12">
                          <div class=" col-12">
                              <h2>編輯會員資料</h2>
                              <div class="col-12 col-md-12 wrapDataItem">
@@ -58,7 +58,7 @@
                             <button id="memDataButton"type="submit">確認</button>
                             <button id="memDataCancel" type="reset">取消</button>
                         </div>
-                </div>
+                </form>
                 
              </div>
         </div>
@@ -160,8 +160,11 @@
             
         </div>
     </div>
+    <!---------- 製作星星背景 ---------->
+    <canvas id="starShine"></canvas>
     <!-- footer -->
     @@include('./template/footer.html')
+    <script src="js/starsShine.js"></script>
     <script src="js/animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script> 

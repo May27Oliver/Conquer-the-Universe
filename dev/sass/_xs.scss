@@ -770,13 +770,427 @@
         }
     }
 }
+
+/*__________[START] 首頁公民投票 VOTE IN INDEX __________*/
+
+.voteSectionWrapper{
+    margin-top: -160px;
+    // background: url('../img/vote/index-vote-bg.png') no-repeat center center / contain ;
+    .voteSection {
+        width: 100%;
+        max-width: 992px;
+        margin: 200px auto;
+        padding: 1px 15px;
+        box-sizing: border-box;
+
+        h2 {
+            background: url('../img/vote/title-bg.png') no-repeat center center / contain;
+            color: #fff;
+            text-align: center;
+            line-height: 2.8;
+            margin: 0px auto 80px;
+        }
+
+        /*------ 投票卡片 ------*/
+        .voteGroup {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0px -7.5px;
+
+            .voteCard {
+                &:nth-child(n+3){
+                    display: none;
+                }
+                .voteWrapper {
+                    height: 100%;
+                    border-radius: 10px;
+                    text-align: center;
+                    position: relative;
+                    padding: 1px;
+                    margin: 7.5px;
+
+                    .voteChart {
+                        background: $green;
+                        padding: 15px;
+                        border-radius: 10px 10px 0 0;
+
+                        img {
+                            width: 80%;
+                            vertical-align: bottom;
+                            padding-bottom: 10px;
+                        }
+                        #votePie{
+                            width: 80%;
+                            height: auto;
+                        }
+                    }
+
+                    .voteText {
+                        background: lighten($green, 15);
+                        padding: 15px;
+                        border-radius: 0 0 10px 10px;
+
+                        small {
+                            margin-top: 10px;
+                            font-size: 15px;
+                            display: block;
+                        }
+
+                        h3 {
+                            font-size: 18px;
+                            font-weight: 500;
+                            margin-top: 10px;
+                        }
+
+                        p {
+                            font-size: 15px;
+                            font-weight: 400;
+                            margin-top: 10px;
+                        }
+                    }
+
+                    &.voteArea {
+                        position: relative;
+                        height: 100%;
+                        margin: 8.5px;
+                    }
+                }
+            }
+        }
+    }
+    /*------ 按鈕 ------*/
+    button {
+        display: block;
+        background: #1d2088;
+        color: #fff;
+        font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 5px 18px;
+        margin: 10px auto 0;
+        border: none;
+        border-radius: 20px;
+
+        &:hover {
+            background: lighten(#1d2088, 15);
+        }
+
+        &[disabled|="disabled"] {
+            background: #ccc;
+            opacity: 0.8;
+
+            &:hover {
+                background: #ccc;
+            }
+        }
+
+        &.report {
+            width: 40px;
+            background: #fff;
+            color: #333;
+            font-size: 10px;
+            font-weight: 400;
+            padding: 2px 0;
+            margin: 0;
+            border-radius: 5px;
+            box-sizing: border-box;
+            position: absolute;
+            right: 20px;
+            top: 18px;
+        }
+        
+        &.index-more{
+            background: #ffd584;
+            color: #b78100;
+            line-height: 40px;
+            text-align: center;
+            padding: 0 18px;
+            margin-top: 50px;
+            border: 2px solid #b78100;
+            border-radius: 40px;
+            cursor: pointer;
+
+            &:hover {
+                background: lighten(#ffd584,10);
+            }
+        }
+    }
+
+    /*------ 跳窗提示 ------*/
+    .voteAlertGroup {
+        width: 100vw;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .5);
+        z-index: 9999;
+        display: none;
+
+        .voteAlertVoting,
+        .voteAlertVoted,
+        .voteAlertReport {
+            width: 300px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+
+            h2 {
+                font-size: 30px;
+                text-align: center;
+                background: $yellow;
+                padding: 20px;
+                margin: 0;
+            }
+
+            .voteAlertText {
+                background: lighten($yellow, 12);
+                border-radius: 0 0 10px 10px;
+                text-align: center;
+                padding: 20px;
+
+                p {
+                    margin: 10px 10px 0;
+                }
+
+                button {
+                    display: inline-block;
+                    background: $yellow;
+                    color: #333;
+                    margin-top: 35px;
+                }
+
+                select {
+                    width: 120px;
+                    display: block;
+                    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                    border: none;
+                    margin: 30px auto 0;
+                }
+            }
+        }
+    }
+        
+    
+}
+/*__________[END] 首頁公民投票 VOTE IN INDEX __________*/
+
+
+
+   // -------贊助商品區------
+ 
+//    .shopContainer{
+//     margin-top: 100px;
+//     padding-top: 50px;
+//     padding-bottom: 50px;
+//     text-align: center;
+//     background-color: #333;	
+//     position: relative;
+// .shoptitle{
+//     margin: 30px auto 50px;
+//     padding: 30px;
+//     width: 150px;
+//     background-size:100%;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-image: url(../img/title.png);
+//      h2{
+//          color:#fff;
+//     }	
+
+// }  
+// .boxForProduct{
+//     max-width: 500px;
+//     margin: 0 auto;
+//     height: 600px;
+//      .col-6{
+//          padding: 0;    
+//      }
+//  }
+// .productBox{
+//     margin: 0 auto;
+//     width: 95%;
+//     background-repeat: no-repeat;
+//     background-size:contain;
+//     background-position: bottom;
+//     position: relative;
+// }
+// .model{
+//     background-color: #90BEE3;
+//     max-width: 500px;
+//     margin: 0 auto 50px;
+//     background-image: url(../img/pinkPlanet.png);
+//     background-repeat: no-repeat;
+//     background-position: bottom;
+//     border-radius: 10px;
+// }
+// .model .pic01{
+//     padding: 20px;
+//     margin-top: 50px;
+// }
+// .productPic{
+//     box-sizing:border-box;
+//     margin: 50px auto 20px;
+//     background-color: antiquewhite;;
+//     border-radius: 10px;
+//     width: 145px;
+//     height: 145px;
+//     position: relative;
+//     img{
+//         top: calc(50% - 50px);
+//         left: calc(50% - 50px);
+//         position: absolute; 
+//         max-width: 100px;
+//         text-align: center;
+        // background-color: #333;	
+// 	.shoptitle{
+// 		margin: 30px auto 50px;
+// 		padding: 30px;
+// 		width: 150px;
+// 		background-size:100%;
+// 		background-position: center;
+// 		background-repeat: no-repeat;
+//         background-image: url(../img/title.png);
+
+//         h2 {
+//             color: #fff;
+//         }
+
+//     }
+
+//     .boxForProduct {
+//         .col-6 {
+//             max-width: 400px;
+//             background-color: #1c0e44;
+//         }
+//     }
+
+//     .productBox {
+//         margin: 0 auto;
+//         width: 95%;
+//         background-repeat: no-repeat;
+//         background-size: contain;
+//         background-position: bottom;
+//     }
+
+//     .model {
+
+//         background-color: #90BEE3;
+//         max-width: 500px;
+//         margin: 0 auto 50px;
+//         background-image: url(../img/pinkPlanet.png);
+//         background-repeat: no-repeat;
+//         background-position: bottom;
+//         border-radius: 10px;
+//     }
+
+//     .model .pic01 {
+//         padding: 20px;
+//         margin-top: 50px;
+//     }
+// }
+// .productTitle{
+// h3{
+//     font-weight: bold;
+//     color: #fff;	
+// }
+// .productBtn{
+//     width: 60px;
+//     margin: 10px auto;
+//     background-color: #448aca;
+//     padding: 5px;
+//     border-radius: 50px;
+//     h2{
+//         color: #fff;
+//     }	
+// }
+// } 
+// }
+// .toolTitle{
+// color:#fff;
+// line-height: 2;
+// }
+// .toolTitle02{
+// display: none;
+
+// }
+// .proTitle{
+//     a{ 
+//         display:block;
+//         margin: auto;
+//         color:#b78100;
+//         background-color: #ffd584;
+//     /* padding:15px;*/
+//         width: 160px;
+//         line-height: 40px;
+//         text-align: center;
+//         border-radius: 40px;
+//         border:2px solid #b78100;
+//     }
+// .moreProductBtn{
+// text-align: center;
+// margin: 30px auto;
+// width: 80px;
+// border-radius: 50px;
+// padding: 10px;
+// font-size: 20px;
+// font-weight: bold;
+// overflow: hidden;
+// background-color: #E8B51C;	
+// h2{ 
+//     font-weight: bold;
+//     color: #fff;
+// }
+// }
+// //商品業內頁的扭蛋區
+// .event{
+// padding-top: 50px;
+// background-color: #1c0e44;
+// }
+// .gashapon{
+
+// text-align: center;;
+// img{
+//     width: 300px;
+// }
+// }
+// .clearboth{
+// clear: both;
+// }
+// //商品業內頁的燈箱
+// #shopLightBox{
+// color: #FFF;
+// background-color: #E8B51C;
+// margin: 0 auto;
+// border-radius: 10px;
+// position: absolute;
+// top: calc(60% - 100px);
+// right: calc(50% - 100px);
+// z-index: 1;
+// width: 200px;
+// height: 150px;
+// p{
+//   margin: 30px auto 30px;
+// }
+// span{
+
+//     padding: 5px 10px 5px 10px;
+//     margin: 20px;
+//     background-color: #a6bfd0;
+//     border-radius: 5px;
+// }
+// }
 /*____________________ 贊助商品區 ____________________*/
+    .shopContainerAll{
+        background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
+    }
    .shopContainer{
-        margin-top: 100px;
+        margin-top: 80px;
         padding-top: 50px;
         padding-bottom: 50px;
-        text-align: center;
-        background-color: #333;	
+        text-align: center;    
         position: relative;
         .shoptitle{
             margin: 30px auto 50px;
@@ -799,7 +1213,7 @@
             }
         }
         .productBox{
-            margin: 0 auto;
+            margin: 0 auto 100px;
             width: 95%;
             background-repeat: no-repeat;
             background-size:contain;
@@ -859,6 +1273,22 @@
     .toolTitle02{
         display: none;
     }
+    .toolTitle03{
+       padding: 10px;
+       color:#fff;
+       line-height: 2;
+       h2{
+           text-align: center;
+       }
+    }
+    .toolTitle04{
+       padding: 10px;
+       color:#fff;
+       line-height: 2;
+       h2{
+           text-align: center;
+       }
+    }
     .proTitle{
         a{ 
         display:block;
@@ -892,6 +1322,7 @@
     .event{
         padding-top: 50px;
         padding-bottom: 50px;
+        position: relative;     
     }
     .gashapon{
         text-align: center;;
@@ -899,63 +1330,72 @@
             width: 300px;
         }
     }
-    .event{
-        a{
+    .boxfora{
+        color: #FFF;
+        width: 100px;
+        height: 50px;
+        margin:50px auto;
+        text-align: center; 
+        a{  
+            margin-top: 50px auto 0px;
             font-size: 22px;
-            padding: 5px 10px 10px 8px;
+            padding: 10px 10px 10px 8px;
             color: #fff;
             font-weight: bold;
             text-align: center;
-            background-color: #bb6e6e80;
-            box-shadow:   0px   4px   0px   0px   #A25050;
+            background-color: #dbcf24e7;
+            box-shadow:   0px   6px   0px   0px   #A25050;
             border-radius:20px;
             position: relative;
             top: 0;
-            transition: 0.3s;
+            transition: 0.3s; 
+        }
+        a:hover{
+            box-shadow:   0px   0px   0px   0px   #A25050;
+            top: 6px;    
         }
     }
-    // .boxfora{
-    //     color: #FFF;
-    //     width: 100px;
-    //     height: 50px;
-    //     margin:10px 0;
-    //     text-align: center; 
-    //     span{
-    //         font-size: 22px;
-    //         padding: 5px 10px 10px 8px;
-    //         color: #fff;
-    //         font-weight: bold;
-    //         text-align: center;
-    //         background-color: #dbcf24e7;
-    //         box-shadow:   0px   4px   0px   0px   #A25050;
-    //         border-radius:20px;
-    //         position: relative;
-    //         top: 0;
-    //         transition: 0.3s; 
-    //     span:hover{
-    //         box-shadow:   0px   0px   0px   0px   #A25050;
-    //         top: 4px;    
-    //     }
-    // }
     .clearboth{
         clear: both;
     }
     .trash{
-        color: #fff;
+        // color: rgb(245, 234, 234);
         background-color: #84ccc9;
         width: 300px;
         margin: 0 auto;
-        padding: 30px;
+        padding-top: 30px;
         border-radius: 10px;
+        position: absolute;
+        top: calc(30% - 100px);
+        right: calc(50% - 150px);
+        z-index: 1;
+        width: 300px;
+        height:350px;
         img{
             width: 200px;
             border-radius: 5px;
         }
-        h3{
-            margin: 5px auto 5px;
+        h2{
+            margin: 15px auto 15px;
         }
         span{
+            font-size: 20px;
+            font-weight: bold;
             line-height: 1.5;
+        }
+    }
+    #trashLightBoxBtn{
+        margin: 10px auto 0;
+        background-color: #4CAF50;
+        width: 68px;
+        height: 32px;
+        border-radius: 50px;
+        opacity: 0.7;
+        p{  
+            line-height: 32px;
+            color: #fff;
+            font-weight: bold; 
+
         }
     }
     //商品業內頁的燈箱
@@ -965,7 +1405,7 @@
         margin: 0 auto;
         border-radius: 10px;
         position: absolute;
-        top: calc(55% - 100px);
+        top: calc(40% - 100px);
         right: calc(50% - 100px);
         z-index: 1;
         width: 200px;
@@ -981,7 +1421,22 @@
         }
     }
 
-/*____________________ VOTE ____________________*/
+    .shopNews{
+        background: #84ccc9;
+        border-radius: 10px 10px 0px 0px;
+        padding: 15px; 
+    }
+    .shopNewsForm{
+        width: 90%;
+        background: #84ccc9;
+        border-radius: 0px 0px 10px 10px;
+        padding: 30px;
+        margin: 0px auto;
+        box-sizing: border-box;
+    }
+  
+/*____________________[START] VOTE ____________________*/
+
 .votePage {
     background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
 
@@ -1037,7 +1492,7 @@
                         img {
                             width: 80%;
                             vertical-align: bottom;
-                            padding-bottom: 10px;
+                            padding-bottom: 15px;
                         }
                     }
 
@@ -1045,9 +1500,10 @@
                         background: lighten($green, 15);
                         padding: 15px;
                         border-radius: 0 0 10px 10px;
+                        position: relative;
 
                         small {
-                            margin-top: 10px;
+                            padding-top: 10px;
                             font-size: 15px;
                             display: block;
                         }
@@ -1195,8 +1651,8 @@
                 border-radius: 5px;
                 box-sizing: border-box;
                 position: absolute;
-                right: 20px;
-                top: 18px;
+                right: 10px;
+                top: 8px;
             }
 
             &.voteLaunch {
@@ -1282,6 +1738,16 @@
         z-index: -1;
     }
 }
+
+    #starShine {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+/*____________________[END] VOTE ____________________*/
+
+
 
 // 公民小學堂網頁標題
 .video-body {
@@ -1908,6 +2374,7 @@ div.slider {
 
 // NEWS 開始
 .news {
+    margin-top:-200px;
     background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
     // background-image: url(../img/STAR.png), url(../img/bg.png);
     // background-repeat: repeat;
@@ -2205,7 +2672,9 @@ button{
 }
 
 .newsTitle{
+    margin-top:-180px;
     width: 100%;
+    margin-bottom:50px;
     h2{
         line-height: 100px;
         text-align: center;
@@ -2219,6 +2688,8 @@ button{
     }
 }
 .newsMore{
+    margin-top:80px;
+    margin-bottom:-160px;
     a{
         display:block;
         text-decoration: none;
