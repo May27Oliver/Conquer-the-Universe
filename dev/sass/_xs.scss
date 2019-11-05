@@ -774,6 +774,7 @@
 /*__________[START] 首頁公民投票 VOTE IN INDEX __________*/
 
 .voteSectionWrapper{
+    margin-top: -160px;
     // background: url('../img/vote/index-vote-bg.png') no-repeat center center / contain ;
     .voteSection {
         width: 100%;
@@ -1178,12 +1179,14 @@
 // }
 // }
 /*____________________ 贊助商品區 ____________________*/
+    .shopContainerAll{
+        background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
+    }
    .shopContainer{
-        margin-top: 100px;
+        margin-top: 80px;
         padding-top: 50px;
         padding-bottom: 50px;
-        text-align: center;
-        background-color: #333;	
+        text-align: center;    
         position: relative;
         .shoptitle{
             margin: 30px auto 50px;
@@ -1206,7 +1209,7 @@
             }
         }
         .productBox{
-            margin: 0 auto;
+            margin: 0 auto 100px;
             width: 95%;
             background-repeat: no-repeat;
             background-size:contain;
@@ -1266,6 +1269,22 @@
     .toolTitle02{
         display: none;
     }
+    .toolTitle03{
+       padding: 10px;
+       color:#fff;
+       line-height: 2;
+       h2{
+           text-align: center;
+       }
+    }
+    .toolTitle04{
+       padding: 10px;
+       color:#fff;
+       line-height: 2;
+       h2{
+           text-align: center;
+       }
+    }
     .proTitle{
         a{ 
         display:block;
@@ -1299,6 +1318,7 @@
     .event{
         padding-top: 50px;
         padding-bottom: 50px;
+        position: relative;     
     }
     .gashapon{
         text-align: center;;
@@ -1306,63 +1326,72 @@
             width: 300px;
         }
     }
-    .event{
-        a{
+    .boxfora{
+        color: #FFF;
+        width: 100px;
+        height: 50px;
+        margin:50px auto;
+        text-align: center; 
+        a{  
+            margin-top: 50px auto 0px;
             font-size: 22px;
-            padding: 5px 10px 10px 8px;
+            padding: 10px 10px 10px 8px;
             color: #fff;
             font-weight: bold;
             text-align: center;
-            background-color: #bb6e6e80;
-            box-shadow:   0px   4px   0px   0px   #A25050;
+            background-color: #dbcf24e7;
+            box-shadow:   0px   6px   0px   0px   #A25050;
             border-radius:20px;
             position: relative;
             top: 0;
-            transition: 0.3s;
+            transition: 0.3s; 
+        }
+        a:hover{
+            box-shadow:   0px   0px   0px   0px   #A25050;
+            top: 6px;    
         }
     }
-    // .boxfora{
-    //     color: #FFF;
-    //     width: 100px;
-    //     height: 50px;
-    //     margin:10px 0;
-    //     text-align: center; 
-    //     span{
-    //         font-size: 22px;
-    //         padding: 5px 10px 10px 8px;
-    //         color: #fff;
-    //         font-weight: bold;
-    //         text-align: center;
-    //         background-color: #dbcf24e7;
-    //         box-shadow:   0px   4px   0px   0px   #A25050;
-    //         border-radius:20px;
-    //         position: relative;
-    //         top: 0;
-    //         transition: 0.3s; 
-    //     span:hover{
-    //         box-shadow:   0px   0px   0px   0px   #A25050;
-    //         top: 4px;    
-    //     }
-    // }
     .clearboth{
         clear: both;
     }
     .trash{
-        color: #fff;
+        // color: rgb(245, 234, 234);
         background-color: #84ccc9;
         width: 300px;
         margin: 0 auto;
-        padding: 30px;
+        padding-top: 30px;
         border-radius: 10px;
+        position: absolute;
+        top: calc(30% - 100px);
+        right: calc(50% - 150px);
+        z-index: 1;
+        width: 300px;
+        height:350px;
         img{
             width: 200px;
             border-radius: 5px;
         }
-        h3{
-            margin: 5px auto 5px;
+        h2{
+            margin: 15px auto 15px;
         }
         span{
+            font-size: 20px;
+            font-weight: bold;
             line-height: 1.5;
+        }
+    }
+    #trashLightBoxBtn{
+        margin: 10px auto 0;
+        background-color: #4CAF50;
+        width: 68px;
+        height: 32px;
+        border-radius: 50px;
+        opacity: 0.7;
+        p{  
+            line-height: 32px;
+            color: #fff;
+            font-weight: bold; 
+
         }
     }
     //商品業內頁的燈箱
@@ -1372,7 +1401,7 @@
         margin: 0 auto;
         border-radius: 10px;
         position: absolute;
-        top: calc(55% - 100px);
+        top: calc(40% - 100px);
         right: calc(50% - 100px);
         z-index: 1;
         width: 200px;
@@ -1388,9 +1417,22 @@
         }
     }
 
-
-
+    .shopNews{
+        background: #84ccc9;
+        border-radius: 10px 10px 0px 0px;
+        padding: 15px; 
+    }
+    .shopNewsForm{
+        width: 90%;
+        background: #84ccc9;
+        border-radius: 0px 0px 10px 10px;
+        padding: 30px;
+        margin: 0px auto;
+        box-sizing: border-box;
+    }
+  
 /*____________________[START] VOTE ____________________*/
+
 .votePage {
     background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
 
@@ -1692,6 +1734,13 @@
         z-index: -1;
     }
 }
+
+    #starShine {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
 /*____________________[END] VOTE ____________________*/
 
 
@@ -1838,6 +1887,23 @@
                 height: 16vw;
                 line-height: 20vw;
                 display: block;
+                position: relative;
+                iframe{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                }
+                span{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                    z-index: 2;
+                }
             }
         }
     }
@@ -1925,7 +1991,13 @@
         border-radius: 10px;
     }
 
-    p {
+    #award{
+        display: none;
+        margin: 2vw 0;
+        color: red;
+    }
+
+    #wrongAns{
         display: none;
         margin: 2vw 0;
         color: red;
@@ -2298,6 +2370,7 @@ div.slider {
 
 // NEWS 開始
 .news {
+    margin-top:-200px;
     background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
     // background-image: url(../img/STAR.png), url(../img/bg.png);
     // background-repeat: repeat;
@@ -2595,7 +2668,9 @@ button{
 }
 
 .newsTitle{
+    margin-top:-180px;
     width: 100%;
+    margin-bottom:50px;
     h2{
         line-height: 100px;
         text-align: center;
@@ -2609,6 +2684,8 @@ button{
     }
 }
 .newsMore{
+    margin-top:80px;
+    margin-bottom:-160px;
     a{
         display:block;
         text-decoration: none;
