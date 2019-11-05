@@ -3,9 +3,9 @@ window.addEventListener('load',function(){
     let videos=document.querySelectorAll(".fn-video");
     
     for(let i=0;i<videos.length;i++){
-        
         videos[i].addEventListener('click',function(e){
             var source = e.target.getAttribute("data-source");// 回傳 "src"
+            console.log(source);
             document.getElementById("big-video").src=source;
         });
     }
