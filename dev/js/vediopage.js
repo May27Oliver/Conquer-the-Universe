@@ -61,21 +61,24 @@ window.addEventListener('load',function(){
     lastOne.addEventListener('click',function(){
         award.style.display="none";
         wrongAns.style.display="none";
-        if(fnProblems1[0].style.display=="block"){
-            lastOne.disabled="true";
-        }
         fnProblems1[0].style.display="block";
         fnProblems1[1].style.display="none";
+        // if(fnProblems1[0].style.display=="block"){
+        lastOne.disabled="true";
+        nextOne.disabled="false";
+        // }
+        
     });
 
     nextOne.addEventListener('click',function(){
         award.style.display="none";
         wrongAns.style.display="none";
-        if(fnProblems1[1].style.display=="block"){
-            nextOne.disabled="true";
-        }
         fnProblems1[0].style.display="none";
         fnProblems1[1].style.display="block";
+        // if(fnProblems1[1].style.display=="block"){
+        nextOne.disabled="true";
+        lastOne.disabled="false";
+          
     });
     
 

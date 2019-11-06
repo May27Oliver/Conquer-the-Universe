@@ -75,11 +75,11 @@
                 <div class="row " >
                     <div class="col-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="item boxLeft">
-                            <div class="memNameBox"><a href="">
+                            <div class="memNameBox" id="memNameBox">
                             <img src="img/badge.png" alt="">
                                 <h3>菜逼巴</h3>
                                 <h2>發大財</h2> 
-                            </a></div>
+                            </div>
 
                             <div class="supportBox">
                                 <h4>個人貢獻支持度</h4>
@@ -108,8 +108,8 @@
                      <div class="col-12 col-md-4 col-lg-4 col-xl-4 boxRight">
                             <div id="tab-demo"> 
                                 <ul class="tab-title">
-                                        <li><a href="#tab01">現有道具</a></li>
-                                        <li><a href="#tab02">今日道具</a></li>
+                                        <li><a href="#tab01">今日道具</a></li>
+                                        <li><a href="#tab02">現有道具</a></li>
                                     </ul>
                                 <div class="tabIn">
                                     <div class="wrapTabIn">
@@ -222,8 +222,9 @@
 
     
     function init(){
-        //===設定memDataBtn.onclick 事件理程序是 showMemberForm ,編輯會員資料按鈕
+        //===設定memDataBtn/memNameBox.onclick 事件理程序是 showMemberForm ,編輯會員資料按鈕
         $id("memDataBtn").onclick = showMemberForm;
+        $id("memNameBox").onclick = showMemberForm;
         
         //===設定btnLogin.onclick 事件處理程序是 sendForm ,確認按鈕-送去後端資料
         // $id("memDataButton").onclick = sendForm;
