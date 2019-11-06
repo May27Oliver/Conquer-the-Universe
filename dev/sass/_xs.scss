@@ -2724,35 +2724,6 @@ button{
 .newsMessage button .fa {
  color: #E8B51C;
 }
-
-.alertWindow{}
- .alertClose {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: #ccc;
- }
-    .alertWindow .alertClose:before, .alertWindow .alertClose:after {
-      content: "";
-      background-color: #7d2c7c;
-      height: 14px;
-      width: 4px;
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      margin: auto;
-      transform: rotate(45deg); }
-    .alertWindow .alertClose:after {
-      transform: rotate(-45deg); }
-    .alertWindow .alertClose:hover {
-      background-color: #ccc; }
-
       .newsTalk{
           input{
             width: 70%;
