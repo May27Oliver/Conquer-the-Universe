@@ -99,7 +99,10 @@
                     </div>
                     <div class="col-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="item boxCenter">
-                            <img src="img/rabbit.png" alt="">
+                            <img class="homeRabbit" src="img/rabbit.png" alt="">
+                            <div id="EquiBox">
+                                <img id="Equi" src="img/shopPic1.png" alt="">
+                            </div>
                                 <button class="memBtn" id="memDataBtn">編輯會員資料</button>
                             <!-- onclick="location.href='memberData.html'   -->
                         </div>
@@ -132,9 +135,11 @@
                                         </div>
                                     </div>
                                     <div id="tab02" class="tab-inner">
-                                        <div class="propBox">
+                                        <div class="propBox" id="itemEqui1">
+                                            <img src="img/shopPic1.png" alt="">
                                         </div>
                                         <div class="propBox">
+                                            <img src="img/shopPic2.png" alt="">
                                         </div>
                                         <div class="propBox">
                                         </div>
@@ -193,6 +198,7 @@
     function cancelMemData(){
         // $id("memberData").style.display = "none";
         $id("alertWindowWrap").style.display = "block";
+        document.querySelector(".alertContent").innerText = "確定要取消目前變更的會員資料嗎?";
         
     }
 
@@ -214,11 +220,30 @@
         $id("memDataLock1").disabled=true;
         $id("memDataLock2").disabled=true;
         $id("memDataLock3").disabled=true;
+        $id("Equi").style.display = "none";//解除外觀道具
     }
     //點擊alert視窗_取消_取消修改
     function alertMemData(){
         $id("alertWindowWrap").style.display = "none";
     }
+
+     //====換外觀道具
+    //設定換道具
+    function showEqui( e ){
+	let tagSrc =e.target.src;
+    document.getElementById("Equi").src = tagSrc.replace("", "");
+    document.getElementById("Equi").style.display = "block";
+
+    }
+
+    //設定解除道具alert跳出
+    function removeEqui(){
+        // $id("Equi").style.display = "none";
+        $id("alertWindowWrap").style.display = "block"; //alert視窗跳出
+        document.querySelector(".alertContent").innerText = "確定要解除外觀道具嗎?";//改變div文字內容 => .innerText = "自己要呈現的文字內容"  ,querySelector可抓任何一個class id img...
+        
+    }
+
 
     
     function init(){
@@ -242,23 +267,19 @@
 
         //===設定alertWindowWrap不要取消
         $id("cancelButton").onclick = alertMemData;
+
+        //===換道具
+          let imgs = document.querySelectorAll(".propBox img");
+        for(let i=0; i<imgs.length; i++){
+            imgs[i].onclick = showEqui;
+        }
+
+        //===解除道具
+        $id("Equi").onclick = removeEqui;
+
     }; //window.onload
 
     window.onload=init;	
-    
-    //====alert訊息====
-    function alertBoxShow(content = '你確認修改資料嗎?', title = '注意', color = 'red', callback){
-        $('.alertWindowWrap').css('display', 'flex');
-        $('.alertTitle').html(title).css('color', color);
-        $('.alertContent').html(content);
-        $('.alertClose').off();
-        $('.alertButton').off();
-
-        $('.alertClose').click(() => {alertCloseWindow(callback)});
-        $('.alertButton').click(() => { alertCloseWindow(callback)});
-        $('.cancelButton').click(() => { alertCloseWindow(callback)});
-        // callback();
-    }
     
     </script>
 </body>

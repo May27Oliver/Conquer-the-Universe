@@ -90,7 +90,7 @@
     <div id="alertWindowWrap" style="display: flex; display: none;">
         <div class="alertWindow">
             <h3 class="alertTitle" style="color: red;">注意</h3>
-            <div class="alertContent">確定要取消目前變更的會員資料嗎?</div>
+            <div class="alertContent">哈哈，請自行利用js程式更改自己的訊息，程式寫法在下方註解</div>
             <div class="closeWrap">
                 <div id="alertButton">確認</div>
                 <div id="cancelButton">取消</div>
@@ -100,18 +100,22 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <script>
-    function alertCloseWindow(callback){
-        // e.stopPropagation();
-        // $('.alertWindowWrap').css('display', 'none');
-        $('.alertWindowWrap').fadeOut(100);
+    <!-- <script>
+    //當你想用alert視窗時,請在自己程式下事件處理程序
+    //ex:點button跑出alert,改變訊息 <button id=memDataCancel>
+
+
+   //點擊取消按鈕,提醒使用者是否確定取消,叫出alert視窗
+    function cancelMemData(){
+        document.querySelector(".alertContent").innerText = "確定要取消目前變更的會員資料嗎?";//改變div文字內容 => .innerText = "自己要呈現的文字內容"
         
-        // $(this).parentsUntil('.alertWindowWrap').fadeOut(100);
-        if( callback){
-            callback();
-        }
     }
-   
-    </script>
+
+    function init(){ 
+    //===設定btnLoginCancel.onclick 事件處理程序是 cancelLogin ,取消按鈕-跳出視窗
+    $id("memDataCancel").onclick = cancelMemData;
+    };
+    window.onload=init;	
+    </script> -->
 </body>
 </html>
