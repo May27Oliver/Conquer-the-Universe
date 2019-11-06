@@ -308,6 +308,7 @@
     .memNameBox{
         overflow: hidden;
         margin-bottom:10px;
+        cursor: pointer;
         img{
             float: left;
             padding-right: 20px;
@@ -431,6 +432,7 @@
         background: #ffd584;
         padding: 10px 20px;
         margin-top: 30px;
+        cursor: pointer;
     }
     
     
@@ -576,6 +578,7 @@
             background: #ffd584;
             padding: 5px 20px;
             margin: 50px 10px 0;
+            cursor: pointer;
         }
         #memDataCancel{
             font-size: 16px;
@@ -586,6 +589,7 @@
             opacity: .9;
             padding: 5px 20px;
             margin: 50px 10px 0;
+            cursor: pointer;
             
         }
         /*會員編輯資料的select與option樣式*/
