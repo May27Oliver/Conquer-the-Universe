@@ -14,9 +14,7 @@
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>宇宙星聞 - 征服宇宙</title>
-    <style>
     
-    </style>
 </head>
 <body class="news">
         @@include('./template/header.html')
@@ -37,7 +35,7 @@
 	<div class="fakeNewsLanuch container">
         <div class="ufo">
 
-            <img class="uu" src="img/UFO.png" alt="">
+            <!-- <img class="uu" src="img/UFO.png" alt=""> -->
             
         </div>
 		<h2>發佈新聞</h2>
@@ -67,86 +65,144 @@
 		</form>
 	</div>
 
-         
-         <div class="newsBox">
-             <div class="newsitem">
-                    <div class="newsPic">
-                        <img src="https://picsum.photos/350/250/?random=1">
-                    </div>
-                  <div class="newsText">
-                      <div class="newsTOP">
-                          <h2>這裡是標題</h2>
-                          <h3>日期: <span>2019/10/27</span>~<span>2019/10/31</span> </h3>
+         <!-- 跳窗 -->
+         <div id="newsWindowWrap" style="display:none;">
+          <div class="newsWindow">
+            <div class="newsWindowLeft">
+                <div class="newsTOP">
+                    <h2>這裡是標題</h2>
+                   
+                </div>
+
+              <img src="img/trueNews.png" alt="">
+              <div class="newsText">
+                  <h3>剩餘時間: <span>20小時48分07秒</span> </h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut adipisci voluptatum fuga magni ad perferendis qui officiis unde ipsam provident tempora suscipit tempore, cumque doloribus, quibusdam pariatur a magnam quod?</p>
+               
+                </div>
+
+
+            </div>
+
+              <div class="newsWindoRight">
+                  <div class="newsBtn">
+                      <div class="newsWindoClose" onclick="newsClose()"></div>
+                      <div class="newsMessage">
+                          <button id="bt00"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan>1</SPan></button>
+                          <button><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><SPan>18</SPan></button>
+                          <button><i class="fa fa-comments" aria-hidden="true"></i><SPan>19</SPan></button>
+                          
                       </div>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut adipisci voluptatum fuga magni ad perferendis qui officiis unde ipsam provident tempora suscipit tempore, cumque doloribus, quibusdam pariatur a magnam quod?</p>
-                    <div class="newsBtnAll">
-                        <div class="newsBtn">
-                            <button id="bt"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan id="add"></SPan></button>
+                      
+                    
+                    </div>
+
+                  <div class="newsTalk">
+                      <input maxlength="240" placeholder="我有話要說"></input>
+                     
+                  </div>
+              
+              	<div class="closeWrap">
+              	    
+              	    <div id="cancelButton">取消</div>
+              	</div>
+              
+
+              	<div class="newsClose"></div>
+              </div>
+
+          </div>
+      </div>
+
+
+ 
+
+         <!-- 跳窗END -->
+
+
+
+         <div class="newsAllBox">
+           <div class="newsBox">
+               <div class="newsitem">
+                      <div class="newsPic">
+                        <img src="img/trueNews.png" alt="">
+                      </div>
+                    <div class="newsText">
+                        <div class="newsTOP">
+                            <h2>這裡是標題</h2>
+                            <h3>剩餘時間: <span>20小時48分07秒</span> </h3>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut adipisci voluptatum fuga magni ad perferendis qui officiis unde ipsam provident tempora suscipit tempore, cumque doloribus, quibusdam pariatur a magnam quod?</p>
+                      <div class="newsBtnAll">
+                          <div class="newsBtn">
+                              <button id="bt"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan id="add"></SPan></button>
+                              <button><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><SPan>18</SPan></button>
+                              <button><i class="fa fa-comments" aria-hidden="true"></i><SPan>19</SPan></button>
+                         
+                          </div>
+                          <button class="newsreport">檢舉</button>
+                        
+                        </div>
+                      </div>
+                    
+                  </div>
+           </div>
+  
+  
+           <div class="newsBox">
+                  <div class="newsitem">
+                         <div class="newsPic">
+                          <img src="img/trueNews.png" alt="">
+                         </div>
+                       <div class="newsText">
+                           <div class="newsTOP">
+                               <h2>這裡是標題</h2>
+                               <h3>剩餘時間: <span>11小時07分08秒</span> </h3>
+                           </div>
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut adipisci voluptatum fuga magni ad perferendis qui officiis unde ipsam provident tempora suscipit tempore, cumque doloribus, quibusdam pariatur a magnam quod?</p>
+                         <div class="newsBtnAll">
+                          <div class="newsBtn">
+                            <button><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan>17</SPan></button>
                             <button><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><SPan>18</SPan></button>
                             <button><i class="fa fa-comments" aria-hidden="true"></i><SPan>19</SPan></button>
                        
                         </div>
-                        <button class="newsreport">檢舉</button>
-                      
-                      </div>
-                    </div>
-                  
-                </div>
+                             <button class="newsreport">檢舉</button>
+                           
+                           </div>
+                         </div>
+                       
+                     </div>
+              </div>
+  
+  
+              <div class="newsBox">
+                      <div class="newsitem">
+                             <div class="newsPic">
+                                 <img src="img/fakeNews.png" alt="">
+                             </div>
+                           <div class="newsText">
+                               <div class="newsTOP" onload="initial()">
+                                   <h2>這裡是標題</h2>
+                                   <h3>已結束</h3>
+                               </div>
+                               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus fugiat earum nulla pariatur eos cupiditate, quaerat accusamus molestias debitis eaque reiciendis ex assumenda blanditiis</p>
+                               <p>獨眼星總支持度-30</p>
+                             <div class="newsBtnAll">
+                              <div class="newsBtn">                       
+                                <button id="bt1"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan id="add">16</SPan></button>
+                                <button id="bt2"><i class="fa fa-thumbs-down" aria-hidden="true"></i><SPan>17</SPan></button>
+                                <button id="bt3" onclick="showDiscuss()"><i class="fa fa-comments" aria-hidden="true"></i><SPan>19</SPan></button>
+                           
+                            </div>
+                                 <button class="newsreport" onclick="CheckForm()">檢舉</button>
+                               
+                               </div>
+                             </div>
+                           
+                         </div>
+                  </div>
          </div>
-
-
-         <div class="newsBox">
-                <div class="newsitem">
-                       <div class="newsPic">
-                           <img src="https://picsum.photos/350/250/?random=1">
-                       </div>
-                     <div class="newsText">
-                         <div class="newsTOP">
-                             <h2>這裡是標題</h2>
-                             <h3>日期: <span>2019/10/27</span>~<span>2019/10/31</span> </h3>
-                         </div>
-                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut adipisci voluptatum fuga magni ad perferendis qui officiis unde ipsam provident tempora suscipit tempore, cumque doloribus, quibusdam pariatur a magnam quod?</p>
-                       <div class="newsBtnAll">
-                        <div class="newsBtn">
-                          <button><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan>17</SPan></button>
-                          <button><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><SPan>18</SPan></button>
-                          <button><i class="fa fa-comments" aria-hidden="true"></i><SPan>19</SPan></button>
-                     
-                      </div>
-                           <button class="newsreport">檢舉</button>
-                         
-                         </div>
-                       </div>
-                     
-                   </div>
-            </div>
-
-
-            <div class="newsBox">
-                    <div class="newsitem">
-                           <div class="newsPic">
-                               <img src="https://picsum.photos/350/250/?random=1">
-                           </div>
-                         <div class="newsText">
-                             <div class="newsTOP">
-                                 <h2>這裡是標題</h2>
-                                 <h3>日期: <span>2019/10/27</span>~<span>2019/10/31</span> </h3>
-                             </div>
-                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut adipisci voluptatum fuga magni ad perferendis qui officiis unde ipsam provident tempora suscipit tempore, cumque doloribus, quibusdam pariatur a magnam quod?</p>
-                           <div class="newsBtnAll">
-                            <div class="newsBtn">                       
-                              <button id="bt"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan id="add">16</SPan></button>
-                              <button id="bt2"><i class="fa fa-thumbs-down" aria-hidden="true"></i><SPan>17</SPan></button>
-                              <button id="bt"><i class="fa fa-comments" aria-hidden="true"></i><SPan>19</SPan></button>
-                         
-                          </div>
-                               <button class="newsreport" onclick="CheckForm()">檢舉</button>
-                             
-                             </div>
-                           </div>
-                         
-                       </div>
-                </div>
 
         
                 <div class="newsPageAll">
@@ -165,44 +221,80 @@
                 
 
     
-         
+                <canvas id="starShine"></canvas>
 
             @@include('./template/footer.html')
-<script language="Javascript">   
 
+
+<script src="js/starsShine.js"></script>   
+
+<script language="Javascript">  
 function CheckForm()
-
 {
-    swal("Good job!", "You clicked the button!", "success");
-
-//   if(confirm("確認要送出本表單嗎?????")==true)   
-
-//     return true;
-
-//   else  
-
-//     return false;
+    swal("!!!", "先這樣!", "success");
 
 }  
-    </script>
+ </script>
 
+
+
+
+ 
 <!-- 點擊+1 -->
 <script type="text/javascript">
+
   window.onload=function(){
 
 
     var count=0;
     
     var obt=document.getElementById("bt");
-    var odiv=document.getElementById("add");
+    var ospan=document.getElementById("add");
 
-    odiv.innerHTML=count;
+    ospan.innerHTML=count;
     obt.onclick=function(){
       count=count+1;
-      odiv.innerHTML=count;
+      ospan.innerHTML=count;
     }
   }
   </script> 
+
+  <!-- 跳窗 -->
+<script>
+  function $id(id){
+    return document.getElementById(id);
+  }
+
+  function showDiscuss(){
+    $id("newsWindowWrap").style.display = "block";
+  }
+  function newsClose(){
+    $id("newsWindowWrap").style.display = "none";
+  } 
   
+</script>
+  <!-- 時間倒數 -->
+  <script type="text/javascript">
+    var countdownnumber=5;
+    var countdownid,x;
+    function initial(){
+      x=document.getElementById("countdown");
+      x.innerHTML=countdownnumber;
+      countdownnumber--;
+      countdownid=window.setInterval(countdownfunc,1000);
+    }
+    function countdownfunc(){ 
+      x.innerHTML=countdownnumber;
+      if (countdownnumber==0){
+        alert("倒數結束");
+        clearInterval(countdownid);
+      }
+      countdownnumber--;
+    }
+    </script>
+
+
+
+
 </body>
 </html>
