@@ -28,12 +28,12 @@
                                 <p>標題：<input type="text" name="voteTitle" id="voteTitle" size="20" maxlength="10" placeholder="最多10個中文字"></p>
                                 <p>時間： <span>2019/11/05</span>截止</p>
                                 <div class="voteSelectGroup">
-                                    <p>選項：<input type="text" name="voteSelector" id="voteSelectorA" size="20" maxlength="8" placeholder="最多8個中文字"></p>  
-                                    <p>選項：<input type="text" name="voteSelector" id="voteSelectorB" size="20" maxlength="8" placeholder="最多8個中文字"></p>
+                                    <p>選項：<input type="text" name="voteSelector" id="voteSelectorA" size="20" maxlength="6" placeholder="最多6個中文字"></p>  
+                                    <p>選項：<input type="text" name="voteSelector" id="voteSelectorB" size="20" maxlength="6" placeholder="最多6個中文字"></p>
                                 </div>
                             </form>
                             <button class="voteLaunch">發起</button>
-                            <button class="voteCancel">取消</button>
+                            <button type="reset" form="voteForm" class="voteLaunchCancel">取消</button>
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                             <button class="report">檢舉</button>
                             <small>發起人：<span>劉一</span></small>
                             <h3>公民投票標題</h3>
-                            <p>2019/10/30~2019/11/05</p>
+                            <p>2019/11/05截止</p>
                             <div class="voteSelectGroup">
                                 <button class="voteSelect">已選擇的選項</button>
                                 <button class="voteSelect" disabled="disabled">另個選項不可選</button>
@@ -63,7 +63,7 @@
                             <button class="report">檢舉</button>
                             <small>發起人：<span>陳二</span></small>
                             <h3>公民投票標題</h3>
-                            <p>2019/10/30~2019/11/05</p>
+                            <p>2019/11/05截止</p>
                             <div class="voteSelectGroup">
                                 <button class="voteSelect">選項一</button>
                                 <button class="voteSelect">選項二</button>
@@ -80,7 +80,7 @@
                             <button class="report">檢舉</button>
                             <small>發起人：<span>張三</span></small>
                             <h3>公民投票標題</h3>
-                            <p>2019/10/30~2019/11/05</p>
+                            <p>2019/11/05截止</p>
                             <div class="voteSelectGroup">
                                 <button class="voteSelect">選項一</button>
                                 <button class="voteSelect">選項二</button>
@@ -97,7 +97,7 @@
                             <button class="report">檢舉</button>
                             <small>發起人：<span>李四</span></small>
                             <h3>公民投票標題</h3>
-                            <p>2019/10/30~2019/11/05</p>
+                            <p>2019/11/05截止</p>
                             <div class="voteSelectGroup">
                                 <button class="voteSelect">選項一</button>
                                 <button class="voteSelect">選項二</button>
@@ -114,7 +114,7 @@
                             <button class="report">檢舉</button>
                             <small>發起人：<span>王五</span></small>
                             <h3>公民投票標題</h3>
-                            <p>2019/10/30~2019/11/05</p>
+                            <p>2019/11/05截止</p>
                             <div class="voteSelectGroup">
                                 <button class="voteSelect">選項一</button>
                                 <button class="voteSelect">選項二</button>
@@ -212,8 +212,9 @@
             <div class="voteAlertAdding">
                 <h2>系統訊息</h2>
                 <div class="voteAlertText">
-                    <p>您確定要發起新的投票主題嗎？</p>
-                    <button class="voteSubmit">確認</button>
+                    <p>確定要發起此公投議題嗎？</p>
+                    <!-- <button type="submit" form="voteForm" class="voteSubmit">確認</button> -->
+                    <button type="submit" class="voteSubmit">確認</button>
                     <button class="voteCancel">取消</button>
                 </div>
             </div>
@@ -221,7 +222,7 @@
                 <h2>系統訊息</h2>
                 <div class="voteAlertText">
                     <p>已新增投票主題</p>
-                    <button class="voteSubmit">確認</button>
+                    <button class="voteOkay">確認</button>
                 </div>
             </div>
             <div class="voteAlertVoting">
@@ -236,21 +237,22 @@
                 <h2>系統訊息</h2>
                 <div class="voteAlertText">
                     <p>已完成投票</p>
-                    <button class="voteSubmit">確認</button>
+                    <button class="voteOkay">確認</button>
                 </div>
             </div>
             <div class="voteAlertReport">
                 <h2>系統訊息</h2>
                 <div class="voteAlertText">
-                    <p>已完成投票</p>
+                    <p>檢舉原因：</p>
                     <select name="voteReportMessage">
-                        <option>請選擇原因</option>
+                        <option>請選擇</option>
                         <option value="1">外部廣告</option>
                         <option value="2">仇恨言論</option>
                         <option value="3">色情內容</option>
                         <option value="4">與主題無關</option>
                     </select>
                     <button id="voteReportSubmit">確認</button>
+                    <button class="voteCancel">取消</button>
                 </div>
             </div>
         </section>
@@ -266,33 +268,6 @@
     <!--/////////////// JavaScript ///////////////-->
     <script src="js/starsShine.js"></script>
     <script src="js/PieChart.js"></script>
-    <script>
-        $(document).ready(function(){
-
-            $('.voteAlertAdding').hide();
-            
-        /*--- 新增投票的Click事件 ---*/
-            $('.voteAdd').click(function(){
-                $(this).addClass("flip");
-                $(".voteAdding").addClass("flip");
-            });
-            $('.voteCancel').click(function(){
-                $(".voteAdd").removeClass("flip");
-                $(".voteAdding").removeClass("flip");
-            });
-
-        /*--- 新增投票的前台表單驗證 ---*/
-        
-        /*--- 跳窗提示控制 ---*/
-            $('.voteLaunch').click(function(){
-                $('.voteAlertAdding').show();
-            });
-            $('.voteSelectGroup .voteSelect').click(function(){});      
-
-        });
-
-
-
-    </script>
+    <script src="js/VoteClick.js"></script>
 </body>
 </html>

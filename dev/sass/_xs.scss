@@ -871,6 +871,7 @@
         margin: 10px auto 0;
         border: none;
         border-radius: 20px;
+        cursor: pointer;
 
         &:hover {
             background: lighten(#1d2088, 15);
@@ -909,7 +910,6 @@
             margin-top: 50px;
             border: 2px solid #b78100;
             border-radius: 40px;
-            cursor: pointer;
 
             &:hover {
                 background: lighten(#ffd584,10);
@@ -1539,6 +1539,7 @@
                             left: 0;
                             backface-visibility: hidden;
                             transition: 1s;
+                            cursor: pointer;
 
                             &::before,
                             &::after {
@@ -1625,7 +1626,8 @@
             padding: 5px 18px;
             margin: 10px auto 0;
             border: none;
-            border-radius: 20px;
+            border-radius: 50px;
+            cursor: pointer;
 
             &:hover {
                 background: lighten(#1d2088, 15);
@@ -1634,6 +1636,7 @@
             &[disabled|="disabled"] {
                 background: #ccc;
                 opacity: 0.8;
+                cursor: no-drop;
 
                 &:hover {
                     background: #ccc;
@@ -1660,7 +1663,7 @@
                 margin: 35px 10px 0;
             }
 
-            &.voteCancel {
+            &.voteLaunchCancel,&.voteCancel {
                 display: inline-block;
                 background: #1d2088;
                 margin: 10px 10px 0;
