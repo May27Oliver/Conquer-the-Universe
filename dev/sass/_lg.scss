@@ -163,13 +163,14 @@
     }
     // 背景小物
     .rabbit{
+        top:40vw;
         img{
             width: 20vw;
         }
     }
 
     .fatty{
-        top:40vw;
+        top:54vw;
         left:10vw;
     }
 
@@ -226,7 +227,6 @@
           font-weight: bold;  
         }
         li{
-            margin: 2vw 0;
             a{
                 color:black;
             }

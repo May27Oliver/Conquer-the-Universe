@@ -1846,7 +1846,7 @@
 .rabbit {
     width: 10vw;
     position: absolute;
-    top: 50vw;
+    top: 90vw;
     right: 20vw;
     z-index: -1;
 
@@ -1858,7 +1858,7 @@
 .fatty {
     width: 10vw;
     position: absolute;
-    top: 70vw;
+    top: 110vw;
     left: 5vw;
     z-index: -1;
 
@@ -1875,6 +1875,8 @@
     width: 100%;
     .video-slider{    
         margin: 2vw auto;
+        width: 100%;
+        height: 16vw;
         background-color: #CCC;
         border-radius: 20px;
         position: relative;
