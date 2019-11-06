@@ -192,7 +192,7 @@
                               <div class="newsBtn">                       
                                 <button id="bt1"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan id="add">16</SPan></button>
                                 <button id="bt2"><i class="fa fa-thumbs-down" aria-hidden="true"></i><SPan>17</SPan></button>
-                                <button id="bt3" onclick="showMemberForm()"><i class="fa fa-comments" aria-hidden="true"></i><SPan>19</SPan></button>
+                                <button id="bt3" onclick="showDiscuss()"><i class="fa fa-comments" aria-hidden="true"></i><SPan>19</SPan></button>
                            
                             </div>
                                  <button class="newsreport" onclick="CheckForm()">檢舉</button>
@@ -264,16 +264,15 @@ function CheckForm()
   function $id(id){
     return document.getElementById(id);
   }
- 
-  //點擊編輯會員按鈕,memDataBtn會出現編輯燈箱
-  function showMemberForm(){
+
+  function showDiscuss(){
     $id("newsWindowWrap").style.display = "block";
   }
   function newsClose(){
     $id("newsWindowWrap").style.display = "none";
   } 
   
-  </script>
+</script>
   <!-- 時間倒數 -->
   <script type="text/javascript">
     var countdownnumber=5;
