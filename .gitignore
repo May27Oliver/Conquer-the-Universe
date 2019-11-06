@@ -2,3 +2,4 @@ node_modules
 dest
 gulpfile.js
 indexpath.js
+package-lock.json
