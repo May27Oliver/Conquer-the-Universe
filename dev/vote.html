@@ -44,29 +44,12 @@
                         </div>
                         <div class="voteText">
                             <button class="report">檢舉</button>
-                            <small>發起人：<span>王五</span></small>
+                            <small>發起人：<span>劉一</span></small>
                             <h3>公民投票標題</h3>
                             <p>2019/10/30~2019/11/05</p>
                             <div class="voteSelectGroup">
                                 <button class="voteSelect">已選擇的選項</button>
                                 <button class="voteSelect" disabled="disabled">另個選項不可選</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="voteCard col-6 col-md-4 col-lg-3">
-                    <div class="voteWrapper">
-                        <div class="voteChart">
-                            <img src="img/vote/unknow.png" alt="未知統計結果">
-                        </div>
-                        <div class="voteText">
-                            <button class="report">檢舉</button>
-                            <small>發起人：<span>劉一</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/10/30~2019/11/05</p>
-                            <div class="voteSelectGroup">
-                                <button class="voteSelect">選項一</button>
-                                <button class="voteSelect">選項二</button>
                             </div>
                         </div>
                     </div>
@@ -113,6 +96,23 @@
                         <div class="voteText">
                             <button class="report">檢舉</button>
                             <small>發起人：<span>李四</span></small>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/30~2019/11/05</p>
+                            <div class="voteSelectGroup">
+                                <button class="voteSelect">選項一</button>
+                                <button class="voteSelect">選項二</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voteCard col-6 col-md-4 col-lg-3">
+                    <div class="voteWrapper">
+                        <div class="voteChart">
+                            <img src="img/vote/unknow.png" alt="未知統計結果">
+                        </div>
+                        <div class="voteText">
+                            <button class="report">檢舉</button>
+                            <small>發起人：<span>王五</span></small>
                             <h3>公民投票標題</h3>
                             <p>2019/10/30~2019/11/05</p>
                             <div class="voteSelectGroup">
@@ -269,6 +269,8 @@
     <script>
         $(document).ready(function(){
 
+            $('.voteAlertAdding').hide();
+            
         /*--- 新增投票的Click事件 ---*/
             $('.voteAdd').click(function(){
                 $(this).addClass("flip");
@@ -282,7 +284,9 @@
         /*--- 新增投票的前台表單驗證 ---*/
         
         /*--- 跳窗提示控制 ---*/
-            $('.voteLaunch').click(function(){});
+            $('.voteLaunch').click(function(){
+                $('.voteAlertAdding').show();
+            });
             $('.voteSelectGroup .voteSelect').click(function(){});      
 
         });

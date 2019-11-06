@@ -1,11 +1,12 @@
 window.addEventListener('load',function(){
     // video slider功能，點下去出現大video
     let videos=document.querySelectorAll(".fn-video");
+    
     for(let i=0;i<videos.length;i++){
-        videos[i].addEventListener('mouseover',function(e){
-            let smallVideo=e.target.src; //抓slider上的影片來源
-            let bigVideo = document.getElementById("big-video").src;
-            document.getElementById("big-video").src=smallVideo;
+        videos[i].addEventListener('click',function(e){
+            var source = e.target.getAttribute("data-source");// 回傳 "src"
+            console.log(source);
+            document.getElementById("big-video").src=source;
         });
     }
     let oneVedio=0;
@@ -48,10 +49,31 @@ window.addEventListener('load',function(){
     let ans2=$id("ans2");
     let ans3=$id("ans3");
     let award=$id("award");
-    
-    $id("ans1").addEventListener('click',function(){
+    let wrongAns=$id("wrongAns");
 
+    ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
     });
 
+    ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    ans3.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    ans1.addEventListener('defocus',function(){
+        award.style.display="none";
+        wrongAns.style.display="none";
+    });
 
 });

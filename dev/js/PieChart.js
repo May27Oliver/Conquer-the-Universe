@@ -6,7 +6,7 @@ var pieChart = new Chart(ctx, {
         labels: labels,
         datasets: [{
             //預設資料
-            data: [10,90],
+            data: [40,60],
             borderColor: "transparent",
             backgroundColor: [
             //資料顏色
