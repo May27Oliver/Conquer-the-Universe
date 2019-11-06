@@ -411,5 +411,21 @@
 
     }
 
+    // 首頁
+    .index_body{
+        // background-color: #1c0e44;
+        background-image:url(../img/index_img/indexBGtop.jpg);
+        background-size:100%;
+        background-position:center top;
+        background-repeat: no-repeat;
+        .indexWrap{
+            background-image:url(../img/index_img/indexBGearth.jpg.png),url(../img/index_img/indexBGbottom.png);
+            background-size:110%,100%;
+            background-position:center 10%,center 10%;
+            background-repeat: no-repeat;
+            margin-left:0px;
+        }
+    }
+
 // news end
 }
