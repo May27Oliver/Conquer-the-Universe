@@ -11,429 +11,430 @@
 @@include('./template/header.html')
 <script src='js/shop.js'></script>
 <!-- 最上面 -->
-<header class="indexHeader">
-    <h1>誰是宇宙大總統?</h1>
-    <ul class="indexWinner">
-        <li class="winner2">
-            <div class="planetTxt">
-                <p id="winPlanet_2">肥宅星</p>
-                <p>66666<span>支持度</span></p>
-            </div>
-            <div class="stageText">
-                <div class="alienImg">
-                    <img src="img/index_img/alien_2.png" alt="外星人">
+<div class="indexWrap">
+    <header class="indexHeader">
+        <h1>誰是宇宙大總統?</h1>
+        <ul class="indexWinner">
+            <li class="winner2">
+                <div class="planetTxt">
+                    <p id="winPlanet_2">肥宅星</p>
+                    <p>66666<span>支持度</span></p>
                 </div>
-                <p id="winPlayer_2">最多就六個字</p>
-                <h1>2</h1>
-            </div>
-        </li>
-        <li class="winner1">
-            <div class="planetTxt">
-                <p id="winPlanet_1">兔兔星</p>
-                <p>66666<span>支持度</span></p>
-            </div>
-            <div class="stageText">
-                <div class="alienImg">
-                    <img src="img/index_img/alien_3.png" alt="外星人">
+                <div class="stageText">
+                    <div class="alienImg">
+                        <img src="img/index_img/alien_2.png" alt="外星人">
+                    </div>
+                    <p id="winPlayer_2">最多就六個字</p>
+                    <h1>2</h1>
                 </div>
-                <p id="winPlayer_1">最多就六個字</p>
-                <h1>1</h1>
-            </div>
-        </li>
-        <li class="winner3">
-            <div class="planetTxt">
-                <p id="winPlanet_3">派大星</p>
-                <p>66666<span>支持度</span></p>
-            </div>
-            <div class="stageText">
-                <div class="alienImg">
-                    <img src="img/index_img/alien_1.png" alt="外星人">
-                </div>
-                <p id="winPlayer_3">最多就六個字</p>
-                <h1>3</h1>
-            </div>
-        </li>
-    </ul>
-</header>
-<!-- 排行榜 -->
-<section class="leaderBoard  container">
-    <div class="leaderTitle">
-        <h2>支持度排行榜</h2>
-    </div>
-    <p>2019.10.01-2019.10.31</p>
-    <ul class="boardTitle">
-        <li id="rankAll">全體排名</li>
-        <li id="rankP_1">派大星</li>
-        <li id="rankP_2">肥宅星</li>
-        <li id="rankP_3">兔兔星</li>
-    </ul>
-    <div class="boardInner" id="boardInner">
-        <ul class="innerTitle">
-            <li>名次</li>
-            <li>公民</li>
-            <li>支持度</li>
-            <li>智慧/財富/道德</li>
-        </ul>
-        <ul id="innerPlayer">
-            <li id="playList_1">
-                <ul>
-                    <li id="playerRIA">1</li>
-                    <li id="playerName">sexFat</li>
-                    <li id="playerDevote">12345</li>
-                    <li id="playerInt">100</li>
-                    <li id="playerWealth">100</li>
-                    <li id="playerMoral">100</li>
-                </ul>
             </li>
-            <li id="playList_2"><ul></ul></li>
-            <li id="playList_3"><ul></ul></li>
-            <li id="playList_4"><ul></ul></li>
-            <li id="playList_5"><ul></ul></li>
-            <li id="playList_6"><ul></ul></li>
+            <li class="winner1">
+                <div class="planetTxt">
+                    <p id="winPlanet_1">兔兔星</p>
+                    <p>66666<span>支持度</span></p>
+                </div>
+                <div class="stageText">
+                    <div class="alienImg">
+                        <img src="img/index_img/alien_3.png" alt="外星人">
+                    </div>
+                    <p id="winPlayer_1">最多就六個字</p>
+                    <h1>1</h1>
+                </div>
+            </li>
+            <li class="winner3">
+                <div class="planetTxt">
+                    <p id="winPlanet_3">派大星</p>
+                    <p>66666<span>支持度</span></p>
+                </div>
+                <div class="stageText">
+                    <div class="alienImg">
+                        <img src="img/index_img/alien_1.png" alt="外星人">
+                    </div>
+                    <p id="winPlayer_3">最多就六個字</p>
+                    <h1>3</h1>
+                </div>
+            </li>
         </ul>
-    </div>
-</section>
-
-<section class="indexNews  container">
-    <div class="newsTitle">
-        <h2>熱門新聞</h2>
-    </div>
-    <div class="indexNewsContent">
-        <div class="newsBox">
-            <div class="newsitem">
-                   <div class="newsPic">
-                       <img src="https://picsum.photos/350/250/?random=1">
-                   </div>
-                 <div class="newsText">
-                     <div class="newsTOP">
-                         <h2>這裡是標題</h2>
-                         <h3>日期: <span>2019/10/27</span>~<span>2019/10/31</span> </h3>
-                     </div>
-                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut adipisci voluptatum fuga magni ad perferendis qui officiis unde ipsam provident tempora suscipit tempore, cumque doloribus, quibusdam pariatur a magnam quod?</p>
-                   <div class="newsBtnAll">
-                       <div class="newsBtn">
-                           <button id="bt"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan id="add"></SPan></button>
-                           <button><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><SPan>18</SPan></button>
-                           <button><i class="fa fa-comments" aria-hidden="true"></i><SPan>19</SPan></button>
+    </header>
+    <!-- 排行榜 -->
+    <section class="leaderBoard  container">
+        <div class="leaderTitle">
+            <h2>支持度排行榜</h2>
+        </div>
+        <p>2019.10.01-2019.10.31</p>
+        <ul class="boardTitle">
+            <li id="rankAll">全體排名</li>
+            <li id="rankP_1">派大星</li>
+            <li id="rankP_2">肥宅星</li>
+            <li id="rankP_3">兔兔星</li>
+        </ul>
+        <div class="boardInner" id="boardInner">
+            <ul class="innerTitle">
+                <li>名次</li>
+                <li>公民</li>
+                <li>支持度</li>
+                <li>智慧/財富/道德</li>
+            </ul>
+            <ul id="innerPlayer">
+                <li id="playList_1">
+                    <ul>
+                        <li id="playerRIA">1</li>
+                        <li id="playerName">sexFat</li>
+                        <li id="playerDevote">12345</li>
+                        <li id="playerInt">100</li>
+                        <li id="playerWealth">100</li>
+                        <li id="playerMoral">100</li>
+                    </ul>
+                </li>
+                <li id="playList_2"><ul></ul></li>
+                <li id="playList_3"><ul></ul></li>
+                <li id="playList_4"><ul></ul></li>
+                <li id="playList_5"><ul></ul></li>
+                <li id="playList_6"><ul></ul></li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="indexNews  container">
+        <div class="newsTitle">
+            <h2>熱門新聞</h2>
+        </div>
+        <div class="indexNewsContent">
+            <div class="newsBox">
+                <div class="newsitem">
+                       <div class="newsPic">
+                           <img src="https://picsum.photos/350/250/?random=1">
                        </div>
-                       <button class="newsreport">檢舉</button>
-                     </div>
+                     <div class="newsText">
+                         <div class="newsTOP">
+                             <h2>這裡是標題</h2>
+                             <h3>日期: <span>2019/10/27</span>~<span>2019/10/31</span> </h3>
+                         </div>
+                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut adipisci voluptatum fuga magni ad perferendis qui officiis unde ipsam provident tempora suscipit tempore, cumque doloribus, quibusdam pariatur a magnam quod?</p>
+                       <div class="newsBtnAll">
+                           <div class="newsBtn">
+                               <button id="bt"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan id="add"></SPan></button>
+                               <button><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><SPan>18</SPan></button>
+                               <button><i class="fa fa-comments" aria-hidden="true"></i><SPan>19</SPan></button>
+                           </div>
+                           <button class="newsreport">檢舉</button>
+                         </div>
+                       </div>
                    </div>
+            </div>
+    
+    
+            <div class="newsBox">
+                   <div class="newsitem">
+                          <div class="newsPic">
+                              <img src="https://picsum.photos/350/250/?random=1">
+                          </div>
+                        <div class="newsText">
+                            <div class="newsTOP">
+                                <h2>這裡是標題</h2>
+                                <h3>日期: <span>2019/10/27</span>~<span>2019/10/31</span> </h3>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut adipisci voluptatum fuga magni ad perferendis qui officiis unde ipsam provident tempora suscipit tempore, cumque doloribus, quibusdam pariatur a magnam quod?</p>
+                          <div class="newsBtnAll">
+                           <div class="newsBtn">
+                             <button><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan>17</SPan></button>
+                             <button><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><SPan>18</SPan></button>
+                             <button><i class="fa fa-comments" aria-hidden="true"></i><SPan>19</SPan></button>
+                         </div>
+                              <button class="newsreport">檢舉</button>
+                            </div>
+                          </div>
+                      </div>
                </div>
         </div>
-
-
-        <div class="newsBox">
-               <div class="newsitem">
-                      <div class="newsPic">
-                          <img src="https://picsum.photos/350/250/?random=1">
-                      </div>
-                    <div class="newsText">
-                        <div class="newsTOP">
-                            <h2>這裡是標題</h2>
-                            <h3>日期: <span>2019/10/27</span>~<span>2019/10/31</span> </h3>
+        <div class="newsMore">
+            <a href="#">更多新聞</a>
+        </div>
+    </section>
+    
+    
+    <section class="joinPlanet container">
+        <div class="joinTitle">
+            <h2>加入星球</h2>
+        </div>
+        <div class="slider slider_circle_10 pla_slec">
+            <div class="pla_slec_in" id="pla_slec_1">
+                <div class="slec_star">
+                    <div class="slec_cont">
+                        <div class="chartRadarDiv" id="slec_cont_img1" style="height:110%; width: 110%" >@@include('./template/indexRader1.html')</div>
+                    </div>
+                    <img src="img/index_img/planet_1.png" alt="">
+                    <div class="slec_alien">
+                        <img src="img/index_img/alien_1.png" alt="">
+                    </div>
+                    <span class="indexMore_btn" id="slec_btn_1"><a href="">成為此星球公民</a></span>
+                </div>
+            </div>
+            <div class="pla_slec_in" id="pla_slec_2">
+                <div class="slec_star">
+                    <div class="slec_cont">
+                        <div class="chartRadarDiv" id="slec_cont_img2" style="height:110%; width: 110%" >@@include('./template/indexRader2.html')</div>
+                    </div>
+                    <img src="img/index_img/planet_2.png" alt="">
+                    <div class="slec_alien">
+                        <img src="img/index_img/alien_2.png" alt="">
+                    </div>
+                    <span class="indexMore_btn" id="slec_btn_2"><a href="">成為此星球公民</a></span>
+                </div>
+            </div>
+            <div class="pla_slec_in" id="pla_slec_3">
+                <div class="slec_star">
+                    <div class="slec_cont">
+                        <div class="chartRadarDiv" id="slec_cont_img3" style="height:110%; width: 110%" >@@include('./template/indexRader3.html')</div>
+                    </div>
+                    <img src="img/index_img/planet_3.png" alt="">
+                    <div class="slec_alien">
+                        <img src="img/index_img/alien_3.png" alt="">
+                    </div>
+                    <span class="indexMore_btn" id="slec_btn_3"><a href="">成為此星球公民</a></span>
+                </div>
+            </div>
+            <div class="next_button"></div>
+            <div class="prev_button"></div>
+        </div>
+    </section>
+    
+    
+    <!-- ------贊助商品區------- -->
+    <section class="shopContainer">  
+        <div id="shopLightBox" style="display:none">  
+            <img src="../dev/img/" alt="">  
+            <p>確定要購買此項道具?</p>  
+            <span id="addToBackpack">確認</span>
+            <span id="Cancelbtn">取消</span>
+        </div>  
+        <div class="shoptitle">
+        <h2>贊助候選人</h2>
+        </div>
+        <div id="boxForDisappear">
+        <div id="productBox" class="productBox">
+            <div class="model">
+                <img class="pic01" src="img/rabbit.png"" alt="">
+            </div>
+            <div class="boxForProduct">
+                <div class="col-6">
+                        <div class="productPic">
+                            <img id="shopPic1" src="img/shopPic1.png"" alt="">
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut adipisci voluptatum fuga magni ad perferendis qui officiis unde ipsam provident tempora suscipit tempore, cumque doloribus, quibusdam pariatur a magnam quod?</p>
-                      <div class="newsBtnAll">
-                       <div class="newsBtn">
-                         <button><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan>17</SPan></button>
-                         <button><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><SPan>18</SPan></button>
-                         <button><i class="fa fa-comments" aria-hidden="true"></i><SPan>19</SPan></button>
-                     </div>
-                          <button class="newsreport">檢舉</button>
-                        </div>
-                      </div>
-                  </div>
-           </div>
-    </div>
-    <div class="newsMore">
-        <a href="#">更多新聞</a>
-    </div>
-</section>
-
-
-<section class="joinPlanet container">
-    <div class="joinTitle">
-        <h2>加入星球</h2>
-    </div>
-    <div class="slider slider_circle_10 pla_slec">
-        <div class="pla_slec_in" id="pla_slec_1">
-            <div class="slec_star">
-                <div class="slec_cont">
-                    <div class="chartRadarDiv" id="slec_cont_img1" style="height:110%; width: 110%" >@@include('./template/indexRader1.html')</div>
+                        <div class="productTitle">
+                            <h3>
+                            聰明棒球帽
+                            </h3>
+                            <div class="productBtn">
+                                <h2 id="shopSpanLogin" >$100</h2>
+                            </div>
+                        </div>  
                 </div>
-                <img src="img/index_img/planet_1.png" alt="">
-                <div class="slec_alien">
-                    <img src="img/index_img/alien_1.png" alt="">
-                </div>
-                <span class="indexMore_btn" id="slec_btn_1"><a href="">成為此星球公民</a></span>
-            </div>
-        </div>
-        <div class="pla_slec_in" id="pla_slec_2">
-            <div class="slec_star">
-                <div class="slec_cont">
-                    <div class="chartRadarDiv" id="slec_cont_img2" style="height:110%; width: 110%" >@@include('./template/indexRader2.html')</div>
-                </div>
-                <img src="img/index_img/planet_2.png" alt="">
-                <div class="slec_alien">
-                    <img src="img/index_img/alien_2.png" alt="">
-                </div>
-                <span class="indexMore_btn" id="slec_btn_2"><a href="">成為此星球公民</a></span>
-            </div>
-        </div>
-        <div class="pla_slec_in" id="pla_slec_3">
-            <div class="slec_star">
-                <div class="slec_cont">
-                    <div class="chartRadarDiv" id="slec_cont_img3" style="height:110%; width: 110%" >@@include('./template/indexRader3.html')</div>
-                </div>
-                <img src="img/index_img/planet_3.png" alt="">
-                <div class="slec_alien">
-                    <img src="img/index_img/alien_3.png" alt="">
-                </div>
-                <span class="indexMore_btn" id="slec_btn_3"><a href="">成為此星球公民</a></span>
-            </div>
-        </div>
-        <div class="next_button"></div>
-        <div class="prev_button"></div>
-    </div>
-</section>
-
-
-<!-- ------贊助商品區------- -->
-<section class="shopContainer">  
-    <div id="shopLightBox" style="display:none">  
-        <img src="../dev/img/" alt="">  
-        <p>確定要購買此項道具?</p>  
-        <span id="addToBackpack">確認</span>
-        <span id="Cancelbtn">取消</span>
-    </div>  
-    <div class="shoptitle">
-    <h2>贊助候選人</h2>
-    </div>
-    <div id="boxForDisappear">
-    <div id="productBox" class="productBox">
-        <div class="model">
-            <img class="pic01" src="img/rabbit.png"" alt="">
-        </div>
-        <div class="boxForProduct">
-            <div class="col-6">
+                <div class="col-6">
                     <div class="productPic">
-                        <img id="shopPic1" src="img/shopPic1.png"" alt="">
+                            <img id="shopPic2" src="img/shopPic2.png"" alt="">
                     </div>
                     <div class="productTitle">
-                        <h3>
-                        聰明棒球帽
-                        </h3>
+                        <h3>親和力面具</h3>
                         <div class="productBtn">
                             <h2 id="shopSpanLogin" >$100</h2>
                         </div>
                     </div>  
-            </div>
-            <div class="col-6">
-                <div class="productPic">
-                        <img id="shopPic2" src="img/shopPic2.png"" alt="">
                 </div>
-                <div class="productTitle">
-                    <h3>親和力面具</h3>
-                    <div class="productBtn">
-                        <h2 id="shopSpanLogin" >$100</h2>
+                <div class="col-6">
+                    <div class="productPic">
+                        <img id="shopPic3" src="img/shopPic3.png"" alt="">
                     </div>
-                </div>  
-            </div>
-            <div class="col-6">
-                <div class="productPic">
-                    <img id="shopPic3" src="img/shopPic3.png"" alt="">
+                    <div class="productTitle">
+                        <h3>口才大聲公</h3>
+                        <div class="productBtn">
+                            <h2 id="shopSpanLogin">$100</h2>
+                        </div>
+                        </div>  
                 </div>
-                <div class="productTitle">
-                    <h3>口才大聲公</h3>
-                    <div class="productBtn">
-                        <h2 id="shopSpanLogin">$100</h2>
+                <div class="col-6">
+                    <div class="productPic">
+                        <img id="shopPic4" src="img/shopPic4.png"" alt="">
                     </div>
+                    <div class="productTitle">
+                        <h3>人氣氣球</h3>
+                        <div class="productBtn">
+                            <h2 id="shopSpanLogin">$100</h2>
+                        </div>
                     </div>  
-            </div>
-            <div class="col-6">
-                <div class="productPic">
-                    <img id="shopPic4" src="img/shopPic4.png"" alt="">
                 </div>
-                <div class="productTitle">
-                    <h3>人氣氣球</h3>
-                    <div class="productBtn">
-                        <h2 id="shopSpanLogin">$100</h2>
-                    </div>
-                </div>  
-            </div>
-        </div>      
-    </div>
-    <div class="clearboth"></div>
-    <div class="proTitle">
-       <a href="shop.html">看更多</a>
-    </div>
-    </div>
-</section>
-
-
-<!-- 公民小學堂 -->
-<div class="container">
-    <!-- 網頁標題 -->
-    <div class="videoTitle">
-        <h2>公民小學堂</h2>
-        <!-- <h2>地球觀測站</h2> -->
-    </div>
-    <!-- 影片區 -->
-    <div class="video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/lJyt1sy4xv4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        
-    </div>
-    <!-- Question -->
-    <div class="question">
-        <h2>1.財經題：美中貿易戰起因為何？</h2>
-        <ul>
-            <li><a href="">&nbsp&nbsp1.日圓貼水</a></li>
-            <li><a href="">&nbsp&nbsp2.英國脫歐</a></li>
-            <li><a href="">&nbsp&nbsp3.鉅額貿易逆差</a></li>
-            <li><a href="">&nbsp&nbsp4.聯準會過度量化寬鬆</a></li>
-        </ul>
-        <p id="award">恭喜答對！<br>您將得到5點候選人支持度與宇宙幣100元！</p>
-    </div>
-    <button class="index-more">觀看更多影片</button>
-</div>
-</div>
-
-
-<!---------- 公民投票 ---------->
-<div class="voteSectionWrapper">
-    <section class="voteSection">
-        <h2>熱門投票</h2>
-        <div class="voteGroup">
-            <div class="voteCard col-6 col-md-4">
-                <div class="voteWrapper">
-                    <div class="voteChart">
-                        <img src="img/vote/voted.png" alt="目前統計結果">
-                    </div>
-                    <div class="voteText">
-                        <button class="report">檢舉</button>
-                        <small>發起人：<span>劉一</span></small>
-                        <h3>公民投票標題</h3>
-                        <p>2019/10/30~2019/11/05</p>
-                        <div class="voteSelectGroup">
-                            <button class="voteSelect">已選擇的選項</button>
-                            <button class="voteSelect" disabled="disabled">另個選項不可選</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="voteCard col-6 col-md-4">
-                <div class="voteWrapper">
-                    <div class="voteChart">
-                        <img src="img/vote/unknow.png" alt="未知統計結果">
-                    </div>
-                    <div class="voteText">
-                        <button class="report">檢舉</button>
-                        <small>發起人：<span>陳二</span></small>
-                        <h3>公民投票標題</h3>
-                        <p>2019/10/30~2019/11/05</p>
-                        <div class="voteSelectGroup">
-                            <button class="voteSelect">選項一</button>
-                            <button class="voteSelect">選項二</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="voteCard col-6 col-md-4">
-                <div class="voteWrapper">
-                    <div class="voteChart">
-                        <img src="img/vote/unknow.png" alt="未知統計結果">
-                    </div>
-                    <div class="voteText">
-                        <button class="report">檢舉</button>
-                        <small>發起人：<span>張三</span></small>
-                        <h3>公民投票標題</h3>
-                        <p>2019/10/30~2019/11/05</p>
-                        <div class="voteSelectGroup">
-                            <button class="voteSelect">選項一</button>
-                            <button class="voteSelect">選項二</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div>      
         </div>
-        <div class="voteGroup">
-            <div class="voteCard col-6 col-md-4">
-                <div class="voteWrapper">
-                    <div class="voteChart">
-                        <img src="img/vote/voted.png" alt="目前統計結果">
-                    </div>
-                    <div class="voteText">
-                        <small>發起人：<span>趙六</span></small>
-                        <h3>公民投票標題</h3>
-                        <p>2019/10/10~2019/10/17</p>
-                        <div class="voteSelectGroup">
-                            <button disabled="disabled">已結束</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="voteCard col-6 col-md-4">
-                <div class="voteWrapper">
-                    <div class="voteChart">
-                        <img src="img/vote/voted.png" alt="目前統計結果">
-                    </div>
-                    <div class="voteText">
-                        <small>發起人：<span>孫七</span></small>
-                        <h3>公民投票標題</h3>
-                        <p>2019/10/10~2019/10/17</p>
-                        <div class="voteSelectGroup">
-                            <button disabled="disabled">已結束</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="voteCard col-6 col-md-4">
-                <div class="voteWrapper">
-                    <div class="voteChart">
-                        <img src="img/vote/voted.png" alt="目前統計結果">
-                    </div>
-                    <div class="voteText">
-                        <small>發起人：<span>周八</span></small>
-                        <h3>公民投票標題</h3>
-                        <p>2019/10/10~2019/10/17</p>
-                        <div class="voteSelectGroup">
-                            <button disabled="disabled">已結束</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="clearboth"></div>
+        <div class="proTitle">
+           <a href="shop.html">看更多</a>
         </div>
-        <a href="vote.html"><button class="index-more">參與更多公投議題</button></a>
+        </div>
     </section>
-</div>
-
-
-<!-- ----- 頁尾 FOOTER ----- -->
-<footer>
-    <div class="indexFooter"><img class="footerImg" src="img/index_img/indexFooter.png" alt="">
-        <div class="indexFooterIn">
-            <nav class="indexFooterNav">
-                <ul>
-                    <li><a href="#">宇宙星聞</a></li>
-                    <li><a href="#">公民學堂</a></li>
-                    <li><a href="vote.html">公民投票</a></li>
-                    <li><a href="#">宇宙商城</a></li>
-                    <li><a href="#">公民的家</a></li>
-                </ul>
-            </nav>
-            <nav class="indexMedia">
-                <ul>
-                    <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
-                </ul>
-            </nav>
-            <p>Copyright © 2019 DD103G2</p>
+    
+    
+    <!-- 公民小學堂 -->
+    <div class="container">
+        <!-- 網頁標題 -->
+        <div class="videoTitle">
+            <h2>公民小學堂</h2>
+            <!-- <h2>地球觀測站</h2> -->
         </div>
+        <!-- 影片區 -->
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/lJyt1sy4xv4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+        </div>
+        <!-- Question -->
+        <div class="question">
+            <h2>1.財經題：美中貿易戰起因為何？</h2>
+            <ul>
+                <li><a href="">&nbsp&nbsp1.日圓貼水</a></li>
+                <li><a href="">&nbsp&nbsp2.英國脫歐</a></li>
+                <li><a href="">&nbsp&nbsp3.鉅額貿易逆差</a></li>
+                <li><a href="">&nbsp&nbsp4.聯準會過度量化寬鬆</a></li>
+            </ul>
+            <p id="award">恭喜答對！<br>您將得到5點候選人支持度與宇宙幣100元！</p>
+        </div>
+        <button class="index-more">觀看更多影片</button>
     </div>
     
-</footer>
+    
+    <!---------- 公民投票 ---------->
+    <div class="voteSectionWrapper">
+        <section class="voteSection">
+            <h2>熱門投票</h2>
+            <div class="voteGroup">
+                <div class="voteCard col-6 col-md-4">
+                    <div class="voteWrapper">
+                        <div class="voteChart">
+                            <img src="img/vote/voted.png" alt="目前統計結果">
+                        </div>
+                        <div class="voteText">
+                            <button class="report">檢舉</button>
+                            <small>發起人：<span>劉一</span></small>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/30~2019/11/05</p>
+                            <div class="voteSelectGroup">
+                                <button class="voteSelect">已選擇的選項</button>
+                                <button class="voteSelect" disabled="disabled">另個選項不可選</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voteCard col-6 col-md-4">
+                    <div class="voteWrapper">
+                        <div class="voteChart">
+                            <img src="img/vote/unknow.png" alt="未知統計結果">
+                        </div>
+                        <div class="voteText">
+                            <button class="report">檢舉</button>
+                            <small>發起人：<span>陳二</span></small>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/30~2019/11/05</p>
+                            <div class="voteSelectGroup">
+                                <button class="voteSelect">選項一</button>
+                                <button class="voteSelect">選項二</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voteCard col-6 col-md-4">
+                    <div class="voteWrapper">
+                        <div class="voteChart">
+                            <img src="img/vote/unknow.png" alt="未知統計結果">
+                        </div>
+                        <div class="voteText">
+                            <button class="report">檢舉</button>
+                            <small>發起人：<span>張三</span></small>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/30~2019/11/05</p>
+                            <div class="voteSelectGroup">
+                                <button class="voteSelect">選項一</button>
+                                <button class="voteSelect">選項二</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="voteGroup">
+                <div class="voteCard col-6 col-md-4">
+                    <div class="voteWrapper">
+                        <div class="voteChart">
+                            <img src="img/vote/voted.png" alt="目前統計結果">
+                        </div>
+                        <div class="voteText">
+                            <small>發起人：<span>趙六</span></small>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/10~2019/10/17</p>
+                            <div class="voteSelectGroup">
+                                <button disabled="disabled">已結束</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voteCard col-6 col-md-4">
+                    <div class="voteWrapper">
+                        <div class="voteChart">
+                            <img src="img/vote/voted.png" alt="目前統計結果">
+                        </div>
+                        <div class="voteText">
+                            <small>發起人：<span>孫七</span></small>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/10~2019/10/17</p>
+                            <div class="voteSelectGroup">
+                                <button disabled="disabled">已結束</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voteCard col-6 col-md-4">
+                    <div class="voteWrapper">
+                        <div class="voteChart">
+                            <img src="img/vote/voted.png" alt="目前統計結果">
+                        </div>
+                        <div class="voteText">
+                            <small>發起人：<span>周八</span></small>
+                            <h3>公民投票標題</h3>
+                            <p>2019/10/10~2019/10/17</p>
+                            <div class="voteSelectGroup">
+                                <button disabled="disabled">已結束</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="vote.html"><button class="index-more">參與更多公投議題</button></a>
+        </section>
+    </div>
+    
+    
+    <!-- ----- 頁尾 FOOTER ----- -->
+    <footer>
+        <div class="indexFooter"><img class="footerImg" src="img/index_img/indexFooter.png" alt="">
+            <div class="indexFooterIn">
+                <nav class="indexFooterNav">
+                    <ul>
+                        <li><a href="#">宇宙星聞</a></li>
+                        <li><a href="#">公民學堂</a></li>
+                        <li><a href="vote.html">公民投票</a></li>
+                        <li><a href="#">宇宙商城</a></li>
+                        <li><a href="#">公民的家</a></li>
+                    </ul>
+                </nav>
+                <nav class="indexMedia">
+                    <ul>
+                        <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+                    </ul>
+                </nav>
+                <p>Copyright © 2019 DD103G2</p>
+            </div>
+        </div>
+        
+    </footer>
+</div>
 <script src="js/PieChart.js"></script>
 <script>
     $(document).ready(function() {

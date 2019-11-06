@@ -2662,10 +2662,6 @@ button{
 
 // news分頁end
 
-// 首頁
-.index_body{
-    background-color: #1c0e44;
-}
 
 .newsTitle{
     margin-top:-180px;
@@ -2697,5 +2693,22 @@ button{
         border-radius: 40px;
         border: 2px solid #b78100;
         margin:0 auto;
+    }
+}
+
+
+// 首頁
+.index_body{
+    background-color: #1c0e44;
+    background-image:url(../img/index_img/indexBGtop.jpg);
+    background-size:100%;
+    background-position:center top;
+    background-repeat: no-repeat;
+    .indexWrap{
+        background-image:url(../img/index_img/indexBGearth.jpg.png),url(../img/index_img/indexBGbottom.png);
+        background-size:150%,300%;
+        background-position:center 6.5%,center bottom;
+        background-repeat: no-repeat;
+        margin-left:0px;
     }
 }
