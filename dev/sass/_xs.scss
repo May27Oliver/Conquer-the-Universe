@@ -2883,6 +2883,7 @@ button{
 
 // 首頁
 .index_body{
+    overflow-x: hidden;
     background-color: #1c0e44;
     background-image:url(../img/index_img/indexBGtop.jpg);
     background-size:100%;
@@ -2894,5 +2895,36 @@ button{
         background-position:center 6.5%,center bottom;
         background-repeat: no-repeat;
         margin-left:0px;
+    }
+}
+
+.indexStar{
+    width: 100vw;
+    img{
+        position: absolute;
+        z-index: -999;
+        top:150px;
+        left:50%;
+        transform-origin: 50%;
+        // transform: translateX(-30%) rotate(30deg);
+        width: 280%;
+    }
+    img:nth-child(1){
+        animation: indexStar 40s infinite linear;
+    }
+    img:nth-child(2){
+        animation: indexStar 20s infinite linear;
+    }
+    img:nth-child(3){
+        animation: indexStar 25s infinite linear;
+    }
+}
+
+@keyframes indexStar{
+    0%{
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100%{
+        transform: translateX(-50%) rotate(360deg);
     }
 }

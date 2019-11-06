@@ -801,5 +801,18 @@
     }
 
 
+    .indexStar{
+        width: 100vw;
+        img{
+            position: absolute;
+            z-index: -999;
+            top:10px;
+            left:50%;
+            transform-origin: 50%;
+            // transform: translateX(-30%) rotate(30deg);
+            width: 280%;
+        }
+    }
+    
 // MD 結束
 }

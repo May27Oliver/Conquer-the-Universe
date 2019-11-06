@@ -83,6 +83,7 @@
             display: none;
         }
         .logo{
+            z-index: 999;
             h1{
                 a{
                     margin:15px 0px 0px 50px;
@@ -708,6 +709,20 @@
             background-position:center 11%,center 30%;
             background-repeat: no-repeat;
             margin-left:0px;
+        }
+    }
+
+
+    .indexStar{
+        width: 100vw;
+        img{
+            position: absolute;
+            z-index: -999;
+            top:100px;
+            left:50%;
+            transform-origin: 50%;
+            // transform: translateX(-30%) rotate(30deg);
+            width: 250%;
         }
     }
 
