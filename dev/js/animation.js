@@ -22,4 +22,26 @@ console.log('star');
    y: -30,
    repeat: -1, //-1無限迴圈,
    yoyo: true
+})
+
+// 首頁
+TweenMax.to('.alien_1 img', 1.5,{
+   //  x:100,
+   repeat:-1,
+   yoyo:true,
+   ease: Bounce.easeOut, y: -50
+})
+
+TweenMax.to('.alien_2 img', 2,{
+   //  x:100,
+   repeat:-1,
+   yoyo:true,
+   ease: Bounce.easeOut, y: -50
+})
+
+TweenMax.to('.alien_3 img', 1,{
+   //  x:100,
+   repeat:-1,
+   yoyo:true,
+   ease: Bounce.easeOut, y: -50
 });

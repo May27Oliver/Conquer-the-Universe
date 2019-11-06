@@ -391,12 +391,31 @@
     .boxCenter{
         margin-top: 60px;
         margin-bottom: 60px;
+        position: relative;
+         //外觀道具
+        img{
+            display: block;
+            margin: auto;
+            
+        }
+         #EquiBox{
+            position: absolute;
+            top: 13%;
+            left:37%;
+            width: 95px;
+            height: 95px;
+            // background-color: #333;
+            #Equi{
+                width: 80%;
+                height: 80%;
+                display: block;
+                margin: auto;
+                cursor: pointer;
+            }
+        }
         
     }
-    .boxCenter img{
-        display: block;
-        margin: auto;
-    }
+    
     
     
     .redBall{
@@ -433,6 +452,10 @@
         padding: 10px 20px;
         margin-top: 30px;
         cursor: pointer;
+    }
+    .memBtn:hover {
+        background: darken(#ffd584,10);
+        color: darken(#b78100,10);
     }
     
     
@@ -486,12 +509,11 @@
                     color:#000;
                     padding:15px 10px; 
                     height:50px; 
-                    /* border:1px #BCBCBC solid; */
                     .propBox{
                         border-radius: 8px;
                         background-color: #d4faff;
                         width: 100px;   
-                        padding-bottom: 100px;
+                        height: 100px;
                         float: left;
                         margin-bottom: 10px;
                         margin-right: 2.5px;
@@ -505,7 +527,20 @@
                         
                     }  
                   }
-                
+                #tab02{
+                    #itemEqui1{
+                        display: flex;
+                        align-items: center;
+                    }
+                    img{
+                        
+                        display: block;
+                        width: 90%;
+                        height: 90%;
+                        margin: auto;
+                        cursor: pointer;
+                    }
+                }
             }
     
             .wrapTabIn::-webkit-scrollbar {
@@ -591,6 +626,10 @@
             margin: 50px 10px 0;
             cursor: pointer;
             
+        }
+        #memDataCancel:hover {
+            background: darken(#ffd584,10);
+            color: darken(#b78100,10);
         }
         /*會員編輯資料的select與option樣式*/
         .homeCitizen{
@@ -778,7 +817,7 @@
 /*__________[START] 首頁公民投票 VOTE IN INDEX __________*/
 
 .voteSectionWrapper{
-    margin-top: -160px;
+    margin-top: -200px;
     // background: url('../img/vote/index-vote-bg.png') no-repeat center center / contain ;
     .voteSection {
         width: 100%;
@@ -865,10 +904,10 @@
         background: #1d2088;
         color: #fff;
         font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
-        font-size: 15px;
+        // font-size: 15px;
         font-weight: 500;
         padding: 5px 18px;
-        margin: 10px auto 0;
+        margin: 30px auto 0;
         border: none;
         border-radius: 20px;
         cursor: pointer;
@@ -902,20 +941,25 @@
         }
         
         &.index-more{
-            background: #ffd584;
+            text-decoration: none;
             color: #b78100;
+            background-color: #ffd584;
+            /* padding:15px;*/
+            width: 200px;
             line-height: 40px;
             text-align: center;
-            padding: 0 18px;
-            margin-top: 50px;
-            border: 2px solid #b78100;
             border-radius: 40px;
+            border: 2px solid #b78100;
+            cursor: pointer;
 
             &:hover {
-                background: lighten(#ffd584,10);
+                background: darken(#ffd584,10);
+                color: darken(#b78100,10);
             }
         }
     }
+    
+    
 
     /*------ 跳窗提示 ------*/
     .voteAlertGroup {
@@ -977,211 +1021,6 @@
 
 /*__________[END] 首頁公民投票 VOTE IN INDEX __________*/
 
-
-
-   // -------贊助商品區------
- 
-//    .shopContainer{
-//     margin-top: 100px;
-//     padding-top: 50px;
-//     padding-bottom: 50px;
-//     text-align: center;
-//     background-color: #333;	
-//     position: relative;
-// .shoptitle{
-//     margin: 30px auto 50px;
-//     padding: 30px;
-//     width: 150px;
-//     background-size:100%;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-image: url(../img/title.png);
-//      h2{
-//          color:#fff;
-//     }	
-
-// }  
-// .boxForProduct{
-//     max-width: 500px;
-//     margin: 0 auto;
-//     height: 600px;
-//      .col-6{
-//          padding: 0;    
-//      }
-//  }
-// .productBox{
-//     margin: 0 auto;
-//     width: 95%;
-//     background-repeat: no-repeat;
-//     background-size:contain;
-//     background-position: bottom;
-//     position: relative;
-// }
-// .model{
-//     background-color: #90BEE3;
-//     max-width: 500px;
-//     margin: 0 auto 50px;
-//     background-image: url(../img/pinkPlanet.png);
-//     background-repeat: no-repeat;
-//     background-position: bottom;
-//     border-radius: 10px;
-// }
-// .model .pic01{
-//     padding: 20px;
-//     margin-top: 50px;
-// }
-// .productPic{
-//     box-sizing:border-box;
-//     margin: 50px auto 20px;
-//     background-color: antiquewhite;;
-//     border-radius: 10px;
-//     width: 145px;
-//     height: 145px;
-//     position: relative;
-//     img{
-//         top: calc(50% - 50px);
-//         left: calc(50% - 50px);
-//         position: absolute; 
-//         max-width: 100px;
-//         text-align: center;
-        // background-color: #333;	
-// 	.shoptitle{
-// 		margin: 30px auto 50px;
-// 		padding: 30px;
-// 		width: 150px;
-// 		background-size:100%;
-// 		background-position: center;
-// 		background-repeat: no-repeat;
-//         background-image: url(../img/title.png);
-
-//         h2 {
-//             color: #fff;
-//         }
-
-//     }
-
-//     .boxForProduct {
-//         .col-6 {
-//             max-width: 400px;
-//             background-color: #1c0e44;
-//         }
-//     }
-
-//     .productBox {
-//         margin: 0 auto;
-//         width: 95%;
-//         background-repeat: no-repeat;
-//         background-size: contain;
-//         background-position: bottom;
-//     }
-
-//     .model {
-
-//         background-color: #90BEE3;
-//         max-width: 500px;
-//         margin: 0 auto 50px;
-//         background-image: url(../img/pinkPlanet.png);
-//         background-repeat: no-repeat;
-//         background-position: bottom;
-//         border-radius: 10px;
-//     }
-
-//     .model .pic01 {
-//         padding: 20px;
-//         margin-top: 50px;
-//     }
-// }
-// .productTitle{
-// h3{
-//     font-weight: bold;
-//     color: #fff;	
-// }
-// .productBtn{
-//     width: 60px;
-//     margin: 10px auto;
-//     background-color: #448aca;
-//     padding: 5px;
-//     border-radius: 50px;
-//     h2{
-//         color: #fff;
-//     }	
-// }
-// } 
-// }
-// .toolTitle{
-// color:#fff;
-// line-height: 2;
-// }
-// .toolTitle02{
-// display: none;
-
-// }
-// .proTitle{
-//     a{ 
-//         display:block;
-//         margin: auto;
-//         color:#b78100;
-//         background-color: #ffd584;
-//     /* padding:15px;*/
-//         width: 160px;
-//         line-height: 40px;
-//         text-align: center;
-//         border-radius: 40px;
-//         border:2px solid #b78100;
-//     }
-// .moreProductBtn{
-// text-align: center;
-// margin: 30px auto;
-// width: 80px;
-// border-radius: 50px;
-// padding: 10px;
-// font-size: 20px;
-// font-weight: bold;
-// overflow: hidden;
-// background-color: #E8B51C;	
-// h2{ 
-//     font-weight: bold;
-//     color: #fff;
-// }
-// }
-// //商品業內頁的扭蛋區
-// .event{
-// padding-top: 50px;
-// background-color: #1c0e44;
-// }
-// .gashapon{
-
-// text-align: center;;
-// img{
-//     width: 300px;
-// }
-// }
-// .clearboth{
-// clear: both;
-// }
-// //商品業內頁的燈箱
-// #shopLightBox{
-// color: #FFF;
-// background-color: #E8B51C;
-// margin: 0 auto;
-// border-radius: 10px;
-// position: absolute;
-// top: calc(60% - 100px);
-// right: calc(50% - 100px);
-// z-index: 1;
-// width: 200px;
-// height: 150px;
-// p{
-//   margin: 30px auto 30px;
-// }
-// span{
-
-//     padding: 5px 10px 5px 10px;
-//     margin: 20px;
-//     background-color: #a6bfd0;
-//     border-radius: 5px;
-// }
-// }
 /*____________________ 贊助商品區 ____________________*/
     .shopContainerAll{
         background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
@@ -1290,6 +1129,7 @@
        }
     }
     .proTitle{
+        margin: -70px 0;
         a{ 
         display:block;
         margin: auto;
@@ -1301,6 +1141,10 @@
         text-align: center;
         border-radius: 40px;
         border:2px solid #b78100;
+        }
+        a:hover {
+            background: darken(#ffd584,10);
+            color: darken(#b78100,10);
         }
     }
     .moreProductBtn{
@@ -1788,6 +1632,11 @@
         text-align: center;
         border-radius: 40px;
         border: 2px solid #b78100;
+        cursor: pointer;
+    }
+    .index-more:hover {
+        background: darken(#ffd584,10);
+        color: darken(#b78100,10);
     }
 }
 
@@ -2073,6 +1922,7 @@
 
 // 首頁加入星球
 .joinPlanet{
+    margin-bottom:150px;
     .joinTitle{
         width: 100%;
         h2{
@@ -2355,6 +2205,10 @@ div.slider {
             transform: translateX(-50%);
             animation: slec_b .2s .3s forwards;
             opacity: 0;
+        }
+        a:hover {
+            background: darken(#ffd584,10);
+            color: darken(#b78100,10);
         }
     }
 }
@@ -2655,6 +2509,10 @@ button{
     padding: 9px 20px 9px 20px;
     margin: 10px;
 }
+.newsWindow #newsButton:hover {
+    background: darken(#ffd584,10);
+    color: darken(#b78100,10);
+}
 .newsWindow #cancelButton{
     position: relative;
     cursor: pointer;
@@ -2668,6 +2526,10 @@ button{
     margin: 10px;
     font-weight: 900;
     font-weight: 500;
+}
+.newsWindow #cancelButton:hover {
+    background: darken(#ffd584,10);
+    color: darken(#b78100,10);
 }
  
 .newsWindow .newsClose:after {
@@ -2727,6 +2589,7 @@ button{
  display: inline-block;
  cursor: pointer; 
 }
+
 
 .newsMessage button .fa {
  color: #E8B51C;
@@ -2885,6 +2748,10 @@ button{
         border: 2px solid #b78100;
         margin:0 auto;
     }
+    a:hover {
+        background: darken(#ffd584,10);
+        color: darken(#b78100,10);
+    }
 }
 
 
@@ -2903,6 +2770,9 @@ button{
         background-repeat: no-repeat;
         margin-left:0px;
     }
+    section{
+        margin-top: -50px;
+    }
 }
 
 .indexStar{
@@ -2917,13 +2787,13 @@ button{
         width: 280%;
     }
     img:nth-child(1){
-        animation: indexStar 40s infinite linear;
+        animation: indexStar 170s infinite linear;
     }
     img:nth-child(2){
-        animation: indexStar 20s infinite linear;
+        animation: indexStar 80s infinite linear;
     }
     img:nth-child(3){
-        animation: indexStar 25s infinite linear;
+        animation: indexStar 35s infinite linear;
     }
 }
 
