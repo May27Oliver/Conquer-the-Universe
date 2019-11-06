@@ -166,7 +166,7 @@
                     .propBox{
                             
                             width: 95px;   
-                            padding-bottom: 95px;
+                           height: 95px;
                             margin-left: -1px;
                             margin-right: 14px;
                             margin-bottom: 14px;
@@ -813,6 +813,11 @@
             width: 280%;
         }
     }
+
+    .joinPlanet{
+        margin-bottom:0px;
+    }
+
     
 // MD 結束
 }

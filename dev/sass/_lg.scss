@@ -401,18 +401,9 @@
                     .voteText{
                         small{
                             margin-top: 10px;
-                            font-size: 15px;
-                            display: block;
                         }
                         h3{
                             font-size: 18px;
-                            font-weight: 500;
-                            margin-top: 10px;
-                        }
-                        p{
-                            font-size: 18px;
-                            font-weight: 400;
-                            margin-top: 10px;
                         }
                     }
                 }
@@ -495,10 +486,10 @@
                 width: 470px;
                 li:nth-child(1){
                     margin-left:8px;
-                    margin-right:45px;
+                    margin-right:42px;
                 }
                 li:nth-child(2){
-                    margin-right:83px;
+                    margin-right:87px;
                 }
                 li:nth-child(3){
                     margin-right:87px;
@@ -521,26 +512,15 @@
 
     /*____________________[START] VOTE ____________________*/
     .votePage{
+        margin-top: -160px;
         .container{
             /*------ 投票卡片 ------*/
             .voteGroup{
                 .voteCard{
                     .voteWrapper{
                         .voteText{
-                            small{
-                                margin-top: 10px;
-                                font-size: 15px;
-                                display: block;
-                            }
                             h3{
                                 font-size: 18px;
-                                font-weight: 500;
-                                margin-top: 10px;
-                            }
-                            p{
-                                font-size: 18px;
-                                font-weight: 400;
-                                margin-top: 10px;
                             }
                         }
                         &.voteArea{
@@ -710,6 +690,9 @@
             background-repeat: no-repeat;
             margin-left:0px;
         }
+        section{
+            margin-top: 0px;
+        }
     }
 
 
@@ -725,6 +708,17 @@
             width: 250%;
         }
     }
+
+    .joinPlanet{
+        margin-bottom:50px;
+    }
+    .proTitle{
+        margin: -70px 0 -30px 0;
+    }
+    .voteSectionWrapper{
+        margin-top: -170px;
+    }
+
 
 
 }
