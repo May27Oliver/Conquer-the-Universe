@@ -434,6 +434,10 @@
         margin-top: 30px;
         cursor: pointer;
     }
+    .memBtn:hover {
+        background: darken(#ffd584,10);
+        color: darken(#b78100,10);
+    }
     
     
     
@@ -591,6 +595,10 @@
             margin: 50px 10px 0;
             cursor: pointer;
             
+        }
+        #memDataCancel:hover {
+            background: darken(#ffd584,10);
+            color: darken(#b78100,10);
         }
         /*會員編輯資料的select與option樣式*/
         .homeCitizen{
@@ -865,10 +873,10 @@
         background: #1d2088;
         color: #fff;
         font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
-        font-size: 15px;
+        // font-size: 15px;
         font-weight: 500;
         padding: 5px 18px;
-        margin: 10px auto 0;
+        margin: 30px auto 0;
         border: none;
         border-radius: 20px;
 
@@ -901,21 +909,25 @@
         }
         
         &.index-more{
-            background: #ffd584;
+            text-decoration: none;
             color: #b78100;
+            background-color: #ffd584;
+            /* padding:15px;*/
+            width: 200px;
             line-height: 40px;
             text-align: center;
-            padding: 0 18px;
-            margin-top: 50px;
-            border: 2px solid #b78100;
             border-radius: 40px;
+            border: 2px solid #b78100;
             cursor: pointer;
 
             &:hover {
-                background: lighten(#ffd584,10);
+                background: darken(#ffd584,10);
+                color: darken(#b78100,10);
             }
         }
     }
+    
+    
 
     /*------ 跳窗提示 ------*/
     .voteAlertGroup {
@@ -1097,6 +1109,10 @@
         text-align: center;
         border-radius: 40px;
         border:2px solid #b78100;
+        }
+        a:hover {
+            background: darken(#ffd584,10);
+            color: darken(#b78100,10);
         }
     }
     .moreProductBtn{
@@ -1581,6 +1597,11 @@
         text-align: center;
         border-radius: 40px;
         border: 2px solid #b78100;
+        cursor: pointer;
+    }
+    .index-more:hover {
+        background: darken(#ffd584,10);
+        color: darken(#b78100,10);
     }
 }
 
@@ -2150,6 +2171,10 @@ div.slider {
             animation: slec_b .2s .3s forwards;
             opacity: 0;
         }
+        a:hover {
+            background: darken(#ffd584,10);
+            color: darken(#b78100,10);
+        }
     }
 }
 
@@ -2449,6 +2474,10 @@ button{
     padding: 9px 20px 9px 20px;
     margin: 10px;
 }
+.newsWindow #newsButton:hover {
+    background: darken(#ffd584,10);
+    color: darken(#b78100,10);
+}
 .newsWindow #cancelButton{
     position: relative;
     cursor: pointer;
@@ -2462,6 +2491,10 @@ button{
     margin: 10px;
     font-weight: 900;
     font-weight: 500;
+}
+.newsWindow #cancelButton:hover {
+    background: darken(#ffd584,10);
+    color: darken(#b78100,10);
 }
  
 .newsWindow .newsClose:after {
@@ -2521,6 +2554,7 @@ button{
  display: inline-block;
  cursor: pointer; 
 }
+
 
 .newsMessage button .fa {
  color: #E8B51C;
@@ -2678,6 +2712,10 @@ button{
         border-radius: 40px;
         border: 2px solid #b78100;
         margin:0 auto;
+    }
+    a:hover {
+        background: darken(#ffd584,10);
+        color: darken(#b78100,10);
     }
 }
 
