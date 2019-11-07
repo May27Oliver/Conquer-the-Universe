@@ -292,6 +292,10 @@
             position: absolute;
             bottom:0;
             left:0;
+            img{
+                // transform: translateY(-100px);
+                margin-bottom:50px;
+            }
         }
     }
 }
@@ -717,6 +721,7 @@
         margin-right: 5px;
         border-radius: 5px 5px 0 0;
         cursor: pointer;
+        margin-bottom: -3px;
     }
 
     #rankAll {
@@ -742,7 +747,7 @@
     margin: 0 auto;
     clear: both;
     padding: 15px;
-    border-radius: 0 5px 5px 5px;
+    border-radius:5px;
     max-width: 370px;
     transform: translateY(-1px);
     .innerTitle{
@@ -910,6 +915,7 @@
         margin: 30px auto 0;
         border: none;
         border-radius: 20px;
+        cursor: pointer;
 
         &:hover {
             background: lighten(#1d2088, 15);
@@ -945,7 +951,7 @@
             background-color: #ffd584;
             /* padding:15px;*/
             width: 200px;
-            line-height: 40px;
+            line-height: 30px;
             text-align: center;
             border-radius: 40px;
             border: 2px solid #b78100;
@@ -1382,6 +1388,7 @@
                             left: 0;
                             backface-visibility: hidden;
                             transition: 1s;
+                            cursor: pointer;
 
                             &::before,
                             &::after {
@@ -1468,7 +1475,8 @@
             padding: 5px 18px;
             margin: 10px auto 0;
             border: none;
-            border-radius: 20px;
+            border-radius: 50px;
+            cursor: pointer;
 
             &:hover {
                 background: lighten(#1d2088, 15);
@@ -1477,6 +1485,7 @@
             &[disabled|="disabled"] {
                 background: #ccc;
                 opacity: 0.8;
+                cursor: no-drop;
 
                 &:hover {
                     background: #ccc;
@@ -1503,7 +1512,7 @@
                 margin: 35px 10px 0;
             }
 
-            &.voteCancel {
+            &.voteLaunchCancel,&.voteCancel {
                 display: inline-block;
                 background: #1d2088;
                 margin: 10px 10px 0;
@@ -1694,7 +1703,7 @@
 .rabbit {
     width: 10vw;
     position: absolute;
-    top: 50vw;
+    top: 90vw;
     right: 20vw;
     z-index: -1;
 
@@ -1706,7 +1715,7 @@
 .fatty {
     width: 10vw;
     position: absolute;
-    top: 70vw;
+    top: 110vw;
     left: 5vw;
     z-index: -1;
 
@@ -1723,6 +1732,8 @@
     width: 100%;
     .video-slider{    
         margin: 2vw auto;
+        width: 100%;
+        height: 16vw;
         background-color: #CCC;
         border-radius: 20px;
         position: relative;
@@ -2039,7 +2050,7 @@ div.slider {
     border: 1px solid #000 !important;
     background: #fff !important;
     opacity: 0.3 !important;
-    z-index: 5000 !important;
+    z-index: 1;
     cursor: pointer;
     text-align: center;
     line-height: 30px;
@@ -2177,35 +2188,31 @@ div.slider {
 
 
 .indexMore_btn {
-    a {
-        display: none;
-    }
+    display: none;
 }
 
 .active {
     .indexMore_btn {
-        a {
-            display: inline-block;
-            text-decoration: none;
-            color: #b78100;
-            background-color: #ffd584;
-            /* padding:15px;*/
-            width: 160px;
-            line-height: 40px;
-            text-align: center;
-            border-radius: 40px;
-            border: 2px solid #b78100;
-            position: absolute;
-            bottom: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: slec_b .2s .3s forwards;
-            opacity: 0;
-        }
-        a:hover {
-            background: darken(#ffd584,10);
-            color: darken(#b78100,10);
-        }
+        display: block;
+        color: #b78100;
+        background-color: #ffd584;
+        /* padding:15px;*/
+        width: 200px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 40px;
+        border: 2px solid #b78100;
+        position: absolute;
+        bottom: -65px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: slec_b .2s .3s forwards;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .indexMore_btn:hover {
+        background: darken(#ffd584,10);
+        color: darken(#b78100,10);
     }
 }
 
@@ -2772,7 +2779,7 @@ button{
 }
 
 .indexStar{
-    width: 100vw;
+    width: 100%;
     img{
         position: absolute;
         z-index: -999;

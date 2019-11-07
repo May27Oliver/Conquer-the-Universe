@@ -18,7 +18,7 @@
     }
 
     .fatty{
-        top:37vw;
+        top:46vw;
         left:10vw;
     }
 
@@ -111,6 +111,11 @@
     // Question
     .question{
         width: 53vw;
+        li {
+            border: transparent 2px solid;
+            // padding: 2vw 0;
+            line-height: 1.6;
+        }
     }
 
 //首頁的贊助商品區//
@@ -250,73 +255,73 @@
     }
 // ---------------------以上為商品贊助區-----------------------
 
-    .slider{
-        display: flex;
-        justify-content: center;
-        height: 10vw;
-        margin: 0 auto;
-        width: 62vw;
-        .video-slider{    
-            margin: 2vw auto;
-            background-color: #CCC;
-            border-radius: 20px;
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            ul{
-                width: 125%;
-                height: 10vw;
-                position: relative;
-                display: flex;
-                justify-content: space-evenly;
-                align-items: center;
-                li{
-                    width: 20%;
-                    height: 10vw;
-                    line-height: 10vw;
-                    display: block;
-                }
-            }
-        }
+    // .slider{
+    //     display: flex;
+    //     justify-content: center;
+    //     height: 10vw;
+    //     margin: 0 auto;
+    //     width: 62vw;
+    //     .video-slider{    
+    //         margin: 2vw auto;
+    //         background-color: #CCC;
+    //         border-radius: 20px;
+    //         position: relative;
+    //         overflow: hidden;
+    //         width: 100%;
+    //         ul{
+    //             width: 125%;
+    //             height: 10vw;
+    //             position: relative;
+    //             display: flex;
+    //             justify-content: space-evenly;
+    //             align-items: center;
+    //             li{
+    //                 width: 20%;
+    //                 height: 10vw;
+    //                 line-height: 10vw;
+    //                 display: block;
+    //             }
+    //         }
+    //     }
 
-        .slider-forward{
-            background:transparent;
-            border: transparent;    
-            width: 5vw;
-            height: 10vw;
-            line-height: 10vw;
-            position: relative;
-            i{
-                color: #aaa;
-                position: absolute;
-                top: 3vw;
-                left: -2vw;
-                z-index: 2;
-                font-size: 8vw;
-            }
-        }
+    //     .slider-forward{
+    //         background:transparent;
+    //         border: transparent;    
+    //         width: 5vw;
+    //         height: 10vw;
+    //         line-height: 10vw;
+    //         position: relative;
+    //         i{
+    //             color: #aaa;
+    //             position: absolute;
+    //             top: 3vw;
+    //             left: -2vw;
+    //             z-index: 2;
+    //             font-size: 8vw;
+    //         }
+    //     }
 
-        .slider-back{
-            background:transparent;
-            border: transparent;
-            width: 5vw;
-            height: 10vw;
-            line-height: 10vw;
-            position: relative;
-            i{
-                color: #aaa;
-                position: absolute;
-                top: 3vw;
-                left:-1vw;
-                z-index: 2;
-                font-size: 8vw;
-            }
-        }
-    }
+    //     .slider-back{
+    //         background:transparent;
+    //         border: transparent;
+    //         width: 5vw;
+    //         height: 10vw;
+    //         line-height: 10vw;
+    //         position: relative;
+    //         i{
+    //             color: #aaa;
+    //             position: absolute;
+    //             top: 3vw;
+    //             left:-1vw;
+    //             z-index: 2;
+    //             font-size: 8vw;
+    //         }
+    //     }
+    // }
 // Question
-    .question{
-        width: 53vw;
-    }
+    // .question{
+    //     width: 53vw;
+    // }
 
     // footer
     //首頁footer
@@ -503,7 +508,7 @@
     margin: 0 auto;
     clear: both;
     padding: 25px;
-    border-radius: 0 5px 5px 5px;
+    border-radius:5px;
     max-width: 800px;
     transform: translateY(-1px);
     .innerTitle{

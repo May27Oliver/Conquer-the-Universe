@@ -163,13 +163,14 @@
     }
     // 背景小物
     .rabbit{
+        top:40vw;
         img{
             width: 20vw;
         }
     }
 
     .fatty{
-        top:40vw;
+        top:54vw;
         left:10vw;
     }
 
@@ -226,7 +227,6 @@
           font-weight: bold;  
         }
         li{
-            margin: 2vw 0;
             a{
                 color:black;
             }
@@ -401,18 +401,9 @@
                     .voteText{
                         small{
                             margin-top: 10px;
-                            font-size: 15px;
-                            display: block;
                         }
                         h3{
                             font-size: 18px;
-                            font-weight: 500;
-                            margin-top: 10px;
-                        }
-                        p{
-                            font-size: 18px;
-                            font-weight: 400;
-                            margin-top: 10px;
                         }
                     }
                 }
@@ -528,20 +519,8 @@
                 .voteCard{
                     .voteWrapper{
                         .voteText{
-                            small{
-                                margin-top: 10px;
-                                font-size: 15px;
-                                display: block;
-                            }
                             h3{
                                 font-size: 18px;
-                                font-weight: 500;
-                                margin-top: 10px;
-                            }
-                            p{
-                                font-size: 18px;
-                                font-weight: 400;
-                                margin-top: 10px;
                             }
                         }
                         &.voteArea{
