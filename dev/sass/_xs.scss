@@ -721,6 +721,7 @@
         margin-right: 5px;
         border-radius: 5px 5px 0 0;
         cursor: pointer;
+        margin-bottom: -3px;
     }
 
     #rankAll {
@@ -746,7 +747,7 @@
     margin: 0 auto;
     clear: both;
     padding: 15px;
-    border-radius: 0 5px 5px 5px;
+    border-radius:5px;
     max-width: 370px;
     transform: translateY(-1px);
     .innerTitle{
