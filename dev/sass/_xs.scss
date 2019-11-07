@@ -292,6 +292,10 @@
             position: absolute;
             bottom:0;
             left:0;
+            img{
+                // transform: translateY(-100px);
+                margin-bottom:50px;
+            }
         }
     }
 }
