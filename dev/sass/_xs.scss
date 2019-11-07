@@ -951,7 +951,7 @@
             background-color: #ffd584;
             /* padding:15px;*/
             width: 200px;
-            line-height: 40px;
+            line-height: 30px;
             text-align: center;
             border-radius: 40px;
             border: 2px solid #b78100;
@@ -2050,7 +2050,7 @@ div.slider {
     border: 1px solid #000 !important;
     background: #fff !important;
     opacity: 0.3 !important;
-    z-index: 5000 !important;
+    z-index: 1;
     cursor: pointer;
     text-align: center;
     line-height: 30px;
@@ -2188,35 +2188,31 @@ div.slider {
 
 
 .indexMore_btn {
-    a {
-        display: none;
-    }
+    display: none;
 }
 
 .active {
     .indexMore_btn {
-        a {
-            display: inline-block;
-            text-decoration: none;
-            color: #b78100;
-            background-color: #ffd584;
-            /* padding:15px;*/
-            width: 160px;
-            line-height: 40px;
-            text-align: center;
-            border-radius: 40px;
-            border: 2px solid #b78100;
-            position: absolute;
-            bottom: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: slec_b .2s .3s forwards;
-            opacity: 0;
-        }
-        a:hover {
-            background: darken(#ffd584,10);
-            color: darken(#b78100,10);
-        }
+        display: block;
+        color: #b78100;
+        background-color: #ffd584;
+        /* padding:15px;*/
+        width: 200px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 40px;
+        border: 2px solid #b78100;
+        position: absolute;
+        bottom: -65px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: slec_b .2s .3s forwards;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .indexMore_btn:hover {
+        background: darken(#ffd584,10);
+        color: darken(#b78100,10);
     }
 }
 
@@ -2783,7 +2779,7 @@ button{
 }
 
 .indexStar{
-    width: 100vw;
+    width: 100%;
     img{
         position: absolute;
         z-index: -999;

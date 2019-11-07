@@ -9,6 +9,7 @@
 </head>
 <body class="index_body">
 @@include('./template/header.html')
+@@include('./template/indexAlert.html')
 <script src='js/shop.js'></script>
 <!-- 最上面 -->
 <div class="indexStar">
@@ -153,7 +154,7 @@
                </div>
         </div>
         <div class="newsMore">
-            <a href="#">更多新聞</a>
+            <a href="news.html"">更多新聞</a>
         </div>
     </section>
     
@@ -172,7 +173,7 @@
                     <div class="slec_alien">
                         <img src="img/index_img/alien_1.png" alt="">
                     </div>
-                    <span class="indexMore_btn" id="slec_btn_1"><a href="">成為此星球公民</a></span>
+                    <button class="indexMore_btn" id="slec_btn_1">成為此星球公民</button>
                 </div>
             </div>
             <div class="pla_slec_in" id="pla_slec_2">
@@ -184,7 +185,7 @@
                     <div class="slec_alien">
                         <img src="img/index_img/alien_2.png" alt="">
                     </div>
-                    <span class="indexMore_btn" id="slec_btn_2"><a href="">成為此星球公民</a></span>
+                    <button class="indexMore_btn" id="slec_btn_2">成為此星球公民</button>
                 </div>
             </div>
             <div class="pla_slec_in" id="pla_slec_3">
@@ -196,13 +197,14 @@
                     <div class="slec_alien">
                         <img src="img/index_img/alien_3.png" alt="">
                     </div>
-                    <span class="indexMore_btn" id="slec_btn_3"><a href="">成為此星球公民</a></span>
+                    <button class="indexMore_btn" id="slec_btn_3">成為此星球公民</button>
                 </div>
             </div>
             <div class="next_button"></div>
             <div class="prev_button"></div>
         </div>
     </section>
+    
     
     
     <!-- ------贊助商品區------- -->
@@ -301,7 +303,7 @@
             </ul>
             <p id="award">恭喜答對！<br>您將得到5點候選人支持度與宇宙幣100元！</p>
         </div>
-        <button class="index-more">觀看更多影片</button>
+        <a href="video.html" class="index-more">觀看更多影片</a>
     </div>
     
     
@@ -467,6 +469,30 @@
             $('#rankP_3').click(function(){
                 $('#boardInner').css('backgroundColor','#ff99a2');
             });
+        //當你想用alert視窗時,請在自己程式下事件處理程序
+        //ex:點button跑出alert,改變訊息 <button id=memDataCancel>
+
+ 
+        //點擊取消按鈕,提醒使用者是否確定取消,叫出alert視窗
+        $("#slec_btn_1").click(function(){
+            $("#alertWindowWrap").css('display','block');
+            document.querySelector(".alertContent").innerText = "是否確認成為派大星的公民?";
+        });
+        $("#slec_btn_2").click(function(){
+            $("#alertWindowWrap").css('display','block');
+            document.querySelector(".alertContent").innerText = "是否確認成為肥宅星的公民?";
+        });
+        $("#slec_btn_3").click(function(){
+            $("#alertWindowWrap").css('display','block');
+            document.querySelector(".alertContent").innerText = "是否確認成為兔兔星的公民?";
+        });
+        $('#cancelButton').click(function(){
+            $("#alertWindowWrap").css('display','none');
+        });
+        $('#alertButton').click(function(){
+            document.querySelector(".alertContent").innerText = "登入/註冊會員";
+        });
+       
     });
 </script>
 </body>
