@@ -9,7 +9,7 @@ window.addEventListener('load',function(){
             document.getElementById("big-video").src=source;
         });
     }
-    let oneVedio=0;
+    let oneVideo=0;
     let wrap=document.querySelector(".video-slider ul");
     let turnLeft=document.querySelector(".slider-forward");
     let turnRight=document.querySelector(".slider-back");
@@ -18,24 +18,24 @@ window.addEventListener('load',function(){
 
     // video slider左邊按鈕按下去功能
     document.querySelector(".slider-forward").addEventListener('click',function(e){
-        oneVedio--;
-        wrap.style.left= 25*oneVedio+"%";
-        console.log(oneVedio);
+        oneVideo--;
+        wrap.style.left= 25*oneVideo+"%";
+        // console.log(oneVideo);
         turnRight.disabled=false;
         turnRight.style.opacity=1;
-        if( oneVedio == -1){
+        if( oneVideo == -1){
             turnLeft.disabled = true;
             turnLeft.style.opacity=0;
         }
     });
     // video slider右邊按鈕按下去功能
     document.querySelector(".slider-back").addEventListener('click',function(e){
-        oneVedio++;
-        wrap.style.left= 25*oneVedio+"%";
-        console.log(oneVedio);
+        oneVideo++;
+        wrap.style.left= 25*oneVideo+"%";
+        // console.log(oneVideo);
         turnLeft.disabled = false;
         turnLeft.style.opacity=1;
-        if( oneVedio == 0){
+        if( oneVideo == 0){
             turnRight.disabled = true;
             turnRight.style.opacity=0;
         } 
