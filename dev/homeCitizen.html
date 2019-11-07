@@ -196,9 +196,10 @@
 
      //點擊取消按鈕,提醒使用者是否確定取消,叫出alert視窗
     function cancelMemData(){
-        // $id("memberData").style.display = "none";
         $id("alertWindowWrap").style.display = "block";
         document.querySelector(".alertContent").innerText = "確定要取消目前變更的會員資料嗎?";
+        $id("alertButton").style.display = "inline-block";//當點擊會員資料更改取消按鈕，叫出alert把alertButton按鈕叫出
+        $id("alertEqui").style.display = "none";//當點擊會員資料更改取消按鈕，叫出alert把alertEqui按鈕隱藏
         
     }
 
@@ -220,11 +221,12 @@
         $id("memDataLock1").disabled=true;
         $id("memDataLock2").disabled=true;
         $id("memDataLock3").disabled=true;
-        $id("Equi").style.display = "none";//解除外觀道具
+        
     }
     //點擊alert視窗_取消_取消修改
     function alertMemData(){
         $id("alertWindowWrap").style.display = "none";
+        
     }
 
      //====換外觀道具
@@ -241,7 +243,12 @@
         // $id("Equi").style.display = "none";
         $id("alertWindowWrap").style.display = "block"; //alert視窗跳出
         document.querySelector(".alertContent").innerText = "確定要解除外觀道具嗎?";//改變div文字內容 => .innerText = "自己要呈現的文字內容"  ,querySelector可抓任何一個class id img...
-        
+        $id("alertButton").style.display = "none";//當解除道具，叫出alert把alertButton按鈕隱藏
+        $id("alertEqui").style.display = "inline-block";//當解除道具，叫出alert把alertEqui按鈕叫出
+    }
+    function alertRemoveEqui(){
+        $id("Equi").style.display = "none";//解除外觀道具
+        $id("alertWindowWrap").style.display = "none";
     }
 
 
@@ -276,6 +283,7 @@
 
         //===解除道具
         $id("Equi").onclick = removeEqui;
+        $id("alertEqui").onclick = alertRemoveEqui;
 
     }; //window.onload
 
