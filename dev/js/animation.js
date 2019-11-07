@@ -44,4 +44,8 @@ TweenMax.to('.alien_3 img', 1,{
    repeat:-1,
    yoyo:true,
    ease: Bounce.easeOut, y: 50
-});
+})
+
+
+
+;

@@ -459,15 +459,35 @@
 
             $('#rankAll').click(function(){
                 $('#boardInner').css('backgroundColor','#84ccc9');
+                TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                    x: -1500
+                }, {
+                    x: 0
+                }, 0.3);
             });
             $('#rankP_1').click(function(){
                 $('#boardInner').css('backgroundColor','#fcd93d');
+                TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                    x: -1500
+                }, {
+                    x: 0
+                }, 0.3);
             });
             $('#rankP_2').click(function(){
                 $('#boardInner').css('backgroundColor','#58d8ff');
+                TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                    x: -1500
+                }, {
+                    x: 0
+                }, 0.3);
             });
             $('#rankP_3').click(function(){
                 $('#boardInner').css('backgroundColor','#ff99a2');
+                TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                    x: -1500
+                }, {
+                    x: 0
+                }, 0.3);
             });
         //當你想用alert視窗時,請在自己程式下事件處理程序
         //ex:點button跑出alert,改變訊息 <button id=memDataCancel>
