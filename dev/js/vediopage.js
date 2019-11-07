@@ -49,6 +49,10 @@ window.addEventListener('load',function(){
         return document.getElementsByClassName(classname);
      }//簡寫getElementsByClassName，記得要把classname加上""
     
+    function $query(cssname){
+        return document.querySelector(cssname);
+    }
+
     let fnProblems1 = $class("fnVideo1-problem");//抓影片一題庫所有的題目
     let fnProblems2 = $class("fnVideo2-problem");//抓影片二題庫所有的題目
     let fnProblems3 = $class("fnVideo3-problem");//抓影片三題庫所有的題目
@@ -57,17 +61,20 @@ window.addEventListener('load',function(){
 
     let lastOne=$id("lastProblem");//抓上一題的button
     let nextOne=$id("nextProblem");//抓下一提的button
-    console.log(fnProblems1[1]);
+    
     lastOne.addEventListener('click',function(){
         award.style.display="none";
         wrongAns.style.display="none";
         fnProblems1[0].style.display="block";
         fnProblems1[1].style.display="none";
-        // if(fnProblems1[0].style.display=="block"){
-        lastOne.disabled="true";
-        nextOne.disabled="false";
-        // }
-        
+        fnProblems2[0].style.display="block";
+        fnProblems2[1].style.display="none";
+        fnProblems3[0].style.display="block";
+        fnProblems3[1].style.display="none";
+        fnProblems4[0].style.display="block";
+        fnProblems4[1].style.display="none";
+        fnProblems5[0].style.display="block";
+        fnProblems5[1].style.display="none";
     });
 
     nextOne.addEventListener('click',function(){
@@ -75,10 +82,14 @@ window.addEventListener('load',function(){
         wrongAns.style.display="none";
         fnProblems1[0].style.display="none";
         fnProblems1[1].style.display="block";
-        // if(fnProblems1[1].style.display=="block"){
-        nextOne.disabled="true";
-        lastOne.disabled="false";
-          
+        fnProblems2[0].style.display="none";
+        fnProblems2[1].style.display="block";
+        fnProblems3[0].style.display="none";
+        fnProblems3[1].style.display="block";
+        fnProblems4[0].style.display="none";
+        fnProblems4[1].style.display="block";
+        fnProblems5[0].style.display="none";
+        fnProblems5[1].style.display="block";
     });
     
 
@@ -95,7 +106,7 @@ window.addEventListener('load',function(){
     let award=$id("award");
     let wrongAns=$id("wrongAns");
     
-    // 第一題解答
+    // 財經影片一第一題解答
     fnP1Ans1.addEventListener('click',function(){
         award.style.display="none";
         wrongAns.style.display="block";
@@ -116,7 +127,7 @@ window.addEventListener('load',function(){
         wrongAns.style.display="block";
     });
 
-    // 第二題解答
+    // 財經影片一第二題解答
     fnP2Ans1.addEventListener('click',function(){
         award.style.display="none";
         wrongAns.style.display="block";
@@ -137,5 +148,6 @@ window.addEventListener('load',function(){
         wrongAns.style.display="none";
     });
 
-
+    //財經影片二第一題解答
+    
 });
