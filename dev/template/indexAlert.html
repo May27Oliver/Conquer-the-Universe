@@ -46,23 +46,12 @@
     .alertWindow .alertContent {
         font-size: 20px;
         line-height: 1.2;
-        padding: 20px 0; 
+        padding: 25px 0; 
     }
     .alertWindow .closeWrap {
         height: 38px; 
     }
     .alertWindow #alertButton {
-        position: relative;
-        cursor: pointer;
-        display: inline-block;
-        border-radius: 20px;
-        color: #b78100;
-        border:1px solid #b78100;
-        background: #ffd584;
-        padding: 9px 20px 9px 20px;
-        margin: 10px;
-    }
-    .alertWindow #alertEqui {
         position: relative;
         cursor: pointer;
         display: inline-block;
@@ -100,17 +89,15 @@
 <body>
     <div id="alertWindowWrap" style="display: flex; display: none;">
         <div class="alertWindow">
-            <h3 class="alertTitle" style="color: red;">注意</h3>
+            <!-- <h3 class="alertTitle" style="color: red;">注意</h3> -->
             <div class="alertContent">哈哈，請自行利用js程式更改自己的訊息，程式寫法在下方註解</div>
             <div class="closeWrap">
                 <div id="alertButton">確認</div>
-                <div id="alertEqui" style="display: none;">確認</div>
                 <div id="cancelButton">取消</div>
             </div>
             <div class="alertClose"></div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- <script>
     //當你想用alert視窗時,請在自己程式下事件處理程序
