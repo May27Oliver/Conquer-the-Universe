@@ -29,7 +29,27 @@
     p {
         color: #fff;
         float: right;
-        margin-right: 20px;
+        margin-right:20px;
+        color:rgba(0,0,0,0);
+        background-repeat: no-repeat;
+        span{
+            color:$green;
+        }
+    }
+    #planetPoint_1{
+        background-image: url(../img/index_img/alien_1.png);
+        background-position: 0 -10px;
+         background-size: 60%;
+    }
+    #planetPoint_2{
+        background-image: url(../img/index_img/alien_2.png);
+        background-position: 0 5px;
+         background-size: 60%;
+    }
+    #planetPoint_3{
+        background-image: url(../img/index_img/alien_3.png);
+        background-position: 0 -20px;
+         background-size: 50%;
     }
 }
 
