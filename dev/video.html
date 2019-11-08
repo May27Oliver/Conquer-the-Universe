@@ -19,14 +19,14 @@
             </div>
             <!-- 目錄與頁籤 -->
             <div class="select-section">
-                <button class="video-button">財經題</button>
-                <button class="video-button">思辨題</button>
-                <button class="video-button">美學題</button>
+                <button id="fn-video-button">財經題</button>
+                <button id="Jt-video-button">思辨題</button>
+                <button id="As-video-button">美學題</button>
                 <!-- <button>回目錄</button>         -->
             </div>
             <!-- 影片區 --><!-- 背景小物 -->
             <div class="video">
-                <iframe id="big-video" width="560" height="315" src="https://www.youtube.com/embed/lJyt1sy4xv4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="big-video" width="560" height="315" src="https://www.youtube.com/embed/et3NitNdfv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="rabbit">
                 <img src="img/videorabbit.png" alt="">
@@ -38,12 +38,26 @@
             <div class="slider">
                 <button class="slider-forward"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
                 <div class="video-slider">
-                    <ul>
-                        <li class="fn-video"><span data-source="https://www.youtube.com/embed/et3NitNdfv0"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/et3NitNdfv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-                        <li class="fn-video"><span data-source="https://www.youtube.com/embed/9-DbhRVffl4"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/9-DbhRVffl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-                        <li class="fn-video"><span data-source="https://www.youtube.com/embed/J5iKzOp-cEI"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/J5iKzOp-cEI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-                        <li class="fn-video"><span data-source="https://www.youtube.com/embed/nKcsu4JierI"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/nKcsu4JierI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-                        <li class="fn-video"><span data-source="https://www.youtube.com/embed/E64cTPnojWc"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/E64cTPnojWc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                    <ul id="fn">
+                        <li class="fn-video"><span data-source="https://www.youtube.com/embed/et3NitNdfv0" data-num="1"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/et3NitNdfv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="fn-video"><span data-source="https://www.youtube.com/embed/9-DbhRVffl4" data-num="2"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/9-DbhRVffl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="fn-video"><span data-source="https://www.youtube.com/embed/J5iKzOp-cEI" data-num="3"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/J5iKzOp-cEI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="fn-video"><span data-source="https://www.youtube.com/embed/nKcsu4JierI" data-num="4"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/nKcsu4JierI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="fn-video"><span data-source="https://www.youtube.com/embed/E64cTPnojWc" data-num="5"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/E64cTPnojWc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                    </ul>
+                    <ul id="Jt" style="display: none;">
+                        <li class="Jt-video"><span data-source="https://www.youtube.com/embed/sHHa4ETr2jE" data-num="1"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/sHHa4ETr2jE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="Jt-video"><span data-source="https://www.youtube.com/embed/DCx3O3gygok" data-num="2"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/DCx3O3gygok" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="Jt-video"><span data-source="https://www.youtube.com/embed/0EwJRUzVYxk" data-num="3"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/0EwJRUzVYxk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="Jt-video"><span data-source="https://www.youtube.com/embed/J9btigv8l4s" data-num="4"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/J9btigv8l4s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="Jt-video"><span data-source="https://www.youtube.com/embed/LpBtpejHb2k" data-num="5"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/LpBtpejHb2k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                    </ul>
+                    <ul id="As" style="display: none;">
+                        <li class="As-video"><span data-source="https://www.youtube.com/embed/-Kg1FNo11r0" data-num="1"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/-Kg1FNo11r0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="As-video"><span data-source="https://www.youtube.com/embed/fjThZAWpmzE" data-num="2"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/fjThZAWpmzE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="As-video"><span data-source="https://www.youtube.com/embed/rdsClAo2HL4" data-num="3"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/rdsClAo2HL4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="As-video"><span data-source="https://www.youtube.com/embed/_OdV5bwOT7s" data-num="4"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/_OdV5bwOT7s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="As-video"><span data-source="https://www.youtube.com/embed/3n4s3oXyKys" data-num="5"></span><iframe width="100%" height="100%" src="https://www.youtube.com/embed/3n4s3oXyKys" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
                     </ul>
                 </div>
                 <button class="slider-back"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
@@ -92,7 +106,7 @@
                         </div>
                     </div>
                     <div id="fnVideo3" style=display:none><!--影片三題庫-->
-                        <div class="fnVideo3-problem" style=display:none><!--影片三第一題-->
+                        <div class="fnVideo3-problem"><!--影片三第一題-->
                             <h2>1.財經題：廣場協議後為何日本失落了三十年？</h2>
                             <ul>
                                 <li id="fnVideo3-problem1Ans1">&nbsp&nbsp1.日圓貼水</li>
@@ -101,7 +115,7 @@
                                 <li id="fnVideo3-problem1Ans4">&nbsp&nbsp4.日本央行濫發鈔票</li>
                             </ul>
                         </div>
-                        <div class="fnVideo3-problem" ><!--影片三第二題-->
+                        <div class="fnVideo3-problem" style=display:none><!--影片三第二題-->
                             <h2>2.財經題：請問廣場協議對日本影響最嚴峻的項目為何？</h2>
                             <ul>
                                 <li id="fnVideo3-problem2Ans1">&nbsp&nbsp1.日本勞動成本提高</li>
@@ -112,7 +126,7 @@
                         </div>
                     </div>
                     <div id="fnVideo4" style=display:none><!--影片四所包含的題目-->
-                        <div class="fnVideo4-problem" style=display:none><!--影片四第一題-->
+                        <div class="fnVideo4-problem"><!--影片四第一題-->
                             <h2>1.財經題：請問下列哪項是當前可實現的人工智慧？</h2>
                             <ul>
                                 <li id="fnVideo4-problem1Ans1">&nbsp&nbsp1.藉由各式感測器、既有資料基礎所集結成的資料庫協助機器做出判斷的一組程式</li>
@@ -121,7 +135,7 @@
                                 <li id="fnVideo4-problem1Ans4">&nbsp&nbsp4.預測地震發生</li>
                             </ul>
                         </div>
-                        <div class="fnVideo4-problem" ><!--影片四第二題-->
+                        <div class="fnVideo4-problem" style=display:none><!--影片四第二題-->
                             <h2>2.財經題：請問下列哪件事情可藉由當前人工智慧實現？</h2>
                             <ul>
                                 <li id="fnVideo4-problem2Ans1">&nbsp&nbsp1.人臉辨識</li>
@@ -132,7 +146,7 @@
                         </div>
                     </div>
                     <div id="fnVideo5" style=display:none><!--影片五所包含的題目-->
-                        <div class="fnVideo5-problem" style=display:none><!--影片五第一題-->
+                        <div class="fnVideo5-problem"><!--影片五第一題-->
                             <h2>1.財經題：不當的降息可能導致整體經濟產生什麼後果？</h2>
                             <ul>
                                 <li id="fnVideo5-problem1Ans1">&nbsp&nbsp1.生產過剩</li>
@@ -141,7 +155,7 @@
                                 <li id="fnVideo5-problem1Ans4">&nbsp&nbsp4.通貨膨脹</li>
                             </ul>
                         </div>
-                        <div class="fnVideo5-problem" ><!--影片五第二題-->
+                        <div class="fnVideo5-problem" style=display:none><!--影片五第二題-->
                             <h2>2.財經題：什麼狀況下央行必須採取升息策略？</h2>
                             <ul>
                                 <li id="fnVideo5-problem2Ans1">&nbsp&nbsp1.景氣過熱</li>
@@ -152,8 +166,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="justiceProblem" style=display:none><!--思辨問題區-->
-                    <div class="JtVideo1" style=display:none><!--影片一所包含的題目-->
+                <div id="justiceProblem" style=display:none><!--思辨問題區-->
+                    <div class="JtVideo1"><!--影片一所包含的題目-->
                         <div class="JtVideo1-problem" style=display:none><!--影片五第一題-->
                             <h2>1.思辨題：影片中的電車問題如果是您列車長會如何抉擇？</h2>
                             <ul>
@@ -161,7 +175,7 @@
                                 <li id="JtVideo1-problem1Ans2">&nbsp&nbsp2.直直往前開</li>
                             </ul>
                         </div>
-                        <div class="JtVideo1-problem" ><!--影片五第二題-->
+                        <div class="JtVideo1-problem" style=display:none><!--影片五第二題-->
                             <h2>2.思辨題：如果您是天橋上的旁觀者，您會如何抉擇？</h2>
                             <ul>
                                 <li id="JtVideo1-problem2Ans1">&nbsp&nbsp1.什麼都不做</li>
@@ -170,7 +184,7 @@
                         </div>
                     </div>
                     <div class="JtVideo2" style=display:none><!--影片二所包含的題目-->
-                        <div class="JtVideo2-problem" style=display:none><!--影片五第一題-->
+                        <div class="JtVideo2-problem"><!--影片五第一題-->
                             <h2>1.思辨題：請問邊沁認為道德的最高原則是什麼？</h2>
                             <ul>
                                 <li id="JtVideo2-problem1Ans1">&nbsp&nbsp1.人人生而平等</li>
@@ -179,7 +193,7 @@
                                 <li id="JtVideo2-problem1Ans4">&nbsp&nbsp4.遵守法律</li>
                             </ul>
                         </div>
-                        <div class="JtVideo2-problem" ><!--影片五第二題-->
+                        <div class="JtVideo2-problem" style=display:none><!--影片五第二題-->
                             <h2>2.思辨題：根據邊沁的主張，您覺得面對電車問題如果他是列車長，他會如何抉擇？</h2>
                             <ul>
                                 <li id="JtVideo2-problem2Ans1">&nbsp&nbsp1.轉向</li>
@@ -195,7 +209,7 @@
                                 <li id="JtVideo3-problem1Ans2">&nbsp&nbsp2.可以</li>
                             </ul>
                         </div>
-                        <div class="JtVideo3-problem" ><!--影片五第二題-->
+                        <div class="JtVideo3-problem" style=display:none><!--影片五第二題-->
                             <h2>2.思辨題：彌爾認為什麼是道德的最高原則？</h2>
                             <ul>
                                 <li id="JtVideo3-problem2Ans1">&nbsp&nbsp1.最大多數人的最大幸福</li>
@@ -215,7 +229,7 @@
                                 <li id="JtVideo4-problem1Ans4">&nbsp&nbsp4.以上皆是</li>
                             </ul>
                         </div>
-                        <div class="JtVideo4-problem" ><!--影片五第二題-->
+                        <div class="JtVideo4-problem" style=display:none><!--影片五第二題-->
                             <h2>2.思辨題：請問基於洛克的主張，政府能否基於都市更新的理由拆遷你家？</h2>
                             <ul>
                                 <li id="JtVideo4-problem2Ans1">&nbsp&nbsp1.可以</li>
@@ -233,7 +247,7 @@
                                 <li id="JtVideo5-problem1Ans4">&nbsp&nbsp4.可以，因為士兵同意加入政府。</li>
                             </ul>
                         </div>
-                        <div class="JtVideo5-problem" ><!--影片五第二題-->
+                        <div class="JtVideo5-problem" style=display:none><!--影片五第二題-->
                             <h2>2.思辨題：請問您是否贊同一個公民可以藉由付錢請人代替的方式來盡徵兵義務？</h2>
                             <ul>
                                 <li id="JtVideo5-problem2Ans1">&nbsp&nbsp1.可以</li>
@@ -242,7 +256,7 @@
                         </div>
                     </div><!--影片五所包含的題目-->
                 </div>
-                <div class="aestheticProblem" style=display:none><!--美學問題區-->
+                <div id="aestheticProblem" style=display:none><!--美學問題區-->
                     <div class="AsVideo1"><!--影片一所包含的題目-->
                         <div class="AsVideo1-problem" ><!--影片五第二題-->                        
                             <h2>1.美學題：不當的降息可能導致整體經濟產生什麼後果？</h2>
@@ -253,7 +267,7 @@
                                 <li id="AsVideo1-problem1Ans4">&nbsp&nbsp4.通貨膨脹</li>
                             </ul>
                         </div>
-                        <div class="AsVideo1-problem" ><!--影片五第二題-->
+                        <div class="AsVideo1-problem" style=display:none><!--影片五第二題-->
                             <h2>2.美學題：什麼狀況下央行必須採取升息策略？</h2>
                             <ul>
                                 <li id="AsVideo1-problem2Ans1">&nbsp&nbsp1.景氣過熱</li>
@@ -263,7 +277,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="AsVideo2"><!--影片二所包含的題目-->
+                    <div class="AsVideo2" style=display:none><!--影片二所包含的題目-->
                         <div class="AsVideo2-problem" ><!--影片五第二題-->                        
                             <h2>1.美學題：不當的降息可能導致整體經濟產生什麼後果？</h2>
                             <ul>
@@ -273,7 +287,7 @@
                                 <li id="AsVideo2-problem1Ans4">&nbsp&nbsp4.通貨膨脹</li>
                             </ul>
                         </div>
-                        <div class="AsVideo2-problem" ><!--影片五第二題-->
+                        <div class="AsVideo2-problem" style=display:none><!--影片五第二題-->
                             <h2>2.美學題：什麼狀況下央行必須採取升息策略？</h2>
                             <ul>
                                 <li id="AsVideo2-problem2Ans1">&nbsp&nbsp1.景氣過熱</li>
@@ -283,7 +297,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="AsVideo3"><!--影片三所包含的題目-->
+                    <div class="AsVideo3" style=display:none><!--影片三所包含的題目-->
                         <div class="AsVideo3-problem" ><!--影片五第二題-->                        
                             <h2>1.美學題：不當的降息可能導致整體經濟產生什麼後果？</h2>
                             <ul>
@@ -293,7 +307,7 @@
                                 <li id="AsVideo3-problem1Ans4">&nbsp&nbsp4.通貨膨脹</li>
                             </ul>
                         </div>
-                        <div class="AsVideo3-problem" ><!--影片五第二題-->
+                        <div class="AsVideo3-problem" style=display:none><!--影片五第二題-->
                             <h2>2.美學題：什麼狀況下央行必須採取升息策略？</h2>
                             <ul>
                                 <li id="AsVideo3-problem2Ans1">&nbsp&nbsp1.景氣過熱</li>
@@ -303,7 +317,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="AsVideo4"><!--影片四所包含的題目-->
+                    <div class="AsVideo4" style=display:none><!--影片四所包含的題目-->
                         <div class="AsVideo4-problem" ><!--影片五第二題-->                        
                             <h2>1.美學題：不當的降息可能導致整體經濟產生什麼後果？</h2>
                             <ul>
@@ -313,7 +327,7 @@
                                 <li id="AsVideo4-problem1Ans4">&nbsp&nbsp4.通貨膨脹</li>
                             </ul>
                         </div>
-                        <div class="AsVideo4-problem" ><!--影片五第二題-->
+                        <div class="AsVideo4-problem" style=display:none><!--影片五第二題-->
                             <h2>2.美學題：什麼狀況下央行必須採取升息策略？</h2>
                             <ul>
                                 <li id="AsVideo4-problem2Ans1">&nbsp&nbsp1.景氣過熱</li>
@@ -323,7 +337,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="AsVideo5"><!--影片五所包含的題目-->
+                    <div class="AsVideo5" style=display:none><!--影片五所包含的題目-->
                         <div class="AsVideo5-problem" ><!--影片五第二題-->                        
                             <h2>1.美學題：不當的降息可能導致整體經濟產生什麼後果？</h2>
                             <ul>
@@ -333,7 +347,7 @@
                                 <li id="AsVideo5-problem1Ans4">&nbsp&nbsp4.通貨膨脹</li>
                             </ul>
                         </div>
-                        <div class="AsVideo5-problem" ><!--影片五第二題-->
+                        <div class="AsVideo5-problem" style=display:none><!--影片五第二題-->
                             <h2>2.美學題：什麼狀況下央行必須採取升息策略？</h2>
                             <ul>
                                 <li id="AsVideo5-problem2Ans1">&nbsp&nbsp1.景氣過熱</li>
