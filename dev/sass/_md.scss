@@ -818,6 +818,61 @@
         margin-bottom:0px;
     }
 
+    .ufo1{
+        width: 20%;
+        display:block;
+        position: absolute;
+        z-index: 0;
+        top:650px;
+        left:150%;
+        transition: .3s;
+        animation:ufo 4s;
+        // opacity: 0;
+        img{
+            width: 100%;
+            display:block;
+        }
+    }
+
+    @keyframes ufo{
+        0%{
+            top:0px;
+            left:50px;
+        }
+        25%{
+            top:200px;
+            left:-100px;
+        }
+        50%{
+            top:400px;
+            left:80%;
+        }
+        75%{
+            top:600px;
+            left:30%;
+        }
+        100%{
+            top:800px;
+            left:100%;
+        }
+    }
+
+
+    .ufo2{
+        width: 20%;
+        display:block;
+        position: fixed;
+        z-index: 0;
+        // top:250px;
+        // right:0;
+        // transition: .3s;
+        img{
+            width: 100%;
+            display:block;
+        }
+    }
+
+
     
 // MD 結束
 }
