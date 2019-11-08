@@ -29,7 +29,27 @@
     p {
         color: #fff;
         float: right;
-        margin-right: 20px;
+        margin-right:20px;
+        color:rgba(0,0,0,0);
+        background-repeat: no-repeat;
+        span{
+            color:$green;
+        }
+    }
+    #planetPoint_1{
+        background-image: url(../img/index_img/alien_1.png);
+        background-position: 0 -10px;
+         background-size: 60%;
+    }
+    #planetPoint_2{
+        background-image: url(../img/index_img/alien_2.png);
+        background-position: 0 5px;
+         background-size: 60%;
+    }
+    #planetPoint_3{
+        background-image: url(../img/index_img/alien_3.png);
+        background-position: 0 -20px;
+         background-size: 50%;
     }
 }
 
@@ -1285,7 +1305,7 @@
     }
   
 /*____________________[START] VOTE ____________________*/
-
+// *{ outline: 1px solid #f00; }
 .votePage {
     background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
 
@@ -1432,7 +1452,7 @@
                                 h3 {
                                     text-align: center;
                                     font-size: 15px;
-                                    padding: 15px;
+                                    padding: 10px;
                                     margin-bottom: 25px;
                                     border-bottom: 1px solid #333;
                                 }
@@ -1534,11 +1554,8 @@
             z-index: 9999;
             display: none;
 
-            .voteAlertAdding,
-            .voteAlertAdded,
-            .voteAlertVoting,
-            .voteAlertVoted,
-            .voteAlertReport {
+            .voteAlertDoing,
+            .voteAlertDid {
                 width: 300px;
                 position: fixed;
                 top: 50%;
@@ -1555,7 +1572,7 @@
                 }
 
                 .voteAlertText {
-                    background: lighten($yellow, 12);
+                    background: lighten($yellow, 30);
                     border-radius: 0 0 10px 10px;
                     text-align: center;
                     padding: 20px;
@@ -1572,31 +1589,30 @@
                     }
 
                     select {
-                        width: 120px;
-                        display: block;
+                        width: 150px;
                         font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                        font-size: 15px;
+                        color: #333;
                         border: none;
-                        margin: 30px auto 0;
+                        padding: 5px 10px;
+                        margin: 15px auto 0;
+                        option{
+                            line-height: 2;
+                        }
                     }
                 }
             }
         }
     }
-
-    #starShine {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
 }
-
-    #starShine {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
+#starShine {
+    width: 100%;
+    // height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 /*____________________[END] VOTE ____________________*/
 
 
@@ -2807,4 +2823,8 @@ button{
     100%{
         transform: translateX(-50%) rotate(360deg);
     }
+}
+
+.ufo{
+    display:none;
 }
