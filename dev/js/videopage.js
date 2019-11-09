@@ -118,28 +118,6 @@ window.addEventListener('load',function(){
         fnProblems4[1].style.display="none";
         fnProblems5[0].style.display="block";
         fnProblems5[1].style.display="none";
-    
-        JtProblems1[0].style.display="block";
-        JtProblems1[1].style.display="none";
-        JtProblems2[0].style.display="block";
-        JtProblems2[1].style.display="none";
-        JtProblems3[0].style.display="block";
-        JtProblems3[1].style.display="none";
-        JtProblems4[0].style.display="block";
-        JtProblems4[1].style.display="none";
-        JtProblems5[0].style.display="block";
-        JtProblems5[1].style.display="none";
-
-        AsProblems1[0].style.display="block";
-        AsProblems1[1].style.display="none";
-        AsProblems2[0].style.display="block";
-        AsProblems2[1].style.display="none";
-        AsProblems3[0].style.display="block";
-        AsProblems3[1].style.display="none";
-        AsProblems4[0].style.display="block";
-        AsProblems4[1].style.display="none";
-        AsProblems5[0].style.display="block";
-        AsProblems5[1].style.display="none";
 
             switch(videoNum){
                 case 1:
@@ -186,6 +164,17 @@ window.addEventListener('load',function(){
         });
 
         JtVideos[i].addEventListener('click',function(e){
+            JtProblems1[0].style.display="block";
+            JtProblems1[1].style.display="none";
+            JtProblems2[0].style.display="block";
+            JtProblems2[1].style.display="none";
+            JtProblems3[0].style.display="block";
+            JtProblems3[1].style.display="none";
+            JtProblems4[0].style.display="block";
+            JtProblems4[1].style.display="none";
+            JtProblems5[0].style.display="block";
+            JtProblems5[1].style.display="none";
+            
             var source = e.target.getAttribute("data-source");// 回傳 "src"
             var videoNum=parseInt(e.target.getAttribute("data-num"));
             console.log(videoNum);
@@ -235,6 +224,17 @@ window.addEventListener('load',function(){
         });
 
         AsVideos[i].addEventListener('click',function(e){
+            AsProblems1[0].style.display="block";
+            AsProblems1[1].style.display="none";
+            AsProblems2[0].style.display="block";
+            AsProblems2[1].style.display="none";
+            AsProblems3[0].style.display="block";
+            AsProblems3[1].style.display="none";
+            AsProblems4[0].style.display="block";
+            AsProblems4[1].style.display="none";
+            AsProblems5[0].style.display="block";
+            AsProblems5[1].style.display="none";
+
             var source = e.target.getAttribute("data-source");// 回傳 "src"
             var videoNum=parseInt(e.target.getAttribute("data-num"));
             console.log(videoNum);
@@ -323,7 +323,7 @@ window.addEventListener('load',function(){
 
     let lastOne=$id("lastProblem");//抓上一題的button
     let nextOne=$id("nextProblem");//抓下一提的button
-    
+    //上一題下一題button點按出現
     lastOne.addEventListener('click',function(){
         award.style.display="none";
         wrongAns.style.display="none";
