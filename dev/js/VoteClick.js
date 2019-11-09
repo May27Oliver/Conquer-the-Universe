@@ -1,12 +1,15 @@
 window.addEventListener("load",function(){
+    function $id(id){
+        return document.getElementById(id);
+    }
+    function $class(className){
+        return document.querySelector(className);
+    }
+    function $classes(classNames){
+        return document.querySelectorAll(classNames);
+    }
 
     //__________ 新增投票的Click事件 __________//
-    function $class(num){
-        return document.querySelector(num);
-    }
-    function $classes(num){
-        return document.querySelectorAll(num);
-    }
     let voteAlertGroup = $class(".voteAlertGroup");
     let voteAlertDoing = $class(".voteAlertDoing");
     let voteAlertDid = $class(".voteAlertDid");
@@ -25,14 +28,6 @@ window.addEventListener("load",function(){
     }
 
 
-    //__________ 新增投票的前台表單驗證 __________//
-
-
-
-    //__________ 是否已投過票的篩選 __________//
-
-
-
     //__________ 跳窗提示控制 __________//
     let voteLaunch = $class(".voteLaunch");
     let voteSelect = $classes(".voteSelect"); //All
@@ -47,8 +42,15 @@ window.addEventListener("load",function(){
     let voteReportSubmit = $class(".voteReportSubmit");
     let voteAlertReport = $class(".voteAlertReport");
 
-    //------[顯示] 發起投票確認視窗 ------//
+    //######### 發起投票議題 #########//
     voteLaunch.onclick = function(){
+        //------[驗證] 是否為會員 ------//
+    
+        //------[驗證] 是否完整填寫表單 ------//
+        let voteTitle = $id("#voteTitle");
+        let regExp = /^([\u4e00-\u9fa5])+\d|([\u4e00\u4e8c\u4e09\u56db\u4e94\u516d\u4e03\u516b\u4e5d\u5341])/;
+        
+        //------[顯示] 確認視窗跳出 ------//
         voteDoingNotice.innerText="確定要發起此公投議題嗎？";
         voteAddingSubmit.style.display="inline-block";
         voteVotingSubmit.style.display="none";
@@ -57,8 +59,14 @@ window.addEventListener("load",function(){
         voteAlertGroup.style.display="block";
         voteAlertDoing.style.display="block";
     }
-    //------[顯示] 進行投票確認視窗 ------//
+
+    //######### 進行投票 #########//
     for(var i=0; i<voteSelect.length; i++){
+        //------[驗證] 是否為會員 ------//
+    
+        //------[驗證] 是否已投過票 ------//
+
+        //------[顯示] 確認視窗跳出 ------//
         voteSelect[i].onclick = function(){
             voteDoingNotice.innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
             voteAddingSubmit.style.display="none";
@@ -67,10 +75,17 @@ window.addEventListener("load",function(){
             voteReportMessage.style.display="none";
             voteAlertGroup.style.display="block";
             voteAlertDoing.style.display="block";
+            
         }
     }
-    //------[顯示] 檢舉原因選擇視窗 ------//
+
+    //######### 進行檢舉 #########//
     for(var i=0; i<report.length; i++){
+        //------[驗證] 是否為會員 ------//
+
+        //------[驗證] 是否有選擇檢舉原因 ------//
+
+        //------[顯示] 檢舉原因選擇視窗 ------//
         report[i].onclick = function(){
             voteDoingNotice.innerText="檢舉原因：";
             voteAddingSubmit.style.display="none";
@@ -81,12 +96,14 @@ window.addEventListener("load",function(){
             voteAlertDoing.style.display="block";
         }
     }
+
     //------[隱藏] 發起投票確認視窗-確認-(next:通知已新增投票) ------//
     voteAddingSubmit.onclick = function(){
-        voteDidNotice.innerText="已新增投票主題";
+        voteDidNotice.innerText="已新增投票議題";
         voteAlertDoing.style.display="none";
         voteAlertDid.style.display="block";
     }
+
     //------[隱藏] 進行投票確認視窗-確認-(next:通知已完成投票) ------//
     voteVotingSubmit.onclick = function(){
         voteDidNotice.innerText="已完成投票";
@@ -95,10 +112,11 @@ window.addEventListener("load",function(){
     }
     //------[隱藏] 進行檢舉確認視窗-確認-(next:通知已完成檢舉) ------//
     voteReportSubmit.onclick = function(){
-        voteDidNotice.innerText="已檢舉";
+        voteDidNotice.innerText="已檢舉該議題";
         voteAlertDoing.style.display="none";
         voteAlertDid.style.display="block";
     }
+
     //------[隱藏] 發起投票確認視窗-取消 ------//
     //------[隱藏] 進行投票確認視窗-取消 ------//
     //------[隱藏] 檢舉投票議題-取消 ------//
@@ -109,6 +127,7 @@ window.addEventListener("load",function(){
             voteAlertDid.style.display="none";
         }
     }
+
     //------[隱藏] 通知已新增投票-確認 ------//
     //------[隱藏] 通知已完成投票-確認 ------//
     //------[隱藏] 通知已完成檢舉-確認 ------//
