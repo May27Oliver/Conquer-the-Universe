@@ -134,25 +134,36 @@
     .redBall{
         height: 900px;
         .boxCenter{ 
-            img{
-            margin-top: 190px;
+            margin-top: 200px;
+            .EquiImg{
+               
+               #EquiHand{
+                //    position: absolute;
+                //    top: 223px;
+                //    right:-46px;
+                //    width: 95px;
+                //    height: 95px;
+                   // background-color: #333;
+                   
+                }
+           
             }
-        }
+        }        
     }
+
 
     
     //內容區塊-右
  
     #tab-demo{
         margin-top: 115px;
-        ul{
-            li{
-                a{
-                    padding-left: 6px;
-                    padding-right: 6.5px;
-                }
-            }
-        }
+        .tab-title{
+             .tabBtn{
+                 font-size: 18px;
+                 padding-left: 23.5px;
+                 padding-right: 23px;
+             }
+         }
         width: 240px; 
         height: 580px;
         .tabIn{

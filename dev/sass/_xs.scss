@@ -395,17 +395,21 @@
     .boxCenter{
         margin-top: 60px;
         margin-bottom: 60px;
-        position: relative;
+        // position: relative;
          //外觀道具
-        img{
-            display: block;
-            margin: auto;
-            
-        }
-         #EquiBox{
+        .EquiImg{
+             margin: auto;
+             width: 220px;
+             position: relative;
+            img{
+                display: block;
+                margin: auto;
+                
+            } 
+            #EquiBox{
             position: absolute;
-            top: 13%;
-            left:37%;
+            top: 62px;
+            left:65px;
             width: 95px;
             height: 95px;
             // background-color: #333;
@@ -415,9 +419,26 @@
                 display: block;
                 margin: auto;
                 cursor: pointer;
+                }
             }
-        }
+            #EquiHand{
+                position: absolute;
+                top: 223px;
+                right:-46px;
+                width: 95px;
+                height: 95px;
+                cursor: pointer;
+                // background-color: #333;
+                #EquiHand{
+                    width: 80%;
+                    height: 80%;
+                    display: block;
+                    margin: auto;
+                    cursor: pointer;
+                    }
+                }
         
+        }
     }
     
     
@@ -468,32 +489,34 @@
     #tab-demo{ 
         overflow: hidden;
         margin: auto;
-        ul{ 
+        .tab-title{ 
             display:block;
             margin:0;
             list-style:none;
            
-            li{
+            .tabBtn{
+                border: none;
                 display:inline-block; 
                 vertical-align:top;
                  margin:0 -1px -1px 0 ; 
                  /* border:1px solid #BCBCBC;  */
-                 height:28px; line-height:2; 
-                 background:#a6bfd0;
-                 padding:0 15px;list-style:none; box-sizing:border-box;
-                 border-radius: 8px 8px 0 0;
-                 a{ 
-                    color:#333; 
-                    text-decoration:none;
-                    padding-left: 18.5px;
-                    padding-right: 18.5px;
-                }
                 
-               }
-               li.active{ 
-                    /* border-bottom:1px solid #fff;  */
-                    background:$green;
-                }
+                 line-height:2;
+                //  background:$green; 
+                 font-size: 1em;
+                 padding:1px 15px 0;
+                 list-style:none; box-sizing:border-box;
+                 border-radius: 8px 8px 0 0;
+                 cursor: pointer;
+                
+            }
+            #tabBtn1{
+                background:$green;
+            }
+            #tabBtn2{
+                background:#a6bfd0
+            }
+
         }
         
         
@@ -532,7 +555,7 @@
                     }  
                   }
                 #tab02{
-                    #itemEqui1{
+                    .propBox{
                         display: flex;
                         align-items: center;
                     }

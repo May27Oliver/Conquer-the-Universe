@@ -99,10 +99,18 @@
                     </div>
                     <div class="col-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="item boxCenter">
-                            <img class="homeRabbit" src="img/rabbit.png" alt="">
-                            <div id="EquiBox">
-                                <img id="Equi" src="img/shopPic1.png" alt="">
+                            <div class="EquiImg">
+                                <img class="homeRabbit" src="img/rabbit.png" alt=""> 
+                                <div id="EquiBox">
+                                    <img id="Equi" src="img/shopPic1.png" alt="">
+                                </div>
+                                <div id="EquiBoxHand">
+                                    <img id="EquiHand" src="img/shopPic3.png" >
+                                </div>
+
                             </div>
+                            
+                           
                                 <button class="memBtn" id="memDataBtn">編輯會員資料</button>
                             <!-- onclick="location.href='memberData.html'   -->
                         </div>
@@ -110,10 +118,10 @@
                      
                      <div class="col-12 col-md-4 col-lg-4 col-xl-4 boxRight">
                             <div id="tab-demo"> 
-                                <ul class="tab-title">
-                                        <li><a href="#tab01">今日道具</a></li>
-                                        <li><a href="#tab02">現有道具</a></li>
-                                    </ul>
+                                <div class="tab-title">
+                                       <span class="tabBtn" id="tabBtn1">今日道具</span>
+                                        <span class="tabBtn" id="tabBtn2">現有道具</span>
+                                </div>
                                 <div class="tabIn">
                                     <div class="wrapTabIn">
                                     <div id="tab01" class="tab-inner">
@@ -136,14 +144,16 @@
                                     </div>
                                     <div id="tab02" class="tab-inner">
                                         <div class="propBox" id="itemEqui1">
-                                            <img src="img/shopPic1.png" alt="">
+                                            <img class="hat" src="img/shopPic1.png" alt="">
+                                        </div>
+                                        <div class="propBox" >
+                                            <img class="hat" src="img/shopPic2.png" alt="">
                                         </div>
                                         <div class="propBox">
-                                            <img src="img/shopPic2.png" alt="">
+                                            <img class="hand" src="img/shopPic3.png" alt="">
                                         </div>
                                         <div class="propBox">
-                                        </div>
-                                        <div class="propBox">
+                                            <img class="hand" src="img/shopPic4.png" alt="">
                                         </div>
                                         <div class="propBox">
                                         </div>
@@ -174,15 +184,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script> 
     //=====頁籤程式碼=====   
-    $(function(){
-    var $li = $('ul.tab-title li');
-        $($li. eq(0) .addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
-    
-        $li.click(function(){
-            $($(this).find('a'). attr ('href')).show().siblings ('.tab-inner').hide();
-            $(this).addClass('active'). siblings ('.active').removeClass('active');
+    $(document).ready(function(){
+            $('#tabBtn1').click(function(){
+                $('#tabBtn2').css('backgroundColor','#a6bfd0'),
+                $('#tabBtn1').css('backgroundColor','#84ccc9'),
+                $('#tab02').css('display','none');
+                $('#tab01').css('display','inline-block');
+            });
+            $('#tabBtn2').click(function(){
+                $('#tabBtn1').css('backgroundColor','#a6bfd0'),
+                $('#tabBtn2').css('backgroundColor','#84ccc9'),
+                $('#tab01').css('display','none');
+                $('#tab02').css('display','inline-block');
+            });
         });
-    });
 
 //=====會員編輯按鈕程式=====
     function $id(id){
@@ -230,15 +245,22 @@
     }
 
      //====換外觀道具
-    //設定換道具
+    //設定帽子換道具
     function showEqui( e ){
 	let tagSrc =e.target.src;
-    document.getElementById("Equi").src = tagSrc.replace("", "");
+    console.log(tagSrc);
+    document.getElementById("Equi").src = tagSrc.replace("","");
     document.getElementById("Equi").style.display = "block";
 
     }
+    function showEquiHand(e){
+        let HadSrc =e.target.src;
+    console.log(HadSrc);
+    document.getElementById("EquiHand").src = HadSrc.replace("","");
+    document.getElementById("EquiHand").style.display = "block";
+    }
 
-    //設定解除道具alert跳出
+    //設定解除帽子道具alert跳出
     function removeEqui(){
         // $id("Equi").style.display = "none";
         $id("alertWindowWrap").style.display = "block"; //alert視窗跳出
@@ -247,7 +269,7 @@
         $id("alertEqui").style.display = "inline-block";//當解除道具，叫出alert把alertEqui按鈕叫出
     }
     function alertRemoveEqui(){
-        $id("Equi").style.display = "none";//解除外觀道具
+        $id("Equi").style.display = "none";//解除帽子外觀道具
         $id("alertWindowWrap").style.display = "none";
     }
 
@@ -275,15 +297,25 @@
         //===設定alertWindowWrap不要取消
         $id("cancelButton").onclick = alertMemData;
 
-        //===換道具
-          let imgs = document.querySelectorAll(".propBox img");
+        //===換帽子道具
+        let imgs = document.querySelectorAll(".propBox .hat");
         for(let i=0; i<imgs.length; i++){
             imgs[i].onclick = showEqui;
+            console.log(imgs[i]);
         }
 
-        //===解除道具
+        //===解除帽子道具
         $id("Equi").onclick = removeEqui;
         $id("alertEqui").onclick = alertRemoveEqui;
+
+        //===換手上道具
+        let handImgs = document.querySelectorAll(".propBox .hand");
+        for(let i=0; i<handImgs.length; i++){
+            handImgs[i].onclick = showEquiHand;
+            console.log(handImgs[i]);
+        }
+        
+
 
     }; //window.onload
 
