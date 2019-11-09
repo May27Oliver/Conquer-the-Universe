@@ -108,6 +108,8 @@ window.addEventListener('load',function(){
             document.getElementById("big-video").src=source;
             // 底下題目跟著換
             // 先回第一題
+        award.style.display="none";
+        wrongAns.style.display="none";
         fnProblems1[0].style.display="block";
         fnProblems1[1].style.display="none";
         fnProblems2[0].style.display="block";
@@ -595,4 +597,170 @@ window.addEventListener('load',function(){
     });
 
     //財經影片二第一題解答
+    fnV2P1Ans1.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    fnV2P1Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV2P1Ans3.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV2P1Ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    //影片二第二題答案
+    fnV2P2Ans1.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    fnV2P2Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV2P2Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV2P2Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    //影片三題目一答案
+    fnV3P1Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV3P1Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV3P1Ans3.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    fnV3P1Ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    //影片三題目二答案
+    fnV3P2Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV3P2Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV3P2Ans3.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV3P2Ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    //影片四題目一答案
+    fnV4P1Ans1.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    fnV4P1Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV4P1Ans3.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV4P1Ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    //影片四第二題答案
+    fnV4P2Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV4P2Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV4P2Ans3.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV4P2Ans4.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    //影片五第一題答案
+    fnV5P1Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV5P1Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV5P1Ans3.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV5P1Ans4.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    //影片五第二題答案
+    fnV5P2Ans1.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    fnV5P2Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV5P2Ans3.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    fnV5P2Ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
 });
