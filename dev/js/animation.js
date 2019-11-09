@@ -46,6 +46,11 @@ TweenMax.to('.alien_3 img', 1,{
    ease: Bounce.easeOut, y: 50
 })
 
+TweenMax.to('.ufo', 1,{
+   y: -20,
+   repeat: -1, //-1無限迴圈,
+   yoyo: true
+})
 
 
 ;
