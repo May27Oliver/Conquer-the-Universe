@@ -1345,6 +1345,11 @@
             margin: -7.5px;
 
             .voteCard {
+
+                &.col-12{
+                    height: 450px;
+                }
+
                 .voteWrapper {
                     height: 100%;
                     border-radius: 10px;
@@ -1393,11 +1398,11 @@
                     &.voteArea {
                         position: relative;
                         height: 100%;
-                        margin: 8.5px;
+                        margin: 7.5px;
 
                         .voteAdd {
                             width: 100%;
-                            height: calc(100% - 19px);
+                            height: 100%;
                             background: lighten($green, 15);
                             border: 10px double $green;
                             border-radius: 10px;
@@ -1434,7 +1439,7 @@
 
                         .voteAdding {
                             width: 100%;
-                            height: calc(100% - 19px);
+                            height: 100%;
                             border-radius: 10px;
                             box-sizing: border-box;
                             transform: perspective(800px) rotateY(180deg);
@@ -1452,9 +1457,9 @@
                                 h3 {
                                     text-align: center;
                                     font-size: 15px;
-                                    padding: 10px;
+                                    padding: 15px 10px;
                                     margin-bottom: 25px;
-                                    border-bottom: 1px solid #333;
+                                    border-bottom: 1px solid darken($green,20);
                                 }
 
                                 p {
@@ -1492,7 +1497,7 @@
             font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
             font-size: 15px;
             font-weight: 500;
-            padding: 5px 18px;
+            padding: 5px 15px;
             margin: 10px auto 0;
             border: none;
             border-radius: 50px;
@@ -1505,10 +1510,19 @@
             &[disabled|="disabled"] {
                 background: #ccc;
                 opacity: 0.8;
-                cursor: no-drop;
+                cursor: not-allowed;
 
                 &:hover {
                     background: #ccc;
+                }
+            }
+
+            &.voteSelected {
+                background: #1d2088;
+                box-shadow: 0px 0px 0px 3px darken($blue,20);
+                cursor: default;
+                &:hover {
+                    background: #1d2088;
                 }
             }
 
@@ -1523,8 +1537,8 @@
                 border-radius: 5px;
                 box-sizing: border-box;
                 position: absolute;
-                right: 10px;
-                top: 8px;
+                right: 6px;
+                top: 6px;
             }
 
             &.voteLaunch {
@@ -1532,7 +1546,8 @@
                 margin: 35px 10px 0;
             }
 
-            &.voteLaunchCancel,&.voteCancel {
+            &.voteLaunchCancel,
+            &.voteCancel {
                 display: inline-block;
                 background: #1d2088;
                 margin: 10px 10px 0;
@@ -1578,6 +1593,7 @@
                     padding: 20px;
 
                     p {
+                        line-height: 1.5;
                         margin: 10px 10px 0;
                     }
 
@@ -1606,8 +1622,7 @@
     }
 }
 #starShine {
-    width: 100%;
-    // height: auto;
+    // width: 100%;
     position: absolute;
     top: 0;
     left: 0;
