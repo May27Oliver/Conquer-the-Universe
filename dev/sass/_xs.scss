@@ -566,7 +566,7 @@
                     }
                 }
             }
-    
+            // home scrollbar
             .wrapTabIn::-webkit-scrollbar {
                 width: 6px;
                 height: 10px;
@@ -2250,6 +2250,7 @@ div.slider {
 
 // NEWS 開始
 .news {
+    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
     background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
     // background-image: url(../img/STAR.png), url(../img/bg.png);
     // background-repeat: repeat;
@@ -2306,7 +2307,7 @@ div.slider {
     .newsText {
         width: 100%;
         margin: 0 auto;
-        text-align: center;
+        
 
 
         h2 {
@@ -2317,8 +2318,8 @@ div.slider {
 
         p {
             line-height: 1.6;
-            margin-top: 20px;
-            margin-bottom: 25px;
+           margin: 20px 20px;
+            text-align: left;
         }
         h3{
             color: orangered;
@@ -2334,6 +2335,7 @@ div.slider {
     .newsBtn {
         margin-bottom: 20px;
         margin-top: 30px;
+        display: flex;
 
         button {
             color: #FFF;
@@ -2433,7 +2435,9 @@ label{
     background: #fff;
     padding: 2px 15px;
     border-radius: 2px;
+    
 }
+
     
 }
 
@@ -2449,7 +2453,7 @@ button{
     display: block;
     background: #1d2088;
     color: #fff;
-    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+    
     font-size: 15px;
     font-weight: 500;
     padding: 5px 18px;
@@ -2470,23 +2474,26 @@ button{
 
 // newsLightBox START
 #newsWindowWrap {
+    
     justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
     width: 100vw;
     height: 100vh;
-    z-index:999; 
+    background: rgba(29, 29, 29, 0.7);
+    z-index: 990;
+    // font-family: "微軟正黑體";
+    
 }
 .newsWindow {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    // box-sizing: border-box;
+    
+    // justify-content: space-between;
     align-items: center;
-    position: relative;
-    width: 100%;
-    min-width: 350px; 
+   
+    width: 70%;
+    min-width: 375px; 
     max-width: 1000px;
     margin: 10px;
     
@@ -2501,10 +2508,10 @@ button{
     bottom: 0;
     right: 0;
     margin: auto;
-    height: 60%;
+    height: 70%;
     display: flex;
-    flex-direction:row;
-    overflow: hidden;
+    flex-direction:column;
+    // overflow: hidden;
 }
  .newsWindow .newsTitle {
     font-size: 32px; 
@@ -2557,48 +2564,186 @@ button{
 .newsWindow .newsClose:hover {
     background-color: #ccc; 
 }
+// news scrollbar
+.newsWindowLeft::-webkit-scrollbar {
+    width: 6px;
+    height: 10px;
+}
+.newsWindowLeft::-webkit-scrollbar-thumb {
+    background-color: #0996b9;
+    border-radius: 5px;
+}
 
+.newsWindowLeft::-webkit-scrollbar-track {
+    background-color: #c4c4c4;
+}
 
 .newsWindowLeft{
-  width: 50%;
-  height: 100%;
-  background-color: #ccc;
+  width: 100%;
+  height: 80%;
+  background-color: rgb(63, 63, 63);
   /* border-right: 5px solid #000000; */
+  overflow-y: auto;
+  
+
+ 
   img{
-      width: 90%;
+      width: 70%;
   }
   h2{
-      margin: 20px 0;
+      margin: 10px 0;
+      color: rgb(180, 180, 3);
+      font-size: 30px;
       
   }
   h3{
-      padding: 20px;
+      padding: 10px;
+      color: rgb(255, 184, 158);
   }
   p{
-      margin: 0 30px;
+      margin: 20px 30px;
       line-height: 1.6;
+      text-align: left;
+      color: rgb(255, 254, 245);
   }
- 
-}
-.newsWindoRight{
-  width: 50%;
-  height: 100%;
-  .newsTalk{
-    
-      width: 100%;
-  }
-  .newsMessage{
-      margin: 20px 0;
-      padding-bottom: 20px;
-  }
-  
  
 }
 
-.newsMessage{
+.newsWindoRight{
   width: 100%;
-  border-bottom: 2px solid #ccc;
+  height: 100%;
+  background-color:$green;
+  
+  
+//   overflow-y: auto;
+    h2{
+        line-height: 2;
+        color: #fff;
+    }
+
+    .newsDOWN{
+        // background-color: #000;
+        .newsTalk{
+        width: 100%;
+            margin-top: 10px;
+        //   margin-bottom: 20px;
+        //   background-color: #000;
+        
+            // line-height: 100px;
+        input{
+            border: 1px solid #ccc;
+            font-size: 15px; 
+            width: 70%;
+            font-size: 15px; 
+            // padding: 10px;
+            border-radius:5px ;
+            
+        }  
+        
+            button{
+                font-size: 14px;
+                border: none;
+                border-radius:10px;
+                margin: 0 5px;
+            }
+
+    }
 }
+  
+  .newsMessage{
+    //   background-color: orange;
+     
+      margin: 20px 0;
+      padding-bottom: 20px;
+      width: 100%;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  .newsMsgAll::-webkit-scrollbar {
+    width: 6px;
+    height: 10px;
+}
+.newsMsgAll::-webkit-scrollbar-thumb {
+    background-color: #0996b9;
+    border-radius: 5px;
+}
+
+.newsMsgAll::-webkit-scrollbar-track {
+    background-color: #c4c4c4;
+} 
+}
+.newsMsgAll{
+//    background-color: #000;
+   height: 76%;
+   overflow-y: auto;
+   background-color: rgb(236, 236, 236);
+  
+
+  
+
+.newsMsgitem{
+    width: 90%;
+    margin: 50px auto;
+    padding: 15px 0;
+    background-color: #212121;
+    border-radius: 5px;
+    
+    // border: solid #CCC 1px;
+    
+   
+
+    .newsMsgID{
+        // display: flex;
+       background-color: #000;
+        p{
+            float: right;
+            font-size: 16px;
+            padding: 10px;
+            color: palegoldenrod;
+        }
+        h3{
+        float: left;
+        padding: 10px;
+        color: orange;
+    }
+    }
+
+    .newsMsgBox{
+        margin-top: 50px;
+        margin-bottom: 30px;
+        text-align-last: left;
+       padding: 10px 10px;
+
+       p{
+           color: palegoldenrod;
+           line-height: 1.6;
+       }
+    }
+    
+
+        .newsreport2{
+           
+            background: #ccc;
+            color: #333;
+            font-size: 10px;
+            font-weight: 400;
+            
+           
+         
+            border-radius: 5px;
+            float: right;
+
+        }
+       
+       
+      
+    
+    
+    
+}   
+}
+
+
 .newsMessage button{
  margin:0 20px; 
  color: #E8B51C;
@@ -2613,16 +2758,7 @@ button{
 .newsMessage button .fa {
  color: #E8B51C;
 }
-      .newsTalk{
-          input{
-            width: 70%;
-            font-size: 22px;
-            margin: 10px;
-            padding: 10px;
-            border-radius:10px ;
- 
-          }
-      }
+     
 
       .newsWindoClose {
         position: absolute;
