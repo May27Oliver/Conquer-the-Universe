@@ -273,6 +273,19 @@
         $id("alertWindowWrap").style.display = "none";
     }
 
+    //設定解除手上道具alert跳出
+    function removeEquiHand(){
+        // $id("Equi").style.display = "none";
+        $id("alertWindowWrap").style.display = "block"; //alert視窗跳出
+        document.querySelector(".alertContent").innerText = "確定要解除外觀道具嗎?";//改變div文字內容 => .innerText = "自己要呈現的文字內容"  ,querySelector可抓任何一個class id img...
+        $id("alertButton").style.display = "none";//當解除道具，叫出alert把alertButton按鈕隱藏
+        $id("alertEquiHand").style.display = "inline-block";//當解除道具，叫出alert把alertEqui按鈕叫出
+    }
+    function alertRemoveEquiHand(){
+        $id("EquiHand").style.display = "none";//解除帽子外觀道具
+        $id("alertWindowWrap").style.display = "none";
+    }
+
 
     
     function init(){
@@ -314,6 +327,9 @@
             handImgs[i].onclick = showEquiHand;
             console.log(handImgs[i]);
         }
+        //===解除手上道具
+        $id("EquiHand").onclick = removeEquiHand;
+        $id("alertEquiHand").onclick = alertRemoveEquiHand;
         
 
 

@@ -73,6 +73,17 @@
         padding: 9px 20px 9px 20px;
         margin: 10px;
     }
+    .alertWindow #alertEquiHand {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        border-radius: 20px;
+        color: #b78100;
+        border:1px solid #b78100;
+        background: #ffd584;
+        padding: 9px 20px 9px 20px;
+        margin: 10px;
+    }
    .alertWindow #cancelButton{
         position: relative;
         cursor: pointer;
@@ -87,6 +98,7 @@
         font-weight: 900;
         font-weight: 500;
     }
+    
      
     .alertWindow .alertClose:after {
         transform: rotate(-45deg); 
@@ -105,6 +117,7 @@
             <div class="closeWrap">
                 <div id="alertButton">確認</div>
                 <div id="alertEqui" style="display: none;">確認</div>
+                <div id="alertEquiHand" style="display: none;">確認</div>
                 <div id="cancelButton">取消</div>
             </div>
             <div class="alertClose"></div>

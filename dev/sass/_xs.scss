@@ -443,20 +443,13 @@
             }
             #EquiHand{
                 position: absolute;
-                top: 223px;
-                right:-46px;
-                width: 95px;
-                height: 95px;
+                top: 210px;
+                right:-30px;
+                width: 75px;
+                height: 105px;
                 cursor: pointer;
                 // background-color: #333;
-                #EquiHand{
-                    width: 80%;
-                    height: 80%;
-                    display: block;
-                    margin: auto;
-                    cursor: pointer;
-                    }
-                }
+            }
         
         }
     }
@@ -586,6 +579,10 @@
                         height: 90%;
                         margin: auto;
                         cursor: pointer;
+                    }
+                    .hand{
+                        width: 75%;
+                        height: 95%;
                     }
                 }
             }
