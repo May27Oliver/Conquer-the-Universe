@@ -29,7 +29,27 @@
     p {
         color: #fff;
         float: right;
-        margin-right: 20px;
+        margin-right:20px;
+        color:rgba(0,0,0,0);
+        background-repeat: no-repeat;
+        span{
+            color:$green;
+        }
+    }
+    #planetPoint_1{
+        background-image: url(../img/index_img/alien_1.png);
+        background-position: 0 -10px;
+         background-size: 60%;
+    }
+    #planetPoint_2{
+        background-image: url(../img/index_img/alien_2.png);
+        background-position: 0 5px;
+         background-size: 60%;
+    }
+    #planetPoint_3{
+        background-image: url(../img/index_img/alien_3.png);
+        background-position: 0 -20px;
+         background-size: 50%;
     }
 }
 
@@ -292,6 +312,10 @@
             position: absolute;
             bottom:0;
             left:0;
+            img{
+                // transform: translateY(-100px);
+                margin-bottom:50px;
+            }
         }
     }
 }
@@ -308,6 +332,7 @@
     .memNameBox{
         overflow: hidden;
         margin-bottom:10px;
+        cursor: pointer;
         img{
             float: left;
             padding-right: 20px;
@@ -390,12 +415,31 @@
     .boxCenter{
         margin-top: 60px;
         margin-bottom: 60px;
+        position: relative;
+         //外觀道具
+        img{
+            display: block;
+            margin: auto;
+            
+        }
+         #EquiBox{
+            position: absolute;
+            top: 13%;
+            left:37%;
+            width: 95px;
+            height: 95px;
+            // background-color: #333;
+            #Equi{
+                width: 80%;
+                height: 80%;
+                display: block;
+                margin: auto;
+                cursor: pointer;
+            }
+        }
         
     }
-    .boxCenter img{
-        display: block;
-        margin: auto;
-    }
+    
     
     
     .redBall{
@@ -431,6 +475,11 @@
         background: #ffd584;
         padding: 10px 20px;
         margin-top: 30px;
+        cursor: pointer;
+    }
+    .memBtn:hover {
+        background: darken(#ffd584,10);
+        color: darken(#b78100,10);
     }
     
     
@@ -484,12 +533,11 @@
                     color:#000;
                     padding:15px 10px; 
                     height:50px; 
-                    /* border:1px #BCBCBC solid; */
                     .propBox{
                         border-radius: 8px;
                         background-color: #d4faff;
                         width: 100px;   
-                        padding-bottom: 100px;
+                        height: 100px;
                         float: left;
                         margin-bottom: 10px;
                         margin-right: 2.5px;
@@ -503,7 +551,20 @@
                         
                     }  
                   }
-                
+                #tab02{
+                    #itemEqui1{
+                        display: flex;
+                        align-items: center;
+                    }
+                    img{
+                        
+                        display: block;
+                        width: 90%;
+                        height: 90%;
+                        margin: auto;
+                        cursor: pointer;
+                    }
+                }
             }
             // home scrollbar
             .wrapTabIn::-webkit-scrollbar {
@@ -576,6 +637,7 @@
             background: #ffd584;
             padding: 5px 20px;
             margin: 50px 10px 0;
+            cursor: pointer;
         }
         #memDataCancel{
             font-size: 16px;
@@ -586,7 +648,12 @@
             opacity: .9;
             padding: 5px 20px;
             margin: 50px 10px 0;
+            cursor: pointer;
             
+        }
+        #memDataCancel:hover {
+            background: darken(#ffd584,10);
+            color: darken(#b78100,10);
         }
         /*會員編輯資料的select與option樣式*/
         .homeCitizen{
@@ -674,6 +741,7 @@
         margin-right: 5px;
         border-radius: 5px 5px 0 0;
         cursor: pointer;
+        margin-bottom: -3px;
     }
 
     #rankAll {
@@ -699,7 +767,7 @@
     margin: 0 auto;
     clear: both;
     padding: 15px;
-    border-radius: 0 5px 5px 5px;
+    border-radius:5px;
     max-width: 370px;
     transform: translateY(-1px);
     .innerTitle{
@@ -774,7 +842,7 @@
 /*__________[START] 首頁公民投票 VOTE IN INDEX __________*/
 
 .voteSectionWrapper{
-    margin-top: -160px;
+    margin-top: -200px;
     // background: url('../img/vote/index-vote-bg.png') no-repeat center center / contain ;
     .voteSection {
         width: 100%;
@@ -861,12 +929,13 @@
         background: #1d2088;
         color: #fff;
         font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
-        font-size: 15px;
+        // font-size: 15px;
         font-weight: 500;
         padding: 5px 18px;
-        margin: 10px auto 0;
+        margin: 30px auto 0;
         border: none;
         border-radius: 20px;
+        cursor: pointer;
 
         &:hover {
             background: lighten(#1d2088, 15);
@@ -897,21 +966,25 @@
         }
         
         &.index-more{
-            background: #ffd584;
+            text-decoration: none;
             color: #b78100;
-            line-height: 40px;
+            background-color: #ffd584;
+            /* padding:15px;*/
+            width: 200px;
+            line-height: 30px;
             text-align: center;
-            padding: 0 18px;
-            margin-top: 50px;
-            border: 2px solid #b78100;
             border-radius: 40px;
+            border: 2px solid #b78100;
             cursor: pointer;
 
             &:hover {
-                background: lighten(#ffd584,10);
+                background: darken(#ffd584,10);
+                color: darken(#b78100,10);
             }
         }
     }
+    
+    
 
     /*------ 跳窗提示 ------*/
     .voteAlertGroup {
@@ -973,211 +1046,6 @@
 
 /*__________[END] 首頁公民投票 VOTE IN INDEX __________*/
 
-
-
-   // -------贊助商品區------
- 
-//    .shopContainer{
-//     margin-top: 100px;
-//     padding-top: 50px;
-//     padding-bottom: 50px;
-//     text-align: center;
-//     background-color: #333;	
-//     position: relative;
-// .shoptitle{
-//     margin: 30px auto 50px;
-//     padding: 30px;
-//     width: 150px;
-//     background-size:100%;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-image: url(../img/title.png);
-//      h2{
-//          color:#fff;
-//     }	
-
-// }  
-// .boxForProduct{
-//     max-width: 500px;
-//     margin: 0 auto;
-//     height: 600px;
-//      .col-6{
-//          padding: 0;    
-//      }
-//  }
-// .productBox{
-//     margin: 0 auto;
-//     width: 95%;
-//     background-repeat: no-repeat;
-//     background-size:contain;
-//     background-position: bottom;
-//     position: relative;
-// }
-// .model{
-//     background-color: #90BEE3;
-//     max-width: 500px;
-//     margin: 0 auto 50px;
-//     background-image: url(../img/pinkPlanet.png);
-//     background-repeat: no-repeat;
-//     background-position: bottom;
-//     border-radius: 10px;
-// }
-// .model .pic01{
-//     padding: 20px;
-//     margin-top: 50px;
-// }
-// .productPic{
-//     box-sizing:border-box;
-//     margin: 50px auto 20px;
-//     background-color: antiquewhite;;
-//     border-radius: 10px;
-//     width: 145px;
-//     height: 145px;
-//     position: relative;
-//     img{
-//         top: calc(50% - 50px);
-//         left: calc(50% - 50px);
-//         position: absolute; 
-//         max-width: 100px;
-//         text-align: center;
-        // background-color: #333;	
-// 	.shoptitle{
-// 		margin: 30px auto 50px;
-// 		padding: 30px;
-// 		width: 150px;
-// 		background-size:100%;
-// 		background-position: center;
-// 		background-repeat: no-repeat;
-//         background-image: url(../img/title.png);
-
-//         h2 {
-//             color: #fff;
-//         }
-
-//     }
-
-//     .boxForProduct {
-//         .col-6 {
-//             max-width: 400px;
-//             background-color: #1c0e44;
-//         }
-//     }
-
-//     .productBox {
-//         margin: 0 auto;
-//         width: 95%;
-//         background-repeat: no-repeat;
-//         background-size: contain;
-//         background-position: bottom;
-//     }
-
-//     .model {
-
-//         background-color: #90BEE3;
-//         max-width: 500px;
-//         margin: 0 auto 50px;
-//         background-image: url(../img/pinkPlanet.png);
-//         background-repeat: no-repeat;
-//         background-position: bottom;
-//         border-radius: 10px;
-//     }
-
-//     .model .pic01 {
-//         padding: 20px;
-//         margin-top: 50px;
-//     }
-// }
-// .productTitle{
-// h3{
-//     font-weight: bold;
-//     color: #fff;	
-// }
-// .productBtn{
-//     width: 60px;
-//     margin: 10px auto;
-//     background-color: #448aca;
-//     padding: 5px;
-//     border-radius: 50px;
-//     h2{
-//         color: #fff;
-//     }	
-// }
-// } 
-// }
-// .toolTitle{
-// color:#fff;
-// line-height: 2;
-// }
-// .toolTitle02{
-// display: none;
-
-// }
-// .proTitle{
-//     a{ 
-//         display:block;
-//         margin: auto;
-//         color:#b78100;
-//         background-color: #ffd584;
-//     /* padding:15px;*/
-//         width: 160px;
-//         line-height: 40px;
-//         text-align: center;
-//         border-radius: 40px;
-//         border:2px solid #b78100;
-//     }
-// .moreProductBtn{
-// text-align: center;
-// margin: 30px auto;
-// width: 80px;
-// border-radius: 50px;
-// padding: 10px;
-// font-size: 20px;
-// font-weight: bold;
-// overflow: hidden;
-// background-color: #E8B51C;	
-// h2{ 
-//     font-weight: bold;
-//     color: #fff;
-// }
-// }
-// //商品業內頁的扭蛋區
-// .event{
-// padding-top: 50px;
-// background-color: #1c0e44;
-// }
-// .gashapon{
-
-// text-align: center;;
-// img{
-//     width: 300px;
-// }
-// }
-// .clearboth{
-// clear: both;
-// }
-// //商品業內頁的燈箱
-// #shopLightBox{
-// color: #FFF;
-// background-color: #E8B51C;
-// margin: 0 auto;
-// border-radius: 10px;
-// position: absolute;
-// top: calc(60% - 100px);
-// right: calc(50% - 100px);
-// z-index: 1;
-// width: 200px;
-// height: 150px;
-// p{
-//   margin: 30px auto 30px;
-// }
-// span{
-
-//     padding: 5px 10px 5px 10px;
-//     margin: 20px;
-//     background-color: #a6bfd0;
-//     border-radius: 5px;
-// }
-// }
 /*____________________ 贊助商品區 ____________________*/
     .shopContainerAll{
         background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
@@ -1286,6 +1154,7 @@
        }
     }
     .proTitle{
+        margin: -70px 0;
         a{ 
         display:block;
         margin: auto;
@@ -1297,6 +1166,10 @@
         text-align: center;
         border-radius: 40px;
         border:2px solid #b78100;
+        }
+        a:hover {
+            background: darken(#ffd584,10);
+            color: darken(#b78100,10);
         }
     }
     .moreProductBtn{
@@ -1432,7 +1305,7 @@
     }
   
 /*____________________[START] VOTE ____________________*/
-
+// *{ outline: 1px solid #f00; }
 .votePage {
     background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
 
@@ -1535,6 +1408,7 @@
                             left: 0;
                             backface-visibility: hidden;
                             transition: 1s;
+                            cursor: pointer;
 
                             &::before,
                             &::after {
@@ -1578,7 +1452,7 @@
                                 h3 {
                                     text-align: center;
                                     font-size: 15px;
-                                    padding: 15px;
+                                    padding: 10px;
                                     margin-bottom: 25px;
                                     border-bottom: 1px solid #333;
                                 }
@@ -1621,7 +1495,8 @@
             padding: 5px 18px;
             margin: 10px auto 0;
             border: none;
-            border-radius: 20px;
+            border-radius: 50px;
+            cursor: pointer;
 
             &:hover {
                 background: lighten(#1d2088, 15);
@@ -1630,6 +1505,7 @@
             &[disabled|="disabled"] {
                 background: #ccc;
                 opacity: 0.8;
+                cursor: no-drop;
 
                 &:hover {
                     background: #ccc;
@@ -1656,7 +1532,7 @@
                 margin: 35px 10px 0;
             }
 
-            &.voteCancel {
+            &.voteLaunchCancel,&.voteCancel {
                 display: inline-block;
                 background: #1d2088;
                 margin: 10px 10px 0;
@@ -1678,11 +1554,8 @@
             z-index: 9999;
             display: none;
 
-            .voteAlertAdding,
-            .voteAlertAdded,
-            .voteAlertVoting,
-            .voteAlertVoted,
-            .voteAlertReport {
+            .voteAlertDoing,
+            .voteAlertDid {
                 width: 300px;
                 position: fixed;
                 top: 50%;
@@ -1699,7 +1572,7 @@
                 }
 
                 .voteAlertText {
-                    background: lighten($yellow, 12);
+                    background: lighten($yellow, 30);
                     border-radius: 0 0 10px 10px;
                     text-align: center;
                     padding: 20px;
@@ -1716,31 +1589,30 @@
                     }
 
                     select {
-                        width: 120px;
-                        display: block;
+                        width: 150px;
                         font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                        font-size: 15px;
+                        color: #333;
                         border: none;
-                        margin: 30px auto 0;
+                        padding: 5px 10px;
+                        margin: 15px auto 0;
+                        option{
+                            line-height: 2;
+                        }
                     }
                 }
             }
         }
     }
-
-    #starShine {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
 }
-
-    #starShine {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
+#starShine {
+    width: 100%;
+    // height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 /*____________________[END] VOTE ____________________*/
 
 
@@ -1781,6 +1653,11 @@
         text-align: center;
         border-radius: 40px;
         border: 2px solid #b78100;
+        cursor: pointer;
+    }
+    .index-more:hover {
+        background: darken(#ffd584,10);
+        color: darken(#b78100,10);
     }
 }
 
@@ -1805,7 +1682,7 @@
     display: flex;
     justify-content: space-between;
     margin: 15vw auto;
-    .video-button{
+    #fn-video-button,#Jt-video-button,#As-video-button{
         background-color: #1d2088;
 
         &:hover {
@@ -1842,7 +1719,7 @@
 .rabbit {
     width: 10vw;
     position: absolute;
-    top: 50vw;
+    top: 90vw;
     right: 20vw;
     z-index: -1;
 
@@ -1854,7 +1731,7 @@
 .fatty {
     width: 10vw;
     position: absolute;
-    top: 70vw;
+    top: 110vw;
     left: 5vw;
     z-index: -1;
 
@@ -1871,6 +1748,8 @@
     width: 100%;
     .video-slider{    
         margin: 2vw auto;
+        width: 100%;
+        height: 16vw;
         background-color: #CCC;
         border-radius: 20px;
         position: relative;
@@ -2066,6 +1945,7 @@
 
 // 首頁加入星球
 .joinPlanet{
+    margin-bottom:150px;
     .joinTitle{
         width: 100%;
         h2{
@@ -2186,7 +2066,7 @@ div.slider {
     border: 1px solid #000 !important;
     background: #fff !important;
     opacity: 0.3 !important;
-    z-index: 5000 !important;
+    z-index: 1;
     cursor: pointer;
     text-align: center;
     line-height: 30px;
@@ -2324,31 +2204,31 @@ div.slider {
 
 
 .indexMore_btn {
-    a {
-        display: none;
-    }
+    display: none;
 }
 
 .active {
     .indexMore_btn {
-        a {
-            display: inline-block;
-            text-decoration: none;
-            color: #b78100;
-            background-color: #ffd584;
-            /* padding:15px;*/
-            width: 160px;
-            line-height: 40px;
-            text-align: center;
-            border-radius: 40px;
-            border: 2px solid #b78100;
-            position: absolute;
-            bottom: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: slec_b .2s .3s forwards;
-            opacity: 0;
-        }
+        display: block;
+        color: #b78100;
+        background-color: #ffd584;
+        /* padding:15px;*/
+        width: 200px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 40px;
+        border: 2px solid #b78100;
+        position: absolute;
+        bottom: -65px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: slec_b .2s .3s forwards;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .indexMore_btn:hover {
+        background: darken(#ffd584,10);
+        color: darken(#b78100,10);
     }
 }
 
@@ -2655,6 +2535,10 @@ button{
     padding: 9px 20px 9px 20px;
     margin: 10px;
 }
+.newsWindow #newsButton:hover {
+    background: darken(#ffd584,10);
+    color: darken(#b78100,10);
+}
 .newsWindow #cancelButton{
     position: relative;
     cursor: pointer;
@@ -2668,6 +2552,10 @@ button{
     margin: 10px;
     font-weight: 900;
     font-weight: 500;
+}
+.newsWindow #cancelButton:hover {
+    background: darken(#ffd584,10);
+    color: darken(#b78100,10);
 }
  
 .newsWindow .newsClose:after {
@@ -2866,6 +2754,7 @@ button{
  cursor: pointer; 
 }
 
+
 .newsMessage button .fa {
  color: #E8B51C;
 }
@@ -2983,13 +2872,6 @@ button{
 
 // news分頁end
 
-// news 結束*!@#$%%^^^^^^^^^^^^^^^
-
-// 首頁
-.index_body{
-    background-color: #1c0e44;
-}
-
 .newsTitle{
     margin-top:-180px;
     width: 100%;
@@ -3021,4 +2903,64 @@ button{
         border: 2px solid #b78100;
         margin:0 auto;
     }
+    a:hover {
+        background: darken(#ffd584,10);
+        color: darken(#b78100,10);
+    }
+}
+
+
+// 首頁
+.index_body{
+    overflow-x: hidden;
+    background-color: #1c0e44;
+    background-image:url(../img/index_img/indexBGtop.jpg);
+    background-size:100%;
+    background-position:center top;
+    background-repeat: no-repeat;
+    .indexWrap{
+        background-image:url(../img/index_img/indexBGearth.jpg.png),url(../img/index_img/indexBGbottom.png);
+        background-size:150%,300%;
+        background-position:center 6.5%,center bottom;
+        background-repeat: no-repeat;
+        margin-left:0px;
+    }
+    section{
+        margin-top: -50px;
+    }
+}
+
+.indexStar{
+    width: 100%;
+    img{
+        position: absolute;
+        z-index: -999;
+        top:150px;
+        left:50%;
+        transform-origin: 50%;
+        // transform: translateX(-30%) rotate(30deg);
+        width: 280%;
+    }
+    img:nth-child(1){
+        animation: indexStar 170s infinite linear;
+    }
+    img:nth-child(2){
+        animation: indexStar 80s infinite linear;
+    }
+    img:nth-child(3){
+        animation: indexStar 35s infinite linear;
+    }
+}
+
+@keyframes indexStar{
+    0%{
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100%{
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+.ufo{
+    display:none;
 }

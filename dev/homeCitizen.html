@@ -75,11 +75,11 @@
                 <div class="row " >
                     <div class="col-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="item boxLeft">
-                            <div class="memNameBox"><a href="">
+                            <div class="memNameBox" id="memNameBox">
                             <img src="img/badge.png" alt="">
                                 <h3>菜逼巴</h3>
                                 <h2>發大財</h2> 
-                            </a></div>
+                            </div>
 
                             <div class="supportBox">
                                 <h4>個人貢獻支持度</h4>
@@ -99,7 +99,10 @@
                     </div>
                     <div class="col-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="item boxCenter">
-                            <img src="img/rabbit.png" alt="">
+                            <img class="homeRabbit" src="img/rabbit.png" alt="">
+                            <div id="EquiBox">
+                                <img id="Equi" src="img/shopPic1.png" alt="">
+                            </div>
                                 <button class="memBtn" id="memDataBtn">編輯會員資料</button>
                             <!-- onclick="location.href='memberData.html'   -->
                         </div>
@@ -108,8 +111,8 @@
                      <div class="col-12 col-md-4 col-lg-4 col-xl-4 boxRight">
                             <div id="tab-demo"> 
                                 <ul class="tab-title">
-                                        <li><a href="#tab01">現有道具</a></li>
-                                        <li><a href="#tab02">今日道具</a></li>
+                                        <li><a href="#tab01">今日道具</a></li>
+                                        <li><a href="#tab02">現有道具</a></li>
                                     </ul>
                                 <div class="tabIn">
                                     <div class="wrapTabIn">
@@ -132,9 +135,11 @@
                                         </div>
                                     </div>
                                     <div id="tab02" class="tab-inner">
-                                        <div class="propBox">
+                                        <div class="propBox" id="itemEqui1">
+                                            <img src="img/shopPic1.png" alt="">
                                         </div>
                                         <div class="propBox">
+                                            <img src="img/shopPic2.png" alt="">
                                         </div>
                                         <div class="propBox">
                                         </div>
@@ -191,8 +196,10 @@
 
      //點擊取消按鈕,提醒使用者是否確定取消,叫出alert視窗
     function cancelMemData(){
-        // $id("memberData").style.display = "none";
         $id("alertWindowWrap").style.display = "block";
+        document.querySelector(".alertContent").innerText = "確定要取消目前變更的會員資料嗎?";
+        $id("alertButton").style.display = "inline-block";//當點擊會員資料更改取消按鈕，叫出alert把alertButton按鈕叫出
+        $id("alertEqui").style.display = "none";//當點擊會員資料更改取消按鈕，叫出alert把alertEqui按鈕隱藏
         
     }
 
@@ -214,16 +221,42 @@
         $id("memDataLock1").disabled=true;
         $id("memDataLock2").disabled=true;
         $id("memDataLock3").disabled=true;
+        
     }
     //點擊alert視窗_取消_取消修改
     function alertMemData(){
         $id("alertWindowWrap").style.display = "none";
+        
     }
+
+     //====換外觀道具
+    //設定換道具
+    function showEqui( e ){
+	let tagSrc =e.target.src;
+    document.getElementById("Equi").src = tagSrc.replace("", "");
+    document.getElementById("Equi").style.display = "block";
+
+    }
+
+    //設定解除道具alert跳出
+    function removeEqui(){
+        // $id("Equi").style.display = "none";
+        $id("alertWindowWrap").style.display = "block"; //alert視窗跳出
+        document.querySelector(".alertContent").innerText = "確定要解除外觀道具嗎?";//改變div文字內容 => .innerText = "自己要呈現的文字內容"  ,querySelector可抓任何一個class id img...
+        $id("alertButton").style.display = "none";//當解除道具，叫出alert把alertButton按鈕隱藏
+        $id("alertEqui").style.display = "inline-block";//當解除道具，叫出alert把alertEqui按鈕叫出
+    }
+    function alertRemoveEqui(){
+        $id("Equi").style.display = "none";//解除外觀道具
+        $id("alertWindowWrap").style.display = "none";
+    }
+
 
     
     function init(){
-        //===設定memDataBtn.onclick 事件理程序是 showMemberForm ,編輯會員資料按鈕
+        //===設定memDataBtn/memNameBox.onclick 事件理程序是 showMemberForm ,編輯會員資料按鈕
         $id("memDataBtn").onclick = showMemberForm;
+        $id("memNameBox").onclick = showMemberForm;
         
         //===設定btnLogin.onclick 事件處理程序是 sendForm ,確認按鈕-送去後端資料
         // $id("memDataButton").onclick = sendForm;
@@ -241,23 +274,20 @@
 
         //===設定alertWindowWrap不要取消
         $id("cancelButton").onclick = alertMemData;
+
+        //===換道具
+          let imgs = document.querySelectorAll(".propBox img");
+        for(let i=0; i<imgs.length; i++){
+            imgs[i].onclick = showEqui;
+        }
+
+        //===解除道具
+        $id("Equi").onclick = removeEqui;
+        $id("alertEqui").onclick = alertRemoveEqui;
+
     }; //window.onload
 
     window.onload=init;	
-    
-    //====alert訊息====
-    function alertBoxShow(content = '你確認修改資料嗎?', title = '注意', color = 'red', callback){
-        $('.alertWindowWrap').css('display', 'flex');
-        $('.alertTitle').html(title).css('color', color);
-        $('.alertContent').html(content);
-        $('.alertClose').off();
-        $('.alertButton').off();
-
-        $('.alertClose').click(() => {alertCloseWindow(callback)});
-        $('.alertButton').click(() => { alertCloseWindow(callback)});
-        $('.cancelButton').click(() => { alertCloseWindow(callback)});
-        // callback();
-    }
     
     </script>
 </body>

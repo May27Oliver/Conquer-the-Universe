@@ -166,7 +166,7 @@
                     .propBox{
                             
                             width: 95px;   
-                            padding-bottom: 95px;
+                           height: 95px;
                             margin-left: -1px;
                             margin-right: 14px;
                             margin-bottom: 14px;
@@ -326,12 +326,12 @@
     }
     // 背景小物
     .rabbit{
-        top:30vw;
+        top:43vw;
         right:20vw;
     }
 
     .fatty{
-        top:45vw;
+        top:60vw;
         left:10vw;
     }
 
@@ -1069,7 +1069,95 @@
         justify-content: center;
         align-items: center; 
     }
+    // 首頁
+    .index_body{
+        // background-color: #1c0e44;
+        background-image:url(../img/index_img/indexBGtop.jpg);
+        background-size:100%;
+        background-position:center top;
+        background-repeat: no-repeat;
+        .indexWrap{
+            background-image:url(../img/index_img/indexBGearth.jpg.png),url(../img/index_img/indexBGbottom.png);
+            background-size:150%,150%;
+            background-position:center 9.5%,center 35%;
+            background-repeat: no-repeat;
+            margin-left:0px;
+        }
+    }
 
 
+    .indexStar{
+        width: 100vw;
+        img{
+            position: absolute;
+            z-index: -999;
+            top:10px;
+            left:50%;
+            transform-origin: 50%;
+            // transform: translateX(-30%) rotate(30deg);
+            width: 280%;
+        }
+    }
+
+    .joinPlanet{
+        margin-bottom:0px;
+    }
+
+    .ufo1{
+        width: 20%;
+        display:block;
+        position: absolute;
+        z-index: 0;
+        top:650px;
+        left:150%;
+        transition: .3s;
+        animation:ufo 4s;
+        // opacity: 0;
+        img{
+            width: 100%;
+            display:block;
+        }
+    }
+
+    @keyframes ufo{
+        0%{
+            top:0px;
+            left:50px;
+        }
+        25%{
+            top:200px;
+            left:-100px;
+        }
+        50%{
+            top:400px;
+            left:80%;
+        }
+        75%{
+            top:600px;
+            left:30%;
+        }
+        100%{
+            top:800px;
+            left:100%;
+        }
+    }
+
+
+    .ufo2{
+        width: 20%;
+        display:block;
+        position: fixed;
+        z-index: 0;
+        // top:250px;
+        // right:0;
+        // transition: .3s;
+        img{
+            width: 100%;
+            display:block;
+        }
+    }
+
+
+    
 // MD 結束
 }
