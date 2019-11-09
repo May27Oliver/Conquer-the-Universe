@@ -215,6 +215,7 @@
         document.querySelector(".alertContent").innerText = "確定要取消目前變更的會員資料嗎?";
         $id("alertButton").style.display = "inline-block";//當點擊會員資料更改取消按鈕，叫出alert把alertButton按鈕叫出
         $id("alertEqui").style.display = "none";//當點擊會員資料更改取消按鈕，叫出alert把alertEqui按鈕隱藏
+        $id("alertEquiHand").style.display = "none";
         
     }
 
@@ -266,6 +267,7 @@
         $id("alertWindowWrap").style.display = "block"; //alert視窗跳出
         document.querySelector(".alertContent").innerText = "確定要解除外觀道具嗎?";//改變div文字內容 => .innerText = "自己要呈現的文字內容"  ,querySelector可抓任何一個class id img...
         $id("alertButton").style.display = "none";//當解除道具，叫出alert把alertButton按鈕隱藏
+        $id("alertEquiHand").style.display = "none";
         $id("alertEqui").style.display = "inline-block";//當解除道具，叫出alert把alertEqui按鈕叫出
     }
     function alertRemoveEqui(){
