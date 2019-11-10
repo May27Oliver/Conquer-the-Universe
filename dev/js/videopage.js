@@ -763,4 +763,327 @@ window.addEventListener('load',function(){
         award.style.display="none";
         wrongAns.style.display="block";
     });
+
+    //思辨區影片一問題一答案
+    JtV1P1Ans1.addEventListener('click',function(){
+        award.innerText="了解，您做出不簡單的決定，獲得宇宙幣100元"
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    JtV1P1Ans2.addEventListener('click',function(){
+        award.innerText="了解，您做出不簡單的決定，獲得宇宙幣100元"
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+    //問題二答案
+    JtV1P2Ans1.addEventListener('click',function(){
+        award.innerText="了解，您做出不簡單的決定，獲得宇宙幣100元";
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    JtV1P2Ans2.addEventListener('click',function(){
+        award.innerText="了解，您做出不簡單的決定，獲得宇宙幣100元";
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    //思辨區影片二問題一答案
+    JtV2P1Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    JtV2P1Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    JtV2P1Ans3.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    JtV2P1Ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    //思辨區影片二問題二答案
+    JtV2P2Ans1.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    JtV2P2Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    //思辨區影片三問題一答案
+    JtV3P1Ans1.addEventListener('click',function(){
+        award.innerText="感謝您的答覆，這也是個不容易的決定，恭喜您獲得宇宙幣100元";
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    JtV3P1Ans2.addEventListener('click',function(){
+        award.innerText="感謝您的答覆，這也是個不容易的決定，恭喜您獲得宇宙幣100元";
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    //思辨區影片三問題二答案
+    JtV3P2Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    JtV3P2Ans2.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    JtV3P2Ans3.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    JtV3P2Ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    //思辨區影片四問題一答案
+    JtV4P1Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    JtV4P1Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    JtV4P1Ans3.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    JtV4P1Ans4.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    //思辨區影片四問題二答案
+    JtV4P2Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    JtV4P2Ans2.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    //思辨區影片五問題一答案
+    JtV5P1Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    JtV5P1Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    JtV5P1Ans3.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    JtV5P1Ans4.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    //思辨區影片五問題二答案
+    JtV5P2Ans1.addEventListener('click',function(){
+        award.innerText="了解，您做出不簡單的決定，獲得宇宙幣100元";
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    JtV5P2Ans2.addEventListener('click',function(){
+        award.innerText="了解，您做出不簡單的決定，獲得宇宙幣100元";
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    //美學區影片一問題一答案
+    AsV1P1Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV1P1Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV1P1Ans3.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    AsV1P1Ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+    //美學區影片一問題二答案
+    AsV1P2Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV1P2Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV1P2Ans3.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    AsV1P2Ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+    //美學區影片二問題一答案
+    AsV2P1Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV2P1Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV2P1Ans3.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    AsV2P1Ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+    //美學區影片二問題二答案
+    AsV2P2Ans1.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    AsV2P2Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV2P2Ans3.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV2P2Ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+    //美學區影片三問題一答案
+    AsV3P1Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV3P1Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV3P1Ans3.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    AsV3P1Ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+    //美學區影片三問題二答案
+    AsV3P2Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV3P2Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV3P2Ans3.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV3P2Ans4.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    //美學區影片四問題一答案
+    AsV4P1Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV4P1Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV4P1Ans3.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    AsV4P1Ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+    //美學區影片四問題二答案
+    AsV4P2Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV4P2Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV4P2Ans3.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV4P2Ans4.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+    //美學區影片五問題一答案
+
+    //美學區影片五問題二答案
+
 });
