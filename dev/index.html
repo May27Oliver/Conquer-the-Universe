@@ -11,7 +11,7 @@
 <body class="index_body">
 @@include('./template/header.html')
 @@include('./template/indexAlert.html')
-<script src='js/shop.js'></script>
+<!-- <script src='js/shop.js'></script> -->
 <!-- 最上面 -->
 <div class="indexStar">
     <img src="img/index_img/star.png" alt="">
@@ -223,12 +223,13 @@
     
     <!-- ------贊助商品區------- -->
     <section class="shopContainer">  
-        <div id="shopLightBox" style="display:none">  
-            <img src="../dev/img/" alt="">  
-            <p>確定要購買此項道具?</p>  
-            <span id="addToBackpack">確認</span>
-            <span id="Cancelbtn">取消</span>
-        </div>  
+        <div id="shopBlack" style="display:none;">
+            <div id="shopLightBox" style="display:none;">     
+                <p>確定要購買此項道具?</p>  
+                <span id="addToBackpack">確認</span>
+                <span id="Cancelbtn">取消</span>
+            </div>
+         </div>  
         <div class="shoptitle">
         <h2>贊助候選人</h2>
         </div>
