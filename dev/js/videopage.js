@@ -76,7 +76,9 @@ window.addEventListener('load',function(){
         justiceProblem.style.display="none";
         aestheticeProblem.style.display="none";
         fnProblems1[0].style.display="block";
-
+        fnProblems1[1].style.display="none";
+        award.style.display="none";
+        wrongAns.style.display="none";
     });
     JtButton.addEventListener('click',function(){
         bigVideo.src="https://www.youtube.com/embed/sHHa4ETr2jE";
@@ -85,8 +87,11 @@ window.addEventListener('load',function(){
         As.style.display="none";
         financeProblem.style.display="none";
         justiceProblem.style.display="";
-        aestheticProblem.style.display="none";
+        aestheticeProblem.style.display="none";
         JtProblems1[0].style.display="block";
+        JtProblems1[1].style.display="none";
+        award.style.display="none";
+        wrongAns.style.display="none";
     });
     AsButton.addEventListener('click',function(){
         bigVideo.src="https://www.youtube.com/embed/-Kg1FNo11r0";
@@ -95,8 +100,11 @@ window.addEventListener('load',function(){
         As.style.display="";
         financeProblem.style.display="none";
         justiceProblem.style.display="none";
-        aestheticProblem.style.display="";
+        aestheticeProblem.style.display="";
         AsProblems1[0].style.display="block";
+        AsProblems1[1].style.display="none";
+        award.style.display="none";
+        wrongAns.style.display="none";
     });
 
     // video slider功能，點下去出現大video
@@ -501,55 +509,55 @@ window.addEventListener('load',function(){
     let JtV5P2Ans3=$id("JtVideo5-problem2Ans3");
     let JtV5P2Ans4=$id("JtVideo5-problem2Ans4");
 
-    let AsV1P1Ans1=$id("JtVideo1-problem1Ans1");
-    let AsV1P1Ans2=$id("JtVideo1-problem1Ans2");
-    let AsV1P1Ans3=$id("JtVideo1-problem1Ans3");
-    let AsV1P1Ans4=$id("JtVideo1-problem1Ans4");
+    let AsV1P1Ans1=$id("AsVideo1-problem1Ans1");
+    let AsV1P1Ans2=$id("AsVideo1-problem1Ans2");
+    let AsV1P1Ans3=$id("AsVideo1-problem1Ans3");
+    let AsV1P1Ans4=$id("AsVideo1-problem1Ans4");
 
-    let AsV1P2Ans1=$id("JtVideo1-problem2Ans1");
-    let AsV1P2Ans2=$id("JtVideo1-problem2Ans2");
-    let AsV1P2Ans3=$id("JtVideo1-problem2Ans3");
-    let AsV1P2Ans4=$id("JtVideo1-problem2Ans4");
+    let AsV1P2Ans1=$id("AsVideo1-problem2Ans1");
+    let AsV1P2Ans2=$id("AsVideo1-problem2Ans2");
+    let AsV1P2Ans3=$id("AsVideo1-problem2Ans3");
+    let AsV1P2Ans4=$id("AsVideo1-problem2Ans4");
 
-    let AsV2P1Ans1=$id("JtVideo2-problem1Ans1");
-    let AsV2P1Ans2=$id("JtVideo2-problem1Ans2");
-    let AsV2P1Ans3=$id("JtVideo2-problem1Ans3");
-    let AsV2P1Ans4=$id("JtVideo2-problem1Ans4");
+    let AsV2P1Ans1=$id("AsVideo2-problem1Ans1");
+    let AsV2P1Ans2=$id("AsVideo2-problem1Ans2");
+    let AsV2P1Ans3=$id("AsVideo2-problem1Ans3");
+    let AsV2P1Ans4=$id("AsVideo2-problem1Ans4");
 
-    let AsV2P2Ans1=$id("JtVideo2-problem2Ans1");
-    let AsV2P2Ans2=$id("JtVideo2-problem2Ans2");
-    let AsV2P2Ans3=$id("JtVideo2-problem2Ans3");
-    let AsV2P2Ans4=$id("JtVideo2-problem2Ans4");
+    let AsV2P2Ans1=$id("AsVideo2-problem2Ans1");
+    let AsV2P2Ans2=$id("AsVideo2-problem2Ans2");
+    let AsV2P2Ans3=$id("AsVideo2-problem2Ans3");
+    let AsV2P2Ans4=$id("AsVideo2-problem2Ans4");
 
-    let AsV3P1Ans1=$id("JtVideo3-problem1Ans1");
-    let AsV3P1Ans2=$id("JtVideo3-problem1Ans2");
-    let AsV3P1Ans3=$id("JtVideo3-problem1Ans3");
-    let AsV3P1Ans4=$id("JtVideo3-problem1Ans4");
+    let AsV3P1Ans1=$id("AsVideo3-problem1Ans1");
+    let AsV3P1Ans2=$id("AsVideo3-problem1Ans2");
+    let AsV3P1Ans3=$id("AsVideo3-problem1Ans3");
+    let AsV3P1Ans4=$id("AsVideo3-problem1Ans4");
     
-    let AsV3P2Ans1=$id("JtVideo3-problem2Ans1");
-    let AsV3P2Ans2=$id("JtVideo3-problem2Ans2");
-    let AsV3P2Ans3=$id("JtVideo3-problem2Ans3");
-    let AsV3P2Ans4=$id("JtVideo3-problem2Ans4");
+    let AsV3P2Ans1=$id("AsVideo3-problem2Ans1");
+    let AsV3P2Ans2=$id("AsVideo3-problem2Ans2");
+    let AsV3P2Ans3=$id("AsVideo3-problem2Ans3");
+    let AsV3P2Ans4=$id("AsVideo3-problem2Ans4");
 
-    let AsV4P1Ans1=$id("JtVideo4-problem1Ans1");
-    let AsV4P1Ans2=$id("JtVideo4-problem1Ans2");
-    let AsV4P1Ans3=$id("JtVideo4-problem1Ans3");
-    let AsV4P1Ans4=$id("JtVideo4-problem1Ans4");
+    let AsV4P1Ans1=$id("AsVideo4-problem1Ans1");
+    let AsV4P1Ans2=$id("AsVideo4-problem1Ans2");
+    let AsV4P1Ans3=$id("AsVideo4-problem1Ans3");
+    let AsV4P1Ans4=$id("AsVideo4-problem1Ans4");
 
-    let AsV4P2Ans1=$id("JtVideo4-problem2Ans1");
-    let AsV4P2Ans2=$id("JtVideo4-problem2Ans2");
-    let AsV4P2Ans3=$id("JtVideo4-problem2Ans3");
-    let AsV4P2Ans4=$id("JtVideo4-problem2Ans4");
+    let AsV4P2Ans1=$id("AsVideo4-problem2Ans1");
+    let AsV4P2Ans2=$id("AsVideo4-problem2Ans2");
+    let AsV4P2Ans3=$id("AsVideo4-problem2Ans3");
+    let AsV4P2Ans4=$id("AsVideo4-problem2Ans4");
 
-    let AsV5P1Ans1=$id("JtVideo5-problem1Ans1");
-    let AsV5P1Ans2=$id("JtVideo5-problem1Ans2");
-    let AsV5P1Ans3=$id("JtVideo5-problem1Ans3");
-    let AsV5P1Ans4=$id("JtVideo5-problem1Ans4");
+    let AsV5P1Ans1=$id("AsVideo5-problem1Ans1");
+    let AsV5P1Ans2=$id("AsVideo5-problem1Ans2");
+    let AsV5P1Ans3=$id("AsVideo5-problem1Ans3");
+    let AsV5P1Ans4=$id("AsVideo5-problem1Ans4");
 
-    let AsV5P2Ans1=$id("JtVideo5-problem2Ans1");
-    let AsV5P2Ans2=$id("JtVideo5-problem2Ans2");
-    let AsV5P2Ans3=$id("JtVideo5-problem2Ans3");
-    let AsV5P2Ans4=$id("JtVideo5-problem2Ans4");
+    let AsV5P2Ans1=$id("AsVideo5-problem2Ans1");
+    let AsV5P2Ans2=$id("AsVideo5-problem2Ans2");
+    let AsV5P2Ans3=$id("AsVideo5-problem2Ans3");
+    let AsV5P2Ans4=$id("AsVideo5-problem2Ans4");
 
     let award=$id("award");
     let wrongAns=$id("wrongAns");
@@ -1074,16 +1082,52 @@ window.addEventListener('load',function(){
     });
 
     AsV4P2Ans3.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    AsV4P2Ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+    //美學區影片五問題一答案
+    AsV5P1Ans1.addEventListener('click',function(){
+        award.style.display="block";
+        wrongAns.style.display="none";
+    });
+
+    AsV5P1Ans2.addEventListener('click',function(){
         award.style.display="none";
         wrongAns.style.display="block";
     });
 
-    AsV4P2Ans4.addEventListener('click',function(){
+    AsV5P1Ans3.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV5P1Ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+    //美學區影片五問題二答案
+    AsV5P2Ans1.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV5P2Ans2.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
+
+    AsV5P2Ans3.addEventListener('click',function(){
         award.style.display="block";
         wrongAns.style.display="none";
     });
-    //美學區影片五問題一答案
 
-    //美學區影片五問題二答案
-
+    AsV5P2Ans4.addEventListener('click',function(){
+        award.style.display="none";
+        wrongAns.style.display="block";
+    });
 });
