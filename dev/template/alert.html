@@ -8,119 +8,124 @@
 	<title>alert樣式修改</title>
     <style>
      #alertWindowWrap {
-        justify-content: center;
-        align-items: center;
+        background: rgba(0, 0, 0, .5);
+        width: 100vw;
+        height: 100%;
         position: fixed;
         top: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index:999; 
-    }
-    .alertWindow {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        width: 25%;
-        min-width: 350px;
-        max-width: 400px;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: #fff;
-        color: #333;
-        z-index: 999;
-        text-align: center; 
-        position: absolute;
-        top: 0;
         left: 0;
-        bottom: 0;
-        right: 0;
-        margin: auto;
-        height: 200px;
+        z-index: 999;
+        display: none;
+     }
+    .alertWindow {
+        width: 300px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
     }
-     .alertWindow .alertTitle {
+    .alertWindow h2{
+        font-size: 1em;
+        text-align: center;
+        background: #fcd93d;
+        padding: 20px;
+        margin: 0;
+        border-radius: 10px 10px 0 0;
+    }
+    .alertTextBox{
+        background: #FEF7D4;
+        border-radius: 0 0 10px 10px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .alertWindow .alertTitle {
         font-size: 32px; 
     }
     .alertWindow .alertContent {
         font-size: 20px;
-        line-height: 1.2;
+        line-height: 1.5;
         padding: 20px 0; 
     }
-    .alertWindow .closeWrap {
-        height: 38px; 
-    }
+  
     .alertWindow #alertButton {
         position: relative;
         cursor: pointer;
         display: inline-block;
         border-radius: 20px;
-        color: #b78100;
+        /* color: #b78100;
         border:1px solid #b78100;
-        background: #ffd584;
+        background: #ffd584; */
+        background: #fcd93d;
         padding: 9px 20px 9px 20px;
         margin: 10px;
+    }
+    #alertButton:hover{
+        opacity: .8;
     }
     .alertWindow #alertEqui {
         position: relative;
         cursor: pointer;
         display: inline-block;
         border-radius: 20px;
-        color: #b78100;
-        border:1px solid #b78100;
-        background: #ffd584;
+        /* color: #b78100;
+        border:1px solid #b78100;    
+        background: #ffd584; */
+        background: #fcd93d;
         padding: 9px 20px 9px 20px;
         margin: 10px;
+    }
+    #alertEqui:hover{
+        opacity: .8;
     }
     .alertWindow #alertEquiHand {
         position: relative;
         cursor: pointer;
         display: inline-block;
         border-radius: 20px;
-        color: #b78100;
+        /* color: #b78100;
         border:1px solid #b78100;
-        background: #ffd584;
+        background: #ffd584; */
+        background: #fcd93d;
         padding: 9px 20px 9px 20px;
         margin: 10px;
+    }
+    #alertEquiHand:hover{
+        opacity: .8;
     }
    .alertWindow #cancelButton{
         position: relative;
         cursor: pointer;
         display: inline-block;
         border-radius: 20px;
-        color: #b78100;
+        /* color: #b78100;
         border:1px solid #b78100;
-        background: #ffd584;
-        opacity: .8;
+        background: #ffd584; */
+        background: #fcd93d;
+        /* opacity: .8; */
         padding: 9px 20px 9px 20px;
         margin: 10px;
         font-weight: 900;
         font-weight: 500;
     }
+    #cancelButton:hover{
+        opacity: .8;
+    }
     
-     
-    .alertWindow .alertClose:after {
-        transform: rotate(-45deg); 
-    }
-    .alertWindow .alertClose:hover {
-        background-color: #ccc; 
-    }
     </style>
 	
 </head>
 <body>
     <div id="alertWindowWrap" style="display: flex; display: none;">
         <div class="alertWindow">
-            <h3 class="alertTitle" style="color: red;">注意</h3>
-            <div class="alertContent">哈哈，請自行利用js程式更改自己的訊息，程式寫法在下方註解</div>
-            <div class="closeWrap">
+            <h2 class="alertTitle">系統訊息</h2>
+            <div class="alertTextBox">
+                <p class="alertContent">哈哈，請自行利用js程式更改自己的訊息，程式寫法在下方註解</p>       
                 <div id="alertButton">確認</div>
                 <div id="alertEqui" style="display: none;">確認</div>
                 <div id="alertEquiHand" style="display: none;">確認</div>
                 <div id="cancelButton">取消</div>
             </div>
-            <div class="alertClose"></div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
