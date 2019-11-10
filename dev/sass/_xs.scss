@@ -2063,7 +2063,7 @@
     margin: 15vw auto;
     #fn-video-button,#Jt-video-button,#As-video-button{
         background-color: #1d2088;
-
+        cursor: pointer;
         &:hover {
             background-color: lighten(#1d2088, 10%);
         }
@@ -2141,6 +2141,7 @@
             justify-content: space-evenly;
             align-items: center;
             li{
+                cursor: pointer;
                 width: 25%;
                 height: 16vw;
                 line-height: 20vw;
@@ -2218,6 +2219,7 @@
     }
 
     li {
+        cursor: pointer;
         border: transparent 2px solid;
         padding: 2vw 0;
         line-height: 1.6;
@@ -2272,7 +2274,8 @@
             color: white;
             padding: 5px 18px;
             box-shadow: 0px 0px 20px #fff;
-            border-radius: 20px;
+            border-radius: 20px;            
+            cursor: pointer;
             border: none;
 
             &:hover {
