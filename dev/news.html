@@ -6,23 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-
     <!-- 分頁 -->
-    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>  
+  <script type="text/javascript" src="js/jquery-1.8.3.js"></script>  
   <script type="text/javascript" src="js/jquery.pagination.js"></script>
-
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <title>宇宙星聞 - 征服宇宙</title>
-    
+    @@include('./template/CDN.html')
 </head>
 <body class="news">
-        @@include('./template/header.html')
-
-
-
-
-
+  @@include('./template/header.html')
         <div class="newstitle">
             <!-- <img src="img/UFO.png" alt=""> -->
                     <h1>宇宙新聞</h1>
@@ -32,22 +25,28 @@
 
 
         <!---------- 新聞表單 ---------->
-	<div class="fakeNewsLanuch container">
+
+        
+	<div class="fakeNewsLanuch">
         <div class="ufo">
 
             <!-- <img class="uu" src="img/UFO.png" alt=""> -->
             
         </div>
 		<h2>發佈新聞</h2>
-		<form method="POST" action="fakeNewsLanuch.php">
-			<p>使用對象：
-				<label for="planetA">星球A</label>
-				<input type="radio" name="planet" id="planetA">
-				<label for="planetB">星球B</label>
-				<input type="radio" name="planet" id="planetB">
-				<label for="planetC">星球C</label>
-				<input type="radio" name="planet" id="planetC">
-			</p>
+		<form name="MakeNews">
+        <div class="selectmenu">
+          <p>作用星球:
+            <input type="radio" id="starA" name="Planet">
+            <label for="starA">派大星</label>
+          
+            <input type="radio" id="starB" name="Planet">
+            <label for="starB">肥宅星</label>
+          
+            <input type="radio" id="starC" name="Planet">
+            <label for="starC">兔兔星</label>
+          </p>
+          </div>
 			<p>支持度基礎值：
 				<select>
 					<option>請選擇</option>
@@ -59,19 +58,19 @@
 					<option>-200</option>
 				</select>
 			</p>
-			<p>新聞標題：<input type="text" maxlength="20" placeholder="最多輸入10個中文字"></p>
-			<p>新聞內容：<textarea maxlength="240" placeholder="最多輸入120個中文字"></textarea></p>
-			<button type="submit">送出(<span>$100</span>)</button>
+			<p>新聞標題：<input type="text" maxlength="20" placeholder="最多輸入10個中文字" name="title"></p>
+			<p>新聞內容：<textarea maxlength="240" placeholder="最多輸入120個中文字" name="content"></textarea></p>
+			<button type="submit" onclick="check()">送出(<span>$100</span>)</button>
 		</form>
 	</div>
 
          <!-- 跳窗 -->
-           <div id="newsWindowWrap">
-            <div class="newsWindow">
+           <div id="newsWindowWrap" style="display: none;">
+            <div class="newsWindow" >
               <div class="newsWindowLeft">
                   <div class="newsTOP">
                       <h2>這裡是標題</h2>
-                      <h3>剩餘時間: <span>20小時48分07秒</span> </h3>
+                      <h3>剩餘時間: <span></span> </h3>
                   </div>
   
                 <img src="img/trueNews.png" alt="">
@@ -86,16 +85,16 @@
   
               </div>
   
-                <div class="newsWindoRight">
+                <div class="newsWindoRight" id="newsWindoRight">
                     
                   
-                    <h2>留言</h2>
+                    <!-- <h2>留言</h2> -->
                     <div class="newsMsgAll">
                       
                       <div class="newsMsgitem">
                         <div class="newsMsgID">
                           <h3>玩家ID:是這樣嗎</h3>
-                          <p>2019/11/08 10:41</p>
+                          <p> </p>
                         </div>
                        <div class="newsMsgBox">
                          <p>我覺得不行1</p>
@@ -158,8 +157,10 @@
                       </div> -->
                     </div>
   
-                    <div class="newsTalk">
+                    <div class="newsTalk" id="newsTalk">
                       <input maxlength="240" placeholder="我有話要說">
+
+                      <!-- <input type="text" @keyup.enter="addTask" v-model="newTask"> -->
                       <button>送出</button>
                      
                     </div>
@@ -213,9 +214,9 @@
                           <img src="img/trueNews.png" alt="">
                          </div>
                        <div class="newsText">
-                           <div class="newsTOP">
+                           <div class="newsTOP" id="app">
                                <h2>這裡是標題</h2>
-                               <h3>剩餘時間: <span>11小時07分08秒</span> </h3>
+                               <h3>剩餘時間: <span>{{ `${day}天 ${hr}時 ${min}分 ${sec}秒` }}</span> </h3>
                            </div>
                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut adipisci voluptatum fuga magni ad perferendis qui officiis unde ipsam provident tempora suscipit tempore, cumque doloribus, quibusdam pariatur a magnam quod?</p>
                          <div class="newsBtnAll">
@@ -248,7 +249,7 @@
                                <p>獨眼星總支持度-30</p>
                              <div class="newsBtnAll">
                               <div class="newsBtn">                       
-                                <button id="bt1"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan id="add">16</SPan></button>
+                                <button id="bt1"  @click="num++"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan>{{num}}</SPan></button>
                                 <button id="bt2"><i class="fa fa-thumbs-down" aria-hidden="true"></i><SPan>17</SPan></button>
                                 <button id="bt3" onclick="showDiscuss()"><i class="fa fa-comments" aria-hidden="true"></i><SPan>19</SPan></button>
                            
@@ -366,47 +367,128 @@ function CheckForm()
 </script>
   <!-- 時間倒數 -->
   <script type="text/javascript">
-    var countdownnumber=5;
-    var countdownid,x;
-    function initial(){
-      x=document.getElementById("countdown");
-      x.innerHTML=countdownnumber;
-      countdownnumber--;
-      countdownid=window.setInterval(countdownfunc,1000);
+   new Vue({
+  el: '#app',
+  data: function () {
+    return {
+      day: 0, hr: 0, min: 0, sec: 0
     }
-    function countdownfunc(){ 
-      x.innerHTML=countdownnumber;
-      if (countdownnumber==0){
-        alert("倒數結束");
-        clearInterval(countdownid);
-      }
-      countdownnumber--;
+  },
+  mounted: function () {
+    this.countdown()
+  },
+  methods: {
+    countdown: function () {
+      const end = Date.parse(new Date('2019-11-26'))
+      const now = Date.parse(new Date())
+      const msec = end - now
+      let day = parseInt(msec / 1000 / 60 / 60 / 24)
+      let hr = parseInt(msec / 1000 / 60 / 60 % 24)
+      let min = parseInt(msec / 1000 / 60 % 60)
+      let sec = parseInt(msec / 1000 % 60)
+      this.day = day
+      this.hr = hr > 9 ? hr : '0' + hr
+      this.min = min > 9 ? min : '0' + min
+      this.sec = sec > 9 ? sec : '0' + sec
+      const that = this
+      setTimeout(function () {
+        that.countdown()
+      }, 1000)
     }
-    </script>
-
-<script type="text/javascript">
-
-//設定倒數秒數
-var t = 10;
-
-//顯示倒數秒收
-function showTime()
-{
-    t -= 1;
-    document.getElementById('div1').innerHTML= t;
-    
-    if(t==0)
-    {
-        location.href='http://www.dotblogs.com.tw/puma/';
-    }
-    
-    //每秒執行一次,showTime()
-    setTimeout("showTime()",1000);
-}
-
-//執行showTime()
-showTime();
+  }
+})
 </script>
+
+<script>
+  new Vue({
+      el: '#',
+      data: {
+          message: 'Hello, VueJS!',
+      },
+      methods: { 
+      },
+      computed: {     //計算屬性
+                today: function(){
+                    let now = new Date();
+                    return now;
+                },
+            },
+  });
+</script>
+
+<!-- 抓時間 -->
+<script>
+  var padDate = function (value) {  
+    return value<10?'0'+value:value;
+  };
+  var time = new Vue({
+      el:'#newsTOP',
+      data:{
+          date:new Date() 
+      },
+      filters:{  
+          formatDate:function (value) {   
+              var date = new Date();
+              var year = date.getFullYear();
+              var month = padDate(date.getMonth()+1);
+              var day = padDate(date.getHours());
+              var hours = padDate(date.getHours());
+              var minutes = padDate(date.getMinutes());
+              var seconds = padDate(date.getSeconds());
+             
+              return year+'-'+month+'-'+day+' '+hours+':'+minutes+':'+seconds;
+          }
+      },
+      mounted: function () {  
+          var _this = this;   
+          this.timer = setInterval(function () {
+              _this.date = new Date();   
+          },1000);
+      },
+      beforeDestory:function () { 
+          if (this.timer){
+              clearInterval(this.timer);  
+          }
+      }
+  })
+</script>
+<!-- 抓時間end -->
+
+<script>
+  new Vue({
+      el: '#bt1',
+      data: {
+        message: '',
+        num: 0,
+      },
+  });
+</script>
+
+<!-- 表單判定 -->
+<script type="text/javascript">
+  // <!-- 此check()函式在最後的「傳送」案鈕會用到 -->
+   function check()
+   {
+           if(!MakeNews.Planet[0].checked && !MakeNews.Planet[1].checked&& !MakeNews.Planet[2].checked) 
+           {
+            alert("請選擇星球");
+           }
+         
+           else if(MakeNews.content.value == "")
+           {
+                   alert("請輸入新聞內容");
+           }
+          
+           else if(MakeNews.title.value == "")
+           {
+            alert("請輸入標題");
+           }
+          
+           else reg.submit();
+    }
+</script>
+
+<!-- 判定end -->
 
 
 </body>
