@@ -231,28 +231,7 @@
             color: white;
         }
     }
-//商品業內頁的燈箱
-    #shopLightBox{
-        color: #FFF;
-        background-color: #E8B51C;
-        margin: 0 auto;
-        border-radius: 10px;
-        position: absolute;
-        top: calc(25% - 100px);
-        right: calc(50% - 100px);
-        z-index: 1;
-        width: 200px;
-        height: 150px;
-        p{
-            margin: 30px auto 30px;
-        }
-        span{
-            padding: 5px 10px 5px 10px;
-            margin: 20px;
-            background-color: #a6bfd0;
-            border-radius: 5px;
-        }
-    }
+   
 // ---------------------以上為商品贊助區-----------------------
 
     // .slider{

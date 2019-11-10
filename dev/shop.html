@@ -16,16 +16,20 @@
 
 <section class="shopContainer">  
 <!-- --------------------服裝道具---------------------- -->
-    <div id="shopLightBox" style="display:none">  
-        <img src="../dev/img/" alt="">  
-        <p>確定要購買此項道具?</p>  
-        <span id="addToBackpack">確認</span>
-        <span id="Cancelbtn">取消</span>
-    </div> 
+    
     <div class="shoptitle">
         <h2>贊助候選人</h2>
     </div>
-    <div id="boxForDisappear">
+
+
+ <div id="shopBlack" style="display:none;">
+    <div id="shopLightBox" style="display:none;">     
+        <p>確定要購買此項道具?</p>  
+        <span id="addToBackpack">確認</span>
+        <span id="Cancelbtn">取消</span>
+    </div>
+ </div>
+    <div id="boxForDisappear">        
         <div class="toolTitle02">
             <h2>
                 服裝道具
@@ -37,17 +41,16 @@
         <div id="productBox" class="productBox">
             <div class="model">
                 <img class="pic01" src="img/rabbit.png"" alt="">
-            </div>
-            
+            </div>      
             <div class="boxForProduct">
-                    <div class="toolTitle">
-                        <h3>
-                            服裝道具
-                        </h3>
-                        <span>
-                            購買服裝道具可以增加候選人支持度
-                        </span>
-                    </div>
+                <div class="toolTitle">
+                    <h3>
+                        服裝道具
+                    </h3>
+                    <span>
+                        購買服裝道具可以增加候選人支持度
+                    </span>
+                </div>
                     <div class="col-6">
                             <div class="productPic">
                                 <img id="shopPic1" src="img/shopPic1.png"" alt="">
@@ -95,6 +98,7 @@
                         </div>  
                     </div>
             </div> 
+        </div> 
     </div>
       <!-- -------------------新聞道具區-------------------  -->
       <div class="toolTitle03">
@@ -133,44 +137,68 @@
             </form>
         </div>             
         <div class="clearboth"></div>
-    <!-- -------------------扭蛋區------------------ -->
+ <!-- -------------------扭蛋區------------------ -->
         <div class="toolTitle04">
-                <h2>
-                    新聞集錦
-                </h2>
-                <span>
-                    購買新聞道具之後可以張貼至討論區，經由玩家案讚或按噓，候選人的支持度就會增加或減少
-                </span>
+            <h2>
+                事件扭蛋機
+            </h2>
+            <span>
+                玩家可以花費$100宇宙幣抽出隨機事件,可以增加或減少候選人支持度
+            </span>
         </div>
-        <div class="event">
-            <div id="trashLightBox" style="opacity:0;" class="trash">
-                <div class="trashPic">
+        <div class="eventgashapon">
+            <div id="trashLightBox" class="trash" style="display:none;"><!---扭蛋事件燈箱-->
+                <div class="trashPic">  
                     <img src="img/trash.png" alt="">
                 </div>
                 <h2>肥仔星候選人亂丟垃圾!!</h2>
                 <span>支持度-10</span>
                 <div id="trashLightBoxBtn">
-                    <p>
-                      確認
-                    </p>
+                    <p>確認</p>
                 </div>
+            </div>        
+            <div id="event02" class="gashapon">  <!--扭蛋動態----->
+                <img class="gashaponPic" src="img/gashapon/empty.png" alt="">
+            
+                    <div class="gashaponPic01">
+                        <img src="img/gashapon/blue.png" alt="">
+                    </div>
+                    <div class="gashaponPic02">
+                        <img src="img/gashapon/red.png" alt="">
+                    </div>
+                    <div class="gashaponPic03">
+                        <img src="img/gashapon/orange.png" alt="">
+                    </div>
+                    <div class="gashaponPic04">
+                        <img src="img/gashapon/green.png" alt="">
+                    </div>
+                    <div class="gashaponPic05">
+                        <img src="img/gashapon/pink.png" alt="">
+                    </div>
+                    <div class="gashaponPic06">
+                        <img src="img/gashapon/navy.png" alt="">
+                    </div>
+                    <div class="gashaponPic07">
+                        <img src="img/gashapon/yellow.png" alt="">
+                    </div>
+                    
+            </div>       
+            <div id="gashaponLightBox" style="display:none;">     <!--燈箱-->
+                <p>確定要花費$100購買事件扭蛋嗎?</p>  
+                <span id="gashaponEvent">確認</span>
+                <span id="cancelEvent">取消</span>
             </div>
-            <div id="event" class="gashapon">
-                <img class="gashaponPic"src="img/gashapon.png" alt="">
+
+            <div id="gashaponBtn" class="boxfora">  <!---觸發按鈕-->
+                <a id="eventButton">按下去</a>   
             </div>
-            <div id="gashaponBtn" class="boxfora">
-				<a id="eventButton">按下去</a>
-		    </div>
-        </div>
-  
-    </div>
-
-
+        </div>  <!---event-->   
 
 </section>      
-  
+    <canvas id="starShine"></canvas>
     <!-------------------- 頁尾 -------------------->
     @@include('template/footer.html')
+    <script src="js/starsShine.js"></script>
   
 	<!-- <script src="js/script.js"></script> -->
 </body>
