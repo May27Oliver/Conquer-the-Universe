@@ -2688,6 +2688,7 @@ div.slider {
         margin: 0 auto;
         .newsTOP{
             padding-left: 20px;
+            cursor: pointer;
             // text-align: center;
         }
         
@@ -2714,11 +2715,13 @@ div.slider {
     border-top: 5px solid #E8B51C;
     width: 80%;
     margin: 50px auto;
+    
 
     .newsBtn {
         margin-bottom: 20px;
         margin-top: 30px;
         display: flex;
+        
 
         button {
             color: #FFF;
@@ -2726,6 +2729,7 @@ div.slider {
             border: none;
             background: none;
             display: inline-block;
+            cursor: pointer;
 
             .fa {
                 color: #E8B51C;
@@ -2752,6 +2756,7 @@ div.slider {
         position: absolute;
         right: 20px;
         top: 18px;
+        cursor: pointer;
         // border-radius: 5px;
         // width: 70px;
         // height: 30px;
@@ -2845,6 +2850,8 @@ input,textarea{
     vertical-align: top;
     padding: 5px;
     margin-left: 5px;
+    height: 80px;
+    width: 80%;
     box-sizing: border-box;
 }
 label{
@@ -2860,9 +2867,11 @@ label{
 
 select{
     width: 25%;
+    height: 40px;
     font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
     border: none;
-    border-radius: 2px;
+    font-size: 16px;
+    border-radius: 4px;
 }
 
 button{
@@ -2876,6 +2885,7 @@ button{
     margin: 35px auto 0;
     border: none;
     border-radius: 20px;
+    cursor: pointer;
 }
 }
 
