@@ -2329,6 +2329,12 @@
     display: none;
 }
 
+//公民小學堂星空背景
+#starShine{
+    position: absolute;
+    z-index: -2;
+}
+
 // footer
 .footer {
     background: black;

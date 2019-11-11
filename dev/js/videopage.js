@@ -174,6 +174,8 @@ window.addEventListener('load',function(){
         });
 
         JtVideos[i].addEventListener('click',function(e){
+            award.style.display="none";
+            wrongAns.style.display="none";
             JtProblems1[0].style.display="block";
             JtProblems1[1].style.display="none";
             JtProblems2[0].style.display="block";
@@ -234,6 +236,8 @@ window.addEventListener('load',function(){
         });
 
         AsVideos[i].addEventListener('click',function(e){
+            award.style.display="none";
+            wrongAns.style.display="none";
             AsProblems1[0].style.display="block";
             AsProblems1[1].style.display="none";
             AsProblems2[0].style.display="block";
@@ -561,14 +565,14 @@ window.addEventListener('load',function(){
 
     let award=$id("award");
     let wrongAns=$id("wrongAns");
-    
+    // let fnV1P1A = document.querySelectorAll(".fnVideo1-problem li");//抓每個題目的四個選項
     // 財經影片一第一題解答
     fnV1P1Ans1.addEventListener('click',function(){
         award.style.display="none";
         wrongAns.style.display="block";
     });
 
-    fnV1P1Ans2.addEventListener('click',function(){
+    fnV1P1Ans2.addEventListener('click',function(e){
         award.style.display="none";
         wrongAns.style.display="block";
     });
