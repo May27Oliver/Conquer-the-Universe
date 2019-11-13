@@ -1,3 +1,9 @@
+window.addEventListener('load',function(){
+   new CountUp("pie",0,6666).start();
+   new CountUp("fatty",0,6666).start();
+   new CountUp("peter",0,6666).start();
+});
+
 console.log('star');
 
  TweenMax.to('.rabbit', 1,{
@@ -19,6 +25,16 @@ console.log('star');
 
  //公民的家
  TweenMax.to('.boxCenter img', 2,{
+   y: -30,
+   repeat: -1, //-1無限迴圈,
+   yoyo: true
+})
+TweenMax.to('.EquiClose1', 2,{
+   y: -30,
+   repeat: -1, //-1無限迴圈,
+   yoyo: true
+})
+TweenMax.to('.EquiClose2', 2,{
    y: -30,
    repeat: -1, //-1無限迴圈,
    yoyo: true
