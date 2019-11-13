@@ -86,12 +86,11 @@ window.addEventListener('load',function(){
         img.src = document.getElementById("shopPic1").src;
       }
       function loadImage02(){
-          
+        
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d"); 
         var img = new Image();
         img.onload = function(){
-           
           ctx.drawImage(img,150,120,100,85);
         }
         img.src = document.getElementById("shopPic2").src;
