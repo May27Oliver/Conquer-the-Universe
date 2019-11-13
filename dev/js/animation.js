@@ -2,6 +2,10 @@ window.addEventListener('load',function(){
    new CountUp("pie",0,6666).start();
    new CountUp("fatty",0,6666).start();
    new CountUp("peter",0,6666).start();
+   new CountUp("winPoint_1",0,6666).start();
+   new CountUp("winPoint_2",0,6666).start();
+   new CountUp("winPlanet_3",0,6666).start();
+
 });
 
 console.log('star');
