@@ -8,6 +8,7 @@
     <title>征服宇宙</title>
 </head>
 <script src="js/skrollr.js"></script>
+<script src='js/shop.js'></script>
 <body class="index_body">
 @@include('./template/header.html')
 @@include('./template/indexAlert.html')
@@ -236,19 +237,21 @@
         <div id="boxForDisappear">
         <div id="productBox" class="productBox">
             <div class="model">
-                <img class="pic01" src="img/rabbit.png"" alt="">
+                    <canvas id="myCanvas" width="300" height="600">     
+                        </canvas>
+                <img class="rabbitPic" src="img/rabbit.png"" alt="">
             </div>
             <div class="boxForProduct">
                 <div class="col-6">
                         <div class="productPic">
-                            <img id="shopPic1" src="img/shopPic1.png"" alt="">
+                                <img id="shopPic1" src="img/shopPic1.png" width="128" onclick="loadImage()"/>
                         </div>
                         <div class="productTitle">
                             <h3>
                             聰明棒球帽
                             </h3>
                             <div class="productBtn">
-                                <h2 id="shopSpanLogin" >$100</h2>
+                                <button id="shopSpanLogin" >$100</button>
                             </div>
                         </div>  
                 </div>
@@ -259,7 +262,7 @@
                     <div class="productTitle">
                         <h3>親和力面具</h3>
                         <div class="productBtn">
-                            <h2 id="shopSpanLogin" >$100</h2>
+                            <button id="shopSpanLogin" >$100</button>
                         </div>
                     </div>  
                 </div>
@@ -270,7 +273,7 @@
                     <div class="productTitle">
                         <h3>口才大聲公</h3>
                         <div class="productBtn">
-                            <h2 id="shopSpanLogin">$100</h2>
+                            <button id="shopSpanLogin" >$100</button>
                         </div>
                         </div>  
                 </div>
@@ -281,7 +284,7 @@
                     <div class="productTitle">
                         <h3>人氣氣球</h3>
                         <div class="productBtn">
-                            <h2 id="shopSpanLogin">$100</h2>
+                            <button id="shopSpanLogin" >$100</button>
                         </div>
                     </div>  
                 </div>
