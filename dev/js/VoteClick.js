@@ -26,7 +26,7 @@ window.addEventListener("load",function(){
     let voteCancel = $classes(".voteCancel");
     let voteOkay = $classes(".voteOkay");
     let report = $classes(".report");
-    let voteDoingNotice = $class(".voteDoingNotice");
+    let voteDoingNotice = $classes(".voteDoingNotice");
     let voteDidNotice = $class(".voteDidNotice");
     let voteReportMessage = $class(".voteReportMessage");
     let voteAddingSubmit = $class(".voteAddingSubmit");
@@ -81,15 +81,13 @@ window.addEventListener("load",function(){
 
     //變動數據
     function changeData(a,b){
-        // console.log(prosNum);
-        // console.log(consNum);
         // 隨機資料
         for(var i=0;i<ctx.length;i++){
             // var randomNum=Math.floor(Math.random() *100) + 1;
             
         //將隨機資料載入至圖表中
         // pieChart[i].data.datasets[0].data=[randomNum,100-randomNum];
-        pieChart[i].data.datasets[0].data=[prosNum[i],consNum[i]];
+        pieChart[i].data.datasets[0].data=[prosNum,consNum];
         
         //更新
         pieChart[i].update();
@@ -121,7 +119,7 @@ window.addEventListener("load",function(){
 
         //------[顯示] 確認視窗跳出 ------//
         voteNo[i].onclick = function(){
-            voteDoingNotice.innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
+            voteDoingNotice[i].innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
             voteAddingSubmit.style.display="none";
             voteVotingYes[i].style.display="none";
             voteVotingNo[i].style.display="";
@@ -132,7 +130,7 @@ window.addEventListener("load",function(){
         }
 
         voteYes[i].onclick = function(){
-            voteDoingNotice.innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
+            voteDoingNotice[i].innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
             voteAddingSubmit.style.display="none";
             voteVotingYes[i].style.display="";
             voteVotingNo[i].style.display="none";
@@ -151,7 +149,7 @@ window.addEventListener("load",function(){
 
         //------[顯示] 檢舉原因選擇視窗 ------//
         report[i].onclick = function(){
-            voteDoingNotice.innerText="檢舉原因：";
+            voteDoingNotice[i].innerText="檢舉原因：";
             voteAddingSubmit.style.display="none";
             voteVotingSubmit[0].style.display="none";
             voteReportSubmit.style.display="inline-block";
@@ -169,24 +167,12 @@ window.addEventListener("load",function(){
     }
 
     //------[隱藏] 進行投票確認視窗-確認-(next:通知已完成投票) ------//
-    var prosNum=[]; //支持
-    var consNum=[]; //不支持
-    var j=0;
-    var k=0;
-        // voteYes[i].addEventListener('click',pros);
-        // voteNo[i].addEventListener('click',cons);
+    var prosNum=0; //支持
+    var consNum=0; //不支持
 
-    // function pros(){
-    //     prosNum++;
-    // };
-
-    // function cons(){
-    //     consNum++; 
-    // };
     for(var i=0;i<voteYes.length;i++){
         voteVotingYes[i].onclick = function(){
-        j++;
-        prosNum[i]=j;
+        prosNum++;
         voteDidNotice.innerText="已完成投票";
         voteAlertDoing[i].style.display="none";
         voteAlertDid.style.display="block";
@@ -198,8 +184,7 @@ window.addEventListener("load",function(){
         voteDidNotice.innerText="已完成投票";
         voteAlertDoing[i].style.display="none";
         voteAlertDid.style.display="block";
-        k++;
-        consNum[i]=k; 
+        consNum++; 
         console.log("不支持數:",consNum);
         return consNum[i];
     }
