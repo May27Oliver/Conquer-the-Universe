@@ -90,20 +90,19 @@
                     width: 176px;
                     height: 56px;
                     color:#333;
-                }
             }
-            #nav-control{
-                display: none;
-            }
-            .logo{
-                z-index: 999;
-                h1{
-                    a{
-                        margin:15px 0px 0px 50px;
-                        background-size: 100%;
-                        width: calc(230px * .8);
-                        height: calc(91px * .8);
-                    }
+        }
+        #nav-control{
+            display: none;
+        }
+        .logo{
+            z-index: 999;
+            h1{
+                a{
+                    margin:15px 0px 0px 50px;
+                    background-size: 100%;
+                    width: calc(230px * .8);
+                    height: calc(91px * .8);
                 }
             }
         }
