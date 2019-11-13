@@ -3554,4 +3554,41 @@ button{
 
 .ufo{
     display:none;
+    opacity: 0;
 }
+
+
+// #back_to_top{
+// 	display: none;
+// }
+// #back_to_top:focus{
+// 	outline: none;
+// }
+
+.index_body{
+    .indexWrap{
+        .back_to_top{
+            // display: block;
+            opacity: 0;
+            border:0;
+            width: 45px;
+            height: 80px;
+            position: fixed;
+            bottom: 20px;
+            right:20px;
+            background-color: rgba(245,232,217,0);
+            z-index: 998;
+            transition: .5s;
+            img{
+                display: block;
+                position: absolute;
+                top:0;
+                left:0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+     
+    }
+}
+
