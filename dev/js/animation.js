@@ -23,6 +23,16 @@ console.log('star');
    repeat: -1, //-1無限迴圈,
    yoyo: true
 })
+TweenMax.to('.EquiClose1', 2,{
+   y: -30,
+   repeat: -1, //-1無限迴圈,
+   yoyo: true
+})
+TweenMax.to('.EquiClose2', 2,{
+   y: -30,
+   repeat: -1, //-1無限迴圈,
+   yoyo: true
+})
 
 // 首頁
 TweenMax.to('.alien_1 img', 1.5,{
