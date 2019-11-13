@@ -1997,9 +1997,11 @@
             border: none;
             border-radius: 50px;
             cursor: pointer;
+            outline: none;
 
             &:hover {
                 background: lighten(#1d2088, 15);
+                box-shadow: 0px 0px 0px 3px darken($blue,20);
             }
 
             &[disabled|="disabled"] {
@@ -2009,15 +2011,18 @@
 
                 &:hover {
                     background: #ccc;
+                    box-shadow: none;
                 }
             }
 
             &.voteSelected {
-                background: #1d2088;
+                background: lighten(#1d2088, 15);
                 box-shadow: 0px 0px 0px 3px darken($blue,20);
+                
                 cursor: default;
                 &:hover {
-                    background: #1d2088;
+                    background: lighten(#1d2088, 15);
+                    box-shadow: 0px 0px 0px 3px darken($blue,20);
                 }
             }
 
@@ -2354,6 +2359,7 @@
         border: transparent 2px solid;
         padding: 2vw 0;
         line-height: 1.6;
+        border-radius: 30px;
 
         a {
             color: black;
@@ -2419,6 +2425,12 @@
 // 聊天機器人
 .tip-robot {
     display: none;
+}
+
+//公民小學堂星空背景
+#starShine{
+    position: absolute;
+    z-index: -2;
 }
 
 // footer

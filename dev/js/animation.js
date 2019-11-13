@@ -1,3 +1,9 @@
+window.addEventListener('load',function(){
+   new CountUp("pie",0,6666).start();
+   new CountUp("fatty",0,6666).start();
+   new CountUp("peter",0,6666).start();
+});
+
 console.log('star');
 
  TweenMax.to('.rabbit', 1,{
