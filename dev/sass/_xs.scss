@@ -1905,9 +1905,11 @@
             border: none;
             border-radius: 50px;
             cursor: pointer;
+            outline: none;
 
             &:hover {
                 background: lighten(#1d2088, 15);
+                box-shadow: 0px 0px 0px 3px darken($blue,20);
             }
 
             &[disabled|="disabled"] {
@@ -1917,15 +1919,18 @@
 
                 &:hover {
                     background: #ccc;
+                    box-shadow: none;
                 }
             }
 
             &.voteSelected {
-                background: #1d2088;
+                background: lighten(#1d2088, 15);
                 box-shadow: 0px 0px 0px 3px darken($blue,20);
+                
                 cursor: default;
                 &:hover {
-                    background: #1d2088;
+                    background: lighten(#1d2088, 15);
+                    box-shadow: 0px 0px 0px 3px darken($blue,20);
                 }
             }
 
