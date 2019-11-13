@@ -71,5 +71,4 @@ TweenMax.to('.ufo', 1,{
    yoyo: true
 })
 
-
 ;

@@ -9,6 +9,7 @@
 </head>
 <script src="js/skrollr.js"></script>
 <body class="index_body">
+
 @@include('./template/header.html')
 @@include('./template/indexAlert.html')
 <!-- <script src='js/shop.js'></script> -->
@@ -429,7 +430,10 @@
             <a href="vote.html"><button class="index-more">參與更多公投議題</button></a>
         </section>
     </div>
-    
+
+    <button type="button" id="back_to_top" >
+       <img src="img/goTop.png" alt="">
+    </button>
     
     <!-- ----- 頁尾 FOOTER ----- -->
     <footer>
@@ -467,6 +471,54 @@
 <!-- <script src=""></script> -->
 <script>
     $(document).ready(function() {
+
+        function goS(){
+            $("#back_to_top").attr("class","back_to_top");
+            $(".back_to_top").css('opacity','1');
+            if ( $(document).scrollTop() < 600 ){
+                $(".back_to_top").hide();
+            }else {
+                $(".back_to_top").show();
+            }
+
+            $(window).scroll(function() {
+                if ( $(this).scrollTop() > 600 ){
+                    $(".back_to_top").fadeIn(1000);
+                } else {
+                    $(".back_to_top").fadeOut(1000);
+                }
+            });
+            window.onresize = function(){
+                if(document.body.clientWidth>992){
+                    document.getElementById("nav-control").checked = false;
+                    goM();
+                }
+            }
+        }
+        function goM(){
+            $("#back_to_top").removeAttr("class").css('display','none');
+            window.onresize = function(){
+                if(document.body.clientWidth<=768){
+                    goS();
+                }
+            }
+        }
+        
+        $(function(){
+            $("#back_to_top").click(function(){
+                $("html,body").animate({ scrollTop: 0 }, "normal");
+                // $(".back_to_top").css('bottom','50px');  
+                return false;
+            });
+            if(document.body.clientWidth<=992){
+                goS();
+            } else{
+                goM();
+
+            } 
+              
+        });
+        
     
             var s = skrollr.init();
     
@@ -560,6 +612,8 @@
         }
         var demo = new countUp("winPoint_1", 0, 5848, 0, 5, options);
         demo.start();
+
+
     });
 </script>
 </body>
