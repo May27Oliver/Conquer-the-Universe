@@ -254,12 +254,14 @@
             }
             .planetTxt{
                 span{
-                    margin-left:5px;
+                    margin-right:5px;
+                    font-size: 1.2em;
                 }
                 p{
                     margin-bottom:5px;
                     color: #fff;
                 }
+
             }
         }
         .winner2{
@@ -797,11 +799,14 @@
     li {
         float: left;
         padding: 0 10px;
-        line-height: 30px;
+        line-height:35px;
         margin-right: 5px;
         border-radius: 5px 5px 0 0;
         cursor: pointer;
-        margin-bottom: -3px;
+        margin-bottom: -5px;
+    }
+    li:hover{
+        transform: translateY(-3px);
     }
 
     #rankAll {
