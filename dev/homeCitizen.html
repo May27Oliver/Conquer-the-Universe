@@ -103,11 +103,14 @@
                                 <img class="homeRabbit" src="img/rabbit.png" alt=""> 
                                 <div id="EquiBox">
                                     <img id="Equi" src="img/shopPic1.png" alt="">
+                                    
+                                    <div class="EquiClose1" style="display: none;" onclick="removeEqui()"></div>
                                 </div>
                                 <div id="EquiBoxHand">
                                     <img id="EquiHand" src="img/shopPic3.png" >
+                                    <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
                                 </div>
-
+                               
                             </div>
                             
                            
@@ -119,14 +122,14 @@
                      <div class="col-12 col-md-4 col-lg-4 col-xl-4 boxRight">
                             <div id="tab-demo"> 
                                 <div class="tab-title">
-                                       <span class="tabBtn" id="tabBtn1">今日道具</span>
+                                       <span class="tabBtn" id="tabBtn1">限時道具</span>
                                         <span class="tabBtn" id="tabBtn2">現有道具</span>
                                 </div>
                                 <div class="tabIn">
                                     <div class="wrapTabIn">
                                             
                                     <div id="tab01" class="tab-inner">
-                                        <h4><b>限時購買:23:59:35</b></h4> 
+                                        <h4>限時搶購:<i></i>  <i></i>  <i></i></h4> 
                                         <div class="propBox">
                                             <div id="today">
                                                 <img class="hat" src="img/shopPic2.png" alt="">
@@ -148,10 +151,11 @@
                                         </div>
                                         <div class="propBox">
                                         </div>
+                                        
                                     </div>
                                     <div id="tab02" class="tab-inner">
                                         <div class="propBox" id="itemEqui1">
-                                            <img class="hat" src="img/shopPic1.png" alt="">
+                                            <img class="hat" id="hat1" src="img/shopPic1.png" alt="">
                                         </div>
                                         <div class="propBox" >
                                             <img class="hat" id="hat2" src="img/shopPic2.png" alt=""style="display:none;">
@@ -161,6 +165,10 @@
                                         </div>
                                         <div class="propBox">
                                             <img class="hand" src="img/shopPic4.png" alt="">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
                                         </div>
                                         <div class="propBox">
                                         </div>
@@ -204,9 +212,67 @@
                 $('#tab01').css('display','none');
                 $('#tab02').css('display','inline-block');
             });
-        });
+            //hover帽子道具img出現叉叉
+            $("#EquiBox img").mouseover(function(){
+                $(".EquiClose1").css("display","block");
+            }); 
+            $("#EquiBox img").mouseout(function(){
+                $(".EquiClose1").css("display","none");
+            });
+            // moveEquiIn1
+            $(".EquiClose1").mouseover(function(){
+                $(".EquiClose1").css("display","block");
+            });
 
+            $(".EquiClose1").mouseout(function(){
+                $(".EquiClose1").css("display","none");
+            });
+            //hover手上道具img出現叉叉
+            $("#EquiBoxHand img").mouseover(function(){
+                $(".EquiClose2").css("display","block");
+            });
+            $("#EquiBoxHand img").mouseout(function(){
+                $(".EquiClose2").css("display","none");
+            });
+            // moveEquiIn2
+            $(".EquiClose2").mouseover(function(){
+                $(".EquiClose2").css("display","block");
+            });
+
+            $(".EquiClose2").mouseout(function(){
+                $(".EquiClose2").css("display","none");
+            });
+        });
+//=====倒數計時程式=====       
+    var aI = document.getElementsByTagName("i");
+
+    setInterval(function() {  // 設置倒數計時: 結束時間 - 當前時間
+        
+    // 當前時間
+    var time = new Date();
+    var nowTime = time.getTime(); // 獲取當前毫秒數
+    // 設置結束時間 : 11月13號 24點0分0秒
+    //   time.setMonth(10); //   獲取當前 月份 (從 '0' 開始算)
+    //   time.setDate(14); //   獲取當前 日
+    time.setHours(24); //   獲取當前 時
+    time.setMinutes(0); //   獲取當前 分
+    time.setSeconds(0);
+    var endTime = time.getTime();
+
+    // 倒數計時: 差值
+    var offsetTime = (endTime - nowTime) / 1000; // ** 以秒為單位
+    var sec = parseInt(offsetTime % 60); // 秒
+    var min = parseInt((offsetTime / 60) % 60); // 分 ex: 90秒
+    var hr = parseInt(offsetTime / 60 / 60); // 時
+
+    aI[0].textContent = hr + "時";
+    aI[1].textContent = min + "分";
+    aI[2].textContent = sec + "秒";
+    }, 1000);
+    
 //=====會員編輯按鈕程式=====
+
+
     function $id(id){
         return document.getElementById(id);
     }
@@ -256,17 +322,17 @@
      //====換外觀道具
     //設定帽子換道具
     function showEqui( e ){
-	let tagSrc =e.target.src;
-    console.log(tagSrc);
-    document.getElementById("Equi").src = tagSrc.replace("","");
-    document.getElementById("Equi").style.display = "block";
-
+        let tagSrc =e.target.src;
+        console.log(tagSrc);
+        document.getElementById("Equi").src = tagSrc.replace("","");
+        document.getElementById("Equi").style.display = "block";
     }
+
     function showEquiHand(e){
         let HadSrc =e.target.src;
-    console.log(HadSrc);
-    document.getElementById("EquiHand").src = HadSrc.replace("","");
-    document.getElementById("EquiHand").style.display = "block";
+        console.log(HadSrc);
+        document.getElementById("EquiHand").src = HadSrc.replace("","");
+        document.getElementById("EquiHand").style.display = "block";
     }
 
     //設定解除帽子道具alert跳出
@@ -281,6 +347,7 @@
     function alertRemoveEqui(){
         $id("Equi").style.display = "none";//解除帽子外觀道具
         $id("alertWindowWrap").style.display = "none";
+        document.querySelector(".EquiClose1").style.display = "none";
     }
 
     //設定解除手上道具alert跳出
@@ -295,6 +362,7 @@
     function alertRemoveEquiHand(){
         $id("EquiHand").style.display = "none";//解除帽子外觀道具
         $id("alertWindowWrap").style.display = "none";
+        document.querySelector(".EquiClose2").style.display = "none";
     }
 
     //購買限時道具跳窗homeShopAlert
@@ -320,7 +388,7 @@
     function init(){
         //===設定memDataBtn/memNameBox.onclick 事件理程序是 showMemberForm ,編輯會員資料按鈕
         $id("memDataBtn").onclick = showMemberForm;
-        $id("memNameBox").onclick = showMemberForm;
+        // $id("memNameBox").onclick = showMemberForm;
         
         //===設定btnLogin.onclick 事件處理程序是 sendForm ,確認按鈕-送去後端資料
         // $id("memDataButton").onclick = sendForm;
@@ -356,12 +424,13 @@
             handImgs[i].onclick = showEquiHand;
             console.log(handImgs[i]);
         }
+
         //===解除手上道具
         $id("EquiHand").onclick = removeEquiHand;
         $id("alertEquiHand").onclick = alertRemoveEquiHand;
         
         //===購買限時道具
-        document.querySelector(".homeShop").onclick = homeShopAlert
+        document.querySelector(".homeShop").onclick = homeShopAlert;
         $id("alertHomeShop").onclick = alertRemoveHomeShop;
 
     }; //window.onload

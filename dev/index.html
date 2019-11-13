@@ -9,6 +9,7 @@
 </head>
 <script src="js/skrollr.js"></script>
 <body class="index_body">
+
 @@include('./template/header.html')
 @@include('./template/indexAlert.html')
 <!-- <script src='js/shop.js'></script> -->
@@ -38,7 +39,7 @@
             <li class="winner2">
                 <div class="planetTxt">
                     <p id="winPlanet_2">肥宅星</p>
-                    <p>66666<span>支持度</span></p>
+                    <p><span id="winPoint_1">66666</span>支持度</p>
                 </div>
                 <div class="stageText">
                     <div class="alienImg alien_2">
@@ -51,7 +52,7 @@
             <li class="winner1">
                 <div class="planetTxt">
                     <p id="winPlanet_1">兔兔星</p>
-                    <p>66666<span>支持度</span></p>
+                    <p><span id="winPoint_2">66666</span>支持度</p>
                 </div>
                 <div class="stageText">
                     <div class="alienImg alien_3">
@@ -64,7 +65,7 @@
             <li class="winner3">
                 <div class="planetTxt">
                     <p id="winPlanet_3">派大星</p>
-                    <p>66666<span>支持度</span></p>
+                    <p><span id="winPoint_3">66666</span>支持度</p>
                 </div>
                 <div class="stageText">
                     <div class="alienImg alien_1">
@@ -501,8 +502,60 @@
 <script src="js/VoteClick.js"></script>
 <script src="js/starsShine.js"></script>
 <script src="js/animation.js"></script>
+<script src="js/countUp.min.js" type="module"></script>
+<script src="js/demo.js"></script>
+<!-- <script src=""></script> -->
 <script>
     $(document).ready(function() {
+
+        function goS(){
+            $("#back_to_top").attr("class","back_to_top");
+            $(".back_to_top").css('opacity','1');
+            if ( $(document).scrollTop() < 600 ){
+                $(".back_to_top").hide();
+            }else {
+                $(".back_to_top").show();
+            }
+
+            $(window).scroll(function() {
+                if ( $(this).scrollTop() > 600 ){
+                    $(".back_to_top").fadeIn(1000);
+                } else {
+                    $(".back_to_top").fadeOut(1000);
+                }
+            });
+            window.onresize = function(){
+                if(document.body.clientWidth>992){
+                    document.getElementById("nav-control").checked = false;
+                    goM();
+                }
+            }
+        }
+        function goM(){
+            $("#back_to_top").removeAttr("class").css('display','none');
+            window.onresize = function(){
+                if(document.body.clientWidth<=768){
+                    goS();
+                }
+            }
+        }
+        
+        $(function(){
+            $("#back_to_top").click(function(){
+                $("html,body").animate({ scrollTop: 0 }, "normal");
+                // $(".back_to_top").css('bottom','50px');  
+                return false;
+            });
+            if(document.body.clientWidth<=992){
+                goS();
+            } else{
+                goM();
+
+            } 
+              
+        });
+        
+    
             var s = skrollr.init();
     
             $('.slider_circle_10').EasySlides({
@@ -512,38 +565,45 @@
                 'delayaftershow': 300,
             })
 
-
             $('#rankAll').click(function(){
                 $('#boardInner').css('backgroundColor','#84ccc9');
                 TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                    x: -1500
+                    x: -500,
+                    opacity:0
                 }, {
-                    x: 0
-                }, 0.3);
+                    x: 0,
+                    opacity:1
+                }, 0.08);
             });
             $('#rankP_1').click(function(){
                 $('#boardInner').css('backgroundColor','#fcd93d');
                 TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                    x: -1500
+                    x: -500,
+                    opacity:0
                 }, {
-                    x: 0
-                }, 0.3);
+                    x: 0,
+                    opacity:1
+                }, 0.08);
             });
             $('#rankP_2').click(function(){
                 $('#boardInner').css('backgroundColor','#58d8ff');
                 TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                    x: -1500
+                    x: -500,
+                    opacity:0
                 }, {
-                    x: 0
-                }, 0.3);
+                    x: 0,
+                    opacity:1
+                }, 0.08);
             });
             $('#rankP_3').click(function(){
                 $('#boardInner').css('backgroundColor','#ff99a2');
                 TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                    x: -1500
+                    x: -500,
+                    opacity:0
                 }, {
-                    x: 0
-                }, 0.3);
+                    x: 0,
+                    opacity:1
+                }, 0.08);
             });
         //當你想用alert視窗時,請在自己程式下事件處理程序
         //ex:點button跑出alert,改變訊息 <button id=memDataCancel>
@@ -578,6 +638,18 @@
                 $( ".ufo2" ).fadeOut(800);
             }
         })  
+        var options = {
+          useEasing : true,
+          useGrouping : true,
+          separator : ',',
+          decimal : '.',
+          prefix : '',
+          suffix : ''
+        }
+        var demo = new countUp("winPoint_1", 0, 5848, 0, 5, options);
+        demo.start();
+
+
     });
 </script>
 </body>
