@@ -124,8 +124,15 @@
                                 </div>
                                 <div class="tabIn">
                                     <div class="wrapTabIn">
+                                            
                                     <div id="tab01" class="tab-inner">
+                                        <h4><b>限時購買:23:59:35</b></h4> 
                                         <div class="propBox">
+                                            <div id="today">
+                                                <img class="hat" src="img/shopPic2.png" alt="">
+                                                <button class="homeShop" >$100</button> 
+                                            </div>
+                                            
                                         </div>
                                         <div class="propBox">
                                         </div>
@@ -147,7 +154,7 @@
                                             <img class="hat" src="img/shopPic1.png" alt="">
                                         </div>
                                         <div class="propBox" >
-                                            <img class="hat" src="img/shopPic2.png" alt="">
+                                            <img class="hat" id="hat2" src="img/shopPic2.png" alt=""style="display:none;">
                                         </div>
                                         <div class="propBox">
                                             <img class="hand" src="img/shopPic3.png" alt="">
@@ -216,6 +223,7 @@
         $id("alertButton").style.display = "inline-block";//當點擊會員資料更改取消按鈕，叫出alert把alertButton按鈕叫出
         $id("alertEqui").style.display = "none";//當點擊會員資料更改取消按鈕，叫出alert把alertEqui按鈕隱藏
         $id("alertEquiHand").style.display = "none";
+        $id("alertHomeShop").style.display = "none";
         
     }
 
@@ -263,11 +271,11 @@
 
     //設定解除帽子道具alert跳出
     function removeEqui(){
-        // $id("Equi").style.display = "none";
         $id("alertWindowWrap").style.display = "block"; //alert視窗跳出
         document.querySelector(".alertContent").innerText = "確定要解除外觀道具嗎?";//改變div文字內容 => .innerText = "自己要呈現的文字內容"  ,querySelector可抓任何一個class id img...
         $id("alertButton").style.display = "none";//當解除道具，叫出alert把alertButton按鈕隱藏
         $id("alertEquiHand").style.display = "none";
+        $id("alertHomeShop").style.display = "none";
         $id("alertEqui").style.display = "inline-block";//當解除道具，叫出alert把alertEqui按鈕叫出
     }
     function alertRemoveEqui(){
@@ -277,15 +285,34 @@
 
     //設定解除手上道具alert跳出
     function removeEquiHand(){
-        // $id("Equi").style.display = "none";
         $id("alertWindowWrap").style.display = "block"; //alert視窗跳出
         document.querySelector(".alertContent").innerText = "確定要解除外觀道具嗎?";//改變div文字內容 => .innerText = "自己要呈現的文字內容"  ,querySelector可抓任何一個class id img...
         $id("alertButton").style.display = "none";//當解除道具，叫出alert把alertButton按鈕隱藏
+        $id("alertEqui").style.display = "none";
+        $id("alertHomeShop").style.display = "none";
         $id("alertEquiHand").style.display = "inline-block";//當解除道具，叫出alert把alertEqui按鈕叫出
     }
     function alertRemoveEquiHand(){
         $id("EquiHand").style.display = "none";//解除帽子外觀道具
         $id("alertWindowWrap").style.display = "none";
+    }
+
+    //購買限時道具跳窗homeShopAlert
+    function homeShopAlert(){
+        $id("alertWindowWrap").style.display = "block"; //alert視窗跳出
+        document.querySelector(".alertContent").innerText = "確定要購買此道具嗎?";
+        $id("alertButton").style.display = "none";
+        $id("alertEqui").style.display = "none";
+        $id("alertEquiHand").style.display = "none";
+        $id("alertHomeShop").style.display = "inline-block";
+        
+
+    }
+    function alertRemoveHomeShop(){
+        $id("alertWindowWrap").style.display = "none";
+        $id("today").style.display = "none";
+        $id("hat2").style.display = "block";
+
     }
 
 
@@ -333,7 +360,9 @@
         $id("EquiHand").onclick = removeEquiHand;
         $id("alertEquiHand").onclick = alertRemoveEquiHand;
         
-
+        //===購買限時道具
+        document.querySelector(".homeShop").onclick = homeShopAlert
+        $id("alertHomeShop").onclick = alertRemoveHomeShop;
 
     }; //window.onload
 
