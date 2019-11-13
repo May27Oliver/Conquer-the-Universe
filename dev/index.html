@@ -38,7 +38,7 @@
             <li class="winner2">
                 <div class="planetTxt">
                     <p id="winPlanet_2">肥宅星</p>
-                    <p><span id="index-fat">66666</span>支持度</p>
+                    <p><span id="winPoint_1">66666</span>支持度</p>
                 </div>
                 <div class="stageText">
                     <div class="alienImg alien_2">
@@ -51,7 +51,7 @@
             <li class="winner1">
                 <div class="planetTxt">
                     <p id="winPlanet_1">兔兔星</p>
-                    <p><span id="index-rabi">66666</span>支持度</p>
+                    <p><span id="winPoint_2">66666</span>支持度</p>
                 </div>
                 <div class="stageText">
                     <div class="alienImg alien_3">
@@ -64,7 +64,7 @@
             <li class="winner3">
                 <div class="planetTxt">
                     <p id="winPlanet_3">派大星</p>
-                    <p><span id="index-star">66666</span>支持度</p>
+                    <p><span id="winPoint_3">66666</span>支持度</p>
                 </div>
                 <div class="stageText">
                     <div class="alienImg alien_1">
@@ -462,8 +462,12 @@
 <script src="js/PieChart.js"></script>
 <script src="js/starsShine.js"></script>
 <script src="js/animation.js"></script>
+<script src="js/countUp.min.js" type="module"></script>
+<script src="js/demo.js"></script>
+<!-- <script src=""></script> -->
 <script>
     $(document).ready(function() {
+    
             var s = skrollr.init();
     
             $('.slider_circle_10').EasySlides({
@@ -473,38 +477,45 @@
                 'delayaftershow': 300,
             })
 
-
             $('#rankAll').click(function(){
                 $('#boardInner').css('backgroundColor','#84ccc9');
                 TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                    x: -1500
+                    x: -500,
+                    opacity:0
                 }, {
-                    x: 0
-                }, 0.3);
+                    x: 0,
+                    opacity:1
+                }, 0.08);
             });
             $('#rankP_1').click(function(){
                 $('#boardInner').css('backgroundColor','#fcd93d');
                 TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                    x: -1500
+                    x: -500,
+                    opacity:0
                 }, {
-                    x: 0
-                }, 0.3);
+                    x: 0,
+                    opacity:1
+                }, 0.08);
             });
             $('#rankP_2').click(function(){
                 $('#boardInner').css('backgroundColor','#58d8ff');
                 TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                    x: -1500
+                    x: -500,
+                    opacity:0
                 }, {
-                    x: 0
-                }, 0.3);
+                    x: 0,
+                    opacity:1
+                }, 0.08);
             });
             $('#rankP_3').click(function(){
                 $('#boardInner').css('backgroundColor','#ff99a2');
                 TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                    x: -1500
+                    x: -500,
+                    opacity:0
                 }, {
-                    x: 0
-                }, 0.3);
+                    x: 0,
+                    opacity:1
+                }, 0.08);
             });
         //當你想用alert視窗時,請在自己程式下事件處理程序
         //ex:點button跑出alert,改變訊息 <button id=memDataCancel>
@@ -539,6 +550,16 @@
                 $( ".ufo2" ).fadeOut(800);
             }
         })  
+        var options = {
+          useEasing : true,
+          useGrouping : true,
+          separator : ',',
+          decimal : '.',
+          prefix : '',
+          suffix : ''
+        }
+        var demo = new countUp("winPoint_1", 0, 5848, 0, 5, options);
+        demo.start();
     });
 </script>
 </body>
