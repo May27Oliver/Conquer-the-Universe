@@ -60,9 +60,19 @@
             li{
                 list-style: none;
                 margin:0 11px;
-                line-height: 100px;
                 float: left;
                 text-align: center;
+                a{
+                    display: block;
+                    height: 100px;
+                    line-height: 100px;
+                }
+            }
+            li:hover{
+                background-image: url(../img/UFO.png);  
+                background-size:90%;
+                background-position: center 2px; 
+                background-repeat: no-repeat; 
             }
         }
         span{
