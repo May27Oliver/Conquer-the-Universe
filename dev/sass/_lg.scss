@@ -108,12 +108,12 @@
         }
     }
     // 最上面的獎台
-    .indexHeader{
+    .homeHeader{
         padding-top:150px;
         h1{
             padding-bottom:50px;
         }
-        .indexWinner{
+        .homeWinner{
             width: 600px;
             li{
                 width: 200px;
@@ -366,7 +366,7 @@
     }
     //↑↑↑↑↑以上為贊助商品區↑↑↑↑↑
 
-    /*__________[START] 首頁公民投票 VOTE IN INDEX __________*/
+    /*__________[START] 首頁公民投票 VOTE IN home __________*/
     .voteSection{
         /*------ 投票卡片 ------*/
         .voteGroup{
@@ -392,7 +392,7 @@
             }
         }
     }
-    /*__________[END] 首頁公民投票 VOTE IN INDEX __________*/
+    /*__________[END] 首頁公民投票 VOTE IN home __________*/
     
 
 
@@ -527,9 +527,9 @@
 
     
 //首頁footer
-    .indexFooter{
+    .homeFooter{
         display:block;
-        // background:url(../img/index_img/indexFooter.png);
+        // background:url(../img/home_img/homeFooter.png);
         // background-repeat: no-repeat;
         // margin-top: 20%;
         // width: 100%;
@@ -552,7 +552,7 @@
             top:88%;
             left: 0;
         };
-        .indexFooterNav{
+        .homeFooterNav{
             
             position: absolute;
             top: 30%;
@@ -570,7 +570,7 @@
                 }
             }
         }
-        .indexMedia{
+        .homeMedia{
             position: absolute;
             top: 77%;
             left: 0%;
@@ -650,14 +650,14 @@
     }
   
      // 首頁
-     .index_body{
+     .home_body{
         // background-color: #1c0e44;
-        background-image:url(../img/index_img/indexBGtop.jpg);
+        background-image:url(../img/home_img/homeBGtop.jpg);
         background-size:100%;
         background-position:center top;
         background-repeat: no-repeat;
-        .indexWrap{
-            background-image:url(../img/index_img/indexBGearth.jpg.png),url(../img/index_img/indexBGbottom.png);
+        .homeWrap{
+            background-image:url(../img/home_img/homeBGearth.jpg.png),url(../img/home_img/homeBGbottom.png);
             background-size:150%,120%;
             background-position:center 11%,center 30%;
             background-repeat: no-repeat;
@@ -672,7 +672,7 @@
     }
 
 
-    .indexStar{
+    .homeStar{
         width: 100vw;
         img{
             position: absolute;
