@@ -30,7 +30,7 @@ window.addEventListener("load",function(){
     let voteDidNotice = $class(".voteDidNotice");
     let voteReportMessage = $class(".voteReportMessage");
     let voteAddingSubmit = $class(".voteAddingSubmit");
-    let voteVotingSubmit = $classes(".voteVotingSubmit");
+    // let voteVotingSubmit = $class(".voteVotingSubmit");
     let voteReportSubmit = $class(".voteReportSubmit");
     let voteVotingYes = $class(".voteVotingYes");
     let voteVotingNo = $class(".voteVotingNo");
@@ -54,12 +54,6 @@ window.addEventListener("load",function(){
             }else{
                 ctx.style.backgroundImage = "";
             }*/
-            
-            //要放入new Chart中data的值
-            // var x= 0 + Math.floor(Math.random() *100);
-            // var y= 0 + Math.floor(Math.random() *100);
-            // var x=2;
-            // var y=2;
 
             //把pieChart丟進for迴圈裡，並在context後面加上[i]即可
             pieChart[i] = new Chart(ctx[i], {
@@ -68,7 +62,7 @@ window.addEventListener("load",function(){
                     labels: labels,
                     datasets: [{
                         //預設資料
-                        data: [5,5],
+                        data: [0,0],
                         borderColor: "transparent",
                         backgroundColor: [
                         //資料顏色
@@ -85,14 +79,14 @@ window.addEventListener("load",function(){
     pieProduce();  
 
     //變動數據
-    function changeData(a,b){
-        // 隨機資料
-        for(var i=0;i<ctx.length;i++){
-            // var randomNum=Math.floor(Math.random() *100) + 1;
+    function changeData(){
+        for(var i=0;i<voteArr.length;i++){
+            var prosNum=voteArr[i].prosNum;
+            var consNum=voteArr[i].consNum;
+            pieChart[i].data.datasets[0].data=[prosNum,consNum];
             
         //將隨機資料載入至圖表中
-        // pieChart[i].data.datasets[0].data=[randomNum,100-randomNum];
-        pieChart[i].data.datasets[0].data=[prosNum,consNum];
+        // pieChart[i].data.datasets[0].data=[prosNum,consNum];
         //物件.prosNum  物件.consNum
         //更新
         pieChart[i].update();
@@ -100,14 +94,6 @@ window.addEventListener("load",function(){
     }
     setInterval(changeData,500);
 
-    
-    // var voteObj={
-    //     name:"",
-    //     title:"",
-    //     deadline:"",
-    //     prosNum:0,
-    //     consNum:0,
-    // };
     function insertAfter(newEl, targetEl){//將element元素插到node後面
       var parentEl = targetEl.parentNode;
       if(parentEl.lastChild == targetEl)
@@ -118,9 +104,9 @@ window.addEventListener("load",function(){
       }           
     }
 
-    //設立一個物件把一格投票所會用到的所有方法屬性都包裝起來
+    //設立一個物件把一格投票欄的贊成票與反對票統統包起來。
     function voteObj(name,title,deadline,prosNum,consNum){//
-        this.name =name;
+        this.name =voter.value;
         this.title =voteTitle.value;
         this.deadline =deadline;
         this.prosTitle=voteSelectorA.value;
@@ -129,22 +115,35 @@ window.addEventListener("load",function(){
         this.consNum=0;
     }
     var voteArr=[];
-    // for(var i=0;i<5;i++){
-    // voteArr[i]=voteKey;
-    // }
-    console.log(voteArr);
+    
+    voteArr=[{prosNum:5,consNum:8},{prosNum:0,consNum:0},{prosNum:0,consNum:0},{prosNum:0,consNum:0},{prosNum:0,consNum:0}];
+    
+    function getIndex(child){//取button的index值
+        var parent = child.parentNode.parentNode.parentNode.parentNode.parentNode;
+        var child = child.parentNode.parentNode.parentNode.parentNode;
+        var children = parent.children;
+        var i = children.length- 1;
+        for (; i >= 0; i--){
+            if (child == children[i]){
+                break;
+            }
+        }
+        return i;
+    };  
+
     // 新增公民投票議題出現，事件聆聽功能
     voteAddingSubmit.addEventListener('click',function(){
-        var name="You";//這邊要記錄發起人的會員Id
+        var name=voter.value;//這邊要記錄發起人的會員Id
         var title=voteTitle.value;
         var deadline=2019-11-14;
         var prosNum=0;
         var consNum=0;
-        voteArr.push(new voteObj(name,title,deadline,prosNum,consNum));
+        voteArr.unshift(new voteObj(name,title,deadline,prosNum,consNum));
         //把新的物件放進陣列裡
         for(var i=0;i<voteArr.length;i++){
-            console.log(voteArr[i]);
+            console.log("prosNum:",voteArr[i]);
         }
+        voting();
         var wrapeDiv1 = document.createElement('div');
         var wrapeDiv2 = document.createElement('div');
         var wrapeDiv3 = document.createElement('div');
@@ -191,6 +190,7 @@ window.addEventListener("load",function(){
         noBtn.innerText=voteSelectorB.value;
         
         yesBtn.onclick=function(){
+            var yesIndex=getIndex(this)-1;
             voteDoingNotice.innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
             voteAlertGroup.style.display="block";
             voteAlertDoing.style.display="block";
@@ -199,9 +199,17 @@ window.addEventListener("load",function(){
             voteAddingSubmit.style.display="none";
             voteVotingYes.style.display="inline-block";
             voteVotingNo.style.display="none";
+            voteVotingYes.onclick=function(){
+                voteDidNotice.innerText="已完成投票";
+                voteAlertDoing.style.display="none";
+                voteAlertDid.style.display="block";
+                voteArr[yesIndex].prosNum++;
+                console.log(voteArr[yesIndex].prosNum);
+            };
         }
         
         noBtn.onclick=function(){
+            var noIndex=getIndex(this)-1;
             voteAlertGroup.style.display="block";
             voteAlertDoing.style.display="block";
             voteReportSubmit.style.display="none";
@@ -210,6 +218,13 @@ window.addEventListener("load",function(){
             voteAddingSubmit.style.display="none";
             voteVotingYes.style.display="none";
             voteVotingNo.style.display="inline-block";
+            voteVotingNo.onclick=function(){
+                voteArr[noIndex].consNum++;
+                voteDidNotice.innerText="已完成投票";
+                voteAlertDoing.style.display="none";
+                voteAlertDid.style.display="block";
+                console.log(voteArr[noIndex].consNum);
+            };
         }//增加yesBtn function和noBtn function
 
         pieProduce();
@@ -224,20 +239,22 @@ window.addEventListener("load",function(){
     /*__________ 跳窗提示 __________*/
     
     //######### 進行投票 #########//
-    function voting(){
-        // voteYes = $classes(".voteYes");
-        // voteNo = $classes(".voteNo");
-        for(var i=0; i<voteNo.length; i++){
-            //------[驗證] 是否為會員 ------//
-        
-            //------[驗證] 是否已投過票 ------//
 
-            //------[顯示] 確認視窗跳出 ------//
+    function voting(){//給demo的那幾個投票項目建立事件聆聽功能
+        for(var i=0; i<voteNo.length; i++){  
             voteNo[i].onclick = function(){
+                var noIndex=getIndex(this)-1;
                 voteDoingNotice.innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
                 voteAddingSubmit.style.display="none";
                 voteVotingYes.style.display="none";
                 voteVotingNo.style.display="";
+                voteVotingNo.onclick=function(){
+                    voteArr[noIndex].consNum++;
+                    voteDidNotice.innerText="已完成投票";
+                    voteAlertDoing.style.display="none";
+                    voteAlertDid.style.display="block";
+                    console.log(voteArr[noIndex].consNum);
+                };
                 voteReportSubmit.style.display="none";
                 voteReportMessage.style.display="none";
                 voteAlertGroup.style.display="block";
@@ -245,6 +262,7 @@ window.addEventListener("load",function(){
             }
 
             voteYes[i].onclick = function(){
+                var yesIndex=getIndex(this)-1;
                 voteDoingNotice.innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
                 voteAddingSubmit.style.display="none";
                 voteVotingYes.style.display="";
@@ -253,13 +271,18 @@ window.addEventListener("load",function(){
                 voteReportMessage.style.display="none";
                 voteAlertGroup.style.display="block";
                 voteAlertDoing.style.display="block";
+                voteVotingYes.onclick=function(){
+                    voteDidNotice.innerText="已完成投票";
+                    voteAlertDoing.style.display="none";
+                    voteAlertDid.style.display="block";
+                    voteArr[yesIndex].prosNum++;
+                    console.log(voteArr[yesIndex].prosNum);
+                };
             }
         }
-        console.log("不支持按鈕數",voteNo.length);
     }
 
     voting();
-    
 
     //######### 進行檢舉 #########//
     for(var i=0; i<report.length; i++){
@@ -271,9 +294,11 @@ window.addEventListener("load",function(){
         report[i].onclick = function(){
             voteDoingNotice.innerText="檢舉原因：";
             voteAddingSubmit.style.display="none";
-            voteVotingSubmit[0].style.display="none";
+            // voteVotingSubmit.style.display="none";
             voteReportSubmit.style.display="inline-block";
             voteReportMessage.style.display="block";
+            voteVotingYes.style.display="none";
+            voteVotingNo.style.display="none";
             voteAlertGroup.style.display="block";
             voteAlertDoing.style.display="block";
         }
@@ -285,35 +310,6 @@ window.addEventListener("load",function(){
         voteAlertDoing.style.display="none";
         voteAlertDid.style.display="block";
     }
-
-    //------[隱藏] 進行投票確認視窗-確認-(next:通知已完成投票) ------//
-    var prosNum=0; //支持
-    var consNum=0; //不支持
-    // console.log("物件裡的prosNum",voteArr[0].prosNum);
-
-    for(var i=0;i<voteYes.length;i++){
-        voteVotingYes.onclick = function(){
-            prosNum++;
-            voteDidNotice.innerText="已完成投票";
-            voteAlertDoing.style.display="none";
-            voteAlertDid.style.display="block";
-            // console.log("支持數:",voteArr[i].prosNum);
-            return prosNum;
-        }  
-
-        voteVotingNo.onclick = function(){
-            voteDidNotice.innerText="已完成投票";
-            voteAlertDoing.style.display="none";
-            voteAlertDid.style.display="block";
-            consNum++; 
-            console.log("不支持數:",voteArr[i].consNum);
-            return consNum;
-        }
-    }
-    
-
-    
-
 
     //------[隱藏] 進行檢舉確認視窗-確認-(next:通知已完成檢舉) ------//
     voteReportSubmit.onclick = function(){
