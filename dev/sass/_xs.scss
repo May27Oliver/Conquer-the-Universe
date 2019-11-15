@@ -348,7 +348,6 @@
         font-size: 20px;
         }
         h2{
-        padding-top: 10px;
         font-size: 32px;
         }
     }
@@ -622,6 +621,8 @@
                         margin-right: 2.5px;
                         margin-left: 2.5px;
                         margin-right: 5.5px;
+                           
+                        
                         margin-left: 7px;
                         margin-right: 7px;
                         margin-bottom: 14px;
@@ -756,9 +757,6 @@
                 line-height: 3;
                 color: #eee;
             }
-            img{
-                cursor: pointer;
-            }
            
             
         }
@@ -789,10 +787,6 @@
             padding: 5px 20px;
             margin: 50px 10px 0;
             cursor: pointer;
-        }
-        #memDataButton:hover {
-            background: darken(#ffd584,10);
-            color: darken(#b78100,10);
         }
         #memDataCancel{
             font-size: 16px;
@@ -1263,11 +1257,24 @@
         background-repeat: no-repeat;
         background-position: bottom;
         border-radius: 10px;
-        .pic01{
+        position: relative;
+        .rabbitPic{
             padding: 20px;
             margin-top: 50px;
         }
+        canvas{
+            margin: 0 auto;
+            position: absolute;
+            top: 0; 
+            left: 0;
+            right: 0;
+            bottom: 0;
+            
+        }
     }
+    // #myCanva{
+    //     background-image: url(../img/rabbit.png);
+    // }
     .productPic{
         box-sizing:border-box;
         margin: 50px auto 20px;
@@ -1289,17 +1296,24 @@
             font-weight: bold;
             color: #fff;	
         }
-        .productBtn{
-            cursor: pointer;    
-            width: 60px;
-            margin: 10px auto;
-            background-color: #448aca;
-            padding: 5px;
+        button{
+            display: block;
+            background: #1d2088;
+            color: #fff;
+            font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 5px 15px;
+            margin: 10px auto 0;
+            border: none;
             border-radius: 50px;
-            h2{
-                color: #fff;
-            }	
+            cursor: pointer;
+
+            &:hover {
+                background: lighten(#1d2088, 15);
+            }
         }
+          
     } 
 }
 .toolTitle{
@@ -1310,6 +1324,7 @@
     display: none;
 }
 .toolTitle03{
+   margin-bottom: 100px; 
    padding: 10px;
    color:#fff;
    line-height: 2;
@@ -2013,11 +2028,9 @@
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            outline: none;
 
             &:hover {
                 background: lighten(#1d2088, 15);
-                box-shadow: 0px 0px 0px 3px darken($blue,20);
             }
 
             &[disabled|="disabled"] {
@@ -2027,18 +2040,15 @@
 
                 &:hover {
                     background: #ccc;
-                    box-shadow: none;
                 }
             }
 
             &.voteSelected {
-                background: lighten(#1d2088, 15);
+                background: #1d2088;
                 box-shadow: 0px 0px 0px 3px darken($blue,20);
-                
                 cursor: default;
                 &:hover {
-                    background: lighten(#1d2088, 15);
-                    box-shadow: 0px 0px 0px 3px darken($blue,20);
+                    background: #1d2088;
                 }
             }
 
@@ -2223,7 +2233,7 @@
     margin: 15vw auto;
     #fn-video-button,#Jt-video-button,#As-video-button{
         background-color: #1d2088;
-        cursor: pointer;
+
         &:hover {
             background-color: lighten(#1d2088, 10%);
         }
@@ -2301,7 +2311,6 @@
             justify-content: space-evenly;
             align-items: center;
             li{
-                cursor: pointer;
                 width: 25%;
                 height: 16vw;
                 line-height: 20vw;
@@ -2379,11 +2388,9 @@
     }
 
     li {
-        cursor: pointer;
         border: transparent 2px solid;
         padding: 2vw 0;
         line-height: 1.6;
-        border-radius: 30px;
 
         a {
             color: black;
@@ -2435,8 +2442,7 @@
             color: white;
             padding: 5px 18px;
             box-shadow: 0px 0px 20px #fff;
-            border-radius: 20px;            
-            cursor: pointer;
+            border-radius: 20px;
             border: none;
 
             &:hover {
@@ -2449,12 +2455,6 @@
 // 聊天機器人
 .tip-robot {
     display: none;
-}
-
-//公民小學堂星空背景
-#starShine{
-    position: absolute;
-    z-index: -2;
 }
 
 // footer
@@ -2856,11 +2856,6 @@ div.slider {
     .newsText {
         width: 100%;
         margin: 0 auto;
-        .newsTOP{
-            padding-left: 20px;
-            cursor: pointer;
-            // text-align: center;
-        }
         
 
 
@@ -2885,13 +2880,11 @@ div.slider {
     border-top: 5px solid #E8B51C;
     width: 80%;
     margin: 50px auto;
-    
 
     .newsBtn {
         margin-bottom: 20px;
         margin-top: 30px;
         display: flex;
-        
 
         button {
             color: #FFF;
@@ -2899,11 +2892,9 @@ div.slider {
             border: none;
             background: none;
             display: inline-block;
-            cursor: pointer;
 
             .fa {
                 color: #E8B51C;
-                padding-right: 5px;
 
             }
 
@@ -2926,7 +2917,6 @@ div.slider {
         position: absolute;
         right: 20px;
         top: 18px;
-        cursor: pointer;
         // border-radius: 5px;
         // width: 70px;
         // height: 30px;
@@ -2940,34 +2930,16 @@ div.slider {
 }
 
 // 發新聞開始
-
-// 表單選星球
-.selectmenu{
-    input[type="radio"] {
-    display: none;
-}
-    input[type="radio"] + label {
-    display: inline-block;
-    background-color: #ddd;
-    cursor: pointer;
-    padding: 5px 5px;
-    border-radius: 5px;
-    // margin-left: 10px;
-}
-input[type="radio"]:checked + label {
-    background-color:#1d2088;
-    color: #fff;
-}
-
-}
-
-
-
-// 表單一結束
 .fakeNewsLanuch{
     font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
     
-   margin: 80px auto;
+    .ufo{
+        // margin:0 auto;
+        text-align: center;
+       &:hover{
+        transform: scale(.5);
+       }
+    }
 
     h2{
     width: 90%;
@@ -2987,23 +2959,9 @@ form{
     width: 90%;
     background: #84ccc9;
     border-radius: 10px;
-    min-width: 350px;
-    max-width: 1200px;
     padding: 30px;
     margin: 0px auto;
     box-sizing: border-box;
-    
-    select{
-        font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
-        border: none;
-        border-radius: 5px;
-        width: 50%;
-        line-height: 1.5;
-        vertical-align: top;
-        padding: 5px;
-        margin-left: 5px;
-        box-sizing: border-box;
-    }
 }
 
 
@@ -3014,14 +2972,12 @@ p{
 input,textarea{
     font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
     border: none;
-    border-radius: 5px;
+    border-radius: 2px;
     width: calc(100% - 100px);
     line-height: 1.5;
     vertical-align: top;
     padding: 5px;
     margin-left: 5px;
-    height: 80px;
-    width: 80%;
     box-sizing: border-box;
 }
 label{
@@ -3037,11 +2993,9 @@ label{
 
 select{
     width: 25%;
-    height: 40px;
     font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
     border: none;
-    font-size: 16px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 button{
@@ -3055,7 +3009,6 @@ button{
     margin: 35px auto 0;
     border: none;
     border-radius: 20px;
-    cursor: pointer;
 }
 }
 
@@ -3078,7 +3031,7 @@ button{
     width: 100vw;
     height: 100vh;
     background: rgba(29, 29, 29, 0.7);
-    z-index: 999;
+    z-index: 990;
     // font-family: "微軟正黑體";
     
 }
@@ -3119,7 +3072,6 @@ button{
 }
 .newsWindow .closeWrap {
     height: 38px; 
-    
 }
 .newsWindow #newsButton {
     position: relative;
@@ -3131,6 +3083,10 @@ button{
     background: #ffd584;
     padding: 9px 20px 9px 20px;
     margin: 10px;
+}
+.newsWindow #newsButton:hover {
+    background: darken(#ffd584,10);
+    color: darken(#b78100,10);
 }
 .newsWindow #cancelButton{
     position: relative;
@@ -3146,10 +3102,13 @@ button{
     font-weight: 900;
     font-weight: 500;
 }
+.newsWindow #cancelButton:hover {
+    background: darken(#ffd584,10);
+    color: darken(#b78100,10);
+}
  
 .newsWindow .newsClose:after {
     transform: rotate(-45deg); 
-    
 }
 .newsWindow .newsClose:hover {
     background-color: #ccc; 
@@ -3170,34 +3129,31 @@ button{
 
 .newsWindowLeft{
   width: 100%;
-  height: 50%;
-  
-  background-color: $green;
+  height: 80%;
+  background-color: rgb(63, 63, 63);
   /* border-right: 5px solid #000000; */
-//   overflow-y: auto;
+  overflow-y: auto;
   
 
  
   img{
-      width: 60%;
-      display: none;
+      width: 70%;
   }
   h2{
       margin: 10px 0;
-      color: #1d2088;
-      font-size: 28px;
+      color: rgb(180, 180, 3);
+      font-size: 30px;
       
   }
   h3{
       padding: 10px;
-      color: rgb(122, 33, 0);
-      font-size: 16px;
+      color: rgb(255, 184, 158);
   }
   p{
       margin: 20px 30px;
       line-height: 1.6;
       text-align: left;
-      color: #212121
+      color: rgb(255, 254, 245);
   }
  
 }
@@ -3218,11 +3174,7 @@ button{
         // background-color: #000;
         .newsTalk{
         width: 100%;
-        height: 100%;
-        margin:30px 35px;
-        display: flex;
-            
-          
+            margin-top: 10px;
         //   margin-bottom: 20px;
         //   background-color: #000;
         
@@ -3234,18 +3186,14 @@ button{
             font-size: 15px; 
             // padding: 10px;
             border-radius:5px ;
-            margin-right: 5px;
             
         }  
         
             button{
-                border-radius: 20px;
-                font-family: '微軟正黑體';
-                padding: px 15px;
-                background: #1d2088;
-                color: #fff;
                 font-size: 14px;
                 border: none;
+                border-radius:10px;
+                margin: 0 5px;
             }
 
     }
@@ -3283,13 +3231,11 @@ button{
   
 
 .newsMsgitem{
-    width: 100%;
-    margin:15px auto;
-    background-color: #ccc;
-    border: solid #CCC 1px;
-    position: relative;
-    padding: 15px;
-    box-sizing: border-box;
+    width: 90%;
+    margin: 50px auto;
+    padding: 15px 0;
+    background-color: #212121;
+    border-radius: 5px;
     
     // border: solid #CCC 1px;
     
@@ -3302,12 +3248,12 @@ button{
             float: right;
             font-size: 16px;
             padding: 10px;
-            color: #fff;
+            color: palegoldenrod;
         }
         h3{
         float: left;
         padding: 10px;
-        color: #1d2088;
+        color: orange;
     }
     }
 
@@ -3318,7 +3264,7 @@ button{
        padding: 10px 10px;
 
        p{
-           color:#212121;
+           color: palegoldenrod;
            line-height: 1.6;
        }
     }
@@ -3326,18 +3272,16 @@ button{
 
         .newsreport2{
            
-            background: #fff;
-            font-family: '微軟正黑體';
-            font-weight: 400;
-            border-radius: 5px;
-            /* float: right; */
-            border: none;
-            padding: 2px 5px;
-            position: absolute;
-            right: 5px;
-            bottom: 5px;
+            background: #ccc;
+            color: #333;
             font-size: 10px;
+            font-weight: 400;
             
+           
+         
+            border-radius: 5px;
+            float: right;
+
         }
        
        
@@ -3358,6 +3302,7 @@ button{
  display: inline-block;
  cursor: pointer; 
 }
+
 
 .newsMessage button .fa {
  color: #E8B51C;
@@ -3388,7 +3333,6 @@ button{
           left: 0;
           margin: auto;
           transform: rotate(45deg); 
-          border-radius:5px ;
         }
          .newsWindoClose:after {
           transform: rotate(-45deg); 
@@ -3476,7 +3420,6 @@ button{
 
 
 // news分頁end
-// news 結束*!@#$%%^^^^^^^^^^^^^^^
 
 .newsTitle{
     margin-top:-180px;
