@@ -75,3 +75,41 @@ window.addEventListener('load',function(){
         document.getElementById("gashaponLightBox").style.display = 'none';
         document.getElementById("event02").style.display = " ";     
     }
+
+    function loadImage01(){
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d"); 
+        var img = new Image();
+        img.onload = function(){
+          ctx.drawImage(img,150,120,100,85);
+        }
+        img.src = document.getElementById("shopPic1").src;
+      }
+      function loadImage02(){
+        
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d"); 
+        var img = new Image();
+        img.onload = function(){
+          ctx.drawImage(img,150,120,100,85);
+        }
+        img.src = document.getElementById("shopPic2").src;
+      }
+      function loadImage03(){
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d"); 
+        var img = new Image();
+        img.onload = function(){
+          ctx.drawImage(img,265,280,100,120);
+        }
+        img.src = document.getElementById("shopPic3").src;
+      }
+      function loadImage04(){
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d"); 
+        var img = new Image();
+        img.onload = function(){
+          ctx.drawImage(img,60,280,100,130);
+        }
+        img.src = document.getElementById("shopPic4").src;
+      }

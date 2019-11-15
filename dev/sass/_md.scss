@@ -6,8 +6,8 @@
     }
 
     // 首頁最上面獎台
-    .indexHeader{
-        .indexWinner{
+    .homeHeader{
+        .homeWinner{
             width: 450px;
             li{
                 width: 150px;
@@ -135,19 +135,6 @@
         height: 900px;
         .boxCenter{ 
             margin-top: 200px;
-            .EquiImg{
-               
-               #EquiHand{
-                //    position: absolute;
-                //    top: 223px;
-                //    right:-46px;
-                //    width: 95px;
-                //    height: 95px;
-                   // background-color: #333;
-                   
-                }
-           
-            }
         }        
     }
 
@@ -248,8 +235,8 @@
     }
 
     // 最上面的獎台
-    .indexHeader{
-        .indexWinner{
+    .homeHeader{
+        .homeWinner{
             width: 450px;
             li{
                 width: 150px;
@@ -425,7 +412,7 @@
     }
 
 
-    /*__________[START] 首頁公民投票 VOTE IN INDEX __________*/
+    /*__________[START] 首頁公民投票 VOTE IN home __________*/
     .voteSectionWrapper{
         .voteSection{
             /*------ 投票卡片 ------*/
@@ -438,7 +425,7 @@
             }
         }
     }
-    /*__________[END] 首頁公民投票 VOTE IN INDEX __________*/
+    /*__________[END] 首頁公民投票 VOTE IN home __________*/
 
     /*____________________[START] VOTE ____________________*/
     // *{ outline: 1px solid #f00; }
@@ -520,23 +507,6 @@
                 text-align: center;
             }
         }
-        .productTitle{
-            h3{
-                font-weight: bold;
-                color: #fff;
-                margin-left: 18px;	
-            }
-            .productBtn{
-                width: 60px;
-                margin-right: 40px;
-                background-color: #448aca;
-                padding: 5px;
-                border-radius: 50px;
-                h2{
-                    color: #fff;
-                }	
-            }
-        } 
     }
     .clearboth{
         clear: both;
@@ -1126,14 +1096,14 @@ padding: 15px;
         align-items: center; 
     }
     // 首頁
-    .index_body{
+    .home_body{
         // background-color: #1c0e44;
-        background-image:url(../img/index_img/indexBGtop.jpg);
+        background-image:url(../img/home_img/homeBGtop.jpg);
         background-size:100%;
         background-position:center top;
         background-repeat: no-repeat;
-        .indexWrap{
-            background-image:url(../img/index_img/indexBGearth.jpg.png),url(../img/index_img/indexBGbottom.png);
+        .homeWrap{
+            background-image:url(../img/home_img/homeBGearth.jpg.png),url(../img/home_img/homeBGbottom.png);
             background-size:150%,150%;
             background-position:center 9.5%,center 35%;
             background-repeat: no-repeat;
@@ -1142,7 +1112,7 @@ padding: 15px;
     }
 
 
-    .indexStar{
+    .homeStar{
         width: 100vw;
         img{
             position: absolute;
