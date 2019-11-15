@@ -305,7 +305,7 @@
     // footer
     //首頁footer
     footer{
-        .indexFooter{
+        .homeFooter{
             // position: absolute;
             
                 .footerImg{
@@ -313,7 +313,7 @@
                     width: 100%; 
                     
                         }
-            .indexMedia{
+            .homeMedia{
                 position: absolute;
                 top: 78.5%;
                 left: 0%;
@@ -395,14 +395,14 @@
     }
 
     // 首頁
-    .index_body{
+    .home_body{
         // background-color: #1c0e44;
-        background-image:url(../img/index_img/indexBGtop.jpg);
+        background-image:url(../img/home_img/homeBGtop.jpg);
         background-size:100%;
         background-position:center top;
         background-repeat: no-repeat;
-        .indexWrap{
-            background-image:url(../img/index_img/indexBGearth.jpg.png),url(../img/index_img/indexBGbottom.png);
+        .homeWrap{
+            background-image:url(../img/home_img/homeBGearth.jpg.png),url(../img/home_img/homeBGbottom.png);
             background-size:110%,100%;
             background-position:center 10%,center 10%;
             background-repeat: no-repeat;
@@ -410,7 +410,7 @@
         }
     }
 
-    .indexStar{
+    .homeStar{
         width: 100vw;
         img{
             position: absolute;

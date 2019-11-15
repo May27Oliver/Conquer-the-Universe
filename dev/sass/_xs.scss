@@ -37,17 +37,17 @@
         }
     }
     #planetPoint_1{
-        background-image: url(../img/index_img/alien_1.png);
+        background-image: url(../img/home_img/alien_1.png);
         background-position: 0 -10px;
          background-size: 60%;
     }
     #planetPoint_2{
-        background-image: url(../img/index_img/alien_2.png);
+        background-image: url(../img/home_img/alien_2.png);
         background-position: 0 5px;
          background-size: 60%;
     }
     #planetPoint_3{
-        background-image: url(../img/index_img/alien_3.png);
+        background-image: url(../img/home_img/alien_3.png);
         background-position: 0 -20px;
          background-size: 50%;
     }
@@ -218,7 +218,7 @@
 
 
   // 首頁最上面獎台
-  .indexHeader{
+  .homeHeader{
     padding-top:100px;
     >h1{
         color: #fff;
@@ -227,7 +227,7 @@
         text-align: center;
         margin:70px auto;
     }
-    .indexWinner{
+    .homeWinner{
         width: 330px;
         margin:0 auto;
         overflow: hidden;
@@ -267,7 +267,7 @@
         }
         .winner2{
             .stageText{
-                background-image: url(../img/index_img/stageB2.png);
+                background-image: url(../img/home_img/stageB2.png);
                 margin-right: -3.4%;
                 padding-top:189px;
                 p{
@@ -283,7 +283,7 @@
         }
         .winner1{
             .stageText{
-                background-image: url(../img/index_img/stageR1.png);
+                background-image: url(../img/home_img/stageR1.png);
                 p{
                     bottom:70px;
                 }
@@ -294,7 +294,7 @@
         }
         .winner3{
             .stageText{
-                background-image: url(../img/index_img/stageY3.png);
+                background-image: url(../img/home_img/stageY3.png);
                 margin-left: -3.3%;
                 padding-top:159px;
                 p{
@@ -997,11 +997,11 @@
     }
 }
 
-/*__________[START] 首頁公民投票 VOTE IN INDEX __________*/
+/*__________[START] 首頁公民投票 VOTE IN home __________*/
 
 .voteSectionWrapper{
     margin-top: -200px;
-    // background: url('../img/vote/index-vote-bg.png') no-repeat center center / contain ;
+    // background: url('../img/vote/home-vote-bg.png') no-repeat center center / contain ;
     .voteSection {
         width: 100%;
         max-width: 992px;
@@ -1126,7 +1126,7 @@
             top: 6px;
         }
         
-        &.index-more{
+        &.home-more{
             text-decoration: none;
             background: #ffd584;
             color: #b78100;
@@ -1215,7 +1215,7 @@
     }    
 }
 
-/*__________[END] 首頁公民投票 VOTE IN INDEX __________*/
+/*__________[END] 首頁公民投票 VOTE IN home __________*/
 
 /*____________________ 贊助商品區 ____________________*/
 .shopContainerAll{
@@ -2180,7 +2180,7 @@
         border-radius: 20px;
         border: 1px solid #fff;
     }
-    .index-more{
+    .home-more{
         display:block;
         margin: auto;
         color: #b78100;
@@ -2194,7 +2194,7 @@
         margin-top:80px;
         margin-bottom:30px;
     }
-    .index-more:hover {
+    .home-more:hover {
         background: darken(#ffd584,10);
         color: darken(#b78100,10);
     }
@@ -2486,7 +2486,7 @@
 }
 
 //首頁footer
-.indexFooter {
+.homeFooter {
     display: none;
 }
 
@@ -2578,19 +2578,19 @@
 
     #pla_slec_1 {
         .slec_cont {
-            background-image: url(../img/index_img/slecContentBox1.png);
+            background-image: url(../img/home_img/slecContentBox1.png);
         }
     }
 
     #pla_slec_2 {
         .slec_cont {
-            background-image: url(../img/index_img/slecContentBox2.png);
+            background-image: url(../img/home_img/slecContentBox2.png);
         }
     }
 
     #pla_slec_3 {
         .slec_cont {
-            background-image: url(../img/index_img/slecContentBox3.png);
+            background-image: url(../img/home_img/slecContentBox3.png);
         }
     }
 }
@@ -2752,12 +2752,12 @@ div.slider {
 }
 
 
-.indexMore_btn {
+.homeMore_btn {
     display: none;
 }
 
 .active {
-    .indexMore_btn {
+    .homeMore_btn {
         display: block;
         color: #b78100;
         background-color: #ffd584;
@@ -2775,7 +2775,7 @@ div.slider {
         opacity: 0;
         cursor: pointer;
     }
-    .indexMore_btn:hover {
+    .homeMore_btn:hover {
         background: darken(#ffd584,10);
         color: darken(#b78100,10);
     }
@@ -3517,15 +3517,15 @@ button{
 
 
 // 首頁
-.index_body{
+.home_body{
     overflow-x: hidden;
     background-color: #1c0e44;
-    background-image:url(../img/index_img/indexBGtop.jpg);
+    background-image:url(../img/home_img/homeBGtop.jpg);
     background-size:100%;
     background-position:center top;
     background-repeat: no-repeat;
-    .indexWrap{
-        background-image:url(../img/index_img/indexBGearth.jpg.png),url(../img/index_img/indexBGbottom.png);
+    .homeWrap{
+        background-image:url(../img/home_img/homeBGearth.jpg.png),url(../img/home_img/homeBGbottom.png);
         background-size:150%,300%;
         background-position:center 6.5%,center bottom;
         background-repeat: no-repeat;
@@ -3536,7 +3536,7 @@ button{
     }
 }
 
-.indexStar{
+.homeStar{
     width: 100%;
     img{
         position: absolute;
@@ -3548,17 +3548,17 @@ button{
         width: 280%;
     }
     img:nth-child(1){
-        animation: indexStar 170s infinite linear;
+        animation: homeStar 170s infinite linear;
     }
     img:nth-child(2){
-        animation: indexStar 80s infinite linear;
+        animation: homeStar 80s infinite linear;
     }
     img:nth-child(3){
-        animation: indexStar 35s infinite linear;
+        animation: homeStar 35s infinite linear;
     }
 }
 
-@keyframes indexStar{
+@keyframes homeStar{
     0%{
         transform: translateX(-50%) rotate(0deg);
     }
@@ -3580,8 +3580,8 @@ button{
 // 	outline: none;
 // }
 
-.index_body{
-    .indexWrap{
+.home_body{
+    .homeWrap{
         .back_to_top{
             // display: block;
             opacity: 0;
