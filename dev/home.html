@@ -556,16 +556,22 @@
             'delayaftershow': 300,
         })
 
-
+        function change(){
+            playerData[i]="-";
+        }
         // 排行榜抓資料
         function getPlayerList(){
             var xhr = new XMLHttpRequest();
             xhr.onload=function (){
                 if( xhr.status == 200 ){ 
                     playerData = JSON.parse(xhr.responseText);
-                    HTMLstr = "";
+                    HTMLstr = "";                
                     for(var i=0; i<6; i++ ){
-                        HTMLstr += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[i].memName}</li><li>${playerData[i].popularity}</li><li>${playerData[i].wisdom}</li><li>${playerData[i].charisma}</li><li>${playerData[i].finance}</li></ul></li>`;
+                        if(playerData[i]){
+                            HTMLstr += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[i].memName}</li><li>${playerData[i].popularity}</li><li>${playerData[i].wisdom}</li><li>${playerData[i].charisma}</li><li>${playerData[i].finance}</li></ul></li>`;
+                        }else{
+                            HTMLstr += ` <li class="playList"><ul><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li></ul></li>`;
+                        }
                     }
                 document.getElementById('innerPlayer').innerHTML =HTMLstr;
                 }else{
