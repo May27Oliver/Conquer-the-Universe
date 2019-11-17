@@ -1,0 +1,40 @@
+<div class="newsLaunch">
+    <h2>發布新聞</h2>
+    <form action="" method="GET" class="newsForm container">
+        <div class="newsUpPic col-12 col-md-4">
+            <label for="newsPic">
+                <img src="../img/vote/NewsUpPic.png" alt="upload">
+                <input type="file" name="newsPic" id="newsPic">
+            </label>
+        </div>
+        <ul class="newsStarts col-12 col-md-8">
+            <li>作用星球：
+                <input type="radio" id="starA" name="Planet[]">
+                <label for="starA">派大星</label>
+                <input type="radio" id="starB" name="Planet[]">
+                <label for="starB">肥宅星</label>
+                <input type="radio" id="starC" name="Planet[]">
+                <label for="starC">兔兔星</label>
+            </li>
+            <li>欲增減支持度：
+                <select name="pointRaise[]" required>
+                    <option>請選擇</option>
+                    <option value="200"> 200</option>
+                    <option value="100"> 100</option>
+                    <option value="50"> 50</option>
+                    <option value="-50">-50</option>
+                    <option value="-100">-100</option>
+                    <option value="-200">-200</option>
+                </select>
+            </li>
+            <li>新聞標題：
+                <input type="text" maxlength="20" placeholder="最多輸入10個中文字" name="title" required></input>
+            </li>
+            <li>新聞內容：
+                <textarea maxlength="240" placeholder="最多輸入120個中文字" name="content" rows="5" required></textarea>
+            </li>
+        </ul>
+        <button type="submit" onclick="check()">送出(<span>$100</span>)</button>
+        <button type="reset">清空</button>
+    </form>
+</div>

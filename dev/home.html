@@ -96,22 +96,8 @@
                 <li>支持度</li>
                 <li>智慧/財富/道德</li>
             </ul>
-            <ul id="innerPlayer">
-                <li id="playList_1">
-                    <ul>
-                        <li id="playerRIA">1</li>
-                        <li id="playerName">sexFat</li>
-                        <li id="playerDevote">12345</li>
-                        <li id="playerInt">100</li>
-                        <li id="playerWealth">100</li>
-                        <li id="playerMoral">100</li>
-                    </ul>
-                </li>
-                <li id="playList_2"><ul></ul></li>
-                <li id="playList_3"><ul></ul></li>
-                <li id="playList_4"><ul></ul></li>
-                <li id="playList_5"><ul></ul></li>
-                <li id="playList_6"><ul></ul></li>
+            <ul id="innerPlayer"></ul>
+                <li id="playList"></li>
             </ul>
         </div>
     </section>
@@ -507,7 +493,28 @@
 <script src="js/countUp.min.js" type="module"></script>
 <!-- <script src=""></script> -->
 <script>
-    $(document).ready(function() {
+    $(document).ready(function(){
+        function getPlayerList(){
+            var xhr = new XMLHttpRequest();
+            xhr.onload=function (){
+                if( xhr.status == 200 ){ 
+                    playerData = JSON.parse(xhr.responseText);
+                    HTMLstr = "";
+                    for(var i=0; i<6; i++ ){
+                        HTMLstr += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[i].memName}</li><li>${playerData[i].popularity}</li><li>${playerData[i].wisdom}</li><li>${playerData[i].charisma}</li><li>${playerData[i].finance}</li></ul></li>`;
+                    }
+                   document.getElementById('innerPlayer').innerHTML =HTMLstr;
+                }else{
+                    alert( xhr.status );
+                }
+            }
+            var url = "php/boardInner.php";
+            xhr.open("Get", url, true);
+            xhr.send( null );
+        }
+        getPlayerList();
+
+
 
         function goS(){
             $("#back_to_top").attr("class","back_to_top");

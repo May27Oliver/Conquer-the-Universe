@@ -22,7 +22,7 @@
                     <div class="voteWrapper voteArea">
                         <div class="voteAdd"></div>
                         <div class="voteAdding">
-                            <form method="GET" action="voteLaunch.php" id="voteForm">
+                            <form method="GET" action="" id="voteForm">
                                 <h3>發起公民投票</h3>
                                 <p>姓名：<input type="text" name="voter" class="voter" size="20" maxlength="10" placeholder="最多10個中文字" required></p>
                                 <p>議題：<input type="text" name="voteTitle" class="voteTitle" size="20" maxlength="10" placeholder="最多10個中文字" required></p>
@@ -46,7 +46,7 @@
                             <button class="report">檢舉</button>
                             <small>發起人：<span>劉一</span></small>
                             <h3>公民投票標題</h3>
-                            <p>2019/11/05截止</p>
+                            <p class="deadline">2019/11/05截止</p>
                             <div class="voteSelectGroup">
                                 <button disabled="disabled" class="voteSelect voteSelected">已選擇此選項</button>
                                 <button class="voteSelect" disabled="disabled">不可再選另個</button>
@@ -63,7 +63,7 @@
                             <button class="report">檢舉</button>
                             <small>發起人：<span>陳二</span></small>
                             <h3>公民投票標題</h3>
-                            <p>2019/11/05截止</p>
+                            <p class="deadline">2019/11/05截止</p>
                             <div class="voteSelectGroup">
                                 <button class="voteYes">支持</button>
                                 <button class="voteNo">不支持</button>
@@ -80,7 +80,7 @@
                             <button class="report">檢舉</button>
                             <small>發起人：<span>張三</span></small>
                             <h3>公民投票標題</h3>
-                            <p>2019/11/05截止</p>
+                            <p class="deadline">2019/11/05截止</p>
                             <div class="voteSelectGroup">
                                 <button class="voteYes">支持</button>
                                 <button class="voteNo">不支持</button>
@@ -97,7 +97,7 @@
                             <button class="report">檢舉</button>
                             <small>發起人：<span>李四</span></small>
                             <h3>公民投票標題</h3>
-                            <p>2019/11/05截止</p>
+                            <p class="deadline">2019/11/05截止</p>
                             <div class="voteSelectGroup">
                                 <button class="voteYes">支持</button>
                                 <button class="voteNo">不支持</button>
@@ -114,7 +114,7 @@
                             <button class="report">檢舉</button>
                             <small>發起人：<span>王五</span></small>
                             <h3>公民投票標題</h3>
-                            <p>2019/11/05截止</p>
+                            <p class="dealine">2019/11/05截止</p>
                             <div class="voteSelectGroup">
                                 <button class="voteYes">支持</button>
                                 <button class="voteNo">不支持</button>
@@ -208,13 +208,13 @@
         </section>
 
         <!---------- 跳窗提示 ---------->
-        <section class="voteAlertGroup">
+        <section class="voteAlertGroup" style="display: none;">
             <!-- 第一個 -->
-            <div class="voteAlertDoing">
+            <div class="voteAlertDoing" style="display: none;">
                 <h2>系統訊息</h2>
                 <div class="voteAlertText">
                     <p class="voteDoingNotice"></p>
-                    <select class="voteReportMessage" name="voteReportMessage" style="display: none;">
+                    <select class="voteReportMessage" name="voteReportMessage[]" style="display: none;">
                         <option>請選擇</option>
                         <option value="1">外部廣告</option>
                         <option value="2">仇恨言論</option>
@@ -231,8 +231,7 @@
                     <button class="voteCancel">取消</button>
                 </div>
             </div>
-            <!-- 暫時刪掉四個alertdoing燈箱 -->
-            <div class="voteAlertDid">
+            <div class="voteAlertDid" style="display: none;">
                 <h2>系統訊息</h2>
                 <div class="voteAlertText">
                     <p class="voteDidNotice"></p>
@@ -281,7 +280,7 @@
         let voteVotingSubmit = $class(".voteVotingSubmit");
         let voteReportSubmit = $class(".voteReportSubmit");
         let voteVotingYes = $class(".voteVotingYes");
-    let voteVotingNo = $class(".voteVotingNo");
+        let voteVotingNo = $class(".voteVotingNo");
         //------[翻轉] 點選卡片翻出或取消表單 ------//
         voteAdd.onclick = function(e){
             e.target.classList.toggle("flip");
