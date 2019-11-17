@@ -1930,8 +1930,10 @@
         line-height: 1.5;
     }
 }
-
-#trashLightBoxBtn {
+#trashLightBox{
+    font-size: 20px;
+}
+#trashLightBoxBtn{
     cursor: pointer;
     margin: 10px auto 0;
     background-color: #4CAF50;

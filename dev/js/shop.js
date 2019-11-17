@@ -29,6 +29,19 @@ window.addEventListener('load',function(){
     function trashBack(){
         document.getElementById("shopBlack").style.display=" ";
         document.getElementById("gashaponLightBox").style.display ="";
+        document.getElementById("trashLightBoxBtn").style.display ="";
+
+        var arr1=new Array("肥仔星","胖胖星","兔兔星");
+        var arr2 = new Array("盜伐山林","亂丟垃圾","日行一善");  
+        function rand(arr){
+          return parseInt (Math.random()*arr.length);
+        } 
+        let trashLightBox = document.getElementById("trashLightBox");
+        let aa = arr1[rand(arr1)];
+        let bb = arr2[rand(arr2)];
+        let dd = "<a href='../index.html'><img src='img/" + bb + ".png'/></a>"
+        var cc=`${dd}<br>${aa}<br>${bb}`;
+        trashLightBox.innerHTML=cc;
     }
     function showGashaoin(){
         document.getElementById("trashLightBox").style.display ="none";
