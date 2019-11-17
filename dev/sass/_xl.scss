@@ -515,19 +515,19 @@
 
             li {
                 float: left;
-                width: 30px;
+                // width: 30px;
             }
 
-            li:nth-child(1){
-                margin-left:8px;
-                margin-right:52px;
-            }
-            li:nth-child(2){
-                margin-right:95px;
-            }
-            li:nth-child(3){
-                margin-right:98px;
-            }
+            // li:nth-child(1){
+            //     margin-left:8px;
+            //     margin-right:52px;
+            // }
+            // li:nth-child(2){
+            //     margin-right:95px;
+            // }
+            // li:nth-child(3){
+            //     margin-right:98px;
+            // }
 
             li:nth-child(4):after {
                 content: '/';
