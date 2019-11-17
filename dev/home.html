@@ -96,7 +96,9 @@
                 <li>支持度</li>
                 <li>智慧/財富/道德</li>
             </ul>
-            @@include('./php/boardInner.php')
+            <ul id="innerPlayer"></ul>
+                <li id="playList"></li>
+            </ul>
         </div>
     </section>
     
@@ -491,7 +493,28 @@
 <script src="js/countUp.min.js" type="module"></script>
 <!-- <script src=""></script> -->
 <script>
-    $(document).ready(function() {
+    $(document).ready(function(){
+        function getPlayerList(){
+            var xhr = new XMLHttpRequest();
+            xhr.onload=function (){
+                if( xhr.status == 200 ){ 
+                    playerData = JSON.parse(xhr.responseText);
+                    HTMLstr = "";
+                    for(var i=0; i<6; i++ ){
+                        HTMLstr += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[i].memName}</li><li>${playerData[i].popularity}</li><li>${playerData[i].wisdom}</li><li>${playerData[i].charisma}</li><li>${playerData[i].finance}</li></ul></li>`;
+                    }
+                   document.getElementById('innerPlayer').innerHTML =HTMLstr;
+                }else{
+                    alert( xhr.status );
+                }
+            }
+            var url = "php/boardInner.php";
+            xhr.open("Get", url, true);
+            xhr.send( null );
+        }
+        getPlayerList();
+
+
 
         function goS(){
             $("#back_to_top").attr("class","back_to_top");
