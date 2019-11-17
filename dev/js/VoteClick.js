@@ -39,7 +39,7 @@ window.addEventListener("load",function(){
     let countDown= $classes(".deadline");
 
 
-    /*__________ 圓餅圖製作 __________*/
+    //__________ 圓餅圖製作 __________//
     var labels = ['贊同','不贊同'];
     var context;
     var ctx=[];
@@ -89,7 +89,7 @@ window.addEventListener("load",function(){
         pieChart[i].update();
         }
     }
-    setInterval(changeData,1000);//
+    setInterval(changeData,1000);
 
     function insertAfter(newEl, targetEl){//將element元素插到node後面
       var parentEl = targetEl.parentNode;
@@ -162,10 +162,9 @@ window.addEventListener("load",function(){
     }, 1000);
 
 
-
-    // 新增公民投票議題出現，事件聆聽功能
+    //__________ 新增公民投票議題出現，事件聆聽功能 __________//
     voteAddingSubmit.addEventListener('click',function(){
-        var name=voter.value;//這邊要記錄發起人的會員Id
+        var name=voter.value;  //這邊要記錄發起人的會員Id
         var title=voteTitle.value;
         var deadline=x;
         var prosNum=0;
@@ -299,34 +298,15 @@ window.addEventListener("load",function(){
         voteNo = $classes(".voteNo");
         return voteYes,voteNo,voteArr;
     });
-    
     // 宣告一個陣列，把一個投票欄位會用到的所有方法屬性都包裝成物件丟進陣列裡
     
-    /*__________ 跳窗提示 __________*/
+
+    //__________ 跳窗提示 __________//
     
     //######### 進行投票 #########//
-
-    function voting(){//給demo的那幾個投票項目建立事件聆聽功能
-        for(var i=0; i<voteNo.length; i++){  
-            voteNo[i].onclick = function(){
-                var noIndex=getIndex(this)-1;
-                voteDoingNotice.innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
-                voteAddingSubmit.style.display="none";
-                voteVotingYes.style.display="none";
-                voteVotingNo.style.display="";
-                voteVotingNo.onclick=function(){
-                    voteArr[noIndex].consNum++;
-                    voteDidNotice.innerText="已完成投票";
-                    voteAlertDoing.style.display="none";
-                    voteAlertDid.style.display="block";
-                    console.log(voteArr[noIndex].consNum);
-                };
-                voteReportSubmit.style.display="none";
-                voteReportMessage.style.display="none";
-                voteAlertGroup.style.display="block";
-                voteAlertDoing.style.display="block";
-            }
-
+    function voting(){  //給demo的那幾個投票項目建立事件聆聽功能
+        for(var i=0; i<voteNo.length; i++){
+            //------[點擊] 選項一 ------//
             voteYes[i].onclick = function(){
                 var yesIndex=getIndex(this)-1;
                 voteDoingNotice.innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
@@ -345,9 +325,27 @@ window.addEventListener("load",function(){
                     console.log(voteArr[yesIndex].prosNum);
                 };
             }
+            //------[點擊] 選項二 ------//
+            voteNo[i].onclick = function(){
+                var noIndex=getIndex(this)-1;
+                voteDoingNotice.innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
+                voteAddingSubmit.style.display="none";
+                voteVotingYes.style.display="none";
+                voteVotingNo.style.display="";
+                voteVotingNo.onclick=function(){
+                    voteArr[noIndex].consNum++;
+                    voteDidNotice.innerText="已完成投票";
+                    voteAlertDoing.style.display="none";
+                    voteAlertDid.style.display="block";
+                    console.log(voteArr[noIndex].consNum);
+                };
+                voteReportSubmit.style.display="none";
+                voteReportMessage.style.display="none";
+                voteAlertGroup.style.display="block";
+                voteAlertDoing.style.display="block";
+            }
         }
     }
-
     voting();
 
     //######### 進行檢舉 #########//
