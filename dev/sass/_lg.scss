@@ -697,6 +697,31 @@
 
     #back_to_top{
 		display: none;
-	}
+    }
+    
+        /*__________[START] NewsForm __________*/
+    // *{ outline: 1px solid #f00; }
+    .newsLaunch {
+        .newsForm {
+            .newsUpPic {
+                label {
+                    align-items: flex-end;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+            }
+
+            .newsStarts {
+                li {
+                    &:nth-child(1) {
+                        margin-right: 18%;
+                    }
+                }
+            }
+        }
+    }
+    /*__________[END] NewsForm __________*/
     
 }
