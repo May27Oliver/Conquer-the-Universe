@@ -494,26 +494,8 @@
 <!-- <script src=""></script> -->
 <script>
     $(document).ready(function(){
-        function getPlayerList(){
-            var xhr = new XMLHttpRequest();
-            xhr.onload=function (){
-                if( xhr.status == 200 ){ 
-                    playerData = JSON.parse(xhr.responseText);
-                    HTMLstr = "";
-                    for(var i=0; i<6; i++ ){
-                        HTMLstr += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[i].memName}</li><li>${playerData[i].popularity}</li><li>${playerData[i].wisdom}</li><li>${playerData[i].charisma}</li><li>${playerData[i].finance}</li></ul></li>`;
-                    }
-                   document.getElementById('innerPlayer').innerHTML =HTMLstr;
-                }else{
-                    alert( xhr.status );
-                }
-            }
-            var url = "php/boardInner.php";
-            xhr.open("Get", url, true);
-            xhr.send( null );
-        }
         getPlayerList();
-
+        rankClick();
 
 
         function goS(){
@@ -564,15 +546,39 @@
         });
         
     
-            var s = skrollr.init();
-    
-            $('.slider_circle_10').EasySlides({
-                'autoplay': true,
-                'show': 3,
-                'timeout': 5000,
-                'delayaftershow': 300,
-            })
+        var s = skrollr.init();
 
+        $('.slider_circle_10').EasySlides({
+            'autoplay': true,
+            'show': 3,
+            'timeout': 5000,
+            'delayaftershow': 300,
+        })
+
+
+        // 排行榜抓資料
+        function getPlayerList(){
+            var xhr = new XMLHttpRequest();
+            xhr.onload=function (){
+                if( xhr.status == 200 ){ 
+                    playerData = JSON.parse(xhr.responseText);
+                    HTMLstr = "";
+                    for(var i=0; i<6; i++ ){
+                        HTMLstr += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[i].memName}</li><li>${playerData[i].popularity}</li><li>${playerData[i].wisdom}</li><li>${playerData[i].charisma}</li><li>${playerData[i].finance}</li></ul></li>`;
+                    }
+                document.getElementById('innerPlayer').innerHTML =HTMLstr;
+                }else{
+                    alert( xhr.status );
+                }
+            }
+            var url = "php/boardInner.php";
+            xhr.open("Get", url, true);
+            xhr.send( null );
+        }
+
+
+        // 排行榜案分頁
+        function rankClick(){
             $('#rankAll').click(function(){
                 $('#boardInner').css('backgroundColor','#84ccc9');
                 TweenMax.staggerFromTo('#innerPlayer>li', .3, {
@@ -613,6 +619,10 @@
                     opacity:1
                 }, 0.08);
             });
+        }
+            
+            
+           
         //當你想用alert視窗時,請在自己程式下事件處理程序
         //ex:點button跑出alert,改變訊息 <button id=memDataCancel>
 
