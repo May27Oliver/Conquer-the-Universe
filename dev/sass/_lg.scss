@@ -433,16 +433,14 @@
         max-width: 670px;
         .innerTitle{
             width: 600px;
+            li {
+                margin-right: 35px;
+                margin-left: 35px;
+            }
             li:nth-child(1){
-                margin-left:60px;
-                margin-right:62px;
+                margin-left: 80px;
             }
-            li:nth-child(2){
-                margin-right:95px;
-            }
-            li:nth-child(3){
-                margin-right:78px;
-            }
+            
          }
     }
     #innerPlayer{
@@ -458,16 +456,28 @@
         li{
             ul{
                 width: 470px;
-                // li:nth-child(1){
-                //     margin-left:8px;
-                //     margin-right:42px;
-                // }
-                // li:nth-child(2){
-                //     margin-right:87px;
-                // }
-                // li:nth-child(3){
-                //     margin-right:87px;
-                // }
+                li:nth-child(1){
+                    width: 63px;
+                    margin-right:5px;
+                }
+                li:nth-child(2){
+                    width: 132px;
+                    margin-right:5px;
+                }
+                li:nth-child(3){
+                    width: 77px;
+                    margin-right:5px;
+                }
+                li:nth-child(4){
+                    width: 30px;  
+                    margin-left:60px; 
+                }
+                li:nth-child(5){
+                    width: 30px;   
+                }
+                li:nth-child(6){
+                    width: 30px;   
+                }
              }
         }
     }
