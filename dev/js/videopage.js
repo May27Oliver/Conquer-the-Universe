@@ -10,7 +10,20 @@ window.addEventListener('load',function(){
      function $query(cssname){
          return document.querySelector(cssname);
      }
- 
+
+     function $queryAll(cssname){
+        return document.querySelectorAll(cssname);
+    }
+    //按鈕事件觸發後才引入各slider的影片畫面，增加網頁效能
+     let fnVideoAddress=$queryAll(".fn-video iframe");
+     var videoAddress=$queryAll(".fn-video span");
+     for(var i=0;i<videoAddress.length;i++){
+        fnVideoAddress[i].src=videoAddress[i].getAttribute("data-source");
+    }//財經題
+    
+    let JtVideoAddress=$queryAll(".Jt-video iframe");
+    let AsVideoAddress=$queryAll(".As-video iframe");
+
      let fnProblems1 = $class("fnVideo1-problem");//抓影片一題庫所有的題目
      let fnProblems2 = $class("fnVideo2-problem");//抓影片二題庫所有的題目
      let fnProblems3 = $class("fnVideo3-problem");//抓影片三題庫所有的題目
@@ -79,6 +92,22 @@ window.addEventListener('load',function(){
         fnProblems1[1].style.display="none";
         award.style.display="none";
         wrongAns.style.display="none";
+        var videoAddress=$queryAll(".fn-video span");
+        for(var i=0;i<videoAddress.length;i++){
+            fnVideoAddress[i].src=videoAddress[i].getAttribute("data-source");
+        }//財經題
+        turnRight.disabled=true; //一開始右鍵不能按
+        turnRight.style.opacity=0;
+        turnLeft.disabled=false;
+        turnLeft.style.opacity=1;
+        oneVideo=0;
+        for(var i=0;i<3;i++){
+        wrap[i].style.left= 25*oneVideo+"%";
+        }
+        if( oneVideo == 0){
+            turnRight.disabled = true;
+            turnRight.style.opacity=0;
+        } 
     });
     JtButton.addEventListener('click',function(){
         bigVideo.src="https://www.youtube.com/embed/sHHa4ETr2jE";
@@ -92,6 +121,22 @@ window.addEventListener('load',function(){
         JtProblems1[1].style.display="none";
         award.style.display="none";
         wrongAns.style.display="none";
+        var videoAddress=$queryAll(".Jt-video span");
+        for(var i=0;i<videoAddress.length;i++){
+        JtVideoAddress[i].src=videoAddress[i].getAttribute("data-source");
+        }//思辨題
+        turnRight.disabled=true; //一開始右鍵不能按
+        turnRight.style.opacity=0;
+        turnLeft.disabled=false;
+        turnLeft.style.opacity=1;
+        oneVideo=0;
+        for(var i=0;i<3;i++){
+        wrap[i].style.left= 25*oneVideo+"%";
+        }
+        if( oneVideo == 0){
+            turnRight.disabled = true;
+            turnRight.style.opacity=0;
+        } 
     });
     AsButton.addEventListener('click',function(){
         bigVideo.src="https://www.youtube.com/embed/-Kg1FNo11r0";
@@ -105,6 +150,22 @@ window.addEventListener('load',function(){
         AsProblems1[1].style.display="none";
         award.style.display="none";
         wrongAns.style.display="none";
+        var videoAddress=$queryAll(".As-video span");
+        for(var i=0;i<videoAddress.length;i++){
+        AsVideoAddress[i].src=videoAddress[i].getAttribute("data-source");
+        }//美學題
+        turnRight.disabled=true; //一開始右鍵不能按
+        turnRight.style.opacity=0;
+        turnLeft.disabled=false;
+        turnLeft.style.opacity=1;
+        oneVideo=0;
+        for(var i=0;i<3;i++){
+        wrap[i].style.left= 25*oneVideo+"%";
+        }
+        if( oneVideo == 0){
+            turnRight.disabled = true;
+            turnRight.style.opacity=0;
+        } 
     });
 
     // video slider功能，點下去出現大video
@@ -297,6 +358,8 @@ window.addEventListener('load',function(){
             }
         });
     }
+
+    /*slider左右移動影片*/ 
     let oneVideo=0;
     let wrap=document.querySelectorAll(".video-slider ul");
     let turnLeft=document.querySelector(".slider-forward");
@@ -578,19 +641,38 @@ window.addEventListener('load',function(){
     
 
     // 財經影片一第一題解答
-    console.log(fnV1P1A.length);
     fnV1P1Ans1.addEventListener('click',function(){
+        var formData = $('#fnV1P1A1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV1P1A.length;i++){
             fnV1P1A[i].style.backgroundColor="transparent";
-            console.log(fnV1P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
         fnV1P1A[0].style.backgroundColor="#C4E1FF";
-        console.log(fnV1P1A[0]);
     },false);
 
     fnV1P1Ans2.addEventListener('click',function(){
+        var formData = $('#fnV1P1A2').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV1P1A.length;i++){
             fnV1P1A[i].style.backgroundColor="transparent";
             console.log(fnV1P1A[i]);
@@ -601,9 +683,19 @@ window.addEventListener('load',function(){
     });
 
     fnV1P1Ans3.addEventListener('click',function(){
+        var formData = $('#fnV1P1A3').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV1P1A.length;i++){
             fnV1P1A[i].style.backgroundColor="transparent";
-            console.log(fnV1P1A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -611,9 +703,19 @@ window.addEventListener('load',function(){
     });
 
     fnV1P1Ans4.addEventListener('click',function(){
+        var formData = $('#fnV1P1A4').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV1P1A.length;i++){
             fnV1P1A[i].style.backgroundColor="transparent";
-            console.log(fnV1P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -622,9 +724,19 @@ window.addEventListener('load',function(){
 
     // 財經影片一第二題解答
     fnV1P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV1P2A.length;i++){
             fnV1P2A[i].style.backgroundColor="transparent";
-            console.log(fnV1P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -632,9 +744,19 @@ window.addEventListener('load',function(){
     });
 
     fnV1P2Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans2').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV1P2A.length;i++){
             fnV1P2A[i].style.backgroundColor="transparent";
-            console.log(fnV1P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -642,9 +764,19 @@ window.addEventListener('load',function(){
     });
 
     fnV1P2Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans3').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV1P2A.length;i++){
             fnV1P2A[i].style.backgroundColor="transparent";
-            console.log(fnV1P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -652,9 +784,19 @@ window.addEventListener('load',function(){
     });
 
     fnV1P2Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans4').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV1P2A.length;i++){
             fnV1P2A[i].style.backgroundColor="transparent";
-            console.log(fnV1P2A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -663,9 +805,19 @@ window.addEventListener('load',function(){
 
     //財經影片二第一題解答
     fnV2P1Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV2P1A.length;i++){
             fnV2P1A[i].style.backgroundColor="transparent";
-            console.log(fnV2P1A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -673,9 +825,19 @@ window.addEventListener('load',function(){
     });
 
     fnV2P1Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV2P1A.length;i++){
             fnV2P1A[i].style.backgroundColor="transparent";
-            console.log(fnV2P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -683,9 +845,19 @@ window.addEventListener('load',function(){
     });
 
     fnV2P1Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV2P1A.length;i++){
             fnV2P1A[i].style.backgroundColor="transparent";
-            console.log(fnV2P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -693,9 +865,19 @@ window.addEventListener('load',function(){
     });
 
     fnV2P1Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV2P1A.length;i++){
             fnV2P1A[i].style.backgroundColor="transparent";
-            console.log(fnV2P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -704,9 +886,19 @@ window.addEventListener('load',function(){
 
     //影片二第二題答案
     fnV2P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV2P2A.length;i++){
             fnV2P2A[i].style.backgroundColor="transparent";
-            console.log(fnV2P2A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -714,9 +906,19 @@ window.addEventListener('load',function(){
     });
 
     fnV2P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV2P2A.length;i++){
             fnV2P2A[i].style.backgroundColor="transparent";
-            console.log(fnV2P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -724,9 +926,19 @@ window.addEventListener('load',function(){
     });
 
     fnV2P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV2P2A.length;i++){
             fnV2P2A[i].style.backgroundColor="transparent";
-            console.log(fnV2P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -734,9 +946,19 @@ window.addEventListener('load',function(){
     });
 
     fnV2P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV2P2A.length;i++){
             fnV2P2A[i].style.backgroundColor="transparent";
-            console.log(fnV2P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -745,9 +967,19 @@ window.addEventListener('load',function(){
 
     //影片三題目一答案
     fnV3P1Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV3P1A.length;i++){
             fnV3P1A[i].style.backgroundColor="transparent";
-            console.log(fnV3P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -755,9 +987,19 @@ window.addEventListener('load',function(){
     });
 
     fnV3P1Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV3P1A.length;i++){
             fnV3P1A[i].style.backgroundColor="transparent";
-            console.log(fnV3P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -765,9 +1007,19 @@ window.addEventListener('load',function(){
     });
 
     fnV3P1Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV3P1A.length;i++){
             fnV3P1A[i].style.backgroundColor="transparent";
-            console.log(fnV3P1A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -775,9 +1027,19 @@ window.addEventListener('load',function(){
     });
 
     fnV3P1Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV3P1A.length;i++){
             fnV3P1A[i].style.backgroundColor="transparent";
-            console.log(fnV3P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -786,9 +1048,19 @@ window.addEventListener('load',function(){
 
     //影片三題目二答案
     fnV3P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV3P2A.length;i++){
             fnV3P2A[i].style.backgroundColor="transparent";
-            console.log(fnV3P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -796,9 +1068,19 @@ window.addEventListener('load',function(){
     });
 
     fnV3P2Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV3P2A.length;i++){
             fnV3P2A[i].style.backgroundColor="transparent";
-            console.log(fnV3P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -806,9 +1088,19 @@ window.addEventListener('load',function(){
     });
 
     fnV3P2Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV3P2A.length;i++){
             fnV3P2A[i].style.backgroundColor="transparent";
-            console.log(fnV3P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -816,9 +1108,19 @@ window.addEventListener('load',function(){
     });
 
     fnV3P2Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV3P2A.length;i++){
             fnV3P2A[i].style.backgroundColor="transparent";
-            console.log(fnV3P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -827,9 +1129,19 @@ window.addEventListener('load',function(){
 
     //影片四題目一答案
     fnV4P1Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV4P1A.length;i++){
             fnV4P1A[i].style.backgroundColor="transparent";
-            console.log(fnV4P1A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -837,9 +1149,19 @@ window.addEventListener('load',function(){
     });
 
     fnV4P1Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV4P1A.length;i++){
             fnV4P1A[i].style.backgroundColor="transparent";
-            console.log(fnV4P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -847,9 +1169,19 @@ window.addEventListener('load',function(){
     });
 
     fnV4P1Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV4P1A.length;i++){
             fnV4P1A[i].style.backgroundColor="transparent";
-            console.log(fnV4P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -857,9 +1189,19 @@ window.addEventListener('load',function(){
     });
 
     fnV4P1Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV4P1A.length;i++){
             fnV4P1A[i].style.backgroundColor="transparent";
-            console.log(fnV4P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -868,9 +1210,19 @@ window.addEventListener('load',function(){
 
     //影片四第二題答案
     fnV4P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV4P2A.length;i++){
             fnV4P2A[i].style.backgroundColor="transparent";
-            console.log(fnV4P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -878,9 +1230,19 @@ window.addEventListener('load',function(){
     });
 
     fnV4P2Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV4P2A.length;i++){
             fnV4P2A[i].style.backgroundColor="transparent";
-            console.log(fnV4P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -888,9 +1250,19 @@ window.addEventListener('load',function(){
     });
 
     fnV4P2Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV4P2A.length;i++){
             fnV4P2A[i].style.backgroundColor="transparent";
-            console.log(fnV4P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -898,9 +1270,19 @@ window.addEventListener('load',function(){
     });
 
     fnV4P2Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV4P2A.length;i++){
             fnV4P2A[i].style.backgroundColor="transparent";
-            console.log(fnV4P2A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -909,9 +1291,19 @@ window.addEventListener('load',function(){
 
     //影片五第一題答案
     fnV5P1Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV5P1A.length;i++){
             fnV5P1A[i].style.backgroundColor="transparent";
-            console.log(fnV5P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -919,9 +1311,19 @@ window.addEventListener('load',function(){
     });
 
     fnV5P1Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV5P1A.length;i++){
             fnV5P1A[i].style.backgroundColor="transparent";
-            console.log(fnV5P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -929,9 +1331,19 @@ window.addEventListener('load',function(){
     });
 
     fnV5P1Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV5P1A.length;i++){
             fnV5P1A[i].style.backgroundColor="transparent";
-            console.log(fnV5P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -939,9 +1351,19 @@ window.addEventListener('load',function(){
     });
 
     fnV5P1Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV5P1A.length;i++){
             fnV5P1A[i].style.backgroundColor="transparent";
-            console.log(fnV5P1A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -950,9 +1372,19 @@ window.addEventListener('load',function(){
 
     //影片五第二題答案
     fnV5P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV5P2A.length;i++){
             fnV5P2A[i].style.backgroundColor="transparent";
-            console.log(fnV5P2A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -960,9 +1392,19 @@ window.addEventListener('load',function(){
     });
 
     fnV5P2Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV5P2A.length;i++){
             fnV5P2A[i].style.backgroundColor="transparent";
-            console.log(fnV5P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -970,9 +1412,19 @@ window.addEventListener('load',function(){
     });
 
     fnV5P2Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV5P2A.length;i++){
             fnV5P2A[i].style.backgroundColor="transparent";
-            console.log(fnV5P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -980,9 +1432,19 @@ window.addEventListener('load',function(){
     });
 
     fnV5P2Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<fnV5P2A.length;i++){
             fnV5P2A[i].style.backgroundColor="transparent";
-            console.log(fnV5P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1002,9 +1464,19 @@ window.addEventListener('load',function(){
 
     //思辨區影片一問題一答案
     JtV1P1Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV1P1A.length;i++){
             JtV1P1A[i].style.backgroundColor="transparent";
-            console.log(JtV1P1A[i]);
         }//先清除所有底色
         award.innerText="了解，您做出不簡單的決定，獲得宇宙幣100元"
         award.style.display="block";
@@ -1013,9 +1485,19 @@ window.addEventListener('load',function(){
     });
 
     JtV1P1Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV1P1A.length;i++){
             JtV1P1A[i].style.backgroundColor="transparent";
-            console.log(JtV1P1A[i]);
         }//先清除所有底色
         award.innerText="了解，您做出不簡單的決定，獲得宇宙幣100元"
         award.style.display="block";
@@ -1024,9 +1506,19 @@ window.addEventListener('load',function(){
     });
     //問題二答案
     JtV1P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV1P2A.length;i++){
             JtV1P2A[i].style.backgroundColor="transparent";
-            console.log(JtV1P2A[i]);
         }//先清除所有底色
         award.innerText="了解，您做出不簡單的決定，獲得宇宙幣100元";
         award.style.display="block";
@@ -1035,9 +1527,19 @@ window.addEventListener('load',function(){
     });
 
     JtV1P2Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV1P2A.length;i++){
             JtV1P2A[i].style.backgroundColor="transparent";
-            console.log(JtV1P2A[i]);
         }//先清除所有底色
         award.innerText="了解，您做出不簡單的決定，獲得宇宙幣100元";
         award.style.display="block";
@@ -1047,9 +1549,19 @@ window.addEventListener('load',function(){
 
     //思辨區影片二問題一答案
     JtV2P1Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV2P1A.length;i++){
             JtV2P1A[i].style.backgroundColor="transparent";
-            console.log(JtV2P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1057,9 +1569,19 @@ window.addEventListener('load',function(){
     });
 
     JtV2P1Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV2P1A.length;i++){
             JtV2P1A[i].style.backgroundColor="transparent";
-            console.log(JtV2P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1067,9 +1589,19 @@ window.addEventListener('load',function(){
     });
 
     JtV2P1Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV2P1A.length;i++){
             JtV2P1A[i].style.backgroundColor="transparent";
-            console.log(JtV2P1A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -1077,9 +1609,19 @@ window.addEventListener('load',function(){
     });
 
     JtV2P1Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV2P1A.length;i++){
             JtV2P1A[i].style.backgroundColor="transparent";
-            console.log(JtV2P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1088,9 +1630,19 @@ window.addEventListener('load',function(){
 
     //思辨區影片二問題二答案
     JtV2P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV2P2A.length;i++){
             JtV2P2A[i].style.backgroundColor="transparent";
-            console.log(JtV2P2A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -1098,9 +1650,19 @@ window.addEventListener('load',function(){
     });
 
     JtV2P2Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV2P2A.length;i++){
             JtV2P2A[i].style.backgroundColor="transparent";
-            console.log(JtV2P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1109,9 +1671,19 @@ window.addEventListener('load',function(){
 
     //思辨區影片三問題一答案
     JtV3P1Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV3P1A.length;i++){
             JtV3P1A[i].style.backgroundColor="transparent";
-            console.log(JtV3P1A[i]);
         }//先清除所有底色
         award.innerText="感謝您的答覆，這也是個不容易的決定，恭喜您獲得宇宙幣100元";
         award.style.display="block";
@@ -1120,9 +1692,19 @@ window.addEventListener('load',function(){
     });
 
     JtV3P1Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV3P1A.length;i++){
             JtV3P1A[i].style.backgroundColor="transparent";
-            console.log(JtV3P1A[i]);
         }//先清除所有底色
         award.innerText="感謝您的答覆，這也是個不容易的決定，恭喜您獲得宇宙幣100元";
         award.style.display="block";
@@ -1132,9 +1714,19 @@ window.addEventListener('load',function(){
 
     //思辨區影片三問題二答案
     JtV3P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV3P2A.length;i++){
             JtV3P2A[i].style.backgroundColor="transparent";
-            console.log(JtV3P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1142,9 +1734,19 @@ window.addEventListener('load',function(){
     });
 
     JtV3P2Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV3P2A.length;i++){
             JtV3P2A[i].style.backgroundColor="transparent";
-            console.log(JtV3P2A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -1152,9 +1754,19 @@ window.addEventListener('load',function(){
     });
 
     JtV3P2Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV3P2A.length;i++){
             JtV3P2A[i].style.backgroundColor="transparent";
-            console.log(JtV3P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1162,9 +1774,19 @@ window.addEventListener('load',function(){
     });
 
     JtV3P2Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV3P2A.length;i++){
             JtV3P2A[i].style.backgroundColor="transparent";
-            console.log(JtV3P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1173,9 +1795,19 @@ window.addEventListener('load',function(){
 
     //思辨區影片四問題一答案
     JtV4P1Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV4P1A.length;i++){
             JtV4P1A[i].style.backgroundColor="transparent";
-            console.log(JtV4P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1183,9 +1815,19 @@ window.addEventListener('load',function(){
     });
 
     JtV4P1Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV4P1A.length;i++){
             JtV4P1A[i].style.backgroundColor="transparent";
-            console.log(JtV4P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1193,9 +1835,19 @@ window.addEventListener('load',function(){
     });
 
     JtV4P1Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV4P1A.length;i++){
             JtV4P1A[i].style.backgroundColor="transparent";
-            console.log(JtV4P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1203,9 +1855,19 @@ window.addEventListener('load',function(){
     });
 
     JtV4P1Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV4P1A.length;i++){
             JtV4P1A[i].style.backgroundColor="transparent";
-            console.log(JtV4P1A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -1214,9 +1876,19 @@ window.addEventListener('load',function(){
 
     //思辨區影片四問題二答案
     JtV4P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV4P2A.length;i++){
             JtV4P2A[i].style.backgroundColor="transparent";
-            console.log(JtV4P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1224,9 +1896,19 @@ window.addEventListener('load',function(){
     });
 
     JtV4P2Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV4P2A.length;i++){
             JtV4P2A[i].style.backgroundColor="transparent";
-            console.log(JtV4P2A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -1235,9 +1917,19 @@ window.addEventListener('load',function(){
 
     //思辨區影片五問題一答案
     JtV5P1Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV5P1A.length;i++){
             JtV5P1A[i].style.backgroundColor="transparent";
-            console.log(JtV5P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1245,9 +1937,19 @@ window.addEventListener('load',function(){
     });
 
     JtV5P1Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV5P1A.length;i++){
             JtV5P1A[i].style.backgroundColor="transparent";
-            console.log(JtV5P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1255,9 +1957,19 @@ window.addEventListener('load',function(){
     });
 
     JtV5P1Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV5P1A.length;i++){
             JtV5P1A[i].style.backgroundColor="transparent";
-            console.log(JtV5P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1265,9 +1977,19 @@ window.addEventListener('load',function(){
     });
 
     JtV5P1Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV5P1A.length;i++){
             JtV5P1A[i].style.backgroundColor="transparent";
-            console.log(JtV5P1A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -1276,9 +1998,19 @@ window.addEventListener('load',function(){
 
     //思辨區影片五問題二答案
     JtV5P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV5P2A.length;i++){
             JtV5P2A[i].style.backgroundColor="transparent";
-            console.log(JtV5P2A[i]);
         }//先清除所有底色
         award.innerText="了解，您做出不簡單的決定，獲得宇宙幣100元";
         award.style.display="block";
@@ -1287,9 +2019,19 @@ window.addEventListener('load',function(){
     });
 
     JtV5P2Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<JtV5P2A.length;i++){
             JtV5P2A[i].style.backgroundColor="transparent";
-            console.log(JtV5P2A[i]);
         }//先清除所有底色
         award.innerText="了解，您做出不簡單的決定，獲得宇宙幣100元";
         award.style.display="block";
@@ -1310,9 +2052,19 @@ window.addEventListener('load',function(){
 
     //美學區影片一問題一答案
     AsV1P1Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV1P1A.length;i++){
             AsV1P1A[i].style.backgroundColor="transparent";
-            console.log(AsV1P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1320,9 +2072,19 @@ window.addEventListener('load',function(){
     });
 
     AsV1P1Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV1P1A.length;i++){
             AsV1P1A[i].style.backgroundColor="transparent";
-            console.log(AsV1P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1330,9 +2092,19 @@ window.addEventListener('load',function(){
     });
 
     AsV1P1Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV1P1A.length;i++){
             AsV1P1A[i].style.backgroundColor="transparent";
-            console.log(AsV1P1A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -1340,9 +2112,19 @@ window.addEventListener('load',function(){
     });
 
     AsV1P1Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV1P1A.length;i++){
             AsV1P1A[i].style.backgroundColor="transparent";
-            console.log(AsV1P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1350,9 +2132,19 @@ window.addEventListener('load',function(){
     });
     //美學區影片一問題二答案
     AsV1P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV1P2A.length;i++){
             AsV1P2A[i].style.backgroundColor="transparent";
-            console.log(AsV1P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1360,9 +2152,19 @@ window.addEventListener('load',function(){
     });
 
     AsV1P2Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV1P2A.length;i++){
             AsV1P2A[i].style.backgroundColor="transparent";
-            console.log(AsV1P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1370,9 +2172,19 @@ window.addEventListener('load',function(){
     });
 
     AsV1P2Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV1P2A.length;i++){
             AsV1P2A[i].style.backgroundColor="transparent";
-            console.log(AsV1P2A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -1380,9 +2192,19 @@ window.addEventListener('load',function(){
     });
 
     AsV1P2Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV1P2A.length;i++){
             AsV1P2A[i].style.backgroundColor="transparent";
-            console.log(AsV1P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1390,9 +2212,19 @@ window.addEventListener('load',function(){
     });
     //美學區影片二問題一答案
     AsV2P1Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV2P1A.length;i++){
             AsV2P1A[i].style.backgroundColor="transparent";
-            console.log(AsV2P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1400,9 +2232,19 @@ window.addEventListener('load',function(){
     });
 
     AsV2P1Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV2P1A.length;i++){
             AsV2P1A[i].style.backgroundColor="transparent";
-            console.log(AsV2P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1410,9 +2252,19 @@ window.addEventListener('load',function(){
     });
 
     AsV2P1Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV2P1A.length;i++){
             AsV2P1A[i].style.backgroundColor="transparent";
-            console.log(AsV2P1A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -1420,9 +2272,19 @@ window.addEventListener('load',function(){
     });
 
     AsV2P1Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV2P1A.length;i++){
             AsV2P1A[i].style.backgroundColor="transparent";
-            console.log(AsV2P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1431,9 +2293,19 @@ window.addEventListener('load',function(){
 
     //美學區影片二問題二答案
     AsV2P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV2P2A.length;i++){
             AsV2P2A[i].style.backgroundColor="transparent";
-            console.log(AsV2P2A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -1441,9 +2313,19 @@ window.addEventListener('load',function(){
     });
 
     AsV2P2Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV2P2A.length;i++){
             AsV2P2A[i].style.backgroundColor="transparent";
-            console.log(AsV2P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1451,9 +2333,19 @@ window.addEventListener('load',function(){
     });
 
     AsV2P2Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV2P2A.length;i++){
             AsV2P2A[i].style.backgroundColor="transparent";
-            console.log(AsV2P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1461,9 +2353,19 @@ window.addEventListener('load',function(){
     });
 
     AsV2P2Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV2P2A.length;i++){
             AsV2P2A[i].style.backgroundColor="transparent";
-            console.log(AsV2P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1471,9 +2373,19 @@ window.addEventListener('load',function(){
     });
     //美學區影片三問題一答案
     AsV3P1Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV3P1A.length;i++){
             AsV3P1A[i].style.backgroundColor="transparent";
-            console.log(AsV3P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1481,9 +2393,19 @@ window.addEventListener('load',function(){
     });
 
     AsV3P1Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV3P1A.length;i++){
             AsV3P1A[i].style.backgroundColor="transparent";
-            console.log(AsV3P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1491,9 +2413,19 @@ window.addEventListener('load',function(){
     });
 
     AsV3P1Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV3P1A.length;i++){
             AsV3P1A[i].style.backgroundColor="transparent";
-            console.log(AsV3P1A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -1501,9 +2433,19 @@ window.addEventListener('load',function(){
     });
 
     AsV3P1Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV3P1A.length;i++){
             AsV3P1A[i].style.backgroundColor="transparent";
-            console.log(AsV3P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1511,9 +2453,19 @@ window.addEventListener('load',function(){
     });
     //美學區影片三問題二答案
     AsV3P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV3P2A.length;i++){
             AsV3P2A[i].style.backgroundColor="transparent";
-            console.log(AsV3P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1521,9 +2473,19 @@ window.addEventListener('load',function(){
     });
 
     AsV3P2Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV3P2A.length;i++){
             AsV3P2A[i].style.backgroundColor="transparent";
-            console.log(AsV3P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1531,9 +2493,19 @@ window.addEventListener('load',function(){
     });
 
     AsV3P2Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV3P2A.length;i++){
             AsV3P2A[i].style.backgroundColor="transparent";
-            console.log(AsV3P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1541,9 +2513,19 @@ window.addEventListener('load',function(){
     });
 
     AsV3P2Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV3P2A.length;i++){
             AsV3P2A[i].style.backgroundColor="transparent";
-            console.log(AsV3P2A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -1552,9 +2534,19 @@ window.addEventListener('load',function(){
 
     //美學區影片四問題一答案
     AsV4P1Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV4P1A.length;i++){
             AsV4P1A[i].style.backgroundColor="transparent";
-            console.log(AsV4P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1562,9 +2554,19 @@ window.addEventListener('load',function(){
     });
 
     AsV4P1Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV4P1A.length;i++){
             AsV4P1A[i].style.backgroundColor="transparent";
-            console.log(AsV4P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1572,9 +2574,19 @@ window.addEventListener('load',function(){
     });
 
     AsV4P1Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV4P1A.length;i++){
             AsV4P1A[i].style.backgroundColor="transparent";
-            console.log(AsV4P1A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -1582,9 +2594,19 @@ window.addEventListener('load',function(){
     });
 
     AsV4P1Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV4P1A.length;i++){
             AsV4P1A[i].style.backgroundColor="transparent";
-            console.log(AsV4P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1592,9 +2614,19 @@ window.addEventListener('load',function(){
     });
     //美學區影片四問題二答案
     AsV4P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV4P2A.length;i++){
             AsV4P2A[i].style.backgroundColor="transparent";
-            console.log(AsV4P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1602,9 +2634,19 @@ window.addEventListener('load',function(){
     });
 
     AsV4P2Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV4P2A.length;i++){
             AsV4P2A[i].style.backgroundColor="transparent";
-            console.log(AsV4P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1612,9 +2654,19 @@ window.addEventListener('load',function(){
     });
 
     AsV4P2Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV4P2A.length;i++){
             AsV4P2A[i].style.backgroundColor="transparent";
-            console.log(AsV4P2A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -1622,9 +2674,19 @@ window.addEventListener('load',function(){
     });
 
     AsV4P2Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV4P2A.length;i++){
             AsV4P2A[i].style.backgroundColor="transparent";
-            console.log(AsV4P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1632,9 +2694,19 @@ window.addEventListener('load',function(){
     });
     //美學區影片五問題一答案
     AsV5P1Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV5P1A.length;i++){
             AsV5P1A[i].style.backgroundColor="transparent";
-            console.log(AsV5P1A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -1642,9 +2714,19 @@ window.addEventListener('load',function(){
     });
 
     AsV5P1Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV5P1A.length;i++){
             AsV5P1A[i].style.backgroundColor="transparent";
-            console.log(AsV5P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1652,9 +2734,19 @@ window.addEventListener('load',function(){
     });
 
     AsV5P1Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV5P1A.length;i++){
             AsV5P1A[i].style.backgroundColor="transparent";
-            console.log(AsV5P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1662,9 +2754,19 @@ window.addEventListener('load',function(){
     });
 
     AsV5P1Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV5P1A.length;i++){
             AsV5P1A[i].style.backgroundColor="transparent";
-            console.log(AsV5P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1672,9 +2774,19 @@ window.addEventListener('load',function(){
     });
     //美學區影片五問題二答案
     AsV5P2Ans1.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV5P2A.length;i++){
             AsV5P2A[i].style.backgroundColor="transparent";
-            console.log(AsV5P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1682,9 +2794,19 @@ window.addEventListener('load',function(){
     });
 
     AsV5P2Ans2.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV5P2A.length;i++){
             AsV5P2A[i].style.backgroundColor="transparent";
-            console.log(AsV5P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1692,9 +2814,19 @@ window.addEventListener('load',function(){
     });
 
     AsV5P2Ans3.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV5P2A.length;i++){
             AsV5P2A[i].style.backgroundColor="transparent";
-            console.log(AsV5P2A[i]);
         }//先清除所有底色
         award.style.display="block";
         wrongAns.style.display="none";
@@ -1702,9 +2834,19 @@ window.addEventListener('load',function(){
     });
 
     AsV5P2Ans4.addEventListener('click',function(){
+        var formData = $('#fnVideo1-problem1Ans1').serialize();
+        console.log('Posting the following: ', formData);
+        $.ajax({
+            url: 'php/video.php',
+            data: formData,
+            type: 'post',
+            // dataType: 'json',
+            success: function(data) {
+                console.log("成功~");
+            }
+        });
         for(var i=0;i<AsV5P2A.length;i++){
             AsV5P2A[i].style.backgroundColor="transparent";
-            console.log(AsV5P2A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
