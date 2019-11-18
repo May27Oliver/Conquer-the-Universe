@@ -1,4 +1,4 @@
-window.addEventListener("load",function(){
+// window.addEventListener("load",function(){
     //__________ 與HTML做連結 __________//
     function $id(id){
         return document.getElementById(id);
@@ -14,23 +14,22 @@ window.addEventListener("load",function(){
     let voteAlertDid = $class(".voteAlertDid");
     let voteAdd = $class(".voteAdd");
     let voteAdding = $class(".voteAdding");
+    let voteLaunchCancel = $class(".voteLaunchCancel");
+    let voteLaunch = $class(".voteLaunch");
+    let voteForm = $id("#voteForm");
     let voteTitle = $class(".voteTitle");
     let voteSelectorA = $id("voteSelectorA");
     let voteSelectorB = $id("voteSelectorB");
-    let voteLaunchCancel = $class(".voteLaunchCancel");
-    let voteWrapper= $classes(".voteWrapper");
-    let voteLaunch = $class(".voteLaunch");
-    let voteSelect = $classes(".voteSelect");
     let voteYes = $classes(".voteYes");
     let voteNo = $classes(".voteNo");
     let voteCancel = $classes(".voteCancel");
     let voteOkay = $class(".voteOkay");
+    let voteKnow = $class(".voteKnow");
     let report = $classes(".report");
     let voteDoingNotice = $class(".voteDoingNotice");
     let voteDidNotice = $class(".voteDidNotice");
     let voteReportMessage = $class(".voteReportMessage");
     let voteAddingSubmit = $class(".voteAddingSubmit");
-    // let voteVotingSubmit = $class(".voteVotingSubmit");
     let voteReportSubmit = $class(".voteReportSubmit");
     let voteVotingYes = $class(".voteVotingYes");
     let voteVotingNo = $class(".voteVotingNo");
@@ -93,8 +92,7 @@ window.addEventListener("load",function(){
 
     function insertAfter(newEl, targetEl){//將element元素插到node後面
       var parentEl = targetEl.parentNode;
-      if(parentEl.lastChild == targetEl)
-      {
+      if(parentEl.lastChild == targetEl){
            parentEl.appendChild(newEl);
       }else{
            parentEl.insertBefore(newEl,targetEl.nextSibling);
@@ -150,7 +148,7 @@ window.addEventListener("load",function(){
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
         for(var i=0;i<countDown.length;i++){    
         // Display the result in the element with id="demo"
-            countDown[i].innerHTML = "投票時間剩："+hours + "時"
+            countDown[i].innerHTML = "投票時間剩 "+hours + "時"
             + minutes + "分 " + seconds + "秒";
 
             // If the count down is finished, write some text
@@ -161,8 +159,41 @@ window.addEventListener("load",function(){
         }
     }, 1000);
 
+    //__________ 新增公民投票議題 __________//
+    //------[翻轉] 點選卡片翻出或取消表單 ------//
+    function toAdding(){
+        voteAdd.classList.toggle("flip");
+        voteAdding.classList.toggle("flip");
+    }
+    function toAdd(){
+        voteAdd.classList.toggle("flip");
+        voteAdding.classList.toggle("flip");
+    }
+    //######### 發起投票議題 #########//
+    voteLaunch.onclick = function(){
+        //------[驗證] 是否為會員 ------//
+    
+        //------[驗證] 是否完整填寫表單 ------//
+        if(voteForm.voter.value == "" | voteForm.voter.value == " "){
+            alert("請輸入姓名");
+        }else if(voteForm.voteTitle.value == "" | voteForm.voteTitle.value == " "){
+            alert("請輸入題目");
+        }else if(voteForm.voteSelectorA.value == "" | voteForm.voteSelectorA.value == " "){
+            alert("請輸入選項");
+        }else if(voteForm.voteSelectorB.value == "" | voteForm.voteSelectorB.value == " "){
+            alert("請輸入選項");
+        }else if(voteForm.voteSelectorA.value == voteForm.voteSelectorB.value){
+            alert("選項不可重複");
+        }else{
+            //------[顯示] 確認視窗跳出 ------//
+            voteDoingNotice.innerText="確定要發起此公投議題嗎？";
+            voteAddingSubmit.style.display="inline-block";
+            voteAlertGroup.style.display="block";
+            voteAlertDoing.style.display="block";
+        }
+    }
 
-    //__________ 新增公民投票議題出現，事件聆聽功能 __________//
+    //######### 新增公民投票議題出現，事件聆聽功能 #########//
     voteAddingSubmit.addEventListener('click',function(){
         var name=voter.value;  //這邊要記錄發起人的會員Id
         var title=voteTitle.value;
@@ -233,7 +264,7 @@ window.addEventListener("load",function(){
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000); 
             // Display the result in the element with id="demo"
-                deadline.innerHTML = "投票時間剩："+hours + "時"
+                deadline.innerHTML = "投票時間剩 "+hours + "時"
                 + minutes + "分" + seconds + "秒";
                 // If the count down is finished, write some text
                 if (distance < 0) {
@@ -253,7 +284,8 @@ window.addEventListener("load",function(){
             voteVotingYes.style.display="inline-block";
             voteVotingNo.style.display="none";
             voteVotingYes.onclick=function(){
-                voteDidNotice.innerText="已完成投票";
+                voteDidNotice.innerHTML="已完成投票，<br>恭喜您獲得30宇宙幣！";
+                    voteOkay.style.display=""
                 voteAlertDoing.style.display="none";
                 voteAlertDid.style.display="block";
                 voteArr[yesIndex].prosNum++;
@@ -273,7 +305,8 @@ window.addEventListener("load",function(){
             voteVotingNo.style.display="inline-block";
             voteVotingNo.onclick=function(){
                 voteArr[noIndex].consNum++;
-                voteDidNotice.innerText="已完成投票";
+                voteDidNotice.innerHTML="已完成投票，<br>恭喜您獲得30宇宙幣！";
+                    voteOkay.style.display=""
                 voteAlertDoing.style.display="none";
                 voteAlertDid.style.display="block";
                 console.log(voteArr[noIndex].consNum);
@@ -293,7 +326,7 @@ window.addEventListener("load",function(){
         }
 
         pieProduce();
-        // voting();        
+        // voting();
         voteYes = $classes(".voteYes");
         voteNo = $classes(".voteNo");
         return voteYes,voteNo,voteArr;
@@ -306,7 +339,7 @@ window.addEventListener("load",function(){
     //######### 進行投票 #########//
     function voting(){  //給demo的那幾個投票項目建立事件聆聽功能
         for(var i=0; i<voteNo.length; i++){
-            //------[點擊] 選項一 ------//
+            //---[點擊] 選項一 ---//
             voteYes[i].onclick = function(){
                 var yesIndex=getIndex(this)-1;
                 voteDoingNotice.innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
@@ -318,23 +351,25 @@ window.addEventListener("load",function(){
                 voteAlertGroup.style.display="block";
                 voteAlertDoing.style.display="block";
                 voteVotingYes.onclick=function(){
-                    voteDidNotice.innerText="已完成投票";
+                    voteDidNotice.innerHTML="已完成投票，<br>恭喜您獲得30宇宙幣！";
+                    voteOkay.style.display=""
                     voteAlertDoing.style.display="none";
                     voteAlertDid.style.display="block";
                     voteArr[yesIndex].prosNum++;
                     console.log(voteArr[yesIndex].prosNum);
                 };
             }
-            //------[點擊] 選項二 ------//
+            //---[點擊] 選項二 ---//
             voteNo[i].onclick = function(){
                 var noIndex=getIndex(this)-1;
                 voteDoingNotice.innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
                 voteAddingSubmit.style.display="none";
                 voteVotingYes.style.display="none";
                 voteVotingNo.style.display="";
-                voteVotingNo.onclick=function(){
+                voteVotingNo.onclick=function(){    
                     voteArr[noIndex].consNum++;
-                    voteDidNotice.innerText="已完成投票";
+                    voteDidNotice.innerHTML="已完成投票，<br>恭喜您獲得30宇宙幣！";
+                    voteOkay.style.display=""
                     voteAlertDoing.style.display="none";
                     voteAlertDid.style.display="block";
                     console.log(voteArr[noIndex].consNum);
@@ -350,11 +385,9 @@ window.addEventListener("load",function(){
 
     //######### 進行檢舉 #########//
     for(var i=0; i<report.length; i++){
-        //------[驗證] 是否為會員 ------//
+        //---[驗證] 是否為會員 ---//
 
-        //------[驗證] 是否有選擇檢舉原因 ------//
-
-        //------[顯示] 檢舉原因選擇視窗 ------//
+        //---[顯示] 檢舉原因選擇視窗 ---//
         report[i].onclick = function(){
             voteDoingNotice.innerText="檢舉原因：";
             voteAddingSubmit.style.display="none";
@@ -368,23 +401,34 @@ window.addEventListener("load",function(){
         }
     }
 
-    //------[隱藏] 發起投票確認視窗-確認-(next:通知已新增投票) ------//
-    voteAddingSubmit.onclick = function(){
-        voteDidNotice.innerText="已新增投票議題";
-        voteAlertDoing.style.display="none";
-        voteAlertDid.style.display="block";
-    }
-
-    //------[隱藏] 進行檢舉確認視窗-確認-(next:通知已完成檢舉) ------//
     voteReportSubmit.onclick = function(){
-        voteDidNotice.innerText="已檢舉該議題";
+    //---[驗證] 是否有選擇檢舉原因 ---//
+        // let voteReportMessage = $class(".voteReportMessage");
+        if(voteReportMessage.selectedIndex === 0){
+            alert("請選擇檢舉原因");
+            // voteDidNotice.innerText="請選擇檢舉原因";
+            // voteAlertDid.style.display="block";
+        }else{
+    //---[隱藏] 進行檢舉確認視窗-確認-(next:通知已完成檢舉) ---//
+            voteDidNotice.innerText="已檢舉該議題";
+            voteOkay.style.display=""
+            voteAlertDoing.style.display="none";
+            voteAlertDid.style.display="block";
+            voteReportMessage.selectedIndex = 0;
+        }
+    }
+
+    //---[隱藏] 發起投票確認視窗-確認-(next:通知已新增投票) ---//
+    voteAddingSubmit.onclick = function(){
+        voteDidNotice.innerHTML="已新增投票議題，<br>恭喜您獲得100宇宙幣！";
+        voteOkay.style.display=""
         voteAlertDoing.style.display="none";
         voteAlertDid.style.display="block";
     }
 
-    //------[隱藏] 發起投票確認視窗-取消 ------//
-    //------[隱藏] 進行投票確認視窗-取消 ------//
-    //------[隱藏] 檢舉投票議題-取消 ------//
+    //---[隱藏] 發起投票確認視窗-取消 ---//
+    //---[隱藏] 進行投票確認視窗-取消 ---//
+    //---[隱藏] 檢舉投票議題-取消 ---//
     for(var i=0; i<voteCancel.length; i++){
         voteCancel[i].onclick = function(){
             voteAlertGroup.style.display="none";
@@ -393,11 +437,15 @@ window.addEventListener("load",function(){
         }
     }
 
-    //------[隱藏] 通知已新增投票-確認 ------//
-    //------[隱藏] 通知已完成投票-確認 ------//
-    //------[隱藏] 通知已完成檢舉-確認 ------//
+    //---[隱藏] 通知已新增投票-確認 ---//
+    //---[隱藏] 通知已完成檢舉-確認 ---//
+    //---[隱藏] 通知已完成投票-確認 ---//
         voteOkay.onclick = function(){
             voteAlertGroup.style.display="none";
             voteAlertDid.style.display="none";
         }
-});
+        voteKnow.onclick = function(){
+            voteAlertGroup.style.display="none";
+            voteAlertDid.style.display="none";
+        }
+// });

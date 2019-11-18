@@ -2080,12 +2080,13 @@
                 }
 
                 .voteWrapper {
-                    height: 100%;
+                    // height: 100%;
                     border-radius: 10px;
                     text-align: center;
                     position: relative;
                     padding: 1px;
                     margin: 7.5px;
+                    box-shadow: 0px 0px 5px #ccc;
 
                     .voteChart {
                         position: relative;
@@ -2123,6 +2124,7 @@
                         position: relative;
                         height: 96%;
                         margin: 8.5px;
+                        box-shadow: none;
 
                         .voteAdd {
                             width: 100%;
@@ -2137,6 +2139,7 @@
                             left: 0;
                             backface-visibility: hidden;
                             transition: 1s;
+                            box-shadow: 0px 0px 5px #ccc;
                             cursor: pointer;
 
                             &::before,
@@ -2165,6 +2168,7 @@
                             width: 100%;
                             height: 100%;
                             border-radius: 10px;
+                            background: $green;
                             box-sizing: border-box;
                             transform: perspective(800px) rotateY(180deg);
                             position: absolute;
@@ -2172,7 +2176,7 @@
                             left: 0;
                             backface-visibility: hidden;
                             transition: 1s;
-                            background: $green;
+                            box-shadow: 0px 0px 5px #ccc;
 
                             #voteForm {
                                 text-align: left;
@@ -2229,25 +2233,26 @@
 
             &:hover {
                 background: lighten(#1d2088, 15);
+                box-shadow: 0px 0px 0px 3px darken($blue, 20);
             }
 
             &[disabled|="disabled"] {
                 background: #ccc;
                 opacity: 0.8;
                 cursor: not-allowed;
-
                 &:hover {
-                    background: #ccc;
+                    box-shadow: none;
                 }
             }
 
             &.voteSelected {
-                background: #1d2088;
+                background: lighten(#1d2088, 15);
                 box-shadow: 0px 0px 0px 3px darken($blue, 20);
                 cursor: default;
 
                 &:hover {
-                    background: #1d2088;
+                    background: lighten(#1d2088, 15);
+                    box-shadow: 0px 0px 0px 3px darken($blue, 20);
                 }
             }
 
@@ -2343,13 +2348,25 @@
                         border: none;
                         padding: 5px 10px;
                         margin: 15px auto 0;
-
-                        option {
-                            line-height: 2;
-                        }
                     }
                 }
             }
+            // .voteAlertDid {
+            //     h2{
+            //         background: $blue;
+            //     }
+            //     .voteAlertText {
+            //         background: lighten($blue, 25);
+            //         button {
+            //             background: $blue;
+
+            //             &:hover {
+            //                 background: lighten($blue, 10);
+            //                 box-shadow: 0px 0px 0px 3px darken($blue, 20);
+            //             }
+            //         }
+            //     }
+            // }
         }
     }
 }
@@ -3940,4 +3957,176 @@ div.slider {
     }
 }
 /*__________[END] NewsForm __________*/
-// 會員註冊登入燈箱
+
+
+/*__________[START] 會員登入註冊燈箱 __________*/
+#loginWrap{
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 999;
+    #loginBox{
+        max-width: 300px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background: #c9badb;
+        border-radius: 20px;
+        z-index: 9999;
+        #loginBoxClose{
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: #ccc;
+            &::before{
+                content: "";
+                background-color: #7d2c7c;
+                height: 14px;
+                width: 4px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                transform: rotate(45deg);
+            }
+            &::after{
+                content: "";
+                background-color: #7d2c7c;
+                height: 14px;
+                width: 4px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                transform: rotate(135deg);
+            }
+        }
+        .loginPage{
+            height: 100%;
+            h2{
+                font-size: 32px;
+                font-weight: 500;
+                text-align: center;
+                background: #440b86;
+                color: #fff;
+                padding: 20px;
+                line-height: 1.5;
+                border-radius: 20px 20px 0 0;
+            }
+            form{
+                height: 100%;
+                text-align: center;
+                padding: 20px;
+                .loginInfo{
+                    margin: 5px auto 0;
+                    tr{
+                        td{
+                            padding: 10px;
+                            input {
+                                font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                                border: none;
+                                border-radius: 5px;
+                                width: 75%;
+                                line-height: 1.5;
+                                padding: 5px;
+                                margin-left: 5px;
+                                box-sizing: border-box;
+                            }
+                        }
+                    }
+                }
+                .yellowButton {
+                    display: inline-block;
+                    background: #ffd584;
+                    color: #b78100;
+                    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                    font-size: 16px;
+                    font-weight: 500;
+                    padding: 8px 20px;
+                    margin: 20px 10px 0;
+                    border: 1px solid #b78100;
+                    border-radius: 50px;
+                    outline: none;
+                    cursor: pointer;
+                }
+                #registeredBtn{
+                    margin: 15px 0;
+                    font-size: 15px;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+    
+            }
+        }
+        .registerPage{
+            height: 100%;
+            text-align: center;
+            padding-bottom: 15px;
+            h2{
+                font-size: 32px;
+                font-weight: 500;
+                text-align: center;
+                background: #440b86;
+                color: #fff;
+                padding: 20px;
+                line-height: 1.5;
+                border-radius: 20px 20px 0 0;
+            }
+            .registerInfo{
+                height: 100%;
+                margin: 20px;
+                tr{
+                    th{
+                        width: 40%;
+                    }
+                    td{
+                        width: 60%;
+                        text-align: left;
+                        input {
+                            font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                            border: none;
+                            border-radius: 5px;
+                            width: 90%;
+                            line-height: 1.5;
+                            padding: 5px 8px;
+                            margin: 10px 0;
+                            box-sizing: border-box;
+                            
+                        }
+                        #memIdCheck{
+                            width: 80px;
+                            margin: 0 0 10px;
+                        }
+                    }
+                }
+            }
+            #registerSubmit {
+                display: inline-block;
+                background: #ffd584;
+                color: #b78100;
+                font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                padding: 8px 20px;
+                margin: 20px 10px;
+                border: 1px solid #b78100;
+                border-radius: 50px;
+                outline: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+/*__________[END] 會員登入註冊燈箱 __________*/
