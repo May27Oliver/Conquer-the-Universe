@@ -495,8 +495,8 @@
 <!-- <script src=""></script> -->
 <script>
     $(document).ready(function(){
-        getPlayerList();
-
+       
+        
 
         function goS(){
             $("#back_to_top").attr("class","back_to_top");
@@ -555,19 +555,44 @@
             'delayaftershow': 300,
         })
 
-        function change(){
-            playerData[i]="-";
-        }
 
-
-       
-        
-        // 排行榜抓資料
-        function getPlayerList(){
+        // 排行榜第一個畫面
+        getList1();
+        function getList1(){
+            
             var xhr = new XMLHttpRequest();
             xhr.onload=function (){
                 if( xhr.status == 200 ){ 
                     playerData = JSON.parse(xhr.responseText);
+                    HTMLstr0 = "";
+                    for(var i=0; i<6; i++ ){
+                        if(playerData[0][i]){
+                            HTMLstr0 += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[0][i].memName}</li><li>${playerData[0][i].popularity}</li><li>${playerData[0][i].wisdom}</li><li>${playerData[0][i].charisma}</li><li>${playerData[0][i].finance}</li></ul></li>`;
+                        }else{
+                            HTMLstr0 += ` <li class="playList"><ul><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li></ul></li>`;
+                        }
+                        document.getElementById('innerPlayer').innerHTML=HTMLstr0;
+                    }
+                }else{ 
+                    alert( xhr.status );
+                }
+            }
+            var url = "php/boardInner.php";
+            xhr.open("Get", url, true);
+            xhr.send( null );
+        }
+        
+                    
+      // 排行榜抓資料
+        getPlayerList();
+        
+        function getPlayerList(){
+            
+            var xhr = new XMLHttpRequest();
+            xhr.onload=function (){
+                if( xhr.status == 200 ){ 
+                    playerData = JSON.parse(xhr.responseText);
+                   
                     HTMLstr0 = "";
                     HTMLstr1 = "";
                     HTMLstr2 = "";
@@ -600,52 +625,80 @@
                             HTMLstr3 += ` <li class="playList"><ul><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li></ul></li>`;
                         }
                     }
-                document.getElementById('innerPlayer').innerHTML =HTMLstr0;
-                $('#rankAll').click(function(){
-                    document.getElementById('innerPlayer').innerHTML =HTMLstr0;
-                    $('#boardInner').css('backgroundColor','#84ccc9');
+                    // var colorAll='#84ccc9';
+                    // var color_1='#fcd93d';
+                    // var color_2='#58d8ff';
+                    // var color_3='#ff99a2';
+                    
+                    // color=document.getElementById('boardInner').style.backgroundColor;
+                    // if(color=colorAll){
+                    //     document.getElementById('innerPlayer').innerHTML=HTMLstr0;
+                    // }else if(color=color_1){
+                    //     document.getElementById('innerPlayer').innerHTML=HTMLstr1;
+                    // }else if(color=color_2){
+                    //     document.getElementById('innerPlayer').innerHTML=HTMLstr2;
+                    // }else if(color=color_3){
+                    //     document.getElementById('innerPlayer').innerHTML=HTMLstr3;
+                    // }
+                    // console.log($('#boardInner').css('backgroundColor'));
+                    
+                    $('#rankAll').click(function(){
+                        document.getElementById('innerPlayer').innerHTML =HTMLstr0;
+                        $('#boardInner').css('backgroundColor','#84ccc9');
+                        TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                            x: -500,
+                            opacity:0
+                        }, {
+                            x: 0,
+                            opacity:1
+                        }, 0.08);
+                    });
+                    $('#rankP_1').click(function(){
+                        document.getElementById('innerPlayer').innerHTML =HTMLstr1;
+                        $('#boardInner').css('backgroundColor','#fcd93d');
+                        TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                            x: -500,
+                            opacity:0
+                        }, {
+                            x: 0,
+                            opacity:1
+                        }, 0.08);
+                    });
+                    $('#rankP_2').click(function(){
+                        document.getElementById('innerPlayer').innerHTML =HTMLstr2;
+                        $('#boardInner').css('backgroundColor','#58d8ff');
+                        TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                            x: -500,
+                            opacity:0
+                        }, {
+                            x: 0,
+                            opacity:1
+                        }, 0.08);
+                    });
+                    $('#rankP_3').click(function(){
+                        document.getElementById('innerPlayer').innerHTML =HTMLstr3;
+                        $('#boardInner').css('backgroundColor','#ff99a2');
+                        TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                            x: -500,
+                            opacity:0
+                        }, {
+                            x: 0,
+                            opacity:1
+                        }, 0.08);
+                    });
+                    
+                    
                     TweenMax.staggerFromTo('#innerPlayer>li', .3, {
                         x: -500,
                         opacity:0
                     }, {
                         x: 0,
                         opacity:1
-                    }, 0.08);
-                });
-                $('#rankP_1').click(function(){
-                    document.getElementById('innerPlayer').innerHTML =HTMLstr1;
-                    $('#boardInner').css('backgroundColor','#fcd93d');
-                    TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                        x: -500,
-                        opacity:0
-                    }, {
-                        x: 0,
-                        opacity:1
-                    }, 0.08);
-                });
-                $('#rankP_2').click(function(){
-                    document.getElementById('innerPlayer').innerHTML =HTMLstr2;
-                    $('#boardInner').css('backgroundColor','#58d8ff');
-                    TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                        x: -500,
-                        opacity:0
-                    }, {
-                        x: 0,
-                        opacity:1
-                    }, 0.08);
-                });
-                $('#rankP_3').click(function(){
-                    document.getElementById('innerPlayer').innerHTML =HTMLstr3;
-                    $('#boardInner').css('backgroundColor','#ff99a2');
-                    TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                        x: -500,
-                        opacity:0
-                    }, {
-                        x: 0,
-                        opacity:1
-                    }, 0.08);
-                });
-                }else{
+                    }, 0.08); 
+
+                    setTimeout(getPlayerList, 5000);
+               
+                }else{ 
                     alert( xhr.status );
                 }
             }
