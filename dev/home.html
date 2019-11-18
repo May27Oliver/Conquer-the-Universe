@@ -496,7 +496,6 @@
 <script>
     $(document).ready(function(){
         getPlayerList();
-        rankClick();
 
 
         function goS(){
@@ -559,21 +558,93 @@
         function change(){
             playerData[i]="-";
         }
+
+
+       
+        
         // 排行榜抓資料
         function getPlayerList(){
             var xhr = new XMLHttpRequest();
             xhr.onload=function (){
                 if( xhr.status == 200 ){ 
                     playerData = JSON.parse(xhr.responseText);
-                    HTMLstr = "";                
+                    HTMLstr0 = "";
+                    HTMLstr1 = "";
+                    HTMLstr2 = "";
+                    HTMLstr3 = "";
                     for(var i=0; i<6; i++ ){
-                        if(playerData[i]){
-                            HTMLstr += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[i].memName}</li><li>${playerData[i].popularity}</li><li>${playerData[i].wisdom}</li><li>${playerData[i].charisma}</li><li>${playerData[i].finance}</li></ul></li>`;
+                        if(playerData[0][i]){
+                            HTMLstr0 += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[0][i].memName}</li><li>${playerData[0][i].popularity}</li><li>${playerData[0][i].wisdom}</li><li>${playerData[0][i].charisma}</li><li>${playerData[0][i].finance}</li></ul></li>`;
                         }else{
-                            HTMLstr += ` <li class="playList"><ul><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li></ul></li>`;
+                            HTMLstr0 += ` <li class="playList"><ul><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li></ul></li>`;
                         }
                     }
-                document.getElementById('innerPlayer').innerHTML =HTMLstr;
+                    for(var i=0; i<6; i++ ){
+                        if(playerData[1][i]){
+                            HTMLstr1 += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[1][i].memName}</li><li>${playerData[1][i].popularity}</li><li>${playerData[1][i].wisdom}</li><li>${playerData[1][i].charisma}</li><li>${playerData[1][i].finance}</li></ul></li>`;
+                        }else{
+                            HTMLstr1 += ` <li class="playList"><ul><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li></ul></li>`;
+                        }
+                    }
+                    for(var i=0; i<6; i++ ){
+                        if(playerData[2][i]){
+                            HTMLstr2 += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[2][i].memName}</li><li>${playerData[2][i].popularity}</li><li>${playerData[2][i].wisdom}</li><li>${playerData[2][i].charisma}</li><li>${playerData[2][i].finance}</li></ul></li>`;
+                        }else{
+                            HTMLstr2 += ` <li class="playList"><ul><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li></ul></li>`;
+                        }
+                    }
+                    for(var i=0; i<6; i++ ){
+                        if(playerData[3][i]){
+                            HTMLstr3 += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[3][i].memName}</li><li>${playerData[3][i].popularity}</li><li>${playerData[3][i].wisdom}</li><li>${playerData[3][i].charisma}</li><li>${playerData[3][i].finance}</li></ul></li>`;
+                        }else{
+                            HTMLstr3 += ` <li class="playList"><ul><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li></ul></li>`;
+                        }
+                    }
+                document.getElementById('innerPlayer').innerHTML =HTMLstr0;
+                $('#rankAll').click(function(){
+                    document.getElementById('innerPlayer').innerHTML =HTMLstr0;
+                    $('#boardInner').css('backgroundColor','#84ccc9');
+                    TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                        x: -500,
+                        opacity:0
+                    }, {
+                        x: 0,
+                        opacity:1
+                    }, 0.08);
+                });
+                $('#rankP_1').click(function(){
+                    document.getElementById('innerPlayer').innerHTML =HTMLstr1;
+                    $('#boardInner').css('backgroundColor','#fcd93d');
+                    TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                        x: -500,
+                        opacity:0
+                    }, {
+                        x: 0,
+                        opacity:1
+                    }, 0.08);
+                });
+                $('#rankP_2').click(function(){
+                    document.getElementById('innerPlayer').innerHTML =HTMLstr2;
+                    $('#boardInner').css('backgroundColor','#58d8ff');
+                    TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                        x: -500,
+                        opacity:0
+                    }, {
+                        x: 0,
+                        opacity:1
+                    }, 0.08);
+                });
+                $('#rankP_3').click(function(){
+                    document.getElementById('innerPlayer').innerHTML =HTMLstr3;
+                    $('#boardInner').css('backgroundColor','#ff99a2');
+                    TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                        x: -500,
+                        opacity:0
+                    }, {
+                        x: 0,
+                        opacity:1
+                    }, 0.08);
+                });
                 }else{
                     alert( xhr.status );
                 }
@@ -582,53 +653,7 @@
             xhr.open("Get", url, true);
             xhr.send( null );
         }
-
-
-        // 排行榜案分頁
-        function rankClick(){
-            $('#rankAll').click(function(){
-                $('#boardInner').css('backgroundColor','#84ccc9');
-                TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                    x: -500,
-                    opacity:0
-                }, {
-                    x: 0,
-                    opacity:1
-                }, 0.08);
-            });
-            $('#rankP_1').click(function(){
-                $('#boardInner').css('backgroundColor','#fcd93d');
-                TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                    x: -500,
-                    opacity:0
-                }, {
-                    x: 0,
-                    opacity:1
-                }, 0.08);
-            });
-            $('#rankP_2').click(function(){
-                $('#boardInner').css('backgroundColor','#58d8ff');
-                TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                    x: -500,
-                    opacity:0
-                }, {
-                    x: 0,
-                    opacity:1
-                }, 0.08);
-            });
-            $('#rankP_3').click(function(){
-                $('#boardInner').css('backgroundColor','#ff99a2');
-                TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                    x: -500,
-                    opacity:0
-                }, {
-                    x: 0,
-                    opacity:1
-                }, 0.08);
-            });
-        }
-            
-            
+        
            
         //當你想用alert視窗時,請在自己程式下事件處理程序
         //ex:點button跑出alert,改變訊息 <button id=memDataCancel>
