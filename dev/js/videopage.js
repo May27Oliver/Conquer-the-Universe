@@ -671,7 +671,6 @@ window.addEventListener('load',function(){
         }
         for(var i=0;i<fnV1P1A.length;i++){
             fnV1P1A[i].style.backgroundColor="transparent";
-            console.log(fnV1P1A[i]);
         }//先清除所有底色
         award.style.display="none";
         wrongAns.style.display="block";
@@ -1041,8 +1040,8 @@ window.addEventListener('load',function(){
         for(var i=0;i<fnV3P2A.length;i++){
             fnV3P2A[i].style.backgroundColor="transparent";
         }//先清除所有底色
-        award.style.display="none";
-        wrongAns.style.display="block";
+        award.style.display="block";
+        wrongAns.style.display="none";
         fnV3P2A[1].style.backgroundColor="#C4E1FF";
     });
 
