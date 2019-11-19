@@ -17,7 +17,7 @@
                     </tr>
                 </table>
                 <div id="submitBtn" class="yellowButton" onclick="login()">登入</div>
-                <div id="registeredBtn" onclick="register()">註冊帳號</div>
+                <div id="registeredBtn" onclick="registerBox()">註冊帳號</div>
             </form>
         </section>
         <!-- @@include('roleCreate.html') -->
@@ -27,7 +27,7 @@
             <table class="registerInfo">
                 <tr>
                     <th>會員帳號：</th>
-                    <td><input type="text" id="mem_id" placeholder="4~12位英數字" maxlength="12"></td>
+                    <td><input type="text" id="memId" placeholder="4~12位英數字" maxlength="12"></td>
                 </tr>
                 <tr>
                     <th>
@@ -39,7 +39,7 @@
                 </tr>
                 <tr>
                     <th>會員密碼：</th>
-                    <td><input type="password" id="mem_psw" placeholder="4~12位英數字" maxlength="12"></td>
+                    <td><input type="password" id="memPsw" placeholder="4~12位英數字" maxlength="12"></td>
                 </tr>
                 <tr>
                     <th>確認密碼：</th>
@@ -47,15 +47,15 @@
                 </tr>
                 <tr>
                     <th>會員暱稱：</th>
-                    <td><input type="text" id="mem_name" placeholder="會員暱稱"></td>
+                    <td><input type="text" id="memName" placeholder="會員暱稱"></td>
                 </tr>
                 <tr>
                     <th>電子信箱：</th>
-                    <td><input type="text" id="mem_email" placeholder="E-mail含@和."></td>
+                    <td><input type="text" id="memEmail" placeholder="E-mail含@和."></td>
                 </tr>
             </table>
-            <div id="registerSubmit" type="button">註冊</div>
-            <!-- <button type="reset">清除</button> -->
+            <div id="registerSubmit" type="button" onclick="register()">註冊</div>
+            <div id="registerCancel" type="button" onclick="backLogin()">取消</div>
         </section>
     </div>
 </div>

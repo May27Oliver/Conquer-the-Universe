@@ -3960,6 +3960,7 @@ div.slider {
 
 
 /*__________[START] 會員登入註冊燈箱 __________*/
+// *{ outline: 1px solid #f00; }
 #loginWrap{
     width: 100vw;
     height: 100%;
@@ -4043,26 +4044,28 @@ div.slider {
                                 padding: 5px;
                                 margin-left: 5px;
                                 box-sizing: border-box;
+                                outline: none;
                             }
                         }
                     }
                 }
                 .yellowButton {
-                    display: inline-block;
+                    width: 30%;
                     background: #ffd584;
                     color: #b78100;
                     font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
                     font-size: 16px;
                     font-weight: 500;
-                    padding: 8px 20px;
-                    margin: 20px 10px 0;
+                    padding: 8px 0;
+                    margin: 20px auto 0;
                     border: 1px solid #b78100;
                     border-radius: 50px;
                     outline: none;
                     cursor: pointer;
                 }
                 #registeredBtn{
-                    margin: 15px 0;
+                    width: 30%;
+                    margin: 15px auto;
                     font-size: 15px;
                     text-decoration: underline;
                     cursor: pointer;
@@ -4103,7 +4106,7 @@ div.slider {
                             padding: 5px 8px;
                             margin: 10px 0;
                             box-sizing: border-box;
-                            
+                            outline: none;
                         }
                         #memIdCheck{
                             width: 80px;
@@ -4112,15 +4115,17 @@ div.slider {
                     }
                 }
             }
-            #registerSubmit {
+            #registerSubmit,
+            #registerCancel {
                 display: inline-block;
+                width: 30%;
                 background: #ffd584;
                 color: #b78100;
                 font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
                 font-size: 16px;
                 font-weight: 500;
-                padding: 8px 20px;
-                margin: 20px 10px;
+                padding: 8px 0;
+                margin: 20px 5px;
                 border: 1px solid #b78100;
                 border-radius: 50px;
                 outline: none;
