@@ -8,38 +8,33 @@
     <title>公民的家</title>
     
 </head>
-<body class="homeCitizen">
-    <!---- 編輯會員內容區塊燈箱 ---->
-    <div class="content" id="memberData" style="display: none;">
+<body class="homeCitizen" id="homeCitizen">
+      <!---- 編輯會員內容區塊燈箱 ---->
+      <div class="content" id="memberData" style="display: none;">
         <div class="container">
             <div class="row">
-
-                 <form action="" class="memDataItem col-12 col-md-12">
-                         <div class=" col-12">
+                 <div  class="memDataItem col-12 col-md-12">
+                         <div class="col-12 memDataBox" id="memDataBox">
                              <h2>編輯會員資料</h2>
-                             <div class="col-12 col-md-12 wrapDataItem">
+                             <div class="col-12 col-md-12 wrapDataItem" id="wrapDataItem">
                                  <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員編號 :</label>
-                                 <span class="col-md-5 memNo">1</span>
+                                 <span class="col-md-5 memNo" id="memNo"></span>
                              </div>
-                             <!-- <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
-                                    <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員姓名 :</label>
-                                    <span class="col-md-5 mem_id">王曉明</span>
-                            </div> -->
                             <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
                                 <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色稱號 :</label>
                                 <select name="titleName" id="memDataLock1" class="memDataLock1" disabled="">
-                                    <option>菜逼巴</option>
+                                    <option></option>
                                 </select>
                                 <img src="img/pencil.png" id="memDataEdit1" class="memDataEdit1" alt="editIcon">
                              </div>
                              <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
                                 <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色暱稱 :
                                 </label>
-                                <span class="col-md-5 memName">發大財</span>  
+                                <span class="col-md-5 memName" id="memName"></span>  
                              </div>
                              <div class="col-12 col-md-12 wrapDataItem">
                                 <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員帳號 : </label>
-                                <span class="col-md-5 memId">1234</span>
+                                <span class="col-md-5 memId"></span>
                              </div>
                              <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
                                 <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員密碼 :
@@ -50,7 +45,7 @@
                              <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
                                 <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員信箱 :
                                 </label>
-                                <input id="memDataLock3" class="col-5 col-md-5 col-lg-5 col-xl-5 email memDataLock"  disabled="" type="email" value="DD103G2@gmail.com">
+                                <input id="memDataLock3" class="col-5 col-md-5 col-lg-5 col-xl-5 email memDataLock"  disabled="" type="email" value="">
                                 <img src="img/pencil.png" id="memDataEdit3" alt="editIcon">
                             </div>
                          </div>
@@ -58,7 +53,7 @@
                             <button id="memDataButton"type="submit">確認</button>
                             <button id="memDataCancel" type="reset">取消</button>
                         </div>
-                </form>
+                </div>
                 
              </div>
         </div>
@@ -69,22 +64,22 @@
     @@include('./template/header.html')
     <!---- 公民家內容區塊 ---->
     <div class="homeContent">
-        <div class="redBall">
+        <div class="redBall" id="redBall">
             <!---- 內容區塊左 ---->
             <div class="container redBallIn">
                 <div class="row " >
                     <div class="col-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="item boxLeft">
                             <div class="memNameBox" id="memNameBox">
-                            <img src="img/badge1.png" alt="">
-                                <h3>菜逼巴</h3>
-                                <h2>發大財</h2> 
+                            <img src="" alt="">
+                                <h3 id="titleName"></h3>
+                                <h2></h2> 
                             </div>
 
                             <div class="supportBox">
                                 <h4>個人貢獻支持度</h4>
-                                <div class="supportBoxIn">
-                                    <p>66666</p>
+                                <div class="supportBoxIn" id="supportBoxIn">
+                                    <p></p>
                                 </div>
                             </div>
 
@@ -99,8 +94,8 @@
                     </div>
                     <div class="col-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="item boxCenter">
-                            <div class="EquiImg">
-                                <img class="citizenRabbit" src="img/rabbit.png" alt=""> 
+                            <div class="EquiImg" id="EquiImg">
+                                <!-- <img class="citizenRabbit" src="img/rabbit.png" alt=""> 
                                 <div id="EquiBox">
                                     <img id="Equi" src="img/shopPic1.png" alt="">
                                     
@@ -109,7 +104,7 @@
                                 <div id="EquiBoxHand">
                                     <img id="EquiHand" src="img/shopPic3.png" >
                                     <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
-                                </div>
+                                </div> -->
                                
                             </div>
                             
@@ -132,7 +127,7 @@
                                         <h4>限時搶購:<i></i>  <i></i>  <i></i></h4> 
                                         <div class="propBox">
                                             <div id="today">
-                                                <img class="hat" src="img/shopPic2.png" alt="">
+                                                <img class="hat" src="" alt="">
                                                 <button class="citizenShop" >$100</button> 
                                             </div>
                                             
@@ -198,6 +193,389 @@
     <script src="js/animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/homeCitizen.js"></script>
-    
+    <script>
+    //個人編輯會員資料撈取
+function getMember(){
+  var xhr = new XMLHttpRequest();
+  xhr.onload=function (){
+       if( xhr.status == 200 ){
+        member = JSON.parse(xhr.responseText);
+            HTMLstr = "";
+            for(var i=0; i<1; i++ ){
+                HTMLstr += `
+                <h2>編輯會員資料</h2>
+                    <div class="col-12 col-md-12 wrapDataItem" id="wrapDataItem">
+                        <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員編號 :</label>
+                            <span class="col-md-5 memNo" id="memNo">${member[i].memNo}</span>
+                        </div>
+                    <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                        <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色稱號 :</label>
+                        <select name="titleName" id="memDataLock1" class="memDataLock1" disabled="">
+                            <option></option>
+                        </select>
+                        <img src="img/pencil.png" id="memDataEdit1" class="memDataEdit1" alt="editIcon">
+                    </div>
+                    <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                        <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色暱稱 :
+                        </label>
+                        <span class="col-md-5 memName" id="memName">${member[i].memName}</span>  
+                    </div>
+                    <div class="col-12 col-md-12 wrapDataItem">
+                        <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員帳號 : </label>
+                        <span class="col-md-5 memId">${member[i].memId}</span>
+                    </div>
+                    <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                        <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員密碼 :
+                        </label>
+                        <input id="memDataLock2" class="col-5 col-md-5 col-lg-5 col-xl-5 memPsw memDataLock"  disabled="" type="password" value="${member[i].memPsw}">
+                        <img src="img/pencil.png" id="memDataEdit2" alt="editIcon">
+                    </div>
+                    <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                        <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員信箱 :
+                        </label>
+                        <input id="memDataLock3" class="col-5 col-md-5 col-lg-5 col-xl-5 email memDataLock"  disabled="" type="email" value="${member[i].email}">
+                        <img src="img/pencil.png" id="memDataEdit3" alt="editIcon">
+                    </div>
+                `;
+            }
+            document.getElementById('memDataBox').innerHTML =HTMLstr;
+       }else{
+        alert( xhr.status );
+       }
+  }
+  
+  var url = "php/homeCitizen.php?";
+  xhr.open("Get", url, true);
+  xhr.send( null );
+}
+getMember();
+
+function memNametitle(){
+  var xhr = new XMLHttpRequest();
+  xhr.onload=function (){
+       if( xhr.status == 200 ){
+        memtitle = JSON.parse(xhr.responseText);
+            HTMLstr = "";
+            for(var i=0; i<1; i++ ){
+                HTMLstr += `
+                <h2>編輯會員資料</h2>
+                    <div class="col-12 col-md-12 wrapDataItem" id="wrapDataItem">
+                        <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員編號 :</label>
+                            <span class="col-md-5 memNo" id="memNo">${member[i].memNo}</span>
+                        </div>
+                    <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                        <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色稱號 :</label>
+                        <select name="titleName" id="memDataLock1" class="memDataLock1" disabled="">
+                            <option>${memtitle[0].titleName}</option>
+                            <option>${memtitle[1].titleName}</option>
+                        </select>
+                        <img src="img/pencil.png" id="memDataEdit1" class="memDataEdit1" alt="editIcon">
+                    </div>
+                    <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                        <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色暱稱 :
+                        </label>
+                        <span class="col-md-5 memName" id="memName">${member[i].memName}</span>  
+                    </div>
+                    <div class="col-12 col-md-12 wrapDataItem">
+                        <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員帳號 : </label>
+                        <span class="col-md-5 memId">${member[i].memId}</span>
+                    </div>
+                    <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                        <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員密碼 :
+                        </label>
+                        <input id="memDataLock2" class="col-5 col-md-5 col-lg-5 col-xl-5 memPsw memDataLock"  disabled="" type="password" value="${member[i].memPsw}">
+                        <img src="img/pencil.png" id="memDataEdit2" alt="editIcon">
+                    </div>
+                    <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                        <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員信箱 :
+                        </label>
+                        <input id="memDataLock3" class="col-5 col-md-5 col-lg-5 col-xl-5 email memDataLock"  disabled="" type="email" value="${member[i].email}">
+                        <img src="img/pencil.png" id="memDataEdit3" alt="editIcon">
+                    </div>
+                `;
+            }
+            document.getElementById('memDataBox').innerHTML =HTMLstr;
+       }else{
+        alert( xhr.status );
+       }
+  }
+  
+  var url = "php/memNameBoxtitle.php?";
+  xhr.open("Get", url, true);
+  xhr.send( null );
+}
+memNametitle();
+
+
+
+
+// 個人貢獻支持度
+function citizenPopularity(){
+  var xhr = new XMLHttpRequest();
+  xhr.onload=function (){
+       if( xhr.status == 200 ){
+        popularity = JSON.parse(xhr.responseText);
+            HTMLstr = "";
+            for(var i=0; i<1; i++ ){
+                HTMLstr += `
+                <p>${popularity[i].popularity}</p>
+                `;
+            }
+            document.getElementById('supportBoxIn').innerHTML =HTMLstr;
+       }else{
+        alert( xhr.status );
+       }
+  }
+  
+  var url = "php/citizenPopularity.php?";
+  xhr.open("Get", url, true);
+  xhr.send( null );
+}
+citizenPopularity();
+
+
+// 個人暱稱
+function memNameBox(){
+  var xhr = new XMLHttpRequest();
+  xhr.onload=function (){
+       if( xhr.status == 200 ){
+        memNameBox = JSON.parse(xhr.responseText);
+            HTMLstr = "";
+            for(var i=0; i<1; i++ ){
+                HTMLstr += `
+                <h2>${memNameBox[i].memName}</h2> 
+                `;
+            }
+            document.getElementById('memNameBox').innerHTML =HTMLstr;
+       }else{
+        alert( xhr.status );
+       }
+  }
+  
+  var url = "php/memNameBox.php?";
+  xhr.open("Get", url, true);
+  xhr.send( null );
+}
+memNameBox();
+
+// 個人稱號
+// function memNameBoxtitle(){
+//   var xhr = new XMLHttpRequest();
+//   xhr.onload=function (){
+//        if( xhr.status == 200 ){
+//         title = JSON.parse(xhr.responseText);
+//             HTMLstr = "";
+//             for(var i=0; i<1; i++ ){
+//                 HTMLstr += `
+//                 <h3>${title[1].titleName}</h3>
+//                 `;
+//             }
+//             document.getElementById('memNameBox').innerHTML =HTMLstr;
+//        }else{
+//         alert( xhr.status );
+//        }
+//   }
+  
+//   var url = "php/memNameBoxtitle.php?";
+//   xhr.open("Get", url, true);
+//   xhr.send( null );
+// }
+// memNameBoxtitle();
+
+// 個人徽章
+function memBadge(){
+  var xhr = new XMLHttpRequest();
+  xhr.onload=function (){
+       if( xhr.status == 200 ){
+        badge = JSON.parse(xhr.responseText);
+        console.log(badge);
+            HTMLstr = "";
+            for(var i=0; i<1; i++ ){
+                HTMLstr += `
+                <img src="${badge[5].bandageimg}" alt="">
+                <h3 id="titleName">菜逼巴</h3>
+                <h2>${memNameBox[i].memName}</h2> 
+                `;
+            }
+            document.getElementById('memNameBox').innerHTML =HTMLstr;
+       }else{
+        alert( xhr.status );
+       }
+  }
+  
+  var url = "php/homeCitizenBadge.php?";
+  xhr.open("Get", url, true);
+  xhr.send( null );
+}
+memBadge();
+
+// 候選人
+function memRole(){
+  var xhr = new XMLHttpRequest();
+  xhr.onload=function (){
+       if( xhr.status == 200 ){
+        StarsRole = JSON.parse(xhr.responseText);
+        console.log(StarsRole);
+            HTMLstr = "";
+            for(var i=0; i<1; i++ ){
+                HTMLstr += `
+                <img class="citizenRabbit" src="${StarsRole[2].starsRole}" alt=""> 
+                <div id="EquiBox" class="rabbitBox">
+                    <img id="Equi" src="" alt="" style="display:none">
+                    <div class="EquiClose1" style="display: none;" onclick="removeEqui()"></div>
+                </div>
+                <div id="EquiBoxHand" class="rabbitHandBox">
+                    <img id="EquiHand" src="" alt="" style="display:none">
+                    <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
+                </div>
+                
+               <!-- <img class="citizenFat" src="${StarsRole[1].starsRole}" alt=""> 
+                <div id="EquiBox" class="fatBox">
+                    <img id="Equi" src="" alt="" style="display:none">
+                    <div class="EquiClose1" style="display: none;" onclick="removeEqui()"></div>
+                </div>
+                <div id="EquiBoxHand" class="fatHandBox">
+                    <img id="EquiHand" src="" alt="" style="display:none">
+                    <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
+                </div>
+
+                <img class="citizenOneEye" src="${StarsRole[0].starsRole}" alt=""> 
+                <div id="EquiBox" class="oneEyeBox">
+                    <img id="Equi" src="" alt="" style="display:none">
+                    <div class="EquiClose1" style="display: none;" onclick="removeEqui()"></div>
+                </div>
+                <div id="EquiBoxHand" class="oneEyeHandBox">
+                    <img id="EquiHand" src="" alt="" style="display:none">
+                    <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
+                </div>  -->
+                `;
+                
+            }
+            document.getElementById('EquiImg').innerHTML =HTMLstr;
+                        //hover帽子道具img出現叉叉
+                $("#EquiBox img").mouseover(function(){
+                    $(".EquiClose1").css("display","block");
+                }); 
+                $("#EquiBox img").mouseout(function(){
+                    $(".EquiClose1").css("display","none");
+                });
+                // moveEquiIn1
+                $(".EquiClose1").mouseover(function(){
+                    $(".EquiClose1").css("display","block");
+                });
+
+                $(".EquiClose1").mouseout(function(){
+                    $(".EquiClose1").css("display","none");
+                });
+                //hover手上道具img出現叉叉
+                $("#EquiBoxHand img").mouseover(function(){
+                    $(".EquiClose2").css("display","block");
+                });
+                $("#EquiBoxHand img").mouseout(function(){
+                    $(".EquiClose2").css("display","none");
+                });
+                // moveEquiIn2
+                $(".EquiClose2").mouseover(function(){
+                    $(".EquiClose2").css("display","block");
+                });
+
+                $(".EquiClose2").mouseout(function(){
+                    $(".EquiClose2").css("display","none");
+                });
+       }else{
+        alert( xhr.status );
+       }
+  }
+  
+  var url = "php/memRole.php?";
+  xhr.open("Get", url, true);
+  xhr.send( null );
+}
+memRole();
+
+// 今日商品上架
+function todayEqui(){
+  var xhr = new XMLHttpRequest();
+  xhr.onload=function (){
+       if( xhr.status == 200 ){
+        todayEqui= JSON.parse(xhr.responseText);
+        console.log(todayEqui);
+            HTMLstr = "";
+            for(var i=0; i<1; i++ ){
+                HTMLstr += `
+                <img class="hat" src="${todayEqui[4].clothimg}" alt="">
+                <button class="citizenShop" >$100</button>  
+                `;
+            }
+            document.getElementById('today').innerHTML =HTMLstr;
+       }else{
+        alert( xhr.status );
+       }
+  }
+  
+  var url = "php/todayEqui.php?";
+  xhr.open("Get", url, true);
+  xhr.send( null );
+}
+todayEqui();
+
+// // 星球圖
+function StarsBall(){
+  var xhr = new XMLHttpRequest();
+  xhr.onload=function (){
+       if( xhr.status == 200 ){
+        StarsBall= JSON.parse(xhr.responseText);
+        console.log(StarsBall);
+        $('#redBall').css('background-image',`url(${StarsBall[0].starsBall})`)
+         console.log(StarsBall[2].starsBall);
+       }else{
+        alert( xhr.status );
+       }
+  }
+  
+  var url = "php/homeCitizenStars.php?";
+  xhr.open("Get", url, true);
+  xhr.send( null );
+}
+StarsBall();
+
+//修改會員資料
+$('body').on('click', '#memDataButton', function () {
+        let titleName= document.getElementById('titleName').innerText=$('#memDataLock1').val();
+        let memNo = $('.memNo').text();
+        let memName = $('.memName').text();
+        let memPsw = $('.memPsw').val();
+        let email = $('.email').val();
+        let storage = sessionStorage;
+        console.log(titleName);
+        console.log(memNo);
+        console.log(memName);
+        console.log(memPsw);
+        console.log(email);
+        sessionStorage.setItem('titleName', titleName);
+        sessionStorage.setItem('memPsw', memPsw);
+        sessionStorage.setItem('email', email);
+            $.ajax({
+                url: `php/homeCitizenModify.php`,
+                data: {
+                    titleName,
+                    memNo,
+                    memName: memName,
+                    memPsw,
+                    email,
+                },
+                type: 'POST',
+                success: function (memEditRows) {
+                    // var afterEdit = JSON.parse(memEditRows);
+                    // console.log(afterEdit);
+                },
+            })
+            $("#memberData").css("display","none");
+            $("#memDataLock3").attr("disabled","false")
+        })
+            
+
+
+    </script>
 </body>
 </html>
