@@ -75,6 +75,46 @@
                 background-repeat: no-repeat; 
             }
         }
+        #wealth{
+            cursor: default;
+            margin-top: 0;
+            position: absolute;
+            right:180px;
+            top:50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            color:white;
+            font-size: 16px;
+            // width: 23px;
+            // height: 23px;
+            line-height: 30px;
+            background-image: url(../img/GEM.png);
+            // background-repeat: none;
+        }
+        #coin{
+            cursor: default;
+            margin-top: 0;
+            position: absolute;
+            right:150px;
+            top:50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            color:white;
+            font-size: 16px;
+            line-height: 30px;
+        }
+        #memberName{
+            cursor: default;
+            margin-top: 0;
+            position: absolute;
+            right:60px;
+            top:20%;
+            transform: translateY(-50%);
+            z-index: 999;
+            color:white;
+            font-size: 16px;
+            line-height: 30px;
+        }
         span{
             margin-top: 0;
             position: absolute;
@@ -82,14 +122,20 @@
             top:50%;
             transform: translateY(-50%);
             z-index: 999;
+            
             #loginBtn{
                 text-align: center;
                 border:0;
-                line-height: 56px;
-                background-image: url(../img/loginBtn.png);
-                width: 176px;
-                height: 56px;
-                color:#333;
+                line-height: 30px;
+                font-size: 16px;
+                // background-image: url(../img/loginBtn.png);
+                width: 100px;
+                height: 30px;
+                color:white;
+                box-sizing: border-box;
+            }
+            #loginBtn:hover{
+                border-bottom: 3px solid white;
             }
         }
         #nav-control{
