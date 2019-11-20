@@ -1,7 +1,4 @@
 window.addEventListener('load',function(){
-   new CountUp("pie",0,6666).start();
-   new CountUp("fatty",0,6666).start();
-   new CountUp("peter",0,6666).start();
 
    let getStart=document.getElementById("winPoint_1");
    if(getStart){
@@ -9,10 +6,10 @@ window.addEventListener('load',function(){
       new CountUp("winPoint_2",0,66666).start();
       new CountUp("winPoint_3",0,66666).start();
    }
-   let homeCitizenCount = document.getElementById("popularity");
-   if(homeCitizenCount){
-      new CountUp("popularity",0,66666).start();
-   }
+   // let homeCitizenCount = document.getElementById("popularity");
+   // if(homeCitizenCount){
+   //    new CountUp("popularity",0,66666).start();
+   // }
    //公民小學堂動畫
    TweenMax.to('.rabbit', 1,{
       //  x:100,
