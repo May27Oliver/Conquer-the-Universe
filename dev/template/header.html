@@ -3,9 +3,9 @@
     <header>
         <div class="topBg"></div>
         <div class="navTop">
-            <p id="planetPoint_3">兔兔星：<span class="jumbo" id="peter">0</span></p>
-            <p id="planetPoint_2">肥宅星：<span class="jumbo" id="fatty">0</span></p>
-            <p id="planetPoint_1">派大星：<span class="jumbo" id="pie">0</span></p>
+            <p id="planetPoint_3">兔兔星：<span class="jumbo" id="peter"></span></p>
+            <p id="planetPoint_2">肥宅星：<span class="jumbo" id="fatty"></span></p>
+            <p id="planetPoint_1">派大星：<span class="jumbo" id="pie"></span></p>
         </div>
     <!-- 天長條 -->
         <div class="banner">
@@ -26,3 +26,33 @@
             </nav>
         </div>
     </header>
+    <script>
+        $(document).ready(function(){
+                        
+            // 最上面個星球總支持度
+            getTopPoint();
+            function getTopPoint(){
+                
+                var xhr = new XMLHttpRequest();
+                xhr.onload=function (){
+                    if( xhr.status == 200 ){ 
+                        pointData = JSON.parse(xhr.responseText);
+                        // new CountUp("pie",0,pointData[0]).start();
+                        // new CountUp("fatty",0,pointData[1]).start();
+                        // new CountUp("peter",0,pointData[2]).start();
+                        document.getElementById("pie").innerText=pointData[0];
+                        document.getElementById("fatty").innerText=pointData[1];
+                        document.getElementById("peter").innerText=pointData[2];
+                        setTimeout(getTopPoint, 1000);
+                    }else{ 
+                        alert( xhr.status );
+                    }
+                }
+                var url = "php/topPoint.php";
+                xhr.open("Get", url, true);
+                xhr.send( null );
+            }
+
+
+        });
+</script>

@@ -1,7 +1,4 @@
 window.addEventListener('load',function(){
-   new CountUp("pie",0,6666).start();
-   new CountUp("fatty",0,6666).start();
-   new CountUp("peter",0,6666).start();
 
    let getStart=document.getElementById("winPoint_1");
    if(getStart){
