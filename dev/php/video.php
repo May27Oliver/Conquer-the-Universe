@@ -36,6 +36,7 @@ $AsV4P2=(int)$_POST['AsV4P2'];
 $AsV5P1=(int)$_POST['AsV5P1'];
 $AsV5P2=(int)$_POST['AsV5P2'];
 $starCoin = 100;
+$ability=10;
 try{
     // 財經影片一問題一
     if($fnV1P1==3){
@@ -43,6 +44,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `finance` = `finance`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($fnV1P2==4){
@@ -50,6 +52,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `finance` = `finance`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($fnV2P1==1){
@@ -57,6 +60,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `finance` = `finance`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($fnV2P2==1){
@@ -64,6 +68,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `finance` = `finance`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($fnV3P1==3){
@@ -71,6 +76,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `finance` = `finance`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($fnV3P2==2){
@@ -78,6 +84,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `finance` = `finance`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($fnV4P1==1){
@@ -85,6 +92,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `finance` = `finance`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($fnV4P2==4){
@@ -92,6 +100,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `finance` = `finance`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($fnV5P1==4){
@@ -99,6 +108,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `finance` = `finance`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($fnV5P2==1){
@@ -106,6 +116,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `finance` = `finance`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($JtV1P1==1){
@@ -113,6 +124,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `wisdom` = `wisdom`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($JtV1P1==2){
@@ -120,6 +132,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `wisdom` = `wisdom`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($JtV1P2==1){
@@ -127,6 +140,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `wisdom` = `wisdom`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($JtV1P2==2){
@@ -134,6 +148,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `wisdom` = `wisdom`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($JtV2P1==3){
@@ -141,6 +156,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `wisdom` = `wisdom`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($JtV2P2==1){
@@ -148,6 +164,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `wisdom` = `wisdom`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($JtV2P2==2){
@@ -155,6 +172,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `wisdom` = `wisdom`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($JtV3P1==1){
@@ -162,6 +180,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `wisdom` = `wisdom`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($JtV3P1==2){
@@ -169,6 +188,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `wisdom` = `wisdom`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($JtV3P2==2){
@@ -176,6 +196,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `wisdom` = `wisdom`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($JtV4P1==4){
@@ -183,6 +204,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `wisdom` = `wisdom`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($JtV4P2==2){
@@ -190,6 +212,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `wisdom` = `wisdom`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($JtV5P1==4){
@@ -197,6 +220,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `wisdom` = `wisdom`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($JtV5P2==1){
@@ -204,6 +228,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `wisdom` = `wisdom`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($JtV5P2==2){
@@ -211,6 +236,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `wisdom` = `wisdom`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($AsV1P1==3){
@@ -218,6 +244,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `charisma` = `charisma`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($AsV1P2==3){
@@ -225,6 +252,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `charisma` = `charisma`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($AsV2P1==3){
@@ -232,6 +260,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `charisma` = `charisma`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($AsV2P2==1){
@@ -239,6 +268,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `charisma` = `charisma`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($AsV3P1==3){
@@ -246,6 +276,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `charisma` = `charisma`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($AsV3P2==4){
@@ -253,6 +284,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `charisma` = `charisma`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($AsV4P1==3){
@@ -260,6 +292,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `charisma` = `charisma`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($AsV4P2==3){
@@ -267,6 +300,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `charisma` = `charisma`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($AsV5P1==1){
@@ -274,6 +308,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `charisma` = `charisma`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }elseif($AsV5P2==3){
@@ -281,6 +316,7 @@ try{
         $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `charisma` = `charisma`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }else{
@@ -288,6 +324,7 @@ try{
         $sql="UPDATE `member`
               SET `popularity` = popularity-{$moneyCut} 
               , `starCoin` = `starCoin`+ {$starCoin}
+              , `charisma` = `charisma`+ {$ability}
               WHERE `member`.`memNo` = 1";
         $pdo->exec($sql);
     }
