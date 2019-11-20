@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @@include('./template/CDN.html')
+    <title>公民的家</title>
+    
+</head>
+<body class="homeCitizen">
+    <!---- 編輯會員內容區塊燈箱 ---->
+    <div class="content" id="memberData" style="display: none;">
+        <div class="container">
+            <div class="row">
+
+                 <form action="" class="memDataItem col-12 col-md-12">
+                         <div class=" col-12">
+                             <h2>編輯會員資料</h2>
+                             <div class="col-12 col-md-12 wrapDataItem">
+                                 <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員編號 :</label>
+                                 <span class="col-md-5 memNo">1</span>
+                             </div>
+                             <!-- <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                                    <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員姓名 :</label>
+                                    <span class="col-md-5 mem_id">王曉明</span>
+                            </div> -->
+                            <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                                <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色稱號 :</label>
+                                <select name="titleName" id="memDataLock1" class="memDataLock1" disabled="">
+                                    <option>菜逼巴</option>
+                                </select>
+                                <img src="img/pencil.png" id="memDataEdit1" class="memDataEdit1" alt="editIcon">
+                             </div>
+                             <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                                <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色暱稱 :
+                                </label>
+                                <span class="col-md-5 memName">發大財</span>  
+                             </div>
+                             <div class="col-12 col-md-12 wrapDataItem">
+                                <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員帳號 : </label>
+                                <span class="col-md-5 memId">1234</span>
+                             </div>
+                             <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                                <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員密碼 :
+                                </label>
+                                <input id="memDataLock2" class="col-5 col-md-5 col-lg-5 col-xl-5 memPsw memDataLock"  disabled="" type="password" value="123">
+                                <img src="img/pencil.png" id="memDataEdit2" alt="editIcon">
+                             </div>
+                             <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+                                <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員信箱 :
+                                </label>
+                                <input id="memDataLock3" class="col-5 col-md-5 col-lg-5 col-xl-5 email memDataLock"  disabled="" type="email" value="DD103G2@gmail.com">
+                                <img src="img/pencil.png" id="memDataEdit3" alt="editIcon">
+                            </div>
+                         </div>
+                         <div class="memDataBox">
+                            <button id="memDataButton"type="submit">確認</button>
+                            <button id="memDataCancel" type="reset">取消</button>
+                        </div>
+                </form>
+                
+             </div>
+        </div>
+     </div>
+    <!---- alert ---->
+    @@include('./template/alert.html')
+    <!---- 選單區 ---->
+    @@include('./template/header.html')
+    <!---- 公民家內容區塊 ---->
+    <div class="homeContent">
+        <div class="redBall">
+            <!---- 內容區塊左 ---->
+            <div class="container redBallIn">
+                <div class="row " >
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <div class="item boxLeft">
+                            <div class="memNameBox" id="memNameBox">
+                            <img src="img/badge1.png" alt="">
+                                <h3>菜逼巴</h3>
+                                <h2>發大財</h2> 
+                            </div>
+
+                            <div class="supportBox">
+                                <h4>個人貢獻支持度</h4>
+                                <div class="supportBoxIn">
+                                    <p id="popularity">66666</p>
+                                </div>
+                            </div>
+
+                            <div class="abilityBox">
+                                <h4>個人能力值</h4>
+                                <div class="abilityBoxIn">
+                                        @@include('./template/radarChart.html')
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <div class="item boxCenter">
+                            <div class="EquiImg">
+                                <img class="citizenRabbit" src="img/rabbit.png" alt=""> 
+                                <div id="EquiBox">
+                                    <img id="Equi" src="img/shopPic1.png" alt="">
+                                    
+                                    <div class="EquiClose1" style="display: none;" onclick="removeEqui()"></div>
+                                </div>
+                                <div id="EquiBoxHand">
+                                    <img id="EquiHand" src="img/shopPic3.png" >
+                                    <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
+                                </div>
+                               
+                            </div>
+                            
+                           
+                                <button class="memBtn" id="memDataBtn">編輯會員資料</button>
+                            <!-- onclick="location.href='memberData.html'   -->
+                        </div>
+                    </div>
+                     
+                     <div class="col-12 col-md-4 col-lg-4 col-xl-4 boxRight">
+                            <div id="tab-demo"> 
+                                <div class="tab-title">
+                                       <span class="tabBtn" id="tabBtn1">限時道具</span>
+                                        <span class="tabBtn" id="tabBtn2">現有道具</span>
+                                </div>
+                                <div class="tabIn">
+                                    <div class="wrapTabIn">
+                                            
+                                    <div id="tab01" class="tab-inner">
+                                        <h4>限時搶購:<i></i>  <i></i>  <i></i></h4> 
+                                        <div class="propBox">
+                                            <div id="today">
+                                                <img class="hat" src="img/shopPic2.png" alt="">
+                                                <button class="citizenShop" >$100</button> 
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        
+                                    </div>
+                                    <div id="tab02" class="tab-inner">
+                                        <div class="propBox" id="itemEqui1">
+                                            <img class="hat" id="hat1" src="img/shopPic1.png" alt="">
+                                        </div>
+                                        <div class="propBox" >
+                                            <img class="hat" id="hat2" src="img/shopPic2.png" alt=""style="display:none;">
+                                        </div>
+                                        <div class="propBox">
+                                            <img class="hand" src="img/shopPic3.png" alt="">
+                                        </div>
+                                        <div class="propBox">
+                                            <img class="hand" src="img/shopPic4.png" alt="">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                        <div class="propBox">
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                    </div> 
+                </div> 
+            </div>
+            <!-- <img class="redImg" src="img/redball.png" alt=""> -->
+            
+        </div>
+    </div>
+    <!---------- 製作星星背景 ---------->
+    <canvas id="starShine"></canvas>
+    <!-- footer -->
+    @@include('./template/footer.html')
+    <script src="js/starsShine.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/homeCitizen.js"></script>
+    
+</body>
+</html>
