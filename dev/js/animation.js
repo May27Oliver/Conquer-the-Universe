@@ -1,11 +1,6 @@
 window.addEventListener('load',function(){
 
-   let getStart=document.getElementById("winPoint_1");
-   if(getStart){
-      new CountUp("winPoint_1",0,66666).start();
-      new CountUp("winPoint_2",0,66666).start();
-      new CountUp("winPoint_3",0,66666).start();
-   }
+   
    let homeCitizenCount = document.getElementById("popularity");
    if(homeCitizenCount){
       new CountUp("popularity",0,66666).start();
