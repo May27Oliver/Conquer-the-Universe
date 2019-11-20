@@ -1,10 +1,10 @@
 window.addEventListener('load',function(){
 
    
-   let homeCitizenCount = document.getElementById("popularity");
-   if(homeCitizenCount){
-      new CountUp("popularity",0,66666).start();
-   }
+   // let homeCitizenCount = document.getElementById("popularity");
+   // if(homeCitizenCount){
+   //    new CountUp("popularity",0,66666).start();
+   // }
    //公民小學堂動畫
    TweenMax.to('.rabbit', 1,{
       //  x:100,

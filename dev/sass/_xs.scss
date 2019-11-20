@@ -57,6 +57,36 @@
     }
 }
 
+.navSec{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    line-height: 40px;
+    z-index: 998;
+    background-color: #000;
+    overflow: hidden;
+    font-size: 10px;
+    p{
+        width: 100%;
+        text-align: center;
+        color: rgba(0, 0, 0, 0);
+        background-repeat: no-repeat;
+    }
+    #memberName{
+        float: right;
+        // margin-right: 60px;
+        color: #84ccc9;
+    }
+    #wealth{
+        // background-image: url(../img/GEM.png);
+        background-position: 0 0;
+        background-size:100%;
+        float: right;
+        margin-right: 60px;
+        color: #84ccc9;
+    }
+}
+
 // 選單
 .topBg {
     position: fixed;
@@ -154,9 +184,9 @@
             margin: 0 auto;
             text-align: center;
             border: 1px solid #fff;
-            line-height: 40px;
-            width: 150px;
-            border-radius: 20px;
+            line-height: 30px;
+            width: 100px;
+            // border-radius: 20px;
         }
     }
 
@@ -558,8 +588,6 @@
 
 
 .redBall {
-    background-image: url(../img/redball.png);
-
     background-repeat: no-repeat;
     background-position: center bottom;
     height: 1365px;
@@ -3076,6 +3104,7 @@ div.slider {
             padding: 20px;
             margin: 0;
         }
+<<<<<<< HEAD
 
         .newsAlertText {
             background: lighten($yellow, 30);
@@ -3109,6 +3138,41 @@ div.slider {
                 padding: 5px 10px;
                 margin: 15px auto 0;
 
+=======
+
+        .newsAlertText {
+            background: lighten($yellow, 30);
+            border-radius: 0 0 10px 10px;
+            text-align: center;
+            padding: 20px;
+
+            p {
+                line-height: 1.5;
+                margin: 10px 10px 0;
+            }
+
+            button {
+                display: inline-block;
+                background: $yellow;
+                color: #333;
+                margin: 35px 10px 0;
+
+                &:hover {
+                    background: lighten($yellow, 15);
+                    box-shadow: 0px 0px 0px 3px darken($yellow, 20);
+                }
+            }
+
+            select {
+                width: 150px;
+                font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                font-size: 15px;
+                color: #333;
+                border: none;
+                padding: 5px 10px;
+                margin: 15px auto 0;
+
+>>>>>>> 90b48600f7470905bb507150bd9377dfd1f709c7
                 option {
                     line-height: 2;
                 }
