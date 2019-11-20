@@ -912,62 +912,60 @@
 
     }
 
-    .newsWindoRight {
+    .newsWindoRight{
         width: 50%;
         height: 100%;
-        background-color: $green;
-        //   overflow-y: auto;
-
-
-        .newsDOWN {
-
-            // background-color: #000;
-            .newsTalk {
-                width: 100%;
-                height: 100%;
-                margin: 30px 25px;
-                display: flex;
-
-                input {
-                    // border: 1px solid #ccc;
-                    // font-size: 16px; 
-                    // width: 70%;
-                    // font-size: 22px; 
-                    // // padding: 10px;
-                    // border-radius:5px ;
-                    border: 1px solid transparent;
-                    font-size: 16px;
-                    width: 70%;
-                    font-size: 15px;
-                    border-radius: 5px;
-                    margin-right: 15px;
-                    padding: 2px 8px;
-                    font-family: '微軟正黑體';
-                }
-
-                button {
-                    // border-radius:10px;
-                    border-radius: 20px;
-                    font-family: '微軟正黑體';
-                    padding: 5px 15px;
-                    background: #1d2088;
-                    color: #fff;
-                }
-
-            }
+        background-color:$green;
+      //   overflow-y: auto;
+      
+      
+      .newsDOWN{
+          // background-color: #000;
+          .newsTalk{
+              width: 100%;
+              height: 100%;
+              margin:30px 25px;
+              display: flex;
+            input{
+              // border: 1px solid #ccc;
+              // font-size: 16px; 
+              // width: 70%;
+              // font-size: 22px; 
+              // // padding: 10px;
+              // border-radius:5px ;
+          border: 1px solid transparent;
+          font-size: 16px;
+          width: 70%;
+          font-size: 15px;
+          border-radius: 5px;
+          margin-right: 15px;
+          padding: 2px 8px;
+          font-family: '微軟正黑體';
+            }  
+            
+              button{
+                  // border-radius:10px;
+                  border-radius: 20px;
+          font-family: '微軟正黑體';
+          padding: 5px 15px;
+          background: #1d2088;
+          color: #fff;
+              }
+      
         }
-
-        .newsMessage {
-            //   background-color: orange;
-
+      }
+        
+        .newsMessage{
+          //   background-color: orange;
+           
             margin: 20px 0;
             padding-bottom: 20px;
             width: 100%;
-            border-bottom: 2px solid #ccc;
+          border-bottom: 2px solid #ccc;
         }
-
-
-    }
+        
+       
+      }
 
     .newsMsgAll {
         //    background-color: #000;
@@ -1177,16 +1175,7 @@
 
     }
 
-    .newsBtnAll {
-        .newsBtn {
-            float: left;
-        }
-
-        .newsreport {
-            float: right;
-
-        }
-    }
+    
 
     .newsBtn {
         margin-bottom: 20px;
