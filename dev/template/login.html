@@ -25,11 +25,11 @@
         <!-- 把阿白的選擇星球放進來 -->
         <section class="registerPage" style="display: none;">
             <h2 class="registerTittle">會員註冊</h2>
-            <form action="php/login.php" method="post"></form>
+            <form action="php/register.php" method="post"></form>
                 <table class="registerInfo">
                     <tr>
                         <th>會員帳號：</th>
-                        <td><input type="text" id="memId" placeholder="4~12位英數字" maxlength="12"></td>
+                        <td><input type="text" id="memIdRig" name="memIdRig" placeholder="4~12位英數字" maxlength="12"></td>
                     </tr>
                     <tr>
                         <th>
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>會員密碼：</th>
-                        <td><input type="password" id="memPsw" placeholder="4~12位英數字" maxlength="12"></td>
+                        <td><input type="password" id="memPswRig" name="memPswRig" placeholder="4~12位英數字" maxlength="12"></td>
                     </tr>
                     <tr>
                         <th>確認密碼：</th>
@@ -49,11 +49,21 @@
                     </tr>
                     <tr>
                         <th>會員暱稱：</th>
-                        <td><input type="text" id="memName" placeholder="會員暱稱"></td>
+                        <td><input type="text" id="memNameRig" name="memNameRig" placeholder="會員暱稱"></td>
+                    </tr>
+                    <tr>
+                        <th>選擇星球：</th>
+                        <td>
+                            <select id="starSelect" name="starSelect">
+                                <option value="1">派大星</option>
+                                <option value="2">肥宅星</option>
+                                <option value="3">兔兔星</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <th>電子信箱：</th>
-                        <td><input type="text" id="memEmail" placeholder="E-mail含@和."></td>
+                        <td><input type="text" id="memEmailRig" name="memEmailRig" placeholder="E-mail含@和."></td>
                     </tr>
                 </table>
                 <div id="loginRig"></div>

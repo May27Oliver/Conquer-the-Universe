@@ -23,6 +23,11 @@
     let wealth = $id("wealth");
     let coin = $id("coin");
     let loginMsg=$id("loginMsg");
+    let memIdRig=$id("memIdRig");
+    let memPswRig=$id("memPswRig");
+    let memNameRig=$id("memNameRig");
+    let memEmailRig=$id("memEmailRig");
+    let starSelect=$id("starSelect");
     //__________ 燈箱開關 __________//
     //燈箱打開
     function loginRegister(){
@@ -45,7 +50,27 @@
         registerPage.style.display="";
     }
     //註冊及驗證
-    function register(){}
+    function register(){
+        console.log(memPswRig.value);
+        var xhr=new XMLHttpRequest();
+
+        xhr.onload=function(){
+            if(xhr.status==200){
+                alert(xhr.responseText);
+            }else{
+                alert(xhr.responseText);
+            }   
+        }
+
+        let url="php/register.php";
+        xhr.open("post",url,true);
+        let query_string=`memIdRig=${memIdRig.value} & starSelect=${starSelect.value} & memPswRig=${memPswRig.value} & memNameRig=${memNameRig.value} & memEmailRig=${memEmailRig.value}`;
+        //memId,memPsw跟登入一樣
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send(query_string);
+        console.log(query_string);
+
+    }
     //取消註冊，清空表單同時返回登入
     function backLogin(){
         // memId.placeholder="";

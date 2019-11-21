@@ -4230,6 +4230,19 @@ div.slider {
                             box-sizing: border-box;
                             outline: none;
                         }
+                        select{
+                            option{
+                                font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                                border: none;
+                                border-radius: 5px;
+                                width: 90%;
+                                line-height: 1.5;
+                                padding: 5px 8px;
+                                margin: 10px 0;
+                                box-sizing: border-box;
+                                outline: none;
+                            }
+                        }
                         #memIdCheck{
                             width: 80px;
                             margin: 0 0 10px;
