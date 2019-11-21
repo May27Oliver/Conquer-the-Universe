@@ -71,6 +71,7 @@ window.addEventListener('load',function(){
                         document.getElementById("stage1").style.backgroundImage = `url('${str1}')`;
                         document.getElementById("stage2").style.backgroundImage = `url('${str2}')`;
                         document.getElementById("stage3").style.backgroundImage = `url('${str3}')`;
+
                     }else{ 
                         alert( xhr.status );
                     }
@@ -79,45 +80,22 @@ window.addEventListener('load',function(){
                 xhr.open("Get", url, true);
                 xhr.send( null );
             }
-           
-            //抓星球前三名
-            // getPlayer3();
-            // function getPlayer3(){
-            //     var xhr = new XMLHttpRequest();
-            //     xhr.onload=function (){
-            //         if( xhr.status == 200 ){ 
-            //             playerData3 = JSON.parse(xhr.responseText);
-            //             for(var i=0; i<3; i++ ){
-            //                 if(playerData3[1][i]){
-                               
-            //                 }else{
-                                
-            //                 }
-            //             }
-            //             for(var i=0; i<3; i++ ){
-            //                 if(playerData3[2][i]){
-                                
-            //                 }else{
-                                
-            //                 }
-            //             }
-            //             for(var i=0; i<; i++ ){
-            //                 if(playerData3[3][i]){
-                               
-            //                 }else{
-                                
-            //                 }
-            //         }else{ 
-            //             alert( xhr.status );
-            //         }
-            //     }
-            //     var url = "php/boardInner.php";
-            //     xhr.open("Get", url, true);
-            //     xhr.send( null );
-            // }
-            
+
             //第一名塞進獎台
+
+            
+
             //發獎牌
+            getPlayer3();
+            function getPlayer3(){
+                var xhr = new XMLHttpRequest();
+                // xhr.onload=function (){}
+                var url = "php/changeBadage.php";
+                xhr.open("Get", url, true);
+                xhr.send( null );
+            }
+     
+            
             //更新新一期的時間區段
             startDate = new Date(myDate.getTime() + (week * 7 * 24 * 60 * 60 * 1000));
             endDate = new Date(myDate.getTime() + (deadline * 7 * 24 * 60 * 60 * 1000));
@@ -126,13 +104,19 @@ window.addEventListener('load',function(){
             document.getElementById("startContest").innerText= startStr;
             document.getElementById("endContest").innerText= endStr;
 
+
             //資料清空
-            //clearPoint();
+            clearPoint();
+            function clearPoint(){
+                var xhr = new XMLHttpRequest();
+                // xhr.onload=function (){}
+                var url = "php/clearPoint.php";
+                xhr.open("Get", url, true);
+                xhr.send( null );
+            }
             
         }
-        
-
-    
+          
     // console.log(time);
     }, 1000);
 });
