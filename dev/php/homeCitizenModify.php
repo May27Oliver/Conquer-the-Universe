@@ -1,10 +1,10 @@
 <?php 
-$errMsg = "";
 session_start();
-
+$errMsg = "";
+$memNo=$_SESSION["memNo"];
 try {
 	require_once("connectPDO.php");
-	$sql='update `member` set memPsw=:memPsw,email=:email order by memNo limit 1';
+	$sql="update `member` set memPsw=:memPsw,email=:email WHERE `member`.`memNo` = {$memNo}";
 	$memEdit=$pdo->prepare($sql);
 	$memEdit->bindValue(':memPsw',$_REQUEST["memPsw"]);
 	$memEdit->bindValue(':email',$_REQUEST["email"]);
