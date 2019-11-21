@@ -3104,7 +3104,6 @@ div.slider {
             padding: 20px;
             margin: 0;
         }
-<<<<<<< HEAD
 
         .newsAlertText {
             background: lighten($yellow, 30);
@@ -3138,41 +3137,6 @@ div.slider {
                 padding: 5px 10px;
                 margin: 15px auto 0;
 
-=======
-
-        .newsAlertText {
-            background: lighten($yellow, 30);
-            border-radius: 0 0 10px 10px;
-            text-align: center;
-            padding: 20px;
-
-            p {
-                line-height: 1.5;
-                margin: 10px 10px 0;
-            }
-
-            button {
-                display: inline-block;
-                background: $yellow;
-                color: #333;
-                margin: 35px 10px 0;
-
-                &:hover {
-                    background: lighten($yellow, 15);
-                    box-shadow: 0px 0px 0px 3px darken($yellow, 20);
-                }
-            }
-
-            select {
-                width: 150px;
-                font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
-                font-size: 15px;
-                color: #333;
-                border: none;
-                padding: 5px 10px;
-                margin: 15px auto 0;
-
->>>>>>> 90b48600f7470905bb507150bd9377dfd1f709c7
                 option {
                     line-height: 2;
                 }
