@@ -26,10 +26,14 @@
     //__________ 燈箱開關 __________//
     //燈箱打開
     function loginRegister(){
-        loginWrap.style.display="";
-        loginPage.style.display="";
-        registerPage.style.display="none";
-        loginBtn.backgroundImage="none";
+        if(loginBtn.innerText == "登出"){
+            logOut();
+        }else{
+            loginWrap.style.display="";
+            loginPage.style.display="";
+            registerPage.style.display="none";
+            loginBtn.backgroundImage="none";            
+        }
     }
     //燈相關閉
     function closeBox(){
@@ -83,8 +87,8 @@
                     // memName.style.top=35;
                     memberName.innerText="您好!"+member.memName;
                     loginBtn.innerText="登出";
-                    loginBtn.onclick=null;
-                    loginBtn.onclick=logOut;
+                    // loginBtn.onclick=null;
+                    // loginBtn.onclick=logOut;
             }else{
                 document.getElementById("loginMsg").innerText=xhr.status;
             }   
@@ -108,8 +112,8 @@
                 wealth.style.height=0;
                 coin.innerText="";
                 loginBtn.style.width=100+"px";
-                loginBtn.onclick=null;
-                loginBtn.onclick=registerBox;
+                // loginBtn.onclick=null;
+                // loginBtn.onclick=registerBox;
                 //這裡的事件聆聽似乎沒有寫進去
             }
         }

@@ -123,21 +123,24 @@
             transform: translateY(-50%);
             z-index: 999;
             
-            #loginBtn{
-                text-align: center;
-                border:0;
-                line-height: 30px;
-                font-size: 16px;
-                // background-image: url(../img/loginBtn.png);
-                width: 100px;
-                height: 30px;
-                color:white;
-                box-sizing: border-box;
-            }
-            #loginBtn:hover{
-                border-bottom: 3px solid white;
-            }
+            
         }
+
+        #loginBtn{
+            text-align: center;
+            border:0;
+            line-height: 30px;
+            font-size: 16px;
+            // background-image: url(../img/loginBtn.png);
+            width: 100px;
+            height: 30px;
+            color:white;
+            box-sizing: border-box;
+        }
+        #loginBtn:hover{
+            border-bottom: 3px solid white;
+        }
+
         #nav-control{
             display: none;
         }

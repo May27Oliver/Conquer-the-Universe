@@ -178,16 +178,17 @@
     span {
         display: block;
         margin-top: 60px;
+    }
 
-        #loginBtn {
-            display: block;
-            margin: 0 auto;
-            text-align: center;
-            border: 1px solid #fff;
-            line-height: 30px;
-            width: 100px;
-            // border-radius: 20px;
-        }
+    #loginBtn {
+        cursor: pointer;
+        color: white;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 30px;
+        width: 100px;
+        // border-radius: 20px;
     }
 
     #nav-control {
