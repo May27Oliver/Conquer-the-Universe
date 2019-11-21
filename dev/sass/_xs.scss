@@ -57,6 +57,36 @@
     }
 }
 
+.navSec{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    line-height: 40px;
+    z-index: 998;
+    background-color: #000;
+    overflow: hidden;
+    font-size: 10px;
+    p{
+        width: 100%;
+        text-align: center;
+        color: rgba(0, 0, 0, 0);
+        background-repeat: no-repeat;
+    }
+    #memberName{
+        float: right;
+        // margin-right: 60px;
+        color: #84ccc9;
+    }
+    #wealth{
+        // background-image: url(../img/GEM.png);
+        background-position: 0 0;
+        background-size:100%;
+        float: right;
+        margin-right: 60px;
+        color: #84ccc9;
+    }
+}
+
 // 選單
 .topBg {
     position: fixed;
@@ -154,9 +184,9 @@
             margin: 0 auto;
             text-align: center;
             border: 1px solid #fff;
-            line-height: 40px;
-            width: 150px;
-            border-radius: 20px;
+            line-height: 30px;
+            width: 100px;
+            // border-radius: 20px;
         }
     }
 
@@ -282,7 +312,7 @@
 
         .winner2 {
             .stageText {
-                background-image: url(../img/home_img/stageB2.png);
+                // background-image: url(../img/home_img/stageB2.png);
                 margin-right: -3.4%;
                 padding-top: 189px;
 
@@ -290,6 +320,10 @@
                     bottom: 50px;
                 }
             }
+
+            // .stageText2 {
+            //     background-image: url(../img/home_img/stageB2.png);
+            // }
 
             .alienImg {
                 bottom: 85px;
@@ -302,7 +336,7 @@
 
         .winner1 {
             .stageText {
-                background-image: url(../img/home_img/stageR1.png);
+                // background-image: url(../img/home_img/stageR1.png);
 
                 p {
                     bottom: 70px;
@@ -316,7 +350,7 @@
 
         .winner3 {
             .stageText {
-                background-image: url(../img/home_img/stageY3.png);
+                // background-image: url(../img/home_img/stageY3.png);
                 margin-left: -3.3%;
                 padding-top: 159px;
 

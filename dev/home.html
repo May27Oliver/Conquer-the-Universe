@@ -12,6 +12,7 @@
 
 @@include('./template/header.html')
 @@include('./template/homeAlert.html')
+@@include('template/login.html')
 <!-- <script src='js/shop.js'></script> -->
 <!-- 最上面 -->
 <div class="homeStar">
@@ -36,45 +37,49 @@
     <header class="homeHeader">
         <h1>誰是宇宙大總統?</h1>
         <ul class="homeWinner">
+
             <li class="winner2">
                 <div class="planetTxt">
-                    <p>肥宅星</p>
-                    <p><span id="winPoint_1">66666</span>支持度</p>
+                    <p id="role2"></p>
+                    <p><span id="winPoint_2"></span>支持度</p>
                 </div>
-                <div class="stageText">
+                <div class="stageText" id="stage2">
                     <div class="alienImg alien_2">
-                        <img src="img/home_img/alien_2.png" alt="外星人">
+                        <img src="" alt="外星人" id="roleImg2">
                     </div>
                     <p id="winPlayer_2">最多就六個字</p>
                     <h1>2</h1>
                 </div>
             </li>
+
             <li class="winner1">
                 <div class="planetTxt">
-                    <p>兔兔星</p>
-                    <p><span id="winPoint_2">66666</span>支持度</p>
+                    <p id="role1"></p>
+                    <p><span id="winPoint_1"></span>支持度</p>
                 </div>
-                <div class="stageText">
-                    <div class="alienImg alien_3">
-                        <img src="img/home_img/alien_3.png" alt="外星人">
+                <div class="stageText" id="stage1">
+                    <div class="alienImg alien_1">
+                        <img src="" alt="外星人" id="roleImg1">
                     </div>
                     <p id="winPlayer_1">最多就六個字</p>
                     <h1>1</h1>
                 </div>
             </li>
+            
             <li class="winner3">
                 <div class="planetTxt">
-                    <p>派大星</p>
-                    <p><span id="winPoint_3">66666</span>支持度</p>
+                    <p id="role3"></p>
+                    <p><span id="winPoint_3"></span>支持度</p>
                 </div>
-                <div class="stageText">
-                    <div class="alienImg alien_1">
-                        <img src="img/home_img/alien_1.png" alt="外星人">
+                <div class="stageText" id="stage3">
+                    <div class="alienImg alien_3">
+                        <img src="" alt="外星人" id="roleImg3">
                     </div>
                     <p id="winPlayer_3">最多就六個字</p>
                     <h1>3</h1>
                 </div>
             </li>
+
         </ul>
     </header>
     <!-- 排行榜 -->
@@ -82,7 +87,7 @@
         <div class="leaderTitle">
             <h2>支持度排行榜</h2>
         </div>
-        <p>2019.10.01-2019.10.31</p>
+        <p><span id="startContest"></span> ~ <span id="endContest"></span></p>
         <ul class="boardTitle">
             <li id="rankAll">全體排名</li>
             <li id="rankP_1">派大星</li>
@@ -492,6 +497,7 @@
 <script src="js/VoteClick.js"></script>
 <script src="js/starsShine.js"></script>
 <script src="js/animation.js"></script>
+<script src="js/login.js"></script>
 <script src="js/countUp.min.js" type="module"></script>
 <script src="js/jquery.easy_slides.js"></script>
 <!-- <script src=""></script> -->
