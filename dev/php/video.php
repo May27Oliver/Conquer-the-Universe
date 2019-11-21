@@ -37,7 +37,7 @@ $AsV4P2=(int)$_POST['AsV4P2'];
 $AsV5P1=(int)$_POST['AsV5P1'];
 $AsV5P2=(int)$_POST['AsV5P2'];
 $starCoin = 100;
-$ability=10;
+$ability=1;
 $memberNo=$_SESSION["memNo"];
 try{
     // 財經影片一問題一

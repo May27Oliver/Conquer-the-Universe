@@ -90,7 +90,7 @@
                     // loginBtn.onclick=null;
                     // loginBtn.onclick=logOut;
             }else{
-                document.getElementById("loginMsg").innerText=xhr.status;
+                document.getElementById("loginMsg").innerText=member.error;
             }   
         }
 
@@ -142,8 +142,6 @@ window.addEventListener("load",function(){
         coin.innerText="800";
         loginBtn.style.width=50+"px"
         loginBtn.innerHTML = "登出";
-        loginBtn.onclick=null;
-        loginBtn.onclick=logOut;
       }
     }
     xhr.open("get", "php/getLoginInfo.php", true);

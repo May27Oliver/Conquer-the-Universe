@@ -17,11 +17,13 @@ try{
     $_SESSION["memId"] = $memRow["memId"];
     $_SESSION["memName"] = $memRow["memName"];
     $_SESSION["email"] = $memRow["email"];
+    $_SESSION["starNo"] = $memRow["starNo"];
     
     $arr["memNo"] = $memRow["memNo"];
     $arr["memId"] = $memRow["memId"];
     $arr["memName"] = $memRow["memName"];
     $arr["email"] = $memRow["email"];
+    $arr["starNo"] = $memRow["starNo"];
     $arr["error"] = "";
 
     }else{
