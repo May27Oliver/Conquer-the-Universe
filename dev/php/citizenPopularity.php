@@ -1,9 +1,11 @@
 <?php
+session_start();
 //個人貢獻支持度
 $errMsg="";
+$memNo=$_SESSION["memNo"];
 try{
   require_once("connectPDO.php");
-  $sql = "select popularity from `member` order by memNo limit 1";
+  $sql = "select popularity from `member` WHERE `member`.`memNo` = {$memNo}";
   $citizenPopularity=$pdo->query($sql);
   $arr=[];
   for($i=0;$i<6;$i++){
