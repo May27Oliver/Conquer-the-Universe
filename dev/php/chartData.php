@@ -2,7 +2,7 @@
 //個人編輯會員資料撈取
 $errMsg="";
 try{
-  require_once("meiDa.php");
+  require_once("connectPDO.php");
   $sql2 = "select wisdom,charisma,finance from `member` order by memNo limit 1" ;
   $chartData=$pdo->query($sql2);
   $arr=[];

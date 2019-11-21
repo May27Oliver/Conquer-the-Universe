@@ -2,7 +2,7 @@
 //個人編輯會員資料撈取
 $errMsg="";
 try{
-  require_once("meiDa.php");
+  require_once("connectPDO.php");
   $sql = "select memName from `member` order by memNo limit 1";
   $memNameBox=$pdo->query($sql);
   $arr1=[];

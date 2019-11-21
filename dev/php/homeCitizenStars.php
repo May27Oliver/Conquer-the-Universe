@@ -2,7 +2,7 @@
 //個人編輯會員資料撈取獎牌(星球圖)
 $errMsg="";
 try{
-  require_once("meiDa.php");
+  require_once("connectPDO.php");
   $sql2 = "select starsBall from `stars` where starNo" ;
   $starsBall=$pdo->query($sql2);
   $arrStarsBall=[];

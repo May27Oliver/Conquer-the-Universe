@@ -1,7 +1,7 @@
 <?php
 $errMsg="";
 try{
-  require_once("meiDa.php");
+  require_once("connectPDO.php");
   $sql = "select memNo,memName,memId,memPsw,email from `member` order by memNo limit 1";
   $member=$pdo->query($sql);
   $arr=[];

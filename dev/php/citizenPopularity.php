@@ -2,7 +2,7 @@
 //個人貢獻支持度
 $errMsg="";
 try{
-  require_once("meiDa.php");
+  require_once("connectPDO.php");
   $sql = "select popularity from `member` order by memNo limit 1";
   $citizenPopularity=$pdo->query($sql);
   $arr=[];

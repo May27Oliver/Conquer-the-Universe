@@ -2,7 +2,7 @@
 //個人編輯會員資料撈取候選人圖
 $errMsg="";
 try{
-  require_once("meiDa.php");
+  require_once("connectPDO.php");
   $sql2 = "select clothimg from `clothinmarket` where clothNo" ;
   $todayEqui=$pdo->query($sql2);
   $arrTodayEqui=[];
