@@ -1170,7 +1170,7 @@
 
                         small {
                             margin-top: 10px;
-                            font-size: 15px;
+                            font-size: 12px;
                             display: block;
                         }
 
@@ -1214,7 +1214,7 @@
         &[disabled|="disabled"] {
             background: #ccc;
             opacity: 0.8;
-            cursor: not-allowed;
+            cursor: default;
 
             &:hover {
                 background: #ccc;
@@ -2107,13 +2107,13 @@
             margin: -7.5px;
 
             .voteCard {
+                min-height: 350px;
 
                 &.col-12 {
                     height: 450px;
                 }
 
                 .voteWrapper {
-                    // height: 100%;
                     border-radius: 10px;
                     text-align: center;
                     position: relative;
@@ -2272,7 +2272,7 @@
             &[disabled|="disabled"] {
                 background: #ccc;
                 opacity: 0.8;
-                cursor: not-allowed;
+                cursor: default;
                 &:hover {
                     box-shadow: none;
                 }
@@ -4100,6 +4100,9 @@ div.slider {
         background: #c9badb;
         border-radius: 20px;
         z-index: 9999;
+        #loginMsg{
+            color: red;
+        }
         #loginBoxClose{
             position: absolute;
             width: 24px;
@@ -4230,12 +4233,28 @@ div.slider {
                             box-sizing: border-box;
                             outline: none;
                         }
+                        select{
+                            option{
+                                font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                                border: none;
+                                border-radius: 5px;
+                                width: 90%;
+                                line-height: 1.5;
+                                padding: 5px 8px;
+                                margin: 10px 0;
+                                box-sizing: border-box;
+                                outline: none;
+                            }
+                        }
                         #memIdCheck{
                             width: 80px;
                             margin: 0 0 10px;
                         }
                     }
                 }
+            }
+            #loginRig{
+                color: red;
             }
             #registerSubmit,
             #registerCancel {
