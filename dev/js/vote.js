@@ -40,7 +40,7 @@ function showRunCards(jsonStr) {
                     <small>發起人：${voteRunData[i].memName}</small>
                     <h3>${voteRunData[i].votQ}</h3>
                     <p>${voteRunData[i].votDeadline}截止</p>
-                    <div class="voteSelectGroup">
+                    <div class="voteSelectGroup" data-votNo="${voteRunData[i].votNo}">
                         <button class="voteA">${voteRunData[i].votA}</button>
                         <button class="voteB">${voteRunData[i].votB}</button>
                     </div>
@@ -199,6 +199,7 @@ function showRunCards(jsonStr) {
     let voteCard = $classes(".voteCard");       //投票
     let voter = $class(".voter");               //發起人
     let countDown = $classes(".deadline");      //截止日期
+    let votNo=$classes(".votNo");
 
     //設立一個物件把一格投票欄的贊成票與反對票統統包起來
     // function voteObj(name, title, deadline,prosTitle,consTitle, prosNum, consNum) { //
@@ -247,12 +248,12 @@ function showRunCards(jsonStr) {
         // var consTitle = voteSelectorB.value;
         // var prosNum = 0;
         // var consNum = 0;
-        // //宣告一個陣列，把一個投票欄位會用到的所有方法屬性都包裝成物件丟進陣列裡
-        // var voteArr = [];
-        // voteArr.unshift(new voteObj(name, title, deadline,prosTitle ,consTitle ,prosNum, consNum));
-        // for (var i = 0; i < voteArr.length; i++) {
-        //     console.log("選項A:", voteArr[i].prosTitle,"選項B：",voteArr[i].consTitle);
-        // }
+        //宣告一個陣列，把一個投票欄位會用到的所有方法屬性都包裝成物件丟進陣列裡
+        var voteArr = [];
+        voteArr.unshift(new voteObj(name, title, deadline,prosTitle ,consTitle ,prosNum, consNum));
+        for (var i = 0; i < voteArr.length; i++) {
+            console.log("選項A:", voteArr[i].prosTitle,"選項B：",voteArr[i].consTitle);
+        }
         voting();
         //把新的物件放進陣列裡
         var wrapeDiv1 = document.createElement('div');
@@ -323,7 +324,7 @@ function showRunCards(jsonStr) {
         }, 1000);
 
         //新增[點擊]投票選項一
-        selectBtnA.onclick = function () {
+        selectBtnA.onclick = function (e) {
             var yesIndex = getIndex(this) - 1;
             $class(".voteDoingNotice").innerHTML = "確認後將無法更改，<br>您要選擇此投票選項嗎？";
             $class(".voteAlertGroup").style.display = "";
@@ -334,16 +335,30 @@ function showRunCards(jsonStr) {
             $class(".voteVotingA").style.display = "";
             $class(".voteVotingB").style.display = "none";
             $class(".voteVotingA").onclick = function () {
-                $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得30宇宙幣！";
+                $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得30宇宙幣";
                 $class(".voteOkay").style.display = ""
                 $class(".voteAlertDoing").style.display = "none";
                 $class(".voteAlertDid").style.display = "";
-                voteRunData[yesIndex].votACount++;
-                console.log(voteRunData[yesIndex].votACount);
+                var xhr=new XMLHttpRequest();
+
+                    xhr.onload=function(){
+                        if(xhr.status==200){
+                            alert("投票成功！");
+                        }else{
+                            alert(xhr.responseText);
+                        }   
+                    }
+        
+                    let url="php/vote/gainYesTicket.php";
+                    xhr.open("post",url,true);
+                    let query_string=`votNo=${e.target.parentNode.getAttribute("data-votNo")}`;
+                    //memId,memPsw跟登入一樣
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send(query_string);
             };
         }
         //新增[點擊]投票選項二
-        selectBtnB  .onclick = function () {
+        selectBtnB  .onclick = function (e) {
             var noIndex = getIndex(this) - 1;
             $class(".voteDoingNotice").innerHTML = "確認後將無法更改，<br>您要選擇此投票選項嗎？";
             $class(".voteAlertGroup").style.display = "";
@@ -358,7 +373,22 @@ function showRunCards(jsonStr) {
                 $class(".voteOkay").style.display = ""
                 $class(".voteAlertDoing").style.display = "none";
                 $class(".voteAlertDid").style.display = "block";
-                voteRunData[noIndex].votBCount;
+                var xhr=new XHLHttpRequest;
+
+                    xhr.onload=function(){
+                        if(xhr.status==200){
+                            alert("投票成功！");
+                        }else{
+                            alert(xhr.responseText);
+                        }   
+                    }
+        
+                    let url="php/vote/gainNoTicket.php";
+                    xhr.open("post",url,true);
+                    let query_string=`votNo=${e.target.parentNode.getAttribute("data-votNo")}`;
+                    //memId,memPsw跟登入一樣
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send(query_string);
             };
         }
         //新增[點擊]檢舉
@@ -383,7 +413,7 @@ function showRunCards(jsonStr) {
     function voting() {
         for (var i = 0; i < $classes(".voteA").length; i++) {
             //[跳窗]選項一
-            $classes(".voteA")[i].onclick = function () {
+            $classes(".voteA")[i].onclick = function (e) {
                 var yesIndex = getIndex(this) - 1;
                 $class(".voteDoingNotice").innerHTML = "確認後將無法更改，<br>您要選擇此投票選項嗎？";
                 $class(".voteAlertGroup").style.display = "block";
@@ -398,11 +428,27 @@ function showRunCards(jsonStr) {
                     $class(".voteOkay").style.display = ""
                     $class(".voteAlertDoing").style.display = "none";
                     $class(".voteAlertDid").style.display = "block";
-                    
+                    // console.log(e.target.parentNode.getAttribute("data-votNo"));
+                    var xhr=new XMLHttpRequest();
+
+                    xhr.onload=function(){
+                        if(xhr.status==200){
+                            alert("投票成功！");
+                        }else{
+                            alert(xhr.responseText);
+                        }   
+                    }
+        
+                    let url="php/vote/gainYesTicket.php";
+                    xhr.open("post",url,true);
+                    let query_string=`votNo=${e.target.parentNode.getAttribute("data-votNo")}`;
+                    //memId,memPsw跟登入一樣
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send(query_string);
                 };
             }
             //[跳窗]選項二
-            $classes(".voteB")[i].onclick = function () {
+            $classes(".voteB")[i].onclick = function (e) {
                 var noIndex = getIndex(this) - 1;
                 $class(".voteDoingNotice").innerHTML = "確認後將無法更改，<br>您要選擇此投票選項嗎？";
                 $class(".voteAlertGroup").style.display = "block";
@@ -417,7 +463,22 @@ function showRunCards(jsonStr) {
                     $class(".voteOkay").style.display = ""
                     $class(".voteAlertDoing").style.display = "none";
                     $class(".voteAlertDid").style.display = "block";
-                    voteRunData[noIndex].votBCount++;
+                    var xhr=new XMLHttpRequest();
+
+                    xhr.onload=function(){
+                        if(xhr.status==200){
+                            alert("投票成功！");
+                        }else{
+                            alert(xhr.responseText);
+                        }   
+                    }
+        
+                    let url="php/vote/gainNoTicket.php";
+                    xhr.open("post",url,true);
+                    let query_string=`votNo=${e.target.parentNode.getAttribute("data-votNo")}`;
+                    //memId,memPsw跟登入一樣
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send(query_string);
                 };
             }
         }
@@ -560,7 +621,7 @@ function showEndCards(jsonStr) {
     function voting() {
         for (var i = 0; i < $classes(".voteA").length; i++) {
             //[跳窗]選項一
-            $classes(".voteA")[i].onclick = function () {
+            $classes(".voteA")[i].onclick = function (e) {
                 var yesIndex = getIndex(this) - 1;
                 $class(".voteDoingNotice").innerHTML = "確認後將無法更改，<br>您要選擇此投票選項嗎？";
                 $class(".voteAlertGroup").style.display = "block";
@@ -575,12 +636,26 @@ function showEndCards(jsonStr) {
                     $class(".voteOkay").style.display = ""
                     $class(".voteAlertDoing").style.display = "none";
                     $class(".voteAlertDid").style.display = "block";
-                    // voteArr[yesIndex].prosNum++;
-                    console.log("您點擊到的是第",yesIndex,"個贊成按鈕");
+                    var xhr=new XMLHttpRequest();
+                    xhr.onload=function(){
+                        if(xhr.status==200){
+                            alert("投票成功！");
+                        }else{
+                            alert(xhr.responseText);
+                        }   
+                    }
+        
+                    let url="php/vote/gainYesTicket.php";
+                    xhr.open("post",url,true);
+                    let query_string=`votNo=${e.target.parentNode.getAttribute("data-votNo")}`;
+                    //memId,memPsw跟登入一樣
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send(query_string);
+
                 };
             }
             //[跳窗]選項二
-            $classes(".voteB")[i].onclick = function () {
+            $classes(".voteB")[i].onclick = function (e) {
                 var noIndex = getIndex(this) - 1;
                 $class(".voteDoingNotice").innerHTML = "確認後將無法更改，<br>您要選擇此投票選項嗎？";
                 $class(".voteAlertGroup").style.display = "block";
@@ -595,8 +670,22 @@ function showEndCards(jsonStr) {
                     $class(".voteOkay").style.display = ""
                     $class(".voteAlertDoing").style.display = "none";
                     $class(".voteAlertDid").style.display = "block";
-                    // voteArr[noIndex].consNum++;
-                    console.log(voteArr[0].consNum);
+                    var xhr=new XMLHttpRequest();
+
+                    xhr.onload=function(){
+                        if(xhr.status==200){
+                            alert("投票成功！");
+                        }else{
+                            alert(xhr.responseText);
+                        }   
+                    }
+        
+                    let url="php/vote/gainNoTicket.php";
+                    xhr.open("post",url,true);
+                    let query_string=`votNo=${e.target.parentNode.getAttribute("data-votNo")}`;
+                    //memId,memPsw跟登入一樣
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send(query_string);
                 };
             }
         }
@@ -753,26 +842,26 @@ function init() {
 }
 window.addEventListener("load", init, false);
 
-function gainYesTicket(){
-    var xhr=new XHLHttpRequest();
+// function gainYesTicket(){
+//     var xhr=new XMLHttpRequest();
 
-    xhr.onload=function(){
-        if(xhr.status==200){
-            alert("新增帳號成功");
-            loginWrap.style.display="none";
-            memId.value="";
-            memPsw.value="";
-            loginMsg.innerText="";
-        }else{
-            alert(xhr.responseText);
-        }   
-    }
+//     xhr.onload=function(){
+//         if(xhr.status==200){
+//             alert("新增帳號成功");
+//             loginWrap.style.display="none";
+//             memId.value="";
+//             memPsw.value="";
+//             loginMsg.innerText="";
+//         }else{
+//             alert(xhr.responseText);
+//         }   
+//     }
 
-    let url="php/register.php";
-    xhr.open("post",url,true);
-    let query_string=`memIdRig=${memIdRig.value} & starSelect=${starSelect.value} & memPswRig=${memPswRig.value} & memNameRig=${memNameRig.value} & memEmailRig=${memEmailRig.value}`;
-    //memId,memPsw跟登入一樣
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.send(query_string);
+//     let url="php/register.php";
+//     xhr.open("post",url,true);
+//     let query_string=`memIdRig=${memIdRig.value} & starSelect=${starSelect.value} & memPswRig=${memPswRig.value} & memNameRig=${memNameRig.value} & memEmailRig=${memEmailRig.value}`;
+//     //memId,memPsw跟登入一樣
+//     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+//     xhr.send(query_string);
     
-}
+// }
