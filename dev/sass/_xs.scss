@@ -1170,7 +1170,7 @@
 
                         small {
                             margin-top: 10px;
-                            font-size: 15px;
+                            font-size: 12px;
                             display: block;
                         }
 
@@ -1214,7 +1214,7 @@
         &[disabled|="disabled"] {
             background: #ccc;
             opacity: 0.8;
-            cursor: not-allowed;
+            cursor: default;
 
             &:hover {
                 background: #ccc;
@@ -2272,7 +2272,7 @@
             &[disabled|="disabled"] {
                 background: #ccc;
                 opacity: 0.8;
-                cursor: not-allowed;
+                cursor: default;
                 &:hover {
                     box-shadow: none;
                 }
