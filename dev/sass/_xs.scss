@@ -2107,13 +2107,13 @@
             margin: -7.5px;
 
             .voteCard {
+                min-height: 350px;
 
                 &.col-12 {
                     height: 450px;
                 }
 
                 .voteWrapper {
-                    // height: 100%;
                     border-radius: 10px;
                     text-align: center;
                     position: relative;
