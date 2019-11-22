@@ -4100,6 +4100,9 @@ div.slider {
         background: #c9badb;
         border-radius: 20px;
         z-index: 9999;
+        #loginMsg{
+            color: red;
+        }
         #loginBoxClose{
             position: absolute;
             width: 24px;
@@ -4249,6 +4252,9 @@ div.slider {
                         }
                     }
                 }
+            }
+            #loginRig{
+                color: red;
             }
             #registerSubmit,
             #registerCancel {
