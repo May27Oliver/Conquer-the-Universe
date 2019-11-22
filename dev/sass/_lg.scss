@@ -75,6 +75,46 @@
                 background-repeat: no-repeat; 
             }
         }
+        #wealth{
+            cursor: default;
+            margin-top: 0;
+            position: absolute;
+            right:180px;
+            top:50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            color:white;
+            font-size: 16px;
+            // width: 23px;
+            // height: 23px;
+            line-height: 30px;
+            background-image: url(../img/GEM.png);
+            // background-repeat: none;
+        }
+        #coin{
+            cursor: default;
+            margin-top: 0;
+            position: absolute;
+            right:150px;
+            top:50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            color:white;
+            font-size: 16px;
+            line-height: 30px;
+        }
+        #memberName{
+            cursor: default;
+            margin-top: 0;
+            position: absolute;
+            right:60px;
+            top:20%;
+            transform: translateY(-50%);
+            z-index: 999;
+            color:white;
+            font-size: 16px;
+            line-height: 30px;
+        }
         span{
             margin-top: 0;
             position: absolute;
@@ -82,16 +122,25 @@
             top:50%;
             transform: translateY(-50%);
             z-index: 999;
-            #loginBtn{
-                text-align: center;
-                border:0;
-                line-height: 56px;
-                background-image: url(../img/loginBtn.png);
-                width: 176px;
-                height: 56px;
-                color:#333;
-            }
+            
+            
         }
+
+        #loginBtn{
+            text-align: center;
+            border:0;
+            line-height: 30px;
+            font-size: 16px;
+            // background-image: url(../img/loginBtn.png);
+            width: 100px;
+            height: 30px;
+            color:white;
+            box-sizing: border-box;
+        }
+        #loginBtn:hover{
+            border-bottom: 3px solid white;
+        }
+
         #nav-control{
             display: none;
         }
@@ -433,16 +482,14 @@
         max-width: 670px;
         .innerTitle{
             width: 600px;
+            li {
+                margin-right: 35px;
+                margin-left: 35px;
+            }
             li:nth-child(1){
-                margin-left:60px;
-                margin-right:62px;
+                margin-left: 80px;
             }
-            li:nth-child(2){
-                margin-right:95px;
-            }
-            li:nth-child(3){
-                margin-right:78px;
-            }
+            
          }
     }
     #innerPlayer{
@@ -459,14 +506,26 @@
             ul{
                 width: 470px;
                 li:nth-child(1){
-                    margin-left:8px;
-                    margin-right:42px;
+                    width: 63px;
+                    margin-right:5px;
                 }
                 li:nth-child(2){
-                    margin-right:87px;
+                    width: 132px;
+                    margin-right:5px;
                 }
                 li:nth-child(3){
-                    margin-right:87px;
+                    width: 77px;
+                    margin-right:5px;
+                }
+                li:nth-child(4){
+                    width: 30px;  
+                    margin-left:60px; 
+                }
+                li:nth-child(5){
+                    width: 30px;   
+                }
+                li:nth-child(6){
+                    width: 30px;   
                 }
              }
         }
@@ -697,6 +756,31 @@
 
     #back_to_top{
 		display: none;
-	}
+    }
+    
+        /*__________[START] NewsForm __________*/
+    // *{ outline: 1px solid #f00; }
+    .newsLaunch {
+        .newsForm {
+            .newsUpPic {
+                label {
+                    align-items: flex-end;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+            }
+
+            .newsStarts {
+                li {
+                    &:nth-child(1) {
+                        margin-right: 18%;
+                    }
+                }
+            }
+        }
+    }
+    /*__________[END] NewsForm __________*/
     
 }

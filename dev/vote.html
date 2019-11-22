@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
     <title>公民投票 - 征服宇宙 Conquer the universe</title>
     @@include('template/CDN.html')
+    
 </head>
 <body class="votePage">
     <!-------------------- 頁首(計分板+導覽列) -------------------->
     @@include('template/header.html')
+    @@include('template/login.html')
 
     <!-------------------- 內容 -------------------->
     <div class="container">
@@ -17,39 +19,57 @@
         <!---------- 進行中 ---------->
         <section class="voteRun">
             <h2>正在進行中的議題</h2>
-            <div class="voteGroup">
-                <div class="voteCard col-12 col-md-4 col-lg-3">
+            <div class="voteGroup" id="voteGroupRun">
+                <!-- <div class="voteCard col-12 col-md-4 col-lg-3">
                     <div class="voteWrapper voteArea">
                         <div class="voteAdd"></div>
                         <div class="voteAdding">
-                            <form method="GET" action="voteLaunch.php" id="voteForm">
+                            <form method="POST" name="voteForm" id="voteForm">
                                 <h3>發起公民投票</h3>
-                                <p>姓名：<input type="text" name="voter" class="voter" size="20" maxlength="10" placeholder="最多10個中文字" required></p>
-                                <p>議題：<input type="text" name="voteTitle" class="voteTitle" size="20" maxlength="10" placeholder="最多10個中文字" required></p>
-                                <p>時間： <span>2019/11/05</span>截止</p>
+                                <p>姓名：<input type="hidden" name="voter" class="voter" size="20" maxlength="10" placeholder="最多10個中文字" required value="$_SESSION['memNo']">$_SESSION['memName']</p>
+                                <p>題目：<input type="text" name="voteTitle" class="voteTitle" size="20" maxlength="10" placeholder="最多10個中文字" required></p>
+                                <p>時間： <time id="afterWeek">2019/12/06</time></p>
                                 <div class="voteSelectGroup">
                                     <p>選項：<input type="text" name="voteSelector[]" id="voteSelectorA" size="20" maxlength="6" placeholder="最多6個中文字" required></p>  
                                     <p>選項：<input type="text" name="voteSelector[]" id="voteSelectorB" size="20" maxlength="6" placeholder="最多6個中文字" required></p>
                                 </div>
+                                
                             </form>
                             <button class="voteLaunch">發起</button>
                             <button type="reset" form="voteForm" class="voteLaunchCancel">取消</button>
                         </div>
                     </div>
-                </div>
-                <div class="voteCard col-6 col-md-4 col-lg-3">
+                </div> -->
+                <!-- <div class="voteCard col-6 col-md-4 col-lg-3">
                     <div class="voteWrapper">
                         <div class="voteChart">
                             <canvas class="votePie"></canvas>
                         </div>
                         <div class="voteText">
                             <button class="report">檢舉</button>
-                            <small>發起人：<span>劉一</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/11/05截止</p>
+                            <small>發起人：</small>
+                            <h3> </h3>
+                            <p class="deadline"></p>
                             <div class="voteSelectGroup">
                                 <button disabled="disabled" class="voteSelect voteSelected">已選擇此選項</button>
-                                <button class="voteSelect" disabled="disabled">不可再選另個</button>
+                                <button disabled="disabled" class="voteSelect">不可再選另個</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="voteCard col-6 col-md-4 col-lg-3">
+                    <div class="voteWrapper">
+                        <div class="voteChart">
+                            <!-- <canvas class="votePie"></canvas> -->
+                        </div>
+                        <div class="voteText">
+                            <button class="report">檢舉</button>
+                            <small>發起人：</small>
+                            <h3> </h3>
+                            <p class="deadline"></p>
+                            <div class="voteSelectGroup">
+                                <button class="voteA"> </button>
+                                <button class="voteB"> </button>
                             </div>
                         </div>
                     </div>
@@ -57,16 +77,16 @@
                 <div class="voteCard col-6 col-md-4 col-lg-3">
                     <div class="voteWrapper">
                         <div class="voteChart">
-                            <canvas class="votePie unvoted"></canvas>
+                            <!-- <canvas class="votePie"></canvas> -->
                         </div>
                         <div class="voteText">
                             <button class="report">檢舉</button>
-                            <small>發起人：<span>陳二</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/11/05截止</p>
+                            <small>發起人：</small>
+                            <h3> </h3>
+                            <p class="deadline"></p>
                             <div class="voteSelectGroup">
-                                <button class="voteYes">支持</button>
-                                <button class="voteNo">不支持</button>
+                                <button class="voteA"> </button>
+                                <button class="voteB"> </button>
                             </div>
                         </div>
                     </div>
@@ -74,16 +94,16 @@
                 <div class="voteCard col-6 col-md-4 col-lg-3">
                     <div class="voteWrapper">
                         <div class="voteChart">
-                            <canvas class="votePie"></canvas>
+                            <!-- <canvas class="votePie"></canvas> -->
                         </div>
                         <div class="voteText">
                             <button class="report">檢舉</button>
-                            <small>發起人：<span>張三</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/11/05截止</p>
+                            <small>發起人：</small>
+                            <h3> </h3>
+                            <p class="deadline"></p>
                             <div class="voteSelectGroup">
-                                <button class="voteYes">支持</button>
-                                <button class="voteNo">不支持</button>
+                                <button class="voteA"> </button>
+                                <button class="voteB"> </button>
                             </div>
                         </div>
                     </div>
@@ -91,16 +111,16 @@
                 <div class="voteCard col-6 col-md-4 col-lg-3">
                     <div class="voteWrapper">
                         <div class="voteChart">
-                            <canvas class="votePie"></canvas>
+                            <!-- <canvas class="votePie"></canvas> -->
                         </div>
                         <div class="voteText">
                             <button class="report">檢舉</button>
-                            <small>發起人：<span>李四</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/11/05截止</p>
+                            <small>發起人：</small>
+                            <h3> </h3>
+                            <p class="deadline"></p>
                             <div class="voteSelectGroup">
-                                <button class="voteYes">支持</button>
-                                <button class="voteNo">不支持</button>
+                                <button class="voteA"> </button>
+                                <button class="voteB"> </button>
                             </div>
                         </div>
                     </div>
@@ -108,16 +128,33 @@
                 <div class="voteCard col-6 col-md-4 col-lg-3">
                     <div class="voteWrapper">
                         <div class="voteChart">
-                            <canvas class="votePie"></canvas>
+                            <!-- <canvas class="votePie"></canvas> -->
                         </div>
                         <div class="voteText">
                             <button class="report">檢舉</button>
-                            <small>發起人：<span>王五</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/11/05截止</p>
+                            <small>發起人：</small>
+                            <h3> </h3>
+                            <p class="deadline"></p>
                             <div class="voteSelectGroup">
-                                <button class="voteYes">支持</button>
-                                <button class="voteNo">不支持</button>
+                                <button class="voteA"> </button>
+                                <button class="voteB"> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voteCard col-6 col-md-4 col-lg-3">
+                    <div class="voteWrapper">
+                        <div class="voteChart">
+                            <!-- <canvas class="votePie"></canvas> -->
+                        </div>
+                        <div class="voteText">
+                            <button class="report">檢舉</button>
+                            <small>發起人：</small>
+                            <h3> </h3>
+                            <p class="deadline"></p>
+                            <div class="voteSelectGroup">
+                                <button class="voteA"> </button>
+                                <button class="voteB"> </button>
                             </div>
                         </div>
                     </div>
@@ -128,16 +165,16 @@
         <!---------- 已結束 ---------->
         <section class="voteEnd">
             <h2>已結束的議題</h2>
-            <div class="voteGroup">
+            <div class="voteGroup" id="voteGroupEnd">
                 <div class="voteCard col-6 col-md-4 col-lg-3">
                     <div class="voteWrapper">
                         <div class="voteChart">
-                            <canvas class="votePie"></canvas>
+                            <!-- <canvas class="votePie"></canvas> -->
                         </div>
                         <div class="voteText">
-                            <small>發起人：<span>趙六</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/10/17截止</p>
+                            <small>發起人：</small>
+                            <h3> </h3>
+                            <p> </p>
                             <div class="voteSelectGroup">
                                 <button disabled="disabled">已結束</button>
                             </div>
@@ -147,12 +184,12 @@
                 <div class="voteCard col-6 col-md-4 col-lg-3">
                     <div class="voteWrapper">
                         <div class="voteChart">
-                            <canvas class="votePie"></canvas>
+                            <!-- <canvas class="votePie"></canvas> -->
                         </div>
                         <div class="voteText">
-                            <small>發起人：<span>孫七</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/10/17截止</p>
+                            <small>發起人：</small>
+                            <h3> </h3>
+                            <p> </p>
                             <div class="voteSelectGroup">
                                 <button disabled="disabled">已結束</button>
                             </div>
@@ -162,12 +199,12 @@
                 <div class="voteCard col-6 col-md-4 col-lg-3">
                     <div class="voteWrapper">
                         <div class="voteChart">
-                            <canvas class="votePie"></canvas>
+                            <!-- <canvas class="votePie"></canvas> -->
                         </div>
                         <div class="voteText">
-                            <small>發起人：<span>周八</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/10/17截止</p>
+                            <small>發起人：</small>
+                            <h3> </h3>
+                            <p> </p>
                             <div class="voteSelectGroup">
                                 <button disabled="disabled">已結束</button>
                             </div>
@@ -177,12 +214,12 @@
                 <div class="voteCard col-6 col-md-4 col-lg-3">
                     <div class="voteWrapper">
                         <div class="voteChart">
-                            <canvas class="votePie"></canvas>
+                            <!-- <canvas class="votePie"></canvas> -->
                         </div>
                         <div class="voteText">
-                            <small>發起人：<span>吳九</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/10/17截止</p>
+                            <small>發起人：</small>
+                            <h3> </h3>
+                            <p> </p>
                             <div class="voteSelectGroup">
                                 <button disabled="disabled">已結束</button>
                             </div>
@@ -192,12 +229,12 @@
                 <div class="voteCard col-6 col-md-4 col-lg-3">
                     <div class="voteWrapper">
                         <div class="voteChart">
-                            <canvas class="votePie"></canvas>
+                            <!-- <canvas class="votePie"></canvas> -->
                         </div>
                         <div class="voteText">
-                            <small>發起人：<span>鄭十</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/10/17截止</p>
+                            <small>發起人：</small>
+                            <h3> </h3>
+                            <p> </p>
                             <div class="voteSelectGroup">
                                 <button disabled="disabled">已結束</button>
                             </div>
@@ -208,9 +245,8 @@
         </section>
 
         <!---------- 跳窗提示 ---------->
-        <section class="voteAlertGroup">
-            <!-- 第一個 -->
-            <div class="voteAlertDoing">
+        <section class="voteAlertGroup" style="display: none;">
+            <div class="voteAlertDoing" style="display: none;">
                 <h2>系統訊息</h2>
                 <div class="voteAlertText">
                     <p class="voteDoingNotice"></p>
@@ -221,22 +257,19 @@
                         <option value="3">色情內容</option>
                         <option value="4">與主題無關</option>
                     </select>
-                    <!-- **串資料時加入 <button form="voteForm">** -->
                     <button type="submit" class="voteAddingSubmit" style="display: none;">確認1</button>
-                    <!-- **串資料時加入 <button form="">** -->
-                    <button type="submit" class="voteVotingYes" style="display: none;">支持</button>
-                    <button type="submit" class="voteVotingNo" style="display: none;">不支持</button>
-                    <!-- **串資料時加入 <button form="">** -->
-                    <button type="submit" class="voteReportSubmit" style="display: none;">確認3</button>
+                    <button type="submit" class="voteVotingA" style="display: none;">確認2</button>
+                    <button type="submit" class="voteVotingB" style="display: none;">確認3</button>
+                    <button type="submit" class="voteReportSubmit" style="display: none;">確認4</button>
                     <button class="voteCancel">取消</button>
                 </div>
             </div>
-            <!-- 暫時刪掉四個alertdoing燈箱 -->
-            <div class="voteAlertDid">
+            <div class="voteAlertDid" style="display: none;">
                 <h2>系統訊息</h2>
                 <div class="voteAlertText">
                     <p class="voteDidNotice"></p>
-                    <button class="voteOkay">確認</button>
+                    <button class="voteOkay" style="display: none;">確認</button>
+                    <button class="voteKnow" style="display: none;">確認</button>
                 </div>
             </div>
         </section>
@@ -250,75 +283,8 @@
 
 
     <!--/////////////// JavaScript ///////////////-->
-    <script src="js/VoteClick.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/vote.js"></script>
     <script src="js/starsShine.js"></script>
-    <script>
-        function $id(id){
-            return document.getElementById(id);
-        }
-        function $class(className){
-            return document.querySelector(className);
-        }
-        function $classes(classNames){
-            return document.querySelectorAll(classNames);
-        }
-        //__________ 與HTML做連結 __________//
-        let voteAlertGroup = $class(".voteAlertGroup");
-        let voteAlertDoing = $class(".voteAlertDoing");
-        let voteAlertDid = $class(".voteAlertDid");
-        let voteAdd = $class(".voteAdd");
-        let voteAdding = $class(".voteAdding");
-        let voteLaunchCancel = $class(".voteLaunchCancel");
-        let voteLaunch = $class(".voteLaunch");
-        let voteSelect = $classes(".voteSelect");
-        let voteCancel = $classes(".voteCancel");
-        let voteOkay = $class(".voteOkay");
-        let report = $classes(".report");
-        let voteDoingNotice = $class(".voteDoingNotice");
-        let voteDidNotice = $class(".voteDidNotice");
-        let voteReportMessage = $class(".voteReportMessage");
-        let voteAddingSubmit = $class(".voteAddingSubmit");
-        let voteVotingSubmit = $class(".voteVotingSubmit");
-        let voteReportSubmit = $class(".voteReportSubmit");
-        let voteVotingYes = $class(".voteVotingYes");
-    let voteVotingNo = $class(".voteVotingNo");
-        //------[翻轉] 點選卡片翻出或取消表單 ------//
-        voteAdd.onclick = function(e){
-            e.target.classList.toggle("flip");
-            voteAdding.classList.toggle("flip");
-        }
-        voteLaunchCancel.onclick = function(){
-            voteAdd.classList.toggle("flip");
-            voteAdding.classList.toggle("flip");
-        }
-        //######### 發起投票議題 #########//
-        voteLaunch.onclick = function(){
-            //------[驗證] 是否為會員 ------//
-        
-            //------[驗證] 是否完整填寫表單 ------//
-            // let voteTitle = $classes(".voteTitle");
-            // let voteSelectorA = $id("#voteSelectorA");
-            // let voteSelectorB = $id("#voteSelectorB");
-            //let regExp = /^([\u4e00-\u9fa5])+\d|([\u4e00\u4e8c\u4e09\u56db\u4e94\u516d\u4e03\u516b\u4e5d\u5341])/;
-            // if(voteTitle.value == ""){
-            //     alert("請輸入標題");
-            // }else if(voteSelectorA.value == ""){
-            //     alert("請輸入選項A");
-            // }else if(voteSelectorB.value == ""){
-            //     alert("請輸入選項B");
-            // }
-            
-            //------[顯示] 確認視窗跳出 ------//
-            voteDoingNotice.innerText="確定要發起此公投議題嗎？";
-            voteAddingSubmit.style.display="inline-block";
-            // voteVotingSubmit.style.display="none";
-            voteReportSubmit.style.display="none";
-            voteReportMessage.style.display="none";
-            voteAlertGroup.style.display="block";
-            voteAlertDoing.style.display="block";
-            voteVotingYes.style.display="none";
-            voteVotingNo.style.display="none";
-        }
-    </script>
 </body>
 </html>

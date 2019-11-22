@@ -30,7 +30,10 @@
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
 	<script type="text/javascript">
-		
+	$.ajax({ 
+        type: 'POST', 
+        url: 'php/chartData.php', 
+        success: function (chartDataRow) { 	
 	//定義變數
 	var chartRadarDOM;
 	var chartRadarData;
@@ -67,43 +70,55 @@
 	};
 	
 	console.log("---------Rader Data--------");
-	var graphData =new Array();
-	graphData.push(100,40,65);
+	var  graphData =new Array();
+	//  graphData.push(100,40,65);
 	// graphData.push(40);
 	// graphData.push(65);
-	
+	// 個人貢獻支持度
+    
+            chartData = JSON.parse(chartDataRow); // alert(JSON.stringify(data)); 
+            var  graphData =new Array();
+            for(var i=0; i<1; i++ ){
+                graphData.push(chartData[i].wisdom,chartData[i].charisma,chartData[i].finance);
+            }
+            
+            console.log(graphData); 
+            console.log(chartData);
+      
 	
 	
 	console.log("--------Rader Create-------------");
 	console.log(graphData);
 		
-	//CreateData
-	chartRadarData = {
-    		labels: ['智力', '財力', '魅力'],
-		datasets: [{
-			label: "Ability value",
-			data: graphData,
-			fill: true,
-			backgroundColor: "rgba(17, 34, 51,0.6)",
-			borderColor: "rgba(63,63,74,0.6)",
-			pointBackgroundColor: "rgba(63,63,74,.5)",
-   			pointBorderColor: "rgba(0,0,0,0)",
-			pointHoverBackgroundColor: "#fff",
-			pointHoverBorderColor: "rgba(0,0,0,0.3)",
-			pointBorderWidth: 3,
-			pointRadius:5,
-			
-			}]
-	};
+        //CreateData
+        chartRadarData = {
+                labels: ['智力', '財力', '魅力'],
+            datasets: [{
+                label: "Ability value",
+                data:  graphData,
+                fill: true,
+                backgroundColor: "rgba(17, 34, 51,0.6)",
+                borderColor: "rgba(63,63,74,0.6)",
+                pointBackgroundColor: "rgba(63,63,74,.5)",
+                pointBorderColor: "rgba(0,0,0,0)",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: "rgba(0,0,0,0.3)",
+                pointBorderWidth: 3,
+                pointRadius:5,
+                
+                }]
+        };
 
-	
-		
-	//Draw
-	var chartRadar = new Chart(chartRadarDOM, {
-		type: 'radar',
-		data: chartRadarData,
-		options: chartRadarOptions
-	});
+        
+            
+        //Draw
+        var chartRadar = new Chart(chartRadarDOM, {
+            type: 'radar',
+            data: chartRadarData,
+            options: chartRadarOptions
+        }); 
+     } 
+    });
 	</script>
 </body>
 </html>

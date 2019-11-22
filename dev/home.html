@@ -12,6 +12,7 @@
 
 @@include('./template/header.html')
 @@include('./template/homeAlert.html')
+@@include('template/login.html')
 <!-- <script src='js/shop.js'></script> -->
 <!-- 最上面 -->
 <div class="homeStar">
@@ -36,45 +37,49 @@
     <header class="homeHeader">
         <h1>誰是宇宙大總統?</h1>
         <ul class="homeWinner">
+
             <li class="winner2">
                 <div class="planetTxt">
-                    <p>肥宅星</p>
-                    <p><span id="winPoint_1">66666</span>支持度</p>
+                    <p id="role2"></p>
+                    <p><span id="winPoint_2"></span>支持度</p>
                 </div>
-                <div class="stageText">
+                <div class="stageText" id="stage2">
                     <div class="alienImg alien_2">
-                        <img src="img/home_img/alien_2.png" alt="外星人">
+                        <img src="" alt="外星人" id="roleImg2">
                     </div>
                     <p id="winPlayer_2">最多就六個字</p>
                     <h1>2</h1>
                 </div>
             </li>
+
             <li class="winner1">
                 <div class="planetTxt">
-                    <p>兔兔星</p>
-                    <p><span id="winPoint_2">66666</span>支持度</p>
+                    <p id="role1"></p>
+                    <p><span id="winPoint_1"></span>支持度</p>
                 </div>
-                <div class="stageText">
-                    <div class="alienImg alien_3">
-                        <img src="img/home_img/alien_3.png" alt="外星人">
+                <div class="stageText" id="stage1">
+                    <div class="alienImg alien_1">
+                        <img src="" alt="外星人" id="roleImg1">
                     </div>
                     <p id="winPlayer_1">最多就六個字</p>
                     <h1>1</h1>
                 </div>
             </li>
+            
             <li class="winner3">
                 <div class="planetTxt">
-                    <p>派大星</p>
-                    <p><span id="winPoint_3">66666</span>支持度</p>
+                    <p id="role3"></p>
+                    <p><span id="winPoint_3"></span>支持度</p>
                 </div>
-                <div class="stageText">
-                    <div class="alienImg alien_1">
-                        <img src="img/home_img/alien_1.png" alt="外星人">
+                <div class="stageText" id="stage3">
+                    <div class="alienImg alien_3">
+                        <img src="" alt="外星人" id="roleImg3">
                     </div>
                     <p id="winPlayer_3">最多就六個字</p>
                     <h1>3</h1>
                 </div>
             </li>
+
         </ul>
     </header>
     <!-- 排行榜 -->
@@ -82,7 +87,7 @@
         <div class="leaderTitle">
             <h2>支持度排行榜</h2>
         </div>
-        <p>2019.10.01-2019.10.31</p>
+        <p><span id="startContest"></span> ~ <span id="endContest"></span></p>
         <ul class="boardTitle">
             <li id="rankAll">全體排名</li>
             <li id="rankP_1">派大星</li>
@@ -96,22 +101,8 @@
                 <li>支持度</li>
                 <li>智慧/財富/道德</li>
             </ul>
-            <ul id="innerPlayer">
-                <li id="playList_1">
-                    <ul>
-                        <li id="playerRIA">1</li>
-                        <li id="playerName">sexFat</li>
-                        <li id="playerDevote">12345</li>
-                        <li id="playerInt">100</li>
-                        <li id="playerWealth">100</li>
-                        <li id="playerMoral">100</li>
-                    </ul>
-                </li>
-                <li id="playList_2"><ul></ul></li>
-                <li id="playList_3"><ul></ul></li>
-                <li id="playList_4"><ul></ul></li>
-                <li id="playList_5"><ul></ul></li>
-                <li id="playList_6"><ul></ul></li>
+            <ul id="innerPlayer"></ul>
+                <li id="playList"></li>
             </ul>
         </div>
     </section>
@@ -467,7 +458,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     </div>
-
+    <button type="button" id="back_to_top" >
+        <img src="img/goTop.png" alt="">
+    </button>
     <!-- ----- 頁尾 FOOTER ----- -->
     <footer>
         <div class="homeFooter"><img class="footerImg" src="img/home_img/homeFooter.png" alt="">
@@ -504,10 +497,14 @@
 <script src="js/VoteClick.js"></script>
 <script src="js/starsShine.js"></script>
 <script src="js/animation.js"></script>
+<script src="js/login.js"></script>
 <script src="js/countUp.min.js" type="module"></script>
+<script src="js/jquery.easy_slides.js"></script>
 <!-- <script src=""></script> -->
 <script>
-    $(document).ready(function() {
+    $(document).ready(function(){
+       
+        
 
         function goS(){
             $("#back_to_top").attr("class","back_to_top");
@@ -557,55 +554,168 @@
         });
         
     
-            var s = skrollr.init();
-    
-            $('.slider_circle_10').EasySlides({
-                'autoplay': true,
-                'show': 3,
-                'timeout': 5000,
-                'delayaftershow': 300,
-            })
+        var s = skrollr.init();
 
-            $('#rankAll').click(function(){
-                $('#boardInner').css('backgroundColor','#84ccc9');
-                TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                    x: -500,
-                    opacity:0
-                }, {
-                    x: 0,
-                    opacity:1
-                }, 0.08);
-            });
-            $('#rankP_1').click(function(){
-                $('#boardInner').css('backgroundColor','#fcd93d');
-                TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                    x: -500,
-                    opacity:0
-                }, {
-                    x: 0,
-                    opacity:1
-                }, 0.08);
-            });
-            $('#rankP_2').click(function(){
-                $('#boardInner').css('backgroundColor','#58d8ff');
-                TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                    x: -500,
-                    opacity:0
-                }, {
-                    x: 0,
-                    opacity:1
-                }, 0.08);
-            });
-            $('#rankP_3').click(function(){
-                $('#boardInner').css('backgroundColor','#ff99a2');
-                TweenMax.staggerFromTo('#innerPlayer>li', .3, {
-                    x: -500,
-                    opacity:0
-                }, {
-                    x: 0,
-                    opacity:1
-                }, 0.08);
-            });
+        $('.slider_circle_10').EasySlides({
+            'autoplay': true,
+            'show': 3,
+            'timeout': 5000,
+            'delayaftershow': 300,
+        })
+
+
+        // 排行榜第一個畫面
+        getList1();
+        function getList1(){
+            
+            var xhr = new XMLHttpRequest();
+            xhr.onload=function (){
+                if( xhr.status == 200 ){ 
+                    playerData = JSON.parse(xhr.responseText);
+                    HTMLstr0 = "";
+                    for(var i=0; i<6; i++ ){
+                        if(playerData[0][i]){
+                            HTMLstr0 += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[0][i].memName}</li><li>${playerData[0][i].popularity}</li><li>${playerData[0][i].wisdom}</li><li>${playerData[0][i].charisma}</li><li>${playerData[0][i].finance}</li></ul></li>`;
+                        }else{
+                            HTMLstr0 += ` <li class="playList"><ul><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li></ul></li>`;
+                        }
+                        document.getElementById('innerPlayer').innerHTML=HTMLstr0;
+                    }
+                }else{ 
+                    alert( xhr.status );
+                }
+            }
+            var url = "php/boardInner.php";
+            xhr.open("Get", url, true);
+            xhr.send( null );
+        }
+        
+                    
+      // 排行榜抓資料
+        getPlayerList();
+        
+        function getPlayerList(){
+            
+            var xhr = new XMLHttpRequest();
+            xhr.onload=function (){
+                if( xhr.status == 200 ){ 
+                    playerData = JSON.parse(xhr.responseText);
+                   
+                    HTMLstr0 = "";
+                    HTMLstr1 = "";
+                    HTMLstr2 = "";
+                    HTMLstr3 = "";
+                    for(var i=0; i<6; i++ ){
+                        if(playerData[0][i]){
+                            HTMLstr0 += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[0][i].memName}</li><li>${playerData[0][i].popularity}</li><li>${playerData[0][i].wisdom}</li><li>${playerData[0][i].charisma}</li><li>${playerData[0][i].finance}</li></ul></li>`;
+                        }else{
+                            HTMLstr0 += ` <li class="playList"><ul><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li></ul></li>`;
+                        }
+                    }
+                    for(var i=0; i<6; i++ ){
+                        if(playerData[1][i]){
+                            HTMLstr1 += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[1][i].memName}</li><li>${playerData[1][i].popularity}</li><li>${playerData[1][i].wisdom}</li><li>${playerData[1][i].charisma}</li><li>${playerData[1][i].finance}</li></ul></li>`;
+                        }else{
+                            HTMLstr1 += ` <li class="playList"><ul><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li></ul></li>`;
+                        }
+                    }
+                    for(var i=0; i<6; i++ ){
+                        if(playerData[2][i]){
+                            HTMLstr2 += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[2][i].memName}</li><li>${playerData[2][i].popularity}</li><li>${playerData[2][i].wisdom}</li><li>${playerData[2][i].charisma}</li><li>${playerData[2][i].finance}</li></ul></li>`;
+                        }else{
+                            HTMLstr2 += ` <li class="playList"><ul><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li></ul></li>`;
+                        }
+                    }
+                    for(var i=0; i<6; i++ ){
+                        if(playerData[3][i]){
+                            HTMLstr3 += ` <li class="playList"><ul><li>${i+1}</li><li>${playerData[3][i].memName}</li><li>${playerData[3][i].popularity}</li><li>${playerData[3][i].wisdom}</li><li>${playerData[3][i].charisma}</li><li>${playerData[3][i].finance}</li></ul></li>`;
+                        }else{
+                            HTMLstr3 += ` <li class="playList"><ul><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li><li>--</li></ul></li>`;
+                        }
+                    }
+                    // var colorAll='#84ccc9';
+                    // var color_1='#fcd93d';
+                    // var color_2='#58d8ff';
+                    // var color_3='#ff99a2';
+                    
+                    // color=document.getElementById('boardInner').style.backgroundColor;
+                    // if(color=colorAll){
+                    //     document.getElementById('innerPlayer').innerHTML=HTMLstr0;
+                    // }else if(color=color_1){
+                    //     document.getElementById('innerPlayer').innerHTML=HTMLstr1;
+                    // }else if(color=color_2){
+                    //     document.getElementById('innerPlayer').innerHTML=HTMLstr2;
+                    // }else if(color=color_3){
+                    //     document.getElementById('innerPlayer').innerHTML=HTMLstr3;
+                    // }
+                    // console.log($('#boardInner').css('backgroundColor'));
+                    
+                    $('#rankAll').click(function(){
+                        document.getElementById('innerPlayer').innerHTML =HTMLstr0;
+                        $('#boardInner').css('backgroundColor','#84ccc9');
+                        TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                            x: -500,
+                            opacity:0
+                        }, {
+                            x: 0,
+                            opacity:1
+                        }, 0.08);
+                    });
+                    $('#rankP_1').click(function(){
+                        document.getElementById('innerPlayer').innerHTML =HTMLstr1;
+                        $('#boardInner').css('backgroundColor','#fcd93d');
+                        TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                            x: -500,
+                            opacity:0
+                        }, {
+                            x: 0,
+                            opacity:1
+                        }, 0.08);
+                    });
+                    $('#rankP_2').click(function(){
+                        document.getElementById('innerPlayer').innerHTML =HTMLstr2;
+                        $('#boardInner').css('backgroundColor','#58d8ff');
+                        TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                            x: -500,
+                            opacity:0
+                        }, {
+                            x: 0,
+                            opacity:1
+                        }, 0.08);
+                    });
+                    $('#rankP_3').click(function(){
+                        document.getElementById('innerPlayer').innerHTML =HTMLstr3;
+                        $('#boardInner').css('backgroundColor','#ff99a2');
+                        TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                            x: -500,
+                            opacity:0
+                        }, {
+                            x: 0,
+                            opacity:1
+                        }, 0.08);
+                    });
+                    
+                    
+                    TweenMax.staggerFromTo('#innerPlayer>li', .3, {
+                        x: -500,
+                        opacity:0
+                    }, {
+                        x: 0,
+                        opacity:1
+                    }, 0.08); 
+
+                    setTimeout(getPlayerList, 10000);
+               
+                }else{ 
+                    alert( xhr.status );
+                }
+            }
+            var url = "php/boardInner.php";
+            xhr.open("Get", url, true);
+            xhr.send( null );
+        }
+        
+           
         //當你想用alert視窗時,請在自己程式下事件處理程序
         //ex:點button跑出alert,改變訊息 <button id=memDataCancel>
 

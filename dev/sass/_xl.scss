@@ -482,16 +482,7 @@
             float: left;
             margin-bottom: 10px;
         }
-        li:nth-child(1){
-            margin-left:60px;
-            margin-right:62px;
-        }
-        li:nth-child(2){
-            margin-right:95px;
-        }
-        li:nth-child(3){
-            margin-right:78px;
-        }
+       
     }
 }
 
@@ -513,29 +504,6 @@
             width: 470px;
             margin: 0 auto;
 
-            li {
-                float: left;
-                width: 30px;
-            }
-
-            li:nth-child(1){
-                margin-left:8px;
-                margin-right:52px;
-            }
-            li:nth-child(2){
-                margin-right:95px;
-            }
-            li:nth-child(3){
-                margin-right:98px;
-            }
-
-            li:nth-child(4):after {
-                content: '/';
-            }
-
-            li:nth-child(5):after {
-                content: '/';
-            }
         }
     }
 }
