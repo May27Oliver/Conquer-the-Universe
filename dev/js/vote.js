@@ -23,10 +23,10 @@ function creatXHR() {
     }
     return xhr;
 }
-
+let voteRunData;
 //[進行中]產生卡片
 function showRunCards(jsonStr) {
-    let voteRunData = JSON.parse(jsonStr);
+    voteRunData = JSON.parse(jsonStr);
     let voteRunCards = "";
     for (var i = 0; i < voteRunData.length; i++) {
         voteRunCards +=
@@ -73,35 +73,35 @@ function showRunCards(jsonStr) {
     </div>` + voteRunCards;
 
     //圓餅圖變數
-    var labels = ["贊成", "反對"];
-    var context;
-    var ctx = [];
-    var pieChart = [];
-    //圓餅圖製作
-    function pieProduce() {
-        context = $classes('.votePie');
-        for (var i = 0; i < context.length; i++) {
-            ctx[i] = context[i].getContext('2d');
-            //把pieChart丟進for迴圈裡，並在context後面加上[i]即可
-            pieChart[i] = new Chart(ctx[i], {
-                type: 'pie',
-                data: {
-                    labels: labels,//init時就要有labels
-                    datasets: [{
-                        //預設資料
-                        data: [1, 1],
-                        borderColor: "transparent",
-                        backgroundColor: [
-                            //資料顏色
-                            "#e24f90",
-                            "#644498",
-                        ],
-                    }],
-                },
-            });
-        };
-        return ctx, context;
-    }
+    // var labels = ["贊成", "反對"];
+    // var context;
+    // var ctx = [];
+    // var pieChart = [];
+    // //圓餅圖製作
+    // function pieProduce() {
+    //     context = $classes('.votePie');
+    //     for (var i = 0; i < context.length; i++) {
+    //         ctx[i] = context[i].getContext('2d');
+    //         //把pieChart丟進for迴圈裡，並在context後面加上[i]即可
+    //         pieChart[i] = new Chart(ctx[i], {
+    //             type: 'pie',
+    //             data: {
+    //                 labels: labels,//init時就要有labels
+    //                 datasets: [{
+    //                     //預設資料
+    //                     data: [voteRunData[i].votACount, voteRunData[i].votBCount],
+    //                     borderColor: "transparent",
+    //                     backgroundColor: [
+    //                         //資料顏色
+    //                         "#e24f90",
+    //                         "#644498",
+    //                     ],
+    //                 }],
+    //             },
+    //         });
+    //     };
+    //     return ctx, context;
+    // }
     pieProduce();
 
     //取button的index值
@@ -202,15 +202,15 @@ function showRunCards(jsonStr) {
     let votNo=$classes(".votNo");
 
     //設立一個物件把一格投票欄的贊成票與反對票統統包起來
-    // function voteObj(name, title, deadline,prosTitle,consTitle, prosNum, consNum) { //
-    //     this.name = voter.value;
-    //     this.title = voteTitle.value;
-    //     this.deadline = deadline;
-    //     this.prosTitle = voteSelectorA.value;
-    //     this.consTitle = voteSelectorB.value;
-    //     this.prosNum = 0;
-    //     this.consNum = 0;
-    // }
+    function voteObj(name, title, deadline,prosTitle,consTitle, prosNum, consNum) { //
+        this.name = voter.value;
+        this.title = voteTitle.value;
+        this.deadline = deadline;
+        this.prosTitle = voteSelectorA.value;
+        this.consTitle = voteSelectorB.value;
+        this.prosNum = 0;
+        this.consNum = 0;
+    }
 
     // voteArr = [{
     //     prosNum: 5,
@@ -241,14 +241,14 @@ function showRunCards(jsonStr) {
     
     //[點擊]新增公民投票議題出現，事件聆聽功能
     $class(".voteAddingSubmit").addEventListener('click', function () {
-        // var name = voter.value; //這邊要記錄發起人的會員Id
-        // var title = voteTitle.value;
-        // var deadline = x;
-        // var prosTitle = voteSelectorA.value;
-        // var consTitle = voteSelectorB.value;
-        // var prosNum = 0;
-        // var consNum = 0;
-        //宣告一個陣列，把一個投票欄位會用到的所有方法屬性都包裝成物件丟進陣列裡
+        var name = voter.value; //這邊要記錄發起人的會員Id
+        var title = voteTitle.value;
+        var deadline = x;
+        var prosTitle = voteSelectorA.value;
+        var consTitle = voteSelectorB.value;
+        var prosNum = 0;
+        var consNum = 0;
+        // 宣告一個陣列，把一個投票欄位會用到的所有方法屬性都包裝成物件丟進陣列裡
         var voteArr = [];
         voteArr.unshift(new voteObj(name, title, deadline,prosTitle ,consTitle ,prosNum, consNum));
         for (var i = 0; i < voteArr.length; i++) {
@@ -402,8 +402,9 @@ function showRunCards(jsonStr) {
             $class(".voteVotingB").style.display = "none";
             $class(".voteReportMessage").style.display = "block";
         }
-        pieProduce();
+        // pieProduce();
         voteLaunch();
+        pieProduce();
         voteA = $classes(".voteA");
         voteB = $classes(".voteB");
         return voteA, voteB, voteArr;
@@ -487,6 +488,55 @@ function showRunCards(jsonStr) {
     BTNs();
 }
 
+
+ //圓餅圖變數
+ var labels = ["贊成", "反對"];
+ var context;
+ var ctx = [];
+ var pieChart = [];
+ //圓餅圖製作
+
+
+ function pieProduce() {
+     context = $classes('.votePie');
+     for (var i = 0; i < context.length; i++) {
+         ctx[i] = context[i].getContext('2d');
+         //把pieChart丟進for迴圈裡，並在context後面加上[i]即可
+         pieChart[i] = new Chart(ctx[i], {
+             type: 'pie',
+             data: {
+                 labels: labels,//init時就要有labels
+                 datasets: [{
+                     //預設資料
+                     data: [voteRunData[i].votACount, voteRunData[i].votBCount],
+                     borderColor: "transparent",
+                     backgroundColor: [
+                         //資料顏色
+                         "#e24f90",
+                         "#644498",
+                     ],
+                 }],
+             },
+         });
+     };
+     return ctx, context;
+ }
+ pieProduce();
+
+ function changeData() {
+    for (var i = 0; i < voteRunData.length; i++) {
+        var prosNum = voteRunData[i].votACount;
+        var consNum = voteRunData[i].votBCount;
+        // pieChart[i].data.labels = [voteArr[i].prosTitle, voteArr[i].consTitle];
+        pieChart[i].data.datasets[0].data = [prosNum, consNum];
+        //更新
+        pieChart[i].update();
+    }
+}
+
+setInterval(changeData, 5000);//這裡要設重抓資料庫的ajax
+
+
 //[已結束]產生卡片
 function showEndCards(jsonStr) {
     let voteEndData = JSON.parse(jsonStr);
@@ -510,52 +560,53 @@ function showEndCards(jsonStr) {
             </div>
         </div>`;
 
-        //圓餅圖變數
-        var labels = ['贊同', '不贊同'];
-        var context;
-        var ctx = [];
-        var pieChart = [];
-        //圓餅圖製作
-        function pieProduce() {
-            context = $classes('.votePie');
-            for (var i = 0; i < context.length; i++) {
-                ctx[i] = context[i].getContext('2d');
-                //把pieChart丟進for迴圈裡，並在context後面加上[i]即可
-                pieChart[i] = new Chart(ctx[i], {
-                    type: 'pie',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            //預設資料
-                            data: [1, 1],
-                            borderColor: "transparent",
-                            backgroundColor: [
-                                //資料顏色
-                                "#e24f90",
-                                "#644498",
-                            ],
-                        }],
-                    },
-                });
-            };
-            return ctx, context;
-        }
-        pieProduce();
+        // //圓餅圖變數
+        // var labels = ['贊同', '不贊同'];
+        // var context;
+        // var ctx = [];
+        // var pieChart = [];
+        // //圓餅圖製作
+        // function pieProduce() {
+        //     context = $classes('.votePie');
+        //     for (var i = 0; i < voteRunData.length; i++) {
+        //         ctx[i] = context[i].getContext('2d');
+        //         //把pieChart丟進for迴圈裡，並在context後面加上[i]即可
+        //         pieChart[i] = new Chart(ctx[i], {
+        //             type: 'pie',
+        //             data: {
+        //                 labels: labels,
+        //                 datasets: [{
+        //                     //預設資料
+        //                     data: [1, 1],
+        //                     borderColor: "transparent",
+        //                     backgroundColor: [
+        //                         //資料顏色
+        //                         "#e24f90",
+        //                         "#644498",
+        //                     ],
+        //                 }],
+        //             },
+        //         });
+        //     };
+        //     return ctx, context;
+        // }
+        // pieProduce();
     }
     $id("voteGroupEnd").innerHTML = voteEndCards;
 
     //圓餅圖變動數據
-    function changeData() {
-        for (var i = 0; i < voteArr.length; i++) {
-            var prosNum = voteRunData[i].votACount;
-            var consNum = voteRunData[i].votBCount;
-            // pieChart[i].data.labels = [voteArr[i].prosTitle, voteArr[i].consTitle];
-            pieChart[i].data.datasets[0].data = [prosNum, consNum];
-            //更新
-            pieChart[i].update();
-        }
-    }
-    setInterval(changeData, 1000);
+    // function changeData() {
+    //     for (var i = 0; i < voteRunData.length; i++) {
+    //         var prosNum = voteRunData[i].votACount;
+    //         var consNum = voteRunData[i].votBCount;
+    //         // pieChart[i].data.labels = [voteArr[i].prosTitle, voteArr[i].consTitle];
+    //         pieChart[i].data.datasets[0].data = [prosNum, consNum];
+    //         //更新
+    //         pieChart[i].update();
+    //     }
+    // }
+
+    // setInterval(changeData, 1000);
 
     //取button的index值
     function getIndex(child) {
@@ -571,7 +622,7 @@ function showEndCards(jsonStr) {
         return i;
     };
 
-    var voteArr = [];
+    // var voteArr = [];
     // voteArr = [{
     //     prosNum: 5,
     //     consNum: 8
@@ -756,6 +807,7 @@ function BTNs() {
         $class(".voteAlertGroup").style.display = "none";
         $class(".voteAlertDid").style.display = "none";
     }
+    return voteRunData;
 }
 
 //---------- PHP載入 ----------//
@@ -830,6 +882,7 @@ function voteLaunch() {
     var data = "memNo=" + $class(".voter").value + "&votQ=" + $class(".voteTitle").value + "&votA=" + $id("voteSelectorA").value + "&votB=" + $id("voteSelectorB").value;
     //送出資料
     xhr.send(data);
+
 }
 
 
@@ -842,26 +895,3 @@ function init() {
 }
 window.addEventListener("load", init, false);
 
-// function gainYesTicket(){
-//     var xhr=new XMLHttpRequest();
-
-//     xhr.onload=function(){
-//         if(xhr.status==200){
-//             alert("新增帳號成功");
-//             loginWrap.style.display="none";
-//             memId.value="";
-//             memPsw.value="";
-//             loginMsg.innerText="";
-//         }else{
-//             alert(xhr.responseText);
-//         }   
-//     }
-
-//     let url="php/register.php";
-//     xhr.open("post",url,true);
-//     let query_string=`memIdRig=${memIdRig.value} & starSelect=${starSelect.value} & memPswRig=${memPswRig.value} & memNameRig=${memNameRig.value} & memEmailRig=${memEmailRig.value}`;
-//     //memId,memPsw跟登入一樣
-//     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-//     xhr.send(query_string);
-    
-// }
