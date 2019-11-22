@@ -179,7 +179,7 @@ $id("alertHomeShop").style.display = "inline-block";
 function alertRemoveHomeShop(){
 $id("alertWindowWrap").style.display = "none";
 $id("today").style.display = "none";
-$id("hat2").style.display = "block";
+// $id("hat2").style.display = "block";
 
 }
 
