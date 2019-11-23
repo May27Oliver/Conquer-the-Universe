@@ -577,27 +577,7 @@
                    $('#popularity').text(popularityAll);
                    sessionStorage.setItem('popularity',popularityAll);
 
-                   $('#tab02').append(`
-                <div class="propBox" id="itemEqui1"> 
-                    <img class="hat" id="hat1" src="${todayEqui.clothimg}" alt="">
-                    <div class="citizenClothNameBox2">
-                        <span><p>${todayEqui.clothName}</p></span>
-                    </div>
-                </div>`);
-            //====換外觀道具
-            //設定帽子換道具
-            function showEqui( e ){
-            let tagSrc =e.target.src;
-            console.log(tagSrc);
-            document.getElementById(`${todayEqui.clothClass}`).src = tagSrc.replace("","");
-            document.getElementById(`${todayEqui.clothClass}`).style.display = "block";
-            }
-                    //===換帽子道具
-                    let imgs = document.querySelectorAll(".hat");
-                    for(let i=0; i<imgs.length; i++){
-                        imgs[i].onclick = showEqui;
-                        // console.log(imgs[i]);
-                    }
+                   
                 },
                 
             })
@@ -605,6 +585,7 @@
         });
     //增加裝備庫欄位
         $("#alertHomeShop").click(function(e){
+            e.stopPropagation();
             let popularity = $('#popularity').text();       //個人支持度
             let popularityAdd = $('.popularityAdd').text(); //商品支持度
             let clothImg = $('.hat').attr('src');           //商品路徑
@@ -667,19 +648,64 @@
       xhr.onload=function (){
            if( xhr.status == 200 ){
             memberCloth= JSON.parse(xhr.responseText);
-            console.log(todayEqui.clothimg);
-                $("#today").append(`
-                <img class="hat" src="${todayEqui.clothimg}" alt="">
-                    <div class="citizenClothNameBox"> 
-                        <button class="citizenShop" >${todayEqui.clothPrice}</button>
-                        <span class="citizenClothName"><p>${todayEqui.clothName}<p></span>
-                        <span class="popularityAdd" style="visibility:hidden">${todayEqui.popularAmount}</span>
-                        <span class="clothNo" style="visibility:hidden">${todayEqui.clothNo}</span>
-                        <span class="clothClass" style="visibility:hidden">${todayEqui.clothClass}</span>
-                    </div> 
-                `)
-                   
-            }
+           for (let i = 0; i < memberCloth.length; i++) {
+            //    console.log(memberCloth[i].clothClass);
+               $('#tab02').append(`
+                <div class="propBox" data-range="${memberCloth[i].clothClass}"> 
+                    <img class="hat" src="${memberCloth[i].clothimg}" alt="">
+                    <div class="citizenClothNameBox2" >
+                        <span><p class="clothName">${memberCloth[i].clothName}</p></span>
+                        
+                    </div>
+                </div>`);
+
+            }   
+                //====換外觀道具
+                //設定帽子換道具
+                function showEqui( e ){
+                    let tagSrc =e.target.src;
+                    // alert(tagSrc);
+                    // let clothClass = $(".clothClass").text();
+                    // let clothName = $(".clothName").text();
+                    // alert(clothClass);
+                    // alert(clothName);
+                    // for (let i = 0; i < memberCloth.length; i++) {
+                        //    document.getElementById(`${memberCloth[i]['clothClass']}`).src = tagSrc.replace("","");
+                        //     document.getElementById(`${memberCloth[i]['clothClass']}`).style.display = "block"; 
+                       
+                    var range=e.target.parentNode.getAttribute("data-range");
+
+                    if(range=="Equi"){
+                        document.getElementById("Equi").src=e.target.src;
+                        document.getElementById("Equi").style.display="";
+                    }else if(range=="EquiHand"){
+                        document.getElementById("EquiHand").src=e.target.src;
+                        document.getElementById("EquiHand").style.display="";
+                    }
+                    
+                        // console.log("您點擊到的是:",);
+                        // console.log (e.target.parentNode.getAttribute("data-range"));
+                        // console.log (memberCloth[0]['clothClass']);
+                        // console.log (memberCloth[1]['clothClass']);
+                    // }
+                }
+                // console.log(memberCloth[i]['clothClass']);
+                    
+                    
+                //===換帽子道具
+                let imgs = document.querySelectorAll(".hat");
+                for(let j=0; j<imgs.length; j++){
+                    imgs[j].onclick = showEqui;
+                    // console.log(imgs[j]); 
+
+                    
+                }
+                
+            
+               
+           }
+            
+                
 
       }
       
