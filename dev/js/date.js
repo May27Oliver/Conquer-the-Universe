@@ -22,6 +22,10 @@ window.addEventListener('load',function(){
         document.getElementById("stage2").style.backgroundImage = "url('img/home_img/stageB2.png')";
         document.getElementById("stage3").style.backgroundImage = "url('img/home_img/stageY3.png')";
 
+        document.getElementById("winPlayer_1").innerText="閃電除除子";
+        document.getElementById("winPlayer_2").innerText="口業橋引路人";
+        document.getElementById("winPlayer_3").innerText="美達";
+
     }
     
     //倒數
@@ -32,8 +36,18 @@ window.addEventListener('load',function(){
         var week=Math.floor(time/604800);//距離起始幾周
         var deadline=week+1;//結算日期
         if(time%604800==0){
-            
-            //抓星球排名
+
+             //各星球第一名塞進星球欄位
+             getPlayer1();
+             function getPlayer1(){
+                 var xhr = new XMLHttpRequest();
+                 // xhr.onload=function (){}
+                 var url = "php/playerNo1.php";
+                 xhr.open("Get", url, true);
+                 xhr.send( null );
+             }
+             
+            //抓星球排名//更新首頁頒獎台
             getStarPoint();
             function getStarPoint(){
                 
@@ -72,6 +86,10 @@ window.addEventListener('load',function(){
                         document.getElementById("stage2").style.backgroundImage = `url('${str2}')`;
                         document.getElementById("stage3").style.backgroundImage = `url('${str3}')`;
 
+                        document.getElementById("winPlayer_1").innerText= starData[0]['firstMemName'];
+                        document.getElementById("winPlayer_2").innerText= starData[1]['firstMemName'];
+                        document.getElementById("winPlayer_3").innerText= starData[2]['firstMemName'];
+
                     }else{ 
                         alert( xhr.status );
                     }
@@ -80,10 +98,6 @@ window.addEventListener('load',function(){
                 xhr.open("Get", url, true);
                 xhr.send( null );
             }
-
-            //第一名塞進獎台
-
-            
 
             //發獎牌
             getPlayer3();
@@ -116,7 +130,7 @@ window.addEventListener('load',function(){
             }
             
         }
-          
+      
     // console.log(time);
     }, 1000);
 });
