@@ -586,7 +586,7 @@
                 },
                 type: 'GET',
                 success: function(){
-                    alert(1111);
+                    // alert(1111);
                    $('#coin').text(balance);
                    sessionStorage.setItem('starCoin',balance);
                    $('#popularity').text(popularityAll);
@@ -647,7 +647,7 @@
                 },
                 type: 'GET',
                 success: function(){
-                    alert(2222);
+                    // alert(2222);
             
                  
                 },
@@ -679,15 +679,6 @@
                 //設定帽子換道具
                 function showEqui( e ){
                     let tagSrc =e.target.src;
-                    // alert(tagSrc);
-                    // let clothClass = $(".clothClass").text();
-                    // let clothName = $(".clothName").text();
-                    // alert(clothClass);
-                    // alert(clothName);
-                    // for (let i = 0; i < memberCloth.length; i++) {
-                        //    document.getElementById(`${memberCloth[i]['clothClass']}`).src = tagSrc.replace("","");
-                        //     document.getElementById(`${memberCloth[i]['clothClass']}`).style.display = "block"; 
-                       
                     var range=e.target.parentNode.getAttribute("data-range");
 
                     if(range=="Equi"){
@@ -699,7 +690,7 @@
                     }
                     
                         // console.log("您點擊到的是:",);
-                        // console.log (e.target.parentNode.getAttribute("data-range"));
+                        //  console.log (e.target.parentNode.getAttribute("data-range"));
                         // console.log (memberCloth[0]['clothClass']);
                         // console.log (memberCloth[1]['clothClass']);
                     // }
@@ -712,7 +703,6 @@
                 for(let j=0; j<imgs.length; j++){
                     imgs[j].onclick = showEqui;
                     // console.log(imgs[j]); 
-
                     
                 }
                 
@@ -730,10 +720,32 @@
     }//setInterval(todayEqui ,10000);
     memberCloth();
 
-    // 現有商品撈出  結束
+    //-----現有商品撈出  結束
 
 
-    //星球圖
+//-----道具點擊
+    $(".hat").click(function () {
+        let equiclothClass = e.target.parentNode.getAttribute("data-range");
+        alert(equiclothClass);
+        let storage = sessionStorage;
+        sessionStorage.setItem('equiclothClass', equiclothClass); 
+        $.ajax({
+                url: `php/equiOnDuty.php`,
+                data: {
+                    equiclothClass:equiclothClass,
+    
+                },
+                type: 'GET',
+                success: function(){
+                    alert(2222);
+            
+                 
+                },
+                
+            })
+    })
+
+//星球圖
 function StarsBall(){
   var xhr = new XMLHttpRequest();
   xhr.onload=function (){
