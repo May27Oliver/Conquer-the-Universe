@@ -72,9 +72,9 @@
                     <div class="col-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="item boxLeft">
                             <div class="memNameBox" id="memNameBox">
-                            <img src="" alt="">
-                                <!-- <h3>菜逼巴</h3>
-                                <h2>發大財</h2>  -->
+                            <img id="badgeImg" src="" alt="">
+                            <h3 id="titleName"></h3>
+                            <h2 id="citizenMemName"></h2>
                             </div>
 
                             <div class="supportBox">
@@ -339,13 +339,7 @@
       xhr.onload=function (){
            if( xhr.status == 200 ){
             memNameBox = JSON.parse(xhr.responseText);
-                HTMLstr = "";
-                for(var i=0; i<1; i++ ){
-                    HTMLstr += `
-                    <h2>${memNameBox[i].memName}</h2> 
-                    `;
-                }
-                document.getElementById('memNameBox').innerHTML =HTMLstr;
+            document.getElementById('citizenMemName').innerText =memNameBox[0].memName;
            }else{
             alert( xhr.status );
            }
@@ -357,6 +351,28 @@
     }
     memNameBox();
     
+    // 個人徽章
+    function memBadge(){
+        
+        var xhr = new XMLHttpRequest();
+        xhr.onload=function (){
+            if( xhr.status == 200 ){
+            badge = JSON.parse(xhr.responseText);
+            var img=badge['badgeImg'];
+            document.getElementById('badgeImg').src=`img/${img}`;
+            alert( xhr.status );
+            console.log(badge['badgeImg']);
+            }
+        }
+      
+      var url = "php/getBadge.php?";
+      xhr.open("Get", url, true);
+      xhr.send( null );
+    }
+    memBadge();
+    
+
+
     // 個人稱號
     // function memNameBoxtitle(){
     //   var xhr = new XMLHttpRequest();
@@ -382,31 +398,29 @@
     // memNameBoxtitle();
     
     // 個人徽章
-    function memBadge(){
-      var xhr = new XMLHttpRequest();
-      xhr.onload=function (){
-           if( xhr.status == 200 ){
-            badge = JSON.parse(xhr.responseText);
-            console.log(badge);
-                HTMLstr = "";
-                for(var i=0; i<1; i++ ){
-                    HTMLstr += `
-                    <img src="${badge[5].bandageimg}" alt="">
-                    <h3 id="titleName">菜逼巴</h3>
-                    <h2>${memNameBox[i].memName}</h2> 
-                    `;
-                }
-                document.getElementById('memNameBox').innerHTML =HTMLstr;
-           }else{
-            alert( xhr.status );
-           }
-      }
+    // function memBadge(){
+    //   var xhr = new XMLHttpRequest();
+    //   xhr.onload=function (){
+    //        if( xhr.status == 200 ){
+    //         badge = JSON.parse(xhr.responseText);
+    //         console.log(badge);
+    //             HTMLstr = "";
+    //             for(var i=0; i<1; i++ ){
+    //                 HTMLstr += `
+                    
+    //                 `;
+    //             }
+    //             document.getElementById('memNameBox').innerHTML =HTMLstr;
+    //        }else{
+    //         alert( xhr.status );
+    //        }
+    //   }
       
-      var url = "php/homeCitizenBadge.php?";
-      xhr.open("Get", url, true);
-      xhr.send( null );
-    }
-    memBadge();
+    //   var url = "php/homeCitizenBadge.php?";
+    //   xhr.open("Get", url, true);
+    //   xhr.send( null );
+    // }
+    // memBadge();
     
     // 候選人
     function memRole(){

@@ -1,32 +1,30 @@
 window.addEventListener('load',function(){
     //星球排名初始值
-    OStarPoint();
-    function OStarPoint(){
+ 
+    // document.getElementById("startContest").innerText= "2019/11/21";
+    // document.getElementById("endContest").innerText= "2019/11/28";
 
-        document.getElementById("startContest").innerText= "2019/11/21";
-        document.getElementById("endContest").innerText= "2019/11/28";
+    // document.getElementById("role1").innerText= '兔兔星';
+    // document.getElementById("role2").innerText= '肥宅星';
+    // document.getElementById("role3").innerText= '派大星';
+    
+    // new CountUp("winPoint_1",0,8787).start();
+    // new CountUp("winPoint_2",0,6666).start();
+    // new CountUp("winPoint_3",0,5487).start();
+    
+    // document.getElementById("roleImg1").src='img/rabbit.png';
+    // document.getElementById("roleImg2").src='img/fat.png';
+    // document.getElementById("roleImg3").src='img/OneEye.png';
+    
+    // document.getElementById("stage1").style.backgroundImage = "url('img/home_img/stageR1.png')";
+    // document.getElementById("stage2").style.backgroundImage = "url('img/home_img/stageB2.png')";
+    // document.getElementById("stage3").style.backgroundImage = "url('img/home_img/stageY3.png')";
 
-        document.getElementById("role1").innerText= '兔兔星';
-        document.getElementById("role2").innerText= '肥宅星';
-        document.getElementById("role3").innerText= '派大星';
-        
-        new CountUp("winPoint_1",0,8787).start();
-        new CountUp("winPoint_2",0,6666).start();
-        new CountUp("winPoint_3",0,5487).start();
-        
-        document.getElementById("roleImg1").src='img/rabbit.png';
-        document.getElementById("roleImg2").src='img/fat.png';
-        document.getElementById("roleImg3").src='img/OneEye.png';
-        
-        document.getElementById("stage1").style.backgroundImage = "url('img/home_img/stageR1.png')";
-        document.getElementById("stage2").style.backgroundImage = "url('img/home_img/stageB2.png')";
-        document.getElementById("stage3").style.backgroundImage = "url('img/home_img/stageY3.png')";
+    // document.getElementById("winPlayer_1").innerText="閃電除除子";
+    // document.getElementById("winPlayer_2").innerText="口業橋引路人";
+    // document.getElementById("winPlayer_3").innerText="美達";
 
-        document.getElementById("winPlayer_1").innerText="閃電除除子";
-        document.getElementById("winPlayer_2").innerText="口業橋引路人";
-        document.getElementById("winPlayer_3").innerText="美達";
-
-    }
+    
     
     //倒數
     setInterval(function() {
@@ -61,12 +59,14 @@ window.addEventListener('load',function(){
                         document.getElementById("role1").innerText= name1;
                         document.getElementById("role2").innerText= name2;
                         document.getElementById("role3").innerText= name3;
-                        var point1=starData[0]['starPopularity'];
-                        var point2=starData[1]['starPopularity'];
-                        var point3=starData[2]['starPopularity'];
-                        new CountUp("winPoint_1",0,point1).start();
-                        new CountUp("winPoint_2",0,point2).start();
-                        new CountUp("winPoint_3",0,point3).start();
+
+                        // var point1=starData[0]['starPopularity'];
+                        // var point2=starData[1]['starPopularity'];
+                        // var point3=starData[2]['starPopularity'];
+                        // new CountUp("winPoint_1",0,point1).start();
+                        // new CountUp("winPoint_2",0,point2).start();
+                        // new CountUp("winPoint_3",0,point3).start();
+
                         // document.getElementById("winPoint_1").innerText= point1;
                         // document.getElementById("winPoint_2").innerText= point2;
                         // document.getElementById("winPoint_3").innerText= point3;
@@ -104,7 +104,7 @@ window.addEventListener('load',function(){
             function getPlayer3(){
                 var xhr = new XMLHttpRequest();
                 // xhr.onload=function (){}
-                var url = "php/changeBadage.php";
+                var url = "php/changeBadge.php";
                 xhr.open("Get", url, true);
                 xhr.send( null );
             }
@@ -130,7 +130,7 @@ window.addEventListener('load',function(){
             }
             
         }
-      
+     
     // console.log(time);
     }, 1000);
 });
