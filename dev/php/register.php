@@ -7,7 +7,7 @@
     $starSelect=$_POST["starSelect"];
     try{
         if(isset($_POST["memIdRig"])==true || isset($_POST["starSelect"])==true || isset($_POST["memPswRig"])==true || isset($_POST["memEmailRig"])==true){
-           $sql="INSERT INTO `member`(starNo,badageNo,memId,memPsw,memName,email,popularity,wisdom,charisma,finance,starCoin) 
+           $sql="INSERT INTO `member`(starNo,badgeNo,memId,memPsw,memName,email,popularity,wisdom,charisma,finance,starCoin) 
               VALUES (:starSelect,0,:memIdRig,:memPswRig,:memNameRig,:memEmailRig,0,0,0,0,0)";
             $member=$pdo->prepare($sql);
             $member->bindValue(":memIdRig",$memIdRig);

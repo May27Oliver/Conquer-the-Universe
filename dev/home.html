@@ -40,42 +40,42 @@
 
             <li class="winner2">
                 <div class="planetTxt">
-                    <p id="role2"></p>
+                    <p id="role2">肥宅星</p>
                     <p><span id="winPoint_2"></span>支持度</p>
                 </div>
-                <div class="stageText" id="stage2">
+                <div class="stageText" id="stage2" style="background-image: url('img/home_img/stageB2.png');">
                     <div class="alienImg alien_2">
-                        <img src="" alt="外星人" id="roleImg2">
+                        <img src="img/fat.png" alt="外星人" id="roleImg2">
                     </div>
-                    <p id="winPlayer_2">最多就六個字</p>
+                    <p id="winPlayer_2">口業橋引路人</p>
                     <h1>2</h1>
                 </div>
             </li>
 
             <li class="winner1">
                 <div class="planetTxt">
-                    <p id="role1"></p>
+                    <p id="role1">兔兔星</p>
                     <p><span id="winPoint_1"></span>支持度</p>
                 </div>
-                <div class="stageText" id="stage1">
+                <div class="stageText" id="stage1" style="background-image: url('img/home_img/stageR1.png');">
                     <div class="alienImg alien_1">
-                        <img src="" alt="外星人" id="roleImg1">
+                        <img src="img/rabbit.png" alt="外星人" id="roleImg1">
                     </div>
-                    <p id="winPlayer_1">最多就六個字</p>
+                    <p id="winPlayer_1">閃電除除子</p>
                     <h1>1</h1>
                 </div>
             </li>
             
             <li class="winner3">
                 <div class="planetTxt">
-                    <p id="role3"></p>
+                    <p id="role3">派大星</p>
                     <p><span id="winPoint_3"></span>支持度</p>
                 </div>
-                <div class="stageText" id="stage3">
+                <div class="stageText" id="stage3" style="background-image: url('img/home_img/stageY3.png');">
                     <div class="alienImg alien_3">
-                        <img src="" alt="外星人" id="roleImg3">
+                        <img src="img/OneEye.png" alt="外星人" id="roleImg3">
                     </div>
-                    <p id="winPlayer_3">最多就六個字</p>
+                    <p id="winPlayer_3">美達</p>
                     <h1>3</h1>
                 </div>
             </li>
@@ -87,7 +87,7 @@
         <div class="leaderTitle">
             <h2>支持度排行榜</h2>
         </div>
-        <p><span id="startContest"></span> ~ <span id="endContest"></span></p>
+        <p><span id="startContest">2019/11/21</span> ~ <span id="endContest">2019/11/28</span></p>
         <ul class="boardTitle">
             <li id="rankAll">全體排名</li>
             <li id="rankP_1">派大星</li>
@@ -562,6 +562,29 @@
             'timeout': 5000,
             'delayaftershow': 300,
         })
+        
+
+        
+        //抓上季結算支持度
+        contestPoint();
+        function contestPoint(){
+            var xhr = new XMLHttpRequest();
+            xhr.onload=function (){
+                if( xhr.status == 200 ){ 
+                    playerData = JSON.parse(xhr.responseText);
+                    new CountUp("winPoint_1",0,playerData[0]['endPoint']).start();
+                    new CountUp("winPoint_2",0,playerData[1]['endPoint']).start();
+                    new CountUp("winPoint_3",0,playerData[2]['endPoint']).start();
+                    
+                }else{ 
+                    alert( xhr.status );
+                }
+            }
+            var url = "php/contestPoint.php";
+            xhr.open("Get", url, true);
+            xhr.send( null );
+        }
+        
 
 
         // 排行榜第一個畫面
@@ -750,6 +773,7 @@
             }
         })  
 
+            
     });
 </script>
 </body>
