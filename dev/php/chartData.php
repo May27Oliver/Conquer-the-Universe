@@ -1,9 +1,11 @@
 <?php
+session_start();
 //個人編輯會員資料撈取
 $errMsg="";
+$memNo=$_SESSION["memNo"];
 try{
   require_once("connectPDO.php");
-  $sql2 = "select wisdom,charisma,finance from `member` order by memNo limit 1" ;
+  $sql2 = "select wisdom,charisma,finance from `member` WHERE `member`.`memNo` = {$memNo}" ;
   $chartData=$pdo->query($sql2);
   $arr=[];
   for($i=0;$i<6;$i++){

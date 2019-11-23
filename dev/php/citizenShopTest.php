@@ -1,14 +1,16 @@
 <?php 
-session_start();
+// session_start();
+
 $errMsg = "";
 $memNo=$_SESSION["memNo"];
+$starCoin = 100;
 try {
 	require_once("connectPDO.php");
-	$sql="update `member` set memPsw=:memPsw,email=:email WHERE `member`.`memNo` = {$memNo}";
-	$memEdit=$pdo->prepare($sql);
-	$memEdit->bindValue(':memPsw',$_REQUEST["memPsw"]);
-	$memEdit->bindValue(':email',$_REQUEST["email"]);
-    $memEdit->execute();
+    $sql="update `member` set `starCoin`=`starCoin` -  {$starCoin} WHERE `memNo`";
+    $pdo->exec($sql);
+	// $updateStarCoin = $pdo->prepare($sql);
+    // $updateStarCoin->bindValue(":memNo", $memNo);
+    // $updateStarCoin->execute();
     // if( $memEdit->rowCount() == 0 ){
     //     echo "{}";
     // }else{

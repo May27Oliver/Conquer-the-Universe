@@ -128,12 +128,15 @@
                                         <h4>限時搶購:<i></i>  <i></i>  <i></i></h4> 
                                         <div class="propBox">
                                             <div id="today">
-                                                <img class="hat" src="img/shopPic2.png" alt="">
-                                                <button class="citizenShop" >$100</button> 
+                                                <!-- <img class="hat" src="img/shopPic2.png" alt="">
+                                                <button class="citizenShop" >$100</button>  -->
                                             </div>
                                             
                                         </div>
                                         <div class="propBox">
+                                            <div id="today">
+                                              
+                                            </div>
                                         </div>
                                         <div class="propBox">
                                         </div>
@@ -150,7 +153,7 @@
                                         
                                     </div>
                                     <div id="tab02" class="tab-inner">
-                                        <div class="propBox" id="itemEqui1">
+                                        <!-- <div class="propBox" id="itemEqui1">
                                             <img class="hat" id="hat1" src="img/shopPic1.png" alt="">
                                         </div>
                                         <div class="propBox" >
@@ -173,7 +176,7 @@
                                         <div class="propBox">
                                         </div>
                                         <div class="propBox">
-                                        </div>
+                                        </div> -->
                                     </div>
                                     </div>
                                 </div>
@@ -318,14 +321,6 @@
            if( xhr.status == 200 ){
             popularity = JSON.parse(xhr.responseText);
             new CountUp("popularity",0,popularity[0].popularity).start();
-                // HTMLstr = "";
-                // for(var i=0; i<1; i++ ){
-                //     HTMLstr += `
-                    
-                //     <p id="popularity">${popularity[0].popularity}</p>
-                //     `;
-                // }
-                // document.getElementById('supportBoxIn').innerHTML =HTMLstr;
            }else{
             alert( xhr.status );
            }
@@ -420,42 +415,46 @@
            if( xhr.status == 200 ){
             StarsRole = JSON.parse(xhr.responseText);
             console.log(StarsRole);
-                HTMLstr = "";
-                for(var i=0; i<1; i++ ){
-                    HTMLstr += `
-                    <img class="citizenRabbit" src="${StarsRole[2].starsRole}" alt=""> 
-                    <div id="EquiBox" class="rabbitBox">
-                        <img id="Equi" src="" alt="" style="display:none">
-                        <div class="EquiClose1" style="display: none;" onclick="removeEqui()"></div>
-                    </div>
-                    <div id="EquiBoxHand" class="rabbitHandBox">
-                        <img id="EquiHand" src="" alt="" style="display:none">
-                        <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
-                    </div>
-                    
-                   <!-- <img class="citizenFat" src="${StarsRole[1].starsRole}" alt=""> 
-                    <div id="EquiBox" class="fatBox">
-                        <img id="Equi" src="" alt="" style="display:none">
-                        <div class="EquiClose1" style="display: none;" onclick="removeEqui()"></div>
-                    </div>
-                    <div id="EquiBoxHand" class="fatHandBox">
-                        <img id="EquiHand" src="" alt="" style="display:none">
-                        <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
-                    </div>
-    
-                    <img class="citizenOneEye" src="${StarsRole[0].starsRole}" alt=""> 
-                    <div id="EquiBox" class="oneEyeBox">
-                        <img id="Equi" src="" alt="" style="display:none">
-                        <div class="EquiClose1" style="display: none;" onclick="removeEqui()"></div>
-                    </div>
-                    <div id="EquiBoxHand" class="oneEyeHandBox">
-                        <img id="EquiHand" src="" alt="" style="display:none">
-                        <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
-                    </div>  -->
-                    `;
-                    
-                }
-                document.getElementById('EquiImg').innerHTML =HTMLstr;
+                    // if(StarsRole[0].starsRole){ 
+                        $(".EquiImg").append(`
+                        <img class="citizenOneEye" src="${StarsRole[0].starsRole}" alt=""> 
+                        <div id="EquiBox" class="oneEyeBox">
+                            <img id="Equi" src="" alt="" style="display:none">
+                            <div class="EquiClose1" style="display: none;" onclick="removeEqui()"></div>
+                        </div>
+                        <div id="EquiBoxHand" class="oneEyeHandBox">
+                            <img id="EquiHand" src="" alt="" style="display:none">
+                            <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
+                        </div>  `);
+
+                    // }else if(StarsRole[1].starsRole=StarsRole[1].starsRole){
+                        // $(".EquiImg").append(` 
+                        // <img class="citizenFat" src="${StarsRole[1].starsRole}" alt=""> 
+                        // <div id="EquiBox" class="fatBox">
+                        //     <img id="Equi" src="" alt="" style="display:none">
+                        //     <div class="EquiClose1" style="display: none;" onclick="removeEqui()"></div>
+                        // </div>
+                        // <div id="EquiBoxHand" class="fatHandBox">
+                        //     <img id="EquiHand" src="" alt="" style="display:none">
+                        //     <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
+                        // </div>`
+                        // );
+
+                    // }else if(StarsRole[0].starsRole=StarsRole[0].starsRole){
+                        // $(".EquiImg").append(`
+                        //     <img class="citizenRabbit" src="${StarsRole[2].starsRole}" alt=""> 
+                        // <div id="EquiBox" class="rabbitBox">
+                        //     <img id="Equi" src="" alt="" style="display:none">
+                        //     <div class="EquiClose1" style="display: none;" onclick="removeEqui()"></div>
+                        // </div>
+                        // <div id="EquiBoxHand" class="rabbitHandBox">
+                        //     <img id="EquiHand" src="" alt="" style="display:none">
+                        //     <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
+                        // </div>`
+                        // );
+
+                    // };
+
                             //hover帽子道具img出現叉叉
                     $("#EquiBox img").mouseover(function(){
                         $(".EquiClose1").css("display","block");
@@ -503,32 +502,126 @@
       xhr.onload=function (){
            if( xhr.status == 200 ){
             todayEqui= JSON.parse(xhr.responseText);
-            console.log(todayEqui);
-                HTMLstr = "";
+            console.log(todayEqui.clothimg);
+                $("#today").append(`
+                <img class="hat" src="${todayEqui.clothimg}" alt="">
+                        <span>${todayEqui.clothName}</span>
+                        <button class="citizenShop" >${todayEqui.clothPrice}</button> 
+                `)
+                   
+            }
 
-                    HTMLstr += `
-                    <img class="hat" src="${todayEqui[4].clothimg}" alt="">
-                    <button class="citizenShop" >$100</button>  
-                    `;
-                }
-                document.getElementById('today').innerHTML =HTMLstr;
       }
       
       var url = "php/todayEqui.php?";
       xhr.open("Get", url, true);
       xhr.send( null );
-    }
+    }//setInterval(todayEqui ,10000);
     todayEqui();
-    
+    // $("#alertHomeShop").click(function(e){
+            
+    //         $.ajax({    
+    //             url: `citizenShoptest.php?`,
+    //             data: {
+    //                 // memNo:memNo,
+    //                 // balance:balance,
+    //             },
+    //             type: 'GET',
+    //             success: function(row){
+                  
+    //             } 
+    //         })
+
+    //     })
+
+
+
+        $("#alertHomeShop").click(function(e){
+            // let memNo  = storage.getItem('memNo',memNo);
+            // let starCoin = storage.getItem('starCoin');
+            let memNo = $('.memNo').text();
+            let starCoin =$('#coin').text();
+            let citizenShop = $('.citizenShop').text();
+            let balance = starCoin - citizenShop;
+            console.log(memNo);
+            console.log(starCoin);
+            console.log(citizenShop);
+            console.log(balance);
+            $.ajax({    
+                url: `citizenShop.php?`,
+                data: {
+                    // memNo:memNo,
+                    balance:balance,
+                },
+                type: 'GET',
+                success: function(row){
+                //    $('#coin').text(balance);
+                //     storage.setItem('starCoin',balance);
+                } 
+            })
+
+        })
+
+        // $("#alertHomeShop").click(function(e){
+        //     $('#tab02').append(`
+        //         <div class="propBox" id="itemEqui1">
+        //             <img class="hat" id="hat1" src="${todayEqui.clothimg}" alt="">
+        //             <span>${todayEqui.clothName}</span>
+        //         </div>`);
+        //         $('#tab02').append(`
+        //         <div class="propBox" id="itemEqui1">
+        //             <img class="hand"" id="hand1" src="${todayEqui.clothimg}" alt="">
+        //             <span>${todayEqui.clothName}</span>
+        //         </div>`);
+        //     //====換外觀道具
+        //     //設定帽子換道具
+        //     function showEqui( e ){
+        //     let tagSrc =e.target.src;
+        //     console.log(tagSrc);
+        //     document.getElementById("Equi").src = tagSrc.replace("","");
+        //     document.getElementById("Equi").style.display = "block";
+        //     }
+        //     //===換帽子道具
+        //     let imgs = document.querySelectorAll(".hat");
+        //     for(let i=0; i<imgs.length; i++){
+        //         imgs[i].onclick = showEqui;
+        //         // console.log(imgs[i]);
+        //     }
+
+        //     //===換手上道具
+        //     function showEquiHand(e){
+        //     let HadSrc =e.target.src;
+        //     console.log(HadSrc);
+        //     document.getElementById("EquiHand").src = HadSrc.replace("","");
+        //     document.getElementById("EquiHand").style.display = "block";
+        //     }
+        //     //===設定換手上道具
+        //     let handImgs = document.querySelectorAll(".propBox .hand");
+        //     for(let i=0; i<handImgs.length; i++){
+        //         handImgs[i].onclick = showEquiHand;
+        //         console.log(handImgs[i]);
+        //     }
+        // })
+
+        
+    //------今日商品結束    
+
+
     // // 星球圖
 function StarsBall(){
   var xhr = new XMLHttpRequest();
   xhr.onload=function (){
        if( xhr.status == 200 ){
         StarsBall= JSON.parse(xhr.responseText);
-        console.log(StarsBall);
-        $('.redBall').css('background-image',`url(${StarsBall[0].starsBall})`)
-         console.log(StarsBall[2].starsBall);
+        // alert(StarsBall);
+        if(StarsBall[0].starsBall=StarsBall[0].starsBall){
+            $('.redBall').css('background-image',`url(${StarsBall[0].starsBall})`)
+        }else if(StarsBall[1].starsBall=StarsBall[1].starsBall){
+            $('.redBall').css('background-image',`url(${StarsBall[1].starsBall})`)
+        }else{
+            $('.redBall').css('background-image',`url(${StarsBall[2].starsBall})`)
+        }
+        //  alert(StarsBall[0].starsBall);
        }else{
         alert( xhr.status );
        }
@@ -554,6 +647,7 @@ StarsBall();
             console.log(memName);
             console.log(memPsw);
             console.log(email);
+            sessionStorage.setItem('memNo', memNo);
             sessionStorage.setItem('titleName', titleName);
             sessionStorage.setItem('memPsw', memPsw);
             sessionStorage.setItem('email', email);

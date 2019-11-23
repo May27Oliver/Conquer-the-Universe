@@ -1,9 +1,11 @@
 <?php
+require_once("connectPDO.php");
+session_start();
 //個人編輯會員資料撈取獎牌(星球圖)
 $errMsg="";
+$starNo=$_SESSION["starNo"];
 try{
-  require_once("connectPDO.php");
-  $sql2 = "select starsBall from `stars` where starNo" ;
+  $sql2 = "select starsBall from `stars` WHERE `stars`.`starNo` = {$starNo}" ;
   $starsBall=$pdo->query($sql2);
   $arrStarsBall=[];
   for($i=0;$i<6;$i++){

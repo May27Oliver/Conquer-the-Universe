@@ -23,6 +23,12 @@
     let wealth = $id("wealth");
     let coin = $id("coin");
     let loginMsg=$id("loginMsg");
+    let memIdRig=$id("memIdRig");
+    let memPswRig=$id("memPswRig");
+    let memNameRig=$id("memNameRig");
+    let memEmailRig=$id("memEmailRig");
+    let starSelect=$id("starSelect");
+    let loginRig=$id("loginRig");
     //__________ 燈箱開關 __________//
     //燈箱打開
     function loginRegister(){
@@ -38,6 +44,9 @@
     //燈相關閉
     function closeBox(){
         loginWrap.style.display="none";
+        memId.value="";
+        memPsw.value="";
+        loginMsg.innerText="";
     }
     //登入及驗證
     function registerBox(){
@@ -45,12 +54,36 @@
         registerPage.style.display="";
     }
     //註冊及驗證
-    function register(){}
+    function register(){
+        if(memPswRig.value=="" && memIdRig.value==""){
+            loginRig.innerText="帳號或密碼欄位不得為空";
+        }else if(memPswRig.value!=pswChecked.value){
+            loginRig.innerText="密碼確認輸入欄位值與密碼不符";
+        }else{
+            var xhr=new XMLHttpRequest();
+            xhr.onload=function(){
+                if(xhr.status==200){
+                    alert("新增帳號成功");
+                    loginWrap.style.display="none";
+                    memId.value="";
+                    memPsw.value="";
+                    loginMsg.innerText="";
+                }else{
+                    alert(xhr.responseText);
+                }   
+            }
+
+            let url="php/register.php";
+            xhr.open("post",url,true);
+            let query_string=`memIdRig=${memIdRig.value} & starSelect=${starSelect.value} & memPswRig=${memPswRig.value} & memNameRig=${memNameRig.value} & memEmailRig=${memEmailRig.value}`;
+            //memId,memPsw跟登入一樣
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(query_string);
+
+        } 
+    }
     //取消註冊，清空表單同時返回登入
     function backLogin(){
-        // memId.placeholder="";
-        // memPsw.placeholder="";
-        // pswChecked.placeholder="";
         memName.value="";
         memEmail.value="";
         registerPage.style.display="none";
@@ -61,42 +94,36 @@
         var xhr=new XMLHttpRequest();
 
         xhr.onload=function(){
-            if(xhr.status==200){
-                // document.getElementById("loginMsg").innerText=xhr.responseText;
-                // if(xhr.responseText=="登入成功！"){
-                    loginWrap.style.display="none";
-                    loginPage.style.display="none";
-                    registerPage.style.display="none";
-                    loginBtn.style.width=50+"px";
-                    wealth.style.backgroundImage.url="../img/GEM.png";
-                    wealth.style.backgroundRepeat="none";
-                    coin.innerText="800";
-                    wealth.style.width=23+"px";
-                    wealth.style.height=23+"px";
-                    // navTop.style.top=40+"px";
-                    // banner.style.top=70+"px";
-                    // topBg.style.height=170+"px";
+            if(xhr.status==200){    
                     let member = JSON.parse(xhr.responseText);
                     if( member.error){
                         loginMsg.innerText=member.error;
                     }else{
                         console.log("=====",member.memId);
                         console.log("=====",member.memName);
-                        console.log("=====",member.email);                      
+                        console.log("=====",member.email);
+                        
+                        loginWrap.style.display="none";
+                        loginPage.style.display="none";
+                        registerPage.style.display="none";
+                        loginBtn.style.width=50+"px";
+                        wealth.style.backgroundImage.url="../img/GEM.png";
+                        wealth.style.backgroundRepeat="none";
+                        coin.innerText="800";
+                        wealth.style.width=23+"px";
+                        wealth.style.height=23+"px";
+                        memberName.innerText="您好!"+member.memName;
+                        loginBtn.innerText="登出";
+
                     }
-                    // memName.style.top=35;
-                    memberName.innerText="您好!"+member.memName;
-                    loginBtn.innerText="登出";
-                    // loginBtn.onclick=null;
-                    // loginBtn.onclick=logOut;
             }else{
-                document.getElementById("loginMsg").innerText=xhr.status;
+                loginMsg.innerText=member.error;
             }   
         }
 
         let url="php/login.php";
         xhr.open("post",url,true);
-        let query_string=`memId=${document.getElementById("memId").value} & memPsw=${document.getElementById("memPsw").value}`;
+        let query_string=`memId=${memId.value} & memPsw=${memPsw.value}`;
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send(query_string);
         console.log(query_string);
@@ -112,9 +139,6 @@
                 wealth.style.height=0;
                 coin.innerText="";
                 loginBtn.style.width=100+"px";
-                // loginBtn.onclick=null;
-                // loginBtn.onclick=registerBox;
-                //這裡的事件聆聽似乎沒有寫進去
             }
         }
         xhr.open("get", "php/logOut.php", true);
@@ -123,7 +147,28 @@
 
     /*-----------註冊帳號驗證--------------*/
     function checkId(){
-
+        let xhr = new XMLHttpRequest()
+        //註冊callback function
+       xhr.onreadystatechange=function(){
+         if(xhr.status ==200){
+             if(memIdRig.value ==""){
+                 loginRig.innerText="帳號不能是空的唷！";
+             }else{
+                 loginRig.innerText=xhr.responseText;
+             }
+           
+         }else{
+           loginRig.innerText=xhr.status;
+         }
+       }
+     
+       //設定好所要連結的程式
+       let url='php/checkId.php';
+       xhr.open("post",url,true);
+       let query_string=`memIdRig=${memIdRig.value}`;
+       xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+       xhr.send(query_string);
+       console.log(query_string);
     } 
 
 window.addEventListener("load",function(){
@@ -142,8 +187,6 @@ window.addEventListener("load",function(){
         coin.innerText="800";
         loginBtn.style.width=50+"px"
         loginBtn.innerHTML = "登出";
-        loginBtn.onclick=null;
-        loginBtn.onclick=logOut;
       }
     }
     xhr.open("get", "php/getLoginInfo.php", true);

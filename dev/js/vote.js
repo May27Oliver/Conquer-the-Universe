@@ -1,157 +1,143 @@
-// window.addEventListener("load",function(){
-    //__________ 與HTML做連結 __________//
-    function $id(id){
-        return document.getElementById(id);
-    }
-    function $class(className){
-        return document.querySelector(className);
-    }
-    function $classes(classNames){
-        return document.querySelectorAll(classNames);
-    }
-    let voteAlertGroup = $class(".voteAlertGroup");
-    let voteAlertDoing = $class(".voteAlertDoing");
-    let voteAlertDid = $class(".voteAlertDid");
-    let voteAdd = $class(".voteAdd");
-    let voteAdding = $class(".voteAdding");
-    let voteLaunchCancel = $class(".voteLaunchCancel");
-    let voteLaunch = $class(".voteLaunch");
-    let voteForm = $id("#voteForm");
-    let voteTitle = $class(".voteTitle");
-    let voteSelectorA = $id("voteSelectorA");
-    let voteSelectorB = $id("voteSelectorB");
-    let voteYes = $classes(".voteYes");
-    let voteNo = $classes(".voteNo");
-    let voteCancel = $classes(".voteCancel");
-    let voteOkay = $class(".voteOkay");
-    let voteKnow = $class(".voteKnow");
-    let report = $classes(".report");
-    let voteDoingNotice = $class(".voteDoingNotice");
-    let voteDidNotice = $class(".voteDidNotice");
-    let voteReportMessage = $class(".voteReportMessage");
-    let voteAddingSubmit = $class(".voteAddingSubmit");
-    let voteReportSubmit = $class(".voteReportSubmit");
-    let voteVotingYes = $class(".voteVotingYes");
-    let voteVotingNo = $class(".voteVotingNo");
-    let voteCard = $classes(".voteCard");
-    let voter = $class(".voter");
-    let countDown= $classes(".deadline");
+//---------- 與HTML做連結 ----------//
+function $id(id) {
+    return document.getElementById(id);
+}
 
+function $class(className) {
+    return document.querySelector(className);
+}
 
-    //__________ 圓餅圖製作 __________//
-    var labels = ['贊同','不贊同'];
-    var context;
-    var ctx=[];
-    var pieChart=[];
-    function pieProduce(){
-        context = $classes('.votePie');
-        for(var i=0; i<context.length; i++){
-            ctx[i] = context[i].getContext('2d');
-            
-            /*如果未投過票，圓餅圖要呈現灰色
-            if(ctx.style.opacity == 0){
-                ctx.style.backgroundImage = "";
-            }else{
-                ctx.style.backgroundImage = "";
-            }*/
+function $classes(classNames) {
+    return document.querySelectorAll(classNames);
+}
 
-            //把pieChart丟進for迴圈裡，並在context後面加上[i]即可
-            pieChart[i] = new Chart(ctx[i], {
-                type: 'pie',
-                data : {
-                    labels: labels,
-                    datasets: [{
-                        //預設資料
-                        data: [0,0],
-                        borderColor: "transparent",
-                        backgroundColor: [
-                        //資料顏色
-                            "#e24f90",
-                            "#644498",
-                        ],
-                    }],
-                },
-            });
-        };
-        return ctx,context;
+//---------- 頁面載入 ----------//
+
+//判斷瀏覽器
+function creatXHR() {
+    var xhr = null;
+    if (window.XHLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
-   
-    pieProduce();  
-
-    //變動數據
-    function changeData(){
-        for(var i=0;i<voteArr.length;i++){
-            var prosNum=voteArr[i].prosNum;
-            var consNum=voteArr[i].consNum;
-            pieChart[i].data.datasets[0].data=[prosNum,consNum];
-        //更新
-        pieChart[i].update();
-        }
+    return xhr;
+}
+let voteRunData;
+//[進行中]產生卡片
+function showRunCards(jsonStr) {
+    voteRunData = JSON.parse(jsonStr);
+    let voteRunCards = "";
+    for (var i = 0; i < voteRunData.length; i++) {
+        voteRunCards +=
+            `<div class="voteCard col-6 col-md-4 col-lg-3">
+            <div class="voteWrapper">
+                <div class="voteChart">
+                    <canvas class="votePie"></canvas>
+                </div>
+                <div class="voteText">
+                    <button class="report">檢舉</button>
+                    <small>發起人：${voteRunData[i].memName}</small>
+                    <h3>${voteRunData[i].votQ}</h3>
+                    <p>${voteRunData[i].votDeadline}截止</p>
+                    <div class="voteSelectGroup" data-votNo="${voteRunData[i].votNo}">
+                        <button class="voteA">${voteRunData[i].votA}</button>
+                        <button class="voteB">${voteRunData[i].votB}</button>
+                    </div>
+                </div>
+            </div>
+        </div>`;
     }
-    setInterval(changeData,1000);
+    $id("voteGroupRun").innerHTML =
+        `<div class="voteCard col-12 col-md-4 col-lg-3">
+        <div class="voteWrapper voteArea">
+            <div class="voteAdd"></div>
+            <div class="voteAdding">
+                <form method="POST" name="voteForm" id="voteForm">
+                    <h3>發起公民投票</h3>
+                    <p>姓名：<input type="hidden" name="voter" class="voter" size="20" maxlength="10" placeholder="最多10個中文字" required value="4">$_SESSION['memName']</p>
+                    <p>題目：<input type="text" name="voteTitle" class="voteTitle" size="20" maxlength="10"
+                            placeholder="最多10個中文字" required></p>
+                    <p>時間： <time id="afterWeek">2019/12/06</time></p>
+                    <div class="voteSelectGroup">
+                        <p>選項：<input type="text" name="voteSelectorA" id="voteSelectorA" size="20"
+                                maxlength="6" placeholder="最多6個中文字" required></p>
+                        <p>選項：<input type="text" name="voteSelectorB" id="voteSelectorB" size="20"
+                                maxlength="6" placeholder="最多6個中文字" required></p>
+                    </div>
+                </form>
+                <button class="voteLaunch">發起</button>
+                <button type="reset" form="voteForm" class="voteLaunchCancel">取消</button>
+            </div>
+        </div>
+    </div>` + voteRunCards;
 
-    function insertAfter(newEl, targetEl){//將element元素插到node後面
-      var parentEl = targetEl.parentNode;
-      if(parentEl.lastChild == targetEl){
-           parentEl.appendChild(newEl);
-      }else{
-           parentEl.insertBefore(newEl,targetEl.nextSibling);
-      }           
-    }
+    //圓餅圖變數
+    // var labels = ["贊成", "反對"];
+    // var context;
+    // var ctx = [];
+    // var pieChart = [];
+    // //圓餅圖製作
+    // function pieProduce() {
+    //     context = $classes('.votePie');
+    //     for (var i = 0; i < context.length; i++) {
+    //         ctx[i] = context[i].getContext('2d');
+    //         //把pieChart丟進for迴圈裡，並在context後面加上[i]即可
+    //         pieChart[i] = new Chart(ctx[i], {
+    //             type: 'pie',
+    //             data: {
+    //                 labels: labels,//init時就要有labels
+    //                 datasets: [{
+    //                     //預設資料
+    //                     data: [voteRunData[i].votACount, voteRunData[i].votBCount],
+    //                     borderColor: "transparent",
+    //                     backgroundColor: [
+    //                         //資料顏色
+    //                         "#e24f90",
+    //                         "#644498",
+    //                     ],
+    //                 }],
+    //             },
+    //         });
+    //     };
+    //     return ctx, context;
+    // }
+    pieProduce();
 
-    //設立一個物件把一格投票欄的贊成票與反對票統統包起來。
-    function voteObj(name,title,deadline,prosNum,consNum){//
-        this.name =voter.value;
-        this.title =voteTitle.value;
-        this.deadline =deadline;
-        this.prosTitle=voteSelectorA.value;
-        this.consTitle=voteSelectorB.value;
-        this.prosNum=0;
-        this.consNum=0;
-    }
-    var voteArr=[];
-    
-    voteArr=[{prosNum:5,consNum:8},{prosNum:2,consNum:1},{prosNum:1,consNum:2},{prosNum:3,consNum:2},{prosNum:2,consNum:3}];
-    
-    function getIndex(child){//取button的index值
+    //取button的index值
+    function getIndex(child) {
         var parent = child.parentNode.parentNode.parentNode.parentNode.parentNode;
         var child = child.parentNode.parentNode.parentNode.parentNode;
         var children = parent.children;
-        var i = children.length- 1;
-        for (; i >= 0; i--){
-            if (child == children[i]){
+        var i = children.length - 1;
+        for (; i >= 0; i--) {
+            if (child == children[i]) {
                 break;
             }
         }
         return i;
-    }; 
+    };
 
-    // 倒數計時截止生產器
-    var countDownDate = new Date().getTime()+ 86400000;//改成24hour
+    //倒數計時截止生產器
+    var countDownDate = new Date().getTime() + 86400000; //改成24hour
     var rightnow = new Date().getTime();
-    console.log(countDownDate);
-    console.log(rightnow);
-    console.log(countDownDate-rightnow);
 
-    // Update the count down every 1 second
-    var x = setInterval(function() { 
-        // Get today's date and time
+    //Update the count down every 1 second
+    var x = setInterval(function () {
+        //Get today's date and time
         var now = new Date().getTime();
-
-        // Find the distance between now and the count down date
+        //Find the distance between now and the count down date
         var distance = countDownDate - now;
-
-        // Time calculations for days, hours, minutes and seconds
+        //Time calculations for days, hours, minutes and seconds
         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        for(var i=0;i<countDown.length;i++){    
-        // Display the result in the element with id="demo"
-            countDown[i].innerHTML = "投票時間剩 "+hours + "時"
-            + minutes + "分 " + seconds + "秒";
-
-            // If the count down is finished, write some text
+        for (var i = 0; i < countDown.length; i++) {
+            //Display the result in the element with id="demo"
+            countDown[i].innerHTML = "投票時間剩 " + hours + "時" +
+                minutes + "分 " + seconds + "秒";
+            //If the count down is finished, write some text
             if (distance < 0) {
                 clearInterval(x);
                 countDown[i].innerHTML = "EXPIRED";
@@ -159,53 +145,117 @@
         }
     }, 1000);
 
-    //__________ 新增公民投票議題 __________//
-    //------[翻轉] 點選卡片翻出或取消表單 ------//
-    function toAdding(){
-        voteAdd.classList.toggle("flip");
-        voteAdding.classList.toggle("flip");
+    //[點擊]翻出新增公民投票議題表單
+    $class(".voteAdd").onclick = function () {
+        $class(".voteAdd").classList.toggle("flip");
+        $class(".voteAdding").classList.toggle("flip");
     }
-    function toAdd(){
-        voteAdd.classList.toggle("flip");
-        voteAdding.classList.toggle("flip");
+    $class(".voteLaunchCancel").onclick = function () {
+        $class(".voteAdd").classList.toggle("flip");
+        $class(".voteAdding").classList.toggle("flip");
     }
-    //######### 發起投票議題 #########//
-    voteLaunch.onclick = function(){
-        //------[驗證] 是否為會員 ------//
-    
-        //------[驗證] 是否完整填寫表單 ------//
-        if(voteForm.voter.value == "" | voteForm.voter.value == " "){
-            alert("請輸入姓名");
-        }else if(voteForm.voteTitle.value == "" | voteForm.voteTitle.value == " "){
+
+    //[AUTO]自動產生截止日期
+    function voteDeadline() {
+        var today = new Date();
+        $id("afterWeek").innerText =
+            today.getFullYear() + "/" +
+            parseInt(today.getMonth() + 1) + "/" +
+            parseInt(today.getDate() + 7) + "截止";
+    }
+    voteDeadline();
+
+    //[點擊]發起投票議題
+    $class(".voteLaunch").onclick = function () {
+        //[驗證]是否為會員
+
+        //[驗證]是否完整填寫表單
+        if (document.voteForm.voteTitle.value == "" || document.voteForm.voteTitle.value == " ") {
             alert("請輸入題目");
-        }else if(voteForm.voteSelectorA.value == "" | voteForm.voteSelectorA.value == " "){
+        } else if (document.voteForm.voteSelectorA.value == "" | document.voteForm.voteSelectorA.value == " ") {
             alert("請輸入選項");
-        }else if(voteForm.voteSelectorB.value == "" | voteForm.voteSelectorB.value == " "){
+        } else if (document.voteForm.voteSelectorB.value == "" | document.voteForm.voteSelectorB.value == " ") {
             alert("請輸入選項");
-        }else if(voteForm.voteSelectorA.value == voteForm.voteSelectorB.value){
+        } else if (document.voteForm.voteSelectorA.value == document.voteForm.voteSelectorB.value) {
             alert("選項不可重複");
-        }else{
-            //------[顯示] 確認視窗跳出 ------//
-            voteDoingNotice.innerText="確定要發起此公投議題嗎？";
-            voteAddingSubmit.style.display="inline-block";
-            voteAlertGroup.style.display="block";
-            voteAlertDoing.style.display="block";
+        } else {
+            //[顯示]確認視窗跳出
+            $class(".voteDoingNotice").innerText = "確定要發起此公投議題嗎？";
+            $class(".voteReportMessage").style.display = "none";
+            $class(".voteAddingSubmit").style.display = "";
+            $class(".voteVotingA").style.display = "none";
+            $class(".voteVotingB").style.display = "none";
+            $class(".voteReportSubmit").style.display = "none";
+            $class(".voteAlertDoing").style.display = "block";
+            $class(".voteAlertGroup").style.display = "block";
         }
     }
 
-    //######### 新增公民投票議題出現，事件聆聽功能 #########//
-    voteAddingSubmit.addEventListener('click',function(){
-        var name=voter.value;  //這邊要記錄發起人的會員Id
-        var title=voteTitle.value;
-        var deadline=x;
-        var prosNum=0;
-        var consNum=0;
-        voteArr.unshift(new voteObj(name,title,deadline,prosNum,consNum));
-        //把新的物件放進陣列裡
-        for(var i=0;i<voteArr.length;i++){
-            console.log("prosNum:",voteArr[i]);
+    let voteTitle = $class(".voteTitle");
+    let voteSelectorA = $id("voteSelectorA");
+    let voteSelectorB = $id("voteSelectorB");
+    let voteA = $classes(".voteA");
+    let voteB = $classes(".voteB");
+    let voteCard = $classes(".voteCard");       //投票
+    let voter = $class(".voter");               //發起人
+    let countDown = $classes(".deadline");      //截止日期
+    let votNo=$classes(".votNo");
+
+    //設立一個物件把一格投票欄的贊成票與反對票統統包起來
+    function voteObj(name, title, deadline,prosTitle,consTitle, prosNum, consNum) { //
+        this.name = voter.value;
+        this.title = voteTitle.value;
+        this.deadline = deadline;
+        this.prosTitle = voteSelectorA.value;
+        this.consTitle = voteSelectorB.value;
+        this.prosNum = 0;
+        this.consNum = 0;
+    }
+
+    // voteArr = [{
+    //     prosNum: 5,
+    //     consNum: 8
+    // }, {
+    //     prosNum: 2,
+    //     consNum: 1
+    // }, {
+    //     prosNum: 1,
+    //     consNum: 2
+    // }, {
+    //     prosNum: 3,
+    //     consNum: 2
+    // }, {
+    //     prosNum: 2,
+    //     consNum: 3
+    // }];
+
+    //將element元素插到node後面
+    function insertAfter(newEl, targetEl) {
+        var parentEl = targetEl.parentNode;
+        if (parentEl.lastChild == targetEl) {
+            parentEl.appendChild(newEl);
+        } else {
+            parentEl.insertBefore(newEl, targetEl.nextSibling);
+        }
+    }
+    
+    //[點擊]新增公民投票議題出現，事件聆聽功能
+    $class(".voteAddingSubmit").addEventListener('click', function () {
+        var name = voter.value; //這邊要記錄發起人的會員Id
+        var title = voteTitle.value;
+        var deadline = x;
+        var prosTitle = voteSelectorA.value;
+        var consTitle = voteSelectorB.value;
+        var prosNum = 0;
+        var consNum = 0;
+        // 宣告一個陣列，把一個投票欄位會用到的所有方法屬性都包裝成物件丟進陣列裡
+        var voteArr = [];
+        voteArr.unshift(new voteObj(name, title, deadline,prosTitle ,consTitle ,prosNum, consNum));
+        for (var i = 0; i < voteArr.length; i++) {
+            console.log("選項A:", voteArr[i].prosTitle,"選項B：",voteArr[i].consTitle);
         }
         voting();
+        //把新的物件放進陣列裡
         var wrapeDiv1 = document.createElement('div');
         var wrapeDiv2 = document.createElement('div');
         var wrapeDiv3 = document.createElement('div');
@@ -215,8 +265,8 @@
         var reportBtn = document.createElement('button');
         var voteIssue = document.createElement('h3');
         var deadline = document.createElement('p');
-        var yesBtn = document.createElement('button');
-        var noBtn = document.createElement('button');
+        var selectBtnA = document.createElement('button');
+        var selectBtnB   = document.createElement('button');
         var issuePerson = document.createElement('small');
         var issuePersonName = document.createElement('span');
 
@@ -226,226 +276,622 @@
         wrapeDiv4.className = "voteText";
         wrapeDiv5.className = "voteSelectGroup";
         pieCanvas.className = "votePie";
-        deadline.className="deadline";
+        deadline.className = "deadline";
         reportBtn.className = "report";
-        yesBtn.className = "voteYes";
-        noBtn.className = "voteNo";
-    
-        insertAfter(wrapeDiv1,voteCard[0]);
+        selectBtnA.className = "voteA";
+        selectBtnB  .className = "voteB";
+
+        insertAfter(wrapeDiv1, voteCard[0]);
         wrapeDiv1.appendChild(wrapeDiv2);
         wrapeDiv2.appendChild(wrapeDiv3);
         wrapeDiv3.appendChild(pieCanvas);
-        insertAfter(wrapeDiv4,wrapeDiv3);
+        insertAfter(wrapeDiv4, wrapeDiv3);
         wrapeDiv4.appendChild(reportBtn);
-        reportBtn.innerText="檢舉";
-        insertAfter(issuePerson,reportBtn);
-        issuePerson.innerText="發起人：";
+        reportBtn.innerText = "檢舉";
+        insertAfter(issuePerson, reportBtn);
+        issuePerson.innerText = "發起人：";
         issuePerson.appendChild(issuePersonName);
-        issuePersonName.innerText=voter.value;
-        insertAfter(voteIssue,issuePerson);
-        voteIssue.innerText=voteTitle.value;
-        insertAfter(deadline,voteIssue);
-        // deadline.innerText="2019/11/05號截止";
-        insertAfter(wrapeDiv5,deadline);
-        wrapeDiv5.appendChild(yesBtn);
-        yesBtn.innerText=voteSelectorA.value;
-        insertAfter(noBtn,yesBtn);
-        noBtn.innerText=voteSelectorB.value;
-        
-        deadline.onload=setInterval(function() { 
+        issuePersonName.innerText = voter.value;
+        insertAfter(voteIssue, issuePerson);
+        voteIssue.innerText = voteTitle.value;
+        insertAfter(deadline, voteIssue);
+        insertAfter(wrapeDiv5, deadline);
+        wrapeDiv5.appendChild(selectBtnA);
+        selectBtnA.innerText = voteSelectorA.value;
+        insertAfter(selectBtnB   , selectBtnA);
+        selectBtnB   .innerText = voteSelectorB.value;
+
+        //新增的投票倒數器
+        deadline.onload = setInterval(function () {
             // Get today's date and time
             var now = new Date().getTime();
             // Find the distance between now and the count down date
             var distance = countDownDate - now;
-    
+
             // Time calculations for days, hours, minutes and seconds
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000); 
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
             // Display the result in the element with id="demo"
-                deadline.innerHTML = "投票時間剩 "+hours + "時"
-                + minutes + "分" + seconds + "秒";
-                // If the count down is finished, write some text
-                if (distance < 0) {
-                    clearInterval(x);
-                    deadline.innerHTML = "EXPIRED";
-                }
-        }, 1000);//新增的投票倒數器
+            deadline.innerHTML = "投票時間剩 " + hours + "時" +
+                minutes + "分" + seconds + "秒";
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                deadline.innerHTML = "EXPIRED";
+            }
+        }, 1000);
 
-        yesBtn.onclick=function(){
-            var yesIndex=getIndex(this)-1;
-            voteDoingNotice.innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
-            voteAlertGroup.style.display="block";
-            voteAlertDoing.style.display="block";
-            voteReportSubmit.style.display="none";
-            voteReportMessage.style.display="none";
-            voteAddingSubmit.style.display="none";
-            voteVotingYes.style.display="inline-block";
-            voteVotingNo.style.display="none";
-            voteVotingYes.onclick=function(){
-                voteDidNotice.innerHTML="已完成投票，<br>恭喜您獲得30宇宙幣！";
-                    voteOkay.style.display=""
-                voteAlertDoing.style.display="none";
-                voteAlertDid.style.display="block";
-                voteArr[yesIndex].prosNum++;
-                console.log(voteArr[yesIndex].prosNum);
-            };
-        }
+        //新增[點擊]投票選項一
+        selectBtnA.onclick = function (e) {
+            var yesIndex = getIndex(this) - 1;
+            $class(".voteDoingNotice").innerHTML = "確認後將無法更改，<br>您要選擇此投票選項嗎？";
+            $class(".voteAlertGroup").style.display = "";
+            $class(".voteAlertDoing").style.display = "";
+            $class(".voteAddingSubmit").style.display = "none";
+            $class(".voteReportSubmit").style.display = "none";
+            $class(".voteReportMessage").style.display = "none";
+            $class(".voteVotingA").style.display = "";
+            $class(".voteVotingB").style.display = "none";
+            $class(".voteVotingA").onclick = function () {
+                $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得30宇宙幣";
+                $class(".voteOkay").style.display = ""
+                $class(".voteAlertDoing").style.display = "none";
+                $class(".voteAlertDid").style.display = "";
+                var xhr=new XMLHttpRequest();
+
+                    xhr.onload=function(){
+                        if(xhr.status==200){
+                            alert("投票成功！");
+                        }else{
+                            alert(xhr.responseText);
+                        }   
+                    }
         
-        noBtn.onclick=function(){
-            var noIndex=getIndex(this)-1;
-            voteAlertGroup.style.display="block";
-            voteAlertDoing.style.display="block";
-            voteReportSubmit.style.display="none";
-            voteReportMessage.style.display="none";
-            voteDoingNotice.innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
-            voteAddingSubmit.style.display="none";
-            voteVotingYes.style.display="none";
-            voteVotingNo.style.display="inline-block";
-            voteVotingNo.onclick=function(){
-                voteArr[noIndex].consNum++;
-                voteDidNotice.innerHTML="已完成投票，<br>恭喜您獲得30宇宙幣！";
-                    voteOkay.style.display=""
-                voteAlertDoing.style.display="none";
-                voteAlertDid.style.display="block";
-                console.log(voteArr[noIndex].consNum);
+                    let url="php/vote/gainYesTicket.php";
+                    xhr.open("post",url,true);
+                    let query_string=`votNo=${e.target.parentNode.getAttribute("data-votNo")}`;
+                    //memId,memPsw跟登入一樣
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send(query_string);
             };
-        }//增加yesBtn function和noBtn function
-
-        reportBtn.onclick = function(){
-            voteDoingNotice.innerText="檢舉原因：";
-            voteAddingSubmit.style.display="none";
-            // voteVotingSubmit.style.display="none";
-            voteReportSubmit.style.display="inline-block";
-            voteReportMessage.style.display="block";
-            voteVotingYes.style.display="none";
-            voteVotingNo.style.display="none";
-            voteAlertGroup.style.display="block";
-            voteAlertDoing.style.display="block";
         }
+        //新增[點擊]投票選項二
+        selectBtnB  .onclick = function (e) {
+            var noIndex = getIndex(this) - 1;
+            $class(".voteDoingNotice").innerHTML = "確認後將無法更改，<br>您要選擇此投票選項嗎？";
+            $class(".voteAlertGroup").style.display = "";
+            $class(".voteAlertDoing").style.display = "";
+            $class(".voteAddingSubmit").style.display = "none";
+            $class(".voteAddingSubmit").style.display = "none";
+            $class(".voteReportMessage").style.display = "none";
+            $class(".voteVotingA").style.display = "none";
+            $class(".voteVotingB").style.display = "";
+            $class(".voteVotingB").onclick = function () {
+                $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得30宇宙幣！";
+                $class(".voteOkay").style.display = ""
+                $class(".voteAlertDoing").style.display = "none";
+                $class(".voteAlertDid").style.display = "block";
+                var xhr=new XHLHttpRequest;
 
+                    xhr.onload=function(){
+                        if(xhr.status==200){
+                            alert("投票成功！");
+                        }else{
+                            alert(xhr.responseText);
+                        }   
+                    }
+        
+                    let url="php/vote/gainNoTicket.php";
+                    xhr.open("post",url,true);
+                    let query_string=`votNo=${e.target.parentNode.getAttribute("data-votNo")}`;
+                    //memId,memPsw跟登入一樣
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send(query_string);
+            };
+        }
+        //新增[點擊]檢舉
+        reportBtn.onclick = function () {
+            $class(".voteDoingNotice").innerText = "檢舉原因：";
+            $class(".voteAlertGroup").style.display = "block";
+            $class(".voteAlertDoing").style.display = "block";
+            $class(".voteAddingSubmit").style.display = "none";
+            $class(".voteReportSubmit").style.display = "";
+            $class(".voteVotingA").style.display = "none";
+            $class(".voteVotingB").style.display = "none";
+            $class(".voteReportMessage").style.display = "block";
+        }
+        // pieProduce();
+        voteLaunch();
         pieProduce();
-        // voting();
-        voteYes = $classes(".voteYes");
-        voteNo = $classes(".voteNo");
-        return voteYes,voteNo,voteArr;
+        voteA = $classes(".voteA");
+        voteB = $classes(".voteB");
+        return voteA, voteB, voteArr;
     });
-    // 宣告一個陣列，把一個投票欄位會用到的所有方法屬性都包裝成物件丟進陣列裡
-    
 
-    //__________ 跳窗提示 __________//
-    
-    //######### 進行投票 #########//
-    function voting(){  //給demo的那幾個投票項目建立事件聆聽功能
-        for(var i=0; i<voteNo.length; i++){
-            //---[點擊] 選項一 ---//
-            voteYes[i].onclick = function(){
-                var yesIndex=getIndex(this)-1;
-                voteDoingNotice.innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
-                voteAddingSubmit.style.display="none";
-                voteVotingYes.style.display="";
-                voteVotingNo.style.display="none";
-                voteReportSubmit.style.display="none";
-                voteReportMessage.style.display="none";
-                voteAlertGroup.style.display="block";
-                voteAlertDoing.style.display="block";
-                voteVotingYes.onclick=function(){
-                    voteDidNotice.innerHTML="已完成投票，<br>恭喜您獲得30宇宙幣！";
-                    voteOkay.style.display=""
-                    voteAlertDoing.style.display="none";
-                    voteAlertDid.style.display="block";
-                    voteArr[yesIndex].prosNum++;
-                    console.log(voteArr[yesIndex].prosNum);
+    //[點擊]進行投票 (給demo的那幾個投票選項建立事件聆聽功能)
+    function voting() {
+        for (var i = 0; i < $classes(".voteA").length; i++) {
+            //[跳窗]選項一
+            $classes(".voteA")[i].onclick = function (e) {
+                var yesIndex = getIndex(this) - 1;
+                $class(".voteDoingNotice").innerHTML = "確認後將無法更改，<br>您要選擇此投票選項嗎？";
+                $class(".voteAlertGroup").style.display = "block";
+                $class(".voteAlertDoing").style.display = "block";
+                $class(".voteAddingSubmit").style.display = "none";
+                $class(".voteReportMessage").style.display = "none";
+                $class(".voteReportSubmit").style.display = "none";
+                $class(".voteVotingB").style.display = "none";
+                $class(".voteVotingA").style.display = "inline-block";
+                $class(".voteVotingA").onclick = function () {
+                    $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得30宇宙幣！";
+                    $class(".voteOkay").style.display = ""
+                    $class(".voteAlertDoing").style.display = "none";
+                    $class(".voteAlertDid").style.display = "block";
+                    // console.log(e.target.parentNode.getAttribute("data-votNo"));
+                    var xhr=new XMLHttpRequest();
+
+                    xhr.onload=function(){
+                        if(xhr.status==200){
+                            alert("投票成功！");
+                        }else{
+                            alert(xhr.responseText);
+                        }   
+                    }
+        
+                    let url="php/vote/gainYesTicket.php";
+                    xhr.open("post",url,true);
+                    let query_string=`votNo=${e.target.parentNode.getAttribute("data-votNo")}`;
+                    //memId,memPsw跟登入一樣
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send(query_string);
                 };
             }
-            //---[點擊] 選項二 ---//
-            voteNo[i].onclick = function(){
-                var noIndex=getIndex(this)-1;
-                voteDoingNotice.innerHTML="確認後將無法更改，<br>您要選擇此投票項目嗎？";
-                voteAddingSubmit.style.display="none";
-                voteVotingYes.style.display="none";
-                voteVotingNo.style.display="";
-                voteVotingNo.onclick=function(){    
-                    voteArr[noIndex].consNum++;
-                    voteDidNotice.innerHTML="已完成投票，<br>恭喜您獲得30宇宙幣！";
-                    voteOkay.style.display=""
-                    voteAlertDoing.style.display="none";
-                    voteAlertDid.style.display="block";
-                    console.log(voteArr[noIndex].consNum);
+            //[跳窗]選項二
+            $classes(".voteB")[i].onclick = function (e) {
+                var noIndex = getIndex(this) - 1;
+                $class(".voteDoingNotice").innerHTML = "確認後將無法更改，<br>您要選擇此投票選項嗎？";
+                $class(".voteAlertGroup").style.display = "block";
+                $class(".voteAlertDoing").style.display = "block";
+                $class(".voteAddingSubmit").style.display = "none";
+                $class(".voteReportMessage").style.display = "none";
+                $class(".voteReportSubmit").style.display = "none";
+                $class(".voteVotingA").style.display = "none";
+                $class(".voteVotingB").style.display = "inline-block";
+                $class(".voteVotingB").onclick = function () {
+                    $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得30宇宙幣！";
+                    $class(".voteOkay").style.display = ""
+                    $class(".voteAlertDoing").style.display = "none";
+                    $class(".voteAlertDid").style.display = "block";
+                    var xhr=new XMLHttpRequest();
+
+                    xhr.onload=function(){
+                        if(xhr.status==200){
+                            alert("投票成功！");
+                        }else{
+                            alert(xhr.responseText);
+                        }   
+                    }
+        
+                    let url="php/vote/gainNoTicket.php";
+                    xhr.open("post",url,true);
+                    let query_string=`votNo=${e.target.parentNode.getAttribute("data-votNo")}`;
+                    //memId,memPsw跟登入一樣
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send(query_string);
                 };
-                voteReportSubmit.style.display="none";
-                voteReportMessage.style.display="none";
-                voteAlertGroup.style.display="block";
-                voteAlertDoing.style.display="block";
             }
         }
     }
     voting();
+    BTNs();
+}
 
-    //######### 進行檢舉 #########//
-    for(var i=0; i<report.length; i++){
-        //---[驗證] 是否為會員 ---//
 
-        //---[顯示] 檢舉原因選擇視窗 ---//
-        report[i].onclick = function(){
-            voteDoingNotice.innerText="檢舉原因：";
-            voteAddingSubmit.style.display="none";
-            // voteVotingSubmit.style.display="none";
-            voteReportSubmit.style.display="inline-block";
-            voteReportMessage.style.display="block";
-            voteVotingYes.style.display="none";
-            voteVotingNo.style.display="none";
-            voteAlertGroup.style.display="block";
-            voteAlertDoing.style.display="block";
+ //圓餅圖變數
+ var labels = ["贊成", "反對"];
+ var context;
+ var ctx = [];
+ var pieChart = [];
+ //圓餅圖製作
+
+
+ function pieProduce() {
+     context = $classes('.votePie');
+     for (var i = 0; i < context.length; i++) {
+         ctx[i] = context[i].getContext('2d');
+         //把pieChart丟進for迴圈裡，並在context後面加上[i]即可
+         pieChart[i] = new Chart(ctx[i], {
+             type: 'pie',
+             data: {
+                 labels: labels,//init時就要有labels
+                 datasets: [{
+                     //預設資料
+                     data: [voteRunData[i].votACount, voteRunData[i].votBCount],
+                     borderColor: "transparent",
+                     backgroundColor: [
+                         //資料顏色
+                         "#e24f90",
+                         "#644498",
+                     ],
+                 }],
+             },
+         });
+     };
+     return ctx, context;
+ }
+ pieProduce();
+
+ function changeData() {
+    for (var i = 0; i < voteRunData.length; i++) {
+        var prosNum = voteRunData[i].votACount;
+        var consNum = voteRunData[i].votBCount;
+        // pieChart[i].data.labels = [voteArr[i].prosTitle, voteArr[i].consTitle];
+        pieChart[i].data.datasets[0].data = [prosNum, consNum];
+        //更新
+        pieChart[i].update();
+    }
+}
+
+setInterval(changeData, 5000);//這裡要設重抓資料庫的ajax
+
+
+//[已結束]產生卡片
+function showEndCards(jsonStr) {
+    let voteEndData = JSON.parse(jsonStr);
+    let voteEndCards = "";
+    for (var i = 0; i < voteEndData.length; i++) {
+        voteEndCards +=
+            `<div class="voteCard col-6 col-md-4 col-lg-3">
+            <div class="voteWrapper">
+                <div class="voteChart">
+                    <canvas class="votePie"></canvas>
+                </div>
+                <div class="voteText">
+                    <button class="report">檢舉</button>
+                    <small>發起人：${voteEndData[i].memName}</small>
+                    <h3>${voteEndData[i].votQ}</h3>
+                    <p>${voteEndData[i].votDeadline}截止</p>
+                    <div class="voteSelectGroup">
+                        <button disabled="disabled">已結束</button>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+
+        // //圓餅圖變數
+        // var labels = ['贊同', '不贊同'];
+        // var context;
+        // var ctx = [];
+        // var pieChart = [];
+        // //圓餅圖製作
+        // function pieProduce() {
+        //     context = $classes('.votePie');
+        //     for (var i = 0; i < voteRunData.length; i++) {
+        //         ctx[i] = context[i].getContext('2d');
+        //         //把pieChart丟進for迴圈裡，並在context後面加上[i]即可
+        //         pieChart[i] = new Chart(ctx[i], {
+        //             type: 'pie',
+        //             data: {
+        //                 labels: labels,
+        //                 datasets: [{
+        //                     //預設資料
+        //                     data: [1, 1],
+        //                     borderColor: "transparent",
+        //                     backgroundColor: [
+        //                         //資料顏色
+        //                         "#e24f90",
+        //                         "#644498",
+        //                     ],
+        //                 }],
+        //             },
+        //         });
+        //     };
+        //     return ctx, context;
+        // }
+        // pieProduce();
+    }
+    $id("voteGroupEnd").innerHTML = voteEndCards;
+
+    //圓餅圖變動數據
+    // function changeData() {
+    //     for (var i = 0; i < voteRunData.length; i++) {
+    //         var prosNum = voteRunData[i].votACount;
+    //         var consNum = voteRunData[i].votBCount;
+    //         // pieChart[i].data.labels = [voteArr[i].prosTitle, voteArr[i].consTitle];
+    //         pieChart[i].data.datasets[0].data = [prosNum, consNum];
+    //         //更新
+    //         pieChart[i].update();
+    //     }
+    // }
+
+    // setInterval(changeData, 1000);
+
+    //取button的index值
+    function getIndex(child) {
+        var parent = child.parentNode.parentNode.parentNode.parentNode.parentNode;
+        var child = child.parentNode.parentNode.parentNode.parentNode;
+        var children = parent.children;
+        var i = children.length - 1;
+        for (; i >= 0; i--) {
+            if (child == children[i]) {
+                break;
+            }
+        }
+        return i;
+    };
+
+    // var voteArr = [];
+    // voteArr = [{
+    //     prosNum: 5,
+    //     consNum: 8
+    // }, {
+    //     prosNum: 2,
+    //     consNum: 1
+    // }, {
+    //     prosNum: 1,
+    //     consNum: 2
+    // }, {
+    //     prosNum: 3,
+    //     consNum: 2
+    // }, {
+    //     prosNum: 2,
+    //     consNum: 3
+    // }];
+
+    //倒數計時截止生產器
+    let countDown = $classes(".deadline");
+    var countDownDate = new Date().getTime() + 86400000; //改成24hour
+    var rightnow = new Date().getTime();
+
+    //Update the count down every 1 second
+    var x = setInterval(function () {
+        //Get today's date and time
+        var now = new Date().getTime();
+        //Find the distance between now and the count down date
+        var distance = countDownDate - now;
+        //Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        for (var i = 0; i < countDown.length; i++) {
+            //Display the result in the element with id="demo"
+            countDown[i].innerHTML = "投票時間剩 " + hours + "時" +
+                minutes + "分 " + seconds + "秒";
+            //If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                countDown[i].innerHTML = "EXPIRED";
+            }
+        }
+    }, 1000);
+
+    //[點擊]進行投票 (給demo的那幾個投票選項建立事件聆聽功能)
+    function voting() {
+        for (var i = 0; i < $classes(".voteA").length; i++) {
+            //[跳窗]選項一
+            $classes(".voteA")[i].onclick = function (e) {
+                var yesIndex = getIndex(this) - 1;
+                $class(".voteDoingNotice").innerHTML = "確認後將無法更改，<br>您要選擇此投票選項嗎？";
+                $class(".voteAlertGroup").style.display = "block";
+                $class(".voteAlertDoing").style.display = "block";
+                $class(".voteAddingSubmit").style.display = "none";
+                $class(".voteReportMessage").style.display = "none";
+                $class(".voteReportSubmit").style.display = "none";
+                $class(".voteVotingB").style.display = "none";
+                $class(".voteVotingA").style.display = "inline-block";
+                $class(".voteVotingA").onclick = function () {
+                    $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得30宇宙幣！";
+                    $class(".voteOkay").style.display = ""
+                    $class(".voteAlertDoing").style.display = "none";
+                    $class(".voteAlertDid").style.display = "block";
+                    var xhr=new XMLHttpRequest();
+                    xhr.onload=function(){
+                        if(xhr.status==200){
+                            alert("投票成功！");
+                        }else{
+                            alert(xhr.responseText);
+                        }   
+                    }
+        
+                    let url="php/vote/gainYesTicket.php";
+                    xhr.open("post",url,true);
+                    let query_string=`votNo=${e.target.parentNode.getAttribute("data-votNo")}`;
+                    //memId,memPsw跟登入一樣
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send(query_string);
+
+                };
+            }
+            //[跳窗]選項二
+            $classes(".voteB")[i].onclick = function (e) {
+                var noIndex = getIndex(this) - 1;
+                $class(".voteDoingNotice").innerHTML = "確認後將無法更改，<br>您要選擇此投票選項嗎？";
+                $class(".voteAlertGroup").style.display = "block";
+                $class(".voteAlertDoing").style.display = "block";
+                $class(".voteAddingSubmit").style.display = "none";
+                $class(".voteReportMessage").style.display = "none";
+                $class(".voteReportSubmit").style.display = "none";
+                $class(".voteVotingA").style.display = "none";
+                $class(".voteVotingB").style.display = "inline-block";
+                $class(".voteVotingB").onclick = function () {
+                    $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得30宇宙幣！";
+                    $class(".voteOkay").style.display = ""
+                    $class(".voteAlertDoing").style.display = "none";
+                    $class(".voteAlertDid").style.display = "block";
+                    var xhr=new XMLHttpRequest();
+
+                    xhr.onload=function(){
+                        if(xhr.status==200){
+                            alert("投票成功！");
+                        }else{
+                            alert(xhr.responseText);
+                        }   
+                    }
+        
+                    let url="php/vote/gainNoTicket.php";
+                    xhr.open("post",url,true);
+                    let query_string=`votNo=${e.target.parentNode.getAttribute("data-votNo")}`;
+                    //memId,memPsw跟登入一樣
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send(query_string);
+                };
+            }
+        }
+    }
+    voting();
+    BTNs();
+}
+
+//[新增議題]更新在頁面上
+
+//[buttons]按鈕寶寶們
+function BTNs() {
+
+    //[點擊]進行檢舉
+    for (var i = 0; i < $classes(".report").length; i++) {
+        //[驗證]是否為會員
+
+        //[顯示]檢舉原因選擇視窗
+        $classes(".report")[i].onclick = function () {
+            $class(".voteDoingNotice").innerText = "檢舉原因：";
+            $class(".voteAlertGroup").style.display = "block";
+            $class(".voteAlertDoing").style.display = "block";
+            $class(".voteAddingSubmit").style.display = "none";
+            $class(".voteReportSubmit").style.display = "";
+            $class(".voteVotingA").style.display = "none";
+            $class(".voteVotingB").style.display = "none";
+            $class(".voteReportMessage").style.display = "block";
         }
     }
 
-    voteReportSubmit.onclick = function(){
-    //---[驗證] 是否有選擇檢舉原因 ---//
-        // let voteReportMessage = $class(".voteReportMessage");
-        if(voteReportMessage.selectedIndex === 0){
+    //[點擊]送出檢舉
+    $class(".voteReportSubmit").onclick = function () {
+        //[驗證]是否有選擇檢舉原因
+        if ($class(".voteReportMessage").selectedIndex === 0) {
             alert("請選擇檢舉原因");
             // voteDidNotice.innerText="請選擇檢舉原因";
             // voteAlertDid.style.display="block";
-        }else{
-    //---[隱藏] 進行檢舉確認視窗-確認-(next:通知已完成檢舉) ---//
-            voteDidNotice.innerText="已檢舉該議題";
-            voteOkay.style.display=""
-            voteAlertDoing.style.display="none";
-            voteAlertDid.style.display="block";
-            voteReportMessage.selectedIndex = 0;
+        } else {
+            //[隱藏]進行檢舉確認視窗-確認-(next:通知已完成檢舉)
+            $class(".voteDidNotice").innerText = "已檢舉該議題";
+            $class(".voteOkay").style.display = ""
+            $class(".voteAlertDoing").style.display = "none";
+            $class(".voteAlertDid").style.display = "block";
+            $class(".voteReportMessage").selectedIndex = "";
         }
     }
 
-    //---[隱藏] 發起投票確認視窗-確認-(next:通知已新增投票) ---//
-    voteAddingSubmit.onclick = function(){
-        voteDidNotice.innerHTML="已新增投票議題，<br>恭喜您獲得100宇宙幣！";
-        voteOkay.style.display=""
-        voteAlertDoing.style.display="none";
-        voteAlertDid.style.display="block";
-    }
-
-    //---[隱藏] 發起投票確認視窗-取消 ---//
-    //---[隱藏] 進行投票確認視窗-取消 ---//
-    //---[隱藏] 檢舉投票議題-取消 ---//
-    for(var i=0; i<voteCancel.length; i++){
-        voteCancel[i].onclick = function(){
-            voteAlertGroup.style.display="none";
-            voteAlertDoing.style.display="none";
-            voteAlertDid.style.display="none";
+    //[點擊]發起投票確認視窗-取消
+    //[點擊]進行投票確認視窗-取消
+    //[點擊]檢舉投票議題-取消
+    for (var i = 0; i < $classes(".voteCancel").length; i++) {
+        $classes(".voteCancel")[i].onclick = function () {
+            $class(".voteAlertGroup").style.display = "none";
+            $class(".voteAlertDoing").style.display = "none";
+            $class(".voteAlertDid").style.display = "none";
+            $class(".voteReportMessage").selectedIndex = "";
         }
     }
 
-    //---[隱藏] 通知已新增投票-確認 ---//
-    //---[隱藏] 通知已完成檢舉-確認 ---//
-    //---[隱藏] 通知已完成投票-確認 ---//
-        voteOkay.onclick = function(){
-            voteAlertGroup.style.display="none";
-            voteAlertDid.style.display="none";
+    //[點擊]通知已新增投票-確認
+    //[點擊]通知已完成檢舉-確認
+    //[點擊]通知已完成投票-確認
+    $class(".voteOkay").onclick = function () {
+        $class(".voteAlertGroup").style.display = "none";
+        $class(".voteAlertDid").style.display = "none";
+    }
+    $class(".voteKnow").onclick = function () {
+        $class(".voteAlertGroup").style.display = "none";
+        $class(".voteAlertDid").style.display = "none";
+    }
+    return voteRunData;
+}
+
+//---------- PHP載入 ----------//
+
+
+//[進行中]接卡片資料
+function getRunCards() {
+    //產生XMLHttpRequest物件
+    var xhr = new XMLHttpRequest();
+    //註冊callback function
+    xhr.onload = function () {
+        if (xhr.readyState === 4) {
+            // 伺服器回應成功
+            if (xhr.status === 200) {
+                showRunCards(xhr.responseText);
+            } else {
+                alert("發生錯誤: " + xhr.status);
+            }
         }
-        voteKnow.onclick = function(){
-            voteAlertGroup.style.display="none";
-            voteAlertDid.style.display="none";
+    }
+    //設定好所要連結的程式
+    xhr.open("GET", "php/vote/getRunCards.php", true);
+    //送出資料
+    xhr.send(null);
+}
+
+//[已結束]接卡片資料
+function getEndCards() {
+    //產生XMLHttpRequest物件
+    var xhr = new XMLHttpRequest();
+    //註冊callback function
+    xhr.onload = function () {
+        if (xhr.readyState === 4) {
+            // 伺服器回應成功
+            if (xhr.status === 200) {
+                showEndCards(xhr.responseText);
+            } else {
+                alert("發生錯誤: " + xhr.status);
+            }
         }
-// });
+    }
+    //設定好所要連結的程式
+    xhr.open("GET", "php/vote/getEndCards.php", true);
+    //送出資料
+    xhr.send(null);
+}
+//[新增議題]存進資料庫
+function voteLaunch() {
+    //產生XMLHttpRequest物件
+    var xhr = new XMLHttpRequest();
+    //註冊callback function
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            // 伺服器回應成功
+            if (xhr.status === 200) {
+                //[點擊]發起投票確認視窗-確認-(next:通知已新增投票)
+                getRunCards();
+                $class(".voteDidNotice").innerHTML = "已新增投票議題，<br>恭喜您獲得100宇宙幣！";
+                $class(".voteOkay").style.display = ""
+                $class(".voteAlertDoing").style.display = "none";
+                $class(".voteAlertDid").style.display = "block";
+            } else {
+                alert("發生錯誤: " + xhr.status);
+            }
+        }
+    }
+    //設定好所要連結的程式
+    xhr.open("POST", "php/vote/voteLaunch.php", true);
+    //要設定在發起連結之後,發送請求之前
+    xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    //POST的參數
+    var data = "memNo=" + $class(".voter").value + "&votQ=" + $class(".voteTitle").value + "&votA=" + $id("voteSelectorA").value + "&votB=" + $id("voteSelectorB").value;
+    //送出資料
+    xhr.send(data);
+
+}
+
+
+
+//---------- load ----------//
+function init() {
+    getRunCards();
+    getEndCards();
+    BTNs();
+}
+window.addEventListener("load", init, false);
+

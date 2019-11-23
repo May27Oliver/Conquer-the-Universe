@@ -1,8 +1,10 @@
 <?php
+session_start();
 $errMsg="";
+$memNo=$_SESSION["memNo"];
 try{
   require_once("connectPDO.php");
-  $sql = "select memNo,memName,memId,memPsw,email from `member` order by memNo limit 1";
+  $sql = "select memNo,memName,memId,memPsw,email from `member` WHERE `member`.`memNo` = {$memNo}";
   $member=$pdo->query($sql);
   $arr=[];
   for($i=0;$i<6;$i++){
