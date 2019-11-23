@@ -84,8 +84,8 @@
     }
     //取消註冊，清空表單同時返回登入
     function backLogin(){
-        memName.value="";
-        memEmail.value="";
+        // memName.value="";
+        // memEmail.value="";
         registerPage.style.display="none";
         loginPage.style.display="";
     }
