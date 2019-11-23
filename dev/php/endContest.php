@@ -3,7 +3,7 @@ $errMsg="";
 try{
     require_once("../php/connectPDO.php");
 
-    $sql="select starNo,starName,starPopularity,starsRole,stageImg from stars order by starPopularity desc";
+    $sql="select starNo,starName,starPopularity,starsRole,stageImg,firstMemName from stars order by starPopularity desc";
     $starPoint=$pdo->query($sql);
     
     $starPointRow=$starPoint->fetchAll(PDO::FETCH_ASSOC);

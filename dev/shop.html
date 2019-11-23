@@ -24,10 +24,15 @@
 
 
  <div id="shopBlack" style="display:none;">
-    <div id="shopLightBox" style="display:none;">     
-        <p>確定要購買此項道具?</p>  
-        <span id="addToBackpack">確認</span>
-        <span id="Cancelbtn">取消</span>
+    <div id="shopLightBox" style="display:none;"> 
+        <div class="shopAlert">
+            <p>系統訊息</p>
+        </div>
+        <div class="shopAlertBtn">
+        <span>確定要購買此項道具?</span>  
+        <button id="addToBackpack">確認</button>
+        <button id="Cancelbtn">取消</button>
+        </div>
     </div>
  </div>
     <div id="boxForDisappear">        
@@ -150,14 +155,16 @@
             </h2>
             <span>
                 玩家可以花費$100宇宙幣抽出隨機事件,可以增加或減少候選人支持度
-            </span>
+            </span> 
         </div>
         <div class="eventgashapon">
-            <div id="trashLightBox" class="trash" style="display:none;"><!---扭蛋事件燈箱-->
-            <button id="trashLightBoxBtn">
-                <p>確認</p>
-            </button>
-            </div>        
+            <div class="boxForEvent">
+                <div id="trashLightBox" class="trash" style="display:none;"><!---扭蛋事件燈箱-->  
+                </div> 
+                <button id="trashLightBoxBtn" style="display:none;">
+                    <p>確認</p>
+                </button> 
+            </div>  
             <div id="event02" class="gashapon">  <!--扭蛋動態----->
                 <img class="gashaponPic" src="img/gashapon/empty.png" alt="">
             
@@ -183,13 +190,20 @@
                         <img src="img/gashapon/yellow.png" alt="">
                     </div>
                     
-            </div>       
-            <div id="gashaponLightBox" style="display:none;">     <!--燈箱-->
-                <p>確定要花費$100購買事件扭蛋嗎?</p>  
-                <span id="gashaponEvent">確認</span>
-                <span id="cancelEvent">取消</span>
-            </div>
-
+            </div>    
+               
+                <div id="shopBlack1" style="display:none;">  
+                    <div id="gashaponLightBox" style="display:none;"> 
+                        <div class="shopAlert1">
+                            <p>系統訊息</p>
+                        </div> 
+                        <div class="shopAertBtn1">
+                            <span>確定要花費$100購買事件扭蛋嗎?</span> 
+                            <button id="gashaponEvent">確認</button>
+                            <button id="cancelEvent">取消</button>
+                        </div>
+                    </div>
+                </div>  
             <div id="gashaponBtn" class="boxfora">  <!---觸發按鈕-->
                 <a id="eventButton">按下去</a>   
             </div>

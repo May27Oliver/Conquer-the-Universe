@@ -1440,16 +1440,11 @@
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-
+            bottom: 0;      
         }
     }
-
-    // #myCanva{
-    //     background-image: url(../img/rabbit.png);
-    // }
-    .productPic {
-        box-sizing: border-box;
+    .productPic{
+        box-sizing:border-box;
         margin: 50px auto 20px;
         background-color: antiquewhite;
         ;
@@ -1485,13 +1480,11 @@
             border: none;
             border-radius: 50px;
             cursor: pointer;
-
             &:hover {
                 background: lighten(#1d2088, 15);
             }
-        }
-
-    }
+        }      
+    } 
 }
 
 .toolTitle {
@@ -1502,15 +1495,36 @@
 .toolTitle02 {
     display: none;
 }
-
-.toolTitle03 {
-    margin-bottom: 100px;
-    padding: 10px;
-    color: #fff;
-    line-height: 2;
-
-    h2 {
-        text-align: center;
+.toolTitle03{
+   margin-bottom: 100px; 
+   padding: 10px;
+   color:#fff;
+   line-height: 2;
+   h2{
+       text-align: center;
+   }
+}
+.toolTitle04{
+   padding: 10px;
+   color:#fff;
+   line-height: 2;
+   h2{
+       text-align: center;
+   }
+}
+.proTitle{
+    margin-top:-75px;
+    margin-bottom:-50px;
+    a{ 
+    display:block;
+    margin: auto;
+    color:#b78100;
+    background-color: #ffd584;
+    width: 160px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 40px;
+    border:2px solid #b78100;
     }
 }
 
@@ -1800,153 +1814,8 @@
         100% {
             transform: rotate(-3turn);
         }
-    }
-}
-
-//尚未觸發的扭蛋機//
-.gashapon01 {
-    text-align: center;
-    position: relative;
-
-    img {
-        width: 300px;
-    }
-
-    .gashaponPic08 {
-        margin: 0 auto;
-        position: absolute;
-        top: 146px;
-        bottom: 0;
-        right: 0px;
-        left: 32px;
-        width: 75px;
-        z-index: -1;
-
-        img {
-            width: 100%
-        }
-    }
-
-    .gashaponPic09 {
-        margin: 0 auto;
-        position: absolute;
-        top: 100px;
-        bottom: 0;
-        right: 72px;
-        left: 0;
-        width: 75px;
-        z-index: -1;
-
-        img {
-            width: 100%;
-        }
-    }
-
-    .gashaponPic10 {
-        margin: 0 auto;
-        position: absolute;
-        top: 94px;
-        bottom: 0;
-        right: 0px;
-        left: 72px;
-        width: 75px;
-        z-index: -1;
-
-        img {
-            width: 100%;
-        }
-    }
-
-    .gashaponPic11 {
-        margin: 0 auto;
-        position: absolute;
-        top: 128px;
-        bottom: 0;
-        right: 0px;
-        left: 139px;
-        width: 75px;
-        z-index: -1;
-
-        img {
-            width: 100%;
-        }
-    }
-
-    .gashaponPic12 {
-        margin: 0 auto;
-        position: absolute;
-        top: 138px;
-        bottom: 0;
-        right: 109px;
-        left: 0;
-        width: 75px;
-        z-index: -4;
-
-        img {
-            width: 100%;
-        }
-    }
-
-    .gashaponPic13 {
-        margin: 0 auto;
-        position: absolute;
-        top: 144px;
-        bottom: 0;
-        right: 0px;
-        left: -42px;
-        width: 75px;
-        z-index: -1;
-
-        img {
-            width: 100%;
-        }
-    }
-
-    .gashaponPic14 {
-        margin: 0 auto;
-        position: absolute;
-        top: 144px;
-        bottom: 0;
-        right: 0px;
-        left: -42px;
-        width: 75px;
-        z-index: -3;
-
-        img {
-            width: 100%;
-        }
-
-    }
-}
-
-//扭蛋確認燈箱//
-#gashaponLightBox {
-    margin: 0 auto;
-    color: #FFF;
-    background-color: #E8B51C;
-    // margin: 0 auto;
-    border-radius: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 99999;
-    width: 200px;
-    height: 150px;
-
-    p {
-        margin: 30px auto 30px;
-    }
-
-    span {
-        cursor: pointer;
-        padding: 5px 10px 5px 10px;
-        margin: 20px;
-        background-color: #a6bfd0;
-        border-radius: 5px;
-    }
-}
-
+    }  
+}          
 //扭蛋觸發按鈕
 .boxfora {
     color: #FFF;
@@ -2009,10 +1878,20 @@
         line-height: 1.5;
     }
 }
+.boxForEvent{
+    position: relative;
+}
 #trashLightBox{
+    line-height: 1.5;
     font-size: 20px;
 }
 #trashLightBoxBtn{
+    position: absolute;
+    top: 220px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    z-index: 999;
     cursor: pointer;
     margin: 10px auto 0;
     background-color: #4CAF50;
@@ -2046,8 +1925,65 @@
 #boxForDisappear {
     position: relative;
 }
-
-#shopBlack {
+//扭蛋的確認購買燈箱
+#shopBlack1{
+    position: fixed;
+    z-index:999;
+    top: 0;    
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+}
+#gashaponLightBox{
+    margin: 0 auto;
+    color: #FFF;
+    border-radius: 10px;
+    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    .shopAlert1{
+        width: 300px;
+        height: 70px;
+        background-color:$yellow;
+        border-radius: 10px 10px 0 0;
+        margin: 0;
+    }
+    p{  color:black;
+       font-size: 30px;
+       text-align: center;
+       padding: 20px;
+    }
+    span{
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 1.5;
+        display: block;
+        color: black;
+        cursor: pointer;  
+    }
+    button{
+        display: inline-block;
+        background: #fcd93d;
+        color: #333;
+        margin: 35px 10px 0;
+        border: none;
+        border-radius: 50px;
+        font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+        cursor: pointer;
+    }
+    .shopAertBtn1{
+        width: 300PX;
+        box-sizing: border-box;
+        padding: 30px;
+        background-color:#FEF7D4;
+        border-radius: 0 0 10px 10px;  
+    }  
+}
+//道具的確認購買燈箱
+#shopBlack{
     position: fixed;
     z-index: 999;
     top: 0;
@@ -2059,7 +1995,6 @@
 #shopLightBox {
     margin: 0 auto;
     color: #FFF;
-    background-color: #E8B51C;
     border-radius: 10px;
     position: relative;
     position: absolute;
@@ -2067,19 +2002,40 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
-    width: 200px;
-    height: 150px;
-
-    p {
-        margin: 30px auto 30px;
+    .shopAlert{
+        width: 300px;
+        height: 70px;
+        background-color:$yellow;
+        border-radius: 10px 10px 0 0;
+        margin: 0;
     }
-
-    span {
+    p{  color:black;
+       font-size: 30px;
+       text-align: center;
+       padding: 20px;
+    }
+    span{
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 1.5;
+        display: block;
+        color: black;
+        cursor: pointer;  
+    }
+    button{
+        display: inline-block;
+        background: #fcd93d;
+        color: #333;
+        margin: 35px 10px 0;
+        border: none;
+        border-radius: 50px;
+        font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
         cursor: pointer;
-        padding: 5px 10px 5px 10px;
-        margin: 20px;
-        background-color: #a6bfd0;
-        border-radius: 5px;
+    }
+    .shopAlertBtn{
+        padding: 20px;
+        background-color:#FEF7D4;
+        border-radius: 0 0 10px 10px;   
     }
 }
 
