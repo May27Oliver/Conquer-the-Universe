@@ -1,14 +1,17 @@
 <?php 
-session_start();
 $errMsg = "";
-$memNo=$_SESSION["memNo"];
+$memNo=$_GET["memNo"];
 $balance = $_GET["balance"];
+$popularityAll = $_GET["popularityAll"];
+print_r($_GET);
 try {
+    $popularityAdd = 10;
 	require_once("connectPDO.php");
-	$sql="update `member` set starCoin=:balance WHERE `member`.`memNo` = {$memNo}";
+	$sql="update `member` set starCoin=:balance , `popularity`=:popularityAll WHERE `memNo` = :memNo";
 	$updateStarCoin = $pdo->prepare($sql);
     $updateStarCoin->bindValue(":memNo", $memNo);
     $updateStarCoin->bindValue(":balance", $balance);
+    $updateStarCoin->bindValue(":popularityAll", $popularityAll);
     $updateStarCoin->execute();
     // if( $memEdit->rowCount() == 0 ){
     //     echo "{}";
