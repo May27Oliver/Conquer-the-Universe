@@ -706,7 +706,7 @@
                     border-radius: 8px;
                     background-color: #d4faff;
                     width: 100px;
-                    height: 100px;
+                    height: 105px;
                     float: left;
                     margin-bottom: 10px;
                     margin-right: 2.5px;
@@ -728,10 +728,18 @@
                         top: 0;
                         left: 0;
 
-                        .citizenShop {
+                        .citizenClothNameBox{
+                            width: 100px;
+                            height: 40px;
                             position: absolute;
-                            top: 70%;
-                            left: 20%;
+                            bottom: 0;
+                            left: 0;
+                            
+                            .citizenShop {
+                            // position: absolute;
+                            // top: 80%;
+                            // left: 10%;
+                            display: block;
                             font-size: 16px;
                             border-radius: 10px;
                             color: #b78100;
@@ -740,13 +748,37 @@
                             padding: 2.5px 10px;
                             cursor: pointer;
                             outline: none;
+                            margin: auto;
+                            text-align: center;
 
+                            }
+                            p{
+                                font-size: 14px;
+                                text-align: center;
+                                line-height: 1.4;
+                                color: #333;
+                            }
                         }
+                        
+
+                        
 
                         .citizenShop:hover {
                             opacity: .8;
                         }
+                        
 
+                    }
+                    .citizenClothNameBox2{
+                        width: 100px;
+                        height: 20px;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        p{
+                            text-align: center;
+                            font-size: 14px;
+                        }
                     }
 
                 }
@@ -793,7 +825,7 @@
                     display: block;
                     width: 90%;
                     height: 90%;
-                    margin: auto;
+                    margin: 5px auto;
                     cursor: pointer;
                 }
 

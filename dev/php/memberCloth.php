@@ -3,7 +3,7 @@
 $errMsg="";
 try{
   require_once("connectPDO.php");
-  $sql = "select clothNo,clothimg,clothName,clothPrice,popularAmount,clothClass from `clothinmarket` where clothNo" ;
+  $sql = "select clothNo,clothimg,clothName,clothClass from `clothinmarket` where memNo" ;
   // $sql = "select clothNo,clothimg,clothName from `clothinmarket` where clothNo" ;
   $todayEqui=$pdo->query($sql);
   $arrTodayEqui=[];

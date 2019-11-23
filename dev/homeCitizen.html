@@ -72,9 +72,9 @@
                     <div class="col-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="item boxLeft">
                             <div class="memNameBox" id="memNameBox">
-                            <img src="" alt="">
-                                <!-- <h3>菜逼巴</h3>
-                                <h2>發大財</h2>  -->
+                            <img id="badgeImg" src="" alt="">
+                            <h3 id="titleName"></h3>
+                            <h2 id="citizenMemName"></h2>
                             </div>
 
                             <div class="supportBox">
@@ -339,13 +339,7 @@
       xhr.onload=function (){
            if( xhr.status == 200 ){
             memNameBox = JSON.parse(xhr.responseText);
-                HTMLstr = "";
-                for(var i=0; i<1; i++ ){
-                    HTMLstr += `
-                    <h2>${memNameBox[i].memName}</h2> 
-                    `;
-                }
-                document.getElementById('memNameBox').innerHTML =HTMLstr;
+            document.getElementById('citizenMemName').innerText =memNameBox[0].memName;
            }else{
             alert( xhr.status );
            }
@@ -357,6 +351,28 @@
     }
     memNameBox();
     
+    // 個人徽章
+    function memBadge(){
+        
+        var xhr = new XMLHttpRequest();
+        xhr.onload=function (){
+            if( xhr.status == 200 ){
+            badge = JSON.parse(xhr.responseText);
+            var img=badge['badgeImg'];
+            document.getElementById('badgeImg').src=`img/${img}`;
+            alert( xhr.status );
+            console.log(badge['badgeImg']);
+            }
+        }
+      
+      var url = "php/getBadge.php?";
+      xhr.open("Get", url, true);
+      xhr.send( null );
+    }
+    memBadge();
+    
+
+
     // 個人稱號
     // function memNameBoxtitle(){
     //   var xhr = new XMLHttpRequest();
@@ -382,31 +398,29 @@
     // memNameBoxtitle();
     
     // 個人徽章
-    function memBadge(){
-      var xhr = new XMLHttpRequest();
-      xhr.onload=function (){
-           if( xhr.status == 200 ){
-            badge = JSON.parse(xhr.responseText);
-            console.log(badge);
-                HTMLstr = "";
-                for(var i=0; i<1; i++ ){
-                    HTMLstr += `
-                    <img src="${badge[5].bandageimg}" alt="">
-                    <h3 id="titleName">菜逼巴</h3>
-                    <h2>${memNameBox[i].memName}</h2> 
-                    `;
-                }
-                document.getElementById('memNameBox').innerHTML =HTMLstr;
-           }else{
-            alert( xhr.status );
-           }
-      }
+    // function memBadge(){
+    //   var xhr = new XMLHttpRequest();
+    //   xhr.onload=function (){
+    //        if( xhr.status == 200 ){
+    //         badge = JSON.parse(xhr.responseText);
+    //         console.log(badge);
+    //             HTMLstr = "";
+    //             for(var i=0; i<1; i++ ){
+    //                 HTMLstr += `
+                    
+    //                 `;
+    //             }
+    //             document.getElementById('memNameBox').innerHTML =HTMLstr;
+    //        }else{
+    //         alert( xhr.status );
+    //        }
+    //   }
       
-      var url = "php/homeCitizenBadge.php?";
-      xhr.open("Get", url, true);
-      xhr.send( null );
-    }
-    memBadge();
+    //   var url = "php/homeCitizenBadge.php?";
+    //   xhr.open("Get", url, true);
+    //   xhr.send( null );
+    // }
+    // memBadge();
     
     // 候選人
     function memRole(){
@@ -505,8 +519,15 @@
             console.log(todayEqui.clothimg);
                 $("#today").append(`
                 <img class="hat" src="${todayEqui.clothimg}" alt="">
-                        <span>${todayEqui.clothName}</span>
-                        <button class="citizenShop" >${todayEqui.clothPrice}</button> 
+                    <div class="citizenClothNameBox"> 
+                        <button class="citizenShop" >${todayEqui.clothPrice}</button>
+                        <span><p class="citizenClothName">${todayEqui.clothName}<p></span>
+                        <span class="popularityAdd" style="visibility:hidden">${todayEqui.popularAmount}</span> 
+                        
+                        <span class="clothNo" style="visibility:hidden">${todayEqui.clothNo}</span>
+                        <span class="clothClass" style="visibility:hidden">${todayEqui.clothClass}</span>
+                       
+                    </div> 
                 `)
                    
             }
@@ -518,96 +539,174 @@
       xhr.send( null );
     }//setInterval(todayEqui ,10000);
     todayEqui();
-    // $("#alertHomeShop").click(function(e){
-            
-    //         $.ajax({    
-    //             url: `citizenShoptest.php?`,
-    //             data: {
-    //                 // memNo:memNo,
-    //                 // balance:balance,
-    //             },
-    //             type: 'GET',
-    //             success: function(row){
-                  
-    //             } 
-    //         })
-
-    //     })
-
-
-
+    
+    //買道具增加聲量 及 買道具扣錢
         $("#alertHomeShop").click(function(e){
-            // let memNo  = storage.getItem('memNo',memNo);
-            // let starCoin = storage.getItem('starCoin');
-            let memNo = $('.memNo').text();
-            let starCoin =$('#coin').text();
-            let citizenShop = $('.citizenShop').text();
-            let balance = starCoin - citizenShop;
+            let clothClass = $('.clothClass').text();       //裝備類型
+            let popularity = $('#popularity').text();       //個人支持度
+            let popularityAdd = $('.popularityAdd').text(); //商品支持度
+            let clothimg = $('.hat').attr('src');           //商品路徑
+            let starCoin =$('#coin').text();                //個人金幣
+            let citizenShop = $('.citizenShop').text();     //商品價格
+            let clothNo = $('.clothNo').text();             //商品編號
+            let memNo = $('.memNo').text();                 //個人編號
+            let popularityAll = parseInt(popularity)+parseInt(popularityAdd); //買道具增加聲量
+            let balance = starCoin - citizenShop; //買道具扣錢
+            let storage = sessionStorage;
+            console.log(clothClass);
+            console.log(clothNo);
+            console.log(clothimg);
             console.log(memNo);
             console.log(starCoin);
             console.log(citizenShop);
             console.log(balance);
+            console.log(popularity);
+            console.log(popularityAdd);
+            console.log(popularityAll);
+            sessionStorage.setItem('clothClass', clothClass);
+            sessionStorage.setItem('clothNo', clothNo);
+            sessionStorage.setItem('clothimg', clothimg);
+            sessionStorage.setItem('memNo', memNo);
+            sessionStorage.setItem('starCoin', starCoin);
+            sessionStorage.setItem('balance', balance);
+            sessionStorage.setItem('citizenShop', citizenShop);
+            sessionStorage.setItem('balance', popularityAll);
             $.ajax({    
-                url: `citizenShop.php?`,
+                url: `php/citizenShop.php`,
                 data: {
-                    // memNo:memNo,
+                    clothClass:clothClass,
+                    clothNo:clothNo,
+                    clothimg:clothimg,
+                    memNo:memNo,
+                    starCoin:starCoin,
                     balance:balance,
+                    citizenShop:citizenShop,
+                    popularityAll:popularityAll,
                 },
                 type: 'GET',
-                success: function(row){
-                //    $('#coin').text(balance);
-                //     storage.setItem('starCoin',balance);
-                } 
+                success: function(){
+                    alert(1111);
+                   $('#coin').text(balance);
+                   sessionStorage.setItem('starCoin',balance);
+                   $('#popularity').text(popularityAll);
+                   sessionStorage.setItem('popularity',popularityAll);
+
+                   $('#tab02').append(`
+                <div class="propBox" id="itemEqui1"> 
+                    <img class="hat" id="hat1" src="${todayEqui.clothimg}" alt="">
+                    <div class="citizenClothNameBox2">
+                        <span><p>${todayEqui.clothName}</p></span>
+                    </div>
+                </div>`);
+            //====換外觀道具
+            //設定帽子換道具
+            function showEqui( e ){
+            let tagSrc =e.target.src;
+            console.log(tagSrc);
+            document.getElementById(`${todayEqui.clothClass}`).src = tagSrc.replace("","");
+            document.getElementById(`${todayEqui.clothClass}`).style.display = "block";
+            }
+                    //===換帽子道具
+                    let imgs = document.querySelectorAll(".hat");
+                    for(let i=0; i<imgs.length; i++){
+                        imgs[i].onclick = showEqui;
+                        // console.log(imgs[i]);
+                    }
+                },
+                
             })
+            
+        });
+    //增加裝備庫欄位
+        $("#alertHomeShop").click(function(e){
+            let popularity = $('#popularity').text();       //個人支持度
+            let popularityAdd = $('.popularityAdd').text(); //商品支持度
+            let clothImg = $('.hat').attr('src');           //商品路徑
+            let starCoin =$('#coin').text();                //個人金幣
+            let citizenShop = $('.citizenShop').text();     //商品價格
+            let clothNo = $('.clothNo').text();             //商品編號
+            let memNo = $('.memNo').text();                 //個人編號
+            let popularityAll = parseInt(popularity)+parseInt(popularityAdd); //買道具增加聲量
+            let balance = starCoin - citizenShop; //買道具扣錢
+            let clothName = $('.citizenClothName').text();       //裝備類型
+            let clothClass = $('.clothClass').text();       //裝備類型
+            let storage = sessionStorage;
+            console.log(clothName)
+            console.log(clothNo);
+            console.log(clothImg);
+            console.log(memNo);
+            console.log(starCoin);
+            console.log(citizenShop);
+            console.log(balance);
+            console.log(popularity);
+            console.log(popularityAdd);
+            console.log(popularityAll); 
+            sessionStorage.setItem('clothNo', clothNo);
+            sessionStorage.setItem('clothImg', clothImg);
+            sessionStorage.setItem('memNo', memNo);
+            sessionStorage.setItem('starCoin', starCoin);
+            sessionStorage.setItem('balance', balance);
+            sessionStorage.setItem('citizenShop', citizenShop);
+            sessionStorage.setItem('balance', popularityAll);
+            sessionStorage.setItem('clothClass', clothClass);
+            sessionStorage.setItem('clothName', clothName);
+            $.ajax({    
+                url: `php/citizenShopInsert.php`,
+                data: {
+                    clothNo:clothNo,
+                    clothImg:clothImg,
+                    memNo:memNo,
+                    clothClass:clothClass,
+                    clothName:clothName,
+                    // starCoin:starCoin,
+                    // balance:balance,
+                    // citizenShop:citizenShop,
+                    // popularityAll:popularityAll,
+                },
+                type: 'GET',
+                success: function(){
+                    alert(2222);
+            
+                 
+                },
+                
+            })
+            
+        });  
+    //------今日商品結束  
 
-        })
+     // 現有商品撈出
+     function memberCloth(){
+      var xhr = new XMLHttpRequest();
+      xhr.onload=function (){
+           if( xhr.status == 200 ){
+            memberCloth= JSON.parse(xhr.responseText);
+            console.log(todayEqui.clothimg);
+                $("#today").append(`
+                <img class="hat" src="${todayEqui.clothimg}" alt="">
+                    <div class="citizenClothNameBox"> 
+                        <button class="citizenShop" >${todayEqui.clothPrice}</button>
+                        <span class="citizenClothName"><p>${todayEqui.clothName}<p></span>
+                        <span class="popularityAdd" style="visibility:hidden">${todayEqui.popularAmount}</span>
+                        <span class="clothNo" style="visibility:hidden">${todayEqui.clothNo}</span>
+                        <span class="clothClass" style="visibility:hidden">${todayEqui.clothClass}</span>
+                    </div> 
+                `)
+                   
+            }
 
-        // $("#alertHomeShop").click(function(e){
-        //     $('#tab02').append(`
-        //         <div class="propBox" id="itemEqui1">
-        //             <img class="hat" id="hat1" src="${todayEqui.clothimg}" alt="">
-        //             <span>${todayEqui.clothName}</span>
-        //         </div>`);
-        //         $('#tab02').append(`
-        //         <div class="propBox" id="itemEqui1">
-        //             <img class="hand"" id="hand1" src="${todayEqui.clothimg}" alt="">
-        //             <span>${todayEqui.clothName}</span>
-        //         </div>`);
-        //     //====換外觀道具
-        //     //設定帽子換道具
-        //     function showEqui( e ){
-        //     let tagSrc =e.target.src;
-        //     console.log(tagSrc);
-        //     document.getElementById("Equi").src = tagSrc.replace("","");
-        //     document.getElementById("Equi").style.display = "block";
-        //     }
-        //     //===換帽子道具
-        //     let imgs = document.querySelectorAll(".hat");
-        //     for(let i=0; i<imgs.length; i++){
-        //         imgs[i].onclick = showEqui;
-        //         // console.log(imgs[i]);
-        //     }
+      }
+      
+      var url = "php/memberCloth.php?";
+      xhr.open("Get", url, true);
+      xhr.send( null );
+    }//setInterval(todayEqui ,10000);
+    memberCloth();
 
-        //     //===換手上道具
-        //     function showEquiHand(e){
-        //     let HadSrc =e.target.src;
-        //     console.log(HadSrc);
-        //     document.getElementById("EquiHand").src = HadSrc.replace("","");
-        //     document.getElementById("EquiHand").style.display = "block";
-        //     }
-        //     //===設定換手上道具
-        //     let handImgs = document.querySelectorAll(".propBox .hand");
-        //     for(let i=0; i<handImgs.length; i++){
-        //         handImgs[i].onclick = showEquiHand;
-        //         console.log(handImgs[i]);
-        //     }
-        // })
-
-        
-    //------今日商品結束    
+    // 現有商品撈出  結束
 
 
-    // // 星球圖
+    //星球圖
 function StarsBall(){
   var xhr = new XMLHttpRequest();
   xhr.onload=function (){
