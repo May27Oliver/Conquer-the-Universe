@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
     <title>公民投票 - 征服宇宙 Conquer the universe</title>
     @@include('template/CDN.html')
-    
+
 </head>
+
 <body class="votePage">
     <!-------------------- 頁首(計分板+導覽列) -------------------->
     @@include('template/header.html')
@@ -26,14 +29,17 @@
                         <div class="voteAdding">
                             <form method="POST" name="voteForm" id="voteForm">
                                 <h3>發起公民投票</h3>
-                                <p>姓名：<input type="hidden" name="voter" class="voter" size="20" maxlength="10" placeholder="最多10個中文字" required value="$_SESSION['memNo']">$_SESSION['memName']</p>
-                                <p>題目：<input type="text" name="voteTitle" class="voteTitle" size="20" maxlength="10" placeholder="最多10個中文字" required></p>
+                                <input type="hidden" name="memNo" class="memNo">
+                                <p id="memName">姓名：$_SESSION['memName']</p>
+                                <p>題目：<input type="text" name="voteTitle" class="voteTitle" size="20" maxlength="10"
+                                        placeholder="最多10個字" required></p>
                                 <p>時間： <time id="afterWeek">2019/12/06</time></p>
                                 <div class="voteSelectGroup">
-                                    <p>選項：<input type="text" name="voteSelector[]" id="voteSelectorA" size="20" maxlength="6" placeholder="最多6個中文字" required></p>  
-                                    <p>選項：<input type="text" name="voteSelector[]" id="voteSelectorB" size="20" maxlength="6" placeholder="最多6個中文字" required></p>
+                                    <p>選項：<input type="text" name="voteSelectorA" id="voteSelectorA" size="20"
+                                            maxlength="6" placeholder="最多6個字" required></p>
+                                    <p>選項：<input type="text" name="voteSelectorB" id="voteSelectorB" size="20"
+                                            maxlength="6" placeholder="最多6個字" required></p>
                                 </div>
-                                
                             </form>
                             <button class="voteLaunch">發起</button>
                             <button type="reset" form="voteForm" class="voteLaunchCancel">取消</button>
@@ -48,7 +54,7 @@
                         <div class="voteText">
                             <button class="report">檢舉</button>
                             <small>發起人：</small>
-                            <h3> </h3>
+                            <h3><b> </b></h3>
                             <p class="deadline"></p>
                             <div class="voteSelectGroup">
                                 <button disabled="disabled" class="voteSelect voteSelected">已選擇此選項</button>
@@ -65,7 +71,7 @@
                         <div class="voteText">
                             <button class="report">檢舉</button>
                             <small>發起人：</small>
-                            <h3> </h3>
+                            <h3><b> </b></h3>
                             <p class="deadline"></p>
                             <div class="voteSelectGroup">
                                 <button class="voteA"> </button>
@@ -82,7 +88,7 @@
                         <div class="voteText">
                             <button class="report">檢舉</button>
                             <small>發起人：</small>
-                            <h3> </h3>
+                            <h3><b> </b></h3>
                             <p class="deadline"></p>
                             <div class="voteSelectGroup">
                                 <button class="voteA"> </button>
@@ -99,7 +105,7 @@
                         <div class="voteText">
                             <button class="report">檢舉</button>
                             <small>發起人：</small>
-                            <h3> </h3>
+                            <h3><b> </b></h3>
                             <p class="deadline"></p>
                             <div class="voteSelectGroup">
                                 <button class="voteA"> </button>
@@ -116,7 +122,7 @@
                         <div class="voteText">
                             <button class="report">檢舉</button>
                             <small>發起人：</small>
-                            <h3> </h3>
+                            <h3><b> </b></h3>
                             <p class="deadline"></p>
                             <div class="voteSelectGroup">
                                 <button class="voteA"> </button>
@@ -133,7 +139,7 @@
                         <div class="voteText">
                             <button class="report">檢舉</button>
                             <small>發起人：</small>
-                            <h3> </h3>
+                            <h3><b> </b></h3>
                             <p class="deadline"></p>
                             <div class="voteSelectGroup">
                                 <button class="voteA"> </button>
@@ -150,7 +156,7 @@
                         <div class="voteText">
                             <button class="report">檢舉</button>
                             <small>發起人：</small>
-                            <h3> </h3>
+                            <h3><b> </b></h3>
                             <p class="deadline"></p>
                             <div class="voteSelectGroup">
                                 <button class="voteA"> </button>
@@ -173,7 +179,7 @@
                         </div>
                         <div class="voteText">
                             <small>發起人：</small>
-                            <h3> </h3>
+                            <h3><b> </b></h3>
                             <p> </p>
                             <div class="voteSelectGroup">
                                 <button disabled="disabled">已結束</button>
@@ -188,7 +194,7 @@
                         </div>
                         <div class="voteText">
                             <small>發起人：</small>
-                            <h3> </h3>
+                            <h3><b> </b></h3>
                             <p> </p>
                             <div class="voteSelectGroup">
                                 <button disabled="disabled">已結束</button>
@@ -203,7 +209,7 @@
                         </div>
                         <div class="voteText">
                             <small>發起人：</small>
-                            <h3> </h3>
+                            <h3><b> </b></h3>
                             <p> </p>
                             <div class="voteSelectGroup">
                                 <button disabled="disabled">已結束</button>
@@ -218,7 +224,7 @@
                         </div>
                         <div class="voteText">
                             <small>發起人：</small>
-                            <h3> </h3>
+                            <h3><b> </b></h3>
                             <p> </p>
                             <div class="voteSelectGroup">
                                 <button disabled="disabled">已結束</button>
@@ -233,7 +239,7 @@
                         </div>
                         <div class="voteText">
                             <small>發起人：</small>
-                            <h3> </h3>
+                            <h3><b> </b></h3>
                             <p> </p>
                             <div class="voteSelectGroup">
                                 <button disabled="disabled">已結束</button>
@@ -287,4 +293,5 @@
     <script src="js/vote.js"></script>
     <script src="js/starsShine.js"></script>
 </body>
+
 </html>
