@@ -113,145 +113,7 @@ function showRunCards(jsonStr) {
     let votNo=$classes(".votNo");
     
     //[點擊]新增公民投票議題出現，事件聆聽功能
-    $class(".voteAddingSubmit").addEventListener('click', function () {
-        // $id("voteGroupRun").innerHTML ="";
-        $class(".voteAlertGroup").style.display = "none";
-        
-        // getRunCards();
-        // var wrapeDiv1 = document.createElement('div');
-        // var wrapeDiv2 = document.createElement('div');
-        // var wrapeDiv3 = document.createElement('div');
-        // var wrapeDiv4 = document.createElement('div');
-        // var wrapeDiv5 = document.createElement('div');
-        // var pieCanvas = document.createElement('canvas');
-        // var reportBtn = document.createElement('button');
-        // var voteIssue = document.createElement('h3');
-        // var deadline = document.createElement('p');
-        // var selectBtnA = document.createElement('button');
-        // var selectBtnB   = document.createElement('button');
-        // var issuePerson = document.createElement('small');
-        // var issuePersonName = document.createElement('span');
-
-        // wrapeDiv1.className = "voteCard col-6 col-md-4 col-lg-3";
-        // wrapeDiv2.className = "voteWrapper";
-        // wrapeDiv3.className = "voteChart";
-        // wrapeDiv4.className = "voteText";
-        // wrapeDiv5.className = "voteSelectGroup";
-        // pieCanvas.className = "votePie";
-        // deadline.className = "deadline";
-        // reportBtn.className = "report";
-        // selectBtnA.className = "voteA";
-        // selectBtnB.className = "voteB";
-
-        // insertAfter(wrapeDiv1, voteCard[0]);
-        // wrapeDiv1.appendChild(wrapeDiv2);
-        // wrapeDiv2.appendChild(wrapeDiv3);
-        // wrapeDiv3.appendChild(pieCanvas);
-        // insertAfter(wrapeDiv4, wrapeDiv3);
-        // wrapeDiv4.appendChild(reportBtn);
-        // reportBtn.innerText = "檢舉";
-        // insertAfter(issuePerson, reportBtn);
-        // issuePerson.innerText = "發起人：";
-        // issuePerson.appendChild(issuePersonName);
-        // issuePersonName.innerText = voter.value;
-        // insertAfter(voteIssue, issuePerson);
-        // voteIssue.innerText = voteTitle.value;
-        // insertAfter(deadline, voteIssue);
-        // insertAfter(wrapeDiv5, deadline);
-        // wrapeDiv5.appendChild(selectBtnA);
-        // selectBtnA.innerText = voteSelectorA.value;
-        // insertAfter(selectBtnB,selectBtnA);
-        // selectBtnB.innerText = voteSelectorB.value;
-
-        // //新增的投票倒數器
-        // deadline.onload = x();
-
-        // //新增[點擊]投票選項一
-        // selectBtnA.onclick = function (e) {
-        //     $class(".voteDoingNotice").innerHTML = "確認後將無法更改，<br>您要選擇此投票選項嗎？";
-        //     $class(".voteAlertGroup").style.display = "";
-        //     $class(".voteAlertDoing").style.display = "";
-        //     $class(".voteAddingSubmit").style.display = "none";
-        //     $class(".voteReportSubmit").style.display = "none";
-        //     $class(".voteReportMessage").style.display = "none";
-        //     $class(".voteVotingA").style.display = "";
-        //     $class(".voteVotingB").style.display = "none";
-        //     $class(".voteVotingA").onclick = function () {
-        //         $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得30宇宙幣";
-        //         $class(".voteOkay").style.display = ""
-        //         $class(".voteAlertDoing").style.display = "none";
-        //         $class(".voteAlertDid").style.display = "";
-        //         var xhr=new XMLHttpRequest();
-
-        //             xhr.onload=function(){
-        //                 if(xhr.status==200){
-        //                     alert("投票成功！");
-        //                 }else{
-        //                     alert(xhr.responseText);
-        //                 }   
-        //             }
-        
-        //             let url="php/vote/gainYesTicket.php";
-        //             xhr.open("post",url,true);
-        //             let query_string=`votNo=${e.target.parentNode.getAttribute("data-votNo")}`;
-        //             //memId,memPsw跟登入一樣
-        //             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        //             xhr.send(query_string);
-        //     };
-        // }
-        // //新增[點擊]投票選項二
-        // selectBtnB.onclick = function (e) {
-        //     $class(".voteDoingNotice").innerHTML = "確認後將無法更改，<br>您要選擇此投票選項嗎？";
-        //     $class(".voteAlertGroup").style.display = "";
-        //     $class(".voteAlertDoing").style.display = "";
-        //     $class(".voteAddingSubmit").style.display = "none";
-        //     $class(".voteAddingSubmit").style.display = "none";
-        //     $class(".voteReportMessage").style.display = "none";
-        //     $class(".voteVotingA").style.display = "none";
-        //     $class(".voteVotingB").style.display = "";
-        //     $class(".voteVotingB").onclick = function () {
-        //         $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得30宇宙幣！";
-        //         $class(".voteOkay").style.display = ""
-        //         $class(".voteAlertDoing").style.display = "none";
-        //         $class(".voteAlertDid").style.display = "block";
-        //         var xhr=new XHLHttpRequest;
-
-        //             xhr.onload=function(){
-        //                 if(xhr.status==200){
-        //                     alert("投票成功！");
-        //                 }else{
-        //                     alert(xhr.responseText);
-        //                 }   
-        //             }
-        
-        //             let url="php/vote/gainNoTicket.php";
-        //             xhr.open("post",url,true);
-        //             let query_string=`votNo=${e.target.parentNode.getAttribute("data-votNo")}`;
-        //             //memId,memPsw跟登入一樣
-        //             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        //             xhr.send(query_string);
-        //     };
-        // }
-        // //新增[點擊]檢舉
-        // reportBtn.onclick = function () {
-        //     $class(".voteDoingNotice").innerText = "檢舉原因：";
-        //     $class(".voteAlertGroup").style.display = "block";
-        //     $class(".voteAlertDoing").style.display = "block";
-        //     $class(".voteAddingSubmit").style.display = "none";
-        //     $class(".voteReportSubmit").style.display = "";
-        //     $class(".voteVotingA").style.display = "none";
-        //     $class(".voteVotingB").style.display = "none";
-        //     $class(".voteReportMessage").style.display = "block";
-        // }
-        // // pieProduce();
-        // voteLaunch();
-        // pieProduce();
-        // voteA = $classes(".voteA");
-        // voteB = $classes(".voteB");
-        // return voteA, voteB;
-        voteLaunch();
-        getRunCards();
-    });
+    $class(".voteAddingSubmit").addEventListener('click', issueProduce);
     voting();
     BTNs();
 }
@@ -552,7 +414,6 @@ function pieProduce() {
     let url="php/vote/checkNum.php";
     xhr.open("Get", url, true);
     xhr.send( null );
-    ;
 }
 
 // 產生結束的餅圖
@@ -670,4 +531,10 @@ function BTNs() {
         $class(".voteAlertGroup").style.display = "none";
         $class(".voteAlertDid").style.display = "none";
     }
+}
+
+function issueProduce() {
+    console.log("事件要發布了哦！");
+    voteLaunch();
+    getRunCards();
 }
