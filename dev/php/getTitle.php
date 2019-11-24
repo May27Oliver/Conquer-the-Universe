@@ -7,7 +7,7 @@ try{
     $clear = $pdo->prepare($sql);
     $clear->execute();
 
-    $sql="select memNo,wisdom,charisma,finance from `member`";
+    $sql="select memNo,popularity,wisdom,charisma,finance from `member`";
     $memData=$pdo->query($sql);
     $memDataRow=$memData->fetchAll(PDO::FETCH_ASSOC);
 
@@ -15,7 +15,7 @@ try{
     $titleData=$pdo->query($sqlTitle);
     $titleDataRow=$titleData->fetchAll(PDO::FETCH_ASSOC);
 
-    for($j=1;$j<count($titleDataRow);$j++){
+    for($j=0;$j<count($titleDataRow);$j++){
         ${'rule'.$j}=$titleDataRow[$j]['titleRule'];
         ${'set'.$j}=$titleDataRow[$j]['titleSet'];
         for($i=0;$i<count($memDataRow);$i++){

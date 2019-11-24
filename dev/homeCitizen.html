@@ -24,7 +24,7 @@
                             <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
                                 <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色稱號 :</label>
                                 <select name="titleName" id="memDataLock1" class="memDataLock1" disabled="">
-                                    <option></option>
+                                    <!-- <option></option> -->
                                 </select>
                                 <img src="img/pencil.png" id="memDataEdit1" class="memDataEdit1" alt="editIcon">
                              </div>
@@ -200,6 +200,26 @@
     <script src="js/homeCitizen.js"></script>
     <script src="js/title.js"></script>
     <script>
+        //抓取稱號資料
+         
+        myTitle();
+        function myTitle(){
+            var xhr = new XMLHttpRequest();
+            xhr.onload=function (){
+                if( xhr.status == 200 ){
+                    titleName = JSON.parse(xhr.responseText);
+                    document.getElementById('titleName').innerText=titleName[0]['titleName'];
+                }else{
+                    alert( xhr.status );
+                }
+            }
+            var url = "php/myTitle.php";
+            xhr.open("Get", url, true);
+            xhr.send( null );
+        }
+        
+
+
         //個人編輯會員資料撈取
     function getMember(){
       var xhr = new XMLHttpRequest();
@@ -217,7 +237,7 @@
                         <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
                             <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色稱號 :</label>
                             <select name="titleName" id="memDataLock1" class="memDataLock1" disabled="">
-                                <option></option>
+                               
                             </select>
                             <img src="img/pencil.png" id="memDataEdit1" class="memDataEdit1" alt="editIcon">
                         </div>
@@ -272,8 +292,7 @@
                         <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
                             <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色稱號 :</label>
                             <select name="titleName" id="memDataLock1" class="memDataLock1" disabled="">
-                                <option>${memtitle[0].titleName}</option>
-                                <option>${memtitle[1].titleName}</option>
+                            
                             </select>
                             <img src="img/pencil.png" id="memDataEdit1" class="memDataEdit1" alt="editIcon">
                         </div>
@@ -736,43 +755,62 @@ StarsBall();
     
     //修改會員資料
     $('body').on('click', '#memDataButton', function () {
-            let titleName= document.getElementById('titleName').innerText=$('#memDataLock1').val();
-            let memNo = $('.memNo').text();
-            let memName = $('.memName').text();
-            let memPsw = $('.memPsw').val();
-            let email = $('.email').val();
-            let storage = sessionStorage;
-            console.log(titleName);
-            console.log(memNo);
-            console.log(memName);
-            console.log(memPsw);
-            console.log(email);
-            sessionStorage.setItem('memNo', memNo);
-            sessionStorage.setItem('titleName', titleName);
-            sessionStorage.setItem('memPsw', memPsw);
-            sessionStorage.setItem('email', email);
-                $.ajax({
-                    url: `php/homeCitizenModify.php`,
-                    data: {
-                        titleName,
-                        memNo,
-                        memName: memName,
-                        memPsw,
-                        email,
-                    },
-                    type: 'POST',
-                    success: function (memEditRows) {
-                        // var afterEdit = JSON.parse(memEditRows);
-                        // console.log(afterEdit);
-                    },
-                })
-                $("#memberData").css("display","none");
-                $("#memDataLock3").attr("disabled","false")
+       
+        let titleName= document.getElementById('titleName').innerText=$('#memDataLock1').val();
+        let memNo = $('.memNo').text();
+        let memName = $('.memName').text();
+        let memPsw = $('.memPsw').val();
+        let email = $('.email').val();
+        let storage = sessionStorage;
+        console.log(titleName);
+        console.log(memNo);
+        console.log(memName);
+        console.log(memPsw);
+        console.log(email);
+        sessionStorage.setItem('memNo', memNo);
+        sessionStorage.setItem('titleName', titleName);
+        sessionStorage.setItem('memPsw', memPsw);
+        sessionStorage.setItem('email', email);
+        $.ajax({
+            url: `php/homeCitizenModify.php`,
+            data: {
+                titleName,
+                memNo,
+                memName: memName,
+                memPsw,
+                email,
+            },
+            type: 'POST',
+            success: function (memEditRows) {
+                // var afterEdit = JSON.parse(memEditRows);
+                // console.log(afterEdit);
+            },
+        })
+        $("#memberData").css("display","none");
+        $("#memDataLock3").attr("disabled","false");
+
+
+        // 稱號寫入資料庫
+        saveTitle();
+        function saveTitle(){
+            let titleName = document.getElementById('titleName').innerText;
+            $.ajax({
+                url: `php/saveTitle.php`,
+                data: {
+                    titleName,
+                },
+                type: 'GET',
+                success: function (memEditRows) {
+                    alert(titleName);
+                },
             })
-                
-    
-    
-        </script>
+        }
+        
+    })
+        
+
+
+</script>
     
 </body>
 </html>
