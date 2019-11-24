@@ -186,7 +186,7 @@
         display: block;
         margin: 0 auto;
         text-align: center;
-        line-height: 30px;
+        line-height: 220px;
         width: 100px;
         // border-radius: 20px;
     }
@@ -4335,4 +4335,48 @@ div.slider {
         opacity: 1;
         transform: translateY(0);
     }
+}
+#wealth{
+    cursor: default;
+    margin-top: 0;
+    position: absolute;
+    right:56%;
+    top:432px;
+    transform: translateY(-50%);
+    transform: translateX(50%);
+    z-index: 999;
+    color:white;
+    font-size: 16px;
+    // width: 23px;
+    // height: 23px;
+    line-height: 30px;
+    background-image: url(../img/GEM.png);
+    // background-repeat: none;
+}
+
+#coin{
+    cursor: default;
+    margin-top: 0;
+    position: absolute;
+    right:48%;
+    top:430px;
+    transform: translateY(-50%);
+    transform: translateX(50%);
+    z-index: 999;
+    color:white;
+    font-size: 16px;
+    line-height: 30px;
+}
+#memberName{
+    cursor: default;
+    margin-top: 0;
+    position: absolute;
+    right:50%;
+    top:400px;
+    transform: translateY(-50%);
+    transform: translateX(50%);
+    z-index: 999;
+    color:white;
+    font-size: 16px;
+    line-height: 30px;
 }
