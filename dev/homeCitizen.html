@@ -381,7 +381,7 @@
             var img=badge['badgeImg'];
             document.getElementById('badgeImg').src=`img/${img}`;
             alert( xhr.status );
-            console.log(badge['badgeImg']);
+            // console.log(badge['badgeImg']);
             }
         }
       
@@ -448,46 +448,40 @@
       xhr.onload=function (){
            if( xhr.status == 200 ){
             StarsRole = JSON.parse(xhr.responseText);
-            console.log(StarsRole);
-                    // if(StarsRole[0].starsRole){ 
+            console.log(StarsRole[0].starNo);
+                    if(StarsRole[0].starNo==1){ 
                         $(".EquiImg").append(`
                         <img class="citizenOneEye" src="${StarsRole[0].starsRole}" alt=""> 
                         <div id="EquiBox" class="oneEyeBox">
-                            <img id="Equi" src="" alt="" style="display:none">
-                            <div class="EquiClose1" style="display: none;" onclick="removeEqui()"></div>
+                            
                         </div>
                         <div id="EquiBoxHand" class="oneEyeHandBox">
-                            <img id="EquiHand" src="" alt="" style="display:none">
-                            <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
+                            
                         </div>  `);
 
-                    // }else if(StarsRole[1].starsRole=StarsRole[1].starsRole){
-                        // $(".EquiImg").append(` 
-                        // <img class="citizenFat" src="${StarsRole[1].starsRole}" alt=""> 
-                        // <div id="EquiBox" class="fatBox">
-                        //     <img id="Equi" src="" alt="" style="display:none">
-                        //     <div class="EquiClose1" style="display: none;" onclick="removeEqui()"></div>
-                        // </div>
-                        // <div id="EquiBoxHand" class="fatHandBox">
-                        //     <img id="EquiHand" src="" alt="" style="display:none">
-                        //     <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
-                        // </div>`
-                        // );
+                    }else if(StarsRole[0].starNo==2){
+                        $(".EquiImg").append(` 
+                        <img class="citizenFat" src="${StarsRole[0].starsRole}" alt=""> 
+                        <div id="EquiBox" class="fatBox">
+                            
+                        </div>
+                        <div id="EquiBoxHand" class="fatHandBox">
+                           
+                        </div>`
+                        );
 
-                    // }else if(StarsRole[0].starsRole=StarsRole[0].starsRole){
-                        // $(".EquiImg").append(`
-                        //     <img class="citizenRabbit" src="${StarsRole[2].starsRole}" alt=""> 
-                        // <div id="EquiBox" class="rabbitBox">
-                        //     <img id="Equi" src="" alt="" style="display:none">
-                        //     <div class="EquiClose1" style="display: none;" onclick="removeEqui()"></div>
-                        // </div>
-                        // <div id="EquiBoxHand" class="rabbitHandBox">
-                        //     <img id="EquiHand" src="" alt="" style="display:none">
-                        //     <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
-                        // </div>`
-                        // );
+                    }else if(StarsRole[0].starNo==3){
+                        $(".EquiImg").append(`
+                            <img class="citizenRabbit" src="${StarsRole[0].starsRole}" alt=""> 
+                        <div id="EquiBox" class="rabbitBox">
+                            
+                        </div>
+                        <div id="EquiBoxHand" class="rabbitHandBox">
+                            
+                        </div>`
+                        );
 
-                    // };
+                    };
 
                             //hover帽子道具img出現叉叉
                     $("#EquiBox img").mouseover(function(){
@@ -536,7 +530,7 @@
       xhr.onload=function (){
            if( xhr.status == 200 ){
             todayEqui= JSON.parse(xhr.responseText);
-            console.log(todayEqui.clothimg);
+            // console.log(todayEqui.clothimg);
                 $("#today").append(`
                 <img class="hat" src="${todayEqui.clothimg}" alt="">
                     <div class="citizenClothNameBox"> 
@@ -562,41 +556,53 @@
     
     //買道具增加聲量 及 買道具扣錢
         $("#alertHomeShop").click(function(e){
-            let clothClass = $('.clothClass').text();       //裝備類型
+            //--買道具增加聲量 及 買道具扣錢
+            let memNo = $('.memNo').text();                 //個人編號
             let popularity = $('#popularity').text();       //個人支持度
             let popularityAdd = $('.popularityAdd').text(); //商品支持度
-            let clothimg = $('.hat').attr('src');           //商品路徑
             let starCoin =$('#coin').text();                //個人金幣
             let citizenShop = $('.citizenShop').text();     //商品價格
-            let clothNo = $('.clothNo').text();             //商品編號
-            let memNo = $('.memNo').text();                 //個人編號
+
             let popularityAll = parseInt(popularity)+parseInt(popularityAdd); //買道具增加聲量
-            let balance = starCoin - citizenShop; //買道具扣錢
+            
+            //==增加裝備庫欄位抓值
+            let clothImg = $('.hat').attr('src');           //商品路徑
+            let clothNo = $('.clothNo').text();             //商品編號
+            let clothName = $('.citizenClothName').text();  //裝備類型
+            let clothClass = $('.clothClass').text();       //裝備類型
             let storage = sessionStorage;
-            console.log(clothClass);
-            console.log(clothNo);
-            console.log(clothimg);
-            console.log(memNo);
-            console.log(starCoin);
-            console.log(citizenShop);
-            console.log(balance);
-            console.log(popularity);
-            console.log(popularityAdd);
-            console.log(popularityAll);
-            sessionStorage.setItem('clothClass', clothClass);
+            
+            
+            // console.log(clothClass);
+            // console.log(clothNo);
+            // console.log(clothimg);
+            // console.log(memNo);
+            // console.log(starCoin);
+            // console.log(citizenShop);
+            // console.log(balance);
+            // console.log(popularity);
+            // console.log(popularityAdd);
+            // console.log(popularityAll);
+            
+
+            if(starCoin>=citizenShop){
+                let balance = starCoin - citizenShop; //買道具扣錢
+            //--買道具增加聲量 及 買道具扣錢    
             sessionStorage.setItem('clothNo', clothNo);
-            sessionStorage.setItem('clothimg', clothimg);
             sessionStorage.setItem('memNo', memNo);
             sessionStorage.setItem('starCoin', starCoin);
             sessionStorage.setItem('balance', balance);
             sessionStorage.setItem('citizenShop', citizenShop);
             sessionStorage.setItem('balance', popularityAll);
+
+            //==增加裝備庫欄位抓值
+           
+            sessionStorage.setItem('clothImg', clothImg);
+            sessionStorage.setItem('clothClass', clothClass);
+            sessionStorage.setItem('clothName', clothName);
             $.ajax({    
                 url: `php/citizenShop.php`,
                 data: {
-                    clothClass:clothClass,
-                    clothNo:clothNo,
-                    clothimg:clothimg,
                     memNo:memNo,
                     starCoin:starCoin,
                     balance:balance,
@@ -604,53 +610,17 @@
                     popularityAll:popularityAll,
                 },
                 type: 'GET',
-                success: function(){
-                    // alert(1111);
+                success: function(data){
+                    // alert(1111)
+                   console.log(data);
                    $('#coin').text(balance);
                    sessionStorage.setItem('starCoin',balance);
                    $('#popularity').text(popularityAll);
                    sessionStorage.setItem('popularity',popularityAll);
-
-                   
                 },
                 
             })
             
-        });
-    //增加裝備庫欄位
-        $("#alertHomeShop").click(function(e){
-            e.stopPropagation();
-            let popularity = $('#popularity').text();       //個人支持度
-            let popularityAdd = $('.popularityAdd').text(); //商品支持度
-            let clothImg = $('.hat').attr('src');           //商品路徑
-            let starCoin =$('#coin').text();                //個人金幣
-            let citizenShop = $('.citizenShop').text();     //商品價格
-            let clothNo = $('.clothNo').text();             //商品編號
-            let memNo = $('.memNo').text();                 //個人編號
-            let popularityAll = parseInt(popularity)+parseInt(popularityAdd); //買道具增加聲量
-            let balance = starCoin - citizenShop; //買道具扣錢
-            let clothName = $('.citizenClothName').text();       //裝備類型
-            let clothClass = $('.clothClass').text();       //裝備類型
-            let storage = sessionStorage;
-            console.log(clothName)
-            console.log(clothNo);
-            console.log(clothImg);
-            console.log(memNo);
-            console.log(starCoin);
-            console.log(citizenShop);
-            console.log(balance);
-            console.log(popularity);
-            console.log(popularityAdd);
-            console.log(popularityAll); 
-            sessionStorage.setItem('clothNo', clothNo);
-            sessionStorage.setItem('clothImg', clothImg);
-            sessionStorage.setItem('memNo', memNo);
-            sessionStorage.setItem('starCoin', starCoin);
-            sessionStorage.setItem('balance', balance);
-            sessionStorage.setItem('citizenShop', citizenShop);
-            sessionStorage.setItem('balance', popularityAll);
-            sessionStorage.setItem('clothClass', clothClass);
-            sessionStorage.setItem('clothName', clothName);
             $.ajax({    
                 url: `php/citizenShopInsert.php`,
                 data: {
@@ -672,8 +642,51 @@
                 },
                 
             })
+        }else{
+                alert("宇宙幣不足，請至公民學堂賺取宇宙幣");
+            };
             
-        });  
+        });
+    //增加裝備庫欄位
+        // $("#alertHomeShop").click(function(e){
+    
+           
+        //     let clothImg = $('.hat').attr('src');           //商品路徑
+        //     let clothNo = $('.clothNo').text();             //商品編號
+        //     let memNo = $('.memNo').text();                 //個人編號
+        //     let clothName = $('.citizenClothName').text();       //裝備類型
+        //     let clothClass = $('.clothClass').text();       //裝備類型
+        //     let storage = sessionStorage;
+            
+
+        //     sessionStorage.setItem('clothNo', clothNo);
+        //     sessionStorage.setItem('clothImg', clothImg);
+        //     sessionStorage.setItem('memNo', memNo);
+        //     sessionStorage.setItem('clothClass', clothClass);
+        //     sessionStorage.setItem('clothName', clothName);
+        //     $.ajax({    
+        //         url: `php/citizenShopInsert.php`,
+        //         data: {
+        //             clothNo:clothNo,
+        //             clothImg:clothImg,
+        //             memNo:memNo,
+        //             clothClass:clothClass,
+        //             clothName:clothName,
+        //             // starCoin:starCoin,
+        //             // balance:balance,
+        //             // citizenShop:citizenShop,
+        //             // popularityAll:popularityAll,
+        //         },
+        //         type: 'GET',
+        //         success: function(){
+        //             // alert(2222);
+            
+                 
+        //         },
+                
+        //     })
+           
+        // });  
     //------今日商品結束  
 
      // 現有商品撈出
@@ -683,13 +696,13 @@
            if( xhr.status == 200 ){
             memberCloth= JSON.parse(xhr.responseText);
            for (let i = 0; i < memberCloth.length; i++) {
-            //    console.log(memberCloth[i].clothClass);
+            //    console.log(memberCloth[i].memClothNo);
                $('#tab02').append(`
-                <div class="propBox" data-range="${memberCloth[i].clothClass}"> 
+                <div class="propBox" data-range="${memberCloth[i].clothClass}" data-memClothNo="${memberCloth[i].memClothNo}"> 
                     <img class="hat" src="${memberCloth[i].clothimg}" alt="">
                     <div class="citizenClothNameBox2" >
                         <span><p class="clothName">${memberCloth[i].clothName}</p></span>
-                        
+                       
                     </div>
                 </div>`);
 
@@ -707,12 +720,36 @@
                         document.getElementById("EquiHand").src=e.target.src;
                         document.getElementById("EquiHand").style.display="";
                     }
-                    
-                        // console.log("您點擊到的是:",);
+                     
+                        // console.log("您點擊到的是:",e.target.parentNode.getAttribute("data-memClothNo"));
                         //  console.log (e.target.parentNode.getAttribute("data-range"));
+                        //  console.log (e.target.parentNode.getAttribute("data-memClothNo"));
                         // console.log (memberCloth[0]['clothClass']);
                         // console.log (memberCloth[1]['clothClass']);
                     // }
+                    let equiClothClass = e.target.parentNode.getAttribute("data-range");
+                    let equiMemClothNo = e.target.parentNode.getAttribute("data-memClothNo");
+                    alert(equiClothClass);
+                    alert(equiMemClothNo);
+                    let storage = sessionStorage;
+                    sessionStorage.setItem('equiClothClass', equiClothClass); 
+                    sessionStorage.setItem('equiMemClothNo', equiMemClothNo); 
+                    $.ajax({
+                        url: `php/equiOnDuty.php`,
+                        data: {
+                            equiClothClass:equiClothClass,
+                            equiMemClothNo:equiMemClothNo,
+            
+                        },
+                        type: 'GET',
+                        success: function(){
+                            alert("成功");
+            
+                 
+                        },
+                
+                    })
+
                 }
                 // console.log(memberCloth[i]['clothClass']);
                     
@@ -741,28 +778,117 @@
 
     //-----現有商品撈出  結束
 
+//撈出候選人身上裝備
+function roleEquiBox(){
+      var xhr = new XMLHttpRequest();
+      xhr.onload=function (){
+           if( xhr.status == 200 ){
+            roleEquiBox= JSON.parse(xhr.responseText);
+            // console.log(roleEquiBox[0][0].clothimg);
+            // console.log(roleEquiBox[1][0].clothimg);
+                
+                    $("#EquiBox").append(`
+                        <img id="Equi" src="${roleEquiBox[0][0].clothimg}" alt="">
+                        <div class="EquiClose1" style="display: none;" onclick="removeEqui()"></div>
+                    `),
+                    
+                     $("#EquiBoxHand").append(`
+                        <img id="EquiHand" src="${roleEquiBox[1][0].clothimg}" alt="">
+                        <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
+                     `)
+                //hover帽子道具img出現叉叉
+                $("#EquiBox img").mouseover(function(){
+                    $(".EquiClose1").css("display","block");
+                }); 
+                $("#EquiBox img").mouseout(function(){
+                    $(".EquiClose1").css("display","none");
+                });
+                // moveEquiIn1
+                $(".EquiClose1").mouseover(function(){
+                    $(".EquiClose1").css("display","block");
+                });
+
+                $(".EquiClose1").mouseout(function(){
+                    $(".EquiClose1").css("display","none");
+                });     
+                //hover手上道具img出現叉叉
+                $("#EquiBoxHand img").mouseover(function(){
+                    $(".EquiClose2").css("display","block");
+                });
+                $("#EquiBoxHand img").mouseout(function(){
+                    $(".EquiClose2").css("display","none");
+                });
+                // moveEquiIn2
+                $(".EquiClose2").mouseover(function(){
+                    $(".EquiClose2").css("display","block");
+                });
+
+                $(".EquiClose2").mouseout(function(){
+                    $(".EquiClose2").css("display","none");
+                });            
+                
+                
+            }
+
+      }
+      
+      var url = "php/roleEquiBox.php?";
+      xhr.open("Get", url, true);
+      xhr.send( null );
+    }//setInterval(todayEqui ,10000);
+    roleEquiBox();
+
+
+//解除候選人身上裝備
+$('body').on('click', '#alertEqui', function () {
+    
+    $.ajax({
+        url: `php/removeRoleEqui.php`,
+        type: 'GET',
+        success: function (memEditRows) {
+            // var afterEdit = JSON.parse(memEditRows);
+            // console.log(afterEdit);
+            alert("解除成功");
+        },
+    })
+    
+})
+$('body').on('click', '#alertEquiHand', function () {
+    
+    $.ajax({
+        url: `php/removeRoleEquiHand.php`,
+        type: 'GET',
+        success: function (memEditRows) {
+            // var afterEdit = JSON.parse(memEditRows);
+            // console.log(afterEdit);
+            alert("解除成功");
+        },
+    })
+    
+})
+                
 
 //-----道具點擊
-    $(".hat").click(function () {
-        let equiclothClass = e.target.parentNode.getAttribute("data-range");
-        alert(equiclothClass);
-        let storage = sessionStorage;
-        sessionStorage.setItem('equiclothClass', equiclothClass); 
-        $.ajax({
-                url: `php/equiOnDuty.php`,
-                data: {
-                    equiclothClass:equiclothClass,
+    // $(".hat").click(function () {
+    //     let equiclothClass = e.target.parentNode.getAttribute("data-range");
+    //     alert(equiclothClass);
+    //     let storage = sessionStorage;
+    //     sessionStorage.setItem('equiclothClass', equiclothClass); 
+    //     $.ajax({
+    //             url: `php/equiOnDuty.php`,
+    //             data: {
+    //                 equiclothClass:equiclothClass,
     
-                },
-                type: 'GET',
-                success: function(){
-                    alert(2222);
+    //             },
+    //             type: 'GET',
+    //             success: function(){
+    //                 alert(2222);
             
                  
-                },
+    //             },
                 
-            })
-    })
+    //         })
+    // })
 
 //星球圖
 function StarsBall(){

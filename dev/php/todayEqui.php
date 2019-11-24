@@ -1,5 +1,5 @@
 <?php
-//個人編輯會員資料撈取候選人圖
+//撈今日商品
 $errMsg="";
 try{
   require_once("connectPDO.php");
