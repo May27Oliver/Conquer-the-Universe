@@ -109,7 +109,7 @@
                         loginBtn.style.width=50+"px";
                         wealth.style.backgroundImage.url="../img/GEM.png";
                         wealth.style.backgroundRepeat="none";
-                        coin.innerText="800";
+                        coin.innerText=member.starCoin;
                         wealth.style.width=23+"px";
                         wealth.style.height=23+"px";
                         memberName.innerText="您好!"+member.memName;
@@ -184,9 +184,10 @@ window.addEventListener("load",function(){
         wealth.style.width=23+"px";
         wealth.style.height=23+"px";
         wealth.style.backgroundRepeat="none";
-        coin.innerText="800";
+        coin.innerText=member.starCoin;
         loginBtn.style.width=50+"px"
         loginBtn.innerHTML = "登出";
+        console.log(member.starCoin);
       }
     }
     xhr.open("get", "php/getLoginInfo.php", true);

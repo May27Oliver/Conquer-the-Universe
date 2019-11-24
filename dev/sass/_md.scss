@@ -478,7 +478,7 @@
     /*__________[START] 首頁公民投票 VOTE IN home __________*/
     .voteSectionWrapper {
         .voteSection {
-
+            
             /*------ 投票卡片 ------*/
             .voteGroup {
                 .voteCard {
@@ -502,6 +502,22 @@
                 .voteCard {
                     &.col-12 {
                         height: auto;
+                    }
+                    .voteWrapper{
+                        .voteText{
+                            h3 {
+                                height: auto;
+                                font-size: 18px;
+                                font-weight: 500;
+                                margin-top: 10px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+                            small{
+                                font-size: 15px;
+                            }
+                        }
                     }
                 }
             }

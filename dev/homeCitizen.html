@@ -24,7 +24,7 @@
                             <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
                                 <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色稱號 :</label>
                                 <select name="titleName" id="memDataLock1" class="memDataLock1" disabled="">
-                                    <option></option>
+                                    <!-- <option></option> -->
                                 </select>
                                 <img src="img/pencil.png" id="memDataEdit1" class="memDataEdit1" alt="editIcon">
                              </div>
@@ -200,6 +200,26 @@
     <script src="js/homeCitizen.js"></script>
     <script src="js/title.js"></script>
     <script>
+        //抓取稱號資料
+         
+        myTitle();
+        function myTitle(){
+            var xhr = new XMLHttpRequest();
+            xhr.onload=function (){
+                if( xhr.status == 200 ){
+                    titleName = JSON.parse(xhr.responseText);
+                    document.getElementById('titleName').innerText=titleName[0]['titleName'];
+                }else{
+                    alert( xhr.status );
+                }
+            }
+            var url = "php/myTitle.php";
+            xhr.open("Get", url, true);
+            xhr.send( null );
+        }
+        
+
+
         //個人編輯會員資料撈取
     function getMember(){
       var xhr = new XMLHttpRequest();
@@ -217,7 +237,7 @@
                         <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
                             <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色稱號 :</label>
                             <select name="titleName" id="memDataLock1" class="memDataLock1" disabled="">
-                                <option></option>
+                               
                             </select>
                             <img src="img/pencil.png" id="memDataEdit1" class="memDataEdit1" alt="editIcon">
                         </div>
@@ -272,8 +292,7 @@
                         <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
                             <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色稱號 :</label>
                             <select name="titleName" id="memDataLock1" class="memDataLock1" disabled="">
-                                <option>${memtitle[0].titleName}</option>
-                                <option>${memtitle[1].titleName}</option>
+                            
                             </select>
                             <img src="img/pencil.png" id="memDataEdit1" class="memDataEdit1" alt="editIcon">
                         </div>
@@ -537,17 +556,23 @@
     
     //買道具增加聲量 及 買道具扣錢
         $("#alertHomeShop").click(function(e){
-            let clothClass = $('.clothClass').text();       //裝備類型
+            //--買道具增加聲量 及 買道具扣錢
+            let memNo = $('.memNo').text();                 //個人編號
             let popularity = $('#popularity').text();       //個人支持度
             let popularityAdd = $('.popularityAdd').text(); //商品支持度
-            let clothimg = $('.hat').attr('src');           //商品路徑
             let starCoin =$('#coin').text();                //個人金幣
             let citizenShop = $('.citizenShop').text();     //商品價格
-            let clothNo = $('.clothNo').text();             //商品編號
-            let memNo = $('.memNo').text();                 //個人編號
+
             let popularityAll = parseInt(popularity)+parseInt(popularityAdd); //買道具增加聲量
-            let balance = starCoin - citizenShop; //買道具扣錢
+            
+            //==增加裝備庫欄位抓值
+            let clothImg = $('.hat').attr('src');           //商品路徑
+            let clothNo = $('.clothNo').text();             //商品編號
+            let clothName = $('.citizenClothName').text();  //裝備類型
+            let clothClass = $('.clothClass').text();       //裝備類型
             let storage = sessionStorage;
+            
+            
             // console.log(clothClass);
             // console.log(clothNo);
             // console.log(clothimg);
@@ -558,20 +583,26 @@
             // console.log(popularity);
             // console.log(popularityAdd);
             // console.log(popularityAll);
-            sessionStorage.setItem('clothClass', clothClass);
+            
+
+            if(starCoin>=citizenShop){
+                let balance = starCoin - citizenShop; //買道具扣錢
+            //--買道具增加聲量 及 買道具扣錢    
             sessionStorage.setItem('clothNo', clothNo);
-            sessionStorage.setItem('clothimg', clothimg);
             sessionStorage.setItem('memNo', memNo);
             sessionStorage.setItem('starCoin', starCoin);
             sessionStorage.setItem('balance', balance);
             sessionStorage.setItem('citizenShop', citizenShop);
             sessionStorage.setItem('balance', popularityAll);
+
+            //==增加裝備庫欄位抓值
+           
+            sessionStorage.setItem('clothImg', clothImg);
+            sessionStorage.setItem('clothClass', clothClass);
+            sessionStorage.setItem('clothName', clothName);
             $.ajax({    
                 url: `php/citizenShop.php`,
                 data: {
-                    clothClass:clothClass,
-                    clothNo:clothNo,
-                    clothimg:clothimg,
                     memNo:memNo,
                     starCoin:starCoin,
                     balance:balance,
@@ -579,53 +610,17 @@
                     popularityAll:popularityAll,
                 },
                 type: 'GET',
-                success: function(){
-                    // alert(1111);
+                success: function(data){
+                    // alert(1111)
+                   console.log(data);
                    $('#coin').text(balance);
                    sessionStorage.setItem('starCoin',balance);
                    $('#popularity').text(popularityAll);
                    sessionStorage.setItem('popularity',popularityAll);
-
-                   
                 },
                 
             })
             
-        });
-    //增加裝備庫欄位
-        $("#alertHomeShop").click(function(e){
-            e.stopPropagation();
-            let popularity = $('#popularity').text();       //個人支持度
-            let popularityAdd = $('.popularityAdd').text(); //商品支持度
-            let clothImg = $('.hat').attr('src');           //商品路徑
-            let starCoin =$('#coin').text();                //個人金幣
-            let citizenShop = $('.citizenShop').text();     //商品價格
-            let clothNo = $('.clothNo').text();             //商品編號
-            let memNo = $('.memNo').text();                 //個人編號
-            let popularityAll = parseInt(popularity)+parseInt(popularityAdd); //買道具增加聲量
-            let balance = starCoin - citizenShop; //買道具扣錢
-            let clothName = $('.citizenClothName').text();       //裝備類型
-            let clothClass = $('.clothClass').text();       //裝備類型
-            let storage = sessionStorage;
-            // console.log(clothName)
-            // console.log(clothNo);
-            // console.log(clothImg);
-            // console.log(memNo);
-            // console.log(starCoin);
-            // console.log(citizenShop);
-            // console.log(balance);
-            // console.log(popularity);
-            // console.log(popularityAdd);
-            // console.log(popularityAll); 
-            sessionStorage.setItem('clothNo', clothNo);
-            sessionStorage.setItem('clothImg', clothImg);
-            sessionStorage.setItem('memNo', memNo);
-            sessionStorage.setItem('starCoin', starCoin);
-            sessionStorage.setItem('balance', balance);
-            sessionStorage.setItem('citizenShop', citizenShop);
-            sessionStorage.setItem('balance', popularityAll);
-            sessionStorage.setItem('clothClass', clothClass);
-            sessionStorage.setItem('clothName', clothName);
             $.ajax({    
                 url: `php/citizenShopInsert.php`,
                 data: {
@@ -647,8 +642,51 @@
                 },
                 
             })
+        }else{
+                alert("宇宙幣不足，請至公民學堂賺取宇宙幣");
+            };
+            
+        });
+    //增加裝備庫欄位
+        // $("#alertHomeShop").click(function(e){
+    
            
-        });  
+        //     let clothImg = $('.hat').attr('src');           //商品路徑
+        //     let clothNo = $('.clothNo').text();             //商品編號
+        //     let memNo = $('.memNo').text();                 //個人編號
+        //     let clothName = $('.citizenClothName').text();       //裝備類型
+        //     let clothClass = $('.clothClass').text();       //裝備類型
+        //     let storage = sessionStorage;
+            
+
+        //     sessionStorage.setItem('clothNo', clothNo);
+        //     sessionStorage.setItem('clothImg', clothImg);
+        //     sessionStorage.setItem('memNo', memNo);
+        //     sessionStorage.setItem('clothClass', clothClass);
+        //     sessionStorage.setItem('clothName', clothName);
+        //     $.ajax({    
+        //         url: `php/citizenShopInsert.php`,
+        //         data: {
+        //             clothNo:clothNo,
+        //             clothImg:clothImg,
+        //             memNo:memNo,
+        //             clothClass:clothClass,
+        //             clothName:clothName,
+        //             // starCoin:starCoin,
+        //             // balance:balance,
+        //             // citizenShop:citizenShop,
+        //             // popularityAll:popularityAll,
+        //         },
+        //         type: 'GET',
+        //         success: function(){
+        //             // alert(2222);
+            
+                 
+        //         },
+                
+        //     })
+           
+        // });  
     //------今日商品結束  
 
      // 現有商品撈出
@@ -881,43 +919,62 @@ StarsBall();
     
     //修改會員資料
     $('body').on('click', '#memDataButton', function () {
-            let titleName= document.getElementById('titleName').innerText=$('#memDataLock1').val();
-            let memNo = $('.memNo').text();
-            let memName = $('.memName').text();
-            let memPsw = $('.memPsw').val();
-            let email = $('.email').val();
-            let storage = sessionStorage;
-            // console.log(titleName);
-            // console.log(memNo);
-            // console.log(memName);
-            // console.log(memPsw);
-            // console.log(email);
-            sessionStorage.setItem('memNo', memNo);
-            sessionStorage.setItem('titleName', titleName);
-            sessionStorage.setItem('memPsw', memPsw);
-            sessionStorage.setItem('email', email);
-                $.ajax({
-                    url: `php/homeCitizenModify.php`,
-                    data: {
-                        titleName,
-                        memNo,
-                        memName: memName,
-                        memPsw,
-                        email,
-                    },
-                    type: 'POST',
-                    success: function (memEditRows) {
-                        // var afterEdit = JSON.parse(memEditRows);
-                        // console.log(afterEdit);
-                    },
-                })
-                $("#memberData").css("display","none");
-                $("#memDataLock3").attr("disabled","false")
+       
+        let titleName= document.getElementById('titleName').innerText=$('#memDataLock1').val();
+        let memNo = $('.memNo').text();
+        let memName = $('.memName').text();
+        let memPsw = $('.memPsw').val();
+        let email = $('.email').val();
+        let storage = sessionStorage;
+        console.log(titleName);
+        console.log(memNo);
+        console.log(memName);
+        console.log(memPsw);
+        console.log(email);
+        sessionStorage.setItem('memNo', memNo);
+        sessionStorage.setItem('titleName', titleName);
+        sessionStorage.setItem('memPsw', memPsw);
+        sessionStorage.setItem('email', email);
+        $.ajax({
+            url: `php/homeCitizenModify.php`,
+            data: {
+                titleName,
+                memNo,
+                memName: memName,
+                memPsw,
+                email,
+            },
+            type: 'POST',
+            success: function (memEditRows) {
+                // var afterEdit = JSON.parse(memEditRows);
+                // console.log(afterEdit);
+            },
+        })
+        $("#memberData").css("display","none");
+        $("#memDataLock3").attr("disabled","false");
+
+
+        // 稱號寫入資料庫
+        saveTitle();
+        function saveTitle(){
+            let titleName = document.getElementById('titleName').innerText;
+            $.ajax({
+                url: `php/saveTitle.php`,
+                data: {
+                    titleName,
+                },
+                type: 'GET',
+                success: function (memEditRows) {
+                    alert(titleName);
+                },
             })
-                
-    
-    
-        </script>
+        }
+        
+    })
+        
+
+
+</script>
     
 </body>
 </html>
