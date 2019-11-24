@@ -230,7 +230,7 @@ function getVoted() {
                 }
             }
         } else {
-            alert(`發生錯誤: ${xhr.status}`);
+            // alert(`發生錯誤: ${xhr.status}`);
         }
     }
 }
@@ -260,7 +260,7 @@ function voteLaunch() {
     //要設定在發起連結之後,發送請求之前
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     //POST的參數，這裡要增加發布時間
-    var data = `memNo=${$class(".memNo").value} & votQ=${$class(".voteTitle").value} & votA=${$id("voteSelectorA").value} & votB=${$id("voteSelectorB").value}`;
+    var data = `votQ=${$class(".voteTitle").value} & votA=${$id("voteSelectorA").value} & votB=${$id("voteSelectorB").value}`;
     //送出資料
     xhr.send(data);
 

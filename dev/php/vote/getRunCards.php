@@ -3,10 +3,10 @@ $errMsg = "";
 try {
 	require_once("../connectPDO.php");
 	$sql_runCards = 
-	"select *
-	from `vote` v,`member` m
-	where v.memNo=m.memNo and v.votDeadline>=now()
-	order by v.votNo desc";
+		"SELECT *
+		FROM `vote` v,`member` m
+		WHERE v.memNo=m.memNo and v.votDeadline>=now()
+		ORDER BY v.votNo DESC";
 	$runCards = $pdo->prepare($sql_runCards);
 	$runCards->execute();
 
