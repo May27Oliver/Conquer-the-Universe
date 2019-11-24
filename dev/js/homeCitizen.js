@@ -121,19 +121,19 @@ $id("alertWindowWrap").style.display = "none";
 
 //====換外觀道具
 //設定帽子換道具
-function showEqui( e ){
-let tagSrc =e.target.src;
-console.log(tagSrc);
-document.getElementById("Equi").src = tagSrc.replace("","");
-document.getElementById("Equi").style.display = "block";
-}
+// function showEqui( e ){
+// let tagSrc =e.target.src;
+// console.log(tagSrc);
+// document.getElementById("Equi").src = tagSrc.replace("","");
+// document.getElementById("Equi").style.display = "block";
+// }
 
-function showEquiHand(e){
-let HadSrc =e.target.src;
-console.log(HadSrc);
-document.getElementById("EquiHand").src = HadSrc.replace("","");
-document.getElementById("EquiHand").style.display = "block";
-}
+// function showEquiHand(e){
+// let HadSrc =e.target.src;
+// console.log(HadSrc);
+// document.getElementById("EquiHand").src = HadSrc.replace("","");
+// document.getElementById("EquiHand").style.display = "block";
+// }
 
 //設定解除帽子道具alert跳出
 function removeEqui(){
@@ -208,22 +208,22 @@ $id("alertButton").onclick = alertCancelMemData;
 $id("cancelButton").onclick = alertMemData;
 
 //===換帽子道具
-let imgs = document.querySelectorAll(".propBox .hat");
-for(let i=0; i<imgs.length; i++){
-    imgs[i].onclick = showEqui;
-    console.log(imgs[i]);
-}
+// let imgs = document.querySelectorAll(".propBox .hat");
+// for(let i=0; i<imgs.length; i++){
+//     imgs[i].onclick = showEqui;
+//     console.log(imgs[i]);
+// }
 
 //===解除帽子道具
 $id("Equi").onclick = removeEqui;
 $id("alertEqui").onclick = alertRemoveEqui;
 
 //===換手上道具
-let handImgs = document.querySelectorAll(".propBox .hand");
-for(let i=0; i<handImgs.length; i++){
-    handImgs[i].onclick = showEquiHand;
-    console.log(handImgs[i]);
-}
+// let handImgs = document.querySelectorAll(".propBox .hand");
+// for(let i=0; i<handImgs.length; i++){
+//     handImgs[i].onclick = showEquiHand;
+//     console.log(handImgs[i]);
+// }
 
 //===解除手上道具
 $id("EquiHand").onclick = removeEquiHand;
