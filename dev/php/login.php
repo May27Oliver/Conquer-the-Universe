@@ -18,12 +18,14 @@ try{
     $_SESSION["memName"] = $memRow["memName"];
     $_SESSION["email"] = $memRow["email"];
     $_SESSION["starNo"] = $memRow["starNo"];
+    $_SESSION["starCoin"] = $memRow["starCoin"]; //新增
     
     $arr["memNo"] = $memRow["memNo"];
     $arr["memId"] = $memRow["memId"];
     $arr["memName"] = $memRow["memName"];
     $arr["email"] = $memRow["email"];
     $arr["starNo"] = $memRow["starNo"];
+    $arr["starCoin"] = $memRow["starCoin"]; //新增
     $arr["error"] = "";
 
     }else{
