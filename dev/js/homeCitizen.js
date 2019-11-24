@@ -12,36 +12,8 @@
         $('#tab01').css('display','none');
         $('#tab02').css('display','inline-block');
     });
-    //hover帽子道具img出現叉叉
-    $("#EquiBox img").mouseover(function(){
-        $(".EquiClose1").css("display","block");
-    }); 
-    $("#EquiBox img").mouseout(function(){
-        $(".EquiClose1").css("display","none");
-    });
-    // moveEquiIn1
-    $(".EquiClose1").mouseover(function(){
-        $(".EquiClose1").css("display","block");
-    });
-
-    $(".EquiClose1").mouseout(function(){
-        $(".EquiClose1").css("display","none");
-    });
-    //hover手上道具img出現叉叉
-    $("#EquiBoxHand img").mouseover(function(){
-        $(".EquiClose2").css("display","block");
-    });
-    $("#EquiBoxHand img").mouseout(function(){
-        $(".EquiClose2").css("display","none");
-    });
-    // moveEquiIn2
-    $(".EquiClose2").mouseover(function(){
-        $(".EquiClose2").css("display","block");
-    });
-
-    $(".EquiClose2").mouseout(function(){
-        $(".EquiClose2").css("display","none");
-    });
+    
+    
 });
 //=====倒數計時程式=====       
 var aI = document.getElementsByTagName("i");
@@ -178,8 +150,9 @@ $id("alertHomeShop").style.display = "inline-block";
 }
 function alertRemoveHomeShop(){
 $id("alertWindowWrap").style.display = "none";
-$id("today").style.display = "none";
+// $id("today").style.display = "none";
 // $id("hat2").style.display = "block";
+$id("today").remove();
 
 }
 

@@ -503,33 +503,83 @@
             margin: auto;
 
         }
-
-        .oneEyeBox {
-            position: absolute;
-            top: 62px;
-            left: 65px;
-            width: 95px;
-            height: 95px;
-
-            // background-color: #333;
-            #Equi {
+        .citizenFat{
+            margin-top: 210px;
+            margin-bottom: 100px;
+        }
+        #EquiBox{
+            img{
                 width: 80%;
                 height: 80%;
                 display: block;
                 margin: auto;
                 cursor: pointer;
-                position: relative;
+                
             }
         }
+        #EquiBoxHand{
+            img {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                width: 75px;
+                height: 105px;
+                cursor: pointer;
 
-        .oneEyeHandBox {
+            }
+        }
+        .oneEyeBox{
+            position: absolute;
+            top: 15px;//肥仔-40px,兔兔62px,派大星15px
+            left:63px;
+            width: 95px;
+            height: 95px;
+           
+            }
+        .oneEyeHandBox{
+            position: absolute;
+            top: 180px;//肥仔50px,兔兔210px,派大星180px
+            right:-30px;
+            width: 75px;
+            height: 105px;
+            cursor: pointer;
+            
+        }
+        .fatBox{
+            position: absolute;
+            top: -40px;//肥仔-40px,兔兔62px
+            left:65px;
+            width: 95px;
+            height: 95px;
+           
+        }
+        .fatHandBox{
+            position: absolute;
+            top: 50px;//肥仔50px,兔兔210px
+            right:-30px;
+            width: 75px;
+            height: 105px;
+            cursor: pointer;
+           
+        }
+
+        .rabbitBox {
+            position: absolute;
+            top: 62px;
+            left: 65px;
+            width: 95px;
+            height: 95px;
+          
+        }
+
+        .rabbitHandBox {
             position: absolute;
             bottom: 90px;
             right: -30px;
             width: 95px;
             height: 95px;
 
-            #EquiHand {
+            img {
                 position: absolute;
                 top: 0px;
                 right: 0px;
