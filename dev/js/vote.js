@@ -44,7 +44,7 @@ function showRunCards(jsonStr) {
                     <form method="POST" name="voteForm" id="voteForm">
                         <h3>發起公民投票</h3>
                         <input type="hidden" name="memNo" class="memNo">
-                        <p id="memName">姓名：$_SESSION['memName']</p>
+                        <p id="memName">暱稱：</p>
                         <p>題目：<input type="text" name="voteTitle" class="voteTitle" size="20" maxlength="10"
                                 placeholder="最多10個字" required></p>
                         <p>時間： <time id="afterWeek">2019/12/06</time></p>
@@ -296,6 +296,7 @@ function voting() {
                     var xhr = new XMLHttpRequest();
                     xhr.onload = function () {
                         if (xhr.status == 200) {
+                            pieProduce();
                             $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得宇宙幣10元！";
                             $class(".voteOkay").style.display = ""
                             $class(".voteAlertDoing").style.display = "none";
@@ -335,6 +336,7 @@ function voting() {
                     var xhr = new XMLHttpRequest();
                     xhr.onload = function () {
                         if (xhr.status == 200) {
+                            pieProduce();
                             $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得宇宙幣10元！";
                             $class(".voteOkay").style.display = ""
                             $class(".voteAlertDoing").style.display = "none";
