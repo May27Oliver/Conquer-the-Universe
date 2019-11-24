@@ -276,60 +276,60 @@
     }
     getMember();
     
-    function memNametitle(){
-      var xhr = new XMLHttpRequest();
-      xhr.onload=function (){
-           if( xhr.status == 200 ){
-            memtitle = JSON.parse(xhr.responseText);
-                HTMLstr = "";
-                for(var i=0; i<1; i++ ){
-                    HTMLstr += `
-                    <h2>編輯會員資料</h2>
-                        <div class="col-12 col-md-12 wrapDataItem" id="wrapDataItem">
-                            <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員編號 :</label>
-                                <span class="col-md-5 memNo" id="memNo">${member[i].memNo}</span>
-                            </div>
-                        <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
-                            <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色稱號 :</label>
-                            <select name="titleName" id="memDataLock1" class="memDataLock1" disabled="">
+    // function memNametitle(){
+    //   var xhr = new XMLHttpRequest();
+    //   xhr.onload=function (){
+    //        if( xhr.status == 200 ){
+    //         memtitle = JSON.parse(xhr.responseText);
+    //             HTMLstr = "";
+    //             for(var i=0; i<1; i++ ){
+    //                 HTMLstr += `
+    //                 <h2>編輯會員資料</h2>
+    //                     <div class="col-12 col-md-12 wrapDataItem" id="wrapDataItem">
+    //                         <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員編號 :</label>
+    //                             <span class="col-md-5 memNo" id="memNo">${member[i].memNo}</span>
+    //                         </div>
+    //                     <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+    //                         <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色稱號 :</label>
+    //                         <select name="titleName" id="memDataLock1" class="memDataLock1" disabled="">
                             
-                            </select>
-                            <img src="img/pencil.png" id="memDataEdit1" class="memDataEdit1" alt="editIcon">
-                        </div>
-                        <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
-                            <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色暱稱 :
-                            </label>
-                            <span class="col-md-5 memName" id="memName">${member[i].memName}</span>  
-                        </div>
-                        <div class="col-12 col-md-12 wrapDataItem">
-                            <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員帳號 : </label>
-                            <span class="col-md-5 memId">${member[i].memId}</span>
-                        </div>
-                        <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
-                            <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員密碼 :
-                            </label>
-                            <input id="memDataLock2" class="col-5 col-md-5 col-lg-5 col-xl-5 memPsw memDataLock"  disabled="" type="password" value="${member[i].memPsw}">
-                            <img src="img/pencil.png" id="memDataEdit2" alt="editIcon">
-                        </div>
-                        <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
-                            <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員信箱 :
-                            </label>
-                            <input id="memDataLock3" class="col-5 col-md-5 col-lg-5 col-xl-5 email memDataLock"  disabled="" type="email" value="${member[i].email}">
-                            <img src="img/pencil.png" id="memDataEdit3" alt="editIcon">
-                        </div>
-                    `;
-                }
-                document.getElementById('memDataBox').innerHTML =HTMLstr;
-           }else{
-            alert( xhr.status );
-           }
-      }
+    //                         </select>
+    //                         <img src="img/pencil.png" id="memDataEdit1" class="memDataEdit1" alt="editIcon">
+    //                     </div>
+    //                     <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+    //                         <label class="col-5 col-md-5 col-lg-5 col-xl-5">角色暱稱 :
+    //                         </label>
+    //                         <span class="col-md-5 memName" id="memName">${member[i].memName}</span>  
+    //                     </div>
+    //                     <div class="col-12 col-md-12 wrapDataItem">
+    //                         <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員帳號 : </label>
+    //                         <span class="col-md-5 memId">${member[i].memId}</span>
+    //                     </div>
+    //                     <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+    //                         <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員密碼 :
+    //                         </label>
+    //                         <input id="memDataLock2" class="col-5 col-md-5 col-lg-5 col-xl-5 memPsw memDataLock"  disabled="" type="password" value="${member[i].memPsw}">
+    //                         <img src="img/pencil.png" id="memDataEdit2" alt="editIcon">
+    //                     </div>
+    //                     <div class="col-12 col-md-12 wrapDataItem wrapEditIcon">
+    //                         <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員信箱 :
+    //                         </label>
+    //                         <input id="memDataLock3" class="col-5 col-md-5 col-lg-5 col-xl-5 email memDataLock"  disabled="" type="email" value="${member[i].email}">
+    //                         <img src="img/pencil.png" id="memDataEdit3" alt="editIcon">
+    //                     </div>
+    //                 `;
+    //             }
+    //             document.getElementById('memDataBox').innerHTML =HTMLstr;
+    //        }else{
+    //         alert( xhr.status );
+    //        }
+    //   }
       
-      var url = "php/memNameBoxtitle.php?";
-      xhr.open("Get", url, true);
-      xhr.send( null );
-    }
-    memNametitle();
+    //   var url = "php/memNameBoxtitle.php?";
+    //   xhr.open("Get", url, true);
+    //   xhr.send( null );
+    // }
+    // memNametitle();
     
     
     
@@ -380,7 +380,7 @@
             badge = JSON.parse(xhr.responseText);
             var img=badge['badgeImg'];
             document.getElementById('badgeImg').src=`img/${img}`;
-            alert( xhr.status );
+            
             // console.log(badge['badgeImg']);
             }
         }

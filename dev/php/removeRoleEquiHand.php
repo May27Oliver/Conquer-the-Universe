@@ -2,7 +2,7 @@
 session_start();
 $errMsg = "";
 $memNo=$_SESSION["memNo"];
-print_r($_GET);
+// print_r($_GET);
 try {
 	require_once("connectPDO.php");
     $sql="update `membercloth` set onDuty=0 WHERE `memNo` = {$memNo} and `clothClass` = 'EquiHand'";
