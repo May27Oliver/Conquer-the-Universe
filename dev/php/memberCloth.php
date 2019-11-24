@@ -5,7 +5,7 @@ $errMsg="";
 $memNo=$_SESSION["memNo"];
 try{
   require_once("connectPDO.php");
-  $sql = "select memNo,clothNo,clothimg,clothName,clothClass from `membercloth` WHERE memNo = {$memNo}" ;
+  $sql = "select * from `membercloth` WHERE memNo = {$memNo}" ;
   // $sql = "select clothNo,clothimg,clothName from `clothinmarket` where clothNo" ;
   $membercloth=$pdo->query($sql);
   $arr=[];

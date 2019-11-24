@@ -5,10 +5,10 @@ $errMsg="";
 $starNo=$_SESSION["starNo"];
 try{
   require_once("connectPDO.php");
-  $sql2 = "select starsRole from `stars` WHERE `stars`.`starNo` = {$starNo}" ;
+  $sql2 = "select starsRole,starNo from `stars` WHERE `stars`.`starNo` = {$starNo}" ;
   $starsRole=$pdo->query($sql2);
   $arrStarsRole=[];
-  for($i=0;$i<6;$i++){
+  for($i=0;$i<1;$i++){
     $starsRoleRow=$starsRole->fetch(PDO::FETCH_ASSOC);
     $arrStarsRole[$i]=$starsRoleRow;
 }
