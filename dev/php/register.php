@@ -7,8 +7,8 @@
     $starSelect=$_POST["starSelect"];
     try{
         if(isset($_POST["memIdRig"])==true || isset($_POST["starSelect"])==true || isset($_POST["memPswRig"])==true || isset($_POST["memEmailRig"])==true){
-           $sql="INSERT INTO `member`(starNo,badgeNo,memId,memPsw,memName,email,popularity,wisdom,charisma,finance,starCoin) 
-              VALUES (:starSelect,0,:memIdRig,:memPswRig,:memNameRig,:memEmailRig,0,0,0,0,0)";
+           $sql="INSERT INTO `member`(starNo,badgeNo,memId,memPsw,memName,email,popularity,wisdom,charisma,finance,starCoin,titleName) 
+              VALUES (:starSelect,0,:memIdRig,:memPswRig,:memNameRig,:memEmailRig,0,0,0,0,300,'菜逼巴')";
             $member=$pdo->prepare($sql);
             $member->bindValue(":memIdRig",$memIdRig);
             $member->bindValue(":starSelect",$starSelect);
@@ -16,6 +16,8 @@
             $member->bindValue(":memNameRig",$memNameRig);
             $member->bindValue(":memEmailRig",$memEmailRig);
             $member->execute(); 
+
+            // echo "資料創建成功";
         }else{
             echo "有資料尚未填寫完成哦~";
         }
