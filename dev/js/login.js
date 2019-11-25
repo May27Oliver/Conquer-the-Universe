@@ -188,6 +188,8 @@ window.addEventListener("load",function(){
         loginBtn.style.width=50+"px"
         loginBtn.innerHTML = "登出";
         console.log(member.starCoin);
+        var nameWord=document.getElementById("memberName").innerText;
+        
       }
     }
     xhr.open("get", "php/getLoginInfo.php", true);

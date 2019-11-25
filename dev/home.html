@@ -25,12 +25,12 @@
         <img src="img/home_img/UFO.png" alt="">
     </div>
     <div class="ufo ufo2"  
-    data-0="opacity:0;transform:rotate(5deg);top:10%;right:-30%;" 
-    data-1100="opacity:1;transform:rotate(5deg);top:30%;right:0%;" 
-    data-3300="opacity:.6;transform:rotate(-5deg);top:30%;right:90%;" 
-    data-4300="opacity:1;transform:rotate(5deg);top:40%;right:-5%;" 
-    data-5500="opacity:.5;transform:rotate(-10deg);top:30%;right:80%;"
-    data-6000="opacity:0;transform:rotate(5deg);top:45%;right:-20%;">
+    data-0="opacity:0;top:10%;right:-30%;" 
+    data-1100="opacity:1;top:30%;right:0%;" 
+    data-3300="opacity:.6;top:30%;right:100%;" 
+    data-4300="opacity:1;top:45%;right:-5%;" 
+    data-5500="opacity:.5;top:30%;right:90%;"
+    data-6000="opacity:0;top:45%;right:-20%;">
         <img src="img/home_img/UFO.png" alt="">
     </div>
             
@@ -167,7 +167,7 @@
     
     <section class="joinPlanet container">
         <div class="joinTitle">
-            <h2>加入星球</h2>
+            <h2 id="joinStar">加入星球</h2>
         </div>
         <div class="slider slider_circle_10 pla_slec">
             <div class="pla_slec_in" id="pla_slec_1">
@@ -503,8 +503,20 @@
 <!-- <script src=""></script> -->
 <script>
     $(document).ready(function(){
-       
-        
+        $(function(){
+            $("#back_to_top").click(function(){
+                $("html,body").animate({ scrollTop: 0 }, "normal");
+                // $(".back_to_top").css('bottom','50px');  
+                return false;
+            });
+            if(document.body.clientWidth<=992){
+                goS();
+            } else{
+                goM();
+
+            } 
+              
+        });
 
         function goS(){
             $("#back_to_top").attr("class","back_to_top");
@@ -538,20 +550,7 @@
             }
         }
         
-        $(function(){
-            $("#back_to_top").click(function(){
-                $("html,body").animate({ scrollTop: 0 }, "normal");
-                // $(".back_to_top").css('bottom','50px');  
-                return false;
-            });
-            if(document.body.clientWidth<=992){
-                goS();
-            } else{
-                goM();
-
-            } 
-              
-        });
+       
         
     
         var s = skrollr.init();
@@ -738,7 +737,14 @@
             xhr.send( null );
         }
         
-           
+        
+        // console.log(mbName);
+        // if(nameWord==""){
+        //     alert(000);
+        // }else{
+        //     alert(111);
+        // }
+
         //當你想用alert視窗時,請在自己程式下事件處理程序
         //ex:點button跑出alert,改變訊息 <button id=memDataCancel>
 
@@ -747,21 +753,80 @@
         $("#slec_btn_1").click(function(){
             $("#alertWindowWrap").css('display','block');
             document.querySelector(".alertContent").innerText = "是否確認成為派大星的公民?";
+            var nameWord=document.getElementById("memberName").innerText;
+            if(nameWord && $id("rankAll")){
+                $('#alertButton').click(function(){
+                    $("#alertButton").css('display','none');
+                    $("#alertButton2").css('display','inline-block');
+                    document.querySelector(".alertContent").innerText="您已選擇過星球";
+                    $('#alertButton2').click(function(){
+                        $("#alertWindowWrap").css('display','none');
+                        $("#alertButton").css('display','inline-block');
+                        $("#alertButton2").css('display','none');
+                    });
+                });
+            }else{
+                $('#alertButton').click(function(){
+                // document.querySelector(".alertContent").innerText = "登入/註冊會員";
+                    $("#alertWindowWrap").css('display','none');
+                    loginRegister();
+                });
+            }
         });
         $("#slec_btn_2").click(function(){
             $("#alertWindowWrap").css('display','block');
             document.querySelector(".alertContent").innerText = "是否確認成為肥宅星的公民?";
+            var nameWord=document.getElementById("memberName").innerText;
+            if(nameWord && $id("rankAll")){
+                $('#alertButton').click(function(){
+                    $("#alertButton").css('display','none');
+                    $("#alertButton2").css('display','inline-block');
+                    document.querySelector(".alertContent").innerText="您已選擇過星球";
+                    $('#alertButton2').click(function(){
+                        $("#alertWindowWrap").css('display','none');
+                        $("#alertButton").css('display','inline-block');
+                        $("#alertButton2").css('display','none');
+                    });
+                });
+            }else{
+                $('#alertButton').click(function(){
+                // document.querySelector(".alertContent").innerText = "登入/註冊會員";
+                    $("#alertWindowWrap").css('display','none');
+                    loginRegister();
+                });
+            }
         });
         $("#slec_btn_3").click(function(){
             $("#alertWindowWrap").css('display','block');
             document.querySelector(".alertContent").innerText = "是否確認成為兔兔星的公民?";
+            var nameWord=document.getElementById("memberName").innerText;
+            if(nameWord && $id("rankAll")){
+                $('#alertButton').click(function(){
+                    $("#alertButton").css('display','none');
+                    $("#alertButton2").css('display','inline-block');
+                    document.querySelector(".alertContent").innerText="您已選擇過星球";
+                    $('#alertButton2').click(function(){
+                        $("#alertWindowWrap").css('display','none');
+                        $("#alertButton").css('display','inline-block');
+                        $("#alertButton2").css('display','none');
+                    });
+                });
+            }else{
+                $('#alertButton').click(function(){
+                // document.querySelector(".alertContent").innerText = "登入/註冊會員";
+                    $("#alertWindowWrap").css('display','none');
+                    loginRegister();
+                });
+            }
         });
         $('#cancelButton').click(function(){
             $("#alertWindowWrap").css('display','none');
         });
-        $('#alertButton').click(function(){
-            document.querySelector(".alertContent").innerText = "登入/註冊會員";
-        });
+        // $('#alertButton').click(function(){
+        //     // document.querySelector(".alertContent").innerText = "登入/註冊會員";
+        //     $("#alertWindowWrap").css('display','none');
+        //     loginRegister();
+        // });
        
         $(".ufo1").fadeOut(1000);
 
