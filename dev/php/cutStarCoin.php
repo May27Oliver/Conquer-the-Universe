@@ -11,17 +11,10 @@ try{
     $moneyCount = $money->fetch(PDO::FETCH_ASSOC);
     if($moneyCount["starCoin"]>100){
         $moneyCut=100;
-        if($event==0 || $event==2){
-            //支持度扣一百
-            $sql="UPDATE `member`
-            SET `starCoin` = starCoin-{$moneyCut},`popularity` = popularity-{$popNum}
-            WHERE `member`.`memNo` = {$memberNo}";
-        }elseif($event==1){
-            //支持度加一百
-            $sql="UPDATE `member`
-            SET `starCoin` = starCoin-{$moneyCut},`popularity` = popularity+{$popNum}
-            WHERE `member`.`memNo` = {$memberNo}";
-        }
+        $sql="UPDATE `member`
+        SET `starCoin` = starCoin-{$moneyCut}
+        WHERE `member`.`memNo` = {$memberNo}";
+
         $pdo->exec($sql);
 
         $sql="select starCoin from `member` where memNo={$memberNo}";
@@ -32,7 +25,23 @@ try{
 
         $arr["starCoin"] = $number["starCoin"]; //新增
 
-        echo $number["starCoin"];
+        echo $number["starCoin"];//回傳宇宙幣數值
+        
+
+        if($event==0 || $event==2){
+            //支持度扣一百
+            $sql="UPDATE `member`
+            SET `popularity` = popularity-{$popNum}
+            WHERE `member`.`memNo` = {$memberNo}";
+        }elseif($event==1){
+            //支持度加一百
+            $sql="UPDATE `member`
+            SET `popularity` = popularity+{$popNum}
+            WHERE `member`.`memNo` = {$memberNo}";
+        }
+
+        $pdo->exec($sql);
+        
     }else{
         echo "0";
     }
