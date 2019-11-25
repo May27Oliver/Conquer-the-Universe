@@ -145,7 +145,7 @@ function gashapon(){
         alert("您尚未登入，請先登入或註冊會員～");
     }else{
         var xhr=new XMLHttpRequest();
-    
+        
         xhr.onload=function(){
             let starCoin =xhr.responseText;
             console.log(starCoin);
