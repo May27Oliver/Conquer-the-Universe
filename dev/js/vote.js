@@ -21,6 +21,7 @@ function showRunCards(jsonStr) {
             `<div class="voteCard col-6 col-md-4 col-lg-3">
                 <div class="voteWrapper">
                     <div class="voteChart">
+                        <img src="img/vote/unvoted.png" alt="未投票" class="unVoted I-${voteRunData[i].votNo}">
                         <canvas class="votePie"></canvas>
                     </div>
                     <div class="voteText" data-votNo="${voteRunData[i].votNo}">
@@ -29,8 +30,8 @@ function showRunCards(jsonStr) {
                         <h3><b>${voteRunData[i].votQ}</b></h3>
                         <p>${voteRunData[i].votDeadline}截止</p>
                         <div class="voteSelectGroup" data-votNo="${voteRunData[i].votNo}">
-                            <button class="voteA">${voteRunData[i].votA}</button>
-                            <button class="voteB">${voteRunData[i].votB}</button>
+                            <button class="voteA A-${voteRunData[i].votNo}">${voteRunData[i].votA}</button>
+                            <button class="voteB B-${voteRunData[i].votNo}">${voteRunData[i].votB}</button>
                         </div>
                     </div>
                 </div>
@@ -219,14 +220,24 @@ function getVoted() {
     xhr.onload = function () {
         // 伺服器回應成功
         if (xhr.status === 200) {
+            console.log(xhr.responseText);
             //檢查session
             let voted = JSON.parse(xhr.responseText);
-            let voteSelectGroup = $classes("voteSelectGroup")
-            for (var i = 0; i < voteSelectGroup.length; i++) {
-                if (voted[i] == voteSelectGroup[i].data("votNo")) {
-                    alert(111);
-                } else {
-                    alert(000);
+            let voteSelectGroup = $classes(".voteSelectGroup");
+            for (var i = 0; i < voted.length; i++) {
+                for (var j = 0; j < voteSelectGroup.length; j++) {
+                    if(voted[i].votNo == voteSelectGroup[j].getAttribute("data-votNo")){
+                        // alert(voted[i].votNo+"已投過票囉~");
+                        var Aclass=`A-${voted[i].votNo}`;
+                        var Bclass=`B-${voted[i].votNo}`;
+                        var Iclass=`I-${voted[i].votNo}`;
+                        // alert(Aclass);
+                        $(`.${Aclass}`).attr("disabled","disabled");
+                        $(`.${Bclass}`).attr("disabled","disabled");
+                        $(`.${Iclass}`).css("display","none");
+                    }else{
+                        // alert(`發生錯誤: ${xhr.responseText}`);
+                    }
                 }
             }
         } else {
@@ -245,11 +256,13 @@ function voteLaunch() {
             // 伺服器回應成功
             if (xhr.status === 200) {
                 //[點擊]發起投票確認視窗-確認-(next:通知已新增投票)
+                let starCoin =xhr.responseText;
                 getRunCards();
                 $class(".voteDidNotice").innerHTML = "已新增投票議題，<br>恭喜您獲得宇宙幣50元！";
                 $class(".voteOkay").style.display = ""
                 $class(".voteAlertDoing").style.display = "none";
                 $class(".voteAlertDid").style.display = "block";
+                $id("coin").innerText = starCoin;
             } else {
                 // alert("發生錯誤: " + xhr.status);
             }
@@ -263,7 +276,6 @@ function voteLaunch() {
     var data = `votQ=${$class(".voteTitle").value} & votA=${$id("voteSelectorA").value} & votB=${$id("voteSelectorB").value}`;
     //送出資料
     xhr.send(data);
-
 }
 
 
@@ -277,7 +289,7 @@ function init() {
 }
 window.addEventListener("load", init, false);
 
-//[點擊]進行投票 (給demo的那幾個投票選項建立事件聆聽功能)
+//[點擊]進行投票
 function voting() {
     for (var i = 0; i < $classes(".voteA").length; i++) {
         //[跳窗]選項一
@@ -296,11 +308,17 @@ function voting() {
                     var xhr = new XMLHttpRequest();
                     xhr.onload = function () {
                         if (xhr.status == 200) {
+                            let starCoin =xhr.responseText;
                             pieProduce();
                             $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得宇宙幣10元！";
                             $class(".voteOkay").style.display = ""
                             $class(".voteAlertDoing").style.display = "none";
                             $class(".voteAlertDid").style.display = "block";
+                            $id("coin").innerText = starCoin;
+                            // $classes(".unVoted")[j].style.display = "none";
+                            // e.target.classList.add("voteSelected");
+                            // e.target.setAttribute("disabled");
+                            getVoted();
                         } else {
                             alert(xhr.responseText);
                         }
@@ -336,11 +354,18 @@ function voting() {
                     var xhr = new XMLHttpRequest();
                     xhr.onload = function () {
                         if (xhr.status == 200) {
+                            let starCoin =xhr.responseText;
                             pieProduce();
                             $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得宇宙幣10元！";
                             $class(".voteOkay").style.display = ""
                             $class(".voteAlertDoing").style.display = "none";
                             $class(".voteAlertDid").style.display = "block";
+                            $id("coin").innerText = starCoin;
+                            // $classes(".unVoted")[j].style.display = "none";
+                            // e.target.classList.add("voteSelected");
+                            // e.target.setAttribute("disabled");
+                            getVoted();
+                            //////////////////////////////////////////////
                         } else {
                             alert(xhr.responseText);
                         }
@@ -520,11 +545,12 @@ function endPieProduce() {
 
 //[AUTO]自動產生截止日期
 function voteDeadline() {
+    var weekSec = 7*24*60*60;
     var today = new Date();
     $id("afterWeek").innerText =
         today.getFullYear() + "/" +
-        parseInt(today.getMonth() + 1) + "/" +
-        parseInt(today.getDate() + 7) + "截止";
+        parseInt(today.getMonth() + 2) + "/" +
+        parseInt((today.getDate() + 7) - 30) + "截止";
 }
 
 setInterval(pieProduce, 5000);
@@ -564,7 +590,7 @@ function BTNs() {
                                 $class(".voteReportMessage").selectedIndex = "";
                             }
                         } else {
-                            alert(`發生錯誤:${xhr.status} | ${xhr.responseText}`);
+                            alert(`發生錯誤:${xhr.status}`);
                         }
                     }
                     //設定好所要連結的程式
