@@ -201,34 +201,14 @@
                   <table class="table table-hover">
                       <thead class="thead">
                           <tr>
-                              <th scope="col">會員編號</th>
-                              <th scope="col">會員暱稱</th>
-                              <th scope="col">會員帳號</th>
-                              <th scope="col">會員密碼</th>
-                              <th scope="col">會員信箱</th>
-                              <th scope="col">星球名稱</th>
-                              <th scope="col">支持度</th>
-                              <th scope="col">宇宙幣</th>
-                              <th scope="col">刪除會員</th>
+                              <th scope="col">新聞檢舉編號</th>
+                              <th scope="col">新聞編號</th>
+                              <th scope="col">新聞內容</th>
+                              <th scope="col">刪除新聞</th>
                           </tr>
                       </thead>
-                      <tbody class="accountSwitch" id="memData">
-                        <!-- <tr>
-                          <td>${memData[i]['memNo']}</td>
-                          <td>${memData[i]['memName']}</td>
-                          <td>${memData[i]['memId']}</td>
-                          <td>${memData[i]['memPsw']}</td>
-                          <td>${memData[i]['email']}</td>
-                          <td>${memData[i]['starName']}</td>
-                          <td>${memData[i]['popularity']}</td>
-                          <td>${member[i]['starCoin']}</td>
-                          <td>
-                              <label class="switch switch-3d switch-success">
-                                  <input class="switch-input video_q_status modified" type="checkbox" name="video_q_status">
-                                  <span class="switch-slider"></span>
-                              </label>
-                          </td>
-                        </tr> -->
+                      <tbody class="accountSwitch" id="newsReData">
+                       
                       </tbody>
                   </table>
                   
@@ -250,20 +230,16 @@
 
   <!-- 燈箱 -->  
   <div id="delBox">
-          
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">系統提示</h5>
       </div>
-    
-      
-        
+
         <div class="modal-body">
           <div class="form-row">
             <div class="form-group col-md-6">
-                是否確定要刪除會員帳號？
+                是否確定要刪除這則新聞？
             </div>
 
-          
           </div>
         </div>
         <div class="d-flex flex-row-reverse col-md-12">
@@ -279,6 +255,6 @@
   <script src="node_modules/pace-progress/pace.min.js"></script>
   <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
   <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
-  <script src="js/accountManage.js""></script>
+  <script src="js/newsReport.js""></script>
 </body>
 </html>
