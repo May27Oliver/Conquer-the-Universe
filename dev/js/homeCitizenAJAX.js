@@ -7,6 +7,7 @@ function myTitle(){
         if( xhr.status == 200 ){
             titleName = JSON.parse(xhr.responseText);
             document.getElementById('titleName').innerText=titleName[0]['titleName'];
+            // titleName.selected=true;
         }else{
             alert( xhr.status );
         }
@@ -721,6 +722,7 @@ StarsBall();
 $('body').on('click', '#memDataButton', function () {
 
 let titleName= document.getElementById('titleName').innerText=$('#memDataLock1').val();
+
 let memNo = $('.memNo').text();
 let memName = $('.memName').text();
 let memPsw = $('.memPsw').val();
@@ -765,7 +767,6 @@ function saveTitle(){
         },
         type: 'GET',
         success: function (memEditRows) {
-            alert(titleName);
         },
     })
 }
