@@ -202,22 +202,24 @@ function loadImage04(){
 }
 
 function gashapon(){
-    console.log(randIndex);
-    var xhr=new XMLHttpRequest();
+    if($id("coin").innerText==""){
+        alert("您尚未登入，請先登入或註冊會員～");
+    }else{
+        var xhr=new XMLHttpRequest();
     
-    xhr.onload=function(){
-      let starCoin =xhr.responseText;
-      console.log(starCoin);
-      if(starCoin<100){
-        alert("您的錢不夠囉，請去小學堂學習~");
-      }else{
-        $id("coin").innerText=starCoin;
-        gashaponLightBox();
-      }
+        xhr.onload=function(){
+            let starCoin =xhr.responseText;
+            console.log(starCoin);
+            if(starCoin<100){
+                alert("您的錢不夠囉，請去小學堂學習~");
+            }else{
+                $id("coin").innerText=starCoin;
+                gashaponLightBox();
+            }
+        }
+        //缺少一個判斷錢夠不夠玩一次的判斷式
+        //和支持度增減
+        xhr.open("get", `php/cutStarCoin.php?event=${randIndex}`, true);
+        xhr.send(null);
     }
-    //缺少一個判斷錢夠不夠玩一次的判斷式
-    //和支持度增減
-    xhr.open("get", `php/cutStarCoin.php?event=${randIndex}`, true);
-    xhr.send(null);
-    
 }

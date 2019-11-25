@@ -12,10 +12,9 @@ function $classes(classNames) {
 }
 
 //---------- 頁面載入 ----------//
-let voteRunData;
 //[進行中]產生卡片
 function showRunCards(jsonStr) {
-    voteRunData = JSON.parse(jsonStr);
+    let voteRunData = JSON.parse(jsonStr);
     let voteRunCards = "";
     for (var i = 0; i < voteRunData.length; i++) {
         voteRunCards +=
@@ -24,9 +23,9 @@ function showRunCards(jsonStr) {
                     <div class="voteChart">
                         <canvas class="votePie"></canvas>
                     </div>
-                    <div class="voteText">
+                    <div class="voteText" data-votNo="${voteRunData[i].votNo}">
                         <button class="report">檢舉</button>
-                        <small>發起人：${voteRunData[i].memName}</small>
+                        <small>發起：${voteRunData[i].memName}</small>
                         <h3><b>${voteRunData[i].votQ}</b></h3>
                         <p>${voteRunData[i].votDeadline}截止</p>
                         <div class="voteSelectGroup" data-votNo="${voteRunData[i].votNo}">
@@ -45,7 +44,7 @@ function showRunCards(jsonStr) {
                     <form method="POST" name="voteForm" id="voteForm">
                         <h3>發起公民投票</h3>
                         <input type="hidden" name="memNo" class="memNo">
-                        <p id="memName">姓名：$_SESSION['memName']</p>
+                        <p id="memName">暱稱：</p>
                         <p>題目：<input type="text" name="voteTitle" class="voteTitle" size="20" maxlength="10"
                                 placeholder="最多10個字" required></p>
                         <p>時間： <time id="afterWeek">2019/12/06</time></p>
@@ -144,7 +143,7 @@ function showEndCards(jsonStr) {
     BTNs();
 }
 
-//---------- PHP載入 ----------//
+//---------- AJAX: PHP載入 ----------//
 //[進行中]接卡片資料
 function getRunCards() {
     //產生XMLHttpRequest物件
@@ -187,6 +186,55 @@ function getEndCards() {
     xhr.send(null);
 }
 
+//[Session]檢查使用者是否為會員
+function getMember() {
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        // 伺服器回應成功
+        if (xhr.status === 200) {
+            //檢查session
+            let member = JSON.parse(xhr.responseText);
+            if (member.memName) {
+                $id("memName").innerText = `暱稱： ${member.memName}`;
+            } else {
+                $id("memName").innerHTML = `暱稱： **請先登入會員**`;
+            }
+        } else {
+            // alert(`發生錯誤: ${xhr.status}`);
+        }
+    }
+    //設定好所要連結的程式
+    xhr.open("GET", "php/vote/getMember.php", true);
+    //送出資料
+    xhr.send(null);
+}
+
+//[Session]檢查使用者是否為已投票
+function getVoted() {
+    let xhr = new XMLHttpRequest();
+    //設定好所要連結的程式
+    xhr.open("GET", "php/vote/getVoted.php", true);
+    //送出資料
+    xhr.send(null);
+    xhr.onload = function () {
+        // 伺服器回應成功
+        if (xhr.status === 200) {
+            //檢查session
+            let voted = JSON.parse(xhr.responseText);
+            let voteSelectGroup = $classes("voteSelectGroup")
+            for (var i = 0; i < voteSelectGroup.length; i++) {
+                if (voted[i] == voteSelectGroup[i].data("votNo")) {
+                    alert(111);
+                } else {
+                    alert(000);
+                }
+            }
+        } else {
+            // alert(`發生錯誤: ${xhr.status}`);
+        }
+    }
+}
+
 //[新增議題]存進資料庫
 function voteLaunch() {
     //產生XMLHttpRequest物件
@@ -198,12 +246,12 @@ function voteLaunch() {
             if (xhr.status === 200) {
                 //[點擊]發起投票確認視窗-確認-(next:通知已新增投票)
                 getRunCards();
-                $class(".voteDidNotice").innerHTML = "已新增投票議題，<br>恭喜您獲得50宇宙幣！";
+                $class(".voteDidNotice").innerHTML = "已新增投票議題，<br>恭喜您獲得宇宙幣50元！";
                 $class(".voteOkay").style.display = ""
                 $class(".voteAlertDoing").style.display = "none";
                 $class(".voteAlertDid").style.display = "block";
             } else {
-                alert("發生錯誤: " + xhr.status);
+                // alert("發生錯誤: " + xhr.status);
             }
         }
     }
@@ -212,35 +260,10 @@ function voteLaunch() {
     //要設定在發起連結之後,發送請求之前
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     //POST的參數，這裡要增加發布時間
-    var data = `memNo=${$class(".memNo").value} & votQ=${$class(".voteTitle").value} & votA=${$id("voteSelectorA").value} & votB=${$id("voteSelectorB").value}`;
+    var data = `votQ=${$class(".voteTitle").value} & votA=${$id("voteSelectorA").value} & votB=${$id("voteSelectorB").value}`;
     //送出資料
     xhr.send(data);
 
-}
-
-//[Session]檢查使用者使否為會員
-function getMember(){
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-        if (xhr.readyState === 4) {
-            // 伺服器回應成功
-            if (xhr.status === 200) {
-                //檢查session
-                if(member.memName){
-                    $id("memName").innerHTML = member.memName;
-
-                } else {
-                    $id("memName").innerHTML = "--請先登入會員--";
-                }
-            } else {
-                alert("發生錯誤: " + xhr.status);
-            }
-        }
-    }
-    //設定好所要連結的程式
-    xhr.open("GET", "php/vote/getMember.php", true);
-    //送出資料
-    xhr.send(null);
 }
 
 
@@ -249,6 +272,7 @@ function init() {
     getRunCards();
     getEndCards();
     getMember();
+    getVoted();
     BTNs();
 }
 window.addEventListener("load", init, false);
@@ -272,7 +296,8 @@ function voting() {
                     var xhr = new XMLHttpRequest();
                     xhr.onload = function () {
                         if (xhr.status == 200) {
-                            $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得10宇宙幣！";
+                            pieProduce();
+                            $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得宇宙幣10元！";
                             $class(".voteOkay").style.display = ""
                             $class(".voteAlertDoing").style.display = "none";
                             $class(".voteAlertDid").style.display = "block";
@@ -311,7 +336,8 @@ function voting() {
                     var xhr = new XMLHttpRequest();
                     xhr.onload = function () {
                         if (xhr.status == 200) {
-                            $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得10宇宙幣！";
+                            pieProduce();
+                            $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得宇宙幣10元！";
                             $class(".voteOkay").style.display = ""
                             $class(".voteAlertDoing").style.display = "none";
                             $class(".voteAlertDid").style.display = "block";
@@ -361,12 +387,10 @@ function getIndex(child) {
     return i;
 };
 
-
 //倒數計時截止生產器
 let countDown = $classes(".deadline");
 var countDownDate = new Date().getTime() + 86400000; //改成24hour
 var rightnow = new Date().getTime();
-
 var x = setInterval(function () {
     //Get today's date and time
     var now = new Date().getTime();
@@ -388,7 +412,6 @@ var x = setInterval(function () {
         }
     }
 }, 1000);
-
 
 //設立一個物件把一格投票欄的贊成票與反對票統統包起來
 function voteObj(name, title, deadline, prosTitle, consTitle, prosNum, consNum) { //
@@ -495,7 +518,6 @@ function endPieProduce() {
     xhr.send(null);
 }
 
-
 //[AUTO]自動產生截止日期
 function voteDeadline() {
     var today = new Date();
@@ -505,14 +527,14 @@ function voteDeadline() {
         parseInt(today.getDate() + 7) + "截止";
 }
 
-setInterval(pieProduce, 4000);
+setInterval(pieProduce, 5000);
 
 //[buttons]按鈕寶寶們
 function BTNs() {
     //[點擊]進行檢舉
     for (var i = 0; i < $classes(".report").length; i++) {
         //[顯示]檢舉原因選擇視窗
-        $classes(".report")[i].onclick = function () {
+        $classes(".report")[i].onclick = function (e) {
             //[驗證]是否為會員
             if (loginBtn.innerText == "登出") {
                 $class(".voteDoingNotice").innerText = "檢舉原因：";
@@ -523,6 +545,37 @@ function BTNs() {
                 $class(".voteVotingA").style.display = "none";
                 $class(".voteVotingB").style.display = "none";
                 $class(".voteReportMessage").style.display = "block";
+                //[點擊]送出檢舉
+                $class(".voteReportSubmit").onclick = function () {
+                    var xhr = new XMLHttpRequest();
+                    xhr.onload = function () {
+                        if (xhr.status === 200) {
+                            //[驗證]是否有選擇檢舉原因
+                            if ($class(".voteReportMessage").selectedIndex === 0) {
+                                alert("請選擇檢舉原因");
+                                // voteDidNotice.innerText="請選擇檢舉原因";
+                                // voteAlertDid.style.display="block";
+                            } else {
+                                //[隱藏]進行檢舉確認視窗-確認-(next:通知已完成檢舉)
+                                $class(".voteDidNotice").innerText = "已檢舉該議題";
+                                $class(".voteOkay").style.display = ""
+                                $class(".voteAlertDoing").style.display = "none";
+                                $class(".voteAlertDid").style.display = "block";
+                                $class(".voteReportMessage").selectedIndex = "";
+                            }
+                        } else {
+                            alert(`發生錯誤:${xhr.status} | ${xhr.responseText}`);
+                        }
+                    }
+                    //設定好所要連結的程式
+                    xhr.open("post", "php/vote/voteReport.php", true);
+                    //要設定在發起連結之後,發送請求之前
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    //POST的參數，這裡要增加發布時間
+                    let data = `votNo=${e.target.parentNode.getAttribute("data-votNo")}&reportMsg=${$class(".voteReportMessage").selectedIndex}`;
+                    //送出資料
+                    xhr.send(data);
+                }
             } else {
                 alert("請登入再檢舉喔！");
                 loginWrap.style.display = "";
@@ -530,23 +583,6 @@ function BTNs() {
                 registerPage.style.display = "none";
                 loginBtn.backgroundImage = "none";
             }
-        }
-    }
-
-    //[點擊]送出檢舉
-    $class(".voteReportSubmit").onclick = function () {
-        //[驗證]是否有選擇檢舉原因
-        if ($class(".voteReportMessage").selectedIndex === 0) {
-            alert("請選擇檢舉原因");
-            // voteDidNotice.innerText="請選擇檢舉原因";
-            // voteAlertDid.style.display="block";
-        } else {
-            //[隱藏]進行檢舉確認視窗-確認-(next:通知已完成檢舉)
-            $class(".voteDidNotice").innerText = "已檢舉該議題";
-            $class(".voteOkay").style.display = ""
-            $class(".voteAlertDoing").style.display = "none";
-            $class(".voteAlertDid").style.display = "block";
-            $class(".voteReportMessage").selectedIndex = "";
         }
     }
 
