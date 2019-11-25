@@ -18,7 +18,7 @@ function showRunCards(jsonStr) {
     let voteRunCards = "";
     for (var i = 0; i < voteRunData.length; i++) {
         voteRunCards +=
-            `<div class="voteCard col-6 col-md-4 col-lg-3">
+            `<div class="voteCard col-6 col-md-4 col-lg-4">
                 <div class="voteWrapper">
                     <div class="voteChart">
                         <img src="img/vote/unvoted.png" alt="未投票" class="unVoted I-${voteRunData[i].votNo}">
@@ -37,110 +37,9 @@ function showRunCards(jsonStr) {
                 </div>
             </div>`;
     }
-    $id("voteGroupRun").innerHTML =
-        `<div class="voteCard col-12 col-md-4 col-lg-3">
-            <div class="voteWrapper voteArea">
-                <div class="voteAdd"></div>
-                <div class="voteAdding">
-                    <form method="POST" name="voteForm" id="voteForm">
-                        <h3>發起公民投票</h3>
-                        <input type="hidden" name="memNo" class="memNo">
-                        <p id="memName">暱稱：</p>
-                        <p>題目：<input type="text" name="voteTitle" class="voteTitle" size="20" maxlength="10"
-                                placeholder="最多10個字" required></p>
-                        <p>時間： <time id="afterWeek">2019/12/06</time></p>
-                        <div class="voteSelectGroup">
-                            <p>選項：<input type="text" name="voteSelectorA" id="voteSelectorA" size="20"
-                                    maxlength="6" placeholder="最多6個字" required></p>
-                            <p>選項：<input type="text" name="voteSelectorB" id="voteSelectorB" size="20"
-                                    maxlength="6" placeholder="最多6個字" required></p>
-                        </div>
-                    </form>
-                    <button class="voteLaunch">發起</button>
-                    <button type="reset" form="voteForm" class="voteLaunchCancel">取消</button>
-                </div>
-            </div>
-        </div>` + voteRunCards;
-
+    $id("voteGroupRun").innerHTML = voteRunCards;
     pieProduce();
-
-    //[點擊]翻出新增公民投票議題表單
-    $class(".voteAdd").onclick = function () {
-        $class(".voteAdd").classList.toggle("flip");
-        $class(".voteAdding").classList.toggle("flip");
-    }
-    $class(".voteLaunchCancel").onclick = function () {
-        $class(".voteAdd").classList.toggle("flip");
-        $class(".voteAdding").classList.toggle("flip");
-    }
-
-    //[AUTO]自動產生截止日期
-    voteDeadline();
-
-    //[點擊]發起投票議題
-    $class(".voteLaunch").onclick = function () {
-        //[驗證]是否完整填寫表單
-        if (document.voteForm.voteTitle.value == "" || document.voteForm.voteTitle.value == " ") {
-            alert("請輸入題目");
-        } else if (document.voteForm.voteSelectorA.value == "" | document.voteForm.voteSelectorA.value == " ") {
-            alert("請輸入選項");
-        } else if (document.voteForm.voteSelectorB.value == "" | document.voteForm.voteSelectorB.value == " ") {
-            alert("請輸入選項");
-        } else if (document.voteForm.voteSelectorA.value == document.voteForm.voteSelectorB.value) {
-            alert("選項不可重複");
-        } else {
-            //[驗證]是否為會員
-            if (loginBtn.innerText == "登出") {
-                //[顯示]確認視窗跳出
-                $class(".voteDoingNotice").innerText = "確定要發起此公投議題嗎？";
-                $class(".voteReportMessage").style.display = "none";
-                $class(".voteAddingSubmit").style.display = "";
-                $class(".voteVotingA").style.display = "none";
-                $class(".voteVotingB").style.display = "none";
-                $class(".voteReportSubmit").style.display = "none";
-                $class(".voteAlertDoing").style.display = "block";
-                $class(".voteAlertGroup").style.display = "block";
-            } else {
-                alert("請登入再發起投票喔！");
-                loginWrap.style.display = "";
-                loginPage.style.display = "";
-                registerPage.style.display = "none";
-                loginBtn.backgroundImage = "none";
-            }
-        }
-    }
-
-    //[點擊]新增公民投票議題出現，事件聆聽功能
-    $class(".voteAddingSubmit").addEventListener('click', issueProduce);
     voting();
-    BTNs();
-}
-
-//[已結束]產生卡片
-function showEndCards(jsonStr) {
-    let voteEndData = JSON.parse(jsonStr);
-    let voteEndCards = "";
-    for (var i = 0; i < voteEndData.length; i++) {
-        voteEndCards +=
-            `<div class="voteCard col-6 col-md-4 col-lg-3">
-            <div class="voteWrapper">
-                <div class="voteChart">
-                    <canvas class="endVotePie"></canvas>
-                </div>
-                <div class="voteText">
-                    <button class="report">檢舉</button>
-                    <small>發起人：${voteEndData[i].memName}</small>
-                    <h3>${voteEndData[i].votQ}</h3>
-                    <p>${voteEndData[i].votDeadline}截止</p>
-                    <div class="voteSelectGroup">
-                        <button disabled="disabled">已結束</button>
-                    </div>
-                </div>
-            </div>
-        </div>`;
-    }
-    $id("voteGroupEnd").innerHTML = voteEndCards;
-    endPieProduce();
     BTNs();
 }
 
@@ -161,51 +60,7 @@ function getRunCards() {
         }
     }
     //設定好所要連結的程式
-    xhr.open("GET", "php/vote/getRunCards.php", true);
-    //送出資料
-    xhr.send(null);
-}
-
-//[已結束]接卡片資料
-function getEndCards() {
-    //產生XMLHttpRequest物件
-    var xhr = new XMLHttpRequest();
-    //註冊callback function
-    xhr.onload = function () {
-        if (xhr.readyState === 4) {
-            // 伺服器回應成功
-            if (xhr.status === 200) {
-                showEndCards(xhr.responseText);
-            } else {
-                alert("發生錯誤: " + xhr.status);
-            }
-        }
-    }
-    //設定好所要連結的程式
-    xhr.open("GET", "php/vote/getEndCards.php", true);
-    //送出資料
-    xhr.send(null);
-}
-
-//[Session]檢查使用者是否為會員
-function getMember() {
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-        // 伺服器回應成功
-        if (xhr.status === 200) {
-            //檢查session
-            let member = JSON.parse(xhr.responseText);
-            if (member.memName) {
-                $id("memName").innerText = `暱稱： ${member.memName}`;
-            } else {
-                $id("memName").innerHTML = `暱稱： *請先登入會員*`;
-            }
-        } else {
-            // alert(`發生錯誤: ${xhr.status}`);
-        }
-    }
-    //設定好所要連結的程式
-    xhr.open("GET", "php/vote/getMember.php", true);
+    xhr.open("GET", "php/vote/getIndexCards.php", true);
     //送出資料
     xhr.send(null);
 }
@@ -230,6 +85,7 @@ function getVoted() {
                         var Aclass=`A-${voted[i].votNo}`;
                         var Bclass=`B-${voted[i].votNo}`;
                         var Iclass=`I-${voted[i].votNo}`;
+                        // alert(Aclass);
                         $(`.${Aclass}`).attr("disabled","disabled");
                         $(`.${Bclass}`).attr("disabled","disabled");
                         $(`.${Iclass}`).css("display","none");
@@ -244,44 +100,10 @@ function getVoted() {
     }
 }
 
-//[新增議題]存進資料庫
-function voteLaunch() {
-    //產生XMLHttpRequest物件
-    var xhr = new XMLHttpRequest();
-    //註冊callback function
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            // 伺服器回應成功
-            if (xhr.status === 200) {
-                //[點擊]發起投票確認視窗-確認-(next:通知已新增投票)
-                let starCoin =xhr.responseText;
-                getRunCards();
-                $class(".voteDidNotice").innerHTML = "已新增投票議題，<br>恭喜您獲得宇宙幣50元！";
-                $class(".voteOkay").style.display = ""
-                $class(".voteAlertDoing").style.display = "none";
-                $class(".voteAlertDid").style.display = "block";
-                $id("coin").innerText = starCoin;
-            } else {
-                // alert("發生錯誤: " + xhr.status);
-            }
-        }
-    }
-    //設定好所要連結的程式
-    xhr.open("POST", "php/vote/voteLaunch.php", true);
-    //要設定在發起連結之後,發送請求之前
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    //POST的參數，這裡要增加發布時間
-    var data = `votQ=${$class(".voteTitle").value} & votA=${$id("voteSelectorA").value} & votB=${$id("voteSelectorB").value}`;
-    //送出資料
-    xhr.send(data);
-}
-
 
 //---------- load ----------//
 function init() {
     getRunCards();
-    getEndCards();
-    getMember();
     getVoted();
     BTNs();
 }
@@ -495,59 +317,6 @@ function pieProduce() {
     let url = "php/vote/checkNum.php";
     xhr.open("Get", url, true);
     xhr.send(null);
-}
-
-// 產生結束的餅圖
-function endPieProduce() {
-    var xhr = new XMLHttpRequest(); //新建個ajax讓去後端拉票出來
-    xhr.onload = function () {
-        if (xhr.status == 200) {
-            let votes = JSON.parse(xhr.responseText);
-            //產生餅圖
-            context = $classes('.endVotePie');
-            var j = context.length - 1; //餅圖要逆著放回去。
-            for (var i = 0; i < context.length; i++) {
-                ctx[i] = context[i].getContext('2d');
-                //把pieChart丟進for迴圈裡，並在context後面加上[i]即可
-                pieChart[i] = new Chart(ctx[i], {
-                    type: 'pie',
-                    data: {
-                        labels: [votes[j].votA, votes[j].votB], //init時就要有labels
-                        datasets: [{
-                            //預設資料
-                            data: [votes[j].votACount, votes[j].votBCount],
-                            borderColor: "transparent",
-                            backgroundColor: [
-                                //資料顏色
-                                "#e24f90",
-                                "#644498",
-                            ],
-                        }],
-                    },
-                });
-                j--;
-            };
-            // for(var i = context.length;i>0;i--){
-
-            // }
-
-        } else {
-            alert(xhr.responseText);
-        }
-    }
-
-    let url = "php/vote/checkEndNum.php";
-    xhr.open("Get", url, true);
-    xhr.send(null);
-}
-
-//[AUTO]自動產生截止日期
-function voteDeadline() {
-    var today = new Date();
-    $id("afterWeek").innerText =
-        today.getFullYear() + "/" +
-        parseInt(today.getMonth() + 2) + "/" +
-        parseInt((today.getDate() + 7) - 30) + "截止";
 }
 
 setInterval(pieProduce, 5000);

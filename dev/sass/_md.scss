@@ -221,6 +221,7 @@
 
         .innerTitle {
             width: 450px;
+
             li {
                 text-align: center;
                 float: left;
@@ -245,27 +246,33 @@
         li {
             ul {
                 width: 423px;
-                li:nth-child(1){
+
+                li:nth-child(1) {
                     width: 60px;
-                    margin-right:5px;
+                    margin-right: 5px;
                 }
-                li:nth-child(2){
+
+                li:nth-child(2) {
                     width: 110px;
-                    margin-right:5px;
+                    margin-right: 5px;
                 }
-                li:nth-child(3){
+
+                li:nth-child(3) {
                     width: 70px;
-                    margin-right:5px;
+                    margin-right: 5px;
                 }
-                li:nth-child(4){
-                    width: 30px;  
-                    margin-left:50px; 
+
+                li:nth-child(4) {
+                    width: 30px;
+                    margin-left: 50px;
                 }
-                li:nth-child(5){
-                    width: 30px;   
+
+                li:nth-child(5) {
+                    width: 30px;
                 }
-                li:nth-child(6){
-                    width: 30px;   
+
+                li:nth-child(6) {
+                    width: 30px;
                 }
             }
         }
@@ -476,19 +483,24 @@
 
 
     /*__________[START] 首頁公民投票 VOTE IN home __________*/
-    .voteSectionWrapper {
-        .voteSection {
-            
+    .voteSection {
+        .container {
+
             /*------ 投票卡片 ------*/
             .voteGroup {
                 .voteCard {
-                    &:nth-child(n+5) {
-                        display: block;
+                    .voteWrapper{
+                        .voteText{
+                            small{
+                                font-size: 15px;
+                            }
+                        }
                     }
                 }
             }
         }
     }
+
 
     /*__________[END] 首頁公民投票 VOTE IN home __________*/
 
@@ -503,18 +515,10 @@
                     &.col-12 {
                         height: auto;
                     }
-                    .voteWrapper{
-                        .voteText{
-                            h3 {
-                                height: auto;
-                                font-size: 18px;
-                                font-weight: 500;
-                                margin-top: 10px;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                            }
-                            small{
+
+                    .voteWrapper {
+                        .voteText {
+                            small {
                                 font-size: 15px;
                             }
                         }
@@ -928,60 +932,62 @@
 
     }
 
-    .newsWindoRight{
+    .newsWindoRight {
         width: 50%;
         height: 100%;
-        background-color:$green;
-      //   overflow-y: auto;
-      
-      
-      .newsDOWN{
-          // background-color: #000;
-          .newsTalk{
-              width: 100%;
-              height: 100%;
-              margin:30px 25px;
-              display: flex;
-            input{
-              // border: 1px solid #ccc;
-              // font-size: 16px; 
-              // width: 70%;
-              // font-size: 22px; 
-              // // padding: 10px;
-              // border-radius:5px ;
-          border: 1px solid transparent;
-          font-size: 16px;
-          width: 70%;
-          font-size: 15px;
-          border-radius: 5px;
-          margin-right: 15px;
-          padding: 2px 8px;
-          font-family: '微軟正黑體';
-            }  
-            
-              button{
-                  // border-radius:10px;
-                  border-radius: 20px;
-          font-family: '微軟正黑體';
-          padding: 5px 15px;
-          background: #1d2088;
-          color: #fff;
-              }
-      
+        background-color: $green;
+        //   overflow-y: auto;
+
+
+        .newsDOWN {
+
+            // background-color: #000;
+            .newsTalk {
+                width: 100%;
+                height: 100%;
+                margin: 30px 25px;
+                display: flex;
+
+                input {
+                    // border: 1px solid #ccc;
+                    // font-size: 16px; 
+                    // width: 70%;
+                    // font-size: 22px; 
+                    // // padding: 10px;
+                    // border-radius:5px ;
+                    border: 1px solid transparent;
+                    font-size: 16px;
+                    width: 70%;
+                    font-size: 15px;
+                    border-radius: 5px;
+                    margin-right: 15px;
+                    padding: 2px 8px;
+                    font-family: '微軟正黑體';
+                }
+
+                button {
+                    // border-radius:10px;
+                    border-radius: 20px;
+                    font-family: '微軟正黑體';
+                    padding: 5px 15px;
+                    background: #1d2088;
+                    color: #fff;
+                }
+
+            }
         }
-      }
-        
-        .newsMessage{
-          //   background-color: orange;
-           
+
+        .newsMessage {
+            //   background-color: orange;
+
             margin: 20px 0;
             padding-bottom: 20px;
             width: 100%;
-          border-bottom: 2px solid #ccc;
+            border-bottom: 2px solid #ccc;
         }
-        
-       
-      }
+
+
+    }
 
     .newsMsgAll {
         //    background-color: #000;
@@ -1191,7 +1197,7 @@
 
     }
 
-    
+
 
     .newsBtn {
         margin-bottom: 20px;
@@ -1358,10 +1364,12 @@
                 font-size: 18px;
 
                 li {
+
                     &:nth-child(1),
                     &:nth-child(2) {
                         display: inline-block;
                     }
+
                     input,
                     textarea {
                         width: calc(100% - 100px);
@@ -1376,20 +1384,22 @@
                 &[type|="submit"] {
                     margin: 20px 10px 0 auto;
                 }
-    
+
                 &[type|="reset"] {
                     margin: 20px auto 0 10px;
                 }
             }
         }
     }
-    #wealth{
-        right:55%;
+
+    #wealth {
+        right: 55%;
     }
-    
-    #coin{
-        right:49%;
+
+    #coin {
+        right: 49%;
     }
+
     /*__________[END] NewsForm __________*/
 
 
