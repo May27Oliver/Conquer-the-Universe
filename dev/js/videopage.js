@@ -648,6 +648,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV1P1A.length;i++){
@@ -667,6 +670,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV1P1A.length;i++){
@@ -686,6 +692,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV1P1A.length;i++){
@@ -704,6 +713,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         
@@ -725,6 +737,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV1P2A.length;i++){
@@ -743,6 +758,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV1P2A.length;i++){
@@ -761,6 +779,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV1P2A.length;i++){
@@ -779,6 +800,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV1P2A.length;i++){
@@ -798,6 +822,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV2P1A.length;i++){
@@ -816,6 +843,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV2P1A.length;i++){
@@ -834,6 +864,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV2P1A.length;i++){
@@ -852,6 +885,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV2P1A.length;i++){
@@ -871,6 +907,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV2P2A.length;i++){
@@ -889,6 +928,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV2P2A.length;i++){
@@ -907,6 +949,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV2P2A.length;i++){
@@ -925,6 +970,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV2P2A.length;i++){
@@ -944,6 +992,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV3P1A.length;i++){
@@ -962,6 +1013,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV3P1A.length;i++){
@@ -980,6 +1034,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV3P1A.length;i++){
@@ -998,6 +1055,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV3P1A.length;i++){
@@ -1017,6 +1077,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV3P2A.length;i++){
@@ -1035,6 +1098,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV3P2A.length;i++){
@@ -1053,6 +1119,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV3P2A.length;i++){
@@ -1071,6 +1140,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV3P2A.length;i++){
@@ -1090,6 +1162,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV4P1A.length;i++){
@@ -1108,6 +1183,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV4P1A.length;i++){
@@ -1126,6 +1204,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV4P1A.length;i++){
@@ -1144,6 +1225,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV4P1A.length;i++){
@@ -1163,6 +1247,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV4P2A.length;i++){
@@ -1181,6 +1268,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV4P2A.length;i++){
@@ -1199,6 +1289,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV4P2A.length;i++){
@@ -1217,6 +1310,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV4P2A.length;i++){
@@ -1236,6 +1332,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV5P1A.length;i++){
@@ -1254,6 +1353,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV5P1A.length;i++){
@@ -1272,6 +1374,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV5P1A.length;i++){
@@ -1290,6 +1395,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV5P1A.length;i++){
@@ -1309,6 +1417,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV5P2A.length;i++){
@@ -1327,7 +1438,10 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
-            });
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
+            });     
         }
         for(var i=0;i<fnV5P2A.length;i++){
             fnV5P2A[i].style.backgroundColor="transparent";
@@ -1345,6 +1459,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV5P2A.length;i++){
@@ -1363,6 +1480,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<fnV5P2A.length;i++){
@@ -1393,6 +1513,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV1P1A.length;i++){
@@ -1412,6 +1535,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV1P1A.length;i++){
@@ -1431,6 +1557,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV1P2A.length;i++){
@@ -1450,6 +1579,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV1P2A.length;i++){
@@ -1470,6 +1602,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV2P1A.length;i++){
@@ -1488,6 +1623,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV2P1A.length;i++){
@@ -1506,6 +1644,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV2P1A.length;i++){
@@ -1524,6 +1665,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV2P1A.length;i++){
@@ -1543,6 +1687,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV2P2A.length;i++){
@@ -1561,6 +1708,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV2P2A.length;i++){
@@ -1580,6 +1730,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV3P1A.length;i++){
@@ -1599,6 +1752,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV3P1A.length;i++){
@@ -1619,6 +1775,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV3P2A.length;i++){
@@ -1637,6 +1796,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV3P2A.length;i++){
@@ -1655,6 +1817,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV3P2A.length;i++){
@@ -1673,6 +1838,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV3P2A.length;i++){
@@ -1692,6 +1860,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV4P1A.length;i++){
@@ -1710,6 +1881,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV4P1A.length;i++){
@@ -1728,6 +1902,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV4P1A.length;i++){
@@ -1746,6 +1923,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV4P1A.length;i++){
@@ -1765,6 +1945,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV4P2A.length;i++){
@@ -1783,6 +1966,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV4P2A.length;i++){
@@ -1802,6 +1988,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV5P1A.length;i++){
@@ -1820,6 +2009,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV5P1A.length;i++){
@@ -1838,6 +2030,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV5P1A.length;i++){
@@ -1856,6 +2051,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV5P1A.length;i++){
@@ -1875,6 +2073,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV5P2A.length;i++){
@@ -1894,6 +2095,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<JtV5P2A.length;i++){
@@ -1925,6 +2129,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV1P1A.length;i++){
@@ -1943,6 +2150,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV1P1A.length;i++){
@@ -1961,6 +2171,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV1P1A.length;i++){
@@ -1979,6 +2192,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV1P1A.length;i++){
@@ -1997,6 +2213,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV1P2A.length;i++){
@@ -2015,6 +2234,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV1P2A.length;i++){
@@ -2033,6 +2255,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV1P2A.length;i++){
@@ -2051,6 +2276,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV1P2A.length;i++){
@@ -2069,6 +2297,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV2P1A.length;i++){
@@ -2087,6 +2318,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV2P1A.length;i++){
@@ -2105,6 +2339,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV2P1A.length;i++){
@@ -2123,6 +2360,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV2P1A.length;i++){
@@ -2142,6 +2382,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV2P2A.length;i++){
@@ -2160,6 +2403,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV2P2A.length;i++){
@@ -2178,6 +2424,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV2P2A.length;i++){
@@ -2196,6 +2445,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV2P2A.length;i++){
@@ -2214,6 +2466,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV3P1A.length;i++){
@@ -2232,6 +2487,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV3P1A.length;i++){
@@ -2250,6 +2508,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV3P1A.length;i++){
@@ -2268,6 +2529,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV3P1A.length;i++){
@@ -2286,6 +2550,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV3P2A.length;i++){
@@ -2304,6 +2571,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV3P2A.length;i++){
@@ -2322,6 +2592,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV3P2A.length;i++){
@@ -2340,6 +2613,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV3P2A.length;i++){
@@ -2359,6 +2635,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV4P1A.length;i++){
@@ -2377,6 +2656,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV4P1A.length;i++){
@@ -2395,6 +2677,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV4P1A.length;i++){
@@ -2413,6 +2698,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV4P1A.length;i++){
@@ -2431,6 +2719,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV4P2A.length;i++){
@@ -2449,6 +2740,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV4P2A.length;i++){
@@ -2467,6 +2761,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV4P2A.length;i++){
@@ -2485,6 +2782,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV4P2A.length;i++){
@@ -2503,6 +2803,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV5P1A.length;i++){
@@ -2521,6 +2824,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV5P1A.length;i++){
@@ -2539,6 +2845,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV5P1A.length;i++){
@@ -2557,6 +2866,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV5P1A.length;i++){
@@ -2575,6 +2887,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV5P2A.length;i++){
@@ -2593,6 +2908,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV5P2A.length;i++){
@@ -2611,6 +2929,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV5P2A.length;i++){
@@ -2629,6 +2950,9 @@ window.addEventListener('load',function(){
                 url: 'php/video.php',
                 data: formData,
                 type: 'post',
+                success: function(response) {
+                    $id('coin').innerText=response;
+                }
             });
         }
         for(var i=0;i<AsV5P2A.length;i++){
