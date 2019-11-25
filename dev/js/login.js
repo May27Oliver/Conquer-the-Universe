@@ -41,6 +41,14 @@
             loginBtn.backgroundImage="none";            
         }
     }
+
+    function enterHomeCitizen(){
+        loginWrap.style.display="";
+        loginPage.style.display="";
+        registerPage.style.display="none";
+        loginBtn.backgroundImage="none";   
+    }
+
     //燈相關閉
     function closeBox(){
         loginWrap.style.display="none";
@@ -114,7 +122,7 @@
                         wealth.style.height=23+"px";
                         memberName.innerText="您好!"+member.memName;
                         loginBtn.innerText="登出";
-                        history.go(0);
+                        // history.go(0);
                     }
             }else{
                 loginMsg.innerText=member.error;
@@ -140,6 +148,7 @@
                 coin.innerText="";
                 loginBtn.style.width=100+"px";
                 history.go(0);
+                window.location = "../dest/home.html";
             }
         }
         xhr.open("get", "php/logOut.php", true);
