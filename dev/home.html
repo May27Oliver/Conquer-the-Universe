@@ -214,73 +214,92 @@
     
     
     <!-- ------贊助商品區------- -->
-    <section class="shopContainer">  
+    <section class="shopContainer"> 
+
         <div id="shopBlack" style="display:none;">
-            <div id="shopLightBox" style="display:none;">     
-                <p>確定要購買此項道具?</p>  
-                <span id="addToBackpack">確認</span>
-                <span id="Cancelbtn">取消</span>
+            <div id="shopLightBox" style="display:none;"> 
+                <div class="shopAlert">
+                    <p>系統訊息</p>
+                </div>
+                <div class="shopAlertBtn">
+                <span>確定要購買此項道具?</span>  
+                <button id="addToBackpack">確認</button>
+                <button id="addToBackpack2">確認</button>
+                <button id="addToBackpack3">確認</button>
+                <button id="addToBackpack4">確認</button>
+                <button id="Cancelbtn">取消</button>
+                </div>
             </div>
-         </div>  
+        </div>
         <div class="shoptitle">
         <h2>贊助候選人</h2>
         </div>
         <div id="boxForDisappear">
-        <div id="productBox" class="productBox">
-            <div class="model">
-                    <canvas id="myCanvas" width="300" height="600">     
-                        </canvas>
-                <img class="rabbitPic" src="img/rabbit.png"" alt="">
-            </div>
-            <div class="boxForProduct">
-                <div class="col-6">
-                        <div class="productPic">
-                                <img id="shopPic1" src="img/shopPic1.png" width="128" onclick="loadImage()"/>
-                        </div>
-                        <div class="productTitle">
-                            <h3>
-                            聰明棒球帽
-                            </h3>
-                            <div class="productBtn">
-                                <button id="shopSpanLogin" >$100</button>
+                <div id="productBox" class="productBox">
+                        <div class="model">   
+                            <canvas id="myCanvas" width="400" height="600">     
+                            </canvas>
+                            <img class="rabbitPic" src="img/rabbit.png" alt="">    
+                        </div>      
+                        <div class="boxForProduct">
+                            <!-- <div class="toolTitle">
+                                <h3>
+                                    服裝道具
+                                </h3>
+                                <span>
+                                    購買服裝道具可以增加候選人支持度
+                                </span>
                             </div>
-                        </div>  
-                </div>
-                <div class="col-6">
-                    <div class="productPic">
-                            <img id="shopPic2" src="img/shopPic2.png"" alt="">
-                    </div>
-                    <div class="productTitle">
-                        <h3>親和力面具</h3>
-                        <div class="productBtn">
-                            <button id="shopSpanLogin" >$100</button>
-                        </div>
-                    </div>  
-                </div>
-                <div class="col-6">
-                    <div class="productPic">
-                        <img id="shopPic3" src="img/shopPic3.png"" alt="">
-                    </div>
-                    <div class="productTitle">
-                        <h3>口才大聲公</h3>
-                        <div class="productBtn">
-                            <button id="shopSpanLogin" >$100</button>
-                        </div>
-                        </div>  
-                </div>
-                <div class="col-6">
-                    <div class="productPic">
-                        <img id="shopPic4" src="img/shopPic4.png"" alt="">
-                    </div>
-                    <div class="productTitle">
-                        <h3>人氣氣球</h3>
-                        <div class="productBtn">
-                            <button id="shopSpanLogin" >$100</button>
-                        </div>
-                    </div>  
-                </div>
-            </div>      
-        </div>
+                                <div class="col-6">
+                                        <div class="productPic">
+                                            <img id="shopPic1" src="img/shopPic1.png" width="128" onclick="loadImage01()"/>
+                                            
+                                        </div>
+                                        <div class="productTitle">
+                                            <h3>
+                                            聰明棒球帽
+                                            </h3>
+                                            <div  class="productBtn">
+                                                <button id="shopSpanLogin" >$100</button>
+                        
+                                            </div>
+                                        </div>  
+                                </div>
+                                <div class="col-6">
+                                    <div class="productPic">
+                                            <img id="shopPic2" src="img/shopPic2.png" width="128" onclick="loadImage02()"/>
+                                    </div>
+                                    <div class="productTitle">
+                                        <h3>親和力面具</h3>
+                                        <div class="productBtn">
+                                            <button id="shopSpanLogin" >$100</button>
+                                        </div>
+                                    </div>  
+                                </div>    
+                                <div class="col-6">
+                                    <div class="productPic">
+                                            <img id="shopPic3" src="img/shopPic3.png" width="128" onclick="loadImage03()"/>
+                                    </div>
+                                    <div class="productTitle">
+                                        <h3>口才大聲公</h3>
+                                        <div  class="productBtn">
+                                            <button id="shopSpanLogin" >$100</button>
+                                        </div>
+                                        </div>  
+                                </div>
+                                <div class="col-6">
+                                    <div class="productPic">
+                                            <img id="shopPic4" src="img/shopPic4.png" width="128" onclick="loadImage04()"/>
+                                    </div>
+                                    <div  class="productTitle">
+                                        <h3>人氣氣球</h3>
+                                        <div class="productBtn">
+                                            <button id="shopSpanLogin" >$100</button>
+                                        </div>
+                                    </div>  
+                                </div> -->
+                        </div> 
+                    </div> 
         <div class="clearboth"></div>
         <div class="proTitle">
            <a href="shop.html">看更多</a>
@@ -403,6 +422,8 @@
 <script src="js/login.js"></script>
 <script src="js/countUp.min.js" type="module"></script>
 <script src="js/jquery.easy_slides.js"></script>
+<script src="js/shop.js"></script>
+<script src="js/shopAJAX.js"></script>
 <!-- <script src=""></script> -->
 <script>
     $(document).ready(function(){
