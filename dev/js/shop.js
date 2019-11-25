@@ -1,12 +1,30 @@
 
 
 window.addEventListener('load',function(){
-    let shopButtons = document.getElementsByClassName("productBtn");
-    for(var i=0;i<shopButtons.length;i++){
-        document.getElementsByClassName("productBtn")[i].onclick = shopShowLightBox; // <!---道具$100確認鍵
+    let shopButtons1 = document.getElementsByClassName("productBtn1");
+    for(var i=0;i<shopButtons1.length;i++){
+        document.getElementsByClassName("productBtn1")[i].onclick = shopShowLightBox1; // <!---道具$100確認鍵
     }
+    let shopButtons2 = document.getElementsByClassName("productBtn2");
+    for(var i=0;i<shopButtons2.length;i++){
+        document.getElementsByClassName("productBtn2")[i].onclick = shopShowLightBox2; // <!---道具$100確認鍵
+    }
+    let shopButtons3 = document.getElementsByClassName("productBtn3");
+    for(var i=0;i<shopButtons3.length;i++){
+        document.getElementsByClassName("productBtn3")[i].onclick = shopShowLightBox3; // <!---道具$100確認鍵
+    }
+    let shopButtons4 = document.getElementsByClassName("productBtn4");
+    for(var i=0;i<shopButtons4.length;i++){
+        document.getElementsByClassName("productBtn4")[i].onclick = shopShowLightBox4; // <!---道具$100確認鍵
+    }
+
     document.getElementById("Cancelbtn").onclick = cancelLogin;  // 道具購買燈箱的取消鍵
-    document.getElementById("addToBackpack").onclick = addToBackpack01;  //道具購買燈箱的確認鍵
+    document.getElementById("addToBackpack").onclick = addToBackpack01;  //道具購買燈箱的確認鍵1
+    document.getElementById("addToBackpack2").onclick = addToBackpack02;  //道具購買燈箱的確認鍵2
+    document.getElementById("addToBackpack3").onclick = addToBackpack03;  //道具購買燈箱的確認鍵3
+    document.getElementById("addToBackpack4").onclick = addToBackpack04;  //道具購買燈箱的確認鍵4
+
+
     document.getElementById("eventButton").onclick = eventLightBox;  //扭蛋啟動的<按下去>-->啟動扭蛋購買燈箱的按鍵
     document.getElementById("trashLightBoxBtn").onclick = backToGashapon;  //扭蛋事件燈箱出現後的確認按鍵(返回原畫面)
     document.getElementById("gashaponEvent").onclick = gashapon; //確認購買扭蛋隨機事件的<確認>按鈕
@@ -15,18 +33,61 @@ window.addEventListener('load',function(){
 
 let randIndex;
 
-function shopShowLightBox(){  //道具$100確認鍵
+function shopShowLightBox1(){  //道具1$100確認鍵
     document.getElementById("shopLightBox").style.display="";//道具燈箱出現
     document.getElementById("shopBlack").style.display="";//道具燈箱的襯底出現
-}  
+    document.getElementById("addToBackpack2").style.display="none";
+    document.getElementById("addToBackpack3").style.display="none";
+    document.getElementById("addToBackpack4").style.display="none";
+    document.getElementById("addToBackpack").style.display="inline-block";
+}
+function shopShowLightBox2(){  //道具2$100確認鍵
+    document.getElementById("shopLightBox").style.display="";//道具燈箱出現
+    document.getElementById("shopBlack").style.display="";//道具燈箱的襯底出現
+    document.getElementById("addToBackpack").style.display="none";
+    document.getElementById("addToBackpack2").style.display="inline-block";
+    document.getElementById("addToBackpack3").style.display="none";
+    document.getElementById("addToBackpack4").style.display="none";
+}
+function shopShowLightBox3(){  //道具3$100確認鍵
+    document.getElementById("shopLightBox").style.display="";//道具燈箱出現
+    document.getElementById("shopBlack").style.display="";//道具燈箱的襯底出現
+    document.getElementById("addToBackpack").style.display="none";
+    document.getElementById("addToBackpack2").style.display="none";
+    document.getElementById("addToBackpack4").style.display="none";
+    document.getElementById("addToBackpack3").style.display="inline-block";
+}
+function shopShowLightBox4(){  //道具4$100確認鍵
+    document.getElementById("shopLightBox").style.display="";//道具燈箱出現
+    document.getElementById("shopBlack").style.display="";//道具燈箱的襯底出現
+    document.getElementById("addToBackpack").style.display="none";
+    document.getElementById("addToBackpack2").style.display="none";
+    document.getElementById("addToBackpack3").style.display="none";
+    document.getElementById("addToBackpack4").style.display="inline-block"
+}
+
 function cancelLogin(){     // 道具購買燈箱的取消鍵
     document.getElementById("shopLightBox").style.display = "none"; //道具燈箱消失
     document.getElementById("shopBlack").style.display="none"; //燈箱的黑色襯底消失
 }
-function addToBackpack01(){  //道具購買燈箱的確認鍵
+function addToBackpack01(){  //道具購買燈箱的確認鍵1
     document.getElementById("shopLightBox").style.display = "none"; //道具燈箱消失
     document.getElementById("shopBlack").style.display="none"; //道具燈箱的黑色襯底消失
 }
+function addToBackpack02(){  //道具購買燈箱的確認鍵2
+    document.getElementById("shopLightBox").style.display = "none"; //道具燈箱消失
+    document.getElementById("shopBlack").style.display="none"; //道具燈箱的黑色襯底消失
+}
+function addToBackpack03(){  //道具購買燈箱的確認鍵3
+    document.getElementById("shopLightBox").style.display = "none"; //道具燈箱消失
+    document.getElementById("shopBlack").style.display="none"; //道具燈箱的黑色襯底消失
+}
+function addToBackpack04(){  //道具購買燈箱的確認鍵4
+    document.getElementById("shopLightBox").style.display = "none"; //道具燈箱消失
+    document.getElementById("shopBlack").style.display="none"; //道具燈箱的黑色襯底消失
+}
+
+
 function eventLightBox(){ //扭蛋啟動的<按下去>-->啟動扭蛋購買燈箱的按鍵
     document.getElementById("shopBlack1").style.display = "";//燈箱黑色襯底出現
     document.getElementById("gashaponLightBox").style.display ="";//確認事件燈箱出現
