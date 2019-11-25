@@ -25,6 +25,19 @@
         }
     }
     
+    #delBox{
+      display: none;
+      background-color:#fff;
+      width: 500px;
+      height: 170px;
+      border-radius: 5px;
+      box-shadow:0 0 2px #333;
+      position: fixed;
+      top:30%;
+      left:calc(50% - 250px);
+      /* transform: translateX(-50%);
+      transform: translateY(-50%); */
+    }
 
   </style>
 </head>
@@ -189,27 +202,40 @@
                       <thead class="thead">
                           <tr>
                               <th scope="col">會員編號</th>
-                              <th scope="col">星球編號</th>
-                              <th scope="col">持有勳章</th>
+                              <th scope="col">會員暱稱</th>
                               <th scope="col">會員帳號</th>
                               <th scope="col">會員密碼</th>
-                              <th scope="col">會員暱稱</th>
                               <th scope="col">會員信箱</th>
+                              <th scope="col">星球名稱</th>
                               <th scope="col">支持度</th>
-                              <th scope="col">智力值</th>
-                              <th scope="col">魅力值</th>
-                              <th scope="col">財力值</th>
                               <th scope="col">宇宙幣</th>
+                              <th scope="col">刪除會員</th>
                           </tr>
                       </thead>
-                      <tbody class="accountSwitch">
+                      <tbody class="accountSwitch" id="memData">
+                        <!-- <tr>
+                          <td>${memData[i]['memNo']}</td>
+                          <td>${memData[i]['memName']}</td>
+                          <td>${memData[i]['memId']}</td>
+                          <td>${memData[i]['memPsw']}</td>
+                          <td>${memData[i]['email']}</td>
+                          <td>${memData[i]['starName']}</td>
+                          <td>${memData[i]['popularity']}</td>
+                          <td>${member[i]['starCoin']}</td>
+                          <td>
+                              <label class="switch switch-3d switch-success">
+                                  <input class="switch-input video_q_status modified" type="checkbox" name="video_q_status">
+                                  <span class="switch-slider"></span>
+                              </label>
+                          </td>
+                        </tr> -->
                       </tbody>
                   </table>
+                  
               </div>
           </div>
               <!-- end -->
-       
-         
+              
         </div>
       </div>
     </aside>
@@ -221,6 +247,31 @@
         </div>
        
       </footer>
+
+  <!-- 燈箱 -->  
+  <div id="delBox">
+          
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">系統提示</h5>
+      </div>
+    
+      
+        
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+                是否確定要刪除會員帳號？
+            </div>
+
+          
+          </div>
+        </div>
+        <div class="d-flex flex-row-reverse col-md-12">
+            <button class="btn btn-primary order-2 mr-1" type="button" id="delOk">確認</button>
+            <button class="btn btn-danger order-1 videoC " type="button" data-dismiss="modal" aria-label="Close" id="delCancel">取消</button>
+        </div>
+  </div>
+<!-- end -->
   <!-- CoreUI and necessary plugins-->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
