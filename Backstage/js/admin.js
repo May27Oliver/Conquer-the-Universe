@@ -19,7 +19,7 @@ $('body').on('click', '#btnNewAdmin', function () {
     </select>
 </td>
 <td>
-    <button type="button" class="btn btn-pill btn-success btn-xl" id="btnAddAdmin">新增</button>
+    <button type="button" class="btn btn-pill btn-success btn-xl" id="btnAddAdmin" onclick=registerAdmin()>新增</button>
 </td>
 <td>    
     <button type="button" class="btn btn-pill btn-secondary btn-xl" id="btnNoCreateAdmin">取消</button>
@@ -49,9 +49,35 @@ function logOut(){
     xhr.open("get", "php/logOut.php", true);
     xhr.send(null);
 }
+// $id("btnAddAdmin").onclick=registerAdmin;
+
+function registerAdmin(){
+    // console.log("帳號：",$id("newAdminName").value);
+    // console.log("密碼：",$id("newAdminPsw").value);
 
 
-window.addEventListener("load", function () {
+    if($id("newAdminName").value=="" && $id("newAdminPsw").value==""){
+        loginRig.innerText="帳號或密碼欄位不得為空";
+    }else{
+        var xhr=new XMLHttpRequest();
+        xhr.onload=function(){
+            if(xhr.status==200){
+                alert("新增帳號成功");
+            }else{
+                alert(xhr.responseText);
+            }   
+        }
+    }
+        let url="php/registerAdmin.php";
+        xhr.open("post",url,true);
+        let query_string=`newAdminName=${$id("newAdminName").value} & newAdminPsw=${$id("newAdminPsw").value}`;
+        //memId,memPsw跟登入一樣
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send(query_string);
+
+}
+
+window.addEventListener("load", function(){
     //-------------- 檢查是否登入 --------------//
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
