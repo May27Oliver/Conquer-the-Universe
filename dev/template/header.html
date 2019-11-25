@@ -34,11 +34,9 @@
     </header>
     <script>
         $(document).ready(function(){
-                        
             // 最上面個星球總支持度
             getTopPoint();
             function getTopPoint(){
-                
                 var xhr = new XMLHttpRequest();
                 xhr.onload=function (){
                     if( xhr.status == 200 ){ 

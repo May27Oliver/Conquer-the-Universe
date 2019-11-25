@@ -114,7 +114,7 @@
                         wealth.style.height=23+"px";
                         memberName.innerText="您好!"+member.memName;
                         loginBtn.innerText="登出";
-
+                        history.go(0);
                     }
             }else{
                 loginMsg.innerText=member.error;
@@ -139,6 +139,7 @@
                 wealth.style.height=0;
                 coin.innerText="";
                 loginBtn.style.width=100+"px";
+                history.go(0);
             }
         }
         xhr.open("get", "php/logOut.php", true);
