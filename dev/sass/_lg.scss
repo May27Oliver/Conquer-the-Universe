@@ -417,31 +417,78 @@
 
     /*__________[START] 首頁公民投票 VOTE IN home __________*/
     .voteSection{
-        /*------ 投票卡片 ------*/
-        .voteGroup{
-            .voteCard{
-                .voteWrapper{
-                    .voteText{
-                        small{
-                            margin-top: 10px;
-                        }
-                        h3{
-                            font-size: 18px;
+        .container{
+            h2+p {
+                font-size: 20px;;
+            }
+            /*------ 投票卡片 ------*/
+            .voteGroup{
+                .voteCard{
+                    .voteWrapper{
+                        .voteText{
+                            h3{
+                                font-size: 20px;
+                            }
                         }
                     }
                 }
             }
-        }
-        /*------ 按鈕------*/
-        button{
-            font-size: 18px;
-            padding: 5px 18px;
-            &.report{
-                font-size: 10px;
+            /*------ 按鈕------*/
+            button{
+                font-size: 18px;
+                padding: 5px 18px;
+                &.report{
+                    font-size: 10px;
+                }
             }
         }
     }
     /*__________[END] 首頁公民投票 VOTE IN home __________*/
+
+
+    /*____________________[START] VOTE ____________________*/
+    .votePage{
+        .container{
+            h1+p {
+                font-size: 20px;
+            }
+            /*------ 投票卡片 ------*/
+            .voteGroup{
+                .voteCard{
+                    .voteWrapper{
+                        .voteText{
+                            h3{
+                                font-size: 20px;
+                            }
+                        }
+                        &.voteArea{
+                            .voteAdding{
+                                #voteForm{
+                                    margin: 25px;
+                                    h3{
+                                        font-size: 18px;
+                                    }
+                                    p{
+                                        font-size: 18px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            /*------ 按鈕------*/
+            button{
+                font-size: 18px;
+                padding: 5px 18px;
+                &.report{
+                    font-size: 10px;
+                    padding: 2px 0;
+                }
+            }
+        }
+    }
+    /*____________________[END] VOTE ____________________*/
     
 
 
@@ -543,46 +590,6 @@
     }
 
 
-    /*____________________[START] VOTE ____________________*/
-    .votePage{
-        .container{
-            /*------ 投票卡片 ------*/
-            .voteGroup{
-                .voteCard{
-                    .voteWrapper{
-                        .voteText{
-                            h3{
-                                font-size: 20px;
-                            }
-                        }
-                        &.voteArea{
-                            .voteAdding{
-                                #voteForm{
-                                    margin: 25px;
-                                    h3{
-                                        font-size: 18px;
-                                    }
-                                    p{
-                                        font-size: 18px;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            /*------ 按鈕------*/
-            button{
-                font-size: 18px;
-                padding: 5px 18px;
-                &.report{
-                    font-size: 10px;
-                    padding: 2px 0;
-                }
-            }
-        }
-    }
-    /*____________________[END] VOTE ____________________*/
 
     
 //首頁footer
