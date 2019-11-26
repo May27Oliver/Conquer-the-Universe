@@ -645,19 +645,17 @@ window.addEventListener('load',function(){
     // 財經影片一第一題解答
         fnV1P1Ans1.addEventListener('click',function(){
             alert($id("loginBtn").innerText.indexOf("登出"));
-            if($id("loginBtn").innerText.indexOf("登出")>=0){
                 var formData = $("input[name='fnV1P1']:checked").serialize();
                 if(formData=="fnV1P1=1"){
-                    console.log('Posting the following: ', formData);
-                    $.ajax({
-                        url: 'php/video.php',
-                        data: formData,
-                        type: 'post',
-                        success: function(response) {
-                            $id('coin').innerText=response;
-                        }
-                    });
-                }
+                console.log('Posting the following: ', formData);
+                $.ajax({
+                    url: 'php/video.php',
+                    data: formData,
+                    type: 'post',
+                    success: function(response) {
+                        $id('coin').innerText=response;
+                    }
+                });
             }
             
             for(var i=0;i<fnV1P1A.length;i++){
@@ -672,17 +670,15 @@ window.addEventListener('load',function(){
             alert($id("loginBtn").innerText.indexOf("登出"));
                 var formData = $("input[name='fnV1P1']:checked").serialize();
                 if(formData=="fnV1P1=1"){
-                    if($id("loginBtn").innerText.indexOf("登出")>=0){
-                        console.log('Posting the following: ', formData);
-                        $.ajax({
-                            url: 'php/video.php',
-                            data: formData,
-                            type: 'post',
-                            success: function(response) {
-                                $id('coin').innerText=response;
-                            }
-                        });
-                    }
+                    console.log('Posting the following: ', formData);
+                    $.ajax({
+                        url: 'php/video.php',
+                        data: formData,
+                        type: 'post',
+                        success: function(response) {
+                            $id('coin').innerText=response;
+                        }
+                    });
                 }
             for(var i=0;i<fnV1P1A.length;i++){
                 fnV1P1A[i].style.backgroundColor="transparent";
