@@ -111,6 +111,7 @@
                         console.log("=====",member.memName);
                         console.log("=====",member.email);
                         
+                        history.go(0);
                         loginWrap.style.display="none";
                         loginPage.style.display="none";
                         registerPage.style.display="none";
@@ -122,7 +123,6 @@
                         wealth.style.height=23+"px";
                         memberName.innerText="您好!"+member.memName;
                         loginBtn.innerText="登出";
-                        // history.go(0);
                     }
             }else{
                 loginMsg.innerText=member.error;
