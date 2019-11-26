@@ -351,7 +351,7 @@
             <p id="award">恭喜答對！<br>您將得到5點候選人支持度與宇宙幣100元！</p>
             <p id="wrongAns">不好意思您答錯囉！將扣您陣營候選人支持度4點</p>                
         </div>
-        <a href="video.html" class="home-more">觀看更多影片</a>
+        <a href="" class="home-more" id="moreVideo">觀看更多影片</a>
     </div>
     
     <!---------- 公民投票 ---------->
@@ -783,6 +783,18 @@
             }
         })  
 
+        document.getElementById("moreVideo").onclick=function(e){
+            var nameWord=document.getElementById("memberName").innerText;
+            if(nameWord){
+                document.getElementById("moreVideo").href="video.html";
+                console.log("有抓到使用者名稱");
+                window.location = "../dest/video.html";
+            }else{
+                e.preventDefault();
+                enterHomeCitizen();
+                console.log("沒有抓到使用者名稱，請求登入");
+            }
+        }
             
     });
 </script>
