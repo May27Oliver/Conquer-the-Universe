@@ -7,13 +7,21 @@
     @@include('./template/CDN.html')
     <title>征服宇宙</title>
 </head>
-<script src="js/skrollr.js"></script>
-<body class="home_body">
 
+
+<body class="home_body">
+<script>
+    if($(window).width() > 768){
+        var body= document.getElementsByTagName('body')[0]; 
+        var script= document.createElement('script'); 
+        script.type= 'text/javascript'; 
+        script.src= 'js/skrollr.js';
+        body.appendChild(script); 
+    }
+</script>
 @@include('./template/header.html')
 @@include('./template/homeAlert.html')
 @@include('template/login.html')
-<!-- <script src='js/shop.js'></script> -->
 <!-- 最上面 -->
 <div class="homeStar">
     <img src="img/home_img/star.png" alt="">
@@ -31,9 +39,12 @@
     data-4300="opacity:1;top:45%;right:-5%;" 
     data-5500="opacity:.5;top:30%;right:90%;"
     data-6000="opacity:0;top:45%;right:-20%;">
-        <img src="img/home_img/UFO.png" alt="">
     </div>
-            
+    <script>
+        if($(window).width() > 768){
+           $('.ufo2').append(`<img src="img/home_img/UFO.png" alt="">`); 
+        }
+    </script>
     <header class="homeHeader">
         <h1>誰是宇宙大總統?</h1>
         <ul class="homeWinner">
@@ -79,13 +90,15 @@
                     <h1>3</h1>
                 </div>
             </li>
-
+            
         </ul>
+        <h2>《上一季總排名》</h2>
+        <p>每周將統計各星球支持度，</br>支持度最高之星球候選人即成為宇宙大總統</p>
     </header>
     <!-- 排行榜 -->
     <section class="leaderBoard  container">
         <div class="leaderTitle">
-            <h2>支持度排行榜</h2>
+            <h2>即時戰況</h2>
         </div>
         <p><span id="startContest">2019/11/21</span> ~ <span id="endContest">2019/11/28</span></p>
         <ul class="boardTitle">
@@ -115,7 +128,7 @@
             <div class="newsBox">
                 <div class="newsitem">
                        <div class="newsPic">
-                           <img src="https://picsum.photos/350/250/?random=1">
+                           <img src="https://picsum.photos/300/250/?random=1">
                        </div>
                      <div class="newsText">
                          <div class="newsTOP">
@@ -139,7 +152,7 @@
             <div class="newsBox">
                    <div class="newsitem">
                           <div class="newsPic">
-                              <img src="https://picsum.photos/350/250/?random=1">
+                              <img src="https://picsum.photos/300/250/?random=1">
                           </div>
                         <div class="newsText">
                             <div class="newsTOP">
@@ -237,7 +250,7 @@
         <div id="boxForDisappear">
                 <div id="productBox" class="productBox">
                         <div class="model">   
-                            <canvas id="myCanvas" width="400" height="600">     
+                            <canvas id="myCanvas" width="350" height="600">     
                             </canvas>
                             <img class="rabbitPic" src="img/rabbit.png" alt="">    
                         </div>      
@@ -414,7 +427,7 @@
         </div>
         
     </footer>
-    @@include('./template/footer.html')
+    @@include('./template/footer.html');
 
     <!---------- 製作星星背景 ---------->
     <canvas id="starShine" witdh="100%" height="30%"></canvas>
@@ -480,10 +493,12 @@
             }
         }
         
-       
+        if($(window).width() > 768){
+            var s = skrollr.init();
+        }
         
     
-        var s = skrollr.init();
+        
 
         $('.slider_circle_10').EasySlides({
             'autoplay': true,
