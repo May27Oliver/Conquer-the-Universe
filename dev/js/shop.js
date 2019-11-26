@@ -25,7 +25,7 @@ window.addEventListener('load',function(){
         document.getElementById("shopLightBox").style.display = "none"; //道具燈箱消失
         document.getElementById("shopBlack").style.display="none"; //道具燈箱的黑色襯底消失
     }
-      function eventLightBox(){ //扭蛋啟動的<按下去>-->啟動扭蛋購買燈箱的按鍵
+      function eventLightBox(){ //扭蛋啟動的<按下去>-->
         document.getElementById("shopBlack1").style.display = "";//燈箱黑色襯底出現
         document.getElementById("gashaponLightBox").style.display ="";//確認事件燈箱出現
 
