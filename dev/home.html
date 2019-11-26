@@ -114,29 +114,35 @@
         <div class="homeNewsContent">
             <div class="newsBox">
                 <div class="newsitem">
-                       <div class="newsPic">
-                           <img src="https://picsum.photos/350/250/?random=1">
-                       </div>
-                     <div class="newsText">
-                         <div class="newsTOP">
-                             <h2>這裡是標題</h2>
-                             <h3>日期: <span>2019/10/27</span>~<span>2019/10/31</span> </h3>
-                         </div>
-                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut adipisci voluptatum fuga magni ad perferendis qui officiis unde ipsam provident tempora suscipit tempore, cumque doloribus, quibusdam pariatur a magnam quod?</p>
-                       <div class="newsBtnAll">
-                           <div class="newsBtn">
-                               <button id="bt"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan id="add"></SPan></button>
-                               <button><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><SPan>18</SPan></button>
-                               <button><i class="fa fa-comments" aria-hidden="true"></i><SPan>19</SPan></button>
-                           </div>
-                           <button class="newsreport">檢舉</button>
-                         </div>
-                       </div>
-                   </div>
-            </div>
+                  <div class="newsPic">
+                    <img src="img/fakeNews.png" alt="">
+                  </div>
+                  <div class="newsText">
+                    <div class="newsTOP" onload="initial()">
+                      <h2>肥宅開始放寒假了</h2>
+                      <h3>已結束</h3>
+                    </div>
+                    <p></p>
+                    <p>獨眼星總支持度-100</p>
+                    <div class="newsBtnAll">
+                      <div class="newsBtn">
+                        <button id="bt1" @click="num++"><i class="fa fa-thumbs-o-up"
+                            aria-hidden="true"></i><SPan>123</SPan></button>
+                        <button id="bt2"><i class="fa fa-thumbs-down" aria-hidden="true"></i><SPan>17</SPan></button>
+                        <button id="bt3" onclick="showDiscuss()"><i class="fa fa-comments"
+                            aria-hidden="true"></i><SPan>19</SPan></button>
+          
+                      </div>
+                      <button class="report" onclick="CheckForm()">檢舉</button>
+          
+                    </div>
+                  </div>
+          
+                </div>
+              </div>
     
     
-            <div class="newsBox">
+            <!-- <div class="newsBox">
                    <div class="newsitem">
                           <div class="newsPic">
                               <img src="https://picsum.photos/350/250/?random=1">
@@ -157,7 +163,7 @@
                             </div>
                           </div>
                       </div>
-               </div>
+               </div> -->
         </div>
         <div class="newsMore">
             <a href="news.html"">更多新聞</a>
