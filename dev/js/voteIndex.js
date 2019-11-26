@@ -18,7 +18,7 @@ function showRunCards(jsonStr) {
     let voteRunCards = "";
     for (var i = 0; i < voteRunData.length; i++) {
         voteRunCards +=
-            `<div class="voteCard col-6 col-md-4 col-lg-4">
+            `<div class="voteCard col-6 col-md-4 col-lg-3">
                 <div class="voteWrapper">
                     <div class="voteChart">
                         <img src="img/vote/unvoted.png" alt="未投票" class="unVoted I-${voteRunData[i].votNo}">
@@ -185,15 +185,12 @@ function voting() {
                             // e.target.classList.add("voteSelected");
                             // e.target.setAttribute("disabled");
                             getVoted();
-                            //////////////////////////////////////////////
                         } else {
                             alert(xhr.responseText);
                         }
                     }
-                    let url = "php/vote/gainNoTicket.php";
-                    xhr.open("post", url, true);
+                    xhr.open("post", "php/vote/gainNoTicket.php", true);
                     let query_string = `votNo=${e.target.parentNode.getAttribute("data-votNo")}`;
-                    //memId,memPsw跟登入一樣
                     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                     xhr.send(query_string);
                 };
@@ -305,17 +302,11 @@ function pieProduce() {
                 });
                 j--;
             };
-            // for(var i = context.length;i>0;i--){
-
-            // }
-
         } else {
             alert(xhr.responseText);
         }
     }
-
-    let url = "php/vote/checkNum.php";
-    xhr.open("Get", url, true);
+    xhr.open("Get", "php/vote/checkNum.php", true);
     xhr.send(null);
 }
 
@@ -356,7 +347,7 @@ function BTNs() {
                                 $class(".voteReportMessage").selectedIndex = "";
                             }
                         } else {
-                            alert(`發生錯誤:${xhr.status}`);
+                            // alert(`發生錯誤:${xhr.status}`);
                         }
                     }
                     //設定好所要連結的程式

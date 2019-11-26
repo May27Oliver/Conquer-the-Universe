@@ -164,9 +164,19 @@
 
 
     //內容區塊-右
+    .citizenText{
+        h2{
+            color: #fff;
+            padding-top: 40px;
+            padding-bottom: 20px;
+        }
+        p{
+            color: #fff;
+        }
+    }
 
     #tab-demo {
-        margin-top: 115px;
+        margin-top: 25px;
 
         .tab-title {
             .tabBtn {
@@ -601,7 +611,7 @@
                 top: calc(50% - 50px);
                 left: calc(50% - 50px);
                 position: absolute;
-                width: 100px;
+                width:100px;
                 text-align: center;
             }
         }
