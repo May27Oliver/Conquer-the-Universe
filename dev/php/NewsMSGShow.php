@@ -25,7 +25,7 @@ try{
     $news ->execute();
     $newsRows=$news->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($newsRows);
-    $arr=[];
+    // $arr=[];
     // while( $newsRow=$news->fetch(PDO::FETCH_ASSOC)){ 
     //     array_push($arr,$newsRow);
     // //    $arr[$i]=$newsRow;
