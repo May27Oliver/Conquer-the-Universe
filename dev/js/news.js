@@ -492,27 +492,27 @@ $(document).ready(function () {
     showNews();
   
 
-     // 跳窗的NEWS
-     function showNews2(d) {
-        // function showAllproduct2(jsonStr) {
-        //     var newsdataB = JSON.parse(jsonStr);
-        let newsMsgAA = "";
-        let msgCarda = document.querySelector('.newsWindowLeft');
-        for (var i = 0; i < newsMSG.length; i++) {
-            newsMsgAA += `<div class="newsTOP" id="newsTOP">
-            <h2>這裡是標題</h2>
-            <h3>剩餘時間: <span></span> </h3>
-          </div>  
-          <img src="img/trueNews.png" alt="">
-          <div class="newsText"> 
-        <p>這裡是新聞內容，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字
-            </p>
-          </div>`;
-        };
-        msgCarda.innerHTML = newsMsgAA;
-        BTNs();  
-        } //產生新聞End
-    showNews2();
+    //  // 跳窗的NEWS
+    //  function showNews2(d) {
+    //     // function showAllproduct2(jsonStr) {
+    //     //     var newsdataB = JSON.parse(jsonStr);
+    //     let newsMsgAA = "";
+    //     let msgCarda = document.querySelector('.newsWindowLeft');
+    //     for (var i = 0; i < newsMSG.length; i++) {
+    //         newsMsgAA += `<div class="newsTOP" id="newsTOP">
+    //         <h2>這裡是標題</h2>
+    //         <h3>剩餘時間: <span></span> </h3>
+    //       </div>  
+    //       <img src="img/trueNews.png" alt="">
+    //       <div class="newsText"> 
+    //     <p>這裡是新聞內容，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字
+    //         </p>
+    //       </div>`;
+    //     };
+    //     msgCarda.innerHTML = newsMsgAA;
+    //     BTNs();  
+    //     } //產生新聞End
+    // showNews2();
 
 
 
