@@ -11,6 +11,10 @@ function $classes(classNames) {
     return document.querySelectorAll(classNames);
 }
 
+function $names(names) {
+    return document.getElementsByName(names);
+}
+
 //---------- 頁面載入 ----------//
 //[進行中]產生卡片
 function showRunCards(jsonStr) {
@@ -41,7 +45,9 @@ function showRunCards(jsonStr) {
     pieProduce();
     voting();
     BTNs();
+    getVoted();
 }
+
 
 //---------- AJAX: PHP載入 ----------//
 //[進行中]接卡片資料
@@ -128,16 +134,13 @@ function voting() {
                     var xhr = new XMLHttpRequest();
                     xhr.onload = function () {
                         if (xhr.status == 200) {
-                            let starCoin =xhr.responseText;
+                            let starCoin = xhr.responseText;
                             pieProduce();
                             $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得宇宙幣10元！";
                             $class(".voteOkay").style.display = ""
                             $class(".voteAlertDoing").style.display = "none";
                             $class(".voteAlertDid").style.display = "block";
                             $id("coin").innerText = starCoin;
-                            // $classes(".unVoted")[j].style.display = "none";
-                            // e.target.classList.add("voteSelected");
-                            // e.target.setAttribute("disabled");
                             getVoted();
                         } else {
                             alert(xhr.responseText);
