@@ -641,20 +641,24 @@ window.addEventListener('load',function(){
         let fnV4P2A = $class("fnV4P2A");//抓每個題目的四個選項
         let fnV5P1A = $class("fnV5P1A");//抓每個題目的四個選項
         let fnV5P2A = $class("fnV5P2A");//抓每個題目的四個選項
+        
     // 財經影片一第一題解答
         fnV1P1Ans1.addEventListener('click',function(){
-            var formData = $("input[name='fnV1P1']:checked").serialize();
-            if(formData=="fnV1P1=1"){
-                console.log('Posting the following: ', formData);
-                $.ajax({
-                    url: 'php/video.php',
-                    data: formData,
-                    type: 'post',
-                    success: function(response) {
-                        $id('coin').innerText=response;
-                    }
-                });
+            if($id("memberName").innerText!=""){
+                var formData = $("input[name='fnV1P1']:checked").serialize();
+                if(formData=="fnV1P1=1"){
+                    console.log('Posting the following: ', formData);
+                    $.ajax({
+                        url: 'php/video.php',
+                        data: formData,
+                        type: 'post',
+                        success: function(response) {
+                            $id('coin').innerText=response;
+                        }
+                    });
+                }
             }
+            
             for(var i=0;i<fnV1P1A.length;i++){
                 fnV1P1A[i].style.backgroundColor="transparent";
             }//先清除所有底色
@@ -664,18 +668,19 @@ window.addEventListener('load',function(){
         },false);
 
         fnV1P1Ans2.addEventListener('click',function(){
-            var formData = $("input[name='fnV1P1']:checked").serialize();
-            console.log(formData);
-            if(formData=="fnV1P1=2"){
-                console.log('Posting the following: ', formData);
-                $.ajax({
-                    url: 'php/video.php',
-                    data: formData,
-                    type: 'post',
-                    success: function(response) {
-                        $id('coin').innerText=response;
-                    }
-                });
+            if($id("memberName").innerText!=""){
+                var formData = $("input[name='fnV1P1']:checked").serialize();
+                if(formData=="fnV1P1=1"){
+                    console.log('Posting the following: ', formData);
+                    $.ajax({
+                        url: 'php/video.php',
+                        data: formData,
+                        type: 'post',
+                        success: function(response) {
+                            $id('coin').innerText=response;
+                        }
+                    });
+                }
             }
             for(var i=0;i<fnV1P1A.length;i++){
                 fnV1P1A[i].style.backgroundColor="transparent";
@@ -708,17 +713,19 @@ window.addEventListener('load',function(){
         });
 
         fnV1P1Ans4.addEventListener('click',function(){
-            var formData = $("input[name='fnV1P1']:checked").serialize();
-            if(formData=="fnV1P1=4"){
-                console.log('Posting the following: ', formData);
-                $.ajax({
-                    url: 'php/video.php',
-                    data: formData,
-                    type: 'post',
-                    success: function(response) {
-                        $id('coin').innerText=response;
-                    }
-                });
+            if($id("memberName").innerText!=""){
+                var formData = $("input[name='fnV1P1']:checked").serialize();
+                if(formData=="fnV1P1=1"){
+                    console.log('Posting the following: ', formData);
+                    $.ajax({
+                        url: 'php/video.php',
+                        data: formData,
+                        type: 'post',
+                        success: function(response) {
+                            $id('coin').innerText=response;
+                        }
+                    });
+                }
             }
             
             for(var i=0;i<fnV1P1A.length;i++){
