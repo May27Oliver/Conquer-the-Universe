@@ -109,7 +109,7 @@
                     </span> -->
                     
                 </div>
-                    <div class="col-6">
+                    <div class="col-3 col-md-6">
                             <div class="productPic">
                                 <img id="shopPic1" src="${shopEqui[0].clothimg}" width="128" onclick="loadImage01()"/>
                                 
@@ -124,7 +124,7 @@
                                 </div>
                             </div>  
                     </div>
-                    <div class="col-6">
+                    <div class="col-3 col-md-6">
                         <div class="productPic">
                                 <img id="shopPic2" src="${shopEqui[4].clothimg}" width="128" onclick="loadImage02()"/>
                         </div>
@@ -138,7 +138,7 @@
                             </div>
                         </div>  
                     </div>    
-                    <div class="col-6">
+                    <div class="col-3 col-md-6">
                         <div class="productPic">
                                 <img id="shopPic3" src="${shopEqui[2].clothimg}" width="128" onclick="loadImage03()"/>
                         </div>
@@ -151,7 +151,7 @@
                             </div>
                             </div>  
                     </div>
-                    <div class="col-6">
+                    <div class="col-3 col-md-6">
                         <div class="productPic">
                                 <img id="shopPic4" src="${shopEqui[3].clothimg}" width="128" onclick="loadImage04()"/>
                         </div>
