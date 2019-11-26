@@ -93,8 +93,8 @@ function eventLightBox(){ //扭蛋啟動的<按下去>-->啟動扭蛋購買燈�
     document.getElementById("gashaponLightBox").style.display ="";//確認事件燈箱出現
 
     var arr1 = new Array("肥仔星候選人","胖胖星候選人","兔兔星候選人");
-    var arr2 = new Array("盜伐山林","亂丟垃圾","日行一善");
-    var amountArr = new Array("支持度-100","支持度-100","支持度+100");
+    var arr2 = new Array("胡亂爬樹","修橋造路","洗錢被抓");
+    var amountArr = new Array("支持度-100","支持度+100","支持度-100");
     // var arr3 = new Array("山林","垃圾","一善");
     function rand(arr){
       return parseInt (Math.random()*arr.length);
