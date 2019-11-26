@@ -10,12 +10,28 @@
 </head>
 <body class="homeCitizen">
     @@include('template/login.html')
+    <!---- alert燈箱 ---->
+    <div id="alertWindowWrap" style="display: flex; display: none;">
+        <div class="alertWindow">
+            <h2 class="alertTitle">系統訊息</h2>
+            <div class="alertTextBox">
+                <p class="alertContent">請自行利用js程式更改自己的訊息，程式寫法在下方註解</p>       
+                <div id="alertButton">確認</div>
+                <div id="alertEqui" style="display: none;">確認</div>
+                <div id="alertEquiHand" style="display: none;">確認</div>
+                <div id="alertHomeShop" style="display: none;">確認</div>
+                <div id="cancelButton">取消</div>
+            </div>
+        </div>
+    </div>
+    <!---- 燈箱結束 ---->
+
     <!---- 編輯會員內容區塊燈箱 ---->
     <div class="content" id="memberData" style="display: none;">
         <div class="container">
             <div class="row">
                  <div  class="memDataItem col-12 col-md-12">
-                         <div class="col-12 memDataBox" id="memDataBox">
+                         <div class="col-12" id="memDataBox">
                              <!-- <h2>編輯會員資料</h2>
                              <div class="col-12 col-md-12 wrapDataItem" id="wrapDataItem">
                                  <label class="col-5 col-md-5 col-lg-5 col-xl-5">會員編號 :</label>
@@ -59,8 +75,6 @@
              </div>
         </div>
      </div>
-    <!---- alert ---->
-    @@include('./template/alert.html')
     <!---- 選單區 ---->
     @@include('./template/header.html')
     <!---- 公民家內容區塊 ---->
@@ -111,19 +125,22 @@
                             
                            
                                 <button class="memBtn" id="memDataBtn">編輯會員資料</button>
-                            <!-- onclick="location.href='memberData.html'   -->
                         </div>
                     </div>
                      
                      <div class="col-12 col-md-4 col-lg-4 col-xl-4 boxRight">
-                            <div id="tab-demo"> 
-                                <div class="tab-title">
-                                       <span class="tabBtn" id="tabBtn1">限時道具</span>
-                                        <span class="tabBtn" id="tabBtn2">現有道具</span>
-                                </div>
-                                <div class="tabIn">
-                                    <div class="wrapTabIn">
-                                            
+                        <span class="citizenText">
+                            <h2>限時道具</h2>
+                            <p>購買道具可以增加候選人支持度</p>
+                        </span>
+                        <div id="tab-demo"> 
+                            <div class="tab-title">
+                                    <span class="tabBtn" id="tabBtn1">限時道具</span>
+                                    <span class="tabBtn" id="tabBtn2">現有道具</span>
+                            </div>
+                            <div class="tabIn">
+                                <div class="wrapTabIn">
+                                        
                                     <div id="tab01" class="tab-inner">
                                         <h4>限時搶購:<i></i>  <i></i>  <i></i></h4> 
                                         <div class="propBox">
@@ -135,7 +152,7 @@
                                         </div>
                                         <div class="propBox">
                                             <div id="today">
-                                              
+                                                
                                             </div>
                                         </div>
                                         <div class="propBox">
@@ -178,10 +195,10 @@
                                         <div class="propBox">
                                         </div> -->
                                     </div>
-                                    </div>
                                 </div>
-                               
                             </div>
+                            
+                        </div>
                     </div> 
                 </div> 
             </div>

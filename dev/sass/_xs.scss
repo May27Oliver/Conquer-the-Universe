@@ -419,7 +419,7 @@
     }
 
     h2 {
-        font-size: 32px;
+        font-size: 30px;
     }
 }
 
@@ -651,7 +651,7 @@
 .redBall {
     background-repeat: no-repeat;
     background-position: center bottom;
-    height: 1455px;
+    height: 1488px;
 
     //container限制容器    
     .redBallIn {
@@ -692,6 +692,19 @@
 
 
 // 內容區塊右
+.citizenText{
+    h2{
+        color: #333;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    p{
+        color: #333;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+}
 #tab-demo {
     overflow: hidden;
     margin: auto;
@@ -946,7 +959,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    max-width: 350px;
+    max-width: 400px;
     width: 450px;
     height: 450px;
     margin: auto;
@@ -955,7 +968,7 @@
 
     h2 {
         text-align: center;
-        line-height: 3;
+        line-height: 4;
         color: #eee;
     }
 
@@ -972,9 +985,10 @@
 
 .memDataBox {
     text-align: center;
-    width: 350px;
+    width: 400px;
     margin: auto;
     background-color: #440b86;
+    border-radius: 20px;
     /* border: 2px solid $green; */
 
     box-sizing: border-box;
@@ -4506,4 +4520,79 @@ div.slider {
     font-size: 16px;
     line-height: 30px;
 }
+
+// ===公民的家燈箱
+#alertWindowWrap {
+    background: rgba(0, 0, 0, .5);
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+
+    .alertWindow {
+        width: 300px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        .alertTitle{
+            font-size: 1em;
+            text-align: center;
+            background: #fcd93d;
+            padding: 20px;
+            margin: 0;
+            border-radius: 10px 10px 0 0;
+            font-size: 32px;
+        }
+        .alertTextBox{
+            background: #FEF7D4;
+            border-radius: 0 0 10px 10px;
+            text-align: center;
+            padding: 20px;
+            .alertContent {
+                font-size: 20px;
+                line-height: 1.5;
+                padding: 20px 0; 
+            }
+            #alertButton,#alertEqui,#alertEquiHand,#alertHomeShop {
+                position: relative;
+                cursor: pointer;
+                display: inline-block;
+                border-radius: 20px;
+                /* color: #b78100;
+                border:1px solid #b78100;
+                background: #ffd584; */
+                background: #fcd93d;
+                padding: 9px 20px 9px 20px;
+                margin: 10px;
+            }
+            #alertButton:hover,#alertEqui:hover,#alertEquiHand:hover,#alertHomeShop:hover{
+                opacity: .8;
+            }
+            #cancelButton{
+                position: relative;
+                cursor: pointer;
+                display: inline-block;
+                border-radius: 20px;
+                /* color: #b78100;
+                border:1px solid #b78100;
+                background: #ffd584; */
+                background: #fcd93d;
+                /* opacity: .8; */
+                padding: 9px 20px 9px 20px;
+                margin: 10px;
+                font-weight: 900;
+                font-weight: 500;
+            }
+            #cancelButton:hover{
+                opacity: .8;
+            }
+
+        }
+    }
+
+ }
 
