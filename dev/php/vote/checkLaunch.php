@@ -6,19 +6,19 @@ $memNo = $_SESSION["memNo"];
 try{
     require_once("../connectPDO.php");
     
-    $sql_voted = 
-        "SELECT * FROM `votrecord` 
-        WHERE `votrecord`.`memNo` = {$memNo}";
-    $voted = $pdo->prepare($sql_voted);
-    $voted->execute();
-
+    $sql_check =
+        "SELECT * FROM `vote` 
+        WHERE `vote`.`memNo`={$memNo} and `vote`.`votDate`=CURDATE()";
+    $check = $pdo->prepare($sql_check);
+    $check->execute();
+    
     //找得到並取回資料
-    $arrayVoted = [];
-    while($votedRow = $voted->fetch(PDO::FETCH_ASSOC)){
-        array_push($arrayVoted,$votedRow);
+    $arrayCheck = [];
+    while($checkRow = $check->fetch(PDO::FETCH_ASSOC)){
+        array_push($arrayCheck,$checkRow);
     };
     //送出json字串
-    echo json_encode($arrayVoted);
+    echo json_encode($arrayCheck);
 
 }catch(PDOException $e){
     $errMsg .= "錯誤訊息: {$e->getMessage()}<br>";

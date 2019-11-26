@@ -1418,8 +1418,11 @@
                 display: none;
 
                 h2 {
+                    color: #333;
                     font-size: 30px;
                     text-align: center;
+                    text-shadow: none;
+                    line-height: 1;
                     background: $yellow;
                     border-radius: 10px 10px 0 0;
                     padding: 20px;

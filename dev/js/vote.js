@@ -230,7 +230,6 @@ function getVoted() {
                         var Aclass=`A-${voted[i].votNo}`;
                         var Bclass=`B-${voted[i].votNo}`;
                         var Iclass=`I-${voted[i].votNo}`;
-                        // alert(Aclass);
                         $(`.${Aclass}`).attr("disabled","disabled");
                         $(`.${Bclass}`).attr("disabled","disabled");
                         $(`.${Iclass}`).css("display","none");
@@ -544,7 +543,6 @@ function endPieProduce() {
 
 //[AUTO]自動產生截止日期
 function voteDeadline() {
-    var weekSec = 7*24*60*60;
     var today = new Date();
     $id("afterWeek").innerText =
         today.getFullYear() + "/" +
