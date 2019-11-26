@@ -153,7 +153,7 @@ $id("EquiHand").onclick = removeEquiHand;
 $id("alertEquiHand").onclick = alertRemoveEquiHand;
 
 //===購買限時道具
-document.querySelector(".citizenShop").onclick = homeShopAlert;
+$id("today").onclick = homeShopAlert;
 $id("alertHomeShop").onclick = alertRemoveHomeShop;
 
 }; 
