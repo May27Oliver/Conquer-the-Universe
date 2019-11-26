@@ -126,42 +126,42 @@
                     </div>
                     <div class="col-6">
                         <div class="productPic">
-                                <img id="shopPic2" src="${shopEqui[1].clothimg}" width="128" onclick="loadImage02()"/>
+                                <img id="shopPic2" src="${shopEqui[4].clothimg}" width="128" onclick="loadImage02()"/>
                         </div>
                         <div class="productTitle">
-                            <h3 class="clothName2">${shopEqui[1].clothName}</h3>
+                            <h3 class="clothName2">${shopEqui[4].clothName}</h3>
                             <div class="productBtn2">
-                                <button id="shopSpanLogin" >${shopEqui[1].clothPrice}</button>
-                                <span class="popularityAdd2" style="visibility:hidden">${shopEqui[1].popularAmount}</span>    
-                                <span class="clothNo2" style="visibility:hidden">${shopEqui[1].clothNo}</span>
-                                <span class="clothClass2" style="visibility:hidden">${shopEqui[1].clothClass}</span>
+                                <button id="shopSpanLogin" >${shopEqui[4].clothPrice}</button>
+                                <span class="popularityAdd2" style="visibility:hidden">${shopEqui[4].popularAmount}</span>    
+                                <span class="clothNo2" style="visibility:hidden">${shopEqui[4].clothNo}</span>
+                                <span class="clothClass2" style="visibility:hidden">${shopEqui[4].clothClass}</span>
                             </div>
                         </div>  
                     </div>    
                     <div class="col-6">
                         <div class="productPic">
-                                <img id="shopPic3" src="${shopEqui[1].clothimg}" width="128" onclick="loadImage03()"/>
+                                <img id="shopPic3" src="${shopEqui[2].clothimg}" width="128" onclick="loadImage03()"/>
                         </div>
                         <div class="productTitle">
-                            <h3 class="clothName3">${shopEqui[1].clothName}</h3>
+                            <h3 class="clothName3">${shopEqui[2].clothName}</h3>
                             <div  class="productBtn3">
-                                <button id="shopSpanLogin" >${shopEqui[1].clothPrice}</button>
-                                <span class="popularityAdd3" style="visibility:hidden">${shopEqui[1].popularAmount}</span>    <span class="clothNo3" style="visibility:hidden">${shopEqui[1].clothNo}</span>
-                                <span class="clothClass3" style="visibility:hidden">${shopEqui[1].clothClass}</span>
+                                <button id="shopSpanLogin" >${shopEqui[2].clothPrice}</button>
+                                <span class="popularityAdd3" style="visibility:hidden">${shopEqui[2].popularAmount}</span>    <span class="clothNo3" style="visibility:hidden">${shopEqui[2].clothNo}</span>
+                                <span class="clothClass3" style="visibility:hidden">${shopEqui[2].clothClass}</span>
                             </div>
                             </div>  
                     </div>
                     <div class="col-6">
                         <div class="productPic">
-                                <img id="shopPic4" src="${shopEqui[1].clothimg}" width="128" onclick="loadImage04()"/>
+                                <img id="shopPic4" src="${shopEqui[3].clothimg}" width="128" onclick="loadImage04()"/>
                         </div>
                         <div  class="productTitle">
-                            <h3 class="clothName4">${shopEqui[1].clothName}</h3>
+                            <h3 class="clothName4">${shopEqui[3].clothName}</h3>
                             <div class="productBtn4">
-                                <button id="shopSpanLogin" >${shopEqui[1].clothPrice}</button>
-                                <span class="popularityAdd4" style="visibility:hidden">${shopEqui[1].popularAmount}</span>    
-                                <span class="clothNo4" style="visibility:hidden">${shopEqui[1].clothNo}</span>
-                                <span class="clothClass4" style="visibility:hidden">${shopEqui[1].clothClass}</span>
+                                <button id="shopSpanLogin" >${shopEqui[3].clothPrice}</button>
+                                <span class="popularityAdd4" style="visibility:hidden">${shopEqui[3].popularAmount}</span>    
+                                <span class="clothNo4" style="visibility:hidden">${shopEqui[3].clothNo}</span>
+                                <span class="clothClass4" style="visibility:hidden">${shopEqui[3].clothClass}</span>
                             </div>
                         </div>  
                     </div>
