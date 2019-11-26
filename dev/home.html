@@ -335,151 +335,54 @@
     </div>
     
     <!---------- 公民投票 ---------->
-    <div class="voteSectionWrapper">
-        <section class="voteSection">
-            <h2>熱門投票</h2>
-            <div class="voteGroup">
-                <div class="voteCard col-6 col-md-4">
-                    <div class="voteWrapper">
-                        <div class="voteChart">
-                            <canvas class="votePie"></canvas>
-                        </div>
-                        <div class="voteText">
-                            <button class="report">檢舉</button>
-                            <small>發起人：<span>劉一</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/11/05截止</p>
-                            <div class="voteSelectGroup">
-                                <button disabled="disabled" class="voteSelect voteSelected">已選擇此選項</button>
-                                <button class="voteSelect" disabled="disabled">不可再選另個</button>
-                            </div>
-                        </div>
+    <section class="voteSection">
+        <!----- 卡片 ----->
+        <div class="voteRun container">
+            <h2>公民投票</h2>
+            <p>參與公民投票即可獲得宇宙幣！</p>
+            <div class="voteGroup" id="voteGroupRun"></div>
+            <!----- 跳窗提示 ----->
+            <div class="voteAlertGroup" style="display: none;">
+                <div class="voteAlertDoing" style="display: none;">
+                    <h2>系統訊息</h2>
+                    <div class="voteAlertText">
+                        <p class="voteDoingNotice"></p>
+                        <select class="voteReportMessage" name="voteReportMessage" style="display: none;">
+                            <option>請選擇</option>
+                            <option>外部廣告</option>
+                            <option>仇恨言論</option>
+                            <option>色情內容</option>
+                            <option>與主題無關</option>
+                        </select>
+                        <button type="submit" class="voteAddingSubmit" style="display: none;">確認1</button>
+                        <button type="submit" class="voteVotingA" style="display: none;">確認2</button>
+                        <button type="submit" class="voteVotingB" style="display: none;">確認3</button>
+                        <button type="submit" class="voteReportSubmit" style="display: none;">確認4</button>
+                        <button class="voteCancel">取消</button>
                     </div>
                 </div>
-                <div class="voteCard col-6 col-md-4">
-                    <div class="voteWrapper">
-                        <div class="voteChart">                        <canvas class="votePie"></canvas>
-                        </div>
-                        <div class="voteText">
-                            <button class="report">檢舉</button>
-                            <small>發起人：<span>陳二</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/11/05截止</p>
-                            <div class="voteSelectGroup">
-                                <button class="voteSelect">選項一</button>
-                                <button class="voteSelect">選項二</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="voteCard col-6 col-md-4">
-                    <div class="voteWrapper">
-                        <div class="voteChart">
-                            <canvas class="votePie"></canvas>
-                        </div>
-                        <div class="voteText">
-                            <button class="report">檢舉</button>
-                            <small>發起人：<span>張三</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/11/05截止</p>
-                            <div class="voteSelectGroup">
-                                <button class="voteSelect">選項一</button>
-                                <button class="voteSelect">選項二</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="voteCard col-6 col-md-4">
-                    <div class="voteWrapper">
-                        <div class="voteChart">
-                            <canvas class="votePie"></canvas>
-                        </div>
-                        <div class="voteText">
-                            <button class="report">檢舉</button>
-                            <small>發起人：<span>李四</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/11/05截止</p>
-                            <div class="voteSelectGroup">
-                                <button class="voteSelect">選項一</button>
-                                <button class="voteSelect">選項二</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="voteCard col-6 col-md-4">
-                    <div class="voteWrapper">
-                        <div class="voteChart">
-                            <canvas class="votePie"></canvas>
-                        </div>
-                        <div class="voteText">
-                            <button class="report">檢舉</button>
-                            <small>發起人：<span>王五</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/11/05截止</p>
-                            <div class="voteSelectGroup">
-                                <button class="voteSelect">選項一</button>
-                                <button class="voteSelect">選項二</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="voteCard col-6 col-md-4">
-                    <div class="voteWrapper">
-                        <div class="voteChart">
-                            <canvas class="votePie"></canvas>
-                        </div>
-                        <div class="voteText">
-                            <button class="report">檢舉</button>
-                            <small>發起人：<span>王五</span></small>
-                            <h3>公民投票標題</h3>
-                            <p>2019/11/05截止</p>
-                            <div class="voteSelectGroup">
-                                <button class="voteSelect">選項一</button>
-                                <button class="voteSelect">選項二</button>
-                            </div>
-                        </div>
+                <div class="voteAlertDid" style="display: none;">
+                    <h2>系統訊息</h2>
+                    <div class="voteAlertText">
+                        <p class="voteDidNotice"></p>
+                        <button class="voteOkay" style="display: none;">確認</button>
+                        <button class="voteKnow" style="display: none;">確認</button>
                     </div>
                 </div>
             </div>
+            <!----- more ----->
             <a href="vote.html"><button class="home-more">參與更多公投議題</button></a>
-        </section>
-
-        <!---------- 跳窗提示 ---------->
-        <section class="voteAlertGroup">
-            <div class="voteAlertDoing">
-                <h2>系統訊息</h2>
-                <div class="voteAlertText">
-                    <p class="voteDoingNotice"></p>
-                    <select class="voteReportMessage" name="voteReportMessage">
-                        <option>請選擇</option>
-                        <option value="1">外部廣告</option>
-                        <option value="2">仇恨言論</option>
-                        <option value="3">色情內容</option>
-                        <option value="4">與主題無關</option>
-                    </select>
-                    <!-- **串資料時加入 <button form="voteForm">** -->
-                    <button type="submit" class="voteAddingSubmit">確認1</button>
-                    <!-- **串資料時加入 <button form="">** -->
-                    <button type="submit" class="voteVotingSubmit">確認2</button>
-                    <!-- **串資料時加入 <button form="">** -->
-                    <button type="submit" class="voteReportSubmit">確認3</button>
-                    <button class="voteCancel">取消</button>
-                </div>
-            </div>
-            <div class="voteAlertDid">
-                <h2>系統訊息</h2>
-                <div class="voteAlertText">
-                    <p class="voteDidNotice"></p>
-                    <button class="voteOkay">確認</button>
-                </div>
-            </div>
-        </section>
+        </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-    </div>
+    </section>
+
+
+    <!---------- GO TO TOP ---------->
     <button type="button" id="back_to_top" >
         <img src="img/goTop.png" alt="">
     </button>
+
     <!-- ----- 頁尾 FOOTER ----- -->
     <footer>
         <div class="homeFooter"><img class="footerImg" src="img/home_img/homeFooter.png" alt="">
@@ -513,7 +416,7 @@
     
 
 <!--/////////////// JavaScript ///////////////-->
-<script src="js/VoteClick.js"></script>
+<script src="js/voteIndex.js"></script>
 <script src="js/starsShine.js"></script>
 <script src="js/animation.js"></script>
 <script src="js/login.js"></script>
