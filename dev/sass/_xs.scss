@@ -416,10 +416,12 @@
 
     h3 {
         font-size: 20px;
+        line-height: 1.5;
+        color: #ddd;
     }
 
     h2 {
-        font-size: 32px;
+        font-size: 30px;
     }
 }
 
@@ -946,7 +948,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    max-width: 350px;
+    max-width: 400px;
     width: 450px;
     height: 450px;
     margin: auto;
@@ -972,12 +974,16 @@
 
 .memDataBox {
     text-align: center;
-    width: 350px;
+    width: 400px;
     margin: auto;
     background-color: #440b86;
     /* border: 2px solid $green; */
-
+    border-radius: 20px;
     box-sizing: border-box;
+    h2{
+        padding-top: 20px;
+        
+    }
 }
 
 
@@ -1022,7 +1028,8 @@
         border: 1px #a4e1f0 solid;
         border-radius: 5px;
         line-height: 1.5;
-        margin-right: 8px;
+        margin-right: 20px;
+        width: 140px;
     }
 
     option {
@@ -1049,7 +1056,7 @@
         border: 1px #a4e1f0 solid;
         border-radius: 5px;
         line-height: 1.5;
-        margin: 5px 12px 5px 0;
+        margin: 5px 12px 5px 6px;
 
 
     }
