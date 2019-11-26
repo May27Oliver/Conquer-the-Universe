@@ -313,23 +313,30 @@
         <!-- 網頁標題 -->
         <div class="videoTitle">
             <h2>公民小學堂</h2>
+            <script src="js/videopage.js"></script>
             <!-- <h2>地球觀測站</h2> -->
         </div>
         <!-- 影片區 -->
         <div class="video">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/lJyt1sy4xv4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            
+            <iframe id="big-video" width="560" height="315" src="https://www.youtube.com/embed/et3NitNdfv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <!-- Question -->
         <div class="question">
-            <h2>1.財經題：美中貿易戰起因為何？</h2>
-            <ul>
-                <li><a href="">&nbsp&nbsp1.日圓貼水</a></li>
-                <li><a href="">&nbsp&nbsp2.英國脫歐</a></li>
-                <li><a href="">&nbsp&nbsp3.鉅額貿易逆差</a></li>
-                <li><a href="">&nbsp&nbsp4.聯準會過度量化寬鬆</a></li>
-            </ul>
+            <div id="financeProblem"><!--金融問題區-->
+                <div id="fnVideo1">  <!--影片一題庫-->
+                    <div class="fnVideo1-problem" ><!--影片一第一題-->
+                        <h2>1.財經題：美中貿易戰起因為何？</h2>
+                        <ul>
+                            <label for="fnV1P1A1"><li id="fnVideo1-problem1Ans1" class="fnV1P1A"><input type="radio" id="fnV1P1A1" name="fnV1P1" value=1>&nbsp&nbsp1.日圓貼水</li></label>
+                            <label for="fnV1P1A2"><li id="fnVideo1-problem1Ans2" class="fnV1P1A"><input type="radio" id="fnV1P1A2" name="fnV1P1" value=2>&nbsp&nbsp2.英國脫歐</li></label>
+                            <label for="fnV1P1A3"><li id="fnVideo1-problem1Ans3" class="fnV1P1A"><input type="radio" id="fnV1P1A3" name="fnV1P1" value=3>&nbsp&nbsp3.鉅額貿易逆差</li></label>
+                            <label for="fnV1P1A4"><li id="fnVideo1-problem1Ans4" class="fnV1P1A"><input type="radio" id="fnV1P1A4" name="fnV1P1" value=4>&nbsp&nbsp4.聯準會過度量化寬鬆</li></label>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <p id="award">恭喜答對！<br>您將得到5點候選人支持度與宇宙幣100元！</p>
+            <p id="wrongAns">不好意思您答錯囉！將扣您陣營候選人支持度4點</p>                
         </div>
         <a href="video.html" class="home-more">觀看更多影片</a>
     </div>
