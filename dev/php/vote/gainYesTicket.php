@@ -1,15 +1,44 @@
-<?php 
-require_once("../connectPDO.php");
-$votNo=$_REQUEST["votNo"];
+<?php
+session_start();
+$errMsg = "";
+$votNo = $_REQUEST["votNo"];
+$memNo = $_SESSION["memNo"];
+
 try{
-    $sql = "UPDATE `vote` 
-            SET `votACount` = `votACount`+ 1 
-            WHERE `vote`.`votNo` = {$votNo}";
-    $voteYes=$pdo->query($sql);
-    $voteYesCount=$voteYes->fetch(PDO::FETCH_ASSOC);
-    echo $voteYesCount["votACount"];
-  }catch(PDOException $e){
-    echo $voteYesCount["error"] = "error";
-  }
+    require_once("../connectPDO.php");
+
+    $sql_record = 
+        "INSERT INTO `votrecord` (votNo, memNo) 
+        VALUES ({$votNo}, {$memNo})";
+    $pdo->exec($sql_record);
+
+    $sql_voteA = 
+        "UPDATE `vote` 
+        SET `votACount` = `votACount`+ 1 
+        WHERE `vote`.`votNo` = {$votNo}";
+    $pdo->exec($sql_voteA);
+
+    $sql_addCoin = 
+        "UPDATE `member` 
+        SET `starCoin` = `starCoin`+ 10 
+        WHERE `member`.`memNo` = {$memNo}";
+    $pdo->exec($sql_addCoin);
+
+    //扣完宇宙幣後要把新的宇宙幣數值fetch回來，並存進session裡面
+    $sql_afterCut="select starCoin from `member` where memNo={$memNo}";
+    $afterCut = $pdo->prepare($sql_afterCut);
+    $afterCut->execute();
+    $number = $afterCut->fetch(PDO::FETCH_ASSOC);
+    $_SESSION["starCoin"] = $number["starCoin"];
+
+    echo $number["starCoin"];
+
+}catch(PDOException $e){
+    $errMsg .= "錯誤訊息: {$e->getMessage()}<br>";
+    $errMsg .= "錯誤行號: {$e->getLine()}<br>";
+    if( $errMsg != ""){
+        echo $errMsg;
+        exit();
+    }
+}
 ?>
-<!-- 考慮投票成功後回傳新票數 -->

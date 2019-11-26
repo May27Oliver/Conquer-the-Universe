@@ -62,19 +62,20 @@ function animate(){
 	update();
 	//context.fillStyle = 'rgba(255, 255, 255, .1)';
 	//context.fillRect(0,0,canvasW,canvasH);
+	context = canvas.getContext("2d");
 	context.clearRect(0,0,canvasW,canvasH);
 	for(var i = 0; i < arrStars.length; i++){
-	arrStars[i].render();
+		arrStars[i].render();
 	}
 	requestAnimationFrame(animate);
 }
 animate();
 
 //Resize Canvas
-// $(window).resize(resizeCanvas);
-// function resizeCanvas(){
-// 	$('#starShine').attr('width', $(window).get(0).innerWidth);
-// 	$('#starShine').attr('height', $(window).get(0).innerHeight);
-// 	context.fillRect(0,0,canvas.width,canvas.height);
-// };
-// resizeCanvas();
+$(document).ready(function(){
+	$(window).resize(function(){
+		$('#starShine').attr('width', $(screen).get(0).offsetWidth);
+		$('#starShine').attr('height', $(document).get(0).offsetWidth);
+		context.clearRect(0,0,canvas.width,canvas.height);
+	});
+});

@@ -24,7 +24,7 @@
                     <li><a href="video.html">公民學堂</a></li>
                     <li><a href="vote.html">公民投票</a></li>
                     <li><a href="shop.html">宇宙商城</a></li>
-                    <li><a href="homeCitizen.html">公民的家</a></li>
+                    <li><a href="" id="homeEnter">公民的家</a></li>
                 </ul>
                 <p id="wealth"></p><span id="coin"></span>
                 <p id="memberName"></p>
@@ -34,11 +34,9 @@
     </header>
     <script>
         $(document).ready(function(){
-                        
             // 最上面個星球總支持度
             getTopPoint();
             function getTopPoint(){
-                
                 var xhr = new XMLHttpRequest();
                 xhr.onload=function (){
                     if( xhr.status == 200 ){ 
@@ -61,4 +59,18 @@
 
 
         });
+        //公民的家登入及未登入
+        $('ul li:last-child').click(function(e){
+            var nameWord=document.getElementById("memberName").innerText;
+            if(nameWord){
+                $id("homeEnter").href="homeCitizen.html";
+                console.log("有抓到使用者名稱");
+                window.location = "../dest/homeCitizen.html";
+            }else{
+                // document.querySelector(".alertContent").innerText = "登入/註冊會員";
+                e.preventDefault();
+                enterHomeCitizen();
+                console.log("沒有抓到使用者名稱");
+            }
+        })
 </script>
