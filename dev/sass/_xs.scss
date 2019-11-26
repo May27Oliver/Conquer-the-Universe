@@ -1245,14 +1245,13 @@
 
 /*__________[START] 首頁公民投票 VOTE IN home __________*/
 
-.voteSectionWrapper {
-    margin-top: -200px;
+.voteSection {
+    padding: 100px 0 300px;
 
-    // background: url('../img/vote/home-vote-bg.png') no-repeat center center / contain ;
-    .voteSection {
+    .container {
         width: 100%;
         max-width: 992px;
-        margin: 200px auto;
+        margin: 0 auto;
         padding: 1px 15px;
         box-sizing: border-box;
 
@@ -1260,8 +1259,17 @@
             background: url('../img/vote/title-bg.png') no-repeat center center / contain;
             color: #fff;
             text-align: center;
+            text-shadow: 0px 0px 1px #000;
             line-height: 2.8;
-            margin: 0px auto 80px;
+            margin: 0 auto;
+        }
+
+        h2+p {
+            color: #fff;
+            line-height: 2;
+            text-align: center;
+            text-shadow: 0px 0px 1px #000;
+            margin: 30px auto;
         }
 
         /*------ 投票卡片 ------*/
@@ -1271,22 +1279,32 @@
             margin: -7.5px;
 
             .voteCard {
-                &:nth-child(n+5) {
-                    display: none;
-                }
+                min-height: 350px;
 
                 .voteWrapper {
-                    height: 100%;
                     border-radius: 10px;
                     text-align: center;
                     position: relative;
                     padding: 1px;
                     margin: 7.5px;
+                    box-shadow: 0px 0px 5px #ccc;
 
                     .voteChart {
+                        position: relative;
                         background: $green;
                         padding: 15px;
                         border-radius: 10px 10px 0 0;
+                        position: relative;
+
+                        img {
+                            width: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            opacity: .97;
+                            border-radius: 10px 10px 0 0;
+                            vertical-align: bottom;
+                        }
                     }
 
                     .voteText {
@@ -1296,15 +1314,19 @@
                         position: relative;
 
                         small {
-                            margin-top: 10px;
+                            padding-top: 10px;
                             font-size: 12px;
                             display: block;
                         }
 
                         h3 {
+                            height: 40px;
                             font-size: 18px;
                             font-weight: 500;
                             margin-top: 10px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
                         }
 
                         p {
@@ -1316,149 +1338,154 @@
                 }
             }
         }
-    }
 
-    /*------ 按鈕 ------*/
-    button {
-        display: block;
-        background: #1d2088;
-        color: #fff;
-        font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
-        font-size: 15px;
-        font-weight: 500;
-        padding: 5px 18px;
-        margin: 10px auto 0;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-        outline: none;
-
-        &:hover {
-            background: lighten(#1d2088, 15);
-            box-shadow: 0px 0px 0px 3px darken($blue, 20);
-        }
-
-        &[disabled|="disabled"] {
-            background: #ccc;
-            opacity: 0.8;
-            cursor: default;
-
-            &:hover {
-                background: #ccc;
-                box-shadow: none;
-            }
-        }
-
-        &.voteSelected {
-            background: lighten(#1d2088, 15);
-            box-shadow: 0px 0px 0px 3px darken($blue, 20);
-
-            cursor: default;
+        /*------ 按鈕 ------*/
+        button {
+            display: block;
+            background: #1d2088;
+            color: #fff;
+            font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 5px 15px;
+            margin: 10px auto 0;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            outline: none;
 
             &:hover {
                 background: lighten(#1d2088, 15);
                 box-shadow: 0px 0px 0px 3px darken($blue, 20);
             }
-        }
 
-        &.report {
-            width: 40px;
-            background: #fff;
-            color: #333;
-            font-size: 10px;
-            font-weight: 400;
-            padding: 2px 0;
-            margin: 0;
-            border-radius: 5px;
-            box-sizing: border-box;
-            position: absolute;
-            right: 6px;
-            top: 6px;
-        }
-
-        &.home-more {
-            text-decoration: none;
-            background: #ffd584;
-            color: #b78100;
-            width: 200px;
-            line-height: 30px;
-            text-align: center;
-            /* padding:15px;*/
-            margin: 80px auto 0;
-            border-radius: 40px;
-            border: 2px solid #b78100;
-            cursor: pointer;
-            margin-top: 70px;
-
-            &:hover {
-                background: darken(#ffd584, 10);
-                color: darken(#b78100, 10);
-            }
-        }
-    }
-
-    /*------ 跳窗提示 ------*/
-    .voteAlertGroup {
-        width: 100vw;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: rgba(0, 0, 0, .5);
-        z-index: 9999;
-        display: none;
-
-        .voteAlertDoing,
-        .voteAlertDid {
-            width: 300px;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: none;
-
-            h2 {
-                color: #333;
-                font-size: 30px;
-                text-align: center;
-                text-shadow: none;
-                line-height: 1;
-                background: $yellow;
-                border-radius: 10px 10px 0 0;
-                padding: 20px;
-                margin: 0;
-            }
-
-            button {
-                display: inline-block;
-                background: $yellow;
-                color: #333;
-                margin: 35px 10px 0;
+            &[disabled|="disabled"] {
+                background: #ccc;
+                opacity: 0.8;
+                cursor: default;
 
                 &:hover {
-                    background: lighten($yellow, 15);
-                    box-shadow: 0px 0px 0px 3px darken($yellow, 20);
+                    box-shadow: none;
+                }
+            }
+            
+
+            &.voteSelected {
+                background: lighten(#1d2088, 15);
+                box-shadow: 0px 0px 0px 3px darken($blue, 20);
+                cursor: default;
+
+                &:hover {
+                    background: lighten(#1d2088, 15);
+                    box-shadow: 0px 0px 0px 3px darken($blue, 20);
                 }
             }
 
-            select {
-                width: 150px;
-                font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
-                font-size: 15px;
+            &.report {
+                width: 40px;
+                background: #fff;
                 color: #333;
-                border: none;
-                padding: 5px 10px;
-                margin: 15px auto 0;
-
-                option {
-                    line-height: 2;
+                font-size: 10px;
+                font-weight: 400;
+                padding: 2px 0;
+                margin: 0;
+                border-radius: 5px;
+                box-sizing: border-box;
+                position: absolute;
+                right: 6px;
+                top: 6px;
+            }
+            
+            &.home-more {
+                text-decoration: none;
+                background: #ffd584;
+                color: #b78100;
+                width: 200px;
+                line-height: 30px;
+                text-align: center;
+                /* padding:15px;*/
+                margin: 80px auto 0;
+                border-radius: 40px;
+                border: 2px solid #b78100;
+                cursor: pointer;
+                margin-top: 70px;
+    
+                &:hover {
+                    background: darken(#ffd584, 10);
+                    color: darken(#b78100, 10);
                 }
             }
-        
+        }
+
+        /*------ 跳窗提示 ------*/
+        .voteAlertGroup {
+            width: 100vw;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .5);
+            z-index: 9999;
+            display: none;
+
+            .voteAlertDoing,
+            .voteAlertDid {
+                width: 300px;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: none;
+
+                h2 {
+                    color: #333;
+                    font-size: 30px;
+                    text-align: center;
+                    text-shadow: none;
+                    line-height: 1;
+                    background: $yellow;
+                    border-radius: 10px 10px 0 0;
+                    padding: 20px;
+                    margin: 0;
+                }
+
+                .voteAlertText {
+                    background: lighten($yellow, 30);
+                    border-radius: 0 0 10px 10px;
+                    text-align: center;
+                    padding: 20px;
+
+                    p {
+                        line-height: 1.5;
+                        margin: 10px 10px 0;
+                    }
+
+                    button {
+                        display: inline-block;
+                        background: $yellow;
+                        color: #333;
+                        margin: 35px 10px 0;
+
+                        &:hover {
+                            background: lighten($yellow, 15);
+                            box-shadow: 0px 0px 0px 3px darken($yellow, 20);
+                        }
+                    }
+
+                    select {
+                        width: 150px;
+                        font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                        font-size: 15px;
+                        color: #333;
+                        border: none;
+                        padding: 5px 10px;
+                        margin: 15px auto 0;
+                    }
+                }
+            }
         }
     }
 }
-
 /*__________[END] 首頁公民投票 VOTE IN home __________*/
 
 /*____________________ 贊助商品區 ____________________*/
@@ -2191,7 +2218,6 @@
 }
 
 /*____________________[START] VOTE ____________________*/
-// *{ outline: 1px solid #f00; }
 .votePage {
     background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
 
