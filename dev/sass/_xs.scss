@@ -825,6 +825,7 @@
                                 // top: 80%;
                                 // left: 10%;
                                 display: block;
+                                font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
                                 font-size: 16px;
                                 border-radius: 10px;
                                 color: #b78100;
@@ -835,6 +836,10 @@
                                 outline: none;
                                 margin: auto;
                                 text-align: center;
+
+                                &::before{
+                                    content:'$';
+                                }
 
                             }
 
@@ -1625,6 +1630,14 @@
         text-align: center;
         line-height: 1.4;
         color: #333;
+        
+        &::before{
+            content: '$';
+        }
+    }
+
+    :hover{
+        opacity: .8;
     }
 }
 
@@ -2046,7 +2059,8 @@
     background-color: rgba(0, 0, 0, .5);
 }
 
-#gashaponLightBox {
+#gashaponLightBox,
+#shopLightBox {
     margin: 0 auto;
     color: #FFF;
     border-radius: 10px;
@@ -2057,6 +2071,7 @@
     transform: translate(-50%, -50%);
     z-index: 999;
 
+    .shopAlert,
     .shopAlert1 {
         width: 300px;
         height: 70px;
@@ -2098,6 +2113,7 @@
         }
     }
 
+    .shopAlertBtn,
     .shopAertBtn1 {
         width: 300PX;
         box-sizing: border-box;
@@ -2115,59 +2131,6 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, .5);
-}
-
-#shopLightBox {
-    margin: 0 auto;
-    color: #FFF;
-    border-radius: 10px;
-    position: relative;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-
-    .shopAlert {
-        width: 300px;
-        height: 70px;
-        background-color: $yellow;
-        border-radius: 10px 10px 0 0;
-        margin: 0;
-    }
-
-    p {
-        color: black;
-        font-size: 30px;
-        text-align: center;
-        padding: 20px;
-    }
-
-    span {
-        font-size: 19px;
-        font-weight: 400;
-        line-height: 1.5;
-        display: block;
-        color: black;
-        cursor: pointer;
-    }
-
-    button {
-        display: inline-block;
-        background: #fcd93d;
-        color: #333;
-        margin: 35px 10px 0;
-        border: none;
-        border-radius: 50px;
-        font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
-        cursor: pointer;
-    }
-
-    .shopAlertBtn {
-        padding: 20px;
-        background-color: #FEF7D4;
-        border-radius: 0 0 10px 10px;
-    }
 }
 
 .shopNews {
