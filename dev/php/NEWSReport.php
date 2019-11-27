@@ -5,6 +5,7 @@ $newsNo = $_REQUEST["newsNo"];
 $reportMsg = $_REQUEST["reportMsg"];
 
 try{
+   
     require_once("../php/connectPDO.php");
     $sql_newsReport = 
       "INSERT INTO `newsreport` (newsReportNo, newsNo, newsReportMsg, newsReportStatus) VALUES (null,'{$newsNo}', '{$reportMsg}', '0')";

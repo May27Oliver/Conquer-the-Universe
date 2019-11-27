@@ -70,7 +70,7 @@
             <li class="nav-item">
               <a class="nav-link" href="index.html">
                 <i class="nav-icon icon-speedometer"></i> 系統概況
-                <span class="badge badge-primary">NEWs</span>
+                <span class="badge badge-primary">Vote</span>
               </a>
             </li>
             <li class="nav-item open">
@@ -139,7 +139,7 @@
                             <a href="adminManage.html">征服宇宙</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="adminManage.html">留言檢舉管理</a>
+                            <a href="adminManage.html">新聞檢舉管理</a>
                         </li>
                     </ol>
                 </nav>
@@ -151,13 +151,13 @@
                   <table class="table table-hover">
                       <thead class="thead">
                           <tr>
-                              <th scope="col">留言檢舉編號</th>
-                              <th scope="col">留言編號</th>
-                              <th scope="col">留言內容</th>
-                              <th scope="col">刪除留言</th>
+                              <th scope="col">檢舉編號</th>
+                              <th scope="col">議題編號</th>
+                              <th scope="col">檢舉原因</th>
+                              <th scope="col">刪除議題</th>
                           </tr>
                       </thead>
-                      <tbody class="accountSwitch" id="msgReData">
+                      <tbody class="accountSwitch" id="voteReData">
                        
                       </tbody>
                   </table>
@@ -187,7 +187,7 @@
         <div class="modal-body">
           <div class="form-row">
             <div class="form-group col-md-6">
-                是否確定要刪除這則留言？
+                是否確定要刪除這則公投議題？
             </div>
 
           </div>
@@ -205,6 +205,6 @@
   <script src="node_modules/pace-progress/pace.min.js"></script>
   <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
   <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
-  <script src="js/msgReport.js"></script>
+  <script src="js/voteReport.js"></script>
 </body>
 </html>

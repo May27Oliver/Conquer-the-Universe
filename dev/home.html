@@ -19,19 +19,19 @@
         body.appendChild(script); 
     }
     //loading
-    window.onload = load;
-    function load() {
-        $("#loading").fadeOut(1000);
-    }
+    // window.onload = load;
+    // function load() {
+    //     $("#loading").fadeOut(1000);
+    // }
 </script>
 @@include('./template/header.html')
 @@include('./template/homeAlert.html')
 @@include('template/login.html')
 <!-- Loading -->
-<div id="loading">  
+<!-- <div id="loading">  
     <div class="double-bounce1"></div>
     <div class="double-bounce2"></div>
-</div> 
+</div>  -->
 
 <!-- 最上面 -->
 <div class="homeStar">
@@ -142,18 +142,19 @@
                     <img src="img/fakeNews.png" alt="">
                   </div>
                   <div class="newsText">
-                    <div class="newsTOP" onload="initial()">
+                    <div class="newsTOP">
                       <h2>肥宅開始放寒假了</h2>
-                      <h3>已結束</h3>
+                      <h3 style="color: orangered;">已結束</h3>
+                      <p>獨眼星總支持度-100</p>
                     </div>
-                    <p></p>
-                    <p>獨眼星總支持度-100</p>
+                    
+                    
                     <div class="newsBtnAll">
                       <div class="newsBtn">
-                        <button id="bt1" @click="num++"><i class="fa fa-thumbs-o-up"
+                        <button id="bt1" @click="num++"><i class="fa fa-thumbs-o-up fa-2x"
                             aria-hidden="true"></i><SPan>123</SPan></button>
-                        <button id="bt2"><i class="fa fa-thumbs-down" aria-hidden="true"></i><SPan>17</SPan></button>
-                        <button id="bt3" onclick="showDiscuss()"><i class="fa fa-comments"
+                        <button id="bt2"><i class="fa fa-thumbs-down fa-2x" aria-hidden="true"></i><SPan>17</SPan></button>
+                        <button id="bt3" onclick="showDiscuss()"><i class="fa fa-comments fa-2x"
                             aria-hidden="true"></i><SPan>19</SPan></button>
           
                       </div>
@@ -164,30 +165,6 @@
           
                 </div>
               </div>
-    
-    
-            <!-- <div class="newsBox">
-                   <div class="newsitem">
-                          <div class="newsPic">
-                              <img src="https://picsum.photos/300/250/?random=1">
-                          </div>
-                        <div class="newsText">
-                            <div class="newsTOP">
-                                <h2>這裡是標題</h2>
-                                <h3>日期: <span>2019/10/27</span>~<span>2019/10/31</span> </h3>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut adipisci voluptatum fuga magni ad perferendis qui officiis unde ipsam provident tempora suscipit tempore, cumque doloribus, quibusdam pariatur a magnam quod?</p>
-                          <div class="newsBtnAll">
-                           <div class="newsBtn">
-                             <button><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan>17</SPan></button>
-                             <button><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><SPan>18</SPan></button>
-                             <button><i class="fa fa-comments" aria-hidden="true"></i><SPan>19</SPan></button>
-                         </div>
-                              <button class="newsreport">檢舉</button>
-                            </div>
-                          </div>
-                      </div>
-               </div> -->
         </div>
         <div class="newsMore">
             <a href="news.html"">更多新聞</a>
@@ -482,7 +459,7 @@
         }
         
         //公民的家登入及未登入
-        $('ul li:last-child').click(function(e){
+        document.getElementById("homeEnterfooter").onclick=function(e){
             var nameWord=document.getElementById("memberName").innerText;
             if(nameWord){
                 $id("homeEnterfooter").href="homeCitizen.html";
@@ -494,7 +471,7 @@
                 enterHomeCitizen();
                 console.log("沒有抓到使用者名稱");
             }
-        })
+        }
      //============footer未登入與登入狀態 結束
 
         $(function(){
