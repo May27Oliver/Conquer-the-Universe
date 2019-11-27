@@ -13,6 +13,11 @@ function $classes(classNames) {
 }
 
 
+
+
+
+
+
 // 跳窗
 function showDiscuss(e) {
     $id("newsWindowWrap").style.display = "block";
@@ -127,7 +132,7 @@ function BTNs() {
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     //POST的參數，這裡要增加發布時間
                     let data = `newsNo=${e.target.getAttribute("data-newsNo")}&reportMsg=${$class(".newsReportMessage").selectedIndex}`;
-                    alert(data);
+                    // alert(data);
                     //送出資料
                     xhr.send(data);
                 }
@@ -176,12 +181,12 @@ function BTNs() {
 }
 
 function init() {
-    BTNs();
+   
     let getNewsNO;
             function showAllproduct(jsonStr){
             var newsdata = JSON.parse(jsonStr);
             let htmlStr = "";
-            console.log( "=============",newsdata.length);
+            // console.log( "=============",newsdata.length);
             for (var i = 0; i < newsdata.length; i++) {
                 // console.log(newsdata[i].newsNo);
                 htmlStr += `
@@ -197,7 +202,7 @@ function init() {
                              
                                 <h3 data-news="${newsdata[i].newsNo}">截止時間: <span>${newsdata[i].newsDeadline}</span></br></span></h3>
                         </div>
-                        <p style="font-size:25px;" onclick="showDiscuss()" data-news="${newsdata[i].newsNo}">${newsdata[i].newsContent}</p>
+                        <p class="ellipsis" onclick="showDiscuss()" data-news="${newsdata[i].newsNo}">${newsdata[i].newsContent}</p>
                         <div class="newsBtnAll" data-news="${newsdata[i].newsNo}">
                             <div class="newsBtn" data-news="${newsdata[i].newsNo}">
 

@@ -3251,7 +3251,20 @@ div.slider {
     background: url('../img/vote/page-bg-star.png') no-repeat center center / cover;
     // background-image: url(../img/STAR.png), url(../img/bg.png);
     // background-repeat: repeat;
+
 }
+
+    .ellipsis{
+        display:-webkit-box;
+        overflow:hidden;
+        text-overflow:ellipsis;    
+        -webkit-line-clamp:2;
+        -webkit-box-orient:vertical;
+        
+        line-height:2;
+        max-height: 2*1;
+    }
+
 .newsReportSubmit{
     display: block;
     background: #1d2088;

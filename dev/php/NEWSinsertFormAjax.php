@@ -15,8 +15,8 @@ $newsTitle=$_POST["newsTitle"];
 $newsContent=$_POST["newsContent"];
 $newsNo="1";
 $memNo="1";
-$newsDeadline=date('Y-m-d H:i:s',strtotime('+1 day'));
-$datetime = date ("Y-m-d H:i:s");
+$newsDeadline=datetime('Y-m-d H:i:s',strtotime('+1 day'));
+$datetime = datetime ("Y-m-d H:i:s");
 $errMsg="";
 // print_r($file["error"]);
 
