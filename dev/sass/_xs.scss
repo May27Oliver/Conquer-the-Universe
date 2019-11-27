@@ -440,8 +440,8 @@
             } 
         }
         .titleClose{
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
         background-color: #fff;
         border-radius: 50px;
         float: right;
@@ -506,17 +506,17 @@
         font-size: 30px;
     }
     .titleNa{
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
         background-color: #fff;
         border-radius: 50px;
-        display: inline-block;
+        display: inline-block; 
+        line-height: 25px;
+        text-align: center;
         cursor: pointer; 
         
         .fa-question{
             font-size: 20px;
-            text-align: center;
-            padding-left: 3px;
             color: #7d2c7c;
         }
         
