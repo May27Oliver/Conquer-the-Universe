@@ -37,23 +37,23 @@ try{
     $getAward1->bindValue("badgeNo", 1);
     $getAward1->execute();
 
-    // $no2_1=$playerRow1[1]['memNo'];
-    // $no2_2=$playerRow2[1]['memNo'];
-    // $no2_3=$playerRow3[1]['memNo'];
+    $no2_1=$playerRow1[1]['memNo'];
+    $no2_2=$playerRow2[1]['memNo'];
+    $no2_3=$playerRow3[1]['memNo'];
 
-    // $sqlAward2 = "update `member` set badgeNo = '2' where memNo = $no2_1 or memNo = $no2_2 or memNo = $no2_3";
-    // $getAward2 = $pdo->prepare($sqlAward2);
-    // $getAward2->bindValue("badgeNo", 2);
-    // $getAward2->execute();
+    $sqlAward2 = "update `member` set badgeNo = '2' where memNo = $no2_1 or memNo = $no2_2 or memNo = $no2_3";
+    $getAward2 = $pdo->prepare($sqlAward2);
+    $getAward2->bindValue("badgeNo", 2);
+    $getAward2->execute();
 
-    // $no3_1=$playerRow1[2]['memNo'];
-    // $no3_2=$playerRow2[2]['memNo'];
-    // $no3_3=$playerRow3[2]['memNo'];
+    $no3_1=$playerRow1[2]['memNo'];
+    $no3_2=$playerRow2[2]['memNo'];
+    $no3_3=$playerRow3[2]['memNo'];
 
-    // $sqlAward3 = "update `member` set badgeNo = '3' where memNo = $no3_1 or memNo = $no3_2 or memNo = $no3_3";
-    // $getAward3 = $pdo->prepare($sqlAward3);
-    // $getAward3->bindValue("badgeNo", 3);
-    // $getAward3->execute();
+    $sqlAward3 = "update `member` set badgeNo = '3' where memNo = $no3_1 or memNo = $no3_2 or memNo = $no3_3";
+    $getAward3 = $pdo->prepare($sqlAward3);
+    $getAward3->bindValue("badgeNo", 3);
+    $getAward3->execute();
 
 
 }catch(PDOException $e){
