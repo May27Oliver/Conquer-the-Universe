@@ -259,7 +259,16 @@
 // 首頁最上面獎台
 .homeHeader {
     padding-top: 100px;
-
+    h2{
+        text-align: center;
+        margin-top:-50px;
+    }
+    >p{
+        margin: 0 auto;
+        text-align: center;
+        margin-top:15px;
+        line-height: 1.2;
+    }
     >h1 {
         color: #fff;
     }
@@ -387,6 +396,7 @@
             }
         }
     }
+    margin-top:-800px;
 }
 
 
@@ -692,19 +702,21 @@
 
 
 // 內容區塊右
-.citizenText{
-    h2{
+.citizenText {
+    h2 {
         color: #333;
         text-align: center;
         padding-top: 20px;
         padding-bottom: 10px;
     }
-    p{
+
+    p {
         color: #333;
         text-align: center;
         padding-bottom: 10px;
     }
 }
+
 #tab-demo {
     overflow: hidden;
     margin: auto;
@@ -1312,6 +1324,7 @@
                             height: 40px;
                             font-size: 18px;
                             font-weight: 500;
+                            line-height: 1.4;
                             margin-top: 10px;
                             display: flex;
                             align-items: center;
@@ -1357,7 +1370,7 @@
                     box-shadow: none;
                 }
             }
-            
+
 
             &.voteSelected {
                 background: lighten(#1d2088, 15);
@@ -1384,7 +1397,7 @@
                 right: 6px;
                 top: 6px;
             }
-            
+
             &.home-more {
                 text-decoration: none;
                 background: #ffd584;
@@ -1397,7 +1410,7 @@
                 border: 2px solid #b78100;
                 cursor: pointer;
                 margin-top: 70px;
-    
+
                 &:hover {
                     background: darken(#ffd584, 10);
                     color: darken(#b78100, 10);
@@ -1488,6 +1501,7 @@
     padding-bottom: 50px;
     text-align: center;
     position: relative;
+
     .shoptitle {
         margin: 30px auto 50px;
         padding: 30px;
@@ -1505,7 +1519,7 @@
     .boxForProduct {
         max-width: 500px;
         margin: 0 auto;
-        height: 600px;
+        height: 200px;
 
         .col-6 {
             padding: 0;
@@ -1524,7 +1538,7 @@
     .model {
         background-color: #90BEE3;
         max-width: 500px;
-        margin: 0 auto 50px;
+        margin: 0 auto 30px;
         background-image: url(../img/pinkPlanet.png);
         background-repeat: no-repeat;
         background-position: bottom;
@@ -1545,7 +1559,7 @@
             bottom: 0;
         }
     }
-    
+
     .productPic {
         box-sizing: border-box;
         margin: 0 auto 10px;
@@ -1568,7 +1582,8 @@
 
     .productTitle {
         h3 {
-            font-weight: bold;
+            line-height: 1.3;
+            font-weight: 200;
             color: #fff;
         }
 
@@ -1591,8 +1606,8 @@
         }
     }
 }
-#shopSpanLogin{
-    margin: 10px auto 10px;
+
+#shopSpanLogin {
     display: block;
     font-size: 16px;
     border-radius: 10px;
@@ -1602,8 +1617,9 @@
     padding: 2.5px 10px;
     cursor: pointer;
     outline: none;
-  
+    margin: 5px auto 0;
     text-align: center;
+
     p {
         font-size: 14px;
         text-align: center;
@@ -1611,9 +1627,11 @@
         color: #333;
     }
 }
+
 .toolTitle {
     color: #fff;
-    line-height: 2;
+    line-height: 0;
+    opacity: 0;
 }
 
 .toolTitle02 {
@@ -1642,47 +1660,17 @@
 }
 
 .proTitle {
-    margin-top: -75px;
-    margin-bottom: -50px;
+    width: 160px;
+    margin: -50px auto 0;
+    background-color: #ffd584;
+    border: 2px solid #b78100;
+    border-radius: 40px;
+    box-sizing: border-box;
 
     a {
-        display: block;
-        margin: auto;
         color: #b78100;
-        background-color: #ffd584;
-        width: 160px;
         line-height: 40px;
         text-align: center;
-        border-radius: 40px;
-        border: 2px solid #b78100;
-    }
-}
-
-.toolTitle04 {
-    padding: 10px;
-    color: #fff;
-    line-height: 2;
-
-    h2 {
-        text-align: center;
-    }
-}
-
-.proTitle {
-    margin-top: -75px;
-    margin-bottom: -50px;
-
-    a {
-        display: block;
-        margin: auto;
-        color: #b78100;
-        background-color: #ffd584;
-        /* padding:15px;*/
-        width: 160px;
-        line-height: 40px;
-        text-align: center;
-        border-radius: 40px;
-        border: 2px solid #b78100;
     }
 }
 
@@ -1950,15 +1938,14 @@
 //扭蛋觸發按鈕
 .boxfora {
     color: #FFF;
-    width: 100px;
+    // width: 100px;
     height: 50px;
     margin: 50px auto;
     text-align: center;
 
     a {
-        margin-top: 50px auto 0px;
         font-size: 22px;
-        padding: 10px 10px 10px 8px;
+        padding: 10px 20px;
         color: #fff;
         font-weight: bold;
         text-align: center;
@@ -1982,17 +1969,18 @@
 
 .trash {
     // color: rgb(245, 234, 234);
-    background-color: #84ccc9;
-    width: 300px;
-    margin: 0 auto;
-    padding-top: 30px;
-    border-radius: 10px;
-    position: absolute;
-    top: calc(30% - 100px);
-    right: calc(50% - 150px);
-    z-index: 1;
     width: 300px;
     height: 350px;
+    background-color: #84ccc9;
+    box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.3);
+    padding: 30px 0;
+    margin: 0 auto;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 
     img {
         width: 200px;
@@ -2010,10 +1998,6 @@
     }
 }
 
-.boxForEvent {
-    position: relative;
-}
-
 #trashLightBox {
     line-height: 1.5;
     font-size: 20px;
@@ -2021,38 +2005,30 @@
 
 #trashLightBoxBtn {
     position: absolute;
-    top: 220px;
-    left: 0;
-    right: 0;
-    bottom: 0px;
+    bottom: 20.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 999;
-    cursor: pointer;
-    margin: 10px auto 0;
-    background-color: #4CAF50;
-    width: 68px;
-    height: 32px;
-    border-radius: 50px;
+    background: #4CAF50;
     opacity: 0.7;
+    font-weight: 500;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
 
     p {
+        font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+        font-size: 18px;
         line-height: 32px;
         color: #fff;
         font-weight: bold;
     }
-}
 
-.trash {
-    background-color: #84ccc9;
-    width: 300px;
-    margin: 0 auto;
-    padding-top: 30px;
-    border-radius: 10px;
-    position: absolute;
-    top: calc(30% - 100px);
-    right: calc(50% - 150px);
-    z-index: 1;
-    width: 300px;
-    height: 350px;
+    &:hover {
+        background: lighten(#4CAF50, 5);
+        box-shadow: 0px 0px 0px 3px darken(#4CAF50, 20);
+    }
 }
 
 //商品業內頁的燈箱
@@ -2107,13 +2083,19 @@
 
     button {
         display: inline-block;
-        background: #fcd93d;
+        background: $yellow;
         color: #333;
+        padding: 5px 20px;
         margin: 35px 10px 0;
         border: none;
         border-radius: 50px;
         font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
         cursor: pointer;
+
+        &:hover {
+            background: lighten($yellow, 15);
+            box-shadow: 0px 0px 0px 3px darken($yellow, 20);
+        }
     }
 
     .shopAertBtn1 {
@@ -2300,6 +2282,7 @@
                         h3 {
                             height: 40px;
                             font-size: 18px;
+                            line-height: 1.4;
                             font-weight: 500;
                             margin-top: 10px;
                             display: flex;
@@ -4106,6 +4089,7 @@ div.slider {
 
 // 首頁
 .home_body {
+    width: 100%;
     overflow-x: hidden;
     background-color: #1c0e44;
     background-image: url(../img/home_img/homeBGtop.jpg);
@@ -4128,6 +4112,10 @@ div.slider {
 
 .homeStar {
     width: 100%;
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+    top:0;
 
     img {
         position: absolute;
@@ -4204,7 +4192,6 @@ div.slider {
 }
 
 /*__________[START] NewsForm __________*/
-// *{ outline: 1px solid #f00; }
 .newsLaunch {
     margin: 150px auto 80px;
 
@@ -4225,6 +4212,7 @@ div.slider {
         display: flex;
         flex-wrap: wrap;
         background: rgba(255, 255, 255, .6);
+        text-align: left;
         padding: 25px;
         margin: 20px auto 0;
         border-radius: 10px;
@@ -4572,8 +4560,8 @@ div.slider {
     cursor: default;
     margin-top: 0;
     position: absolute;
-    right:58%;
-    top:432px;
+    right: 58%;
+    top: 432px;
     transform: translateY(-50%);
     transform: translateX(50%);
     z-index: 999;
@@ -4590,8 +4578,8 @@ div.slider {
     cursor: default;
     margin-top: 0;
     position: absolute;
-    right:46%;
-    top:430px;
+    right: 46%;
+    top: 430px;
     transform: translateY(-50%);
     transform: translateX(50%);
     z-index: 999;
@@ -4630,8 +4618,9 @@ div.slider {
         position: fixed;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%); 
-        .alertTitle{
+        transform: translate(-50%, -50%);
+
+        .alertTitle {
             font-size: 1em;
             text-align: center;
             background: #fcd93d;
@@ -4640,17 +4629,23 @@ div.slider {
             border-radius: 10px 10px 0 0;
             font-size: 32px;
         }
-        .alertTextBox{
+
+        .alertTextBox {
             background: #FEF7D4;
             border-radius: 0 0 10px 10px;
             text-align: center;
             padding: 20px;
+
             .alertContent {
                 font-size: 20px;
                 line-height: 1.5;
-                padding: 20px 0; 
+                padding: 20px 0;
             }
-            #alertButton,#alertEqui,#alertEquiHand,#alertHomeShop {
+
+            #alertButton,
+            #alertEqui,
+            #alertEquiHand,
+            #alertHomeShop {
                 position: relative;
                 cursor: pointer;
                 display: inline-block;
@@ -4662,10 +4657,15 @@ div.slider {
                 padding: 9px 20px 9px 20px;
                 margin: 10px;
             }
-            #alertButton:hover,#alertEqui:hover,#alertEquiHand:hover,#alertHomeShop:hover{
+
+            #alertButton:hover,
+            #alertEqui:hover,
+            #alertEquiHand:hover,
+            #alertHomeShop:hover {
                 opacity: .8;
             }
-            #cancelButton{
+
+            #cancelButton {
                 position: relative;
                 cursor: pointer;
                 display: inline-block;
@@ -4680,12 +4680,82 @@ div.slider {
                 font-weight: 900;
                 font-weight: 500;
             }
-            #cancelButton:hover{
+
+            #cancelButton:hover {
                 opacity: .8;
             }
 
         }
     }
 
- }
+}
 
+/*__________[START] LOADING __________*/
+#loading {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1C0D44;
+    text-align: center;
+    z-index: 9999;
+
+    .double-bounce1,
+    .double-bounce2 {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        border-radius: 50%;
+        background-color: ivory;
+        opacity: 0.6;
+        position: absolute;
+        top: 50%;
+        left: calc(50% - 50px);
+        transform: translate(-50%, -50%);
+        -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+        animation: sk-bounce 2.0s infinite ease-in-out;
+    }
+
+    .double-bounce2 {
+        -webkit-animation-delay: -1.0s;
+        animation-delay: -1.0s;
+    }
+
+    @-webkit-keyframes sk-bounce {
+
+        0%,
+        100% {
+            -webkit-transform: scale(0.0)
+        }
+
+        50% {
+            -webkit-transform: scale(1.0)
+        }
+    }
+
+    @keyframes sk-bounce {
+
+        0%,
+        100% {
+            transform: scale(0.0);
+            -webkit-transform: scale(0.0);
+        }
+
+        50% {
+            transform: scale(1.0);
+            -webkit-transform: scale(1.0);
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+/*__________[END] LOADING __________*/

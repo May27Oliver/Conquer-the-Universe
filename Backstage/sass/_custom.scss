@@ -1,0 +1,525 @@
+// Here you can add other styles
+.indexBody {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    background-image: url(../img/cloudFamily.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+
+    img {
+        vertical-align: middle;
+    }
+
+    span {
+        font-size: 40px;
+        font-weight: bolder;
+        color: dimgrey;
+        line-height: 100px;
+    }
+
+    header {
+        margin: auto;
+    }
+
+    #starShine {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    @keyframes float {
+        0% {
+            top: 0;
+        }
+
+        50% {
+            top: 50px;
+        }
+
+        100% {
+            top: 0;
+        }
+    }
+
+    @keyframes float01 {
+        0% {
+            top: 0;
+        }
+
+        50% {
+            top: 20px;
+        }
+
+        100% {
+            top: 0;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .wrapper {
+            padding-top: 100px;
+            text-align: center;
+            margin: auto;
+            max-width: 600px;
+        }
+
+        .headerImg {
+            width: 200px;
+            margin: auto;
+            text-align: center;
+
+            img {
+                margin-top: 50px;
+                width: 100%;
+            }
+        }
+
+        .choiceOne {
+            height: 500px;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .front_end {
+            max-width: 200px;
+            transition: 1s;
+            position: relative;
+            top: -300px;
+            cursor: pointer;
+        }
+
+        .frontendCloud {
+            top: 500px;
+            max-width: 150px;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 1;
+            top: 130px;
+            background-image: url(../img/cloud1.png);
+        }
+
+        .brownPlanet {
+            max-width: 150px;
+            margin: 10px auto 10px;
+            position: relative;
+            z-index: 0;
+            animation: float01 6s infinite;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .back_end {
+            max-width: 150px;
+            transition: 1s;
+            position: relative;
+            top: -300px;
+            cursor: pointer;
+        }
+
+        .backendCloud {
+            top: 500px;
+            max-width: 150px;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 1;
+            top: 130px;
+            background-image: url(../img/cloud1.png);
+        }
+
+        .greenPlanet {
+            max-width: 200px;
+            margin: 10px auto 10px;
+            position: relative;
+            z-index: 0;
+            animation: float01 6s infinite;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .ufo {
+            max-width: 100px;
+            height: 200px;
+            font-size: 100px;
+            transition: 1s;
+            margin: auto;
+            position: relative;
+            top: -100px;
+            z-index: 6;
+
+            img {
+                width: 100%;
+                top: 30%;
+                animation: float 3s infinite;
+                position: absolute;
+                top: 0px;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .wrapper {
+            padding-top: 100px;
+            text-align: center;
+            margin: auto;
+            max-width: 1200px;
+        }
+
+        .headerImg {
+            width: 300px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .headerImg {
+            img {
+                margin-top: 50px;
+                width: 100%;
+            }
+        }
+
+        .choiceOne {
+            height: 100px;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .front_end {
+            width: 400px;
+            transition: 1s;
+            position: relative;
+            top: -300px;
+            cursor: pointer;
+        }
+
+        .frontendCloud {
+            margin: auto;
+            max-width: 300px;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 1;
+            top: 130px;
+            background-image: url(../img/cloud1.png);
+
+            span {
+                font-size: 80px;
+                font-weight: bolder;
+                color: dimgrey;
+                line-height: 200px;
+            }
+        }
+
+        .brownPlanet {
+            img {
+                width: 350px;
+                position: relative;
+                z-index: 0;
+                animation: float01 6s infinite;
+            }
+        }
+
+        .back_end {
+            width: 400px;
+            transition: 1s;
+            position: relative;
+            top: -300px;
+            cursor: pointer;
+        }
+
+        .backendCloud {
+            margin: auto;
+            max-width: 300px;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 1;
+            top: 130px;
+            background-image: url(../img/cloud1.png);
+
+            span {
+                font-size: 80px;
+                font-weight: bolder;
+                color: dimgrey;
+                line-height: 200px;
+            }
+        }
+
+        .greenPlanet {
+            width: 350px;
+            margin: auto;
+            position: relative;
+            z-index: 0;
+            animation: float01 6s infinite;
+        }
+
+        .greenPlanet {
+            img {
+                width: 100%;
+            }
+        }
+
+        .ufo {
+            width: 300px;
+            height: 300px;
+            font-size: 100px;
+            transition: 1s;
+            margin: auto;
+            position: relative;
+            top: -100px;
+            z-index: 6;
+        }
+
+        .ufo {
+            img {
+                top: 30%;
+                animation: float 3s infinite;
+                width: 100%;
+                position: absolute;
+                top: 0px;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        #starShine {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    }
+}
+
+
+/*__________[START] 管理員登入燈箱 __________*/
+#loginWrap {
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 999;
+
+    #loginBox {
+        max-width: 300px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #c9badb;
+        border-radius: 20px;
+        z-index: 9999;
+
+        #loginMsg {
+            color: red;
+        }
+
+        #loginBoxClose {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: #ccc;
+
+            &::before {
+                content: "";
+                background-color: #7d2c7c;
+                height: 14px;
+                width: 4px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                content: "";
+                background-color: #7d2c7c;
+                height: 14px;
+                width: 4px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                transform: rotate(135deg);
+            }
+        }
+
+        .loginPage {
+            height: 100%;
+
+            h2 {
+                font-size: 32px;
+                font-weight: 500;
+                text-align: center;
+                background: #440b86;
+                color: #fff;
+                padding: 20px;
+                line-height: 1.5;
+                border-radius: 20px 20px 0 0;
+            }
+
+            form {
+                height: 100%;
+                text-align: center;
+                padding: 20px;
+
+                .loginInfo {
+                    margin: 5px auto 0;
+
+                    tr {
+                        td {
+                            padding: 10px;
+
+                            input {
+                                font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                                border: none;
+                                border-radius: 5px;
+                                width: 75%;
+                                line-height: 1.5;
+                                padding: 5px;
+                                margin-left: 5px;
+                                box-sizing: border-box;
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+
+                .yellowButton {
+                    width: 30%;
+                    background: #ffd584;
+                    color: #b78100;
+                    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                    font-size: 16px;
+                    font-weight: 500;
+                    padding: 8px 0;
+                    margin: 20px auto 0;
+                    border: 1px solid #b78100;
+                    border-radius: 50px;
+                    outline: none;
+                    cursor: pointer;
+                }
+
+                #registeredBtn {
+                    width: 30%;
+                    margin: 15px auto;
+                    font-size: 15px;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+
+            }
+        }
+
+        .registerPage {
+            height: 100%;
+            text-align: center;
+            padding-bottom: 15px;
+
+            h2 {
+                font-size: 32px;
+                font-weight: 500;
+                text-align: center;
+                background: #440b86;
+                color: #fff;
+                padding: 20px;
+                line-height: 1.5;
+                border-radius: 20px 20px 0 0;
+            }
+
+            .registerInfo {
+                height: 100%;
+                margin: 20px;
+
+                tr {
+                    th {
+                        width: 40%;
+                    }
+
+                    td {
+                        width: 60%;
+                        text-align: left;
+
+                        input {
+                            font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                            border: none;
+                            border-radius: 5px;
+                            width: 90%;
+                            line-height: 1.5;
+                            padding: 5px 8px;
+                            margin: 10px 0;
+                            box-sizing: border-box;
+                            outline: none;
+                        }
+
+                        select {
+                            option {
+                                font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                                border: none;
+                                border-radius: 5px;
+                                width: 90%;
+                                line-height: 1.5;
+                                padding: 5px 8px;
+                                margin: 10px 0;
+                                box-sizing: border-box;
+                                outline: none;
+                            }
+                        }
+
+                        #memIdCheck {
+                            width: 80px;
+                            margin: 0 0 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*__________[END] 管理員登入燈箱 __________*/
+
+
+/*__________[START] 管理頁面 __________*/
+.app-header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 992px) {
+    .logo {
+        margin-top: 45px;
+    }
+}
+/*__________[END] 管理頁面 __________*/
