@@ -15,12 +15,165 @@
  
 
   <title>宇宙星聞 - 征服宇宙</title>
-  @@include('./template/CDN.html')
+  <link href="img/logo.ico" rel="shortcut icon">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,500,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/jquery.easy_slides.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.8.2/countUp.min.js'></script>
+<script src="js/animation.js"></script>
+<script src="js/date.js"></script>
+
+
+
 </head>
 
 <body class="news">
-  @@include('./template/header.html')
-  @@include('template/login.html')
+      <!---- 選單區 ---->
+    <!-- 及時支持度顯示 -->
+    <header>
+        <!-- <div class="navSec">
+            <p id="wealth"><span id="coin"></span></p>
+            <p id="memberName"></p>
+        </div> -->
+        <div class="topBg"></div>
+        <div class="navTop">
+            <p id="planetPoint_3">兔兔星：<span class="jumbo" id="peter"></span></p>
+            <p id="planetPoint_2">肥宅星：<span class="jumbo" id="fatty"></span></p>
+            <p id="planetPoint_1">派大星：<span class="jumbo" id="pie"></span></p>
+        </div>
+    <!-- 天長條 -->
+        <div class="banner">
+            <input type="checkbox" name="" id="nav-control">
+            <label for="nav-control" class="hamburger"></label>
+            <div class="logo">
+                <h1><a href="home.html">征服宇宙</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="news.html">宇宙星聞</a></li>
+                    <li><a href="video.html">公民學堂</a></li>
+                    <li><a href="vote.html">公民投票</a></li>
+                    <li><a href="shop.html">宇宙商城</a></li>
+                    <li><a href="homeCitizen.html">公民的家</a></li>
+                </ul>
+                <p id="wealth"></p><span id="coin"></span>
+                <p id="memberName"></p>
+                <span id="loginBtn" onclick="loginRegister()">登入 / 註冊</span>
+            </nav>
+        </div>
+    </header>
+    <script>
+        $(document).ready(function(){
+                        
+            // 最上面個星球總支持度
+            getTopPoint();
+            function getTopPoint(){
+                
+                var xhr = new XMLHttpRequest();
+                xhr.onload=function (){
+                    if( xhr.status == 200 ){ 
+                        pointData = JSON.parse(xhr.responseText);
+                        // new CountUp("pie",0,pointData[0]).start();
+                        // new CountUp("fatty",0,pointData[1]).start();
+                        // new CountUp("peter",0,pointData[2]).start();
+                        document.getElementById("pie").innerText=pointData[0];
+                        document.getElementById("fatty").innerText=pointData[1];
+                        document.getElementById("peter").innerText=pointData[2];
+                        setTimeout(getTopPoint, 1000);
+                    }else{ 
+                        alert( xhr.status );
+                    }
+                }
+                var url = "php/topPoint.php";
+                xhr.open("Get", url, true);
+                xhr.send( null );
+            }
+
+
+        });
+</script>
+  <div id="loginWrap" style="display: none;">
+    <div id="loginBox">
+        <div id="loginBoxClose" onclick="closeBox()"></div>
+        <section class="loginPage" style="display: none;">
+            <h2 class="registerTittle">會員登入</h2>
+            <form action="php/login.php" method="post">
+                <table class="loginInfo">
+                    <tr>
+                        <td class="memInfoBox">
+                            帳號：<input type="text" placeholder="User" maxlength="15" id="memId" name="memId" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="memInfoBox">
+                            密碼：<input type="password" placeholder="Password" maxlength="15" id="memPsw" name="memPsw" required>
+                        </td>
+                    </tr>
+                </table>
+                <div id="loginMsg"></div>
+                <div id="submitBtn" class="yellowButton" onclick="login()">登入</div>
+                <div id="registeredBtn" onclick="registerBox()">註冊帳號</div>
+            </form>
+        </section>
+        
+        <!-- 把阿白的選擇星球放進來 -->
+        <section class="registerPage" style="display: none;">
+            <h2 class="registerTittle">會員註冊</h2>
+            <form action="php/checkId.php" method="post"></form>
+                <table class="registerInfo">
+                    <tr>
+                        <th>會員帳號：</th>
+                        <td><input type="text" id="memIdRig" name="memIdRig" placeholder="4~12位英數字" maxlength="12"></td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="memIdCheckPic">
+                                <!-- <img src="img/registeredMagnifier.png"> -->
+                            </div>
+                        </th>
+                        <td><input type="button" id="memIdCheck" value="檢查帳號" onclick="checkId()"></td>
+                    </tr>
+                    <tr>
+                        <th>會員密碼：</th>
+                        <td><input type="password" id="memPswRig" name="memPswRig" placeholder="4~12位英數字" maxlength="12"></td>
+                    </tr>
+                    <tr>
+                        <th>確認密碼：</th>
+                        <td><input type="password" id="pswChecked" placeholder="再次確認密碼" maxlength="12"></td>
+                    </tr>
+                    <tr>
+                        <th>會員暱稱：</th>
+                        <td><input type="text" id="memNameRig" name="memNameRig" placeholder="會員暱稱"></td>
+                    </tr>
+                    <tr>
+                        <th>選擇星球：</th>
+                        <td>
+                            <select id="starSelect" name="starSelect">
+                                <option value="1">派大星</option>
+                                <option value="2">肥宅星</option>
+                                <option value="3">兔兔星</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>電子信箱：</th>
+                        <td><input type="text" id="memEmailRig" name="memEmailRig" placeholder="E-mail含@和."></td>
+                    </tr>
+                </table>
+                <div id="loginRig"></div>
+                <div id="registerSubmit" type="button" onclick="register()">註冊</div>
+                <div id="registerCancel" type="button" onclick="backLogin()">取消</div>
+            </form>
+        </section>
+    </div>
+</div>
   <div class="newstitle">
     <!-- <img src="img/UFO.png" alt=""> -->
     <h1>宇宙新聞</h1>
@@ -31,7 +184,51 @@
 
   <!---------- 新聞表單 ---------->
 
-  @@include('./template/newsForm.html')
+  <div class="newsLaunch">
+    <h2>發布新聞</h2>
+    <!-- 用PHP -->
+    <form id="MakeNews" action="php/NEWSinsertForm.php" method="POST" enctype="multipart/form-data" class="newsForm container">
+      <!-- 用AJAX試試看 -->
+      <!-- <form id="MakeNews" method="POST" enctype="multipart/form-data" class="newsForm container"> -->
+
+        <div class="newsUpPic col-12 col-md-4">
+            <label for="upFile">
+                <input type="file" name="upFile" id="upFile">
+                <img id="imgPreview" src="../dest/img/vote/NewsUpPic.png" alt="upload">
+            </label>
+        </div>
+        <ul class="newsStarts col-12 col-md-8">
+            <li id="Plantaa">作用星球：
+              <input type="radio" id="starA" name="Planet" value="1">
+              <label for="starA">派大星</label>
+    
+              <input type="radio" id="starB" name="Planet" value="2">
+              <label for="starB">肥宅星</label>
+    
+              <input type="radio" id="starC" name="Planet" value="3">
+              <label for="starC">兔兔星</label>
+            </li>
+            <li>欲增減支持度：
+                <select name="newsPoint" id="newsPoint" required>
+                    <option>請選擇</option>
+                    <option value="100"> 100</option>
+                    <option value="-100">-100</option>
+                   
+                </select>
+            </li>
+            
+            <li>新聞標題：
+                <input type="text" maxlength="20" placeholder="最多輸入10個中文字" name="newsTitle" id="newsTitle" required></input>
+            </li>
+            <li>新聞內容：
+                <textarea maxlength="240" placeholder="最多輸入120個中文字" name="newsContent" id="newsContent" rows="5" required></textarea>
+            </li>
+        </ul>
+        <button type="submit" id="sendnews">送出(<span>$100</span>)</button>
+        <button type="reset">清空</button>
+    </form>
+    
+</div>
  <!-- <div class="fakeNewsLanuch">
     <h2>發佈新聞</h2>
     <form name="MakeNews">
@@ -102,6 +299,7 @@
   <div id="newsWindowWrap" style="display: none;">
     <div class="newsWindow">
       <div class="newsWindowLeft">
+       <!-- <img src="img/NEWS.png" alt=""> -->
         <!-- <div class="newsTOP" id="newsTOP">
           <h2>這裡是標題</h2>
           <h3>剩餘時間: <span></span> </h3>
@@ -118,7 +316,7 @@
       <div class="newsWindoRight" id="newsWindoRight">
         <!-- <h2>留言</h2> -->
         <div class="newsMsgAll">
-          <div class="newsMsgitem">
+          <!-- <div class="newsMsgitem">
             <div class="newsMsgID">
               <h3>外星人</h3>
               <p> </p>
@@ -147,7 +345,7 @@
               <p>我覺得不行</p>
             </div>
             <button class="report">檢舉</button>
-          </div>
+          </div> -->
         </div>
         <div class="newsWindoClose"></div>
         <div class="newsDOWN">
@@ -272,7 +470,16 @@
 
   <canvas id="starShine"></canvas>
 
-  @@include('./template/footer.html')
+  <div class="footer">
+    <div class="footer-wrap ">
+        <div class="icon">
+            <a href=""><img src="img/instagram.png" alt=""></a>
+            <a href=""><img src="img/twitter.png" alt=""></a>
+            <a href=""><img src="img/facebook.png" alt=""></a>
+        </div>
+        <p>Copyright © 2019 DD103G2</p>
+    </div>
+</div>
 
 
   <script src="js/starsShine.js"></script>

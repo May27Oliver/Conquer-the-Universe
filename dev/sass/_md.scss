@@ -496,7 +496,9 @@
     /*__________[START] 首頁公民投票 VOTE IN home __________*/
     .voteSection {
         .container {
-
+            h2+p {
+                font-size: 16px;
+            }
             /*------ 投票卡片 ------*/
             .voteGroup {
                 .voteCard {
@@ -519,7 +521,9 @@
     // *{ outline: 1px solid #f00; }
     .votePage {
         .container {
-
+            h1+p {
+                font-size: 18px;
+            }
             /*------ 投票卡片 ------*/
             .voteGroup {
                 .voteCard {

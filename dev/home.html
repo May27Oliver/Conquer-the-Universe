@@ -127,29 +127,35 @@
         <div class="homeNewsContent">
             <div class="newsBox">
                 <div class="newsitem">
-                       <div class="newsPic">
-                           <img src="https://picsum.photos/300/250/?random=1">
-                       </div>
-                     <div class="newsText">
-                         <div class="newsTOP">
-                             <h2>這裡是標題</h2>
-                             <h3>日期: <span>2019/10/27</span>~<span>2019/10/31</span> </h3>
-                         </div>
-                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut adipisci voluptatum fuga magni ad perferendis qui officiis unde ipsam provident tempora suscipit tempore, cumque doloribus, quibusdam pariatur a magnam quod?</p>
-                       <div class="newsBtnAll">
-                           <div class="newsBtn">
-                               <button id="bt"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><SPan id="add"></SPan></button>
-                               <button><i class="fa fa-thumbs-o-down" aria-hidden="true"></i><SPan>18</SPan></button>
-                               <button><i class="fa fa-comments" aria-hidden="true"></i><SPan>19</SPan></button>
-                           </div>
-                           <button class="newsreport">檢舉</button>
-                         </div>
-                       </div>
-                   </div>
-            </div>
+                  <div class="newsPic">
+                    <img src="img/fakeNews.png" alt="">
+                  </div>
+                  <div class="newsText">
+                    <div class="newsTOP" onload="initial()">
+                      <h2>肥宅開始放寒假了</h2>
+                      <h3>已結束</h3>
+                    </div>
+                    <p></p>
+                    <p>獨眼星總支持度-100</p>
+                    <div class="newsBtnAll">
+                      <div class="newsBtn">
+                        <button id="bt1" @click="num++"><i class="fa fa-thumbs-o-up"
+                            aria-hidden="true"></i><SPan>123</SPan></button>
+                        <button id="bt2"><i class="fa fa-thumbs-down" aria-hidden="true"></i><SPan>17</SPan></button>
+                        <button id="bt3" onclick="showDiscuss()"><i class="fa fa-comments"
+                            aria-hidden="true"></i><SPan>19</SPan></button>
+          
+                      </div>
+                      <button class="report" onclick="CheckForm()">檢舉</button>
+          
+                    </div>
+                  </div>
+          
+                </div>
+              </div>
     
     
-            <div class="newsBox">
+            <!-- <div class="newsBox">
                    <div class="newsitem">
                           <div class="newsPic">
                               <img src="https://picsum.photos/300/250/?random=1">
@@ -170,7 +176,7 @@
                             </div>
                           </div>
                       </div>
-               </div>
+               </div> -->
         </div>
         <div class="newsMore">
             <a href="news.html"">更多新聞</a>
@@ -797,6 +803,323 @@
         }
             
     });
+
+    // 新聞用
+
+    let getNewsNO;
+            function showAllproduct(jsonStr){
+            var newsdata = JSON.parse(jsonStr);
+            let htmlStr = "";
+            console.log( "=============",newsdata.length);
+            for (var i = 0; i < 2; i++) {
+                // console.log(newsdata[i].newsNo);
+                htmlStr += `
+                <div class="newsitem" >
+
+                    <div class="newsPic">
+                        <img src="images/${newsdata[i].image}" alt="">
+                    </div>
+                    <div class="newsText" data-news="${newsdata[i].newsNo}"> 
+                        <div class="newsTOP" id="app" data-news="${newsdata[i].newsNo}">
+                            
+                                <h2 data-news="${newsdata[i].newsNo}">${newsdata[i].newsTitle}</h2>
+                             
+                                <h3 data-news="${newsdata[i].newsNo}">截止時間: <span>${newsdata[i].newsDeadline}</span></br></span></h3>
+                        </div>
+                        <p onclick="showDiscuss()" data-news="${newsdata[i].newsNo}">${newsdata[i].newsContent}</p>
+                        <div class="newsBtnAll">
+                            <div class="newsBtn" data-news="${newsdata[i].newsNo}">
+
+                                <button class="goodBTN"><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i><span class="up">${newsdata[i].newsUP}</span></button>
+                        
+                                <button class="LessBTN"><i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i><span class="down">${newsdata[i].newsDown}</span></button>
+                                <button class="msgBTN"><i class="fa fa-comments fa-2x" aria-hidden="true"></i><span>留言</span></button>
+                            </div>
+                            <button class="report" data-newsNo=${newsdata[i].newsNo}>檢舉</button>
+                        </div>
+                    </div>   
+              </div>
+              
+              `;
+
+                       
+            }
+           
+                        document.querySelector(".homeNewsContent").innerHTML = htmlStr;
+
+                        //---------------------------------btn.addEventListener
+                        let newsBtns = document.getElementsByClassName("newsBtn");
+                        let goodBTNs = document.getElementsByClassName("goodBTN");
+                        let LessBTNs = document.getElementsByClassName("LessBTN");
+                        let msgBTNs = document.getElementsByClassName("msgBTN");
+                        for( let i=0; i<newsBtns.length; i++){
+                            
+                            let newsNo = newsBtns[i].getAttribute("data-news");  
+                            goodBTNs[i].addEventListener("click",pressGood);
+                            goodBTNs[i].newsNo = newsNo;
+                            LessBTNs[i].addEventListener("click",pressLess);
+                            LessBTNs[i].newsNo = newsNo;
+                            msgBTNs[i].addEventListener("click",pressMsg);
+                            msgBTNs[i].newsNo = newsNo;
+                        }  
+
+          
+          
+                        function pressGood(e){
+                          let button = e.currentTarget;
+                          button.querySelector("span").innerHTML = parseInt(button.querySelector("span").innerHTML)+ 1;
+                          let newsNo = e.currentTarget.newsNo;
+                          console.log("=======",newsNo);
+                          let xhr = new XMLHttpRequest();
+                          xhr.onload = function(){
+                            if(xhr.status==200){
+                                console.log("=======",xhr.responseText);
+                            }else{
+                                alert(xhr.status);
+                            }
+                          }
+                          xhr.open("get", "php/updateNewsUpDown.php?action=up&newsNo="+ newsNo);
+                          xhr.send(null)
+                        }
+          
+                        function pressLess(e){
+                            let button = e.currentTarget;
+                            button.querySelector("span").innerHTML = parseInt(button.querySelector("span").innerHTML)+ 1;
+                            let newsNo = e.currentTarget.newsNo;
+                            console.log("=======",newsNo);
+                            let xhr = new XMLHttpRequest();
+                            xhr.onload = function(){
+                              if(xhr.status==200){
+                                  console.log("=======",xhr.responseText);
+                              }else{
+                                  alert(xhr.status);
+                              }
+                            }
+                            xhr.open("get", "php/updateNewsUpDown.php?action=down&newsNo="+ newsNo);
+                            xhr.send(null)
+                        }
+          //........................................................
+                        function pressMsg(e){
+                            let button = e.currentTarget;
+                            getNewsNO = e.currentTarget.newsNo;
+                            let xhr = new XMLHttpRequest();
+                            xhr.onload = function (){
+                                if(xhr.status == 200){
+                                    var newsMSG = JSON.parse(xhr.responseText);
+                                    showNewsMSG(newsMSG);
+                                    leftnews();
+                                    $id("newsWindowWrap").style.display = "block";
+                                }else{
+                                    alert(xhr.status);
+                                }
+
+                            }
+                            xhr.open("get", "php/NewsMSGShow.php?getNewsNO="+getNewsNO, false);
+                            xhr.send(null);
+
+                            // $.ajax({
+                            //     url: `php/NewsMSGShow.php`,
+                            //     dataType: "json",
+                            //     data: {
+                            //         "getNewsNO": getNewsNO
+                            //     },
+                            //     type: 'get',
+                            //     success: function(data){
+                            //         // alert("成功GET新聞編號");
+                            //         // console.log(data);
+                            //         // alert(testAjax.responseText);
+                            //         showNewsMSG(data);
+                            //         leftnews();
+                                               
+                            //     },           
+                            // })
+                        }
+            //-------------------------
+            // console.log("您點擊到的是:",e.target.parentNode.getAttribute("data-news")); 
+
+            // newsCard.innerHTML = allprodHTML;
+            BTNs();
+          
+        // showDiscuss();
+           // 跳窗
+           
+            $('.newsTOP').click(function(e){
+                $id("newsWindowWrap").style.display = "block";
+                // console.log("您點擊到的是:",e.target.parentNode.getAttribute("data-news"));
+                // console.log(e.target.getAttribute("data-news"));
+                getNewsNO = e.target.parentNode.getAttribute("data-news");
+                // alert(getNewsNO);
+                //------------------------------
+                // testAjax = 
+                // console.log(getNewsNO);
+                $.ajax({
+                    url: `php/NewsMSGShow.php`,
+                    dataType: "json",
+                    data: {
+                        "getNewsNO": getNewsNO
+                    },
+                    type: 'get',
+                    success: function(data){
+                        // alert("成功GET新聞編號");
+                        // console.log(data);
+                        // alert(testAjax.responseText);
+                        showNewsMSG(data);
+                        leftnews();
+                                   
+                    },           
+                })
+
+                // $.ajax({
+                //     url: `php/NewsShow2.php`,
+                //     dataType: "json",
+                //     data: {
+                //         "getNewsNO": getNewsNO
+                //     },
+                //     type: 'get',
+                //     success: function(d){
+                //         alert("成功GET新聞編號");
+                //         // console.log(data);
+                //         // alert(testAjax.responseText);
+                //        ;             
+                //     },           
+                // })
+            });
+            // $("#bt").click(function (e) {
+            //     let newsADD = $('#add').text();
+            //     let UPtotal = parseInt(newsADD) + 1;
+            //     alert(UPtotal);
+            //     $.ajax({
+            //         url: `php/newsMember.php`,
+            //         data: {
+                        
+            //             balance: balance,
+            //         },
+            //         type: 'GET',
+            //         success: function () {
+                     
+            //         },
+            //     })
+            // });
+
+            
+        } //產生新聞End
+  
+   //   SHOWnews 黑色板子
+    function showNews() {
+
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                showAllproduct(xhr.responseText);
+            } else {
+                alert(xhr.status);
+            }
+        }
+        xhr.open("get", "php/NewsShow.php", true);
+        xhr.send(null);
+    }
+    showNews();
+
+
+    $(document).ready(function (e) {
+    $("#sendMsg").click(function () {
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function (){
+
+            renewNewsMsg(xhr.responseText);
+        }
+        let newsMSG = document.getElementsByName("newsMSG")[0].value;
+        let url = `php/NEWSinsertMSG.php?newsMSG=${newsMSG}&getNewsNO=${getNewsNO}`;
+        xhr.open("get", url, true);
+        xhr.send(null);
+    });
+});
+
+function renewNewsMsg(jsonStr){
+    news = JSON.parse(jsonStr);
+
+    console.log(news);
+    let newsMsgHTML = "";
+    
+    newsMsgHTML += `
+           <div class="newsMsgitem">
+           <div class="newsMsgID">
+             <h3>${news.memName}</h3>
+             <p>${news.newsMsgDate} </p>
+           </div>
+           <div class="newsMsgBox">
+             <p>${news.newsMSG}</p>
+           </div>
+           <button class="report" data-newsNo=${news.newsNo}>檢舉</button>
+         </div>
+          `;
+    newsMsgHTML = newsMsgHTML + document.querySelector('.newsMsgAll').innerHTML ;
+    // alert(newsMsgHTML);    
+    document.querySelector('.newsMsgAll').innerHTML = newsMsgHTML;
+             
+}
+//----------------------------------------------------------------  
+
+// 跳窗左邊內容
+function leftnews(){
+    // var left = JSON.parse(jsonStr);
+    var xhr = new XMLHttpRequest();
+    xhr.onload=function (){
+         if( xhr.status == 200 ){
+             console.log(xhr.responseText);
+          news = JSON.parse(xhr.responseText);
+        //   console.log(news);
+          
+         HTMLstr= `<div class="newsTOP" id="newsTOP">
+          <h2>${news.newsTitle}</h2>
+          <h3>截止時間: <span>${news.newsDeadline}</span> </h3>
+        </div>
+        <img src="images/${news.image}" alt="">
+        <div class="newsText">
+          <p>${news.newsContent}
+          </p>
+        </div>`;
+        document.getElementsByClassName('newsWindowLeft')[0].innerHTML =HTMLstr;
+         }else{
+          alert( xhr.status );
+         }
+    }
+    xhr.open("get", `php/NewsShow2.php?getNewsNO=${getNewsNO}`); 
+    console.log(`php/NewsShow2.php?getNewsNO=${getNewsNO}`);
+    xhr.send( null );
+  }
+ 
+
+
+ //   跳窗右邊MSG資料
+
+function showNewsMSG(newsMSG) {
+        // function showAllmsg(jsonStr) {
+            // var newsMSG = JSON.parse(jsonStr);
+            
+            let newsMsgHTML = "";
+            let msgCard = document.querySelector('.newsMsgAll');
+             console.log(newsMSG);
+            //新聞留言
+            for (var i = 0; i < newsMSG.length; i++) {
+                newsMsgHTML += `
+           <div class="newsMsgitem">
+           <div class="newsMsgID">
+             <h3>${newsMSG[i].memName}</h3>
+             <p>${newsMSG[i].newsMsgDate} </p>
+           </div>
+           <div class="newsMsgBox">
+             <p>${newsMSG[i].newsMsgContent}</p>
+           </div>
+           <button class="report" data-newsNo=${newsMSG[i].newsNo}>檢舉</button>
+         </div>
+          `;
+            };
+            msgCard.innerHTML = newsMsgHTML;
+            BTNs();
+            
+    }
+    // 新聞end
 </script>
 </body>
 </html>

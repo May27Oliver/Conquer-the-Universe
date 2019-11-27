@@ -76,6 +76,7 @@ function showRunCards(jsonStr) {
     $class(".voteLaunchCancel").onclick = function () {
         $class(".voteAdd").classList.toggle("flip");
         $class(".voteAdding").classList.toggle("flip");
+        getMember();
     }
 
     //[AUTO]自動產生截止日期
@@ -118,6 +119,7 @@ function showRunCards(jsonStr) {
     $class(".voteAddingSubmit").addEventListener('click', voteLaunch);
     voting();
     BTNs();
+    getVoted();
 }
 
 //[已結束]產生卡片
@@ -146,6 +148,7 @@ function showEndCards(jsonStr) {
     $id("voteGroupEnd").innerHTML = voteEndCards;
     endPieProduce();
     BTNs();
+    getVoted();
 }
 
 
@@ -261,14 +264,17 @@ function voteLaunch() {
                 //[點擊]發起投票確認視窗-確認-(next:通知已新增投票)
                 if(xhr.responseText!=""){
                     getRunCards();
-                    getVoted();
                     $class(".voteDidNotice").innerHTML = "已新增投票議題，<br>恭喜您獲得宇宙幣50元！";
                     $class(".voteOkay").style.display = ""
                     $class(".voteAlertDoing").style.display = "none";
                     $class(".voteAlertDid").style.display = "block";
                     $id("coin").innerText = xhr.responseText;
                 }else{
-                    alert("您今天已經發起過議題了！");
+                    alert("你今天已經發起過議題了！");
+                    $class(".voteAlertGroup").style.display = "none";
+                    $class(".voteAlertDoing").style.display = "none";
+                    $class(".voteAlertDid").style.display = "none";
+                    $class(".voteReportMessage").selectedIndex = "";
                 }
             } else {
                 // alert("發生錯誤: " + xhr.status);
@@ -314,7 +320,7 @@ function voting() {
                     var xhr = new XMLHttpRequest();
                     xhr.onload = function () {
                         if (xhr.status == 200) {
-                            let starCoin =xhr.responseText;
+                            let starCoin = xhr.responseText;
                             pieProduce();
                             $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得宇宙幣10元！";
                             $class(".voteOkay").style.display = ""
