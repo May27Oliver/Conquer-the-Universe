@@ -30,11 +30,20 @@
         $('#alertWindowWrap').css('display','none');
         $('.EquiClose2').css('display','none');
         
-    });  
+    });
+    $('.titleNa').click(function(){
+        $('.titleText').css('display','inline-block');
+        $('.titleNa').css('display','none');
+    })
+    $('.titleClose').click(function(){
+        $('.titleText').css('display','none');
+        $('.titleNa').css('display','inline-block');
+    })
+
     
 });
 //=====倒數計時程式=====       
-var aI = document.getElementsByTagName("i");
+var aI = document.getElementsByTagName("w");
 
 setInterval(function() {  // 設置倒數計時: 結束時間 - 當前時間
 
@@ -94,6 +103,17 @@ window.addEventListener('load',function(){
         document.getElementById("alertEquiHand").style.display = "none";
         
     }
+
+    // let EquiSrc=document.getElementById("Equi").src;
+    // let EquiHandSrc=document.getElementById("EquiHand").src;
+    // if(EquiSrc || EquiHandSrc   != "undefined" ){
+    
+    //     alert("OOO"); 
+        
+    // }else{
+    //     alert("XXX");
+    //     roleEquiBox();
+    // }
 });
 
 function $id(id){
@@ -173,6 +193,7 @@ $id("alertButton").onclick = alertCancelMemData;
 
 //===設定alertWindowWrap不要取消
 $id("cancelButton").onclick = alertMemData;
+
 
 
 }; 
@@ -356,36 +377,7 @@ xhr.onload=function (){
 
             };
 
-                    //hover帽子道具img出現叉叉
-            $("#EquiBox img").mouseover(function(){
-                $(".EquiClose1").css("display","block");
-            }); 
-            $("#EquiBox img").mouseout(function(){
-                $(".EquiClose1").css("display","none");
-            });
-            // moveEquiIn1
-            $(".EquiClose1").mouseover(function(){
-                $(".EquiClose1").css("display","block");
-            });
-
-            $(".EquiClose1").mouseout(function(){
-                $(".EquiClose1").css("display","none");
-            });
-            //hover手上道具img出現叉叉
-            $("#EquiBoxHand img").mouseover(function(){
-                $(".EquiClose2").css("display","block");
-            });
-            $("#EquiBoxHand img").mouseout(function(){
-                $(".EquiClose2").css("display","none");
-            });
-            // moveEquiIn2
-            $(".EquiClose2").mouseover(function(){
-                $(".EquiClose2").css("display","block");
-            });
-
-            $(".EquiClose2").mouseout(function(){
-                $(".EquiClose2").css("display","none");
-            });
+          
    }else{
     alert( xhr.status );
    }
@@ -605,12 +597,16 @@ memberCloth();
 
 //-----現有商品撈出  結束
 
+
+
+
 //撈出候選人身上裝備
 function roleEquiBox(){
 var xhr = new XMLHttpRequest();
 xhr.onload=function (){
    if( xhr.status == 200 ){
-    roleEquiBox= JSON.parse(xhr.responseText);    
+    roleEquiBox= JSON.parse(xhr.responseText);
+        
             $("#EquiBox").append(`
                 <img id="Equi" src="${roleEquiBox[0][0].clothimg}" alt="">
                 <div class="EquiClose1" style="display: none;" onclick="removeEqui()"></div>
@@ -620,6 +616,14 @@ xhr.onload=function (){
                 <img id="EquiHand" src="${roleEquiBox[1][0].clothimg}" alt="">
                 <div class="EquiClose2" style="display: none;" onclick="removeEquiHand()"></div>
              `)
+
+             
+            //  let EquiSrc=document.getElementById("Equi").src;
+            //  let EquiHandSrc=document.getElementById("EquiHand").src;
+            //  console.log(EquiSrc);
+            //  console.log(EquiHandSrc);
+
+            //  $('.hat').attr('src'); 
         //hover帽子道具img出現叉叉
         $("#EquiBox img").mouseover(function(){
             $(".EquiClose1").css("display","block");
@@ -652,6 +656,8 @@ xhr.onload=function (){
         });            
         
         
+
+        
     };
 
 };
@@ -669,7 +675,7 @@ $('body').on('click', '#alertEqui', function () {
     $.ajax({
     url: `php/removeRoleEqui.php`,
     type: 'GET',
-    success: function (memEditRows) {
+    success: function () {
         // var afterEdit = JSON.parse(memEditRows);
         // console.log(afterEdit);
         // alert("解除成功");

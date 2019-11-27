@@ -1,15 +1,14 @@
 <?php 
 $errMsg = "";
-$newsNo = $_REQUEST["newsNo"];
+$newsMsgNo = $_REQUEST["newsNo"];
 // $newsNo="4";
 $reportMsg = $_REQUEST["reportMsg"];
-
 try{
     require_once("../php/connectPDO.php");
-    $sql_newsReport = 
-      "INSERT INTO `newsreport` (newsReportNo, newsNo, newsReportMsg, newsReportStatus) VALUES (null,'{$newsNo}', '{$reportMsg}', '0')";
-    $newsReport = $pdo->prepare($sql_newsReport);
-    $newsReport->execute();
+    $sql_msgReport = 
+      "INSERT INTO `msgreport` (msgReportNo, newsMsgNo, msgReportMsg, msgReportStatus) VALUES (null,'{$newsMsgNo}', '{$reportMsg}', '0')";
+    $msgReport = $pdo->prepare($sql_msgReport);
+    $msgReport->execute();
     //送出json字串
     // echo json_encode($newsReport);
   }catch(PDOException $e){
