@@ -7,14 +7,15 @@ try{
   // $sql = "select clothNo,clothimg,clothName from `clothinmarket` where clothNo" ;
   $todayEqui=$pdo->query($sql);
   $arrTodayEqui=[];
-  $length = 6;
-  for($i=0;$i<$length;$i++){
-    $todayEquiRow=$todayEqui->fetch(PDO::FETCH_ASSOC);
+  $length = 16;
+  $todayEquiRow=$todayEqui->fetchAll(PDO::FETCH_ASSOC);
+  for($i=0;$i<count($todayEquiRow);$i++){
+    
     $arrTodayEqui[$i]=$todayEquiRow;
 
-    shuffle($arrTodayEqui); //打亂
+    shuffle($arrTodayEqui[$i]); //打亂
 
-    $Equi=$arrTodayEqui[0];//只取第一個定義變數
+    $Equi=$arrTodayEqui[0][0];//只取第一個定義變數
 }
 echo json_encode($Equi);
 }catch(PDOException $e){
