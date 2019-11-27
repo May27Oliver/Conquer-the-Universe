@@ -148,7 +148,7 @@
                 coin.innerText="";
                 loginBtn.style.width=100+"px";
                 history.go(0);
-                window.location = "../dest/home.html";
+                window.location = "home.html";
             }
         }
         xhr.open("get", "php/logOut.php", true);

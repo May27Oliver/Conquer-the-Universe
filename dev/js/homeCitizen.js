@@ -12,7 +12,25 @@
         $('#tab01').css('display','none');
         $('#tab02').css('display','inline-block');
     });
-    
+    $('#alertEqui').click(function(){
+        $('#Equi').css('display','none');//解除帽子外觀道具
+        $('#alertWindowWrap').css('display','none');
+        $('.EquiClose1').css('display','none');
+        
+    });
+
+    $('#alertEqui').click(function(){
+        $('#Equi').css('display','none');//解除手上外觀道具
+        $('#alertWindowWrap').css('display','none');
+        $('.EquiClose1').css('display','none');
+        
+    });
+    $('#alertEquiHand').click(function(){
+        $('#EquiHand').css('display','none');//解除帽子外觀道具
+        $('#alertWindowWrap').css('display','none');
+        $('.EquiClose2').css('display','none');
+        
+    });  
     
 });
 //=====倒數計時程式=====       
@@ -43,7 +61,40 @@ aI[2].textContent = sec + "秒";
 }, 1000);
 
 //=====會員編輯按鈕程式=====
+window.addEventListener('load',function(){
+    //===現時商品打開alert
+    let Buttons1 = document.getElementsByClassName("today");
+    for(var i=0;i<Buttons1.length;i++){
+        document.getElementsByClassName("today")[i].onclick = alertShowLightBox1; // <!---道具$100確認鍵
+    }
+    //===購買限時道具
+    // $id("today").onclick = homeShopAlert;
+    $id("alertHomeShop").onclick = alertRemoveHomeShop;
+    // let Buttons2 = document.getElementById("alertHomeShop");
+    // for(var i=0;i<Buttons2.length;i++){
+    //     document.getElementById("alertHomeShop")[i].onclick = alertShowLightBox1; // <!---道具$100確認鍵
+    // }
+    //===解除帽子道具
+    $id("Equi").onclick = removeEqui;
 
+    //===解除手上道具
+    $id("EquiHand").onclick = removeEquiHand;
+
+
+    
+
+
+    function alertShowLightBox1(){  //道具1$100確認鍵
+        
+        document.getElementById("alertWindowWrap").style.display = "block"; //alert視窗跳出
+        document.querySelector(".alertContent").innerText = "確定要購買此道具嗎?";
+        document.getElementById("alertHomeShop").style.display = "inline-block";
+        document.getElementById("alertButton").style.display = "none";
+        document.getElementById("alertEqui").style.display = "none";
+        document.getElementById("alertEquiHand").style.display = "none";
+        
+    }
+});
 
 function $id(id){
 return document.getElementById(id);
@@ -89,11 +140,6 @@ $id("alertEquiHand").style.display = "none";
 $id("alertHomeShop").style.display = "none";
 $id("alertEqui").style.display = "inline-block";//當解除道具，叫出alert把alertEqui按鈕叫出
 }
-function alertRemoveEqui(){
-$id("Equi").style.display = "none";//解除帽子外觀道具
-$id("alertWindowWrap").style.display = "none";
-document.querySelector(".EquiClose1").style.display = "none";
-}
 
 //設定解除手上道具alert跳出
 function removeEquiHand(){
@@ -104,26 +150,11 @@ $id("alertEqui").style.display = "none";
 $id("alertHomeShop").style.display = "none";
 $id("alertEquiHand").style.display = "inline-block";//當解除道具，叫出alert把alertEqui按鈕叫出
 }
-function alertRemoveEquiHand(){
-$id("EquiHand").style.display = "none";//解除帽子外觀道具
-$id("alertWindowWrap").style.display = "none";
-document.querySelector(".EquiClose2").style.display = "none";
-}
-
-//購買限時道具跳窗homeShopAlert
-function homeShopAlert(){
-$id("alertWindowWrap").style.display = "block"; //alert視窗跳出
-document.querySelector(".alertContent").innerText = "確定要購買此道具嗎?";
-$id("alertButton").style.display = "none";
-$id("alertEqui").style.display = "none";
-$id("alertEquiHand").style.display = "none";
-$id("alertHomeShop").style.display = "inline-block";
 
 
-}
 function alertRemoveHomeShop(){
-$id("alertWindowWrap").style.display = "none";
-$id("today").remove();
+$id("alertWindowWrap").style.display = "";
+document.querySelector(".today").remove();
 
 }
 
@@ -143,18 +174,6 @@ $id("alertButton").onclick = alertCancelMemData;
 //===設定alertWindowWrap不要取消
 $id("cancelButton").onclick = alertMemData;
 
-//===解除帽子道具
-$id("Equi").onclick = removeEqui;
-$id("alertEqui").onclick = alertRemoveEqui;
-
-
-//===解除手上道具
-$id("EquiHand").onclick = removeEquiHand;
-$id("alertEquiHand").onclick = alertRemoveEquiHand;
-
-//===購買限時道具
-$id("today").onclick = homeShopAlert;
-$id("alertHomeShop").onclick = alertRemoveHomeShop;
 
 }; 
 
@@ -385,7 +404,7 @@ xhr.onload=function (){
    if( xhr.status == 200 ){
     todayEqui= JSON.parse(xhr.responseText);
     // console.log(todayEqui.clothimg);
-        $("#today").append(`
+        $(".today").append(`
         <img class="hat" src="${todayEqui.clothimg}" alt="">
             <div class="citizenClothNameBox"> 
                 <button class="citizenShop" >${todayEqui.clothPrice}</button>

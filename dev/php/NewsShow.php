@@ -1,8 +1,9 @@
 <?php
+session_start();
 $errMsg="";
 
 try{
-    require_once("../php/connectPDO.php");
+    require_once("connectPDO.php");
     // $player=$_REQUEST["member"];
     $sql="select * from `news2`where newsNo order by newsNo DESC";
     $news=$pdo->query($sql);
