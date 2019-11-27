@@ -18,10 +18,21 @@
         script.src= 'js/skrollr.js';
         body.appendChild(script); 
     }
+    //loading
+    window.onload = load;
+    function load() {
+        $("#loading").fadeOut(1000);
+    }
 </script>
 @@include('./template/header.html')
 @@include('./template/homeAlert.html')
 @@include('template/login.html')
+<!-- Loading -->
+<div id="loading">  
+    <div class="double-bounce1"></div>
+    <div class="double-bounce2"></div>
+</div> 
+
 <!-- 最上面 -->
 <div class="homeStar">
     <img src="img/home_img/star.png" alt="">
@@ -817,7 +828,7 @@
                 <div class="newsitem" >
 
                     <div class="newsPic">
-                        <img src="images/${newsdata[i].image}" alt="">
+                        <img src="php/images/${newsdata[i].image}" alt="">
                     </div>
                     <div class="newsText" data-news="${newsdata[i].newsNo}"> 
                         <div class="newsTOP" id="app" data-news="${newsdata[i].newsNo}">
@@ -1085,7 +1096,7 @@ function leftnews(){
          }
     }
     xhr.open("get", `php/NewsShow2.php?getNewsNO=${getNewsNO}`); 
-    console.log(`php/NewsShow2.php?getNewsNO=${getNewsNO}`);
+    // console.log(`php/NewsShow2.php?getNewsNO=${getNewsNO}`);
     xhr.send( null );
   }
  
