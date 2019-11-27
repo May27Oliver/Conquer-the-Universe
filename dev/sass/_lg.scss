@@ -211,6 +211,7 @@
                 }
             }
         }
+        margin-top:-1400px;
     }
 
 
@@ -419,7 +420,8 @@
     .voteSection{
         .container{
             h2+p {
-                font-size: 20px;;
+                font-size: 20px;
+                margin: 50px auto;
             }
             /*------ 投票卡片 ------*/
             .voteGroup{
@@ -739,7 +741,8 @@
 
 
     .homeStar{
-        width: 100vw;
+        // width: 100vw;
+        height: 1400px;
         img{
             position: absolute;
             z-index: -999;

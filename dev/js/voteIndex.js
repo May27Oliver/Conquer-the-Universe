@@ -11,6 +11,10 @@ function $classes(classNames) {
     return document.querySelectorAll(classNames);
 }
 
+function $names(names) {
+    return document.getElementsByName(names);
+}
+
 //---------- 頁面載入 ----------//
 //[進行中]產生卡片
 function showRunCards(jsonStr) {
@@ -18,7 +22,7 @@ function showRunCards(jsonStr) {
     let voteRunCards = "";
     for (var i = 0; i < voteRunData.length; i++) {
         voteRunCards +=
-            `<div class="voteCard col-6 col-md-4 col-lg-3">
+            `<div class="voteCard col-6 col-md-4 col-lg-4">
                 <div class="voteWrapper">
                     <div class="voteChart">
                         <img src="img/vote/unvoted.png" alt="未投票" class="unVoted I-${voteRunData[i].votNo}">
@@ -41,7 +45,9 @@ function showRunCards(jsonStr) {
     pieProduce();
     voting();
     BTNs();
+    getVoted();
 }
+
 
 //---------- AJAX: PHP載入 ----------//
 //[進行中]接卡片資料
@@ -55,7 +61,7 @@ function getRunCards() {
             if (xhr.status === 200) {
                 showRunCards(xhr.responseText);
             } else {
-                alert("發生錯誤: " + xhr.status);
+                // alert("發生錯誤: " + xhr.status);
             }
         }
     }
@@ -128,16 +134,13 @@ function voting() {
                     var xhr = new XMLHttpRequest();
                     xhr.onload = function () {
                         if (xhr.status == 200) {
-                            let starCoin =xhr.responseText;
+                            let starCoin = xhr.responseText;
                             pieProduce();
                             $class(".voteDidNotice").innerHTML = "已完成投票，<br>恭喜您獲得宇宙幣10元！";
                             $class(".voteOkay").style.display = ""
                             $class(".voteAlertDoing").style.display = "none";
                             $class(".voteAlertDid").style.display = "block";
                             $id("coin").innerText = starCoin;
-                            // $classes(".unVoted")[j].style.display = "none";
-                            // e.target.classList.add("voteSelected");
-                            // e.target.setAttribute("disabled");
                             getVoted();
                         } else {
                             alert(xhr.responseText);
@@ -146,7 +149,6 @@ function voting() {
                     let url = "php/vote/gainYesTicket.php";
                     xhr.open("post", url, true);
                     let query_string = `votNo=${e.target.parentNode.getAttribute("data-votNo")}`;
-                    //memId,memPsw跟登入一樣
                     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                     xhr.send(query_string);
                 };
@@ -186,7 +188,7 @@ function voting() {
                             // e.target.setAttribute("disabled");
                             getVoted();
                         } else {
-                            alert(xhr.responseText);
+                            // alert(`發生錯誤: ${xhr.status}`);
                         }
                     }
                     xhr.open("post", "php/vote/gainNoTicket.php", true);
@@ -303,7 +305,7 @@ function pieProduce() {
                 j--;
             };
         } else {
-            alert(xhr.responseText);
+            // alert(`發生錯誤: ${xhr.status}`);
         }
     }
     xhr.open("Get", "php/vote/checkNum.php", true);
@@ -392,10 +394,4 @@ function BTNs() {
         $class(".voteAlertGroup").style.display = "none";
         $class(".voteAlertDid").style.display = "none";
     }
-}
-
-function issueProduce() {
-    // console.log("事件要發布了哦！");
-    voteLaunch();
-    getRunCards();
 }

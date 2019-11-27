@@ -1096,13 +1096,27 @@ try{
         echo $number["starCoin"];
     }else{
         $moneyCut = 4;
-        $sql="UPDATE `member`
-              SET `popularity` = popularity-{$moneyCut} 
-              , `starCoin` = `starCoin`- {$starCoin}
-              , `charisma` = `charisma`- {$ability}
-              , `finance` = `finance`- {$ability}
-              , `wisdom` = `wisdom`- {$ability}
-              WHERE `member`.`memNo` = {$memberNo}";
+        
+        $sql="select wisdom,charisma,finance from `member` where memNo={$memberNo}";
+        $befterCut = $pdo->prepare($sql);
+        $befterCut->execute();
+        $number = $befterCut->fetch(PDO::FETCH_ASSOC);
+
+        if($number["wisdom"]<1 || $number["finance"]<1 || $number["charisma"]<1){
+            $sql="UPDATE `member`
+            SET `popularity` = popularity-{$moneyCut} 
+            , `starCoin` = `starCoin`- {$starCoin}
+            WHERE `member`.`memNo` = {$memberNo}";
+        }else{
+            $sql="UPDATE `member`
+            SET `popularity` = popularity-{$moneyCut} 
+            , `starCoin` = `starCoin`- {$starCoin}
+            , `charisma` = `charisma`- {$ability}
+            , `finance` = `finance`- {$ability}
+            , `wisdom` = `wisdom`- {$ability}
+            WHERE `member`.`memNo` = {$memberNo}";
+        }
+        
         $pdo->exec($sql);
 
         $sql="select starCoin from `member` where memNo={$memberNo}";

@@ -4,7 +4,7 @@ $newsNo = $_REQUEST["newNo"];
 $reportMsg = $_REQUEST["reportMsg"];
 
 try{
-    require_once("../connectPDO.php");
+    require_once("../php/connectPDO.php");
     $sql_voteReport = 
       "INSERT INTO `newsreport` (newsNo, newsReportMsg, newsReportStatus) VALUES ('{$newsNo}', '{$reportMsg}', '0')";
     $voteReport = $pdo->prepare($sql_voteReport);
