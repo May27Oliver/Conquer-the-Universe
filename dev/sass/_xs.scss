@@ -2338,6 +2338,7 @@
                             border: 10px double $green;
                             border-radius: 10px;
                             box-sizing: border-box;
+                            -webkit-transform: rotateY(0deg);
                             transform: rotateY(0deg);
                             position: absolute;
                             top: 0;
@@ -2358,14 +2359,17 @@
                                 position: absolute;
                                 top: 50%;
                                 left: 50%;
+                                -webkit-transform: translate(-50%, -50%);
                                 transform: translate(-50%, -50%);
                             }
 
                             &::after {
+                                -webkit-transform: translate(-50%, -50%) rotate(90deg);
                                 transform: translate(-50%, -50%) rotate(90deg);
                             }
 
                             &.flip {
+                                -webkit-transform: rotateY(180deg);
                                 transform: rotateY(180deg);
                             }
                         }
@@ -2376,6 +2380,7 @@
                             border-radius: 10px;
                             background: $green;
                             box-sizing: border-box;
+                            -webkit-transform: rotateY(180deg);
                             transform: rotateY(180deg);
                             position: absolute;
                             top: 0;
@@ -2416,6 +2421,7 @@
                             }
 
                             &.flip {
+                                -webkit-transform: rotateY(360deg);
                                 transform: rotateY(360deg);
                             }
                         }
