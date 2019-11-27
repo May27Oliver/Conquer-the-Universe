@@ -147,6 +147,7 @@
                 wealth.style.height=0;
                 coin.innerText="";
                 loginBtn.style.width=100+"px";
+                history.go(0);
                 window.location = "home.html";
             }
         }

@@ -169,7 +169,7 @@ function loadImage01(){ //紙娃娃功能
     var ctx = canvas.getContext("2d"); 
     var img = new Image();
     img.onload = function(){
-      ctx.drawImage(img,150,120,100,85);
+      ctx.drawImage(img,125,120,100,85);
     }
     img.src = document.getElementById("shopPic1").src;
 }
@@ -178,7 +178,7 @@ function loadImage02(){
     var ctx = canvas.getContext("2d"); 
     var img = new Image();
     img.onload = function(){
-      ctx.drawImage(img,150,120,100,85);
+      ctx.drawImage(img,125,120,100,85);
     }
     img.src = document.getElementById("shopPic2").src;
 }
@@ -187,7 +187,7 @@ function loadImage03(){
     var ctx = canvas.getContext("2d"); 
     var img = new Image();
     img.onload = function(){
-      ctx.drawImage(img,265,280,100,120);
+      ctx.drawImage(img,245,280,100,120);
     }
     img.src = document.getElementById("shopPic3").src;
 }
@@ -196,7 +196,7 @@ function loadImage04(){
     var ctx = canvas.getContext("2d"); 
     var img = new Image();
     img.onload = function(){
-      ctx.drawImage(img,60,280,100,130);
+      ctx.drawImage(img,30,255,100,130);
     }
     img.src = document.getElementById("shopPic4").src;
 }
