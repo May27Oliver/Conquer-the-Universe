@@ -3396,11 +3396,12 @@ div.slider {
     }
 
     .newsText {
-        width: 100%;
+        width: 80%;
         margin: 0 auto;
         .newsTOP{
             line-height: 1.6;
-            padding: 20px 0;
+            
+            margin: 0 auto;
             h2{
                 line-height: 1.6;
                 color: papayawhip;
@@ -3453,7 +3454,7 @@ div.slider {
 .newsBtnAll {
     border-top: 5px solid #E8B51C;
     width: 80%;
-    margin: 50px auto;
+    margin: 20px auto;
     text-align: center;
 
 
@@ -3461,6 +3462,7 @@ div.slider {
         margin-bottom: 20px;
         margin-top: 30px;
         display: flex;
+        text-align: center;
 
 
         button {
@@ -3471,6 +3473,7 @@ div.slider {
             justify-content: space-between;
 
             .fa {
+                margin-right: 12px;
                 color: #E8B51C;
 
             }

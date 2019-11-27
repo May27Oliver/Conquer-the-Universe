@@ -1194,14 +1194,19 @@
         }
 
         .newsText {
-            width: 60%;
+            width: 100%;
             text-align: left;
-            margin: auto;
+            
+            // margin: auto;
 
             h2 {
                 font-size: 24px;
                 margin-top: 20px;
                 margin-bottom: 20px;
+                margin-left: 70px;
+            }
+            h3{
+                margin-left: 70px;
             }
 
 
@@ -1209,6 +1214,7 @@
                 line-height: 1.6;
                 margin-top: 20px;
                 margin-bottom: 25px;
+                margin-left: 70px;
 
             }
 
