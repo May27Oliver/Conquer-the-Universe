@@ -645,8 +645,8 @@
                 position: absolute;
                 top: 0px;
                 right: 0px;
-                width: 75px;
-                height: 105px;
+                width: 100%;
+                
                 cursor: pointer;
 
             }
@@ -874,8 +874,117 @@
             margin: 0 10px;
 
             // width: 3000px;
-            .tab-inner {
-                width: 1500px;
+            .tab-inner1 {
+                width:920px;
+                // margin-bottom: 55px;
+                clear: both;
+                color: #000;
+                padding-top: 20px;
+                margin: 0px 0px -5px 5px;
+                // height: 113px;
+                position: relative;
+                overflow: overlay;
+
+                h4 {
+                    position: absolute;
+                    top: 0%;
+                    left: 3px;
+                    color: rgb(246, 0, 62);
+                    line-height: 1.5;
+                    font-size: 14px;
+                }
+
+                .propBox {
+                    border-radius: 8px;
+                    background-color: #d4faff;
+                    width: 100px;
+                    height: 112px;
+                    float: left;
+                    margin-bottom: 10px;
+                    margin-right: 2.5px;
+                    margin-left: 2.5px;
+                    margin-right: 5.5px;
+
+
+                    margin-left: 7px;
+                    margin-right: 7px;
+                    margin-bottom: 14px;
+                    position: relative;
+
+                    .today {
+                        border-radius: 8px;
+                        // background: rgba(0, 0, 0, .2);
+                        width: 100px;
+                        height: 100px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+
+                        .citizenClothNameBox {
+                            width: 100px;
+                            height: 40px;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+
+                            .citizenShop {
+                                // position: absolute;
+                                // top: 80%;
+                                // left: 10%;
+                                display: block;
+                                font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+                                font-size: 16px;
+                                border-radius: 10px;
+                                color: #b78100;
+                                border: 1px solid #b78100;
+                                background: #ffd584;
+                                padding: 2.5px 10px;
+                                cursor: pointer;
+                                outline: none;
+                                margin: auto;
+                                text-align: center;
+
+                                &::before{
+                                    content:'$';
+                                }
+
+                            }
+
+                            p {
+                                font-size: 14px;
+                                text-align: center;
+                                line-height: 1.4;
+                                color: #333;
+                            }
+                        }
+
+
+
+
+                        .citizenShop:hover {
+                            opacity: .8;
+                        }
+
+
+                    }
+
+                    .citizenClothNameBox2 {
+                        width: 100px;
+                        height: 20px;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+
+                        p {
+                            text-align: center;
+                            font-size: 14px;
+                        }
+                    }
+
+                }
+            }
+            .tab-inner2 {
+                width: 3000px;
                 // margin-bottom: 55px;
                 clear: both;
                 color: #000;
@@ -1037,17 +1146,30 @@
         }
 
         // home scrollbar
-        .tab-inner::-webkit-scrollbar {
+        .tab-inner1::-webkit-scrollbar {
             width: 6px;
             height: 10px;
         }
 
-        .tab-inner::-webkit-scrollbar-thumb {
+        .tab-inner1::-webkit-scrollbar-thumb {
             background-color: #0996b9;
             border-radius: 5px;
         }
 
-        .tab-inner::-webkit-scrollbar-track {
+        .tab-inner1::-webkit-scrollbar-track {
+            background-color: #c4c4c4;
+        }
+        .tab-inner2::-webkit-scrollbar {
+            width: 6px;
+            height: 10px;
+        }
+
+        .tab-inner2::-webkit-scrollbar-thumb {
+            background-color: #0996b9;
+            border-radius: 5px;
+        }
+
+        .tab-inner2::-webkit-scrollbar-track {
             background-color: #c4c4c4;
         }
 

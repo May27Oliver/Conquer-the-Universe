@@ -6,13 +6,13 @@ $balance = $_GET["balance"];
 $popularityAll = $_GET["popularityAll"];
 // print_r($_GET);
 try {
-    $popularityAdd = 10;
-    $cost=100;
+    // $popularityAdd = 10;
+    // $cost=100;
 	require_once("connectPDO.php");
-	$sql="update `member` set starCoin=starCoin-{$cost} , `popularity`=:popularityAll WHERE `memNo` = {$memNo}";
+	$sql="update `member` set starCoin=:balance , `popularity`=:popularityAll WHERE `memNo` = {$memNo}";
 	$updateStarCoin = $pdo->prepare($sql);
     // $updateStarCoin->bindValue(":memNo", $memNo);
-    // $updateStarCoin->bindValue(":balance", $balance);
+    $updateStarCoin->bindValue(":balance", $balance);
     $updateStarCoin->bindValue(":popularityAll", $popularityAll);
     $updateStarCoin->execute();
     // if( $memEdit->rowCount() == 0 ){
