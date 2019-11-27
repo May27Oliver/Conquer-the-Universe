@@ -233,12 +233,12 @@ function init() {
                         for( let i=0; i<newsBtns.length; i++){
                             
                             let newsNo = newsBtns[i].getAttribute("data-news");  
-                            // goodBTNs[i].addEventListener("click",pressGood);
-                            // goodBTNs[i].newsNo = newsNo;
-                            // LessBTNs[i].addEventListener("click",pressLess);
-                            // LessBTNs[i].newsNo = newsNo;
-                            // msgBTNs[i].addEventListener("click",pressMsg);
-                            // msgBTNs[i].newsNo = newsNo;
+                            goodBTNs[i].addEventListener("click",pressGood);
+                            goodBTNs[i].newsNo = newsNo;
+                            LessBTNs[i].addEventListener("click",pressLess);
+                            LessBTNs[i].newsNo = newsNo;
+                            msgBTNs[i].addEventListener("click",pressMsg);
+                            msgBTNs[i].newsNo = newsNo;
                         }  
 
           
@@ -563,40 +563,40 @@ function showNewsMSG(newsMSG) {
 
 
 
-// 圖片
-var img1 = document.querySelector('img');
-var div = document.querySelector('label');
-var input = document.querySelector('input');
-input.onchange = function () {
-    if (input.files && input.files[0]) {
-        if(input.files[0].type == "image/jpeg" || input.files[0].type == "image/gif" || input.files[0].type == "image/png"){
-            var byteSize = input.files[0].size / 1024;
-            if(byteSize <= 250){
-                var reader = new FileReader();
-                reader.readAsDataURL(input.files[0]);
-                reader.onload = function(ev){
-                    var txt = ev.target.result;
-                    var img = new Image();
-                    img.src = txt;
-                    img.onload = function(){
-                        if(img.width <= 200 && img.height <= 200){
-                            console.log("OK");
-                            img1.src = txt;
-                        }else{
-                            console.log("尺寸不對 " + img.width + "*" + img.height);
-                        }
-                    }
-                }
-            }else{
-                console.log("文件大小超出 " + byteSize);
-            }
-        }else{
-            console.log("類型不對 " + input.files[0].type);
-        }
-    }else{
-        console.log("沒有上傳");
-    }
-}
+// // 圖片
+// var img1 = document.querySelector('img');
+// var div = document.querySelector('label');
+// var input = document.querySelector('input');
+// input.onchange = function () {
+//     if (input.files && input.files[0]) {
+//         if(input.files[0].type == "image/jpeg" || input.files[0].type == "image/gif" || input.files[0].type == "image/png"){
+//             var byteSize = input.files[0].size / 1024;
+//             if(byteSize <= 250){
+//                 var reader = new FileReader();
+//                 reader.readAsDataURL(input.files[0]);
+//                 reader.onload = function(ev){
+//                     var txt = ev.target.result;
+//                     var img = new Image();
+//                     img.src = txt;
+//                     img.onload = function(){
+//                         if(img.width <= 200 && img.height <= 200){
+//                             console.log("OK");
+//                             img1.src = txt;
+//                         }else{
+//                             console.log("尺寸不對 " + img.width + "*" + img.height);
+//                         }
+//                     }
+//                 }
+//             }else{
+//                 console.log("文件大小超出 " + byteSize);
+//             }
+//         }else{
+//             console.log("類型不對 " + input.files[0].type);
+//         }
+//     }else{
+//         console.log("沒有上傳");
+//     }
+// }
 
 // 限制圖片大小
 
@@ -606,8 +606,8 @@ input.onchange = function () {
         let reader = new FileReader();
         reader.onload = function(e){
             document.getElementById("imgPreview").src= reader.result;
-            document.getElementById("imgPreview").style.maxHeight= '300px';
-            document.getElementById("imgPreview").style.maxWidth= '300px';
+            document.getElementById("imgPreview").style.maxHeight= '250px';
+            document.getElementById("imgPreview").style.maxWidth= '250px';
         }
         reader.readAsDataURL( file );
     };
