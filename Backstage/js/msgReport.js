@@ -1,44 +1,44 @@
 window.addEventListener('load',function(){
     //抓取檢舉資料
-    getNewsReport();
-    function getNewsReport(){
+    getMsgReport();
+    function getMsgReport(){
         var xhr = new XMLHttpRequest();
         xhr.onload=function (){
             if( xhr.status == 200 ){
-                newsRe = JSON.parse(xhr.responseText);
+                msgRe = JSON.parse(xhr.responseText);
                 
-                for(i=0;i<newsRe.length;i++){
-                    $('#newsReData').append(`<tr>
-                    <td>${newsRe[i]['newsReportNo']}</td>
-                    <td>${newsRe[i]['newsNo']}</td>
-                    <td>${newsRe[i]['newsContent']}</td>
+                for(i=0;i<msgRe.length;i++){
+                    $('#msgReData').append(`<tr>
+                    <td>${msgRe[i]['msgReportNo']}</td>
+                    <td>${msgRe[i]['newsMsgNo']}</td>
+                    <td>${msgRe[i]['newsMsgContent']}</td>
                     <td>
                     <button class="btn btn-pill btn-danger btn-xl mr-1 quizGameUpload" type="button" 
-                        id="newsReDel${i}" data-delete="${newsRe[i]['newsNo']}">刪除
+                        id="msgReDel${i}" data-delete="${msgRe[i]['newsMsgNo']}">刪除
                     </button>
                     </td>
                 </tr>`);
-                    document.getElementById(`newsReDel${i}`).onclick=byeNews;
+                    document.getElementById(`msgReDel${i}`).onclick=byeMsg;
                 }
             }else{
                 alert( xhr.status );
             }
         }
-        var url = "php/getNewsReport.php";
+        var url = "php/getMsgReport.php";
         xhr.open("Get", url, true);
         xhr.send( null );
     }
   
-    function byeNews(e){
+    function byeMsg(e){
       
         $('#delBox').css('display','block');
         $('#delOk').click(function(){
-            var newsNo=e.target.getAttribute("data-delete");
-            console.log(newsNo);
+            var msgNo=e.target.getAttribute("data-delete");
+            console.log(msgNo);
             $.ajax({
-                url: 'php/deleteNews.php',
+                url: 'php/deleteMsg.php',
                 data: {
-                   newsNo,
+                   msgNo,
                 },
                 type: 'GET',
                 success: function () {

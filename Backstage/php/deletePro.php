@@ -1,14 +1,14 @@
 <?php
 //個人編輯會員資料撈取
 $errMsg="";
-$newsNo=$_GET["newsNo"];
-echo $newsNo;
+$clothNo=$_GET["clothNo"];
+echo $clothNo;
 try{
     require_once("connectPDO.php");
 
-    $sql = "DELETE FROM `news2` WHERE newsNo= {$newsNo}" ;
-    $byeNews = $pdo->prepare($sql);
-    $byeNews ->execute();
+    $sql = "DELETE FROM `clothinmarket` WHERE clothNo= {$clothNo}" ;
+    $byePro = $pdo->prepare($sql);
+    $byePro ->execute();
 
     // $sql2 = "update `newsReport` set newsReportStatus=1 WHERE newsNo= {$newsNo}";
     // $renewSta = $pdo->prepare($sql);
