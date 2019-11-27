@@ -131,7 +131,7 @@ function BTNs() {
                     //要設定在發起連結之後,發送請求之前
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     //POST的參數，這裡要增加發布時間
-                    let data = `newsNo=${e.target.getAttribute("data-newsNo")}&reportMsg=${$class(".newsReportMessage").selectedIndex}`;
+                    let data = `newsNo=${e.target.getAttribute("data-newsNo")}&reportMsg=${$class(".newsReportMessage").value}`;
                     // alert(data);
                     //送出資料
                     xhr.send(data);
@@ -209,7 +209,7 @@ function init() {
                                 <button class="goodBTN"><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i><span class="up">${newsdata[i].newsUP}</span></button>
                         
                                 <button class="LessBTN"><i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i><span class="down">${newsdata[i].newsDown}</span></button>
-                                <button class="msgBTN"><i class="fa fa-comments fa-2x" aria-hidden="true"></i><span>留言</span></button>
+                                <button class="msgBTN" onclick="showDiscuss()"><i class="fa fa-comments fa-2x" aria-hidden="true"></i><span>留言</span></button>
                             </div>
                             <button class="report" data-newsNo="${newsdata[i].newsNo}">檢舉</button>
                         </div>
