@@ -399,6 +399,79 @@
 // .row{
 //     overflow: hidden;
 // }
+
+.boxLeft{
+    position: relative;
+    .titleText{
+       
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $green;
+        padding: 10px;
+        border-radius: 8px;
+        display: none;
+        float: left;
+        
+        h4{
+            font-size: 20px;
+            padding-bottom: 5px;
+            text-align: center;
+            line-height: 1.5;
+            
+        }
+        div{
+            border-radius: 8px;
+            background-color: #D4FAFF;
+            padding: 8px;
+           p{
+                font-size: 16px;
+                line-height: 1.5;
+            } 
+        }
+        .titleClose{
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        border-radius: 50px;
+        float: right;
+        position: relative;
+        cursor: pointer; 
+    }
+    .titleClose::before{
+        content: "";
+        background-color: #7d2c7c;
+        height: 14px;
+        width: 4px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        transform: rotate(-45deg);
+    }
+
+
+    }
+    
+    .titleClose::after{
+        content: "";
+        background-color: #7d2c7c;
+        height: 14px;
+        width: 4px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        transform: rotate(45deg);
+    }
+            
+    
+}
+
 .memNameBox {
     overflow: hidden;
     margin-bottom: 10px;
@@ -409,18 +482,50 @@
         padding-right: 20px;
     }
 
-    h3,
-    h2 {
+    h2,
+    #titleName{
         color: #fff;
     }
 
-    h3 {
+    #titleName{
         font-size: 20px;
+        padding-right: 10px;
     }
 
     h2 {
         font-size: 30px;
     }
+    .titleNa{
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border-radius: 50px;
+        display: inline-block;
+        cursor: pointer; 
+        
+        .fa-question{
+            font-size: 20px;
+            text-align: center;
+            padding-left: 3px;
+            color: #7d2c7c;
+        }
+        
+    }
+    
+
+        // .titleNa::after{
+        //     content: "";
+        //     background-color: #7d2c7c;
+        //     height: 14px;
+        //     width: 4px;
+        //     position: absolute;
+        //     right: 0;
+        //     top: 0;
+        //     bottom: 0;
+        //     left: 0;
+        //     margin: auto;
+        //     transform: rotate(90deg);
+        // }
 }
 
 .supportBox {
@@ -747,11 +852,11 @@
         background-color: $green;
         margin: auto;
         border-radius: 0px 8px 8px 8px;
-        height: 148px;
+        height: 160px;
 
         // width: 3000px;
         .wrapTabIn {
-            overflow: overlay;
+            overflow-y: hidden;
             margin: 0 10px;
 
             // width: 3000px;
@@ -761,7 +866,7 @@
                 clear: both;
                 color: #000;
                 padding-top: 20px;
-                margin: 0px 0px 1px 5px;
+                margin: 0px 0px -5px 5px;
                 // height: 113px;
                 position: relative;
                 overflow: overlay;
@@ -779,7 +884,7 @@
                     border-radius: 8px;
                     background-color: #d4faff;
                     width: 100px;
-                    height: 109px;
+                    height: 112px;
                     float: left;
                     margin-bottom: 10px;
                     margin-right: 2.5px;
@@ -4553,6 +4658,9 @@ div.slider {
     color: white;
     font-size: 16px;
     line-height: 30px;
+   
+    
+
 }
 
 // ===公民的家燈箱
