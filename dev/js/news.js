@@ -122,11 +122,12 @@ function BTNs() {
                         }
                     }
                     //設定好所要連結的程式
-                    xhr.open("post", "php/newsReport.php", true);
+                    xhr.open("post", "php/NEWSReport.php", true);
                     //要設定在發起連結之後,發送請求之前
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     //POST的參數，這裡要增加發布時間
                     let data = `newsNo=${e.target.getAttribute("data-newsNo")}&reportMsg=${$class(".newsReportMessage").selectedIndex}`;
+                    alert(data);
                     //送出資料
                     xhr.send(data);
                 }
@@ -175,7 +176,7 @@ function BTNs() {
 }
 
 function init() {
-    rep
+    BTNs();
     let getNewsNO;
             function showAllproduct(jsonStr){
             var newsdata = JSON.parse(jsonStr);
@@ -184,10 +185,10 @@ function init() {
             for (var i = 0; i < newsdata.length; i++) {
                 // console.log(newsdata[i].newsNo);
                 htmlStr += `
-                <div class="newsitem" >
+                <div class="newsitem" data-news="${newsdata[i].newsNo}">
 
                     <div class="newsPic">
-                        <img src="images/${newsdata[i].image}" alt="">
+                        <img src="php/images/${newsdata[i].image}" alt="">
                     </div>
                     <div class="newsText" data-news="${newsdata[i].newsNo}"> 
                         <div class="newsTOP" id="app" data-news="${newsdata[i].newsNo}">
@@ -196,8 +197,8 @@ function init() {
                              
                                 <h3 data-news="${newsdata[i].newsNo}">截止時間: <span>${newsdata[i].newsDeadline}</span></br></span></h3>
                         </div>
-                        <p onclick="showDiscuss()" data-news="${newsdata[i].newsNo}">${newsdata[i].newsContent}</p>
-                        <div class="newsBtnAll">
+                        <p style="font-size:25px;" onclick="showDiscuss()" data-news="${newsdata[i].newsNo}">${newsdata[i].newsContent}</p>
+                        <div class="newsBtnAll" data-news="${newsdata[i].newsNo}">
                             <div class="newsBtn" data-news="${newsdata[i].newsNo}">
 
                                 <button class="goodBTN"><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i><span class="up">${newsdata[i].newsUP}</span></button>
@@ -205,15 +206,16 @@ function init() {
                                 <button class="LessBTN"><i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i><span class="down">${newsdata[i].newsDown}</span></button>
                                 <button class="msgBTN"><i class="fa fa-comments fa-2x" aria-hidden="true"></i><span>留言</span></button>
                             </div>
-                            <button class="report" data-newsNo=${newsdata[i].newsNo}>檢舉</button>
+                            <button class="report" data-newsNo="${newsdata[i].newsNo}">檢舉</button>
                         </div>
                     </div>   
               </div>
               
-              `;
-
-                       
-            }//for
+              `;          
+            }
+            
+            
+            //for
             //-------------------------
                         //   $('.newsBoxAll').append(htmlStr);
                         document.querySelector(".newsBoxAll").innerHTML = htmlStr;
@@ -334,6 +336,10 @@ function init() {
                         // alert("成功GET新聞編號");
                         // console.log(data);
                         // alert(testAjax.responseText);
+                        if (data==null) {
+                             leftnews();
+                             $id("newsWindowWrap").style.display = "block";
+                        }else
                         showNewsMSG(data);
                         leftnews();
                                    
@@ -393,10 +399,11 @@ function init() {
 
 // 發新聞--$$$
 $("#sendnews").click(function (e) {
-
+    let starCoin =$('#coin').text(); 
     let balance = 100; //買道具扣錢
     // alert(balance);
-    $.ajax({
+    if(starCoin>=100){
+          $.ajax({
         url: `php/NEWSshop.php`,
         data: {
             // memNo,
@@ -408,6 +415,10 @@ $("#sendnews").click(function (e) {
             // $('#coin').text(balance);
         },
     })
+    }else{
+        alert("宇宙幣不足，請至公民學堂賺取宇宙幣");
+    }
+  
 });
 
 
@@ -437,7 +448,6 @@ $(document).ready(function (e) {
     $("#sendMsg").click(function () {
         let xhr = new XMLHttpRequest();
         xhr.onload = function (){
-
             renewNewsMsg(xhr.responseText);
         }
         let newsMSG = document.getElementsByName("newsMSG")[0].value;
@@ -445,16 +455,17 @@ $(document).ready(function (e) {
         xhr.open("get", url, true);
         xhr.send(null);
     });
+    document.getElementsByName("newsMSG")[0].value="";
 });
 
 function renewNewsMsg(jsonStr){
     news = JSON.parse(jsonStr);
 
-    console.log(news);
+    // console.log(news);
     let newsMsgHTML = "";
     
     newsMsgHTML += `
-           <div class="newsMsgitem">
+           <div class="newsMsgitem" data-news="${news.newsMsgNo}">
            <div class="newsMsgID">
              <h3>${news.memName}</h3>
              <p>${news.newsMsgDate} </p>
@@ -462,15 +473,13 @@ function renewNewsMsg(jsonStr){
            <div class="newsMsgBox">
              <p>${news.newsMSG}</p>
            </div>
-           <button class="report" data-newsNo=${news.newsNo}>檢舉</button>
+           <button id="" class="report" data-newsNo="${news.newsMsgNo}">檢舉</button>
          </div>
           `;
+          
     newsMsgHTML = newsMsgHTML + document.querySelector('.newsMsgAll').innerHTML ;
     // alert(newsMsgHTML);    
-    document.querySelector('.newsMsgAll').innerHTML = newsMsgHTML;
-   
-    
-             
+    document.querySelector('.newsMsgAll').innerHTML = newsMsgHTML;           
 }
 //----------------------------------------------------------------  
 
@@ -480,17 +489,17 @@ function leftnews(){
     var xhr = new XMLHttpRequest();
     xhr.onload=function (){
          if( xhr.status == 200 ){
-             console.log(xhr.responseText);
+            //  console.log(xhr.responseText);
           news = JSON.parse(xhr.responseText);
         //   console.log(news);
           
          HTMLstr= `<div class="newsTOP" id="newsTOP">
           <h2>${news.newsTitle}</h2>
-          <h3>截止時間: <span>${news.newsDeadline}</span> </h3>
+          <h3>截止時間:<span>${news.newsDeadline}</span> </h3>
         </div>
-        <img src="images/${news.image}" alt="">
+        <img src="php/images/${news.image}" alt="">
         <div class="newsText">
-          <p>${news.newsContent}
+          <p  style="line-height:1.6;text-align:center;margin-botton:20px">${news.newsContent}
           </p>
         </div>`;
         document.getElementsByClassName('newsWindowLeft')[0].innerHTML =HTMLstr;
@@ -499,7 +508,7 @@ function leftnews(){
          }
     }
     xhr.open("get", `php/NewsShow2.php?getNewsNO=${getNewsNO}`); 
-    console.log(`php/NewsShow2.php?getNewsNO=${getNewsNO}`);
+    // console.log(`php/NewsShow2.php?getNewsNO=${getNewsNO}`);
     xhr.send( null );
   }
  
@@ -513,7 +522,7 @@ function showNewsMSG(newsMSG) {
             
             let newsMsgHTML = "";
             let msgCard = document.querySelector('.newsMsgAll');
-             console.log(newsMSG);
+            //  console.log(newsMSG);
             //新聞留言
             for (var i = 0; i < newsMSG.length; i++) {
                 newsMsgHTML += `
@@ -525,7 +534,7 @@ function showNewsMSG(newsMSG) {
            <div class="newsMsgBox">
              <p>${newsMSG[i].newsMsgContent}</p>
            </div>
-           <button class="report" data-newsNo=${newsMSG[i].newsNo}>檢舉</button>
+           <button class="report" data-newsNo="${newsMSG[i].newsMsgNo}">檢舉</button>
          </div>
           `;
             };

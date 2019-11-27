@@ -180,7 +180,21 @@
 
 
   </div>
-
+  <!---- alert燈箱 ---->
+   <div id="alertWindowWrap" style="display: flex; display: none;">
+    <div class="alertWindow">
+        <h2 class="alertTitle">系統訊息</h2>
+        <div class="alertTextBox">
+            <p class="alertContent">請自行利用js程式更改自己的訊息，程式寫法在下方註解</p>       
+            <div id="alertButton">確認</div>
+            <div id="alertEqui" style="display: none;">確認</div>
+            <div id="alertEquiHand" style="display: none;">確認</div>
+            <div id="alertHomeShop" style="display: none;">確認</div>
+            <div id="cancelButton">取消</div>
+        </div>
+    </div>
+</div>
+<!---- 燈箱結束 ---->
 
   <!---------- 新聞表單 ---------->
 
@@ -224,7 +238,7 @@
                 <textarea maxlength="240" placeholder="最多輸入120個中文字" name="newsContent" id="newsContent" rows="5" required></textarea>
             </li>
         </ul>
-        <button type="submit" id="sendnews">送出(<span>$100</span>)</button>
+        <button onclick="check()"  type="submit" id="sendnews">送出(<span>$100</span>)</button>
         <button type="reset">清空</button>
     </form>
     
@@ -274,13 +288,14 @@
               <option value="3">色情內容</option>
               <option value="4">與主題無關</option>
           </select>
+          <input type="hidden">
           <!-- **串資料時加入 <button form="newsForm">** -->
-          <button type="submit" class="newsAddingSubmit" style="display: none;">確認1</button>
+          <button type="submit" class="newsAddingSubmit" style="display: none;">確認</button>
           <!-- **串資料時加入 <button form="">** -->
-          <button type="submit" class="newsVotingYes" style="display: none;">確認2</button>
-          <button type="submit" class="newsVotingNo" style="display: none;">確認3</button>
+          <button type="submit" class="newsVotingYes" style="display: none;">確認</button>
+          <button type="submit" class="newsVotingNo" style="display: none;">確認</button>
           <!-- **串資料時加入 <button form="">** -->
-          <button type="submit" class="newsReportSubmit" style="display: none;">確認4</button>
+          <button type="submit" class="newsReportSubmit" style="display: none;">確認</button>
           <button class="newsCancel">取消</button>
       </div>
   </div>
@@ -298,27 +313,28 @@
   <!-- 留言跳窗 -->
   <div id="newsWindowWrap" style="display: none;">
     <div class="newsWindow">
-      <div class="newsWindowLeft">
-       <!-- <img src="img/NEWS.png" alt=""> -->
-        <!-- <div class="newsTOP" id="newsTOP">
+      <div style="margin-bottom: 20px;" class="newsWindowLeft">
+       <img src="img/NEWS.png" alt="">
+        <div class="newsTOP" id="newsTOP" style="margin-bottom: 20px;">
           <h2>這裡是標題</h2>
-          <h3>剩餘時間: <span></span> </h3>
+          <h3 style="color:red;font-size: 30px;">已結束<span></span> </h3>
         </div>
 
         <img src="img/trueNews.png" alt="">
-        <div class="newsText">
+        <div class="newsText" style="margin-top: 20px;">
 
-          <p>這裡是新聞內容，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字，不知道會有幾個字
+          <p style="line-height:1.6;text-align: center;">這裡放文案這裡放文案這裡放文案這裡放文案這裡放文案這裡放文案這裡放文案這裡放文案
           </p>
-        </div> -->
+        </div>
       </div>
 
       <div class="newsWindoRight" id="newsWindoRight">
         <!-- <h2>留言</h2> -->
         <div class="newsMsgAll">
-          <!-- <div class="newsMsgitem">
+          <div class="newsMsgitem">
             <div class="newsMsgID">
               <h3>外星人</h3>
+              <p>2019/11/18 21:41</p>
               <p> </p>
             </div>
             <div class="newsMsgBox">
@@ -345,7 +361,7 @@
               <p>我覺得不行</p>
             </div>
             <button class="report">檢舉</button>
-          </div> -->
+          </div>
         </div>
         <div class="newsWindoClose"></div>
         <div class="newsDOWN">
@@ -391,7 +407,6 @@
         </div>
       </div> -->
     </div>
-
     <!-- <div class="newsBox">
       <div class="newsitem">
         <div class="newsPic">
@@ -419,38 +434,34 @@
 
       </div>
     </div> -->
+  </div>
+  
+  <div class="newsitem">
+    <div class="newsPic">
+      <img src="img/fakeNews.png" alt="">
+    </div>
+    <div class="newsText">
+      <div class="newsTOP" onload="initial()">
+        <h2 style="color: rgb(155, 151, 145); text-align: center;">肥宅開始放寒假了</h2>
+        <h3 style="color:rgb(251, 100, 45);font-size: 25px;text-align: center;">已結束</h3>
+      </div>
+      <p></p>
+      <p style="font-size:25px;text-align: center;">獨眼星總支持度-100</p>
+      <div class="newsBtnAll">
+        <div class="newsBtn">
+          <button id="bt1" @click="num++"><i class="fa fa-thumbs-o-up fa-2x"
+              aria-hidden="true"></i><SPan>20</SPan></button>
+          <button id="bt2"><i class="fa fa-thumbs-down fa-2x" aria-hidden="true"></i><SPan>77</SPan></button>
+          <button id="bt3" onclick="showDiscuss()"><i class="fa fa-comments fa-2x"
+              aria-hidden="true"></i><SPan>留言</SPan></button>
 
-
-    <div class="newsBox">
-      <div class="newsitem">
-        <div class="newsPic">
-          <img src="img/fakeNews.png" alt="">
         </div>
-        <div class="newsText">
-          <div class="newsTOP" onload="initial()" onclick="showDiscuss()">
-            <h2>肥宅開始放寒假了</h2>
-            <h3>已結束</h3>
-          </div>
-          <p></p>
-          <p>獨眼星總支持度-100</p>
-          <div class="newsBtnAll">
-            <div class="newsBtn">
-              <button id="bt1" @click="num++"><i class="fa fa-thumbs-o-up"
-                  aria-hidden="true"></i><SPan>123</SPan></button>
-              <button id="bt2"><i class="fa fa-thumbs-down" aria-hidden="true"></i><SPan>17</SPan></button>
-              <button id="bt3" onclick="showDiscuss()"><i class="fa fa-comments"
-                  aria-hidden="true"></i><SPan>19</SPan></button>
-
-            </div>
-            <button class="report" onclick="CheckForm()">檢舉</button>
-
-          </div>
-        </div>
+        <button class="report">檢舉</button>
 
       </div>
     </div>
-  </div>
 
+  </div>
 
   <!-- <div class="newsPageAll">
     <div class="pagination">

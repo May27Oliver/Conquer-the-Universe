@@ -38,7 +38,7 @@ try {
 		$fileName = "{$newsNo}.{$fileInfoArr["extension"]}";  //8.gif
 
 		$from = $_FILES["upFile"]["tmp_name"];
-		$to = "../images/$fileName";
+		$to = "images/$fileName";
 		if(copy( $from, $to)===true){
 			//將檔案名稱寫回資料庫
 			$sql = "update news2 set image = :image where newsNo = $newsNo";

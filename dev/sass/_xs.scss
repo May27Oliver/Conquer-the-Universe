@@ -3257,6 +3257,34 @@ div.slider {
     // background-repeat: repeat;
     
 }
+.newsReportSubmit{
+    display: block;
+    background: #1d2088;
+    color: #fff;
+    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 15px;
+    margin: 10px auto 0;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+}
+.newsCancel{
+    display: block;
+    background: #1d2088;
+    color: #fff;
+    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 15px;
+    margin: 10px auto 0;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+}
 
 /*------ 跳窗提示 ------*/
 .newsAlertGroup {
@@ -3379,6 +3407,21 @@ div.slider {
     .newsText {
         width: 100%;
         margin: 0 auto;
+        .newsTOP{
+            line-height: 1.6;
+            padding: 20px 0;
+            h2{
+                line-height: 1.6;
+                color: papayawhip;
+                font-size: 30px;
+            }
+            h3{
+                color:#dcf4fa;
+                font-size:25px;
+            }
+
+            
+        }
 
         #newsDiscuss {
             cursor: pointer;
@@ -3388,7 +3431,7 @@ div.slider {
                 margin-top: 20px;
                 margin-bottom: 20px;
                 text-align: center;
-
+                
                 &:hover {
                     color: orange;
                 }
@@ -3420,6 +3463,7 @@ div.slider {
     border-top: 5px solid #E8B51C;
     width: 80%;
     margin: 50px auto;
+    text-align: center;
 
 
     .newsBtn {
@@ -3579,8 +3623,9 @@ div.slider {
     top: 0;
     width: 100vw;
     height: 100vh;
+    margin: 15px 0;
     background: rgba(29, 29, 29, 0.7);
-    z-index: 990;
+    z-index: 9999;
     // font-family: "微軟正黑體";
 
 }
@@ -3594,6 +3639,7 @@ div.slider {
     width: 70%;
     min-width: 375px;
     max-width: 1000px;
+    
     margin: 10px;
 
     border-radius: 10px;
@@ -3607,7 +3653,7 @@ div.slider {
     bottom: 0;
     right: 0;
     margin: auto;
-    height: 70%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     // overflow: hidden;

@@ -817,7 +817,7 @@
                 <div class="newsitem" >
 
                     <div class="newsPic">
-                        <img src="images/${newsdata[i].image}" alt="">
+                        <img src="php/images/${newsdata[i].image}" alt="">
                     </div>
                     <div class="newsText" data-news="${newsdata[i].newsNo}"> 
                         <div class="newsTOP" id="app" data-news="${newsdata[i].newsNo}">
@@ -1085,7 +1085,7 @@ function leftnews(){
          }
     }
     xhr.open("get", `php/NewsShow2.php?getNewsNO=${getNewsNO}`); 
-    console.log(`php/NewsShow2.php?getNewsNO=${getNewsNO}`);
+    // console.log(`php/NewsShow2.php?getNewsNO=${getNewsNO}`);
     xhr.send( null );
   }
  
