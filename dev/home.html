@@ -19,19 +19,19 @@
         body.appendChild(script); 
     }
     //loading
-    window.onload = load;
-    function load() {
-        $("#loading").fadeOut(1000);
-    }
+    // window.onload = load;
+    // function load() {
+    //     $("#loading").fadeOut(1000);
+    // }
 </script>
 @@include('./template/header.html')
 @@include('./template/homeAlert.html')
 @@include('template/login.html')
 <!-- Loading -->
-<div id="loading">  
+<!-- <div id="loading">  
     <div class="double-bounce1"></div>
     <div class="double-bounce2"></div>
-</div> 
+</div>  -->
 
 <!-- 最上面 -->
 <div class="homeStar">
@@ -459,7 +459,7 @@
         }
         
         //公民的家登入及未登入
-        $('ul li:last-child').click(function(e){
+        document.getElementById("homeEnterfooter").onclick=function(e){
             var nameWord=document.getElementById("memberName").innerText;
             if(nameWord){
                 $id("homeEnterfooter").href="homeCitizen.html";
@@ -471,7 +471,7 @@
                 enterHomeCitizen();
                 console.log("沒有抓到使用者名稱");
             }
-        })
+        }
      //============footer未登入與登入狀態 結束
 
         $(function(){

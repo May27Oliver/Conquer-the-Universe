@@ -131,6 +131,6 @@ window.addEventListener('load',function(){
             
         }
      
-    // console.log(time);
+    console.log(time);
     }, 1000);
 });

@@ -600,7 +600,7 @@ function BTNs() {
                     //要設定在發起連結之後,發送請求之前
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     //POST的參數，這裡要增加發布時間
-                    let data = `votNo=${e.target.parentNode.getAttribute("data-votNo")}&reportMsg=${$class(".voteReportMessage").selectedIndex}`;
+                    let data = `votNo=${e.target.parentNode.getAttribute("data-votNo")}&reportMsg=${$class(".voteReportMessage").value}`;
                     //送出資料
                     xhr.send(data);
                 }
