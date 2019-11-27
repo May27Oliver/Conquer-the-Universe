@@ -647,7 +647,7 @@
                 },
                 type: 'GET',
                 success: function(){
-                    alert(2222);
+                    // alert(2222);
             
                  
                 },

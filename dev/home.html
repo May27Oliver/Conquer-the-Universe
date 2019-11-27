@@ -402,11 +402,11 @@
             <div class="homeFooterIn">
                 <nav class="homeFooterNav">
                     <ul>
-                        <li><a href="#">宇宙星聞</a></li>
-                        <li><a href="#">公民學堂</a></li>
+                        <li><a href="news.html">宇宙星聞</a></li>
+                        <li><a href="" id="videoEnterfooter">公民學堂</a></li>
                         <li><a href="vote.html">公民投票</a></li>
-                        <li><a href="#">宇宙商城</a></li>
-                        <li><a href="#">公民的家</a></li>
+                        <li><a href="shop.html">宇宙商城</a></li>
+                        <li><a href="" id="homeEnterfooter">公民的家</a></li>
                     </ul>
                 </nav>
                 <nav class="homeMedia">
@@ -439,7 +439,41 @@
 <script src="js/shopAJAX.js"></script>
 <!-- <script src=""></script> -->
 <script>
+    
+
+
     $(document).ready(function(){
+    //============footer未登入與登入狀態
+        document.getElementById("videoEnterfooter").onclick=function(e){
+            var nameWord=document.getElementById("memberName").innerText;
+            if(nameWord){
+                $id("videoEnterfooter").href="video.html";
+                console.log("有抓到使用者名稱");
+                window.location = "../dest/video.html";
+            }else{
+                // document.querySelector(".alertContent").innerText = "登入/註冊會員";
+                e.preventDefault();
+                enterHomeCitizen();
+                console.log("沒有抓到使用者名稱，請求登入");
+            }
+        }
+        
+        //公民的家登入及未登入
+        $('ul li:last-child').click(function(e){
+            var nameWord=document.getElementById("memberName").innerText;
+            if(nameWord){
+                $id("homeEnterfooter").href="homeCitizen.html";
+                console.log("有抓到使用者名稱");
+                window.location = "../dest/homeCitizen.html";
+            }else{
+                // document.querySelector(".alertContent").innerText = "登入/註冊會員";
+                e.preventDefault();
+                enterHomeCitizen();
+                console.log("沒有抓到使用者名稱");
+            }
+        })
+     //============footer未登入與登入狀態 結束
+
         $(function(){
             $("#back_to_top").click(function(){
                 $("html,body").animate({ scrollTop: 0 }, "normal");
@@ -1108,6 +1142,8 @@ function showNewsMSG(newsMSG) {
             
     }
     // 新聞end
+
+    
 </script>
 </body>
 </html>
