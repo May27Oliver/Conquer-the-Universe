@@ -82,7 +82,7 @@ window.addEventListener('load',function(){
         let bigVideo=$id("big-video");
         console.log(financeProblem.style.display);
         fnButton.addEventListener('click',function(){
-            bigVideo.src="https://www.youtube.com/embed/et3NitNdfv0";
+            bigVideo.src="https://www.youtube.com/embed/JelWsim7MjU";
             fn.style.display="";
             Jt.style.display="none";
             As.style.display="none";
@@ -97,6 +97,9 @@ window.addEventListener('load',function(){
             for(var i=0;i<videoAddress.length;i++){
                 fnVideoAddress[i].src=videoAddress[i].getAttribute("data-source");
             }//財經題
+            var wrap=document.querySelectorAll(".video-slider ul");
+            var turnLeft=document.querySelector(".slider-forward");
+            var turnRight=document.querySelector(".slider-back");
             turnRight.disabled=true; //一開始右鍵不能按
             turnRight.style.opacity=0;
             turnLeft.disabled=false;
@@ -126,6 +129,9 @@ window.addEventListener('load',function(){
             for(var i=0;i<videoAddress.length;i++){
             JtVideoAddress[i].src=videoAddress[i].getAttribute("data-source");
             }//思辨題
+            var wrap=document.querySelectorAll(".video-slider ul");
+            var turnLeft=document.querySelector(".slider-forward");
+            var turnRight=document.querySelector(".slider-back");
             turnRight.disabled=true; //一開始右鍵不能按
             turnRight.style.opacity=0;
             turnLeft.disabled=false;
@@ -155,6 +161,9 @@ window.addEventListener('load',function(){
             for(var i=0;i<videoAddress.length;i++){
             AsVideoAddress[i].src=videoAddress[i].getAttribute("data-source");
             }//美學題
+            var wrap=document.querySelectorAll(".video-slider ul");
+            var turnLeft=document.querySelector(".slider-forward");
+            var turnRight=document.querySelector(".slider-back");
             turnRight.disabled=true; //一開始右鍵不能按
             turnRight.style.opacity=0;
             turnLeft.disabled=false;
@@ -361,9 +370,9 @@ window.addEventListener('load',function(){
 
                 /*slider左右移動影片*/ 
             let oneVideo=0;
-            let wrap=document.querySelectorAll(".video-slider ul");
-            let turnLeft=document.querySelector(".slider-forward");
-            let turnRight=document.querySelector(".slider-back");
+            var wrap=document.querySelectorAll(".video-slider ul");
+            var turnLeft=document.querySelector(".slider-forward");
+            var turnRight=document.querySelector(".slider-back");
             turnRight.disabled=true; //一開始右鍵不能按
             turnRight.style.opacity=0;
 
