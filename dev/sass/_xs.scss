@@ -3581,8 +3581,8 @@ div.slider {
     .newsPic {
         margin: 10px auto;
         width: 100%;
-        max-width: 250px;
-        max-height: 250px;
+        max-width: 280px;
+        max-height: 280px;
 
 
         img {
@@ -3671,6 +3671,7 @@ div.slider {
 
             .fa {
                 color: #E8B51C;
+                padding-right: 10px;
 
             }
 
@@ -3935,6 +3936,7 @@ div.slider {
     img {
         width: 60%;
         display: none;
+        margin-bottom: 5px;
     }
 
     h2 {
@@ -4124,6 +4126,7 @@ div.slider {
 
 .newsMessage button .fa {
     color: #E8B51C;
+    padding-right: 10px;
 }
 
 
