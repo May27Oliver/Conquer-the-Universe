@@ -130,7 +130,5 @@ window.addEventListener('load',function(){
             }
             
         }
-     
-    console.log(time);
     }, 1000);
 });
