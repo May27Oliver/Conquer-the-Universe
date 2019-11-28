@@ -65,6 +65,9 @@ window.addEventListener('load',function(){
     let fnVideos=document.querySelectorAll(".fn-video");
     let JtVideos=document.querySelectorAll(".Jt-video");
     let AsVideos=document.querySelectorAll(".As-video");
+    var wrap=document.querySelectorAll(".video-slider ul");
+    var turnLeft=$query(".slider-forward");
+    var turnRight=$query(".slider-back");
     
     //題型
     let justiceProblem=$id("justiceProblem");
@@ -82,7 +85,7 @@ window.addEventListener('load',function(){
         let bigVideo=$id("big-video");
         console.log(financeProblem.style.display);
         fnButton.addEventListener('click',function(){
-            bigVideo.src="https://www.youtube.com/embed/et3NitNdfv0";
+            bigVideo.src="https://www.youtube.com/embed/JelWsim7MjU";
             fn.style.display="";
             Jt.style.display="none";
             As.style.display="none";
