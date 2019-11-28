@@ -202,7 +202,7 @@ function init() {
                              
                                 <h3 data-news="${newsdata[i].newsNo}">截止時間: <span>${newsdata[i].newsDeadline}</span></br></span></h3>
                         </div>
-                        <p class="ellipsis" onclick="showDiscuss()" data-news="${newsdata[i].newsNo}">${newsdata[i].newsContent}</p>
+                        <p class="ellipsis" data-news="${newsdata[i].newsNo}">${newsdata[i].newsContent}</p>
                         <div class="newsBtnAll" data-news="${newsdata[i].newsNo}">
                             <div class="newsBtn" data-news="${newsdata[i].newsNo}">
 
@@ -321,51 +321,51 @@ function init() {
         // showDiscuss();
            // 跳窗
            
-            $('.newsTOP').click(function(e){
-                $id("newsWindowWrap").style.display = "block";
-                // console.log("您點擊到的是:",e.target.parentNode.getAttribute("data-news"));
-                // console.log(e.target.getAttribute("data-news"));
-                getNewsNO = e.target.parentNode.getAttribute("data-news");
-                // alert(getNewsNO);
-                //------------------------------
-                // testAjax = 
-                // console.log(getNewsNO);
-                $.ajax({
-                    url: `php/NewsMSGShow.php`,
-                    dataType: "json",
-                    data: {
-                        "getNewsNO": getNewsNO
-                    },
-                    type: 'get',
-                    success: function(data){
-                        // alert("成功GET新聞編號");
-                        // console.log(data);
-                        // alert(testAjax.responseText);
-                        if (data==null) {
-                             leftnews();
-                             $id("newsWindowWrap").style.display = "block";
-                        }else
-                        showNewsMSG(data);
-                        leftnews();
+            // $('.newsTOP').click(function(e){
+            //     $id("newsWindowWrap").style.display = "block";
+            //     // console.log("您點擊到的是:",e.target.parentNode.getAttribute("data-news"));
+            //     // console.log(e.target.getAttribute("data-news"));
+            //     getNewsNO = e.target.parentNode.getAttribute("data-news");
+            //     // alert(getNewsNO);
+            //     //------------------------------
+            //     // testAjax = 
+            //     // console.log(getNewsNO);
+            //     $.ajax({
+            //         url: `php/NewsMSGShow.php`,
+            //         dataType: "json",
+            //         data: {
+            //             "getNewsNO": getNewsNO
+            //         },
+            //         type: 'get',
+            //         success: function(data){
+            //             // alert("成功GET新聞編號");
+            //             // console.log(data);
+            //             // alert(testAjax.responseText);
+            //             if (data==null) {
+            //                  leftnews();
+            //                  $id("newsWindowWrap").style.display = "block";
+            //             }else
+            //             showNewsMSG(data);
+            //             leftnews();
                                    
-                    },           
-                })
+            //         },           
+            //     })
 
-                // $.ajax({
-                //     url: `php/NewsShow2.php`,
-                //     dataType: "json",
-                //     data: {
-                //         "getNewsNO": getNewsNO
-                //     },
-                //     type: 'get',
-                //     success: function(d){
-                //         alert("成功GET新聞編號");
-                //         // console.log(data);
-                //         // alert(testAjax.responseText);
-                //        ;             
-                //     },           
-                // })
-            });
+            //     // $.ajax({
+            //     //     url: `php/NewsShow2.php`,
+            //     //     dataType: "json",
+            //     //     data: {
+            //     //         "getNewsNO": getNewsNO
+            //     //     },
+            //     //     type: 'get',
+            //     //     success: function(d){
+            //     //         alert("成功GET新聞編號");
+            //     //         // console.log(data);
+            //     //         // alert(testAjax.responseText);
+            //     //        ;             
+            //     //     },           
+            //     // })
+            // });
             // $("#bt").click(function (e) {
             //     let newsADD = $('#add').text();
             //     let UPtotal = parseInt(newsADD) + 1;
