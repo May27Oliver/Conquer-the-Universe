@@ -1,9 +1,9 @@
 
 <?php
-// session_start();
+session_start();
 // print_r($_POST);
-$newsNo="1";
-// $memNo=$_SESSION["memNo"];
+// $newsNo="1";
+$memNo=$_SESSION["memNo"];
 
 $datetime = date ("Y-m-d H:i:s");
 $newsDeadline=date('Y-m-d H:i:s',strtotime('+1 day'));
@@ -14,7 +14,7 @@ try {
 	//.......確定是否上傳成功
 	if( $_FILES["upFile"]["error"] == UPLOAD_ERR_OK){
 		
-        $sql = "INSERT INTO `news2`(`newsNo`, `newsTitle`,`newsDate`,`newsDeadline`,`newsUP`, `newsDown`, `newsContent`, `image`, `starNo`, `pointRaise`) values(null, :newsTitle,'{$datetime}','{$newsDeadline}','0','0', :newsContent,'', :Planet, :newsPoint)";
+        $sql = "INSERT INTO `news2`(`newsNo`, `newsTitle`,`newsDate`,`newsDeadline`,`newsUP`, `newsDown`, `newsContent`, `image`, `starNo`,`memNo`, `pointRaise`) values(null, :newsTitle,'{$datetime}','{$newsDeadline}','0','0', :newsContent,'', :Planet,'{$memNo}', :newsPoint)";
 
         // INSERT INTO `news2` (`newsNo`, `fknews`, `newsDate`, `newsDeadline`, `newsUP`, `newsDown`, `newsTitle`, `newsContent`, `image`, `starNo`, `memNo`, `pointRaise`) VALUES (NULL, NULL, NULL, NULL, NULL, NULL, '塞不進去', '爆炸了', NULL, '3', NULL, '-100');
         
@@ -55,14 +55,15 @@ try {
 		}
 
 	}else{
-		echo "錯誤代碼 : {$_FILES["upFile"]["error"]} <br>";
-		echo "新增失敗<br>";
+		// echo "錯誤代碼 : {$_FILES["upFile"]["error"]} <br>";
+		echo "新增失敗:請重新上傳圖片(扣宇宙幣100)<br>";
 		$pdo->rollBack();
 	}
 } catch (PDOException $e) {
 	$pdo->rollBack();
-	$errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
-	$errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";	
+	echo "新增失敗:請輸入支持度(扣宇宙幣100)<br>";
+	// $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
+	// $errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";	
 }
 echo $errMsg;
 
