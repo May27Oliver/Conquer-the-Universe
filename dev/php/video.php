@@ -349,7 +349,7 @@ try{
         $befterCut->execute();
         $number = $befterCut->fetch(PDO::FETCH_ASSOC);
 
-        if($number["finance"]>98){
+        if($number["wisdom"]>98){
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
@@ -359,11 +359,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `wisdom`` = `wisdom``+ {$ability}
+              , `wisdom` = `wisdom`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,wisdom` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,wisdom from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -380,7 +380,7 @@ try{
         $befterCut->execute();
         $number = $befterCut->fetch(PDO::FETCH_ASSOC);
 
-        if($number["finance"]>98){
+        if($number["wisdom"]>98){
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
@@ -390,11 +390,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `wisdom`` = `wisdom``+ {$ability}
+              , `wisdom` = `wisdom`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,wisdom` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,wisdom from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -410,7 +410,7 @@ try{
         $befterCut->execute();
         $number = $befterCut->fetch(PDO::FETCH_ASSOC);
 
-        if($number["finance"]>98){
+        if($number["wisdom"]>98){
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
@@ -420,11 +420,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `wisdom`` = `wisdom``+ {$ability}
+              , `wisdom` = `wisdom`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,wisdom` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,wisdom from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -440,7 +440,7 @@ try{
         $befterCut->execute();
         $number = $befterCut->fetch(PDO::FETCH_ASSOC);
 
-        if($number["finance"]>98){
+        if($number["wisdom"]>98){
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
@@ -450,11 +450,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `wisdom`` = `wisdom``+ {$ability}
+              , `wisdom` = `wisdom`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,wisdom` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,wisdom from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -470,7 +470,7 @@ try{
         $befterCut->execute();
         $number = $befterCut->fetch(PDO::FETCH_ASSOC);
 
-        if($number["finance"]>98){
+        if($number["wisdom"]>98){
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
@@ -480,11 +480,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `wisdom`` = `wisdom``+ {$ability}
+              , `wisdom` = `wisdom`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,wisdom` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,wisdom from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -500,7 +500,7 @@ try{
         $befterCut->execute();
         $number = $befterCut->fetch(PDO::FETCH_ASSOC);
 
-        if($number["finance"]>98){
+        if($number["wisdom"]>98){
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
@@ -510,11 +510,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `wisdom`` = `wisdom``+ {$ability}
+              , `wisdom` = `wisdom`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,wisdom` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,wisdom from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -530,7 +530,7 @@ try{
         $befterCut->execute();
         $number = $befterCut->fetch(PDO::FETCH_ASSOC);
 
-        if($number["finance"]>98){
+        if($number["wisdom"]>98){
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
@@ -540,11 +540,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `wisdom`` = `wisdom``+ {$ability}
+              , `wisdom` = `wisdom`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,wisdom` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,wisdom from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -560,7 +560,7 @@ try{
         $befterCut->execute();
         $number = $befterCut->fetch(PDO::FETCH_ASSOC);
 
-        if($number["finance"]>98){
+        if($number["wisdom"]>98){
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
@@ -570,11 +570,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `wisdom`` = `wisdom``+ {$ability}
+              , `wisdom` = `wisdom`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,wisdom` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,wisdom from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -590,7 +590,7 @@ try{
         $befterCut->execute();
         $number = $befterCut->fetch(PDO::FETCH_ASSOC);
 
-        if($number["finance"]>98){
+        if($number["wisdom"]>98){
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
@@ -600,11 +600,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `wisdom`` = `wisdom``+ {$ability}
+              , `wisdom` = `wisdom`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,wisdom` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,wisdom from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -620,7 +620,7 @@ try{
         $befterCut->execute();
         $number = $befterCut->fetch(PDO::FETCH_ASSOC);
 
-        if($number["finance"]>98){
+        if($number["wisdom"]>98){
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
@@ -630,11 +630,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `wisdom`` = `wisdom``+ {$ability}
+              , `wisdom` = `wisdom`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,wisdom` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,wisdom from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -650,7 +650,7 @@ try{
         $befterCut->execute();
         $number = $befterCut->fetch(PDO::FETCH_ASSOC);
 
-        if($number["finance"]>98){
+        if($number["wisdom"]>98){
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
@@ -660,11 +660,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `wisdom`` = `wisdom``+ {$ability}
+              , `wisdom` = `wisdom`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,wisdom` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,wisdom from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -690,11 +690,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `wisdom`` = `wisdom``+ {$ability}
+              , `wisdom` = `wisdom`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,wisdom` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,wisdom from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -710,7 +710,7 @@ try{
         $befterCut->execute();
         $number = $befterCut->fetch(PDO::FETCH_ASSOC);
 
-        if($number["finance"]>98){
+        if($number["wisdom"]>98){
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
@@ -720,11 +720,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `wisdom`` = `wisdom``+ {$ability}
+              , `wisdom` = `wisdom`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,wisdom` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,wisdom from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -750,11 +750,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `wisdom`` = `wisdom``+ {$ability}
+              , `wisdom` = `wisdom`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,wisdom` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,wisdom from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -770,7 +770,7 @@ try{
         $befterCut->execute();
         $number = $befterCut->fetch(PDO::FETCH_ASSOC);
 
-        if($number["finance"]>98){
+        if($number["wisdom"]>98){
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
@@ -780,11 +780,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `wisdom`` = `wisdom``+ {$ability}
+              , `wisdom` = `wisdom`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,wisdom` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,wisdom from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -811,11 +811,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `charisma`` = `charisma``+ {$ability}
+              , `charisma` = `charisma`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,charisma` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,charisma from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -842,11 +842,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `charisma`` = `charisma``+ {$ability}
+              , `charisma` = `charisma`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,charisma` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,charisma from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -872,11 +872,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `charisma`` = `charisma``+ {$ability}
+              , `charisma` = `charisma`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,charisma` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,charisma from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -902,11 +902,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `charisma`` = `charisma``+ {$ability}
+              , `charisma` = `charisma`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,charisma` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,charisma from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -932,11 +932,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `charisma`` = `charisma``+ {$ability}
+              , `charisma` = `charisma`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,charisma` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,charisma from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -962,11 +962,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `charisma`` = `charisma``+ {$ability}
+              , `charisma` = `charisma`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,charisma` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,charisma from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -992,11 +992,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `charisma`` = `charisma``+ {$ability}
+              , `charisma` = `charisma`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,charisma` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,charisma from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -1022,11 +1022,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `charisma`` = `charisma``+ {$ability}
+              , `charisma` = `charisma`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,charisma` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,charisma from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -1052,11 +1052,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `charisma`` = `charisma``+ {$ability}
+              , `charisma` = `charisma`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,charisma` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,charisma from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
@@ -1082,11 +1082,11 @@ try{
             $sql="UPDATE `member` 
               SET `popularity` = `popularity`+ {$moneyAdd} 
               , `starCoin` = `starCoin`+ {$starCoin}
-              , `charisma`` = `charisma``+ {$ability}
+              , `charisma` = `charisma`+ {$ability}
              WHERE `member`.`memNo` = {$memberNo}";
             $pdo->exec($sql);
         }
-        $sql="select starCoin,charisma` from `member` where memNo={$memberNo}";
+        $sql="select starCoin,charisma from `member` where memNo={$memberNo}";
         $afterCut = $pdo->prepare($sql);
         $afterCut->execute();
         $number = $afterCut->fetch(PDO::FETCH_ASSOC);
