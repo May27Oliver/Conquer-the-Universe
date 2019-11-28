@@ -4,7 +4,7 @@ window.addEventListener('load',function(){
      function getTitle(){
          var xhr = new XMLHttpRequest();
          // xhr.onload=function (){}
-         var url = "../php/getTitle.php";
+         var url = "php/getTitle.php";
          xhr.open("Get", url, true);
          xhr.send( null );
      }
@@ -23,7 +23,7 @@ window.addEventListener('load',function(){
                 alert( xhr.status );
             }
         }
-         var url = "../php/citizenTitle.php";
+         var url = "php/citizenTitle.php";
          xhr.open("Get", url, true);
          xhr.send( null );
      }
