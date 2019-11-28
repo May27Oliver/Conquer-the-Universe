@@ -3577,6 +3577,8 @@ div.slider {
     .newsPic {
         margin: 10px auto;
         width: 100%;
+        max-width: 250px;
+        max-height: 250px;
 
 
         img {
