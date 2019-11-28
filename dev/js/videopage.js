@@ -82,7 +82,7 @@ window.addEventListener('load',function(){
         let bigVideo=$id("big-video");
         console.log(financeProblem.style.display);
         fnButton.addEventListener('click',function(){
-            bigVideo.src="https://www.youtube.com/embed/et3NitNdfv0";
+            bigVideo.src="https://www.youtube.com/embed/JelWsim7MjU";
             fn.style.display="";
             Jt.style.display="none";
             As.style.display="none";
