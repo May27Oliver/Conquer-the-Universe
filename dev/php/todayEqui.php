@@ -7,7 +7,7 @@ try{
   // $sql = "select clothNo,clothimg,clothName from `clothinmarket` where clothNo" ;
   $todayEqui=$pdo->query($sql);
   $arrTodayEqui=[];
-  $length = 16;
+  
   $todayEquiRow=$todayEqui->fetchAll(PDO::FETCH_ASSOC);
   for($i=0;$i<count($todayEquiRow);$i++){
     

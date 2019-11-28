@@ -1,16 +1,18 @@
 <?php 
 $errMsg = "";
-$newsNo = $_REQUEST["newNo"];
+$newsNo = $_REQUEST["newsNo"];
+// $newsNo="4";
 $reportMsg = $_REQUEST["reportMsg"];
 
 try{
+   
     require_once("../php/connectPDO.php");
-    $sql_voteReport = 
-      "INSERT INTO `newsreport` (newsNo, newsReportMsg, newsReportStatus) VALUES ('{$newsNo}', '{$reportMsg}', '0')";
-    $voteReport = $pdo->prepare($sql_voteReport);
-    $voteReport->execute();
+    $sql_newsReport = 
+      "INSERT INTO `newsreport` (newsReportNo, newsNo, newsReportMsg, newsReportStatus) VALUES (null,'{$newsNo}', '{$reportMsg}', '0')";
+    $newsReport = $pdo->prepare($sql_newsReport);
+    $newsReport->execute();
     //送出json字串
-    echo json_encode($voteReport);
+    // echo json_encode($newsReport);
   }catch(PDOException $e){
     $errMsg .= "錯誤訊息: {$e->getMessage()}</br>";
     $errMsg .= "錯誤行號: {$e->getLine()}<br>";
